@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Tweet by author</title>
+
+<style type="text/css">
+<!--
+body {
+	margin-left: -9px;
+	margin-top: -5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style><body>
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 2,
+  interval: 60000,
+  width: 180,
+  height: 400,
+  theme: {
+    shell: {
+      background: '#ffffff',
+      color: '#666666'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#666666',
+      links: '#ffc9ff'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: false,
+    hashtags: true,
+    timestamp: true,
+    avatars: false,
+    behavior: 'all'
+  }
+}).render().setUser('statneuro').start();
+</script>
+</body>
+</html>

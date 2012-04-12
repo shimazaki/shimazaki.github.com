@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<p class="style4">&nbsp;</p>
+<p class="style4">&nbsp;</p>
+<p class="style4"> <img src="../icons/amazon.jpg" alt="amazon" width="86" height="86" align="absmiddle" /> I am currently developing a WEB APP using Amazon EC2.</p>
+<p class="style4">&nbsp;</p>
+<p class="style4"><a href="https://github.com/shimazaki/code/blob/master/lib/loglin/ssloglin.m">ssloglin.m</a> Core function </p>
+<p class="style4">&nbsp;</p>
+<blockquote>
+  <p class="style4">Example: Twitter</p>
+  <p class="style4">If a twitter user tweets more than once in a 5-minutes window, we consider the user is active in that period, and  use `1' to represent the active state. Otherwise, the user is innactive, and we denoted it as 0. Let's consider two twitter users A and B, and see their activities of 240 minuites. </p>
+  <p class="style4"> A: 0101001001101011<br />
+    B: 1110000001101011 </p>
+</blockquote>
+<p class="style4">&nbsp;</p>
+<p class="style4">They are `correlated'. </p>
+<p class="style4">What are the higher-order interactions? </p>
+<p class="style4"> The neurons 1 and 2 are correlated, they fire together. &nbsp;In contrast, 
+  neurons 1 and 3 are anti-correlated. Thus they avoid firing together. 
+  This means, if we assume no triple-wise correlation, i.e., if we 
+  assume a chance coincidence for events that three neurons firing 
+  simultaneously given their firing rates and pair correlations, that 
+  chance coincidence of joint spiking of three neurons must be rare.<br />
+     <br />
+  However, if we observe a little bit more triplet synchronous events 
+  than that scarce chance rate, we conclude that there is a triple-wise 
+  correlation. In this situation, we observe sparse triplet synchronous activities which is still significantly larger amount compared to its chance rate.<br />
+     <br />
+  IMPORTANT:<br />
+  Higher-order interactions is a relative measure of synchrony from lower-order interactions: left-over of effect for generating synchronous events that was already explained from pairwise correlations. Suppose we have multiple neural spike trains of say 100 neurons, exhibiting almost independent sparse spiking activities, each with 
+  1Hz. Suppose then, we observe a very few events of synchronous spiking 
+  of neurons, nevertheless these are strong synchronous events that ALL<br />
+  neurons join. Such activities require higher-order correlation to 
+  explain. This is because the strong synchronous events are so few. If you look at only a pair of neurons, you can not discern it from a 
+  chance coincidence of the two neurons. However, you look at a whole population, it is clear that that joint spikes can not happen by a 
+  chance. Thus you need higher-order analysis to detect sparse, yet strong higher-order synchronous spikes.<br />
+     <br />
+  On the other hand, alternation of completely synchronous spike and silence, an extreme case expected from seizure, can be explain by pairwise correlations. If neurons behave in the same manner, there is 
+  very strong pairwise correlations among them. No room that the 
+  higher-order correlations can play in.</p>
+<p class="style4">&nbsp;</p>
+<p class="style4">In this condition, people are conditionally independent given the common external event. However, if you do not know about the event, the activities are seen as higher-order interactions. <br />
+     <br />
+  Summary:<br />
+  Frequent synchronous events -&gt; Pairwise analysis is sufficient.<br />
+  A sparse, yet strong (i.e. many neurons join), synchronous spiking 
+events (on top of independent spiking of each neurons) -&gt; Higher-order analysis is required.<br />
+     <br />
+  The latter case is something people are looking for as a reminiscence 
+of a cell-assembly activity.</p>
+<p class="style4">&nbsp;</p>
+</body>
+</html>

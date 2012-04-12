@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002-2-1 (1.70) JA patch-1.9
+patched version by:  Kenshi Muto, Debian Project.
+* modified by:  Shige TAKENO
+LaTeX2HTML 2002-2-1 (1.70),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>データからのスケーリング指数の同定とヒストグラム作成に必要な最小試行回数の推定　</TITLE>
+<META NAME="description" CONTENT="データからのスケーリング指数の同定とヒストグラム作成に必要な最小試行回数の推定　">
+<META NAME="keywords" CONTENT="hist_jp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002-2-1 JA patch-1.9">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="../css/latex2html.css">
+
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html138"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html128"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html132"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html134"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html136"
+  HREF="node10.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+ &nbsp; <A HREF=../index.html><B> <IMG SRC=../icons/home.gif BORDER=0></B></A>
+<BR>
+<B> Next:</B> <A NAME="tex2html139"
+  HREF="node9.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html133"
+  HREF="node6.html">議論と発展</A>
+<B> Previous:</B> <A NAME="tex2html129"
+  HREF="node7.html">最適区間幅の理論値のスケーリング則と発散</A>
+ &nbsp; <B>  <A NAME="tex2html135"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html137"
+  HREF="node10.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00042000000000000000">
+データからのスケーリング指数の同定とヒストグラム作成に必要な最小試行回数の推定　</A>
+</H2>
+<IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.gif"
+ ALT="$n$">回の試行数のスパイク統計<IMG
+ WIDTH="12" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.gif"
+ ALT="$\bar{k}$">, <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$s^2$">を用いて, 試行数が<IMG
+ WIDTH="17" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.gif"
+ ALT="$m$">回の場合の最適幅を, 
+外挿したコスト関数
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+C_m \left( \Delta  \right) = \left(\frac{1}{m}+\frac{1}{n} \right) \frac{\bar{k}}{n \Delta^2 } - \frac{s^2}{(n \Delta)^2 }
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="EstimatedCostnm"></A><IMG
+ WIDTH="247" HEIGHT="46" BORDER="0"
+ SRC="img46.gif"
+ ALT="\begin{displaymath}
+C_m \left( \Delta \right) = \left(\frac{1}{m}+\frac{1}{n} \right) \frac{\bar{k}}{n \Delta^2 } - \frac{s^2}{(n \Delta)^2 }
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(8)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+から推定することができる. これによりデータから次の２つの数値を推定できる. 
+(i) スケーリング指数: 
+最適幅の試行数に関するスケーリング指数を調べることができる. 指数が<IMG
+ WIDTH="39" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img47.gif"
+ ALT="$-1/2$">のときは背後のレートは微分不可能であり, <IMG
+ WIDTH="39" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img48.gif"
+ ALT="$-1/3$">のときには微分の存在するなめらかな確率過程であると推定される. 
+(ii) ヒストグラム作成に必要な最小試行回数: 
+転移点で発散やとびを示す指標を用いることで, 転移点を与える<IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.gif"
+ ALT="$n_c$">を推定することができる. 
+これにより実験者は少ない試行数からヒストグラム作成に最低限必要な試行数を予測することができる. 
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html138"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html128"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html132"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html134"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html136"
+  HREF="node10.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html139"
+  HREF="node9.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html133"
+  HREF="node6.html">議論と発展</A>
+<B> Previous:</B> <A NAME="tex2html129"
+  HREF="node7.html">最適区間幅の理論値のスケーリング則と発散</A>
+ &nbsp; <B>  <A NAME="tex2html135"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html137"
+  HREF="node10.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+hideaki
+2006-07-11
+</ADDRESS>
+</BODY>
+</HTML>

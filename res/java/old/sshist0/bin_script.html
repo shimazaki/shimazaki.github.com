@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+
+<script src="java/bin/bin.js" type="text/javascript">
+<!--type="text/javascript"
+//-->
+</script>
+
+<title>A Method for Selecting the Bin Size of a Time Histogram</title>
+<style type="text/css">
+<!--
+.style4 {font-size: x-large}
+.style1 {font-size: small}
+.style2 {	color: #FF0000;
+	font-weight: bold;
+}
+.style6 {font-size: x-small}
+.style9 {color: #333333}
+-->
+</style>
+</head>
+
+<body>
+<blockquote>
+  <h1>A Method for Selecting the Bin Size of a Time Histogram </h1>
+  <h3>Hideaki Shimazaki and Shigeru Shinomoto,  <em>Neural Computation</em> in Press [<a href="http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/ton/pdf/sshistogram.pdf" >pdf</a>] </h3>
+  <p> Nonlinear Dynamics Laboratory, 
+Department of Physics, Kyoto University, <br />
+Oiwakemachi, Kitashirakawa, Kyoto 
+  606-8502, Japan </p>
+  <p>This page is created by <a href="http://2000.jukuin.keio.ac.jp/shimazaki/">Shimazaki H.</a> in collaboration with Shinomoto S. </p>
+  <h2>Abstract</h2>
+  <table width="700" height="138" border="1">
+    <tr>
+      <td><p>The time-histogram method is a handy tool for capturing the instantaneous rate of spike occurrence. 
+        In most of the neurophysiological literature, the bin width that critically determines the goodness of the fit of the time-histogram to the underlying rate has been selected by individual researchers in an unsystematic manner. 
+      We propose an objective method for selecting the bin size of a time-histogram from the spike data, so that the resulting time-histogram best approximates the unknown underlying rate.</p>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <h2>Method <a name="Method" id="Method"></a></h2>
+  <table width="700" height="138" border="1">
+    <tr>
+      <td><p>(i) Divide the observation period <img
+ width="16" height="14" align="bottom" border="0"
+ src="hist_gif/img41.gif"
+ alt="$N$" /> into <img
+ width="19" height="14" align="bottom" border="0"
+ src="hist_gif/img55.gif"
+ alt="$N$" /> bins of width <img
+ width="17" height="14" align="bottom" border="0"
+ src="hist_gif/img3.gif"
+ alt="$\Delta $" />. Count the number of spikes <img
+ width="18" height="30" align="top" border="0"
+ src="hist_gif/img48.gif"
+ alt="$k_i$" />   from all <img
+ width="14" height="13" align="bottom" border="0"
+ src="hist_gif/img6.gif"
+ alt="$N$" /> sequences that enter the i'th bin.</p>
+          (ii) Calculate the mean and variance of the number of events as,
+          <div align="center">
+            <!-- MATH
+ \begin{displaymath}
+\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and }  \displaystyle s^2 \equiv \frac{1}{N-1} \sum_{i=1}^{N} (k_i-\bar{k})^2.
+\end{displaymath}
+ --><img src="hist_gif/img23.gif" width="110" height="78" align="middle" /> and <img src="hist_gif/img24.gif" width="167" height="78" align="middle" /></div>
+        
+            (iii) Compute a formula,          
+            <div align="center">
+            <!-- MATH
+ \begin{displaymath}
+\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and }  \displaystyle s^2 \equiv \frac{1}{N-1} \sum_{i=1}^{N} (k_i-\bar{k})^2.
+\end{displaymath}
+ -->
+        <img src="hist_gif/img25.gif" width="144" height="61" /></div>
+        <p>(iv) Repeat i-iii while changing the bin size <img
+ width="17" height="14" align="bottom" border="0"
+ src="hist_gif/img3.gif"
+ alt="$\Delta $" />. Find <img
+ width="25" height="14" align="bottom" border="0"
+ src="hist_gif/img76.gif"
+ alt="$\Delta^{*}$" /> that minimizes <img
+ width="50" height="32" align="middle" border="0"
+ src="hist_gif/img7.gif"
+ alt="$C_n (\Delta )$" />. <a href="#Ref"></a></p>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <h2>Web Application for  Bin Size Selection <a name="WebApp" id="WebApp"></a></h2>
+  <table width="700" border="1">
+    <tr>
+      <td width="700" height="30" align="left"><p>This web application calculates the optimal bin size of the data you post.</p>
+        <p>*The data is   processed on your own computer (the data is not transferred to our or any other server). </p>
+        <h4>1. Post Data</h4>
+<p>Please `Copy&amp;Paste' your spike data in a text area below. <br />
+            <span class="style1">Each data value must be separated by 
+              a colon(,), a semicolon(;), a blank space( ), a tab(\t), or a return(\n). </span> 
+          
+        </p>
+        <form name="DATAFORM" id="DATAFORM" ><textarea name="TEXT" rows="10" cols="70" wrap="off" onkeyup="Initialize_Parameters()">
+4.37 3.87 4.00 4.03 3.50 4.08 2.25 4.70 1.73 4.93 1.73 4.62
+3.43 4.25 1.68 3.92 3.68 3.10 4.03 1.77 4.08 1.75 3.20 1.85
+4.62 1.97 4.50 3.92 4.35 2.33 3.83 1.88 4.60 1.80 4.73 1.77
+4.57 1.85 3.52 4.00 3.70 3.72 4.25 3.58 3.80 3.77 3.75 2.50
+4.50 4.10 3.70 3.80 3.43 4.00 2.27 4.40 4.05 4.25 3.33 2.00
+4.33 2.93 4.58 1.90 3.58 3.73 3.73 1.82 4.63 3.50 4.00 3.67
+1.67 4.60 1.67 4.00 1.80 4.42 1.90 4.63 2.93 3.50 1.97 4.28
+1.83 4.13 1.83 4.65 4.20 3.93 4.33 1.83 4.53 2.03 4.18 4.43
+4.07 4.13 3.95 4.10 2.27 4.58 1.90 4.50 1.95 4.83 4.12</textarea>
+<span class="style6"><br />
+</span>
+<input name="reset" type="reset" value="Reset to Sample Data" />
+</form>
+<form name="PARAMETERS" id="PARAMETERS">
+  <h4><strong>2. Set Parameters</strong>
+  <span class="style1"><input name="button" type="button" onclick="Initialize_Parameters()" value="Set paramters from the data" /></span></h4>
+  <p>The range from 
+    <input name="DATA_MIN" type="text" value="1.6" size="10" /> to <input name="DATA_MAX" type="text" value="5" size="10" /> of the data is used to make a histogram.<br />
+Search the bin sizes from <input name="BIN_MIN" type="text" value="0.02" size="10" /> to<input name="BIN_MAX" type="text" value="1" size="10" /> . <br />
+The number of sample bin sizes to check within the range is <input name="BIN_DIV" type="text" value="30" size="10" />. <br /><br />
+The number of repeated trials to obtain the data was <input name="DATA_N" type="text" value="1" size="10" />. (optional)</p></form><form name="BinSelectionForm" id="BinSelectionForm"><!--
+<object id="BinSelection" width=10 height=10
+classid="CLSID:8AD9C840-044E-11d1-B3E9-00805F499D93" >
+<PARAM name="code" value="BinSelction.class">
+<PARAM NAME="codebase" value="1.0.2">
+<PARAM NAME="level" value="5">
+...
+</object>
+-->
+  <h4>3. Select a Bin Size</h4>
+  <p><span class="style2">To obtain an optimal bin size of your data, push 
+    <input type="button" name="Button" value="Obtain an Optimal Bin Size" onclick="BinSelectionApplet(); StartApplet(); alert('An optimal bin size of your data is '+OptimalBinSize().toPrecision(3));" language="JavaScript" />
+    .</span><br />
+    To obtain details, push
+    <input name="button" type="button" onclick="BinSelectionApplet();Results_In_Window(); " value="Output Data Sheet of Your Optimized Histogram" />
+    . 
+    <applet code="BinSelection" codebase="java/bin" name="BinSelection" width="0" height="0" id="BinSelection">
+    </applet>
+  </p>
+  </form><form name="FormApplet" id="FormApplet"><strong>
+<table width="600" border="0" align="center"><tr>
+<td width="270" height="342">
+  <applet code="DrawCostFunction" codebase="java/bin" name="DrawCostFunction" width="250" height="250" hspace="10" vspace="10" id="DrawCostFunction">
+  </applet></td><td>
+    <applet code="DrawHistogram" codebase="java/bin" name="DrawHistogram" width="270" height="320" hspace="10" vspace="10" id="DrawHistogram">
+      </applet>
+</td></tr>
+</table>
+</strong>
+  <h4>4. Draw a Histogram and a Cost Function
+    <input type="button" name="Button" value="Redraw a Histogram" onclick="BinSelectionApplet(); StartApplet();" language="JavaScript" />
+  </h4>
+</form>
+        <p>*Java and Javascript programs are tested for IE6 and Firefox 1.5on Windows. Firefox 1.5 on Linux. Firefox 1.5 and Safari on MacOS.
+        The program does not work in Opera. </p>
+        <p>Web Application for Bin Size Selection  &copy; 2006 Hideaki Shimazaki</p></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <h3>Reference<a name="Ref" id="Ref"></a></h3>
+  <table width="700" height="36" border="1">
+    <tr>
+      <td height="30"><p>Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram <em>Neural Computation</em> [<a href="../ton/pdf/sshistogram.pdf">pdf</a>] </p>
+        <p>A short summary: Shimazaki H. and Shinomoto S., A recipe for optimizing a time-histogram <em>Neural Information Processing Systems </em> Vol. 19, 2007  [<a href="http://books.nips.cc/papers/files/nips19/NIPS2006_0137.pdf" >pdf</a>] </p>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <h2>A Sample Matlab Program <a name="Matlab" id="Matlab"></a> </h2>
+  <table width="700" height="138" border="1">
+    <tr>
+      <td><a href="BarHisto_Demo.m" onclick="javascript:urchinTracker ('/downloads/sample.m');">BarHisto_Demo.m</a>
+      .
+      <pre width=80>
+function BarHisto_Demo
+%Bar-Histogram
+% This program gives a cost function of Bar-Graph Time Histogram.
+% Aug. 24, 2005 Author Hideaki Shimazaki
+% Department of Physics, Kyoto University
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Parameter Settings
+% D: Delta
+% N: The number of Spike Sequences
+
+switch 1
+    case 1 %FIG.2 Bar-PSTH, Gauss
+	dt = 0.0001; N = 30; T = 2; mu = 30; g = 10; s = 10;
+	L = ceil(T/dt); tt = dt*[1:L];
+	Dmin = 0.002; Dmax = .5; nmin = Dmin/dt; nmax = Dmax/dt;
+	bin = round(linspace(nmin,nmax,50));
+
+	Nc = mu*g /s/s/sqrt(pi)
+    y = StochProcess_Gauss(T,dt,mu,s,g);
+end
+
+% Rectification
+y = y.*(y>0);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Generation of Poisson Point Processes
+%x = sparse(poissrnd(ones(N,1)*y.*dt));
+for i = 1: N
+	X(i,:) = sparse(poissrnd(y.*dt));
+end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Estimation of the Cost Functioin
+
+x = sum(X);
+for j = 1: length(bin)
+	disp(strcat(num2str(j),'/',num2str(length(bin)))); % give bin width
+    W = bin(j);
+    D(j) = W*dt;
+    
+	clear x_shift;
+	shift = 1; 
+	for SHIFT = 1: ceil(W/1): W; %SHIFT: shifting the start point of the binning  
+        x_shift = x(1,SHIFT:L);
+		
+		COL = floor(length(x_shift)/W);
+        SPKNUM = zeros(1,COL);
+        for i = 1: COL
+            SPKNUM(i) = full( sum( x_shift(W*(i-1)+1:W*i) ));
+        end
+
+        kbar_SHIFT(shift) = mean([SPKNUM]);
+        s2_SHIFT(shift) = var([SPKNUM])*(COL-1)/COL;
+		shift = shift + 1; 
+    end
+    
+    kbar(j) = mean(kbar_SHIFT);
+    s2(j) = mean(s2_SHIFT);
+    C(j) = ( 2*kbar(j) - s2(j) ) ./ (N .* D(j)).^2;
+end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Optimal Bin Size Selection
+[optC,nC]=min(C); optD = D(nC);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Analytical Solutions
+%OUP
+%V = 2*(s^2)./(g.^2).*(g.*D - (1-exp(-g.*D)) )./D./D; %OUP
+%V = s^2./(g.*D).^2.*(1 - cos(g.*D)); % SIN
+V = s^2./(g.*D).^2.*(-1 + exp(-(g*D).^2) + sqrt(pi)*g.*D.*erf(g.*D) ); %GAUSS
+E = mu./D./N;
+Ch = E-V;
+[optCh,nCh]=min(Ch); anaoptD = D(nCh);
+
+figure;
+%%%%%%%% Cost Function
+subplot(1,1,1); plot(D,C,'r.');
+hold on; plot(D,Ch,'b');
+axis square; grid on; title('Cost Function'); xlabel('\Delta');
+legend('Numerical','Analytical');
+
+
+%%%%%%%% Intensity Process, Raster Plots and Histogram 
+figure; set(gcf,'Color',[1 1 1]); 
+subplot(3,1,1); plot(tt,y); xlabel('Time [s]'); axis off;
+title(strcat( 'N=',num2str(N),' T=',num2str(T),' \mu=',num2str(mu), ...
+	' \gamma=',num2str(g),' \sigma=',num2str(s),' Nc=',num2str(Nc) ));
+subplot(3,1,2); spy(X); axis tight; axis fill; axis fill; axis off;
+subplot(3,1,3); bar(mean(EventCount(X(1:N,1:L),bin(nC),dt)),1,'r'); 
+axis tight; axis off;
+
+
+function [RASTER,COL] = EventCount(x,n,dt)
+%[RASTER,COL]=EventCount(x,n,dt)
+% This program returns binned histogram of signal z. 
+% Each bin size is given by n blocks,
+% and actual time window is n*dt.
+[m,L]= size(x);
+COL = floor(L/n);
+w = zeros(m,COL);
+for k = 1: COL
+		w(:,k) = sum( x(:,n*(k-1)+1:n*k), 2) ./ (n*dt);
+end
+RASTER = w;
+
+function y = StochProcess_Gauss(T,dt,mu,s,g)
+% function y = gausscorr(T,dt,mu,s,g)
+% This program produces the stochastic process 
+% characterized by a mean 'mu' and the correlation
+L = round(T/dt);
+Lf = round(1/g/dt*5);
+LL = L+Lf;
+t = [-Lf/2+1:Lf/2]*dt;
+
+eta = sqrt(sqrt(pi)/g*s*s);
+W = mu*dt + eta*sqrt(dt)*randn(1,LL);
+
+%filter function
+%h = t.*g.*g.*exp(-g*t); %n=2 alpha
+h = sqrt(2/pi)*g*exp(-2*g*g.*t.*t);
+
+y_buf = conv(W,h);
+y = y_buf(Lf+1:Lf+L);
+	  </pre></td>
+    </tr>
+  </table>
+  <h2>&nbsp;</h2>
+  <h2>&nbsp;</h2>
+</blockquote>
+<p>&nbsp;</p>
+</body>
+</html>

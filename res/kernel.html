@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="kernel density estimation,カーネル密度推定,直方图,直方图区间优化,核带宽优化" />
+<title>Kernel Bandwidth Optimization</title>
+
+<link rel="stylesheet" href="css/tool.css" />
+<script src="kernel.js" type="text/javascript"></script>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">_uacct = "UA-745872-1"; urchinTracker();</script>
+
+<!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+
+<!-- Local Javascript -->
+<!-- saved from url=(0013)about:internet -->
+
+<!-- Facebook Metadata -->
+<meta property="og:title" content="Kernel Bandwidth Optimization"/>
+<meta property="og:site_name" content="H. Shimazaki"/>
+<meta property="og:image" content="http://web.mit.edu/hshimaza/www/res/sskernel/shimazaki_shinomoto_optmized_2d_kde.png"/>
+
+<style type="text/css">
+<!--
+.style26 {	background-color: #669966;
+	border-bottom-color: #663366;
+	text-decoration: none;
+	font-size: small;
+	color: #FFFFFF;
+}
+.style27 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style28 {background-color: #669966; border-bottom-color: #663366; text-decoration: none; font-size: small; color: #FFFFFF; font-weight: bold; }
+body,td,th {
+	font-family: Times New Roman, Times, serif;
+}
+.style29 {color: #FFFFFF}
+.style33 {
+	font-size: x-large;
+	font-weight: bold;
+}
+.style36 {font-size: xx-large}
+.style37 {color: #DDDDDD}
+.style44 {font-family: "Times New Roman", Times, serif}
+.style43 {color: #CCCCCC}
+-->
+</style>
+</head>
+<body>
+<a name="Top" id="Top"></a>
+
+<!-- BEGIN CONTENTS -->
+<div id="Contents">
+  <table width="180" border="0" cellpadding="0" cellspacing="2">
+    
+    <tr>
+      <td height="22" valign="top">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="22" valign="top"><a href="#Top" class="style9">KERNEL METHOD </a></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="#WebApp" class="style9">- Web Application</a></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="#WebApp" class="style9">- </a><a href="#Method" class="style9">Optimization Method</a><a href="../index.html" target="_parent" class="style22 style23"></a></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="#WebApp" class="style9">- </a><a href="#Ref" class="style9">Original paper </a></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="#WebApp" class="style9">- </a><a href="#FAQ" class="style9">FAQ</a><a href="#Scheme" class="style9"></a></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="#WebApp" class="style9">- </a><a href="#Code" class="style9">Matlab Code </a><a href="#Code" class="style9"></a></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="#WebApp" class="style9">- </a><a href="#Presentation" class="style9">Presentation</a><a href="#Code" class="style9"></a></td>
+    </tr>
+    <tr>
+      <td valign="top">&nbsp;</td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="#WebApp" class="style9"></a><a href="#Links" class="style9">Links</a></td>
+    </tr>
+    
+    <tr>
+      <td valign="top"><a href="histogram.html" class="style9">- Histogram Optimization</a></td>
+    </tr>
+    
+    <tr>
+      <td valign="top"><a href="ssloglin/index.html" class="style9">- Dynamic Interactions </a></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="../index.html" class="style9">- HOME Page</a></td>
+    </tr>
+    <tr>
+      <td valign="top">&nbsp;</td>
+    </tr>
+    
+    <tr>
+      <td valign="top"><span class="style9">Tweet by author </span>
+        <iframe src=../tweet.html width="180" height="260" frameborder=0 marginheight=0 marginwidth=0 align=left scrolling=no></iframe>  </td>
+    </tr>
+    
+
+    <tr>
+      <td height="19" valign="top">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="19" valign="top"><img src="http://www.gravatar.com/avatar/0c0e1f9cb353f991e194574730d4599d?s=100" alt="H Shimazaki"/><span class="style4"><span class="style1"><br />
+            </span></span>This page is managed by<br /> 
+            <span class="style4"><span class="style1"><a href="../reroute.html" target="_parent" class="style22">H. Shimazaki, PhD</a></span></span></td>
+    </tr>
+    <tr>
+      <td height="19" valign="top">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="50" valign="top">
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style" align="right">
+<a href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcb0477f5f1b02" class="addthis_button_compact"
+addthis:description="This page INSTANTLY generates an optimized Kernel Density Estimate of YOUR DATA."
+>Share</a>
+<span class="addthis_separator">|</span>
+<a class="addthis_button_delicious" addthis:description="This page INSTANTLY generates an optimized Kernel Density Estimate of YOUR DATA."></a>
+<a class="addthis_button_myspace" addthis:description="This page INSTANTLY generates an optimized Kernel Density Estimate of YOUR DATA."></a>
+<a class="addthis_button_google" addthis:description="This page INSTANTLY generates an optimized Kernel Density Estimate of YOUR DATA."></a>
+<a class="addthis_button_facebook" addthis:description="This page INSTANTLY generates an optimized Kernel Density Estimate of YOUR DATA."></a></div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcb0477f5f1b02"></script>
+<!-- AddThis Button END -->	  </td>
+    </tr>
+    <tr>
+      <td valign="top">		</td>
+    </tr>
+    <tr>	 </tr>
+    <tr>
+      <td valign="top">
+<!-- FACEBOOK -->
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-like" data-href="http%3A%2F%2F2000.jukuin.keio.ac.jp%2Fshimazaki%2Fres%2Fkernel.html" data-send="false" data-width="175" data-show-faces="true" data-font="arial"></div>
+	  </td>
+    </tr>
+    
+    <tr>
+      <td valign="top"> </td>
+    </tr>
+  </table>
+  <br />
+</div>
+
+<!-- END of CONTENTS -->
+
+
+<table width="700" height="140" border="0" cellpadding="5" cellspacing="0" bordercolor="#FFFFFF" bgcolor="#330033">
+  <tr>
+    <td height="134" nowrap="nowrap" bordercolor="#FFFFFF" background="icons/itoh_jakuchu4_2.jpg" bgcolor="#FFFFFF"><div align="right"><span class="style29 style13 style33"><span class="style13 style36"><span class="style29">Kernel Bandwidth Optimization</span></span></span><br />
+    </div>
+        <br />
+        <div align="right" class="style29"><span><strong><em><br />
+          Web application for optimizing kernel density estimate of your data </em> </strong></span> </div></td>
+  </tr>
+</table>
+
+
+<table width="700" border="0" cellpadding="0" cellspacing="0" >
+  <tr>
+    <td height="" nowrap="nowrap" bordercolor="#FFFFFF" bgcolor="#330033"><div align="right"><a href="histogram.html" class="style37"><strong>Histogram Optimization</strong></a> <span class="style29">|</span> <a href="kernel.html" class="style37">Kernel Optimization</a> <span class="style29">|</span><span class="style23 style38"> <a href="ssloglin/index.html" class="style37">Dynamic Interactions</a></span> <span class="style29">|</span><span class="style43 style23"> Last Update
+          <!-- #BeginDate format:IS1m -->2012-04-11  23:23<!-- #EndDate -->
+    </span> <span class="style29">|</span> </div></td>
+  </tr>
+</table>
+
+<br />
+
+<table width="700" border="0" cellpadding="0" cellspacing="0" >
+  <tr>
+    <td width="376" height="24" nowrap="nowrap">  	</td>
+    <td width="120" nowrap="nowrap"><!-- FACEBOOK -->
+      <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2F2000.jukuin.keio.ac.jp%2Fshimazaki%2Fres%2Fkernel.html&amp;layout=button_count&amp;show_faces=false&amp;width=180&amp;action=like&amp;colorscheme=dark" scrolling="no" frameborder="0" allowtransparency="true" style="border:none; overflow:hidden; width:110px; height:20px"></iframe>
+	</td>
+    <td width="80" nowrap="nowrap"><!-- Google -->
+<!-- Place this tag where you want the +1 button to render -->
+<g:plusone size="medium"></g:plusone>
+
+<!-- Place this render call where appropriate -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script></td>
+    <td width="80" nowrap="nowrap"><!-- TWITTER -->
+
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="statneuro" data-related="H_Shimazaki:Japanese tweets from author.">
+Tweet</a>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></td>
+  </tr>
+</table>
+
+<br />
+
+<table width="700" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="24" bgcolor="#ECE9D8"><p align="center" class="style4 "><strong><a href="http://www.springerlink.com/content/g22785288648l239/fulltext.pdf"></a> Shimazaki  and Shinomoto, <em> Journal of Computational Neuroscience, </em>2010, 29 (1-2) 171-182</strong> <strong><a href="http://www.springerlink.com/content/g22785288648l239/fulltext.pdf"><img src="icons/pdf.gif" width="40" height="15" border="0" align="bottom" /></a></strong></p></td>
+  </tr>
+</table>
+<h2><a name="WebApp" id="WebApp"></a>Optimize Density Profile of Your Data</h2>
+<table width="700" height="138" border="0" cellpadding="10" bgcolor="#ECE9D8">
+  <tr>
+    <td><div align="center">Web Application for  Kernel Bandwidth Optimization (Ver. 0.4) 
+    </div>
+        <form name="DATAFORM" id="DATAFORM">
+          <strong>1.  Copy&amp;Paste your data</strong>
+          <div align="center">
+            <textarea name="TEXT" rows="9" cols="65" wrap="off" onkeyup="PostData();">
+4.37 3.87 4.00 4.03 3.50 4.08 2.25 4.70 1.73 4.93 1.73 4.62
+3.43 4.25 1.68 3.92 3.68 3.10 4.03 1.77 4.08 1.75 3.20 1.85
+4.62 1.97 4.50 3.92 4.35 2.33 3.83 1.88 4.60 1.80 4.73 1.77
+4.57 1.85 3.52 4.00 3.70 3.72 4.25 3.58 3.80 3.77 3.75 2.50
+4.50 4.10 3.70 3.80 3.43 4.00 2.27 4.40 4.05 4.25 3.33 2.00
+4.33 2.93 4.58 1.90 3.58 3.73 3.73 1.82 4.63 3.50 4.00 3.67
+1.67 4.60 1.67 4.00 1.80 4.42 1.90 4.63 2.93 3.50 1.97 4.28
+1.83 4.13 1.83 4.65 4.20 3.93 4.33 1.83 4.53 2.03 4.18 4.43
+4.07 4.13 3.95 4.10 2.27 4.58 1.90 4.50 1.95 4.83 4.12</textarea><br />
+          <strong>
+          <div> 
+            <div align="right">
+              <input name="reset" type="reset" value="Reset" /> 
+            </div>
+          </div>
+          </strong></div>
+        </form>
+        <p><strong>2.</strong>
+            <input name="Button" value="PRESS HERE to Calculate the Optimal Bandwidth" type="button" onclick="PostData(); raster(DATA); density(); t=xaxis(); alert('The optimal kernel width is '  + optw.toPrecision(3)); javascript:urchinTracker ('/kernel/optimization');" language="JavaScript" />
+        
+      <div align="center">
+          <canvas id="Canvas" width="500" height="300"></canvas>
+          <canvas id="Raster" width="500" height="20"></canvas>
+      </div>
+      </p>
+<p><strong>3.</strong>
+            <input name="button" type="button" onclick="Results_In_Window(); javascript:urchinTracker ('/kernel/datasheet');" value="Data Sheet of the Optimized Density Estimation" />
+      </p>
+      <hr />
+        <p>* The Gauss kernel density was used. Its standard deviation is optmized. </p>
+        <p>* Feel safe. The data is processed on your own computer (NEVER transferred
+          to our  server). </p>
+        <p>* This web application uses the HTML5 Canvas technology.</p>
+        <p>ver 0.4 (101231) accelarating computation by excluding &gt;5 std samples. </p>
+        <div align="center">Web Application for Kernel Bandwidth Optimization &copy; 2009-2011Hideaki Shimazaki</div></td>
+  </tr>
+</table>
+<p><br />
+</p>
+<h2><a name="Method" id="Method"></a>Kernel Bandwidth Optimization Method </h2>
+<table width="700" height="138" border="0" cellpadding="0" bgcolor="#ECE9D8">
+   <tr>
+     <td><blockquote> <p class="style4"><strong>I.</strong> Let <img src="sskernel/data.gif" width="49" height="21" /> be your data. Let the kernel with bandwidth <img src="sskernel/w.gif" width="11" height="9" /> be <img src="sskernel/kernel.gif" width="35" height="16" align="bottom" />.</p>
+         <span class="style4"><strong>II.</strong></span> <span class="style4">Compute a formula, </span>
+         <div align="center" class="style4">
+           <!-- MATH
+ \begin{displaymath}
+\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and }  \displaystyle s^2 \equiv \frac{1}{N-1} \sum_{i=1}^{N} (k_i-\bar{k})^2.
+\end{displaymath}
+ -->
+           <img src="sskernel/sskernel_costfunction.gif" width="384" height="51" /></div>
+       <p><span class="style4"><strong>III.</strong></span> <span class="style4">Find <img src="sskernel/w_star.gif" width="17" height="13" /> that minimizes <img src="sskernel/C.gif" align="baseline" /></span> .</p>
+       <p>From the observed data only, the method estimates a bandwidth that minimizes expected L2 loss between the kernel estimate and an unknown underlying density function. An assumption made here is merely that samples are drawn from the density independently each other.	   </p>
+       <div align="center" class="style4"></div>
+	   </blockquote>
+     </td>
+   </tr>
+</table>
+ <p>&nbsp;</p>
+ <h3><a name="Ref" id="Ref"></a>Original paper </h3>
+ <table width="700" height="36" border="0" cellpadding="10" bgcolor="#ECE9D8">
+   <tr>
+     <td height="30"><p>From the observed data only, the method  estimates a binwidth that minimizes expected L2 loss  between the kernel density estimate and an unknown underlying density function. An assumption  made here is merely that samples are drawn from the density independently each other.</p>
+       <p>The method was developed in collaboration with Prof. Shinomoto in Kyoto University. </p>
+       <p><strong><img src="icons/pdf.gif" width="40" height="15" border="0" align="bottom" /> Shimazaki H. and Shinomoto S., Kernel Bandwidth Optimization in Spike Rate Estimation. <em> Journal of Computational Neuroscience</em> (2010) Vol. 29 (1-2) 171-182</strong>  doi:10.1007/s10827-009-0180-4  [<span class="style27">Open Access</span>: <a href="http://www.springerlink.com/content/g22785288648l239/fulltext.pdf" onclick="javascript:urchinTracker ('/downloads/sskernel.pdf');">PDF</a>, <a href="http://dx.doi.org/10.1007/s10827-009-0180-4" onclick="javascript:urchinTracker ('/downloads/sskernel.pdf');">LINK</a>]</p>
+       <p><strong><img src="icons/pdf.gif" width="40" height="15" border="0" align="bottom" /></strong> <a href="ppt/histogram-kernel_optimization.pdf" target="_blank" onclick="javascript:urchinTracker ('/downloads/sskernel.ppt');"><strong>Presentation Slides</strong></a> </p>
+     </td>
+   </tr>
+</table>
+ <p>&nbsp;</p>
+ <h2><a name="FAQ" id="FAQ"></a>FAQ</h2>
+ <table width="700" height="62" border="0" cellpadding="10" bgcolor="#ECE9D8">
+   <tr>
+     <td height="58"><p>Q. Is the method applicable to probability density estimation?</p>
+       <p>A. Yes. </p>
+       <hr />
+     <p class="style4">Q. You provide a histogram optimization method, too. Which of the methods, kernel and histogram, do you recommend for density estimation. </p>
+         <p><span class="style4">A.</span> Kernel density estimation is generally recommended. See <a href="#Ref">our original paper</a> for comparison of the methods. </p>
+         <hr />
+         <p>Q. Is it different from  the least squares cross-validation method?</p>
+         <p>A. Yes. The above formula was derrived under a Poisson point process assumption [see <a href="#Ref">our original paper</a>], not by the cross-validation. As a result, chosen bandwidths by the two methods are not identical.  </p>
+         <hr />
+         <p>Q. Can I use the method for the 2-dimensional density estimation?</p>
+     <p>A. Yes. The same optimization formula can be used in 2-d density estimation. Specifically, the formula for two dimensional vector data <img src="sskernel/2d_x.gif" alt="x" width="65" height="16" /> is given by </p>
+     <p align="center"><img src="sskernel/2d_cost.gif" alt="2d kernel cost" width="435" height="53" /></p>
+     <p align="left">Here the kernel function is defined in 2-dimension. For example, the 2-d (symmetric) Gauss kernel is defined as</p>
+     <p align="center"> <img src="sskernel/2d_gauss.gif" width="201" height="39" /></p>
+     <p align="left">where <img src="sskernel/2d_distance.gif" width="88" height="18" />. </p>
+     <p align="left"> An example of the optimized 2d kernel density estimate is displayed below. </p>
+     <p align="center"><img src="sskernel/shimazaki_shinomoto_optmized_2d_kde.png" width="287" height="125" /></p>
+     <p align="left">Here are the example matlab code <a href="code/sskernel2d_demo.m" onclick="javascript:urchinTracker ('/downloads/Demo_sskernel2d.m');">sskernel2d_demo.m</a> and <a href="code/oldfaithful.txt">data</a>. </p>
+     <p align="left">Note: if you have two dimensional variables with different dynamic ranges, it should be careful to use the one-parameter 2-d kernel. It would be recommended to either i) optimize  two-parameters kernel, or ii) optimize the one-parameter kernel using the standardized  data, for example, by dividing the data by standard deviations of each component. </p>
+     <hr />
+     <p align="left"><span class="style4">Q. Is the variable bandwidth kernel available?</span></p>
+     <p align="left"><span class="style4">A. A matlab code for the Variable Kernel Bandwidth Optimization in the original paper is under preparation. </span></p>
+     <hr />
+     <p>Q. Can I compare the goodness-of-fit of kernel density estimate with that of a 
+       histogram?</p>
+     <p>The definition of the cost function is different in the two papers (2007 and 2010). To compare the cost function of a histogram with the cost function of a kernel, please adjust the histogram cost function as T*C(D)+K^2/T, where K is the total number of samples, and T is the observation length. </p>
+     <p align="left">&nbsp;</p>
+     <hr />
+The FAQ includes my (HS) opinion. They are not opinions neither by my
+     collaborators nor institutions I belong to. <span class="style22"><a href="#Top" class="style22"></a></span> </td>
+   </tr>
+ </table>
+ <p>&nbsp;</p>
+ <h2><a name="Code" id="Code"></a>Code </h2>
+ <table width="700" height="62" border="0" cellpadding="10" bgcolor="#ECE9D8">
+   <tr>
+     <td height="58"><p class="style4">Matlab code: <a href="code/sskernel.m">sskernel.m</a></p>
+         <p class="style4">Function `sskernel' returns optimal bandwidth (standard deviation) of the Gauss kernel function used in kernel density estimation.</p>
+       <p class="style4">optW = sskernel(x); ksdensity(x,'width',optW);</p>
+       <p class="style4"> Statitics Toolbox is required to execute ksdensity. If it is not available, define the Gauss function as<br />
+       `Gauss = @(s,w) 1/sqrt(2*pi)/w*exp(-s.^2/2/w^2);'. Computing `mean( Gauss(x-s,optW) )' provides kernel estimate at s. </p>
+	   </td>
+   </tr>
+ </table>
+ <h2>&nbsp;</h2>
+ <h2><a name="Presentation" id="Presentation"></a>Presentation</h2>
+ <table width="700" height="62" border="0" cellpadding="10" bgcolor="#ECE9D8">
+   <tr>
+     <td height="58"><p align="center" class="style4">
+       <object id="doc_62829" name="doc_62829" height="600" width="670" type="application/x-shockwave-flash" data="http://d1.scribdassets.com/ScribdViewer.swf" style="outline:none;" >
+         <param name="movie" value="http://d1.scribdassets.com/ScribdViewer.swf" />
+         <param name="wmode" value="opaque" />
+         <param name="bgcolor" value="#ffffff" />
+         <param name="allowFullScreen" value="true" />
+         <param name="allowScriptAccess" value="always" />
+         <param name="FlashVars" value="document_id=46152083&access_key=key-nlr8jr7whc25spzh8h0&page=1&viewMode=slideshow" />
+         <embed id="doc_62829" name="doc_62829" src="http://d1.scribdassets.com/ScribdViewer.swf?document_id=46152083&amp;access_key=key-nlr8jr7whc25spzh8h0&amp;page=1&amp;viewMode=slideshow" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" height="600" width="670" wmode="opaque" bgcolor="#ffffff"></embed>
+       </object>
+     </p>     </td>
+   </tr>
+ </table>
+ <p>&nbsp;</p>
+ <h2><a name="Links" id="Links"></a>Links</h2>
+ <table width="700" height="36" border="0" cellpadding="10" bgcolor="#ECE9D8">
+   <tr>
+     <td height="30"><p>External Links </p>
+     <p><a href="http://www.ton.scphys.kyoto-u.ac.jp/~shino/toolbox/english.htm">Other applications for analyzing spike data: <strong>SULAB</strong></a> ( <a href="http://www.ton.scphys.kyoto-u.ac.jp/~shino/">Prof. Shinomoto</a> ) </p></td>
+   </tr>
+ </table>
+ <p>&nbsp;</p>
+ <p>&nbsp;</p>
+</body>
+</html>
+

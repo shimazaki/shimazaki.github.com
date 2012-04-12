@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002-2-1 (1.70) JA patch-1.9
+patched version by:  Kenshi Muto, Debian Project.
+* modified by:  Shige TAKENO
+LaTeX2HTML 2002-2-1 (1.70),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>序論</TITLE>
+<META NAME="description" CONTENT="序論">
+<META NAME="keywords" CONTENT="hist_jp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002-2-1 JA patch-1.9">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="../css/latex2html.css">
+
+<LINK REL="next" HREF="node3.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="hist_jp.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html54"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html42"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html48"
+  HREF="hist_jp.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html50"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html52"
+  HREF="node10.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+ &nbsp; <A HREF=../index.html><B> <IMG SRC=../icons/home.gif BORDER=0></B></A>
+<BR>
+<B> Next:</B> <A NAME="tex2html55"
+  HREF="node3.html">方法</A>
+<B> Up:</B> <A NAME="tex2html49"
+  HREF="hist_jp.html">スパイク時系列のヒストグラム作成における最適区間幅決定のレシピ</A>
+<B> Previous:</B> <A NAME="tex2html43"
+  HREF="node1.html">Contents</A>
+ &nbsp; <B>  <A NAME="tex2html51"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html53"
+  HREF="node10.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00020000000000000000">
+序論</A>
+</H1>
+電気神経生理学の動物実験では感覚刺激・行動・注意等と神経細胞の発火頻度（レート）の相関関係がよく調べられる. 
+広く使われているレート推定の手法に, 
+同一刺激下で行われた複数回の試行のスパイク時系列を適当な時間幅をもつ区間に分割し, その中でのイベント生成率（発火率）を棒グラフとして表す
+Peristimulus Time Histogram (PSTH)がある. 
+PSTHの形状は分割する区間の時間幅に依存するにもかかわらず, 区間幅は多くの場合研究者により恣意的に与えられている. 小山・篠本はヒストグラムによる時間依存Poisson過程のレート推定において最適な区間幅の理論値を導出し, 最適区間幅が発散する場合があることを示した[<A
+ HREF="node9.html#Koyama04">2</A>]. 
+従って実験データから最適区間幅を導出する手順や有限区間幅を得るのに必要な最小試行数の推定方法などが求められる. 
+
+<P>
+あまり知られていないがRudemoは確率分布推定の枠組みで最適な区間幅を求める式を示している[<A
+ HREF="node9.html#Rudemo82">1</A>]. ここではこの先行研究と異なるコスト関数を導入し, スパイク統計から最適区間幅を決定する簡便な公式を導出する. またレートが一般の定常確率過程の場合の最適区間幅の理論値のスケーリング則を導出し, 転移点近傍での振る舞いを調べた. この理論の応用としてコスト関数を外挿することで, データからヒストグラム作成に必要な最小試行数を求める手法, および背後のレート過程がなめらかな過程か否かを推定する手法を提案する. 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="CostFunction"></A><A NAME="119"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1:</STRONG>
+スパイク時系列からの最適ヒストグラムの作成. 
+(a) 黒丸: 式<A HREF="node5.html#EstimatedCost">6</A> を用いてスパイク時系列から推定したコスト関数(各時間幅<IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\Delta $">内での移動平均をとった). 実線: 背後のレートを用いて式<A HREF="node7.html#CLB">7</A>の右辺 から計算したコスト関数. 
+(b) 時間依存Poisson過程に使用したレート(強度過程). 
+(c) スパイク時系列(時間依存Poisson過程, 試行数<IMG
+ WIDTH="50" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$n=10$">, 総スパイク数<IMG
+ WIDTH="19" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$51$">個).
+(d) スパイク時系列から推定された最適幅からなる時間ヒストグラム.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="633" HEIGHT="270" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.gif"
+ ALT="\includegraphics[width=14cm]{CostFunction}"> 
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html54"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html42"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html48"
+  HREF="hist_jp.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html50"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html52"
+  HREF="node10.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html55"
+  HREF="node3.html">方法</A>
+<B> Up:</B> <A NAME="tex2html49"
+  HREF="hist_jp.html">スパイク時系列のヒストグラム作成における最適区間幅決定のレシピ</A>
+<B> Previous:</B> <A NAME="tex2html43"
+  HREF="node1.html">Contents</A>
+ &nbsp; <B>  <A NAME="tex2html51"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html53"
+  HREF="node10.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+hideaki
+2006-07-11
+</ADDRESS>
+</BODY>
+</HTML>

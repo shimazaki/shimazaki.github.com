@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002-2-1 (1.70) JA patch-1.9
+patched version by:  Kenshi Muto, Debian Project.
+* modified by:  Shige TAKENO
+LaTeX2HTML 2002-2-1 (1.70),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>最適区間幅の理論値のスケーリング則と発散</TITLE>
+<META NAME="description" CONTENT="最適区間幅の理論値のスケーリング則と発散">
+<META NAME="keywords" CONTENT="hist_jp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002-2-1 JA patch-1.9">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="../css/latex2html.css">
+
+<LINK REL="next" HREF="node8.html">
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html126"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html114"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html120"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html122"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html124"
+  HREF="node10.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+ &nbsp; <A HREF=../index.html><B> <IMG SRC=../icons/home.gif BORDER=0></B></A>
+<BR>
+<B> Next:</B> <A NAME="tex2html127"
+  HREF="node8.html">データからのスケーリング指数の同定とヒストグラム作成に必要な最小試行回数の推定　</A>
+<B> Up:</B> <A NAME="tex2html121"
+  HREF="node6.html">議論と発展</A>
+<B> Previous:</B> <A NAME="tex2html115"
+  HREF="node6.html">議論と発展</A>
+ &nbsp; <B>  <A NAME="tex2html123"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html125"
+  HREF="node10.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00041000000000000000">
+最適区間幅の理論値のスケーリング則と発散</A>
+</H2>
+式<A HREF="node5.html#cost">4</A>の第一項にCram&#233;r-Raoの不等式を適用することで, コスト関数の下限が<IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\Lambda$">の統計量で与えられる. 
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+C\left( \Delta \right)
+\ge %\frac{E\Lambda}{n \Delta} - \rm var \Lambda.
+\frac{\left\langle\Lambda\right\rangle}{n \Delta} - \left\langle {\left( {\Lambda  - \langle\Lambda\rangle} \right)^2 } \right\rangle
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="CLB"></A><IMG
+ WIDTH="199" HEIGHT="40" BORDER="0"
+ SRC="img32.gif"
+ ALT="\begin{displaymath}
+C\left( \Delta \right)
+\ge %\frac{E\Lambda}{n \Delta} - \rm ...
+...( {\Lambda - \langle\Lambda\rangle} \right)^2 } \right\rangle
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(7)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+右辺の極値を考えることで, レートが平均<IMG
+ WIDTH="13" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.gif"
+ ALT="$\mu$">, 相関関数<IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.gif"
+ ALT="$\phi(t)$">なる定常確率過程について最適幅の解析解が求まる. 
+
+<P>
+<IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.gif"
+ ALT="$n$">が十分大きい場合, <IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.gif"
+ ALT="$\phi(t)$">の原点付近での展開式を用いて式<A HREF="#CLB">7</A>右辺の極値を与える<IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\Delta $">を求める. 
+<IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.gif"
+ ALT="$\phi(t)$">が原点でCusp型となるときは漸近値<IMG
+ WIDTH="50" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.gif"
+ ALT="$\phi'(0+)$">を用いて最適幅は<!-- MATH
+ $\Delta ^ *   \sim \sqrt {{{ - 3\mu } \mathord{\left/
+ {\vphantom {{ - 3\mu } {\phi '\left( {0 + } \right)n}}} \right.
+ \kern-\nulldelimiterspace} {\phi '\left( {0 + } \right)n}}}$
+ -->
+<IMG
+ WIDTH="160" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.gif"
+ ALT="$\Delta ^ * \sim \sqrt {{{ - 3\mu } \mathord{\left/
+{\vphantom {{ - 3\mu } {\ph...
+...ight)n}}} \right.
+\kern-\nulldelimiterspace} {\phi '\left( {0 + } \right)n}}} $">で与えられる. 
+<IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.gif"
+ ALT="$\phi(t)$">が原点でなめらかなときは対称性から<IMG
+ WIDTH="66" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$\phi'(0)=0$">であり, 最適幅は 
+<!-- MATH
+ $\Delta ^ *   \sim \left( {{{ - 6\mu } \mathord{\left/
+ {\vphantom {{ - 6\mu } {\phi ''\left( {0 + } \right)n}}} \right.
+ \kern-\nulldelimiterspace} {\phi ''\left( {0 + } \right)n}}} \right)^{{1 \mathord{\left/
+ {\vphantom {1 3}} \right.
+ \kern-\nulldelimiterspace} 3}}$
+ -->
+<IMG
+ WIDTH="180" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.gif"
+ ALT="$\Delta ^ * \sim \left( {{{ - 6\mu } \mathord{\left/
+{\vphantom {{ - 6\mu } {\p...
+...{1 \mathord{\left/
+{\vphantom {1 3}} \right.
+\kern-\nulldelimiterspace} 3}}
+$">となる. 
+
+<P>
+<IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.gif"
+ ALT="$n$">が小さい転移点付近では
+<!-- MATH
+ $\langle ( \Lambda  - \langle\Lambda\rangle )^2 \rangle \simeq \mu/n_c (1/\Delta) - u (1/\Delta)^2  + O\left( (1/\Delta)^3 \right)$
+ -->
+<IMG
+ WIDTH="360" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$\langle ( \Lambda - \langle\Lambda\rangle )^2 \rangle \simeq \mu/n_c (1/\Delta) - u (1/\Delta)^2 + O\left( (1/\Delta)^3 \right)$">と展開する(<IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.gif"
+ ALT="$n_c$">, <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$u$">は定数). このとき臨界点は<IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.gif"
+ ALT="$n_c$">でありランダウの２次相転移の理論が適用できる. <IMG
+ WIDTH="50" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.gif"
+ ALT="$n&gt;n_c$">では最適幅の振る舞いは<!-- MATH
+ $\Delta^* \sim n n_c / (n-n_c)$
+ -->
+<IMG
+ WIDTH="136" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.gif"
+ ALT="$\Delta^* \sim n n_c / (n-n_c)$">で表される.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html126"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html114"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html120"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html122"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html124"
+  HREF="node10.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html127"
+  HREF="node8.html">データからのスケーリング指数の同定とヒストグラム作成に必要な最小試行回数の推定　</A>
+<B> Up:</B> <A NAME="tex2html121"
+  HREF="node6.html">議論と発展</A>
+<B> Previous:</B> <A NAME="tex2html115"
+  HREF="node6.html">議論と発展</A>
+ &nbsp; <B>  <A NAME="tex2html123"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html125"
+  HREF="node10.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+hideaki
+2006-07-11
+</ADDRESS>
+</BODY>
+</HTML>

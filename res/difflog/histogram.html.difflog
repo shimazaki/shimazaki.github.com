@@ -1,0 +1,1317 @@
+# diffLog ver 0.3 charset=SJIS
+# 2007/04/20 17:24:40 1.0
+## before saved by ViVi
+5c5
+< <META name="keywords" 
+---
+> <META name="keywords"
+33,39c33,39
+< <p><span class="style1">Other languages: <a href="http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html" target="_top"></a> 
+<   <a href="http://www.google.com/translate?langpair=en|fr&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html">histograma[fr]</a> 
+<   <a href="http://www.google.com/translate?langpair=en|pt&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html">histograma[pt]</a> 
+<   <a href="http://www.google.com/translate?langpair=en|es&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html">histogramme</a></span> 
+<   <span class="style1"><a href="http://www.google.com/translate?langpair=en|de&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html">histogramm</a> 
+<   <a href="http://www.google.com/translate?langpair=en|it&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html">istogramma</a></span> 
+<   <span class="style1">Last Update 
+---
+> <p><span class="style1">Other languages: <a href="http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html" target="_top"></a>
+>   <a href="http://www.google.com/translate?langpair=en|fr&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html">histograma[fr]</a>
+>   <a href="http://www.google.com/translate?langpair=en|pt&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html">histograma[pt]</a>
+>   <a href="http://www.google.com/translate?langpair=en|es&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html">histogramme</a></span>
+>   <span class="style1"><a href="http://www.google.com/translate?langpair=en|de&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html">histogramm</a>
+>   <a href="http://www.google.com/translate?langpair=en|it&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html">istogramma</a></span>
+>   <span class="style1">Last Update
+45c45
+<   <tr> 
+---
+>   <tr>
+55c55
+<     <td nowrap><a href="#R" class="style9">R</a> / <a href="#Mathematica" class="style9">Mathematica</a> 
+---
+>     <td nowrap><a href="#R" class="style9">R</a> / <a href="#Mathematica" class="style9">Mathematica</a>
+62c62
+<   <tr> 
+---
+>   <tr>
+74,75c74,75
+<       (ii) Calculate the mean and variance of the number of events as, 
+<       <div align="center"> 
+---
+>       (ii) Calculate the mean and variance of the number of events as,
+>       <div align="center">
+81c81
+<         <img src="hist_gif/img23.gif" width="110" height="78" align="middle" /> 
+---
+>         <img src="hist_gif/img23.gif" width="110" height="78" align="middle" />
+83,84c83,84
+<       (iii) Compute a formula, 
+<       <div align="center"> 
+---
+>       (iii) Compute a formula,
+>       <div align="center">
+107c107
+<   <tr> 
+---
+>   <tr>
+109c109
+<       <div align="center"> 
+---
+>       <div align="center">
+112c112
+<           Data: the duration for eruptions of the Old Faithful geyser in Yellowstone 
+---
+>           Data: the duration for eruptions of the Old Faithful geyser in Yellowstone
+119c119
+< <h2>Web Application for Bin Size Selection (Ver. 0.10 beta, update coming soon) 
+---
+> <h2>Web Application for Bin Size Selection (Ver. 0.10 beta, update coming soon)
+122c122
+<   <tr> 
+---
+>   <tr>
+124c124
+<       <p>This web application calculates the optimal bin size of the data you 
+---
+>       <p>This web application calculates the optimal bin size of the data you
+126c126
+<       <p>*The data is processed on your own computer (the data is not transferred 
+---
+>       <p>*The data is processed on your own computer (the data is not transferred
+130,131c130,131
+<         <span class="style1">Each data value must be separated by a colon(,), 
+<         a semicolon(;), a blank space( ), a tab(\t), or a return(\n). </span> 
+---
+>         <span class="style1">Each data value must be separated by a colon(,),
+>         a semicolon(;), a blank space( ), a tab(\t), or a return(\n). </span>
+145,146c145,146
+<         <span class="style1">Data: the duration for eruptions of the Old Faithful 
+<         geyser in minutes</span></span> 
+---
+>         <span class="style1">Data: the duration for eruptions of the Old Faithful
+>         geyser in minutes</span></span>
+153c153
+<         <p>The range from 
+---
+>         <p>The range from
+155c155
+<           to 
+---
+>           to
+158c158
+<           Search the bin sizes from 
+---
+>           Search the bin sizes from
+163c163
+<           The number of sample bin sizes to check within the range is 
+---
+>           The number of sample bin sizes to check within the range is
+167c167
+<           The number of repeated trials to obtain the data was 
+---
+>           The number of repeated trials to obtain the data was
+182c182
+<         <p><span class="style2">To obtain an optimal bin size of your data, push 
+---
+>         <p><span class="style2">To obtain an optimal bin size of your data, push
+185c185
+<           To obtain details, push 
+---
+>           To obtain details, push
+191c191
+<         <strong> 
+---
+>         <strong>
+193c193
+<           <tr> 
+---
+>           <tr>
+200,201c200,201
+<         </strong> 
+<         <h4>4. Draw a Histogram and a Cost Function 
+---
+>         </strong>
+>         <h4>4. Draw a Histogram and a Cost Function
+205,206c205,206
+<       <p>*Java and Javascript programs are tested for IE6 and Firefox 1.5on Windows. 
+<         Firefox 1.5 on Linux. Firefox 1.5 and Safari on MacOS. The program does 
+---
+>       <p>*Java and Javascript programs are tested for IE6 and Firefox 1.5on Windows.
+>         Firefox 1.5 on Linux. Firefox 1.5 and Safari on MacOS. The program does
+216,219c216,219
+<   <tr> 
+<     <td height="62"><span class="style4">Q.</span> It seems like that <a href="thesis/">your 
+<       theory</a> assumes a time histogram. Can I apply the proposed method to 
+<       a histogram for a probability distribution? 
+---
+>   <tr>
+>     <td height="62"><span class="style4">Q.</span> It seems like that <a href="thesis/">your
+>       theory</a> assumes a time histogram. Can I apply the proposed method to
+>       a histogram for a probability distribution?
+222c222
+<       <p><span class="style4">Q.</span> I obtained a very small bin width, which 
+---
+>       <p><span class="style4">Q.</span> I obtained a very small bin width, which
+224,227c224,227
+<       <p><span class="style4">A.</span> You probably searched smaller bin widths 
+<         than the sampling resolution of your data. Please begin the search from 
+<         the bin width as large as your sampling resolution. In addition, please 
+<         check if your data contains duplicated samples. A small bin width will 
+---
+>       <p><span class="style4">A.</span> You probably searched smaller bin widths
+>         than the sampling resolution of your data. Please begin the search from
+>         the bin width as large as your sampling resolution. In addition, please
+>         check if your data contains duplicated samples. A small bin width will
+230c230
+<       <span class="style4">Q.</span> I have used the Scott's method 
+---
+>       <span class="style4">Q.</span> I have used the Scott's method
+232,233c232,233
+<       and obtained bin size that differs from the result obtained by the present 
+<       method. 
+---
+>       and obtained bin size that differs from the result obtained by the present
+>       method.
+235,239c235,239
+<       <p><span class="style4">A.</span> They should be different. Three assumptions 
+<         were made to obtain the Scott's result. First, the Scott's result is asymptotically 
+<         true (i.e. it is true for large sample size n). Second, the scaling exponent 
+<         -1/3 is true if the density is a smooth function. Third, the coefficient 
+<         3.49 was obtained, assuming the gaussian density function as a reference. 
+---
+>       <p><span class="style4">A.</span> They should be different. Three assumptions
+>         were made to obtain the Scott's result. First, the Scott's result is asymptotically
+>         true (i.e. it is true for large sample size n). Second, the scaling exponent
+>         -1/3 is true if the density is a smooth function. Third, the coefficient
+>         3.49 was obtained, assuming the gaussian density function as a reference.
+242c242
+<       <p><span class="style4">Q.</span> Can I apply the method to the data composed 
+---
+>       <p><span class="style4">Q.</span> Can I apply the method to the data composed
+244,246c244,246
+<       <p><span class="style4">A.</span> Yes. Please note that the resolution of 
+<         your data is an integer. It is recommended to search only the bin widths 
+<         which are a multiple of the resolution of your sampled data. Do not search 
+---
+>       <p><span class="style4">A.</span> Yes. Please note that the resolution of
+>         your data is an integer. It is recommended to search only the bin widths
+>         which are a multiple of the resolution of your sampled data. Do not search
+248c248
+<       <p>(The current version of web application can NOT be used for computing 
+---
+>       <p>(The current version of web application can NOT be used for computing
+251c251
+<       <p><span class="style4">Q.</span> I want to make a 2-dimensional histogram. 
+---
+>       <p><span class="style4">Q.</span> I want to make a 2-dimensional histogram.
+253,255c253,255
+<       <p><span class="style4">A.</span> Yes. The 'bin size' of a 2-d histogram 
+<         is the area of a segmented square cell. The mean and the variance are 
+<         simply computed from the event counts in all the bins of the 2-dimensional 
+---
+>       <p><span class="style4">A.</span> Yes. The 'bin size' of a 2-d histogram
+>         is the area of a segmented square cell. The mean and the variance are
+>         simply computed from the event counts in all the bins of the 2-dimensional
+257c257
+<       <p>(The current version of web application can NOT be used for computing 
+---
+>       <p>(The current version of web application can NOT be used for computing
+260c260
+<       <p><span class="style4">Q.</span> Can I use unbiased variance as the variance 
+---
+>       <p><span class="style4">Q.</span> Can I use unbiased variance as the variance
+262,263c262,263
+<       <p><span class="style4">A.</span> No. Please use the (biased) variance displayed 
+<         in the method. Please note that a built-in function for variance calculation 
+---
+>       <p><span class="style4">A.</span> No. Please use the (biased) variance displayed
+>         in the method. Please note that a built-in function for variance calculation
+267c267
+<       <p>The FAQ includes my (HS) opinion. They are not opinions neither by my 
+---
+>       <p>The FAQ includes my (HS) opinion. They are not opinions neither by my
+273,274c273,274
+< <h2><strong>Theory</strong><a name="Theory" id="Theory"></a></h2><table width="700" height="36" border="1"> 
+< <tr> 
+---
+> <h2><strong>Theory</strong><a name="Theory" id="Theory"></a></h2><table width="700" height="36" border="1">
+> <tr>
+277c277
+<     <p>A bar-graph histogram is constructed simply by counting the number of events 
+---
+>     <p>A bar-graph histogram is constructed simply by counting the number of events
+287c287
+<  alt="$ N$" /> intervals with each length given by 
+---
+>  alt="$ N$" /> intervals with each length given by
+307c307
+<  alt="$ i$" />th bin is given as 
+---
+>  alt="$ i$" />th bin is given as
+315c315
+<     <p> In this thesis, we assess the goodness of the fit of the estimator 
+---
+>     <p> In this thesis, we assess the goodness of the fit of the estimator
+322c322
+<  alt="$ \hat{\lambda}_{t}$" /> to the underlying rate 
+---
+>  alt="$ \hat{\lambda}_{t}$" /> to the underlying rate
+341c341
+<         <tr valign="MIDDLE"> 
+---
+>         <tr valign="MIDDLE">
+355,356c355,356
+<  alt="$ E$" /> refers to the expectation over different realization of point events, 
+<     given 
+---
+>  alt="$ E$" /> refers to the expectation over different realization of point events,
+>     given
+363c363
+<  alt="$ \lambda _{t}$" />. 
+---
+>  alt="$ \lambda _{t}$" />.
+373c373
+<  alt="$ \Delta $" />, the MISE defined in Eq.(<a href="#eq:def_esterr">3.3</a>) 
+---
+>  alt="$ \Delta $" />, the MISE defined in Eq.(<a href="#eq:def_esterr">3.3</a>)
+384c384
+<         <tr valign="MIDDLE"> 
+---
+>         <tr valign="MIDDLE">
+397c397
+<     where 
+---
+>     where
+404c404
+<  alt="$ \hat{\theta}\left( i\right) $" /> is an empirical height of a bar-graph 
+---
+>  alt="$ \hat{\theta}\left( i\right) $" /> is an empirical height of a bar-graph
+408c408
+<  alt="$ i$" />th bin. Hereafter we denote the average over those segmented rate 
+---
+>  alt="$ i$" />th bin. Hereafter we denote the average over those segmented rate
+415,416c415,416
+<  alt="$ \lambda_{t+(i-1)\Delta}$" /> as an average over an ensemble of (segmented) 
+<     rate functions 
+---
+>  alt="$ \lambda_{t+(i-1)\Delta}$" /> as an average over an ensemble of (segmented)
+>     rate functions
+423c423
+<  alt="$ \{\lambda_{t}\}$" /> defined in an interval of 
+---
+>  alt="$ \{\lambda_{t}\}$" /> defined in an interval of
+469,470c469,470
+<  alt="$ \theta $" />. The MISE can be decomposed into two parts, 
+<   
+---
+>  alt="$ \theta $" />. The MISE can be decomposed into two parts,
+> 
+700c700
+< =k/(n\Delta)$" />, this variance-mean relation corresponds to 
+---
+> =k/(n\Delta)$" />, this variance-mean relation corresponds to
+795c795
+<         Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram <em>Neural Computation</em> [<a href="../ton/pdf/sshistogram.pdf" onclick="javascript:urchinTracker ('/downloads/sshistogram.pdf');">pdf</a>] </strong></p>
+---
+>         Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram <em>Neural Computation</em> Vol. 19(6), 1503-1527 [<a href="../ton/pdf/sshistogram.pdf" onclick="javascript:urchinTracker ('/downloads/sshistogram.pdf');">pdf</a>] </strong></p>
+806c806
+<       <td height="1049">When you make a histogram, you need to choose a bin size. How large (or small) the bin size should be? 
+---
+>       <td height="1049">When you make a histogram, you need to choose a bin size. How large (or small) the bin size should be?
+822c822
+<         <p>This statement is not true. Indeed, the errors can be estimated from the data. The above method  computes the estimated errors for several candidate bin sizes, and choose the bin size that produces the smallest `estimated' error. For the details of the method, please refer to Shimazaki and Shinomoto in <em>Neural Computation</em>. </p>        
+---
+>         <p>This statement is not true. Indeed, the errors can be estimated from the data. The above method  computes the estimated errors for several candidate bin sizes, and choose the bin size that produces the smallest `estimated' error. For the details of the method, please refer to Shimazaki and Shinomoto in <em>Neural Computation</em>. </p>
+839c839
+< % Data: the duration for eruptions of  
+---
+> % Data: the duration for eruptions of
+870c870
+< 	
+---
+> 
+873c873
+< 	
+---
+> 
+881c881
+< [Cmin idx] = min(C);                    
+---
+> [Cmin idx] = min(C);
+899c899
+<         
+---
+> 
+# 2007/04/20 17:24:40 1.1
+795c795
+<         Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram <em>Neural Computation</em> Vol. 19(6), 1503-1527 [<a href="../ton/pdf/sshistogram.pdf" onclick="javascript:urchinTracker ('/downloads/sshistogram.pdf');">pdf</a>] </strong></p>
+---
+>         Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram <em>Neural Computation</em> Vol. 19(6), 1503-1527[<a href="../ton/pdf/sshistogram.pdf" onclick="javascript:urchinTracker ('/downloads/sshistogram.pdf');">pdf</a>] </strong></p>
+# 2007/04/20 17:24:42 1.2
+795c795
+<         Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram <em>Neural Computation</em> Vol. 19(6), 1503-1527[<a href="../ton/pdf/sshistogram.pdf" onclick="javascript:urchinTracker ('/downloads/sshistogram.pdf');">pdf</a>] </strong></p>
+---
+>         Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram <em>Neural Computation</em> Vol. 19(6), 1503-1527 [<a href="../ton/pdf/sshistogram.pdf" onclick="javascript:urchinTracker ('/downloads/sshistogram.pdf');">pdf</a>] </strong></p>
+# 2007/04/20 17:24:44 1.3
+795c795
+<         Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram <em>Neural Computation</em> Vol. 19(6), 1503-1527 [<a href="../ton/pdf/sshistogram.pdf" onclick="javascript:urchinTracker ('/downloads/sshistogram.pdf');">pdf</a>] </strong></p>
+---
+>         Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram <em>Neural Computation</em> (2007) Vol. 19(6), 1503-1527 [<a href="../ton/pdf/sshistogram.pdf" onclick="javascript:urchinTracker ('/downloads/sshistogram.pdf');">pdf</a>] </strong></p>
+# 2007/04/20 17:25:30 1.4
+# latest
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<META name="keywords"
+content="Histogram,Histogram,Histograma,Histogramme,Histogramm,Istogramma,Bin,Size,PSTH,density,recipe,optimize,optimizing,time-histogram,method,instantaneous,rate, spike,occurrence,neurophysiology,bin,size,goodness,fit,underlying,rate,selected,individual,researchers,unsystematic,manner,objective,method ,selecting,the bin size of,time-histogram,spike,data,approximate,unknown,underlying,rate,resolution,histogram,increases,optimal, bin size,spike sequences, sampled,optimal,diverges,experimental,trials,moderately,fluctuating,rate,process,spurious,results,paucity,data">
+<link rel="stylesheet" href="../stylesheet.css" type="text/css" />
+<META name="verify-v1" content="pKNPE2IFqzcZvCXHtB4juyDOaPIABNL56XFNyCPt5VY=" />
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-745872-1";
+urchinTracker();
+</script>
+<script src="java/bin/bin.js" type="text/javascript">
+<!--type="text/javascript"
+//-->
+</script>
+<title>Histogram Bin Size Selection</title>
+<style type="text/css">
+<!--
+.style4 {font-size: x-large}
+.style1 {font-size: small}
+.style2 {	color: #FF0000;
+	font-weight: bold;
+}
+.style6 {font-size: x-small}
+.style9 {color: #333333}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF"><blockquote>
+<p><span class="style1">Other languages: <a href="http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html" target="_top"></a>
+  <a href="http://www.google.com/translate?langpair=en|fr&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html">histograma[fr]</a>
+  <a href="http://www.google.com/translate?langpair=en|pt&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html">histograma[pt]</a>
+  <a href="http://www.google.com/translate?langpair=en|es&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html">histogramme</a></span>
+  <span class="style1"><a href="http://www.google.com/translate?langpair=en|de&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html">histogramm</a>
+  <a href="http://www.google.com/translate?langpair=en|it&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html">istogramma</a></span>
+  <span class="style1">Last Update
+  <!-- #BeginDate format:IS1m -->2007-04-20  17:20<!-- #EndDate -->
+  </span><Br />
+</p>
+<h1>Histogram Bin Size Selection</h1>
+<table border="0">
+  <tr>
+    <td nowrap><a href="#Method" class="style9">Method</a> /</td>
+    <td nowrap><a href="#Example" class="style9">Example</a> /</td>
+    <td nowrap><a href="#WebApp" class="style9">Web Application</a> /</td>
+    <td nowrap><a href="#FAQ" class="style9">FAQ</a> /</td>
+    <td nowrap><a href="#Theory" class="style9">Theory</a> /</td>
+    <td nowrap><a href="#Ref" class="style9">Reference</a> /</td>
+    <td nowrap><a href="#OptBin" class="style9">Illustration</a> /</td>
+    <td nowrap class="style9"><a href="#Excel" class="style9">Excel</a> / </td>
+    <td nowrap><a href="#Matlab" class="style9">Matlab</a> /</td>
+    <td nowrap><a href="#R" class="style9">R</a> / <a href="#Mathematica" class="style9">Mathematica</a>
+      //</td>
+    <td nowrap><a href="../reroute.html" target="_parent">Home</a></td>
+  </tr>
+</table>
+<h2>A Method for Selecting the Bin Size of a Histogram <a name="Method" id="Method"></a></h2>
+<table width="700" height="138" border="1">
+  <tr>
+    <td>
+      <p>(i) Divide the data range into <img
+ width="19" height="14" align="bottom" border="0"
+ src="hist_gif/img55.gif"
+ alt="$N$" /> bins of width <img
+ width="17" height="14" align="bottom" border="0"
+ src="hist_gif/img3.gif"
+ alt="$\Delta $" />. Count the number of events <img
+ width="18" height="30" align="top" border="0"
+ src="hist_gif/img48.gif"
+ alt="$k_i$" /> that enter the i'th bin.</p>
+      (ii) Calculate the mean and variance of the number of events as,
+      <div align="center">
+        <!-- MATH
+ \begin{displaymath}
+\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and }  \displaystyle s^2 \equiv \frac{1}{N-1} \sum_{i=1}^{N} (k_i-\bar{k})^2.
+\end{displaymath}
+ -->
+        <img src="hist_gif/img23.gif" width="110" height="78" align="middle" />
+        and <img src="hist_gif/img24.gif" width="167" height="78" align="middle" /></div>
+      (iii) Compute a formula,
+      <div align="center">
+        <!-- MATH
+ \begin{displaymath}
+\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and }  \displaystyle s^2 \equiv \frac{1}{N-1} \sum_{i=1}^{N} (k_i-\bar{k})^2.
+\end{displaymath}
+ -->
+        <img src="hist_gif/img9.gif" width="136" height="61" /></div>
+      <p>(iv) Repeat i-iii while changing the bin size <img
+ width="17" height="14" align="bottom" border="0"
+ src="hist_gif/img3.gif"
+ alt="$\Delta $" />. Find <img
+ width="25" height="14" align="bottom" border="0"
+ src="hist_gif/img76.gif"
+ alt="$\Delta^{*}$" /> that minimizes <img
+ width="50" height="32" align="middle" border="0"
+ src="hist_gif/img7.gif"
+ alt="$C_n (\Delta )$" />.</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>An Optimized Histogram <a name="Example" id="Example"></a></h2>
+<table width="700" height="36" border="1">
+  <tr>
+    <td height="30">
+      <div align="center">
+        <p><img src="hist_gif/Oldfaithful.gif" alt="Oldfaithful" width="323" height="288" /></p>
+        <p>A histogram with bin width optimized by the above method. <br />
+          Data: the duration for eruptions of the Old Faithful geyser in Yellowstone
+          National Park (in minutes)</p>
+      </div>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>Web Application for Bin Size Selection (Ver. 0.10 beta, update coming soon)
+  <a name="WebApp" id="WebApp"></a></h2>
+<table width="700" border="1">
+  <tr>
+    <td width="700" height="30" align="left">
+      <p>This web application calculates the optimal bin size of the data you
+        post.</p>
+      <p>*The data is processed on your own computer (the data is not transferred
+        to our or any other server). </p>
+      <h4>1. Post Data</h4>
+      <p>Please `Copy&amp;Paste' your data in a text area below. <br />
+        <span class="style1">Each data value must be separated by a colon(,),
+        a semicolon(;), a blank space( ), a tab(\t), or a return(\n). </span>
+      </p>
+      <form name="DATAFORM" id="DATAFORM" >
+        <textarea name="TEXT" rows="10" cols="70" wrap="off" onkeyup="Initialize_Parameters()">
+4.37 3.87 4.00 4.03 3.50 4.08 2.25 4.70 1.73 4.93 1.73 4.62
+3.43 4.25 1.68 3.92 3.68 3.10 4.03 1.77 4.08 1.75 3.20 1.85
+4.62 1.97 4.50 3.92 4.35 2.33 3.83 1.88 4.60 1.80 4.73 1.77
+4.57 1.85 3.52 4.00 3.70 3.72 4.25 3.58 3.80 3.77 3.75 2.50
+4.50 4.10 3.70 3.80 3.43 4.00 2.27 4.40 4.05 4.25 3.33 2.00
+4.33 2.93 4.58 1.90 3.58 3.73 3.73 1.82 4.63 3.50 4.00 3.67
+1.67 4.60 1.67 4.00 1.80 4.42 1.90 4.63 2.93 3.50 1.97 4.28
+1.83 4.13 1.83 4.65 4.20 3.93 4.33 1.83 4.53 2.03 4.18 4.43
+4.07 4.13 3.95 4.10 2.27 4.58 1.90 4.50 1.95 4.83 4.12</textarea>
+        <span class="style6"><br />
+        <span class="style1">Data: the duration for eruptions of the Old Faithful
+        geyser in minutes</span></span>
+        <input name="reset" type="reset" value="Reset to Sample Data" />
+      </form>
+      <form name="PARAMETERS" id="PARAMETERS">
+        <h4><strong>2. Set Parameters</strong> <span class="style1">
+          <input name="button" type="button" onclick="Initialize_Parameters()" value="Set paramters from the data" />
+          </span></h4>
+        <p>The range from
+          <input name="DATA_MIN" type="text" value="1.6" size="10" />
+          to
+          <input name="DATA_MAX" type="text" value="5" size="10" />
+          of the data is used to make a histogram.<br />
+          Search the bin sizes from
+          <input name="BIN_MIN" type="text" value="0.02" size="10" />
+          to
+          <input name="BIN_MAX" type="text" value="1" size="10" />
+          . <br />
+          The number of sample bin sizes to check within the range is
+          <input name="BIN_DIV" type="text" value="30" size="10" />
+          . <br />
+          <br />
+          The number of repeated trials to obtain the data was
+          <input name="DATA_N" type="text" value="1" size="10" />
+          . (optional)</p>
+      </form>
+      <form name="BinSelectionForm" id="BinSelectionForm">
+        <!--
+<object id="BinSelection" width=10 height=10
+classid="CLSID:8AD9C840-044E-11d1-B3E9-00805F499D93" >
+<PARAM name="code" value="BinSelction.class">
+<PARAM NAME="codebase" value="1.0.2">
+<PARAM NAME="level" value="5">
+...
+</object>
+-->
+        <h4>3. Select a Bin Size</h4>
+        <p><span class="style2">To obtain an optimal bin size of your data, push
+          <input type="button" name="Button" value="Obtain an Optimal Bin Size" onclick="BinSelectionApplet(); StartApplet(); alert('An optimal bin size of your data is '+OptimalBinSize().toPrecision(3)); javascript:urchinTracker ('/bin_script/calculation');" language="JavaScript" />
+          .</span><br />
+          To obtain details, push
+          <input name="button" type="button" onclick="BinSelectionApplet();Results_In_Window(); javascript:urchinTracker ('/bin_script/datasheet');" value="Output Data Sheet of Your Optimized Histogram" />
+          . <applet code="BinSelection" codebase="java/bin" name="BinSelection" width="0" height="0" id="BinSelection">
+          </applet> </p>
+      </form>
+      <form name="FormApplet" id="FormApplet">
+        <strong>
+        <table width="600" border="0" align="center">
+          <tr>
+            <td width="270" height="342"> <applet code="DrawCostFunction" codebase="java/bin" name="DrawCostFunction" width="250" height="250" hspace="10" vspace="10" id="DrawCostFunction">
+              </applet></td>
+            <td> <applet code="DrawHistogram" codebase="java/bin" name="DrawHistogram" width="270" height="320" hspace="10" vspace="10" id="DrawHistogram">
+              </applet> </td>
+          </tr>
+        </table>
+        </strong>
+        <h4>4. Draw a Histogram and a Cost Function
+          <input type="button" name="Button" value="Redraw a Histogram" onclick="BinSelectionApplet(); StartApplet();" language="JavaScript" />
+        </h4>
+      </form>
+      <p>*Java and Javascript programs are tested for IE6 and Firefox 1.5on Windows.
+        Firefox 1.5 on Linux. Firefox 1.5 and Safari on MacOS. The program does
+        not work in Opera. </p>
+      <p class="style1">06/11/08 Ver. 0.10 Improved datasheet output. </p>
+      <p>Web Application for Bin Size Selection &copy; 2006 Hideaki Shimazaki</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>FAQ<a name="FAQ" id="FAQ"></a></h2>
+<table width="700" height="68" border="1">
+  <tr>
+    <td height="62"><span class="style4">Q.</span> It seems like that <a href="thesis/">your
+      theory</a> assumes a time histogram. Can I apply the proposed method to
+      a histogram for a probability distribution?
+      <p><span class="style4">A.</span> Yes.</p>
+      <hr />
+      <p><span class="style4">Q.</span> I obtained a very small bin width, which
+        is likely to be erroneous. Why? </p>
+      <p><span class="style4">A.</span> You probably searched smaller bin widths
+        than the sampling resolution of your data. Please begin the search from
+        the bin width as large as your sampling resolution. In addition, please
+        check if your data contains duplicated samples. A small bin width will
+        be selected for such highly correlated samples. </p>
+      <hr />
+      <span class="style4">Q.</span> I have used the Scott's method
+      <div align="center"> Optimal Bin Size= 3.49*s*n^(-1/3) , </div>
+      and obtained bin size that differs from the result obtained by the present
+      method.
+      <p></p>
+      <p><span class="style4">A.</span> They should be different. Three assumptions
+        were made to obtain the Scott's result. First, the Scott's result is asymptotically
+        true (i.e. it is true for large sample size n). Second, the scaling exponent
+        -1/3 is true if the density is a smooth function. Third, the coefficient
+        3.49 was obtained, assuming the gaussian density function as a reference.
+        The present method does not require these assumptions. </p>
+      <hr />
+      <p><span class="style4">Q.</span> Can I apply the method to the data composed
+        of integer values? </p>
+      <p><span class="style4">A.</span> Yes. Please note that the resolution of
+        your data is an integer. It is recommended to search only the bin widths
+        which are a multiple of the resolution of your sampled data. Do not search
+        the bin width smaller than the resolution. </p>
+      <p>(The current version of web application can NOT be used for computing
+        only integer bin widths.)</p>
+      <hr />
+      <p><span class="style4">Q.</span> I want to make a 2-dimensional histogram.
+        Can I use this method? </p>
+      <p><span class="style4">A.</span> Yes. The 'bin size' of a 2-d histogram
+        is the area of a segmented square cell. The mean and the variance are
+        simply computed from the event counts in all the bins of the 2-dimensional
+        histogram. </p>
+      <p>(The current version of web application can NOT be used for computing
+        2-dimensional histogram.)</p>
+      <hr />
+      <p><span class="style4">Q.</span> Can I use unbiased variance as the variance
+        in the formula of bin size selection?</p>
+      <p><span class="style4">A.</span> No. Please use the (biased) variance displayed
+        in the method. Please note that a built-in function for variance calculation
+        in a software may returns unbiased variance in default. </p>
+      <p>&nbsp;</p>
+      <hr />
+      <p>The FAQ includes my (HS) opinion. They are not opinions neither by my
+        collaborators or the institution I belong to. </p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2><strong>Theory</strong><a name="Theory" id="Theory"></a></h2><table width="700" height="36" border="1">
+<tr>
+  <td height="30">
+    <p>(digest of Chapter 3 in Ph.D Thesis of H. Shimazaki 2006) </p>
+    <p>A bar-graph histogram is constructed simply by counting the number of events
+      that belong to each bin of width <img
+ width="20" height="16" align="BOTTOM" border="0"
+ src="thesis/img3.gif"
+ alt="$ \Delta $" />. We divide the data range <img
+ width="18" height="16" align="BOTTOM" border="0"
+ src="thesis/img59.gif"
+ alt="$ T$" /> into <img
+ width="22" height="16" align="BOTTOM" border="0"
+ src="thesis/img54.gif"
+ alt="$ N$" /> intervals with each length given by
+      <!-- MATH
+ $\Delta=T/N$
+ -->
+      <img
+ width="84" height="37" align="MIDDLE" border="0"
+ src="thesis/img60.gif"
+ alt="$ \Delta=T/N$" /> . The number of events accumulated from all <img
+ width="16" height="16" align="BOTTOM" border="0"
+ src="thesis/img6.gif"
+ alt="$ n$" /> sequences in the <img
+ width="11" height="16" align="BOTTOM" border="0"
+ src="thesis/img55.gif"
+ alt="$ i$" />th interval is counted as <img
+ width="20" height="35" align="MIDDLE" border="0"
+ src="thesis/img61.gif"
+ alt="$ k_{i}%
+$" />. The bar height at the <img
+ width="11" height="16" align="BOTTOM" border="0"
+ src="thesis/img55.gif"
+ alt="$ i$" />th bin is given as
+      <!-- MATH
+ $k_{i}/n\Delta$
+ -->
+      <img
+ width="56" height="37" align="MIDDLE" border="0"
+ src="thesis/img62.gif"
+ alt="$ k_{i}/n\Delta$" />.</p>
+    <p> In this thesis, we assess the goodness of the fit of the estimator
+      <!-- MATH
+ $\hat{\lambda}_{t}$
+ -->
+      <img
+ width="21" height="45" align="MIDDLE" border="0"
+ src="thesis/img70.gif"
+ alt="$ \hat{\lambda}_{t}$" /> to the underlying rate
+      <!-- MATH
+ $\lambda_{t}$
+ -->
+      <img
+ width="21" height="35" align="MIDDLE" border="0"
+ src="thesis/img1.gif"
+ alt="$ \lambda _{t}$" /> over the data range <img
+ width="18" height="16" align="BOTTOM" border="0"
+ src="thesis/img59.gif"
+ alt="$ T$" /> by the mean integrated squared error (MISE), </p>
+    <div align="CENTER">
+      <!-- MATH
+ \begin{equation}
+\mbox{MISE}\equiv\frac{1}{T}\int_{0}^{T}E\,(\hat{\lambda}_{t}-\lambda_{t}%
+)^{2}\,dt,%
+\end{equation}
+ -->
+      <table cellpadding="0" width="100%" align="CENTER">
+        <tr valign="MIDDLE">
+          <td nowrap align="CENTER">MISE<img
+ width="200" height="68" align="MIDDLE" border="0"
+ src="thesis/img71.gif"
+ alt="$\displaystyle \equiv\frac{1}{T}\int_{0}^{T}E (\hat{\lambda}_{t}-\lambda_{t}%
+)^{2} dt,%
+$" /></td>
+          <td nowrap width="10" align="RIGHT"> (3.3)</td>
+        </tr>
+      </table>
+    </div>
+    where <img
+ width="20" height="16" align="BOTTOM" border="0"
+ src="thesis/img72.gif"
+ alt="$ E$" /> refers to the expectation over different realization of point events,
+    given
+    <!-- MATH
+ $\lambda_{t}$
+ -->
+    <img
+ width="21" height="35" align="MIDDLE" border="0"
+ src="thesis/img1.gif"
+ alt="$ \lambda _{t}$" />.
+    <p> By segmenting the range <img
+ width="18" height="16" align="BOTTOM" border="0"
+ src="thesis/img59.gif"
+ alt="$ T$" /> into <img
+ width="22" height="16" align="BOTTOM" border="0"
+ src="thesis/img54.gif"
+ alt="$ N$" /> intervals of size <img
+ width="20" height="16" align="BOTTOM" border="0"
+ src="thesis/img3.gif"
+ alt="$ \Delta $" />, the MISE defined in Eq.(<a href="#eq:def_esterr">3.3</a>)
+      can be rewritten as </p>
+    <div align="CENTER">
+      <!-- MATH
+ \begin{equation}
+\mbox{MISE}=\frac{1}{\Delta}\int_{0}^{\Delta}\frac{1}{N}\sum_{i=1}%
+^{N}\,E\left\{  {\hat{\theta}}\left(  {i}\right)  {-\lambda_{t+(i-1)\Delta}%
+}\right\}  ^{2}\,dt,%
+\end{equation}
+ -->
+      <table cellpadding="0" width="100%" align="CENTER">
+        <tr valign="MIDDLE">
+          <td nowrap align="CENTER">MISE<img
+ width="341" height="78" align="MIDDLE" border="0"
+ src="thesis/img73.gif"
+ alt="$\displaystyle =\frac{1}{\Delta}\int_{0}^{\Delta}\frac{1}{N}\sum_{i=1}%
+^{N} E\...
+...\hat{\theta}}\left( {i}\right) {-\lambda_{t+(i-1)\Delta}%
+}\right\} ^{2} dt,%
+$" /></td>
+          <td nowrap width="10" align="RIGHT"> (3.4)</td>
+        </tr>
+      </table>
+    </div>
+    where
+    <!-- MATH
+ $\hat{\theta}\left(  i\right)$
+ -->
+    <img
+ width="38" height="45" align="MIDDLE" border="0"
+ src="thesis/img74.gif"
+ alt="$ \hat{\theta}\left( i\right) $" /> is an empirical height of a bar-graph
+    histogram at <img
+ width="11" height="16" align="BOTTOM" border="0"
+ src="thesis/img55.gif"
+ alt="$ i$" />th bin. Hereafter we denote the average over those segmented rate
+    <!-- MATH
+ $\lambda_{t+(i-1)\Delta}$
+ -->
+    <img
+ width="75" height="35" align="MIDDLE" border="0"
+ src="thesis/img75.gif"
+ alt="$ \lambda_{t+(i-1)\Delta}$" /> as an average over an ensemble of (segmented)
+    rate functions
+    <!-- MATH
+ $\{\lambda_{t}\}$
+ -->
+    <img
+ width="40" height="37" align="MIDDLE" border="0"
+ src="thesis/img76.gif"
+ alt="$ \{\lambda_{t}\}$" /> defined in an interval of
+    <!-- MATH
+ $t\in
+\lbrack0,\Delta]$
+ -->
+<img
+ width="78" height="37" align="MIDDLE" border="0"
+ src="thesis/img63.gif"
+ alt="$ t\in\lbrack0,\Delta]$" />:
+<!-- MATH
+ \begin{equation}
+\mbox{MISE}=\frac{1}{\Delta}\int_{0}^{\Delta}\left\langle {E\,(\,{\hat{\theta
+}-\lambda_{t}}\,)^{2}}\right\rangle \,dt.%
+\end{equation}
+ -->
+    <div align="CENTER">
+      <table cellpadding="0" width="100%" align="CENTER">
+      <tr valign="MIDDLE">
+        <td nowrap align="CENTER">MISE<img
+ width="229" height="68" align="MIDDLE" border="0"
+ src="thesis/img77.gif"
+ alt="$\displaystyle =\frac{1}{\Delta}\int_{0}^{\Delta}\left\langle {E ( {\hat{\theta }-\lambda_{t}} )^{2}}\right\rangle  dt.%
+$" /></td>
+        <td nowrap width="10" align="RIGHT"> (3.5)</td>
+      </tr>
+    </table>
+</div>
+ The expectation <img
+ width="20" height="16" align="BOTTOM" border="0"
+ src="thesis/img72.gif"
+ alt="$ E$" /> now refers to the average over the event count, or
+  <!-- MATH
+ $\hat{\theta}=k/(n\Delta)$
+ -->    <img
+ width="100" height="45" align="MIDDLE" border="0"
+ src="thesis/img67.gif"
+ alt="$ \hat{\theta}=k/(n\Delta)$" />, given a rate function
+    <!-- MATH
+ $\lambda_{t}$
+ -->    <img
+ width="21" height="35" align="MIDDLE" border="0"
+ src="thesis/img1.gif"
+ alt="$ \lambda _{t}$" />, or its mean
+  value, <img
+ width="14" height="17" align="BOTTOM" border="0"
+ src="thesis/img2.gif"
+ alt="$ \theta $" />. The MISE can be decomposed into two parts,
+
+  <div align="CENTER">
+    <table cellpadding="0" width="100%" align="CENTER">
+    <tr valign="MIDDLE">
+      <td width="195" align="RIGHT" nowrap>MISE</td>
+      <td width="437" align="LEFT" nowrap><img
+ width="285" height="68" align="MIDDLE" border="0"
+ src="thesis/img78.gif"
+ alt="$\displaystyle =\frac{1}{\Delta}\int_{0}^{\Delta}\left\langle {E ( \hat {\theta}-\theta+\theta-\lambda_{t})^{2}}\right\rangle  dt$" /></td>
+      <td nowrap width="48" align="RIGHT">&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr valign="MIDDLE">
+      <td>&nbsp;</td>
+      <td nowrap align="LEFT"><img
+ width="321" height="68" align="MIDDLE" border="0"
+ src="thesis/img79.gif"
+ alt="$\displaystyle =\left\langle {E{({\hat{\theta}-\theta})^{2}}}\right\rangle +\fra...
+...ta}{\left\langle {\left( {\lambda_{t}-\theta }\right) ^{2}}\right\rangle dt}.%
+$" /></td>
+      <td nowrap width="48" align="RIGHT"><a name="MISE3">(3.6)</a></td>
+    </tr>
+  </table>
+</div>
+The first and second terms are respectively the stochastic fluctuation of the
+estimator
+<!-- MATH
+ $\hat{\theta}$
+ -->
+<img
+ width="14" height="22" align="BOTTOM" border="0"
+ src="thesis/img69.gif"
+ alt="$ \hat{\theta}$" /> around the expected mean rate <img
+ width="14" height="17" align="BOTTOM" border="0"
+ src="thesis/img2.gif"
+ alt="$ \theta $" />, and the
+temporal fluctuation of
+<!-- MATH
+ $\lambda_{t}$
+ -->
+<img
+ width="21" height="35" align="MIDDLE" border="0"
+ src="thesis/img1.gif"
+ alt="$ \lambda _{t}$" /> around its mean <img
+ width="14" height="17" align="BOTTOM" border="0"
+ src="thesis/img2.gif"
+ alt="$ \theta $" /> over an
+interval of length <img
+ width="20" height="16" align="BOTTOM" border="0"
+ src="thesis/img3.gif"
+ alt="$ \Delta $" />, averaged over the segments.
+<p> The second term of Eq.(<a href="#MISE2">3.5</a>) can further be decomposed into two parts, </p>
+<div align="CENTER"><!-- MATH
+ \begin{equation}
+\frac{1}{\Delta}\int_{0}^{\Delta}\left\langle {\left(  {\lambda_{t}%
+-\langle\theta\rangle}\right)  ^{2}}\right\rangle \,dt-\left\langle {\left(
+{\theta-\langle\theta\rangle}\right)  ^{2}}\right\rangle .%
+\end{equation}
+ -->
+    <table cellpadding="0" width="100%" align="CENTER">
+      <tr valign="MIDDLE">
+        <td nowrap align="CENTER"><img
+ width="317" height="68" align="MIDDLE" border="0"
+ src="thesis/img80.gif"
+ alt="$\displaystyle \frac{1}{\Delta}\int_{0}^{\Delta}\left\langle {\left( {\lambda_{t...
+...left\langle {\left( {\theta-\langle\theta\rangle}\right) ^{2}}\right\rangle .%
+$" /></td>
+        <td nowrap width="10" align="RIGHT"> (3.7)</td>
+      </tr>
+    </table>
+</div>
+ The first term in the rhs of Eq.(<a href="#Sys_Error">3.7</a>) represents a mean squared
+fluctuation of the underlying rate
+<!-- MATH
+ $\lambda_{t}$
+ -->
+<img
+ width="21" height="35" align="MIDDLE" border="0"
+ src="thesis/img1.gif"
+ alt="$ \lambda _{t}$" /> from the mean rate
+<!-- MATH
+ ${\langle\theta\rangle}$
+ -->
+<img
+ width="29" height="37" align="MIDDLE" border="0"
+ src="thesis/img81.gif"
+ alt="$ {\langle\theta\rangle}$" />, and is independent of the bin size <img
+ width="20" height="16" align="BOTTOM" border="0"
+ src="thesis/img3.gif"
+ alt="$ \Delta $" />,
+because
+<!-- MATH
+ \begin{equation}
+\frac{1}{\Delta}\int_{0}^{\Delta}\left\langle {\left(  {\lambda_{t}%
+-\langle\theta\rangle}\right)  ^{2}}\right\rangle \,dt=\frac{1}{T}\int_{0}%
+^{T}\left(  {\lambda_{t}-\langle\theta\rangle}\right)  ^{2}\,dt.
+%
+\end{equation}
+ -->
+    <div align="CENTER">
+      <table cellpadding="0" width="100%" align="CENTER">
+      <tr valign="MIDDLE">
+        <td nowrap align="CENTER"><img
+ width="381" height="68" align="MIDDLE" border="0"
+ src="thesis/img82.gif"
+ alt="$\displaystyle \frac{1}{\Delta}\int_{0}^{\Delta}\left\langle {\left( {\lambda_{t...
+...}{T}\int_{0}%
+^{T}\left( {\lambda_{t}-\langle\theta\rangle}\right) ^{2} dt. %
+$" /></td>
+        <td nowrap width="10" align="RIGHT"> (3.8)</td>
+      </tr>
+    </table>
+</div>
+
+ We define a cost function by subtracting this term from the original MISE,
+ <div align="CENTER">
+   <table cellpadding="0" width="100%" align="CENTER">
+    <tr valign="MIDDLE">
+      <td width="219" align="RIGHT" nowrap><img
+ width="57" height="44" align="MIDDLE" border="0"
+ src="thesis/img83.gif"
+ alt="$\displaystyle C_{n}^{^{\prime}}(\Delta)$" /></td>
+      <td width="413" align="LEFT" nowrap><img
+ width="19" height="33" align="MIDDLE" border="0"
+ src="thesis/img84.gif"
+ alt="$\displaystyle \equiv$" />MISE<img
+ width="182" height="68" align="MIDDLE" border="0"
+ src="thesis/img85.gif"
+ alt="$\displaystyle -\frac{1}{T}\int_{0}^{T}\left( {\lambda_{t}-\langle\theta\rangle}\right) ^{2} dt$" /></td>
+      <td nowrap width="48" align="RIGHT">&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr valign="MIDDLE">
+      <td>&nbsp;</td>
+      <td nowrap align="LEFT"><img
+ width="255" height="53" align="MIDDLE" border="0"
+ src="thesis/img86.gif"
+ alt="$\displaystyle =\left\langle E(\hat{\theta}-\theta)^{2}\right\rangle -\left\langle {\left( {\theta-\langle\theta\rangle}\right) ^{2}}\right\rangle . %
+$" /></td>
+      <td nowrap width="48" align="RIGHT"><a name="cost">(3.9)</a></td>
+    </tr>
+  </table>
+</div>
+ The second term in Eq.(<a href="#cost">3.9</a>) represents the temporal fluctuation of the
+expected mean rate <img
+ width="14" height="17" align="BOTTOM" border="0"
+ src="thesis/img2.gif"
+ alt="$ \theta $" /> for individual intervals of width <img
+ width="20" height="16" align="BOTTOM" border="0"
+ src="thesis/img3.gif"
+ alt="$ \Delta $" />. As the
+expected mean rate is not an observable quantity, we must replace the
+fluctuation of the expected mean rate with that of the observable estimator
+<!-- MATH
+ $\hat{\theta}$
+ -->
+<img
+ width="14" height="22" align="BOTTOM" border="0"
+ src="thesis/img69.gif"
+ alt="$ \hat{\theta}$" />. Using the decomposition rule for an unbiased estimator
+(
+<!-- MATH
+ $E\hat{\theta}=\theta)$
+ -->
+<img
+ width="70" height="45" align="MIDDLE" border="0"
+ src="thesis/img87.gif"
+ alt="$ E\hat{\theta}=\theta)$" />,
+
+  <div align="CENTER">
+    <table cellpadding="0" width="100%" align="CENTER">
+    <tr valign="MIDDLE">
+      <td width="262" align="RIGHT" nowrap><img
+ width="137" height="53" align="MIDDLE" border="0"
+ src="thesis/img88.gif"
+ alt="$\displaystyle \left\langle E({\hat{\theta}-\langle E\hat{\theta}\rangle})^{2}\right\rangle$" /></td>
+      <td width="380" align="LEFT" nowrap><img
+ width="206" height="53" align="MIDDLE" border="0"
+ src="thesis/img89.gif"
+ alt="$\displaystyle =\left\langle E(\hat{\theta}-\theta+\theta-{\langle}\theta{\rangle}%
+)^{2}\right\rangle$" /></td>
+      <td nowrap width="38" align="RIGHT">&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr valign="MIDDLE">
+      <td>&nbsp;</td>
+      <td nowrap align="LEFT"><img
+ width="255" height="53" align="MIDDLE" border="0"
+ src="thesis/img90.gif"
+ alt="$\displaystyle =\left\langle E(\hat{\theta}-\theta)^{2}\right\rangle +\left\langle {\left( {\theta-\langle}\theta{\rangle}\right) ^{2}}\right\rangle ,$" /></td>
+      <td nowrap width="38" align="RIGHT"> (3.10)</td>
+    </tr>
+  </table>
+</div>
+
+the cost function is transformed into
+
+  <!-- MATH
+ \begin{equation}
+C_{n}\left(  \Delta\right)  =2\left\langle E(\hat{\theta}-\theta
+)^{2}\right\rangle -E\left\langle ({\hat{\theta}-\langle E\hat{\theta}\rangle
+})^{2}\right\rangle .
+\end{equation}
+ -->
+  <div align="CENTER">
+    <table cellpadding="0" width="100%" align="CENTER">
+    <tr valign="MIDDLE">
+      <td nowrap align="CENTER"><img
+ width="367" height="53" align="MIDDLE" border="0"
+ src="thesis/img91.gif"
+ alt="$\displaystyle C_{n}\left( \Delta\right) =2\left\langle E(\hat{\theta}-\theta )^...
+...E\left\langle ({\hat{\theta}-\langle E\hat{\theta}\rangle })^{2}\right\rangle .$" /></td>
+      <td nowrap width="10" align="RIGHT"> (3.11)</td>
+    </tr>
+  </table>
+</div>
+
+<div align="CENTER"></div>
+ Due to the assumed Poisson nature of the point process, the number of events <img
+ width="15" height="17" align="BOTTOM" border="0"
+ src="thesis/img5.gif"
+ alt="$ k$" /> counted in each bin obeys a Poisson distribution: the variance of <img
+ width="15" height="17" align="BOTTOM" border="0"
+ src="thesis/img5.gif"
+ alt="$ k$" /> is
+  equal to the mean. For the estimated rate defined as
+  <!-- MATH
+ $\hat{\theta}%
+=k/(n\Delta)$
+ -->    <img
+ width="100" height="45" align="MIDDLE" border="0"
+ src="thesis/img98.gif"
+ alt="$ \hat{\theta}%
+=k/(n\Delta)$" />, this variance-mean relation corresponds to
+    <!-- MATH
+ \begin{equation}
+E(\hat{\theta}-\theta)^{2}=\frac{1}{n\Delta}E{\hat{\theta}}.
+%
+\end{equation}
+ -->
+    <div align="CENTER">
+      <table cellpadding="0" width="100%" align="CENTER">
+      <tr valign="MIDDLE">
+        <td nowrap align="CENTER"><img
+ width="169" height="59" align="MIDDLE" border="0"
+ src="thesis/img99.gif"
+ alt="$\displaystyle E(\hat{\theta}-\theta)^{2}=\frac{1}{n\Delta}E{\hat{\theta}}. %
+$" /></td>
+        <td nowrap width="10" align="RIGHT"> (3.14)</td>
+      </tr>
+    </table>
+</div>
+ By incorporating Eq.(<a href="#eq:variancemean">3.14</a>) into Eq.(<a href="#Cn">3.13</a>), the cost
+function is given as a function of the estimator
+<!-- MATH
+ $\hat{\theta}$
+ -->
+<img
+ width="14" height="22" align="BOTTOM" border="0"
+ src="thesis/img69.gif"
+ alt="$ \hat{\theta}$" />,
+
+  <!-- MATH
+ \begin{equation}
+C_{n}\left(  \Delta\right)  =\frac{2}{{n\Delta}}E\left\langle \hat{\theta
+}\right\rangle -E\left\langle ({\hat{\theta}-\langle\hat{\theta}\rangle}%
+)^{2}\right\rangle .
+\end{equation}
+ -->
+  <div align="CENTER">
+    <table cellpadding="0" width="100%" align="CENTER">
+    <tr valign="MIDDLE">
+      <td nowrap align="CENTER"><img
+ width="319" height="59" align="MIDDLE" border="0"
+ src="thesis/img100.gif"
+ alt="$\displaystyle C_{n}\left( \Delta\right) =\frac{2}{{n\Delta}}E\left\langle \hat{...
+...-E\left\langle ({\hat{\theta}-\langle\hat{\theta}\rangle}%
+)^{2}\right\rangle .$" /></td>
+      <td nowrap width="10" align="RIGHT"> (3.15)</td>
+    </tr>
+  </table>
+</div>
+
+<div align="CENTER"></div>
+
+The optimal bin size is obtained by minimizing the cost function
+<!-- MATH
+ $C_{n}%
+(\Delta)$
+ -->
+<img
+ width="57" height="37" align="MIDDLE" border="0"
+ src="thesis/img102.gif"
+ alt="$ C_{n}%
+(\Delta)$" />:
+<!-- MATH
+ \begin{equation}
+\Delta^{\ast}\equiv\arg\min_{\Delta}C_{n}(\Delta).%
+\end{equation}
+ -->
+    <div align="CENTER">
+      <table cellpadding="0" width="100%" align="CENTER">
+      <tr valign="MIDDLE">
+        <td nowrap align="CENTER"><img
+ width="175" height="37" align="MIDDLE" border="0"
+ src="thesis/img103.gif"
+ alt="$\displaystyle \Delta^{\ast}\equiv\arg\min_{\Delta}C_{n}(\Delta).%
+$" /></td>
+        <td nowrap width="10" align="RIGHT"> (3.17)</td>
+      </tr>
+    </table>
+</div>
+By replacing
+<!-- MATH
+ $\hat{\theta}$
+ -->
+<img
+ width="14" height="22" align="BOTTOM" border="0"
+ src="thesis/img69.gif"
+ alt="$ \hat{\theta}$" /> in Eq.(<a href="#eq:CostEstimated">3.16</a>) with the sample
+event counts, the method is converted into a user-friendly recipe summarized
+in the Method.</td>
+    </tr>
+  </table>
+  <h3><a name="Ref" id="Ref"></a></h3>
+  <table width="700" height="36" border="1">
+    <tr>
+      <td height="30" background="ppt/histogram_ppt.pdf"><p><strong>Full paper:<br />
+        Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram <em>Neural Computation</em> (2007) Vol. 19(6), 1503-1527 [<a href="../ton/pdf/sshistogram.pdf" onclick="javascript:urchinTracker ('/downloads/sshistogram.pdf');">pdf</a>] </strong></p>
+          <p><strong>Short summary:<br />
+        </strong><strong>Shimazaki H. and Shinomoto S., A recipe for optimizing a time-histogram <em>Neural Information Processing Systems </em> Vol. 19, 2007  [<a href="http://books.nips.cc/papers/files/nips19/NIPS2006_0137.pdf" onclick="javascript:urchinTracker ('/downloads/nips2006.pdf');">pdf</a>]</strong></p>
+          <p><a href="ppt/histogram_ppt.pdf" onclick="javascript:urchinTracker ('/downloads/sshistogram.ppt');"><strong>Presentation document</strong></a></p>      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <h2>What is an Optimal Bin Size? <a name="OptBin" id="OptBin"></a></h2>
+  <table width="700" height="1055" border="1">
+    <tr>
+      <td height="1049">When you make a histogram, you need to choose a bin size. How large (or small) the bin size should be?
+        <ul>
+          <li>If you choose too small bin size, the bar height at each bin suffers from significantly large statistical fluctuation due to the paucity of data samples in each bin. </li>
+          <li>If you choose too large bin size, the histogram can not represent the shape of the underlying distribution because the resolution isn't good enough. </li>
+        </ul>
+        <p>There is an optimal bin size that remedies these two opposite problems. The Java Applet below demonstrates the problem of the bin size selection. </p>
+        <p>In the applet, data is shown in the upper box and its histogram  in the bottom box. The data is an example from  Neuroscience: the data is a timing of neuronal firing (spikes), and they are obtained by repeating trials. Twenty sequences (trials) are drawn in the data box. However, the data can be anything (weight, height, or test score etc.), and can be one sequence. </p>
+        <p>The histogram is shown in the bottom box by red color. The blue line is the distribution (or rate) that produced data samples in the box above. Our aim is to choose a histogram that best represents this blue line. </p>
+        <p>
+          <applet code="BarHisto" codebase="java/bin" name="BarHisto" width="330" height="280" hspace="20" vspace="20" align="left" id="BarHisto">
+          </applet>
+          As a first step, change the bin size of a histogram in the applet  by using the scroll bar at the bottom. With too small a bin size, you get a jagged histogram. With too large a bin size, you obtain a flat histogram. </p>
+        <p>Now bring the scroll bar left to make the bin size thin, and push `redraw' button several times. The `redraw' button regenerates sample points based on the blue density distribution. Please confirm that the shape of the histogram drastically changes. If you are told to tell which of the two hills of the distribution is taller, can you tell? Although the right hill   is taller than the left  (blue line), the maximum height of a histogram appears at left side quite often. </p>
+        <p>As a second step,  bring your scroll bar right to make the bin size broad, and push `redraw' several times. Please confirm that the shape of the histogram does not change very much. In addition, you  may notice the right hand side of the hills is higher than the left hand side most of the time. However, can you tell where is the highest point of the hill? The resolution of the histogram is not good enough. </p>
+        <p>When you make a histogram, you need to choose a bin size that compromises the conflict between the sample error and the resolution. Now please check the `error check box' on. Yellow area appears, which indicates an error between the histogram and the underlying distribution. You could turn off the histogram check box. Please examine where the total error becomes the smallest by your eyes. You would find that the error becomes the smallest when you bring the scroll bar handle about one fourth of the total length from the left. Please push the `redraw' button several times to check the statistical fluctuation of errors. The optimal bin size of a histogram is the bin size that produces the smallest total errors (yellow area) on average of many realizations of sampled data (i.e. average over many pushes of `redraw' button). </p>
+        <p>At this moment, you might say, &quot;Okay, I now understand what an optimal bin size is. But, how can we know it? After all, we do not know the blue underlying distribution. So we can not know the errors. We can never know the optimal bin size from  data.&quot;</p>
+        <p>This statement is not true. Indeed, the errors can be estimated from the data. The above method  computes the estimated errors for several candidate bin sizes, and choose the bin size that produces the smallest `estimated' error. For the details of the method, please refer to Shimazaki and Shinomoto in <em>Neural Computation</em>. </p>
+      </td></tr>
+  </table>
+  <p>&nbsp;</p>
+  <h2>A Sample Matlab Program <a name="Matlab" id="Matlab"></a> </h2>
+  <table width="700" height="138" border="1">
+    <tr>
+      <td>
+	  Copy and Paste a sample program <a href="code/sample.m" onclick="javascript:urchinTracker ('/downloads/sample.m');">sample.m</a>
+      .
+      <pre width=80>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 2006 Author Hideaki Shimazaki
+% Department of Physics, Kyoto University
+% shimazaki at ton.scphys.kyoto-u.ac.jp
+% Please feel free to use/modify this program.
+%
+% Data: the duration for eruptions of
+% the Old Faithful geyser in Yellowstone National Park (in minutes)
+clear all;
+x = [4.37 3.87 4.00 4.03 3.50 4.08 2.25 4.70 1.73 4.93 1.73 4.62 ...
+     3.43 4.25 1.68 3.92 3.68 3.10 4.03 1.77 4.08 1.75 3.20 1.85 ...
+     4.62 1.97 4.50 3.92 4.35 2.33 3.83 1.88 4.60 1.80 4.73 1.77 ...
+     4.57 1.85 3.52 4.00 3.70 3.72 4.25 3.58 3.80 3.77 3.75 2.50 ...
+     4.50 4.10 3.70 3.80 3.43 4.00 2.27 4.40 4.05 4.25 3.33 2.00 ...
+     4.33 2.93 4.58 1.90 3.58 3.73 3.73 1.82 4.63 3.50 4.00 3.67 ...
+     1.67 4.60 1.67 4.00 1.80 4.42 1.90 4.63 2.93 3.50 1.97 4.28 ...
+     1.83 4.13 1.83 4.65 4.20 3.93 4.33 1.83 4.53 2.03 4.18 4.43 ...
+     4.07 4.13 3.95 4.10 2.27 4.58 1.90 4.50 1.95 4.83 4.12];
+
+x_min = min(x);
+x_max = max(x);
+
+N_MIN = 4;              % Minimum number of bins (integer)
+                        % N_MIN must be more than 1 (N_MIN > 1).
+N_MAX = 50;             % Maximum number of bins (integer)
+
+N = N_MIN:N_MAX;                      % # of Bins
+D = (x_max - x_min) ./ N;             % Bin Size Vector
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Computation of the Cost Function
+for i = 1: length(N)
+	edges = linspace(x_min,x_max,N(i)+1);	% Bin edges
+
+	ki = histc(x,edges);            % Count # of events in bins
+	ki = ki(1:end-1);
+
+	k = mean(ki);                   % Mean of event count
+	v = sum( (ki-k).^2 )/N(i);      % Variance of event count
+
+	C(i) = ( 2*k - v ) / D(i)^2;    % The Cost Function
+
+end
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Optimal Bin Size Selectioin
+[Cmin idx] = min(C);
+optD = D(idx);                         % *Optimal bin size
+edges = linspace(x_min,x_max,N(idx)+1);  % Optimal segmentation
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Display an Optimal Histogram and the Cost Function
+subplot(1,2,1); hist(x,edges); axis square;
+subplot(1,2,2); plot(D,C,'k.',optD,Cmin,'r*'); axis square;
+
+</pre></td>
+    </tr>
+  </table>
+  <h2>&nbsp;</h2>
+  <h2>A Sample R Program<a name="R" id="R"></a></h2>
+  <table width="700" height="138" border="1">
+    <tr>
+      <td><p>Copy and Paste a sample program <a href="code/sample.R" onclick="javascript:urchinTracker ('/downloads/sample.R');">sample.R</a>, then run
+
+        sshist(faithful[,1]) .  </p>
+        <pre width=80>
+#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# 2006 Author Hideaki Shimazaki
+# Department of Physics, Kyoto University
+# shimazaki at ton.scphys.kyoto-u.ac.jp
+# Please feel free to use/modify this program.
+sshist <- function(x){
+
+	N <- 2: 100
+	C <- numeric(length(N))
+	D <- C
+
+	for (i in 1:length(N)) {
+		D[i] <- diff(range(x))/N[i]
+
+		edges = seq(min(x),max(x),length=N[i])
+		hp <- hist(x, breaks = edges, plot=FALSE )
+		ki <- hp$counts
+
+		k <- mean(ki)
+		v <- sum((ki-k)^2)/N[i]
+
+		C[i] <- (2*k-v)/D[i]^2	#Cost Function
+	}
+
+	idx <- which.min(C)
+	optD <- D[idx]
+
+	edges <- seq(min(x),max(x),length=N[idx])
+	h = hist(x, breaks = edges )
+	rug(x)
+
+	return(h)
+}
+</pre></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <h2>A Sample Mathematica Program<a name="Mathematica" id="Mathematica"></a> </h2>
+  <table width="700" border="1">
+    <tr>
+      <td><p>Copy and Paste a sample program <a href="code/sample.nb" onclick="javascript:urchinTracker ('/downloads/sample.nb');">sample.nb</a>, then ctrl+shift. </p>
+        <pre>\!\(&lt;&lt; \ Graphics`Graphics`\n<br />  &lt;&lt; Statistics`DescriptiveStatistics`\[IndentingNewLine]<br />  \(x = {4.37, 3.87, 4.00\ , 4.03, \ 3.50, \ 4.08, \ 2.25, \ 4.70, \ 1.73, \ <br />        4.93, \ 1.73, \ 4.62, \ 3.43, \ 4.25, \ 1.68, \ 3.92, \ 3.68, \ <br />        3.10, \ 4.03, \ 1.77, \ 4.08, \ 1.75, \ 3.20, \ 1.85, 4.62, \ 1.97, \ <br />        4.50, \ 3.92, \ 4.35, \ 2.33, \ 3.83\ , 1.88, \ 4.60, \ 1.80, \ <br />        4.73, \ 1.77, \ 4.57, \ 1.85, \ 3.52, \ 4.00, \ 3.70, \ 3.72, \ <br />        4.25, \ 3.58, \ 3.80, \ 3.77, \ 3.75, \ 2.50, 4.50, \ 4.10, \ 3.70, \ <br />        3.80, \ 3.43, \ 4.00, \ 2.27, \ 4.40, \ 4.05, \ 4.25, \ 3.33, \ <br />        2.00, \ 4.33, \ 2.93, \ 4.58, \ 1.90, \ 3.58, \ 3.73, \ 3.73, \ <br />        1.82, \ 4.63, \ 3.50, \ 4.00, \ 3.67, \ 1.67, \ 4.60, \ 1.67, \ <br />        4.00, \ 1.80, \ 4.42, \ 1.90\ , 4.63, \ 2.93, \ 3.50, \ 1.97, \ <br />        4.28, \ 1.83, \ 4.13, \ 1.83, \ 4.65, \ 4.20, \ 3.93, \ 4.33, \ <br />        1.83, \ 4.53, \ 2.03, \ 4.18, \ 4.43, \ 4.07, \ 4.13, \ 3.95, \ <br />        4.10, \ 2.27, \ 4.58, \ 1.90, \ 4.50, \ 1.95, \ 4.83, \ <br />        4.12};\)\[IndentingNewLine]<br />  c = {}; &Delta; = {}; \ d = {}; p = {};\[IndentingNewLine]<br />  For[i = 1, <br />    i &lt; 50, \(i++\), \[IndentingNewLine]n = i + 3; \[IndentingNewLine]d = <br />      Append[d, \((Max[x] - Min[x])\)/n]; \[IndentingNewLine]ki = <br />      BinCounts[<br />        x, {Min[x], Max[x], <br />          d[\([i]\)]}]; \[IndentingNewLine] (*Cost\ Function\<br />*) \[IndentingNewLine]k\  = \ Mean[ki]; \[IndentingNewLine]v\  = \ <br />      VarianceMLE[ki]; \[IndentingNewLine]c = <br />      Append[c, \((2  k - v)\)/d[\([i]\)]\^2]; \[IndentingNewLine]p = <br />      Append[p, {d[\([i]\)], <br />          c[\([i]\)]}];\[IndentingNewLine]]\[IndentingNewLine] (*Optimal\ Bin\<br />\ Size\ Selection*) \[IndentingNewLine]<br />  \(idx = \(Ordering[c]\)[\([1]\)];\)\[IndentingNewLine]<br />  \(d\^*\) = d[\([idx]\)]\[IndentingNewLine]<br />  \(edges = {};\)\[IndentingNewLine]<br />  \(edges = <br />      Do[Append[edges, Min[x] + \(d\^*\)*i], {i, 0, <br />          idx + 3}];\)\[IndentingNewLine] (*Display\ an\ Optimized\ Histogram\<br />*) \[IndentingNewLine]<br />  \(Histogram[x, \ HistogramRange -&gt; {Min[x], Max[x]}, <br />      HistogramCategories -&gt; edges];\)\[IndentingNewLine]<br />  \(ListPlot[p];\)\)</pre></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <h2>&nbsp;</h2>
+  <p>&copy; 2006	Hideaki Shimazaki All rights reserved. <img src="http://face.u-aizu.ac.jp/counter/count.cgi?cf=126853/histogram|it=u" width="52" height="2" align="baseline" /></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</blockquote>
+<p>&nbsp;</p>
+<h2>&nbsp;</h2>
+<p>&nbsp;</p>
+</body>
+</html>
+</table></blockquote>

@@ -1,0 +1,11 @@
+/NumbDict countdictstack def
+1 dict begin
+/showpage {} def
+userdict begin
+-1.#IND00 1.#QNAN0 translate
+0.000000 1.#QNAN0 translate
+1.#INF00 -1.#IND00 scale
+0.000000 0.000000 translate
+(CostFunction.eps) run
+countdictstack NumbDict sub {end} repeat
+showpage

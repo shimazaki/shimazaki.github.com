@@ -1,0 +1,723 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<!--Converted with jLaTeX2HTML 2002-2-1 (1.70) JA patch-1.9
+patched version by:  Kenshi Muto, Debian Project.
+* modified by:  Shige TAKENO
+LaTeX2HTML 2002-2-1 (1.70),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>定常スパイク時系列の実現</TITLE>
+<META NAME="description" CONTENT="定常スパイク時系列の実現">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002-2-1 JA patch-1.9">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="../css/latex2html.css">
+
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="node4.html">
+<LINK REL="next" HREF="node8.html">
+<META http-equiv=Content-Type content="text/html; charset=shift_jis">
+<script src=http://www.google-analytics.com/urchin.js type=text/javascript></script>
+<script type=text/javascript>_uacct="UA-745872-1";urchinTracker();</script>
+</HEAD>
+
+<BODY>
+    <a name=top id=top> </a>
+    <div id=NaviLayer>  
+    <table width=180 border=0 cellpadding=0 cellspacing=0>
+    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
+    <tr><td height=28 valign=top><b>Spike Density Estimation</b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../histogram.html>Histogram Method</a></b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../kernel.html>Kernel Method</a></b></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Share it with your friend</b></td></tr>
+    <tr><td valign=top><a class=addthis_button href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcbd554189b9a7"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width=125 height=16 alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcbd554189b9a7"></script></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Tweet</b></td></tr>
+    <tr><td valign=top><iframe src=../../tweet.html width=180 height=600 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
+    <tr><td height=28 valign=top></td></tr>
+    </table></div>
+<!--Navigation Panel-->
+<A NAME="tex2html284"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html278"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html274"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html280"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html282"
+  HREF="node16.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html285"
+  HREF="node8.html">非定常スパイク時系列モデル</A>
+<B> Up:</B> <A NAME="tex2html279"
+  HREF="node4.html">定常スパイク時系列モデル</A>
+<B> Previous:</B> <A NAME="tex2html275"
+  HREF="node6.html">定常リニューアル過程</A>
+ &nbsp; <B>  <A NAME="tex2html281"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html283"
+  HREF="node16.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html286"
+  HREF="node7.html#SECTION02131000000000000000">分布の規格化と逆関数法</A>
+<UL>
+<LI><A NAME="tex2html287"
+  HREF="node7.html#SECTION02131100000000000000">指数分布</A>
+<LI><A NAME="tex2html288"
+  HREF="node7.html#SECTION02131200000000000000">ワイブル分布</A>
+<LI><A NAME="tex2html289"
+  HREF="node7.html#SECTION02131300000000000000">その他の分布</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html290"
+  HREF="node7.html#SECTION02132000000000000000">ハザード関数を用いたスパイク生成</A>
+<LI><A NAME="tex2html291"
+  HREF="node7.html#SECTION02133000000000000000">スパイク時系列の作成</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION02130000000000000000">
+定常スパイク時系列の実現</A>
+</H1>
+
+<P>
+本章では定常スパイク時系列を計算機上で実現するための数値計算法を紹介する. スパイク時系列の実現するためには, 特定の分布に従う確率変数を生成する必要がある. このとき様々な確率分布を一様分布に標準化して考えるのが基本になる. 同様に, リニューアル過程の瞬間スパイク生成率を規格化し, ポアソン過程に標準化して考えることもできる.
+この考え方は, 次節以降で非定常のスパイク時系列を実現する際に用いられる時間伸縮理論の基礎になる.
+
+<P>
+
+<H2><A NAME="SECTION02131000000000000000">
+分布の規格化と逆関数法</A>
+</H2>
+
+<P>
+指数分布・ガンマ分布・ワイブル分布・逆ガウス分布等のスパイク密度分布に従う確率変数を生成したい. 特定の分布に従う確率変数を生成する方法に逆関数法がある. 逆関数法<A NAME="670"></A>を理解するために,
+次のような２つの確率変数の確率密度分布の関係を考えよう. 確率密度分布<!-- MATH
+ $f_{X}\left(  x\right)$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img188.gif"
+ ALT="$ f_{X}\left( x\right) $">に従う確率変数（乱数）<IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$ X$">と,
+<IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$ X$">と<!-- MATH
+ $Y=g\left(  X\right)$
+ -->
+<IMG
+ WIDTH="76" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img189.gif"
+ ALT="$ Y=g\left( X\right) $">なる関係がある変数<IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img190.gif"
+ ALT="$ Y$">を考える.
+<IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$ X$">が確率変数だから<IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img190.gif"
+ ALT="$ Y$">も確率変数である.
+このとき確率変数<IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img190.gif"
+ ALT="$ Y$">の確率密度分布<!-- MATH
+ $f_{Y}\left(
+y\right)$
+ -->
+<IMG
+ WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.gif"
+ ALT="$ f_{Y}\left(
+y\right) $">は<!-- MATH
+ $f_{X}\left(  x\right)  ,g\left(  x\right)$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img192.gif"
+ ALT="$ f_{X}\left( x\right) ,g\left( x\right) $">を用いてどのように表現されるだろうか. 確率密度の保存則<!-- MATH
+ $f_{Y}\left(  y\right)  \left\vert dy\right\vert =f_{X}\left(
+x\right)  \left\vert dx\right\vert$
+ -->
+<IMG
+ WIDTH="168" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img193.gif"
+ ALT="$ f_{Y}\left( y\right) \left\vert dy\right\vert =f_{X}\left(
+x\right) \left\vert dx\right\vert $">から<IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img190.gif"
+ ALT="$ Y$">の確率密度分布<!-- MATH
+ $f_{Y}\left(  y\right)$
+ -->
+<IMG
+ WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.gif"
+ ALT="$ f_{Y}\left(
+y\right) $">は
+<!-- MATH
+ \begin{displaymath}
+f_{Y}\left(  y\right)  =f_{X}\left(  x\right)  \left\vert \frac{dx}%
+{dy}\right\vert =f_{X}\left(  x\right)  \left\vert g^{\prime}\left(  x\right)
+\right\vert ^{-1}%
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="277" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img194.gif"
+ ALT="$\displaystyle f_{Y}\left( y\right) =f_{X}\left( x\right) \left\vert \frac{dx}%
+...
+... =f_{X}\left( x\right) \left\vert g^{\prime}\left( x\right)
+\right\vert ^{-1}%
+$">
+</DIV><P></P>
+で与えられる. さて,
+この変数変換に伴う密度分布の変換式は, 一般に成り立つ.
+そこで特に<IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.gif"
+ ALT="$ y$">と<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.gif"
+ ALT="$ x$">の関係として<!-- MATH
+ \begin{displaymath}
+y=g\left(  x\right)  =\int_{-\infty}^{x}f_{X}\left(  u\right)  du
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="186" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img196.gif"
+ ALT="$\displaystyle y=g\left( x\right) =\int_{-\infty}^{x}f_{X}\left( u\right) du
+$">
+</DIV><P></P>
+を考えてみよう. ここで<!-- MATH
+ $f_{X}\left(  x\right)$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img188.gif"
+ ALT="$ f_{X}\left( x\right) $">は<IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$ X$">自身の密度分布であるから, <!-- MATH
+ $g\left(  x\right)$
+ -->
+<IMG
+ WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img197.gif"
+ ALT="$ g\left( x\right) $">として<IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$ X$">の分布関数<!-- MATH
+ $F_{X}\left(  x\right)$
+ -->
+<IMG
+ WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img198.gif"
+ ALT="$ F_{X}\left( x\right) $">を選んだことになる.
+従って<!-- MATH
+ $Y\in\left[  0,1\right]$
+ -->
+<IMG
+ WIDTH="68" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img199.gif"
+ ALT="$ Y\in\left[ 0,1\right] $">であることは明らか. このとき<IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img190.gif"
+ ALT="$ Y$">の密度分布は<!-- MATH
+ \begin{displaymath}
+p\left(  y\right)  =f_{X}\left(  x\right)  \left\vert g^{\prime}\left(
+x\right)  \right\vert ^{-1}=f_{X}\left(  x\right)  \left\vert f_{X}\left(
+x\right)  \right\vert ^{-1}=1.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="338" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img200.gif"
+ ALT="$\displaystyle p\left( y\right) =f_{X}\left( x\right) \left\vert g^{\prime}\left...
+...{-1}=f_{X}\left( x\right) \left\vert f_{X}\left(
+x\right) \right\vert ^{-1}=1.
+$">
+</DIV><P></P>
+つまり, 確率変数<IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img190.gif"
+ ALT="$ Y$">は<!-- MATH
+ $\left[
+0,1\right]$
+ -->
+<IMG
+ WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img201.gif"
+ ALT="$ \left[
+0,1\right] $">の区間内に一様分布する一様乱数である. 式のように変数変換をすると,
+密度が小さくなるところでは, 変換の傾きが小さくなり<IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.gif"
+ ALT="$ y$">軸上に凝縮する効果が働く. 逆に密度が大きくなるところで傾きが大きくなるから, <IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.gif"
+ ALT="$ y$">軸上で疎になるような効果が働く. このように密度を相殺するように写像される. 結果として確率変数<IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img190.gif"
+ ALT="$ Y$">は<!-- MATH
+ $\left[  0,1\right]$
+ -->
+<IMG
+ WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img201.gif"
+ ALT="$ \left[
+0,1\right] $">の区間に一様に分布することになる.
+
+<P>
+そこで逆に, <IMG
+ WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.gif"
+ ALT="$ \xi$">を<!-- MATH
+ $\left[  0,1\right]$
+ -->
+<IMG
+ WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img201.gif"
+ ALT="$ \left[
+0,1\right] $">の区間の一様乱数として,
+<!-- MATH
+ \begin{displaymath}
+\xi=\int_{-\infty}^{\eta}f_{X}\left(  x\right)  dx
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="132" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img203.gif"
+ ALT="$\displaystyle \xi=\int_{-\infty}^{\eta}f_{X}\left( x\right) dx
+$">
+</DIV><P></P>
+を満たす<IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.gif"
+ ALT="$ \eta$">を求めると, <IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.gif"
+ ALT="$ \eta$">は密度分布<!-- MATH
+ $f_{X}\left(
+\eta\right)$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img205.gif"
+ ALT="$ f_{X}\left(
+\eta\right) $">に従う. <!-- MATH
+ $F_{X}\left(  \eta\right)
+=\int_{-\infty}^{\eta}f_{X}\left(  x\right)  dx$
+ -->
+<IMG
+ WIDTH="169" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img206.gif"
+ ALT="$ F_{X}\left( \eta\right)
+=\int_{-\infty}^{\eta}f_{X}\left( x\right) dx$">と書けば, <!-- MATH
+ $\eta=F^{-1}\left(  \xi\right)$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ \eta=F^{-1}\left( \xi\right) $">である.
+このようにして, 一様乱数<IMG
+ WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.gif"
+ ALT="$ \xi$">から逆関数<!-- MATH
+ $F_{X}^{-1}\left(  \xi\right)$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.gif"
+ ALT="$ F_{X}^{-1}\left( \xi\right) $">を用いて,
+密度分布<!-- MATH
+ $f_{X}\left(  \eta\right)  =F_{X}^{\prime
+}\left(  \eta\right)$
+ -->
+<IMG
+ WIDTH="115" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img209.gif"
+ ALT="$ f_{X}\left( \eta\right) =F_{X}^{\prime
+}\left( \eta\right) $">に従う乱数<IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.gif"
+ ALT="$ \eta$">を作成する方法を逆関数法という.
+
+<P>
+
+<H3><A NAME="SECTION02131100000000000000">
+指数分布</A>
+</H3>
+
+<P>
+指数分布の場合は逆関数が解析的に求められる. 平均<IMG
+ WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img122.gif"
+ ALT="$ 1/\lambda$">の指数分布を考え<!-- MATH
+ \begin{displaymath}
+\xi=\int_{0}^{\eta}\lambda e^{-\lambda x}dx=\left[  -e^{-\lambda x}\right]
+_{0}^{\eta}=1-e^{-\lambda\eta}%
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="288" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$\displaystyle \xi=\int_{0}^{\eta}\lambda e^{-\lambda x}dx=\left[ -e^{-\lambda x}\right]
+_{0}^{\eta}=1-e^{-\lambda\eta}%
+$">
+</DIV><P></P>
+を<IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.gif"
+ ALT="$ \eta$">に関して解いて,<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+\eta=-\lambda^{-1}\log\xi.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="111" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img211.gif"
+ ALT="$\displaystyle \eta=-\lambda^{-1}\log\xi.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.19)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+ただし<IMG
+ WIDTH="39" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img212.gif"
+ ALT="$ 1-\xi$">は<IMG
+ WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.gif"
+ ALT="$ \xi$">で置き換えた. 一様乱数<IMG
+ WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.gif"
+ ALT="$ \xi$">を生成し, 上式の変換を行えば平均<IMG
+ WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img122.gif"
+ ALT="$ 1/\lambda$">の指数分布に従う確率変数を生成できる.
+
+<P>
+
+<H3><A NAME="SECTION02131200000000000000"></A><A NAME="720"></A>
+<BR>
+ワイブル分布
+</H3>
+
+<P>
+ワイブル分布の分布関数から<!-- MATH
+ \begin{displaymath}
+\xi=F\left(  \eta;\lambda,\kappa\right)  =1-\exp\left[  -\left\{
+\Gamma\left(  1+1/\kappa\right)  \lambda\eta\right\}  ^{\kappa}\right]  .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="330" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img213.gif"
+ ALT="$\displaystyle \xi=F\left( \eta;\lambda,\kappa\right) =1-\exp\left[ -\left\{
+\Gamma\left( 1+1/\kappa\right) \lambda\eta\right\} ^{\kappa}\right] .
+$">
+</DIV><P></P>
+<IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.gif"
+ ALT="$ t$">に関して解いて,<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+\eta=-\frac{\left[  -\log\xi\right]  ^{1/\kappa}}{\Gamma\left(  1+1/\kappa
+\right)  \lambda}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="144" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img214.gif"
+ ALT="$\displaystyle \eta=-\frac{\left[ -\log\xi\right] ^{1/\kappa}}{\Gamma\left( 1+1/\kappa \right) \lambda}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.20)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+これより一様乱数<IMG
+ WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.gif"
+ ALT="$ \xi$">を生成し, 上式の変換を行えばワイブル分布に従う確率変数を生成できる. <IMG
+ WIDTH="50" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img215.gif"
+ ALT="$ -\log\xi
+$">が平均<IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img216.gif"
+ ALT="$ 1$">の指数分布に従うことに注意.
+
+<P>
+
+<H3><A NAME="SECTION02131300000000000000">
+その他の分布</A>
+</H3>
+
+<P>
+逆関数を解析的に求めることができないときにも, 所望の分布に従う確率変数を生成することができる. 一様乱数<IMG
+ WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.gif"
+ ALT="$ \xi$">を生成し, 数値積分により<!-- MATH
+ $\xi=F\left(  \eta\right)  =\int_{-\infty}^{\eta
+}f\left(  x\right)  dx$
+ -->
+<IMG
+ WIDTH="177" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img217.gif"
+ ALT="$ \xi=F\left( \eta\right) =\int_{-\infty}^{\eta
+}f\left( x\right) dx$">を満たす<IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.gif"
+ ALT="$ \eta$">を求めればよい. ガンマ分布・逆ガウス分布に従う確率変数はこの方法で得ることができる.
+
+<P>
+
+<H2><A NAME="SECTION02132000000000000000">
+ハザード関数を用いたスパイク生成</A>
+</H2>
+
+<P>
+ハザード関数からスパイクを生成する場合, 分布関数とハザード関数の関係式に注目する.
+<!-- MATH
+ \begin{displaymath}
+F\left(  t\right)  =1-\exp\left\{  -\int_{0}^{t}r\left(  u\right)  du\right\}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="228" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img218.gif"
+ ALT="$\displaystyle F\left( t\right) =1-\exp\left\{ -\int_{0}^{t}r\left( u\right) du\right\}
+$">
+</DIV><P></P>
+を変形して<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+\int_{0}^{t}r\left(  u\right)  du=-\log\left[  1-F\left(  t\right)  \right]  .
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="216" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img219.gif"
+ ALT="$\displaystyle \int_{0}^{t}r\left( u\right) du=-\log\left[ 1-F\left( t\right) \right] .$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.21)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+さて, <IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.gif"
+ ALT="$ \eta$">をスパイク密度関数<!-- MATH
+ $f\left(  t\right)$
+ -->
+<IMG
+ WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.gif"
+ ALT="$ f\left( t\right) $">(分布関数<!-- MATH
+ $F\left(  t\right)$
+ -->
+<IMG
+ WIDTH="37" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img221.gif"
+ ALT="$ F\left( t\right) $">)に従う確率変数とすると, <!-- MATH
+ $F\left(
+\eta\right)$
+ -->
+<IMG
+ WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img222.gif"
+ ALT="$ F\left(
+\eta\right) $">は一様乱数になり, <!-- MATH
+ $-\log\left[  1-F\left(  \eta\right)  \right]$
+ -->
+<IMG
+ WIDTH="115" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.gif"
+ ALT="$ -\log\left[ 1-F\left( \eta\right) \right] $">は指数乱数になる. そこで, 指数分布に従う乱数<!-- MATH
+ $\zeta\left(  =-\log\xi\right)$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img224.gif"
+ ALT="$ \zeta\left( =-\log\xi\right) $">を生成し,
+<!-- MATH
+ \begin{displaymath}
+\zeta=\int_{0}^{\eta}r\left(  u\right)  du
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="112" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img225.gif"
+ ALT="$\displaystyle \zeta=\int_{0}^{\eta}r\left( u\right) du
+$">
+</DIV><P></P>
+を満たす<IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.gif"
+ ALT="$ \eta$">を求めれば, <IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.gif"
+ ALT="$ \eta$">はスパイク密度関数<!-- MATH
+ $f\left(  t\right)$
+ -->
+<IMG
+ WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.gif"
+ ALT="$ f\left( t\right) $">に従う確率変数になる. この手法は次節以降で非定常のスパイク時系列を実現する際に用いられる時間伸縮理論の基礎になる.
+
+<P>
+
+<H2><A NAME="SECTION02133000000000000000">
+スパイク時系列の作成</A>
+</H2>
+
+<P>
+リニューアル過程ではスパイク間隔<!-- MATH
+ $\left\{
+T_{1},T_{2},\ldots,T_{n}\right\}$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img226.gif"
+ ALT="$ \left\{
+T_{1},T_{2},\ldots,T_{n}\right\} $">を独立に生成してよい. <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img227.gif"
+ ALT="$ i$">番目のスパイク時刻を<!-- MATH
+ $t_{i}%
+=T_{1}+T_{2}+,\ldots,+T_{i}$
+ -->
+<IMG
+ WIDTH="164" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img228.gif"
+ ALT="$ t_{i}%
+=T_{1}+T_{2}+,\ldots,+T_{i}$">として, スパイク時系列<!-- MATH
+ $\left\{  t_{1},t_{2},\ldots
+,t_{n}\right\}$
+ -->
+<IMG
+ WIDTH="103" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img229.gif"
+ ALT="$ \left\{ t_{1},t_{2},\ldots
+,t_{n}\right\} $">が得られる. 
+
+<P>
+ただし初期スパイクのスパイク密度分布は平衡分布<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+f_{1}\left(  t\right)  =\lambda\left[  1-F\left(  t\right)  \right]
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="142" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img230.gif"
+ ALT="$\displaystyle f_{1}\left( t\right) =\lambda\left[ 1-F\left( t\right) \right]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.22)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+で与える. ここで <!-- MATH
+ $1/\lambda=\int
+xf\left(  x\right)  dx$
+ -->
+<IMG
+ WIDTH="127" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img231.gif"
+ ALT="$ 1/\lambda=\int
+xf\left( x\right) dx$">. 初期スパイクのみを平衡分布から生成した過程を平衡リニューアル過程<A NAME="753"></A>と呼ぶ.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html284"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html278"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html274"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html280"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html282"
+  HREF="node16.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html285"
+  HREF="node8.html">非定常スパイク時系列モデル</A>
+<B> Up:</B> <A NAME="tex2html279"
+  HREF="node4.html">定常スパイク時系列モデル</A>
+<B> Previous:</B> <A NAME="tex2html275"
+  HREF="node6.html">定常リニューアル過程</A>
+ &nbsp; <B>  <A NAME="tex2html281"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html283"
+  HREF="node16.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+&copy; 2007 2008 2009 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki, Ph.D.</a>
+</ADDRESS>
+</BODY>
+</HTML>

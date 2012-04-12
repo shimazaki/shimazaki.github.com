@@ -1,0 +1,8 @@
+-q
+-dNOPAUSE
+-sDEVICE=pbmraw
+-sOUTPUTFILE=tmpps1.pbm
+-r300
+-g1653x0
+tmp$.ps
+quit.ps

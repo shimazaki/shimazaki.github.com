@@ -1,0 +1,3302 @@
+%2multibyte Version: 5.50.0.2952 CodePage: 932
+\documentclass{jbook}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{makeidx}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{fancybox}
+%\usepackage{hyperref} Warning: this prohibits image display
+%\usepackage{appendix}%
+\usepackage[dvips]{graphicx}
+\setcounter{MaxMatrixCols}{30}
+%TCIDATA{OutputFilter=latex2.dll}
+%TCIDATA{Version=5.50.0.2952}
+%TCIDATA{Codepage=932}
+%TCIDATA{CSTFile=jbook55.cst}
+%TCIDATA{Created=Tuesday, January 19, 2010 23:45:50}
+%TCIDATA{LastRevised=Thursday, January 21, 2010 03:57:56}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\jshell\Japanese Book[jbook]">}
+%BeginMSIPreambleData
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+%EndMSIPreambleData
+\newtheorem{theorem}{定理}
+\newtheorem{acknowledgement}[theorem]{承認}
+\newtheorem{algorithm}[theorem]{アルゴリズム}
+\newtheorem{axiom}[theorem]{公理}
+\newtheorem{case}[theorem]{場合}
+\newtheorem{claim}[theorem]{主張}
+\newtheorem{conclusion}[theorem]{結論}
+\newtheorem{condition}[theorem]{条件}
+\newtheorem{conjecture}[theorem]{推論}
+\newtheorem{corollary}[theorem]{系}
+\newtheorem{criterion}[theorem]{基準}
+\newtheorem{definition}[theorem]{定義}
+\newtheorem{example}[theorem]{例}
+\newtheorem{exercise}[theorem]{練習}
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{notation}[theorem]{記号}
+\newtheorem{problem}[theorem]{問題}
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{remark}[theorem]{記事}
+\newtheorem{solution}[theorem]{解法}
+\newtheorem{summary}[theorem]{要約}
+\newenvironment{proof}[1][証明]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\makeindex
+\begin{document}
+
+\frontmatter
+\title{\textbf{神経科学のため%
+の統計}}
+\author{島崎秀昭\\ マサチューセッツ%
+工科大学\\ 理化学研究所 脳科%
+学総合研究センター}
+\maketitle
+\tableofcontents
+
+\chapter*{はじめに}
+
+\markboth{序文}{序文}
+
+このページは, 神経%
+スパイク時系列デ%
+ータを扱う際の基%
+本事項をまとめた%
+ものです.
+
+\bigskip 内容に不備のあ%
+る場合はメールに%
+てご連絡頂ければ%
+幸いです.
+
+\pagebreak 島崎秀昭 2008年8月
+
+\quad\mainmatter
+
+
+\part{スパイク時系列モ%
+デル}
+
+\chapter{定常スパイク時%
+系列モデル}
+
+\section{定常ポワソン過程}
+
+\subsection{指数分布}
+
+$X$が確率分布関数$f\left(  x\right)
+=\lambda e^{-\lambda x}$\marginpar{確率密度%
+分布(probability density function, p.d.f.)
+\par%
+\[
+f\left(  t\right)  =\lim_{\Delta x\rightarrow0+}\frac{P\left(  t<X\leq
+t+\Delta\right)  }{\Delta}%
+\]
+{}}（ただし$x$は非負の%
+実数）に従うときに,
+$X$は指数分布%
+\index{exponential distribution}%
+に従うという。指%
+数分布は記憶のな%
+い(memoryless)分布と言われる
+(無記憶性: loss of memory property, memoryless
+property%
+\index{memoryless property}%
+)。ここで記憶がな%
+いとは$s,t\geq0$に対して%
+\begin{equation}
+P\left(  X>s+t|X>t\right)  =P\left(  X>s\right)  \label{memoryless}%
+\end{equation}
+が成り立つことを%
+言う. 例として, 数年%
+前に買った冷蔵庫%
+があったとしよう.
+購入当初は新品だ%
+った冷蔵庫もやが%
+て古くなり, いつか%
+は壊れてしまう. こ%
+こで冷蔵庫が壊れ%
+るまでの耐久年数%
+の分布が記憶のな%
+しの特徴を持つと%
+しよう. 購入した冷%
+蔵庫は$t$年経った現%
+在も順調に動いて%
+いる. さて, この冷蔵%
+庫はあと何年もつ%
+だろうか. 今後$s$年も%
+つ確率は条件付き%
+確率$P\left(  X>s+t|X>t\right)  $で表す%
+ことができる. とこ%
+ろが記憶なしの特%
+徴\ref{memoryless}を使えば, こ%
+の確率は$P\left(  X>s\right)  $とな%
+ってしまう. つまり,
+記憶なしとは, $t$年間%
+動いていたことが%
+これから先の予測%
+にとって, なんの情%
+報にもならないと%
+いうことを意味し%
+ている.
+
+さて, ここで問題と%
+なるのは, どのよう%
+な分布が記憶なし%
+の特徴を持つかで%
+ある. Bayesの定理から%
+\begin{align*}
+P\left(  X>s+t|X>t\right)   &  =\frac{P\left(  X>s+t,X>t\right)  }{P\left(
+X>t\right)  }\\
+&  =\frac{P\left(  X>s+t\right)  }{P\left(  X>t\right)  }%
+\end{align*}
+これを\ref{memoryless}に代入%
+して%
+\[
+P\left(  X>s+t\right)  =P\left(  X>s\right)  P\left(  X>t\right)
+\]
+そこで関係式$w\left(  s+t\right)
+=w\left(  s\right)  w\left(  t\right)  $を満た%
+す関数はどんな関%
+数か調べてみよう%
+\marginpar{対数をとると%
+\[
+\log w\left(  s+t\right)  =\log w\left(  s\right)  +\log w\left(  t\right)
+\]
+\par
+この関係はextensive propertyと%
+呼ばれ、記憶なし%
+の特徴からくる重%
+要な結果である。}.
+上の式から次の式%
+が成り立つことが%
+わかる.
+\[
+w\left(  1\right)  =w\left(  \frac{1}{n}+\frac{1}{n}+\cdots+\frac{1}%
+{n}\right)  =\left\{  w\left(  \frac{1}{n}\right)  \right\}  ^{n}%
+\]
+変数変換をして$w\left(  1/n\right)
+=w\left(  1\right)  ^{1/n}$とも書ける.
+そこで$x=1/n$とおけば, $w\left(
+x\right)  =\left\{  w\left(  1\right)  \right\}  ^{x}=e^{x\ln w\left(
+1\right)  }$. すなわち$w\left(  x\right)  =e^{-\lambda
+x}$\quad （ただし$\lambda=-\ln w\left(  1\right)
+$）. 従って生存関数%
+は指数関数%
+
+\[
+P\left(  X>x\right)  =e^{-\lambda x}%
+\]
+であることがわかる.
+これにより分布関%
+数は%
+
+\[
+f\left(  x\right)  =\lambda e^{-\lambda x}%
+\]
+指数分布となるこ%
+とが示せる.
+
+イベント間隔が指%
+数分布に従う点過%
+程をポワソン過程%
+という. ポワソン過%
+程とは記憶のない%
+事象の生成過程で%
+ある. ポワソン過程%
+は神経科学における,
+神経細胞の発火（%
+スパイク）を表現%
+する上でも, 基本的%
+な点過程である. 以%
+下では, イベントの%
+ことをスパイクと%
+表現する.
+
+\subsection{一定時間内のス%
+パイクの個数（ポ%
+ワソン分布）\label{sec:Count_Poisson}}
+
+スパイク間隔の分%
+布が指数分布に従%
+う場合に, $T$秒間の間%
+に生じるスパイク%
+の個数$N_{T}$の分布を求%
+めよう. まず, ひとつ%
+もスパイクが生じ%
+ない確率を求める.
+これは一つ目のス%
+パイク間隔が$T$より%
+大きいことを意味%
+するから, 生存関数%
+で与えられる.
+\[
+P\left(  N_{T}=0\right)  =\bar{F}\left(  T\right)  =e^{-\lambda T}%
+\]
+次に一つのスパイ%
+ク（$N_{T}=1$）が生じる%
+確率を求める. 一つ%
+目のスパイク間隔を%
+$s_{1}$とすると, 二つ目%
+のスパイク間隔は$T-s_{1}%
+$より大きい必要が%
+ある. $s_{1}$は$[0,T)$の範囲%
+を取りうるからす%
+べての可能性を尽%
+くして%
+\begin{align*}
+P\left(  N_{T}=1\right)   &  =\int_{0}^{T}f\left(  s_{1}\right)  F\left(
+T-s_{1}\right)  ds_{1}\\
+&  =\int_{0}^{T}\lambda e^{-\lambda s_{1}}e^{-\lambda\left(  T-s_{1}\right)
+}ds_{1}\\
+&  =\lambda Te^{-\lambda T}%
+\end{align*}
+同様にして, 二つの%
+スパイク（$N_{T}=2$）が%
+生じる場合は%
+\begin{align*}
+P\left(  N_{T}=2\right)   &  =\int_{0}^{T}ds_{1}\int_{s_{1}}^{T}ds_{1}f\left(
+s_{1}\right)  f\left(  s_{2}\right)  \bar{F}\left(  T-s_{1}-s_{2}\right) \\
+&  =\int_{0}^{T}ds_{1}\int_{s_{1}}^{T}ds_{2}\lambda e^{-\lambda s_{1}}\lambda
+e^{-\lambda\left(  s_{2}-s_{1}\right)  }e^{-\lambda\left(  T-s_{2}\right)  }\\
+&  =\int_{0}^{T}ds_{1}\lambda^{2}e^{-\lambda T}\left(  T-s_{1}\right) \\
+&  =\frac{1}{2}\left(  \lambda T\right)  ^{2}e^{-\lambda T}%
+\end{align*}
+これを繰り返すと,
+一般にスパイク数%
+の分布は%
+\begin{equation}
+P\left(  N_{t}=n\right)  =\frac{1}{n!}\left(  \lambda T\right)  ^{n}%
+e^{-\lambda T} \label{Poisson distribution}%
+\end{equation}
+となる. この分布は%
+ポワソン分布\marginpar{Poisson
+Distribution}%
+\index{Poisson distribution}%
+と呼ばれる.%
+%TCIMACRO{\FRAME{ftbFU}{4.0011in}{2.6642in}{0pt}{\Qcb{\U{30dd}\U{30ef}%
+%\U{30bd}\U{30f3}\U{5206}\U{5e03}$\lambda=1,3,5$}}{}{Plot}%
+%{\special{ language "Scientific Word";  type "MAPLEPLOT";  width 4.0011in;
+%height 2.6642in;  depth 0pt;  display "USEDEF";  plot_snapshots TRUE;
+%mustRecompute FALSE;  lastEngine "MuPAD";  xmin "0";  xmax "10";
+%xviewmin "-0.0010000010002";  xviewmax "10.0010000010002";
+%yviewmin "-0.000036686593063";  yviewmax "0.367916229141987";  rangeset "X";
+%plottype 4;  labeloverrides 2;
+%axesFont "Times New Roman,12,0000000000,useDefault,normal";  numpoints 100;
+%plotstyle "patchnogrid";  axesstyle "normal";  axestips FALSE;
+%xis \TEXUX{k};  var1name \TEXUX{$k$};
+%function \TEXUX{$\limfunc{PoissonDen}\left( \left\lceil k\right\rceil ;1\right) $};
+%linecolor "blue";  linestyle 1;  pointplot TRUE;  discont FALSE;
+%pointstyle "box";  linethickness 3;  lineAttributes "Solid";
+%var1range "0,10";  num-x-gridlines 10;  curveColor "[flat::RGB:0x000000ff]";
+%curveStyle "Point";  discont FALSE;  rangeset "X";
+%function \TEXUX{$\limfunc{PoissonDen}\left( \left\lceil k\right\rceil ;3\right) $};
+%linecolor "maroon";  linestyle 1;  pointplot TRUE;  discont FALSE;
+%pointstyle "box";  linethickness 3;  lineAttributes "Solid";
+%var1range "0,10";  num-x-gridlines 10;  curveColor "[flat::RGB:0x00800000]";
+%curveStyle "Point";  discont FALSE;  rangeset "X";
+%function \TEXUX{$\limfunc{PoissonDen}\left( \left\lceil k\right\rceil ;5\right) $};
+%linecolor "green";  linestyle 1;  pointplot TRUE;  discont FALSE;
+%pointstyle "box";  linethickness 3;  lineAttributes "Solid";
+%var1range "0,10";  num-x-gridlines 10;  curveColor "[flat::RGB:0x0000ff00]";
+%curveStyle "Point";  discont FALSE;  rangeset "X";
+%function \TEXUX{$\limfunc{PoissonDen}\left( \left\lceil k\right\rceil ;1\right) $};
+%linecolor "blue";  linestyle 1;  discont FALSE;  pointstyle "box";
+%linethickness 1;  lineAttributes "Solid";  var1range "0,10";
+%num-x-gridlines 10;  curveColor "[flat::RGB:0x000000ff]";  curveStyle "Line";
+%discont FALSE;  rangeset "X";
+%function \TEXUX{$\limfunc{PoissonDen}\left( \left\lceil k\right\rceil ;3\right) $};
+%linecolor "red";  linestyle 1;  discont FALSE;  pointstyle "box";
+%linethickness 1;  lineAttributes "Solid";  var1range "0,10";
+%num-x-gridlines 10;  curveColor "[flat::RGB:0x00ff0000]";  curveStyle "Line";
+%discont FALSE;  rangeset "X";
+%function \TEXUX{$\limfunc{PoissonDen}\left( \left\lceil k\right\rceil ;5\right) $};
+%linecolor "green";  linestyle 1;  discont FALSE;  pointstyle "box";
+%linethickness 1;  lineAttributes "Solid";  var1range "0,10";
+%num-x-gridlines 10;  curveColor "[flat::RGB:0x0000ff00]";  curveStyle "Line";
+%discont FALSE;  rangeset "X";  VCamFile 'KWK9HT02.xvz';valid_file "T";
+%tempfilename 'KWK9HT02.wmf';tempfile-properties "XPR";}} }%
+%BeginExpansion
+\begin{figure}
+[tb]
+\begin{center}
+\includegraphics[
+natheight=2.664200in,
+natwidth=4.001100in,
+height=2.6642in,
+width=4.0011in
+]%
+{G:/10/proj/book/graphics/book__1.pdf}%
+\caption{ポワソン分布$\lambda=1,3,5$}%
+\end{center}
+\end{figure}
+%EndExpansion
+
+
+\begin{problem}
+ポワソン分布の平%
+均および分散が$n$に%
+なることを確かめよ.
+
+\begin{solution}
+\begin{problem}
+ポワソン分布の特%
+性関数が次式で表%
+されることを導け.
+\begin{equation}
+f^{\ast}\left(  u\right)  =\exp\left[  \lambda\left(  e^{iu}-1\right)
+\right]
+\end{equation}
+
+
+\begin{solution}
+指数関数の定義$\exp\left[  x\right]
+=\sum_{n=0}^{\infty}\frac{x^{n}}{n!}$を用いる.%
+\begin{align*}
+f^{\ast}\left(  u\right)   &  =E\left[  e^{-iun}\right] \\
+&  =\sum_{n=0}^{\infty}\frac{e^{-\lambda}\lambda^{n}}{n!}e^{-iun}\\
+&  =e^{-\lambda}\sum_{n=0}^{\infty}\frac{\left[  e^{-iu+\ln\lambda}\right]
+^{n}}{n!}\\
+&  =e^{-\lambda}\exp\left[  e^{-iu+\ln}\lambda\right] \\
+&  =\exp\left[  \lambda\left(  e^{iu}-1\right)  \right]
+\end{align*}
+
+\end{solution}
+\end{problem}
+\end{solution}
+\end{problem}
+
+\subsection{一定スパイク数%
+が生じるのにかか%
+る時間（アーラン%
+分布）\label{sec:Erlang}}
+
+記憶なしの特徴を%
+持つスパイクが$n$回%
+起こるまでの時間が%
+$T$秒となる確率を計%
+算しよう. $n=1$の場合は%
+指数分布になるこ%
+とは見た. そこで, 次%
+に$n=2$の場合を考えよう.
+２回目のスパイク%
+の時刻が$T$である確%
+率である. １回目の%
+スパイクが起こる%
+時刻を$s_{1}$とすると,
+その確率は$f\left(  s_{1}\right)  $%
+で与えられる. ２回%
+目のスパイクが$T$で%
+生じる確率は$s_{1}$は$f\left(
+T-s_{1}\right)  $である. この２%
+つを掛け合わせた%
+確率が, ２つのスパ%
+イクが起こるまで%
+の時間が$T$である確%
+率になる. $s_{1}$は$(0,T]$の%
+どれを取ることも%
+できるから, すべて%
+の可能性の和をと%
+って
+\begin{align*}
+f\left(  T\right)   &  =\int_{0}^{T}ds_{1}f\left(  s_{1}\right)  f\left(
+T-s_{1}\right) \\
+&  =\int_{0}^{T}ds_{1}\lambda e^{-\lambda s_{1}}\lambda e^{-\lambda\left(
+T-s_{1}\right)  }\\
+&  =\lambda^{2}Te^{-\lambda T}%
+\end{align*}
+となる. 同様にして,
+$n=3$の場合は%
+\begin{align*}
+f\left(  T\right)   &  =\int_{0}^{T}ds_{1}\int_{0}^{T-s_{1}}ds_{2}f\left(
+s_{1}\right)  f\left(  s_{2}\right)  f\left(  T-s_{1}-s_{2}\right) \\
+&  =\int_{0}^{T}ds_{1}\int_{0}^{T-s_{1}}ds_{2}\lambda e^{-\lambda s_{1}%
+}\lambda e^{-\lambda s_{2}}\lambda e^{-\lambda\left(  T-s_{1}-s_{2}\right)
+}\\
+&  =\lambda^{3}e^{-\lambda T}\int_{0}^{T}ds_{1}\left(  T-s_{1}\right) \\
+&  =\frac{1}{2}\lambda^{3}T^{2}e^{-\lambda T}%
+\end{align*}
+である. 一般にはア%
+ーラン分布%
+\index{Erlang distribution}%
+と呼ばれる分布%
+\begin{equation}
+f\left(  T\right)  =\frac{1}{\left(  n-1\right)  !}\lambda^{n}T^{n-1}%
+e^{-\lambda T} \label{Erlang_distribution}%
+\end{equation}
+が導かれる. この分%
+布は部分積分を繰%
+り返すことで導出%
+することもできる%
+から, 自分でやって%
+みるとよい. アーラ%
+ン分布の平均は$n/\lambda$,
+分散は$n/\lambda^{2}$である.\quad
+今の場合, $n$が整数な%
+のでアーラン分布（Erlang
+distribution）と呼ばれる. $n$%
+を実数$\kappa$に置き換%
+えた分布はガンマ%
+分布(Gamma distribution)と呼ばれる.
+
+\begin{problem}
+アーラン分布を指%
+数分布のラプラス%
+変換を用いて求めよ.
+
+\begin{solution}
+まずアーラン分布%
+のラプラス変換$G_{n}^{\ast}\left(
+s\right)  $を求めておくと\marginpar{%
+\begin{align*}
+\Gamma\left(  n\right)   &  \equiv\int_{0}^{\infty}t^{n-1}e^{-t}dt\\
+&  =\left(  n-1\right)  !
+\end{align*}
+}%
+\begin{align*}
+G_{n}^{\ast}\left(  s\right)   &  =\int_{0}^{\infty}\frac{\lambda^{n}}%
+{\Gamma\left(  n\right)  }t^{n-1}e^{-\lambda t}e^{-st}dt\\
+&  =\frac{\lambda^{n}}{\Gamma\left(  \alpha\right)  }\int_{0}^{\infty}%
+t^{n-1}e^{-\left(  \lambda+s\right)  t}dt
+\end{align*}
+$u=\left(  \lambda+s\right)  t$とおいて,
+\begin{align*}
+G_{\alpha}^{\ast}\left(  s\right)   &  =\frac{\lambda^{n}}{\Gamma\left(
+n\right)  }\int_{0}^{\infty}\left(  \frac{u}{\lambda+s}\right)  ^{n-1}%
+e^{-u}\frac{du}{\lambda+s}\\
+&  =\left(  \frac{\lambda}{\lambda+s}\right)  ^{n}\frac{1}{\Gamma\left(
+\alpha\right)  }\int_{0}^{\infty}u^{n-1}e^{-u}du\\
+&  =\left(  \frac{\lambda}{\lambda+s}\right)  ^{n}%
+\end{align*}
+次に, 独立な確率変%
+数の和$X_{1}+X_{2}+\cdots+X_{n}$の特%
+性関数$f_{n}^{\ast}\left(  s\right)  $は%
+\begin{align*}
+f_{n}^{\ast}\left(  s\right)   &  =E\left[  \exp\left\{  -s\left(  X_{1}%
++X_{2}+\cdots+X_{n}\right)  \right\}  \right] \\
+&  =E\left[  e^{-sX_{1}}\right]  E\left[  e^{-sX_{2}}\right]  \cdots E\left[
+e^{-sX_{1}}\right] \\
+&  =f^{\ast}\left(  x_{1}\right)  f^{\ast}\left(  x_{2}\right)  \cdots
+f^{\ast}\left(  x_{n}\right)
+\end{align*}
+分布が同一の場合%
+(i.i.d.)は%
+\[
+f_{n}^{\ast}\left(  s\right)  =\left\{  f_{1}^{\ast}\left(  s\right)
+\right\}  ^{n}%
+\]
+例えば, $f_{1}^{\ast}\left(  s\right)  $が%
+指数分布の場合は%
+\[
+f_{n}^{\ast}\left(  s\right)  =\left(  \frac{\lambda}{\lambda+s}\right)  ^{n}%
+\]
+逆ラプラス変換す%
+るとアーラン分布%
+になる.
+\[%
+%TCIMACRO{\tciLaplace}%
+%BeginExpansion
+\mathcal{L}%
+%EndExpansion
+^{-1}\left[  f_{n}^{\ast}\left(  s\right)  \right]  =\frac{\lambda^{n}}%
+{\Gamma\left(  n\right)  }t^{n-1}e^{-\lambda t}%
+\]
+
+\end{solution}
+\end{problem}
+
+\subsection{アーラン分布と%
+ポワソン分布の関%
+係\label{sec:ErlangtoPoisson}}%
+
+%TCIMACRO{\FRAME{ftbpF}{4.5626in}{2.4889in}{0pt}{}{}%
+%{fig/count_and_isi_statistics.eps}{\special{ language "Scientific Word";
+%type "GRAPHIC";  display "USEDEF";  valid_file "F";  width 4.5626in;
+%height 2.4889in;  depth 0pt;  original-width 0pt;  original-height 0pt;
+%cropleft "0";  croptop "1";  cropright "1";  cropbottom "0";
+%filename 'fig/count_and_isi_statistics.eps';file-properties "XNPEU";}} }%
+%BeginExpansion
+\begin{figure}
+[ptb]
+\begin{center}
+\includegraphics[
+height=2.4889in,
+width=4.5626in
+]%
+{fig/count_and_isi_statistics.eps}%
+\end{center}
+\end{figure}
+%EndExpansion
+今度は逆に$T$秒間に%
+生じるスパイクの%
+個数$n$の分布を調べ%
+てみよう. このため%
+には, スパイク間隔%
+とスパイク個数と%
+の関係を定義する%
+必要がある. $N_{T}$を時刻%
+$0$から$T$までのスパイ%
+クの個数, $S_{n}$を第$n$番%
+目のスパイクまで%
+の時間とする. 今、$T$%
+が$S_{n}$より短い時間だ%
+ったとしよう（$S_{n}>T$）.
+このとき, 時刻$T$まで%
+に含まれるスパイ%
+クの数は高々$n-1$個で%
+ある（図参照）. こ%
+のことから次の関%
+係が成り立つ.
+\begin{equation}
+P\left(  N_{T}<n\right)  =P\left(  S_{n}>T\right)  \label{count_interval}%
+\end{equation}
+右辺は待ち時間が$t$%
+秒以上である確率で%
+,\quad\
+\begin{align*}
+P\left(  S_{n}>T\right)   &  =\int_{T}^{\infty}\frac{1}{\left(  n-1\right)
+!}\lambda^{n}t^{n-1}e^{-\lambda t}dt\\
+&  =\sum_{k=0}^{n-1}\frac{\left(  \lambda T\right)  ^{k}}{k!}e^{-\lambda T}%
+\end{align*}
+これは部分積分を%
+用いて求めること%
+ができるから, 自分%
+で求めてみるとよい.
+従って累積分布関%
+数は, \ref{count_interval}に代入し%
+て,
+\[
+P\left(  N_{T}<n\right)  =\sum_{k=0}^{n-1}\frac{\left(  \lambda T\right)
+^{k}}{k!}e^{-\lambda T}%
+\]
+時刻tまでのスパイ%
+クの個数が$n$である%
+確率は, $P\left(  N_{T}=n\right)  =P\left(  N_{T}%
+<n+1\right)  -P\left(  N_{T}<n\right)  $である.
+これを用いれば,
+\begin{equation}
+P\left(  N_{T}=n\right)  =\frac{\left(  \lambda T\right)  ^{n}}{n!}e^{-\lambda
+T} \label{Poisson_distribution}%
+\end{equation}
+となり, 再びポワソ%
+ン分布が得られる.
+
+\subsection{瞬間スパイク生%
+成率}
+
+\subsubsection{指数分布の導出}
+
+ここまで, 指数分布%
+をもとに定常ポワ%
+ソン過程の性質を%
+見てきた. \ref{sec:Count_Poisson}で%
+は指数分布からポ%
+ワソン分布を, \ref{sec:Erlang}%
+及び\ref{sec:ErlangtoPoisson}では指%
+数分布からアーラ%
+ン分布を経てポワ%
+ソン分布を求めた.
+この節示すように,
+指数分布及び ポワ%
+ソン分布はスパイ%
+クの瞬間発生率$\lambda\left[
+\text{spike}/s\right]  $を考えるこ%
+とでも求めること%
+ができる. 時刻$T$を十%
+分に小さな幅$\Delta$の%
+区間によって$\Delta/T$個%
+に分ける. $\Delta$内に生%
+じるスパイクの確%
+率は$\lambda\Delta$で与えられ%
+る. 時刻$T$までスパイ%
+クが起こらず, 時刻$T$%
+においてスパイク%
+が生じる確率は%
+\[
+f\left(  T\right)  \Delta=\left(  1-\lambda\Delta\right)  ^{N-1}\lambda
+\Delta=\left(  1-\lambda\Delta\right)  ^{N}\frac{\lambda\Delta}{1-\lambda
+\Delta}%
+\]
+ここで$\left\vert x\right\vert <1$に対%
+する公式%
+\[
+\frac{1}{1-x}=1+x+x^{2}+x^{3}\cdots
+\]%
+\[
+\log\left(  1-x\right)  =-x-\frac{1}{2}x^{2}-\frac{1}{3}x^{3}\cdots\text{ }%
+\]
+を思い出せば,\quad 第一%
+成分は, 十分に小さ%
+な$\Delta$でに対して%
+\begin{align*}
+\left(  1-\lambda\Delta\right)  ^{N}  &  =\exp\left[  N\log\left\{
+1-\lambda\Delta\right\}  \right] \\
+&  =\exp\left[  N\left\{  -\lambda\Delta-\frac{1}{2}\left(  \lambda
+\Delta\right)  ^{2}+\cdots\right\}  \right] \\
+&  \sim\exp\left[  -\lambda T\right]
+\end{align*}
+第二成分は%
+\begin{align*}
+\frac{\lambda\Delta}{1-\lambda\Delta}  &  =\lambda\Delta\left\{
+1+\lambda\Delta+\left(  \lambda\Delta\right)  ^{2}+\cdots\right\} \\
+&  \sim\lambda\Delta
+\end{align*}
+となる. 従って確率%
+分布は指数分布に%
+なる.
+\[
+f\left(  T\right)  =\lambda e^{-\lambda T}%
+\]
+この導出法は一般%
+の点過程の考察で%
+も重要になってくる.
+もう少し簡単な求%
+め方として, 第一成%
+分の導出は%
+\[
+\lim_{\Delta\rightarrow0}\left(  1-\lambda\Delta\right)  ^{N}=\lim
+_{N\rightarrow\infty}\left(  1-\lambda T\frac{1}{N}\right)  ^{N}=e^{-\lambda
+T}%
+\]
+としてもよい. さらに,
+これは生存関数$\bar{F}\left(
+T\right)  $だから, 微分して$f\left(
+T\right)  =\lambda e^{-\lambda T}$を得る. 一%
+定の瞬間発火率に%
+従うスパイク時系%
+列のISIは指数分布に%
+なることがわかった.
+逆に指数分布から%
+瞬間レートが時間%
+に依らない定数で%
+あることも示され%
+る（次節）ので, 両%
+者はポワソン過程%
+の異なる定義と考%
+えて良い.
+
+\subsubsection{ポワソン分布の%
+導出}
+
+瞬間スパイク生成%
+率から直接, ポワソ%
+ン分布を求めるこ%
+ともできる.$\ N$個の区%
+間のうち$n$個にスパ%
+イクが生じる確率は,
+\begin{align*}
+p\left(  N_{T}=n\right)   &  =\left(
+\begin{array}
+[c]{c}%
+N\\
+n
+\end{array}
+\right)  \left(  \lambda\Delta\right)  ^{n}\left(  1-\lambda\Delta\right)
+^{N-n}\\
+&  =\frac{N!}{n!\left(  N-n\right)  !}\left(  \frac{\lambda\Delta}%
+{1-\lambda\Delta}\right)  ^{n}\left(  1-\lambda\Delta\right)  ^{N}\\
+&  \sim\frac{N!}{\left(  N-n\right)  !}\frac{1}{n!}\left(  \lambda
+\Delta\right)  ^{n}\exp\left(  -\lambda T\right) \\
+&  =\frac{N!}{N^{n}\left(  N-n\right)  !}\frac{1}{n!}\left(  \lambda T\right)
+^{n}\exp\left(  -\lambda T\right) \\
+&  \rightarrow\frac{\left(  \lambda T\right)  ^{n}}{n!}\exp\left(  -\lambda
+T\right)
+\end{align*}
+ただし最後のステ%
+ップでは, スターリ%
+ンの公式%
+\index{Stirling's formula!Stirling's approximation}%
+$\ln N!\sim N\ln N-N$を使って,
+\begin{align*}
+\ln\frac{N!}{N^{n}\left(  N-n\right)  !}  &  =\ln N!-n\ln N-\ln\left(
+N-n\right)  !\\
+&  \sim N\ln N-N-n\ln N-\left(  N-n\right)  \ln\left(  N-n\right)  +\left(
+N-n\right) \\
+&  =\left(  1-\frac{n}{N}\right)  \ln\left(  1-\frac{n}{N}\right)  ^{N}-n\\
+&  \rightarrow1\cdot\ln e^{-n}-n\\
+&  =0
+\end{align*}
+を用いた.
+
+\section{定常リニューア%
+ル過程}
+
+前章では記憶なし%
+の特徴をもつスパ%
+イク時系列, すなわ%
+ちポアソン過程に%
+ついて調べた. ポア%
+ソン過程のスパイ%
+ク間隔は指数分布%
+になり, 一定時間内%
+のスパイク数はポ%
+アソン分布に従う%
+ことをみた.\  また瞬%
+間スパイク生成率%
+を導入して, (定常)ポ%
+ワソン過程を定義%
+することもできた.
+本章では, スパイク%
+に記憶がある場合%
+のモデルを導入する.
+特に大事なのは, \  ス%
+パイク生成率が直%
+前のスパイク生成%
+時刻だけに依存す%
+る場合である. この%
+過程はリニューア%
+ル過程と呼ばれる.
+瞬間生成率が２つ%
+以上前のスパイク%
+生成時刻に依存す%
+る一般的なモデル%
+に対して, 直前のス%
+パイクのみに依存%
+することからこの%
+名称で呼ばれる. 一%
+つより前のスパイ%
+クについては忘れて,
+気分を新たに次の%
+スパイク生成に臨%
+むといったところ%
+である.
+
+神経スパイクにつ%
+いては, 強いリニュ%
+ーアル性があるこ%
+とが知られている.
+これは神経細胞の%
+スパイク生成機構%
+の生理学上の制約%
+による. 特にスパイ%
+ク生成後$1-5$ [ms]の間は%
+次のスパイクを生%
+成できない状態に%
+なる. これを絶対不%
+応期（Absolute refractory period%
+\index{Absolute refractory period}%
+）と呼び, 神経細胞%
+のリニューアル性%
+の主要な要因である.
+この他にも膜上の%
+電位依存性イオン%
+チャネルの非線形%
+効果により, 一度ス%
+パイクが生じると%
+複数回のスパイク%
+生成が続くバース%
+ト発火という現象%
+などがある. こうし%
+た性質を表現する%
+ためには, リニュー%
+アル過程の活用が%
+欠かせない.
+
+ここで本章で使う%
+統計量をまとめて%
+おく. 用語は基本的%
+に生存時間解析(Survival
+analysis)の理論に従うが,
+生存時間解析では%
+イベントが固体の%
+死亡を意味するため,
+関連語句がスパイ%
+クの解析にはなじ%
+まない. そこでいく%
+つかは違う名称で%
+呼ぶこともある. まず,
+スパイク発生時刻%
+の確率密度分布(probability density
+function, p.d.f.)を%
+
+\[
+f\left(  t\right)  =\lim_{\Delta\rightarrow0+}\frac{P\left(  t<T\leq
+t+\Delta\right)  }{\Delta}%
+\]
+とする. これをスパ%
+イク密度分布(spike density funtion%
+\index{spike density function}%
+), もしくはスパイク%
+間隔分布と呼ぶInter-spike Interval
+distribution)と呼ぶ. スパイク%
+の発生時刻が$t$以上%
+である確率を生存%
+関数(survivor function%
+\index{survivor function}%
+)と呼び%
+\begin{equation}
+\overline{F}\left(  t\right)  =P\left(  X>t\right)  =\int_{t}^{\infty}f\left(
+u\right)  du
+\end{equation}
+と表す. 生存関数は%
+累積分布関数(cumulative distribution
+function, c.d.f.%
+\index{cumulative distribution functio}%
+)（あるいは単に分%
+布関数）と相補的%
+な関係にある.
+\begin{equation}
+F\left(  t\right)  =P\left(  X<t\right)  =\int_{0}^{t}f\left(  u\right)  du
+\end{equation}
+この分布は生存時%
+間分布(lifetime distribution function)%
+\index{lifetime distribution function}%
+と呼ばれる. スパイ%
+ク密度分布と分布%
+関数は%
+\begin{align}
+f\left(  t\right)   &  =F^{\prime}\left(  t\right) \\
+&  =-\overline{F}^{,}\left(  t\right)
+\end{align}
+の関係にある. ただ%
+し記号プライムは%
+微分の意味.
+
+\subsection{瞬間スパイク生%
+成率：ハザード関数}
+
+リニューアル過程%
+では瞬間スパイク%
+生成率は, 最後のス%
+パイクの時刻を基%
+準にして時間的に%
+変動する. 少なくとも%
+$t$秒間スパイクが生%
+成されず, $t$において%
+スパイクを生成す%
+る確率として, 瞬間%
+スパイク生成率%
+\[
+r\left(  t\right)  =\lim_{\Delta\rightarrow0+}\frac{prob\left(  t<X\leq
+t+\Delta|t<X\right)  }{\Delta}%
+\]
+を導入しよう. 生存%
+時間解析(Survival analysisｓ)の%
+理論では, この関数%
+はハザード関数(hazard function)%
+\index{hazard function}%
+, 年齢別故障率(age-specific failure rate),
+回復関数(recovery function)とも%
+呼ばれる\cite{Cox62}. また, 一%
+般の点過程の類似%
+の量強度関数(intensity function)と%
+呼ばれる.
+\begin{align}
+r\left(  t\right)   &  =\lim_{\Delta\rightarrow0+}\frac{prob\left(  t<X\leq
+t+\Delta\right)  }{\Delta}\frac{1}{prob\left(  t<X\right)  }\nonumber\\
+&  =\frac{f\left(  t\right)  }{\overline{F}\left(  t\right)  }
+\label{hazard_def_renewal}%
+\end{align}
+従ってハザード関%
+数はスパイク密度%
+分布(ISI分布)を用いて%
+次のようにかける.
+\begin{equation}
+r\left(  t\right)  =\frac{f\left(  t\right)  }{1-\int_{0}^{t}f\left(
+u\right)  du} \label{hazard_renewal}%
+\end{equation}
+生存関数で表記す%
+ると%
+\[
+r\left(  t\right)  =-\frac{\overline{F}^{,}\left(  t\right)  }{\overline
+{F}\left(  t\right)  }=-\frac{d}{dt}\left\{  \log\overline{F}\left(  t\right)
+\right\}
+\]
+両辺を$0$から$t$まで積%
+分して%
+\[
+\overline{F}\left(  t\right)  =\exp\left\{  -\int_{0}^{t}r\left(  u\right)
+du\right\}
+\]
+を得る. これから分%
+布関数は%
+\begin{equation}
+F\left(  t\right)  =1-\exp\left\{  -\int_{0}^{t}r\left(  u\right)  du\right\}
+\label{cdf_hazard}%
+\end{equation}
+微分すると, スパイ%
+ク密度分布(ISI分布)は%
+\begin{equation}
+f\left(  t\right)  =r\left(  t\right)  \exp\left\{  -\int_{0}^{t}r\left(
+u\right)  du\right\}  \label{ISI_hazard}%
+\end{equation}
+この式は, 確率密度%
+分布とハザード関%
+数の関係式\ref{hazard_renewal}の%
+逆関数になっている.
+\ref{hazard_renewal}と\ref{ISI_hazard}は併せ%
+て非常に重要な公%
+式なので覚えてお%
+こう. 指数分布のハ%
+ザード関数は$r\left(  t\right)  =\lambda
+$であることはすぐ%
+にわかる. これは少%
+なくとも$t$の間スパ%
+イクが生成されず, $t$%
+においてスパイク%
+を生成する確率が%
+時間によらないこと,
+すなわち記憶なし%
+の特徴を表している.
+
+\subsection{スパイク密度分%
+布：Inter-spike Interval distribution}
+
+それでは, まずいく%
+つかの特徴的なス%
+パイク密度分布(ス%
+パイク間隔分布, ISI分%
+布)を見てみよう.
+
+\subsubsection{ガンマ分布}
+
+ガンマ分布は, アー%
+ラン分布の拡張で%
+あることは既に述%
+べた. リニューアル%
+過程の中でも, 数学%
+的な取り扱いが比%
+較的容易で, 使い勝%
+手が良い分布である.%
+
+%TCIMACRO{\TeXButton{B}{\begin{table}[tp]}}%
+%BeginExpansion
+\begin{table}[tp]%
+%EndExpansion%
+\begin{tabular}
+[t]{c}%
+%TCIMACRO{\FRAME{itbhFU}{3.0512in}{2.0356in}{0in}{\Qcb{\U{30ac}\U{30f3}%
+%\U{30de}\U{5206}\U{5e03}\U{3002}$\lambda=1,$ $\kappa=0.5,1,2$}}{}%
+%{Plot}{\special{ language "Scientific Word";  type "MAPLEPLOT";
+%width 3.0512in;  height 2.0356in;  depth 0in;  display "USEDEF";
+%plot_snapshots TRUE;  mustRecompute FALSE;  lastEngine "MuPAD";  xmin "0.01";
+%xmax "3";  xviewmin "0.01";  xviewmax "3";  yviewmin "-0.000122";
+%yviewmax "2";  viewset "XY";  rangeset "X";  plottype 4;  labeloverrides 2;
+%axesFont "Times New Roman,12,0000000000,useDefault,normal";  numpoints 100;
+%plotstyle "patch";  axesstyle "normal";  axestips FALSE;  xis \TEXUX{x};
+%var1name \TEXUX{$x$};
+%function \TEXUX{$\left[ \func{GammaDen}(x,\kappa ,1/\lambda )\right] _{\kappa =0.5,\lambda =1}$};
+%linecolor "blue";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0.01,3";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x000000ff]";  curveStyle "Line";
+%function \TEXUX{$\left[ \func{GammaDen}(x,\kappa ,1/\lambda )\right] _{\kappa =1,\lambda =1}$};
+%linecolor "maroon";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0.01,3";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x00800000]";  curveStyle "Line";
+%function \TEXUX{$\left[ \func{GammaDen}(x,\kappa ,1/\lambda )\right] _{\kappa =2,\lambda =1}$};
+%linecolor "green";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0.01,3";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x0000ff00]";  curveStyle "Line";
+%VCamFile 'KWK9J704.xvz';valid_file "T";
+%tempfilename 'KWK9J603.wmf';tempfile-properties "XPR";}} }%
+%BeginExpansion
+{\parbox[b]{3.0512in}{\begin{center}
+\includegraphics[
+natheight=2.035600in,
+natwidth=3.051200in,
+height=2.0356in,
+width=3.0512in
+]%
+{G:/10/proj/book/graphics/book__2.pdf}%
+\\
+ガンマ分布。$\lambda=1,$ $\kappa=0.5,1,2$%
+\end{center}}}
+%EndExpansion
+\\%
+%TCIMACRO{\FRAME{itbhFU}{3.0619in}{2.0436in}{0in}{\Qcb{\U{30ac}\U{30f3}%
+%\U{30de}\U{5206}\U{5e03}\U{306e}\U{30cf}\U{30b6}\U{30fc}\U{30c9}%
+%\U{95a2}\U{6570}$\lambda=1$\U{3002}$\kappa=0.5,1,2$\U{3002}}}{}{Plot}%
+%{\special{ language "Scientific Word";  type "MAPLEPLOT";  width 3.0619in;
+%height 2.0436in;  depth 0in;  display "USEDEF";  plot_snapshots TRUE;
+%mustRecompute FALSE;  lastEngine "MuPAD";  xmin "0.01";  xmax "20";
+%xviewmin "0.01";  xviewmax "20";  yviewmin "0";  yviewmax "2";  viewset "XY";
+%rangeset "X";  plottype 4;  labeloverrides 2;
+%axesFont "Times New Roman,12,0000000000,useDefault,normal";  numpoints 100;
+%plotstyle "patch";  axesstyle "normal";  axestips FALSE;  xis \TEXUX{x};
+%var1name \TEXUX{$x$};
+%function \TEXUX{$\left[ \func{GammaDen}\left( x,\kappa ,1/\lambda \right) /\left( 1-\func{GammaDist}(x,\kappa ,1/\lambda )\right) \right] _{\kappa =0.5,\lambda =1}$};
+%linecolor "blue";  linestyle 1;  discont FALSE;  pointstyle "point";
+%linethickness 3;  lineAttributes "Solid";  var1range "0.01,20";
+%num-x-gridlines 100;  curveColor "[flat::RGB:0x000000ff]";
+%curveStyle "Line";  discont FALSE;
+%function \TEXUX{$\left[ \func{GammaDen}\left( x,\kappa ,1/\lambda \right) /\left( 1-\func{GammaDist}(x,\kappa ,1/\lambda )\right) \right] _{\kappa =1,\lambda =1}$};
+%linecolor "maroon";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0.01,20";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x00800000]";  curveStyle "Line";
+%function \TEXUX{$\left[ \func{GammaDen}\left( x,\kappa ,1/\lambda \right) /\left( 1-\func{GammaDist}(x,\kappa ,1/\lambda )\right) \right] _{\kappa =2,\lambda =1}$};
+%linecolor "green";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0.01,20";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x0000ff00]";  curveStyle "Line";
+%VCamFile 'KWK9QC0P.xvz';valid_file "T";
+%tempfilename 'KWK9QC0F.wmf';tempfile-properties "XPR";}} }%
+%BeginExpansion
+{\parbox[b]{3.0619in}{\begin{center}
+\includegraphics[
+natheight=2.043600in,
+natwidth=3.061900in,
+height=2.0436in,
+width=3.0619in
+]%
+{G:/10/proj/book/graphics/book__3.pdf}%
+\\
+ガンマ分布のハザ%
+ード関数$\lambda=1$。$\kappa=0.5,1,2$。%
+\end{center}}}
+%EndExpansion
+\end{tabular}
+\caption{Table Caption}\label{TableKey copy(2)}%
+%TCIMACRO{\TeXButton{E}{\end{table}}}%
+%BeginExpansion
+\end{table}%
+%EndExpansion
+ガンマ分布のハザ%
+ード関数を求めて%
+みよう. \marginpar{$\lambda=1/2$で$\kappa=n/2$%
+（ただし$n$は整数）%
+のときガンマ分布%
+はχ二乗分布と呼ば%
+れる。}\marginpar{$\Gamma\left(  \kappa\right)  =\int
+_{0}^{\infty}u^{\kappa-1}e^{-u}du$}%
+\index{Gamma distribution}%
+\begin{equation}
+f\left(  t;\lambda,\kappa\right)  =\frac{\left(  \kappa\lambda\right)
+^{\kappa}}{\Gamma\left(  \kappa\right)  }t^{\kappa-1}e^{-\kappa\lambda t}%
+\end{equation}
+ガンマ分布の平均%
+は$1/\lambda$, 分散は$1/\kappa\lambda$, ま%
+た$CV=1/\sqrt{\kappa}$. ただし, 平%
+均が$1/\lambda$になるよう%
+に\ref{Erlang_distribution}を規格化%
+してある. 図にいく%
+つかの$\kappa$について%
+分布を表示した. ガ%
+ンマ分布のハザー%
+ド関数は%
+\begin{equation}
+r\left(  t;\lambda,\kappa\right)  =\frac{f\left(  t\right)  }{\overline
+{F}\left(  t\right)  }=\frac{\left(  \lambda t\right)  ^{\kappa-1}e^{-\lambda
+t}}{1-\int_{0}^{x}\left(  \lambda u\right)  ^{\kappa-1}e^{-\lambda u}du}%
+\end{equation}
+単調に増加する. つ%
+まり時間が経につ%
+れて, スパイク発生%
+の確率は高まって%
+いく. 十分大きな値%
+でハザード関数は$\kappa
+$によらず$\lambda$に収束%
+する. すなわち, 十分%
+時間が経つとポワ%
+ソン過程に近づい%
+ていく.
+
+\begin{problem}
+ガンマ分布のハザ%
+ード関数の最大値%
+が$\lambda$であることを%
+示せ. ハザード関数%
+が単調増加関数で%
+あることを示し, 十%
+分大きな$t$で$\kappa$によ%
+らず$\lambda$に収束する%
+ことを示せばよい.
+ロピタルの定理を%
+用いよ.
+\end{problem}
+
+\subsubsection{ワイブル分布}%
+
+%TCIMACRO{\TeXButton{B}{\begin{table}[tp]}}%
+%BeginExpansion
+\begin{table}[tp]%
+%EndExpansion%
+\begin{tabular}
+[c]{l}%
+$%
+%TCIMACRO{\FRAME{itbFU}{3.0885in}{2.0596in}{0in}{\Qcb{\U{30ef}\U{30a4}%
+%\U{30d6}\U{30eb}\U{5206}\U{5e03}$\lambda=1,\kappa=0.5,1,1,3$}}{}%
+%{Plot}{\special{ language "Scientific Word";  type "MAPLEPLOT";
+%width 3.0885in;  height 2.0596in;  depth 0in;  display "USEDEF";
+%plot_snapshots TRUE;  mustRecompute FALSE;  lastEngine "MuPAD";
+%xmin "0.000300";  xmax "3.000600";  xviewmin "0.000300";
+%xviewmax "3.000600";  yviewmin "-0.000318";  yviewmax "3.175722";
+%viewset "XY";  rangeset "X";  plottype 4;  labeloverrides 2;
+%axesFont "Times New Roman,12,0000000000,useDefault,normal";  numpoints 100;
+%plotstyle "patch";  axesstyle "normal";  axestips FALSE;  xis \TEXUX{x};
+%var1name \TEXUX{$x$};
+%function \TEXUX{$\left[ \func{WeibullDen}(x;\kappa ,\lambda /\Gamma \left( 1+1/\kappa \right) )\right] _{\lambda =1,\kappa =0.5}$};
+%linecolor "blue";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0.000300,3.000600";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x000000ff]";  curveStyle "Line";
+%function \TEXUX{$\left[ \func{WeibullDen}(x;\kappa ,\lambda /\Gamma \left( 1+1/\kappa \right) )\right] _{\lambda =1,\kappa =2}$};
+%linecolor "red";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0.000300,3.000600";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x00ff0000]";  curveStyle "Line";
+%function \TEXUX{$\left[ \func{WeibullDen}(x;\kappa ,\lambda /\Gamma \left( 1+1/\kappa \right) )\right] _{\lambda =1,\kappa =5}$};
+%linecolor "green";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0.000300,3.000600";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x0000ff00]";  curveStyle "Line";
+%VCamFile 'KWK9JB08.xvz';valid_file "T";
+%tempfilename 'KWK9JB07.wmf';tempfile-properties "XPR";}} }%
+%BeginExpansion
+{\parbox[b]{3.0885in}{\begin{center}
+\includegraphics[
+natheight=2.059600in,
+natwidth=3.088500in,
+height=2.0596in,
+width=3.0885in
+]%
+{G:/10/proj/book/graphics/book__4.pdf}%
+\\
+ワイブル分布$\lambda=1,\kappa=0.5,1,1,3$
+\end{center}}}
+%EndExpansion
+$\\
+$%
+%TCIMACRO{\FRAME{itbFU}{3.0885in}{2.0596in}{0in}{\Qcb{\U{30ef}\U{30a4}%
+%\U{30d6}\U{30eb}\U{5206}\U{5e03}$\lambda=1,\kappa=0.5,1,1,3$}}{}%
+%{Plot}{\special{ language "Scientific Word";  type "MAPLEPLOT";
+%width 3.0885in;  height 2.0596in;  depth 0in;  display "USEDEF";
+%plot_snapshots TRUE;  mustRecompute FALSE;  lastEngine "MuPAD";
+%xmin "0.000300";  xmax "3.000600";  xviewmin "0.000300";
+%xviewmax "3.000600";  yviewmin "0";  yviewmax "1";  viewset "XY";
+%rangeset "X";  plottype 4;  labeloverrides 2;
+%axesFont "Times New Roman,12,0000000000,useDefault,normal";  numpoints 100;
+%plotstyle "patch";  axesstyle "normal";  axestips FALSE;  xis \TEXUX{x};
+%var1name \TEXUX{$x$};
+%function \TEXUX{$\left[ \func{WeibullDist}(x;\kappa ,\lambda /\Gamma \left( 1+1/\kappa \right) )\right] _{\lambda =1,\kappa =0.5}$};
+%linecolor "blue";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0.000300,3.000600";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x000000ff]";  curveStyle "Line";
+%function \TEXUX{$\left[ \func{WeibullDist}(x;\kappa ,\lambda /\Gamma \left( 1+1/\kappa \right) )\right] _{\lambda =1,\kappa =2}$};
+%linecolor "red";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0.000300,3.000600";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x00ff0000]";  curveStyle "Line";
+%function \TEXUX{$\left[ \func{WeibullDist}(x;\kappa ,\lambda /\Gamma \left( 1+1/\kappa \right) )\right] _{\lambda =1,\kappa =5}$};
+%linecolor "green";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0.000300,3.000600";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x0000ff00]";  curveStyle "Line";
+%VCamFile 'KWK9NR0N.xvz';valid_file "T";
+%tempfilename 'KWK9NR0E.wmf';tempfile-properties "XPR";}} }%
+%BeginExpansion
+{\parbox[b]{3.0885in}{\begin{center}
+\includegraphics[
+natheight=2.059600in,
+natwidth=3.088500in,
+height=2.0596in,
+width=3.0885in
+]%
+{G:/10/proj/book/graphics/book__5.pdf}%
+\\
+ワイブル分布$\lambda=1,\kappa=0.5,1,1,3$
+\end{center}}}
+%EndExpansion
+$\\
+$%
+%TCIMACRO{\FRAME{itbFU}{3.0885in}{2.0596in}{0.1153in}{\Qcb{\U{30ef}%
+%\U{30a4}\U{30d6}\U{30eb}\U{5206}\U{5e03}\U{306e}\U{30cf}\U{30b6}%
+%\U{30fc}\U{30c9}\U{95a2}\U{6570}$\lambda=1,\kappa=0.5,1,1,3$}}{}%
+%{Plot}{\special{ language "Scientific Word";  type "MAPLEPLOT";
+%width 3.0885in;  height 2.0596in;  depth 0.1153in;  display "USEDEF";
+%plot_snapshots TRUE;  mustRecompute FALSE;  lastEngine "MuPAD";  xmin "0";
+%xmax "3";  xviewmin "0";  xviewmax "3";  yviewmin "0";  yviewmax "10";
+%viewset "XY";  rangeset "X";  plottype 4;  labeloverrides 2;
+%axesFont "Times New Roman,12,0000000000,useDefault,normal";  numpoints 100;
+%plotstyle "patch";  axesstyle "normal";  axestips FALSE;  xis \TEXUX{t};
+%var1name \TEXUX{$t$};
+%function \TEXUX{$\left[ \kappa \frac{\Gamma \left( 1+1/\kappa \right) }{\lambda }\left\{ \frac{\Gamma \left( 1+1/\kappa \right) }{\lambda }t\right\} ^{\kappa -1}\right] _{\lambda =1,\kappa =0.5}$};
+%linecolor "blue";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0,3";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x000000ff]";  curveStyle "Line";
+%function \TEXUX{$\left[ \kappa \frac{\Gamma \left( 1+1/\kappa \right) }{\lambda }\left\{ \frac{\Gamma \left( 1+1/\kappa \right) }{\lambda }t\right\} ^{\kappa -1}\right] _{\lambda =1,\kappa =2}$};
+%linecolor "red";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0,3";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x00ff0000]";  curveStyle "Line";
+%function \TEXUX{$\left[ \kappa \frac{\Gamma \left( 1+1/\kappa \right) }{\lambda }\left\{ \frac{\Gamma \left( 1+1/\kappa \right) }{\lambda }t\right\} ^{\kappa -1}\right] _{\lambda =1,\kappa =5}$};
+%linecolor "green";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0,3";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x0000ff00]";  curveStyle "Line";
+%VCamFile 'KWK9JC0A.xvz';valid_file "T";
+%tempfilename 'KWK9JC09.wmf';tempfile-properties "XPR";}} }%
+%BeginExpansion
+\raisebox{-0.1153in}{\parbox[b]{3.0885in}{\begin{center}
+\includegraphics[
+natheight=2.059600in,
+natwidth=3.088500in,
+height=2.0596in,
+width=3.0885in
+]%
+{G:/10/proj/book/graphics/book__6.pdf}%
+\\
+ワイブル分布のハ%
+ザード関数$\lambda=1,\kappa=0.5,1,1,3$
+\end{center}}}
+%EndExpansion
+$%
+\end{tabular}
+\caption{Table Caption}\label{TableKey}%
+%TCIMACRO{\TeXButton{E}{\end{table}}}%
+%BeginExpansion
+\end{table}%
+%EndExpansion
+\marginpar{通常は%
+\[
+r\left(  x\right)  =\frac{\kappa}{\mu}\left(  \frac{x}{\mu}\right)
+^{\kappa-1}%
+\]%
+\[
+f\left(  x\right)  =\frac{\kappa}{\beta}\left(  \frac{x}{\beta}\right)
+^{\kappa-1}\exp\left\{  -\left(  \frac{x}{\beta}\right)  ^{\kappa}\right\}
+\]%
+\[
+F\left(  x\right)  =1-\exp\left\{  -\left(  \frac{x}{\beta}\right)  ^{\kappa
+}\right\}
+\]
+が用いられる。こ%
+の表記では期待値は%
+$\beta\Gamma\left(  1+1/\kappa\right)  $、分散は%
+$\beta^{2}\left[  \Gamma\left(  1+2/\kappa\right)  -\Gamma^{2}\left(
+1+1/\kappa\right)  \right]  $。ここでは%
+期待値を$\beta\Gamma\left(  1+1/\kappa\right)
+=1/\lambda$とするためにこ%
+のようにした。}ガ%
+ンマ分布のハザー%
+ド関数が定数に収%
+束するのに対し, 工%
+業製品の故障率の%
+ようなイベントの%
+場合は, 経年劣化す%
+るからハザード関%
+数は時間とともに%
+増加すると考えら%
+れる. 時間とともに%
+ハザード関数がべ%
+き的に増加する場%
+合を考えよう.
+\begin{align*}
+r\left(  t;\lambda,\kappa\right)   &  =\kappa\lambda\Gamma\left(
+1+1/\kappa\right)  \left\{  \Gamma\left(  1+1/\kappa\right)  \lambda
+t\right\}  ^{\kappa-1}\\
+&  =\kappa\left\{  \Gamma\left(  1+1/\kappa\right)  \lambda\right\}  ^{\kappa
+}t^{\kappa-1}%
+\end{align*}
+ただし$\kappa<1$のときは%
+ハザード関数が減%
+少関数になる. これ%
+は時間が経つにつ%
+れてスパイク発生%
+率は低くなること%
+を表す. べき乗のハ%
+ザード関数を持つ%
+分布はワイブル分%
+布(Weibull distribution)%
+\index{Weibull distribution}%
+とよばれ%
+\[
+f\left(  t;\lambda,\kappa\right)  =\kappa\lambda\Gamma\left(  1+1/\kappa
+\right)  \left\{  \Gamma\left(  1+1/\kappa\right)  \lambda t\right\}
+^{\kappa-1}\exp\left[  -\left\{  \Gamma\left(  1+1/\kappa\right)  \lambda
+t\right\}  ^{\kappa}\right]
+\]
+で与えられる. この%
+表記では, 期待値は$1/\lambda$,
+分散は$1/\lambda^{2}\left[  \Gamma\left(  1+2/\kappa\right)
+/\Gamma\left(  1+1/\kappa\right)  ^{2}-1\right]  $である.
+$\kappa=1$のときにワイブ%
+ル分布は指数分布%
+になる. 分布関数は%
+\[
+F\left(  t;\lambda,\kappa\right)  =1-\exp\left[  -\left\{  \Gamma\left(
+1+1/\kappa\right)  \lambda t\right\}  ^{\kappa}\right]
+\]
+
+
+死亡率のようなイ%
+ベントの場合は, ハ%
+ザード関数が減少%
+から増加に転じる%
+と考えられる. これは,
+乳幼児の死亡率が%
+大きく, 成人に従い%
+死亡率は低下し, 老%
+化にともない再び%
+死亡率が上昇する%
+からである.
+
+\subsubsection{逆ガウス分布}
+
+神経細胞スパイク%
+の場合は, 死亡率と%
+全く逆のハザード%
+関数が描ける. 神経%
+細胞のスパイク活%
+動のISIを良く表すと%
+される逆ガウス分%
+布(Inverse Gaussian distribution%
+\index{inverse Gaussian distribution}%
+)\footnote{逆ガウス分布は%
+がガウス過程のフ%
+ァーストパッセー%
+ジタイム。}\cite{GERSTEIN1964}を%
+見てみよう.
+\[
+f\left(  t;\lambda,\kappa\right)  =\sqrt{\frac{\kappa}{2\pi t^{3}}}\exp\left[
+-\frac{\kappa}{2t}\left(  \lambda t-1\right)  ^{2}\right]  \text{ \ \ for
+}x>0\text{, }0\text{ for }x<0
+\]
+逆ガンマ分布の期%
+待値は$1/\lambda$, 分散は$1/\kappa
+\lambda^{3}$, また$CV=1/\kappa\lambda^{2}で あ
+る .\ $また累積分布関%
+数は%
+\[
+F\left(  t;\lambda,\kappa\right)  =\frac{1}{2}\left\{  1+\operatorname{erf}%
+\left[  \sqrt{\frac{\kappa}{2t}}\left(  \lambda t-1\right)  \right]  \right\}
++\frac{1}{2}e^{2\lambda\kappa}\left\{  1-\operatorname{erf}\left[  \sqrt
+{\frac{\kappa}{2t}}\left(  \lambda t+1\right)  \right]  \right\}
+\]
+逆ガウス分布のハ%
+ザード関数を見て%
+みると増加から減%
+少に転じている. ス%
+パイク発生率はゼ%
+ロから始まり, 時間%
+とともに増加する.
+これはガンマ分布%
+のハザード関数と%
+同じ性質である. ガ%
+ンマ分布と違うのは,
+ハザード関数が減%
+少に転じる. つまり%
+時間が経つにつれ%
+てスパイク発生頻%
+度は減少していく.%
+
+%TCIMACRO{\TeXButton{B}{\begin{table}[tp]}}%
+%BeginExpansion
+\begin{table}[tp]%
+%EndExpansion%
+\begin{tabular}
+[t]{c}%
+%TCIMACRO{\FRAME{itbhFU}{3.0885in}{2.0596in}{0in}{\Qcb{\U{9006}\U{30ac}%
+%\U{30a6}\U{30b9}\U{5206}\U{5e03}\U{ff08}\U{5e73}\U{5747}$\mu=1$\U{ff09}%
+%\U{3002}$\kappa=0.5$, $\kappa=2$\U{ff08}\U{5b9f}\U{7dda}\U{ff09}%
+%\U{3001}$\kappa=10$\U{ff08}\U{70b9}\U{7dda}\U{ff09}\U{3002}}}{}{Plot}%
+%{\special{ language "Scientific Word";  type "MAPLEPLOT";  width 3.0885in;
+%height 2.0596in;  depth 0in;  display "USEDEF";  plot_snapshots TRUE;
+%mustRecompute FALSE;  lastEngine "MuPAD";  xmin "-0.000500";
+%xmax "3.000500";  xviewmin "-0.000500";  xviewmax "3.000500";
+%yviewmin "-0.000146";  yviewmax "1.5";  viewset "XY";  rangeset "X";
+%plottype 4;  labeloverrides 2;
+%axesFont "Times New Roman,12,0000000000,useDefault,normal";  numpoints 100;
+%plotstyle "patch";  axesstyle "normal";  axestips FALSE;  xis \TEXUX{x};
+%var1name \TEXUX{$x$};
+%function \TEXUX{$\left[ \sqrt{\frac{\kappa }{2\pi x^{3}}}\exp \left[ -\frac{\kappa \left( x-\mu \right) ^{2}}{2x\mu ^{2}}\right] \right] _{\kappa =0.5,\mu =1}$};
+%linecolor "blue";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "-0.000500,3.000500";
+%num-x-gridlines 100;  curveColor "[flat::RGB:0x000000ff]";
+%curveStyle "Line";
+%function \TEXUX{$\left[ \sqrt{\frac{\kappa }{2\pi x^{3}}}\exp \left[ -\frac{\kappa \left( x-\mu \right) ^{2}}{2x\mu ^{2}}\right] \right] _{\kappa =1,\mu =1}$};
+%linecolor "maroon";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "-0.000500,3.000500";
+%num-x-gridlines 100;  curveColor "[flat::RGB:0x00800000]";
+%curveStyle "Line";
+%function \TEXUX{$\left[ \sqrt{\frac{\kappa }{2\pi x^{3}}}\exp \left[ -\frac{\kappa \left( x-\mu \right) ^{2}}{2x\mu ^{2}}\right] \right] _{\kappa =5,\mu =1}$};
+%linecolor "green";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "-0.000500,3.000500";
+%num-x-gridlines 100;  curveColor "[flat::RGB:0x0000ff00]";
+%curveStyle "Line";  VCamFile 'KWK9J706.xvz';valid_file "T";
+%tempfilename 'KWK9J705.wmf';tempfile-properties "XPR";}} }%
+%BeginExpansion
+{\parbox[b]{3.0885in}{\begin{center}
+\includegraphics[
+natheight=2.059600in,
+natwidth=3.088500in,
+height=2.0596in,
+width=3.0885in
+]%
+{G:/10/proj/book/graphics/book__7.pdf}%
+\\
+逆ガウス分布（平均%
+$\mu=1$）。$\kappa=0.5$, $\kappa=2$（実線%
+）、$\kappa=10$（点線）。%
+\end{center}}}
+%EndExpansion
+\\%
+%TCIMACRO{\FRAME{itbhFU}{3.0885in}{2.0596in}{0in}{\Qcb{\U{9006}\U{30ac}%
+%\U{30a6}\U{30b9}\U{5206}\U{5e03}\U{ff08}\U{5e73}\U{5747}$\mu=1$\U{ff09}%
+%\U{3002}$\kappa=0.5$, $\kappa=2$\U{ff08}\U{5b9f}\U{7dda}\U{ff09}%
+%\U{3001}$\kappa=10$\U{ff08}\U{70b9}\U{7dda}\U{ff09}\U{3002}}}{}{Plot}%
+%{\special{ language "Scientific Word";  type "MAPLEPLOT";  width 3.0885in;
+%height 2.0596in;  depth 0in;  display "USEDEF";  plot_snapshots TRUE;
+%mustRecompute FALSE;  lastEngine "MuPAD";  xmin "00";  xmax "5";
+%xviewmin "-0.000499952329914";  xviewmax "5.00050000049528";
+%yviewmin "-0.000272308121840";  yviewmax "2.72335080289953";  rangeset "X";
+%plottype 4;  labeloverrides 2;
+%axesFont "Times New Roman,12,0000000000,useDefault,normal";  numpoints 100;
+%plotstyle "patch";  axesstyle "normal";  axestips FALSE;  xis \TEXUX{x};
+%var1name \TEXUX{$x$};
+%function \TEXUX{$\left[ \frac{\sqrt{\frac{\kappa }{2\pi x^{3}}}\exp \left[ -\frac{\kappa \left( x-\mu \right) ^{2}}{2x\mu ^{2}}\right] }{1-\frac{1}{2}-\frac{1}{2}\func{erf}\left[ \sqrt{\frac{\kappa }{2x}}\left( \frac{x}{\mu }-1\right) \right] -\frac{1}{2}\exp \left[ 2\kappa /\mu \right] +\frac{1}{2}\exp \left[ 2\kappa /\mu \right] \func{erf}\left[ \sqrt{\frac{\kappa }{2x}}\left( \frac{x}{\mu }+1\right) \right] }\right] _{\kappa =0.5,\mu =1}$};
+%linecolor "blue";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "00,5";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x000000ff]";  curveStyle "Line";
+%function \TEXUX{$\left[ \frac{\sqrt{\frac{\kappa }{2\pi x^{3}}}\exp \left[ -\frac{\kappa \left( x-\mu \right) ^{2}}{2x\mu ^{2}}\right] }{1-\frac{1}{2}-\frac{1}{2}\func{erf}\left[ \sqrt{\frac{\kappa }{2x}}\left( \frac{x}{\mu }-1\right) \right] -\frac{1}{2}\exp \left[ 2\kappa /\mu \right] +\frac{1}{2}\exp \left[ 2\kappa /\mu \right] \func{erf}\left[ \sqrt{\frac{\kappa }{2x}}\left( \frac{x}{\mu }+1\right) \right] }\right] _{\kappa =1,\mu =1}$};
+%linecolor "maroon";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "00,5";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x00800000]";  curveStyle "Line";
+%function \TEXUX{$\left[ \frac{\sqrt{\frac{\kappa }{2\pi x^{3}}}\exp \left[ -\frac{\kappa \left( x-\mu \right) ^{2}}{2x\mu ^{2}}\right] }{1-\frac{1}{2}-\frac{1}{2}\func{erf}\left[ \sqrt{\frac{\kappa }{2x}}\left( \frac{x}{\mu }-1\right) \right] -\frac{1}{2}\exp \left[ 2\kappa /\mu \right] +\frac{1}{2}\exp \left[ 2\kappa /\mu \right] \func{erf}\left[ \sqrt{\frac{\kappa }{2x}}\left( \frac{x}{\mu }+1\right) \right] }\right] _{\kappa =5,\mu =1}$};
+%linecolor "green";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "00,5";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x0000ff00]";  curveStyle "Line";
+%VCamFile 'KWK9SK0R.xvz';valid_file "T";
+%tempfilename 'KWK9SK0G.wmf';tempfile-properties "XPR";}} }%
+%BeginExpansion
+{\parbox[b]{3.0885in}{\begin{center}
+\includegraphics[
+natheight=2.059600in,
+natwidth=3.088500in,
+height=2.0596in,
+width=3.0885in
+]%
+{G:/10/proj/book/graphics/book__8.pdf}%
+\\
+逆ガウス分布（平均%
+$\mu=1$）。$\kappa=0.5$, $\kappa=2$（実線%
+）、$\kappa=10$（点線）。%
+\end{center}}}
+%EndExpansion
+\end{tabular}
+\caption{}\label{TableKey copy(1)}%
+%TCIMACRO{\TeXButton{E}{\end{table}}}%
+%BeginExpansion
+\end{table}%
+%EndExpansion
+
+
+\chapter{時間変動のある%
+スパイク時系列モ%
+デル}
+
+\section{非定常ポワソン%
+過程の数値計算}
+
+\subsection{時間伸縮}%
+
+%TCIMACRO{\FRAME{ftpF}{3.8335in}{3.4069in}{0pt}{}{\Qlb{FIG_time-rescaling}%
+%}{fig/time-rescaling.eps}{\special{ language "Scientific Word";
+%type "GRAPHIC";  display "USEDEF";  valid_file "F";  width 3.8335in;
+%height 3.4069in;  depth 0pt;  original-width 0pt;  original-height 0pt;
+%cropleft "0";  croptop "1";  cropright "1";  cropbottom "0";
+%filename 'fig/time-rescaling.eps';file-properties "XNPEU";}} }%
+%BeginExpansion
+\begin{figure}
+[pt]
+\begin{center}
+\includegraphics[
+height=3.4069in,
+width=3.8335in
+]%
+{fig/time-rescaling.eps}%
+\label{FIG_time-rescaling}%
+\end{center}
+\end{figure}
+%EndExpansion
+本節では, 定常ポワ%
+ソン過程の拡張と%
+して, 図\ref{FIG_time-rescaling}-aのよ%
+うに時間的に変動%
+するレートから生%
+成される非定常ポ%
+ワソン過程を考え%
+たい. レートの低い%
+ところではスパイ%
+クの発生率は低く,
+レートの高いとこ%
+ろではスパイクの%
+発生率は高くなる%
+だろう. 変動レート%
+を$\lambda_{t}$で表し, 変動レ%
+ートを時刻$t$までを%
+積分した%
+\begin{equation}
+\Lambda\left(  t\right)  =\int_{0}^{t}\lambda\left(  u\right)  du
+\label{time-rescaling}%
+\end{equation}
+を考える. 図\ref{FIG_time-rescaling}%
+-bに関数$\Lambda\left(  t\right)  $を示す.
+$\Lambda$は無次元量で, い%
+わば$\lambda_{t}$により規格%
+化された時間である.
+変動レートの小さ%
+なところでは, 実時%
+間に対して$\Lambda$はゆ%
+っくりと進み, 変動%
+レートの大きな所%
+では$\Lambda$は早く進む.
+そのため, \ref{time-rescaling}の変%
+数変換を行うこと%
+を時間伸縮(Time-rescaling）を%
+すると言う. 例えば%
+図\ref{FIG_time-rescaling}-bでは, リス%
+ケールされた時間%
+軸$\Lambda$上にある２点$\Lambda
+_{1},\Lambda_{2}$の間隔と２点$\Lambda
+_{3},\Lambda_{4}$の間隔はほぼ%
+同じぐらいだが, 実%
+時間上ではレートの%
+$t_{1},t_{2}$の間隔は$t_{3},t_{4}$の%
+間隔よりずっと大%
+きい.
+
+リスケールされた%
+時間軸$\Lambda$上で平均$1$%
+の標準指数分布に%
+従う定常ポワソン%
+過程を考え, 実時間%
+へ写像したスパイ%
+ク時系列が非定常%
+ポワソン過程である.
+$\Lambda$軸上のイベント%
+系列を$\left\{  \Lambda_{1},\Lambda_{2},\cdots\right\}
+$とすると, イベント%
+間隔$\Lambda_{i}-\Lambda_{i-1}$が標準%
+指数分布%
+\[
+g\left(  z\right)  =\exp\left[  -z\right]
+\]
+に従う. 実時間との%
+対応関係は$\Lambda_{i}=\Lambda\left(
+t_{i}\right)  $だから%
+\[
+z\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  \equiv\Lambda\left(
+t_{i}\right)  -\Lambda\left(  t_{i-1}\right)  =\int_{t_{i-1}}^{t_{i}}%
+\lambda\left(  u\right)  du
+\]
+非定常ポワソン時%
+系列を数値的に実%
+現するためには, 指%
+数分布に従う乱数%
+を発生させ, これを%
+満たす$t_{i}$を逐次求め%
+ていけばよい. この%
+方法は時間伸縮%
+(Time-rescaling）理論に基づく%
+方法であり, 次のよ%
+うにまとめられる%
+\cite{Brown2001}.
+
+\begin{algorithm}
+Time-rescaling theoremに基づく非定%
+常ポワソン過程の%
+実現
+
+\begin{enumerate}
+\item $i=1,t_{1}=0.$
+
+\item レート$1$の指数分%
+布に従う乱数$\eta$を生%
+成する.
+
+\item $\eta=\int_{t_{i-1}}^{t_{i}}\lambda\left(  u\right)  du$を%
+満たす$t_{i}$を求める.
+
+\item $t_{i}\geq T$ならば終了.
+
+$t_{i}<T$ならば$i\leftarrow i+1.\ 2$へ.
+\end{enumerate}
+\end{algorithm}
+
+アルゴリズムの第%
+３ステップで指数%
+分布に従う乱数を%
+発生させるには次%
+に説明する逆関数%
+法を用いる.
+
+\subsubsection{逆関数法}
+
+逆関数法%
+\index{Inverse transform sampling}%
+は２つの確率変数%
+の確率密度分布の%
+一般的な関係に基%
+づいている. 例えば%
+確率密度分布$f\left(  x\right)  $%
+に従う確率変数（%
+乱数）$x$を考える. $x$%
+と$y=g\left(  x\right)  $なる関係が%
+ある変数$y$を考えると,
+$x$が乱数だから$y$も乱%
+数である. このとき%
+確率変数$y$の確率密%
+度分布$p\left(  y\right)  $は$f\left(  x\right)
+,g\left(  x\right)  $を用いてどの%
+ように表現される%
+だろうか. 結論から%
+言うと, $p\left(  y\right)  $は%
+\[
+p\left(  y\right)  =f\left(  x\right)  \left\vert \frac{dx}{dy}\right\vert
+=f\left(  x\right)  \left\vert g^{\prime}\left(  x\right)  \right\vert ^{-1}%
+\]
+で与えられる. 最後%
+は全部$y$で表す必要%
+があるから, $p\left(  y\right)  =f\left(
+g^{-1}\left(  y\right)  \right)  \left\vert g^{\prime}\left(  g^{-1}\left(
+y\right)  \right)  \right\vert $というこ%
+とになる. この式は%
+確率密度の保存則%
+を表していて, $p\left(  y\right)
+\left\vert dy\right\vert =f\left(  x\right)  \left\vert dx\right\vert
+$と書くこともできる.
+ただし$\left\vert dy\right\vert =\left\vert g^{\prime
+}\left(  x\right)  dx\right\vert $. つまり$x$に%
+分布するサンプルは,
+傾きが小さいとこ%
+ろは$y$上では凝縮さ%
+れる. 逆に傾きが小%
+さいところは$y$軸上%
+では疎になる.
+
+さて, この変数変換%
+に伴う密度分布の%
+変換式は, 一般に成%
+り立つ. そこで特に$y$%
+と$x$の関係として%
+\[
+y=g\left(  x\right)  =\int_{-\infty}^{x}f\left(  u\right)  du
+\]
+を考えてみよう. こ%
+こで$f\left(  x\right)  $は$x$自身%
+の密度分布である%
+から, $g\left(  x\right)  $として$x$%
+の分布関数を選ん%
+だことになる. 従っ%
+て$y\in\left[  0,1\right]  $であるこ%
+とは明らか. このとき%
+$y$の密度分布は%
+\[
+p\left(  y\right)  =f\left(  x\right)  \left\vert g^{\prime}\left(  x\right)
+\right\vert ^{-1}=f\left(  x\right)  \left\vert f\left(  x\right)  \right\vert
+^{-1}=1
+\]
+つまり, $y$は$\left[  0,1\right]  $の%
+区間内に一様分布%
+する. 式のように変%
+数変換をすると, 密%
+度が小さくなると%
+ころでは, 変換の傾%
+きが小さくなり$y$軸%
+上に凝縮する効果%
+が働く. 逆に密度が%
+大きくなるところ%
+で傾きが大きくな%
+るから, $y$軸上で疎に%
+なるような効果が%
+働く. このように密%
+度を相殺するよう%
+に写像される. 結果%
+として$y$は$\left[  0,1\right]  $の%
+区間に一様に分布%
+することになる.
+
+そこで逆に, $\xi$を$\left[  0,1\right]
+$の区間の一様乱数%
+として,
+\[
+\xi=\int_{-\infty}^{\eta}f\left(  x\right)  dx
+\]
+を満たす$\eta$を求める%
+と, $\eta$は密度分布$f\left(  \eta\right)
+$に従うというわけ%
+である. $F\left(  \eta\right)  =\int_{-\infty}^{\eta
+}f\left(  x\right)  dx$と書けば, $\eta=F^{-1}\left(
+\xi\right)  $である. このよう%
+にして, 一様乱数$\xi$か%
+ら逆関数$F^{-1}\left(  \xi\right)  $を%
+用いて, 密度分布$f\left(
+\eta\right)  =F^{\prime}\left(  \eta\right)  $に従う%
+乱数$\eta$を作成する方%
+法を逆関数法という.
+一般には数値積分%
+により$\eta$を求めるこ%
+とができる. 逆関数%
+が解析的に求めら%
+れる場合には, 解析%
+解を使うのが良い.
+例えば平均$1/\lambda$の指%
+数分布に従う乱数は%
+\[
+\xi=\int_{0}^{\eta}\lambda e^{-\lambda x}dx=\left[  -e^{-\lambda x}\right]
+_{0}^{\eta}=1-e^{-\lambda\eta}%
+\]
+を$\eta$に関して解いて,%
+\[
+\eta=-\lambda^{-1}\log\xi
+\]
+により得られる. た%
+だし$1-\xi$は$\xi$で置き換%
+えた.\quad\ 
+
+\begin{problem}
+一様乱数から平均$n/\lambda
+$・分散$n/\lambda^{2}$のアー%
+ラン分布に従う乱%
+数を生成する公式%
+を導け
+\end{problem}
+
+\subsection{条件付きスパイ%
+ク密度分布}
+
+変動ポワソン過程%
+のISIの確率分布を求%
+めてみよう.
+\begin{align}
+p\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)   &  =\left\vert
+\frac{dz}{dt_{i}}\right\vert g\left(  z|\lambda_{t_{i-1}:t_{i}}\right)
+\nonumber\\
+&  =\lambda\left(  t_{i}\right)  \exp\left[  -\int_{t_{i-1}}^{t_{i}}%
+\lambda\left(  u\right)  du\right]  \label{ISI_inhomogeneous_Poisson}%
+\end{align}
+条件つきISI分布%
+\ref{ISI_inhomogeneous_Poisson}は, 定常ポ%
+ワソン過程のISI分布%
+である指数分布$\lambda e^{-\lambda
+t}$の自然な拡張にな%
+っていることがわ%
+かる. 逆関数法を用%
+いれば, このISI分布に%
+従う時系列を作れる.
+\bigskip
+
+\begin{algorithm}
+逆関数法を用いた%
+非定常ポワソン過%
+程の実現
+
+\begin{enumerate}
+\item $i=1,t_{1}=0$.
+
+\item $\left[  0,1\right]  $の区間の一%
+様乱数$\xi$を生成する.
+
+\item $\xi=\lambda\left(  t_{i}\right)  \exp\left[  -\int_{t_{i-1}}^{t_{i}%
+}\lambda\left(  u\right)  du\right]  $を満たす$t_{i}%
+$を求める.
+
+\item $t_{i}\geq T$ならば終了.
+
+$t_{i}<T$ならば$i\leftarrow i+1.\ 2$へ.
+\end{enumerate}
+\end{algorithm}
+
+\subsection{直説法}
+
+条件付きISI分布%
+\ref{ISI_inhomogeneous_Poisson}はスパイク%
+が時刻$t_{i}$まで生じず,
+時刻$t_{i}$において生成%
+されるときのISI分布%
+である. $t_{i}=0,t_{i-1}=t$と見れば,
+これは定常リニュ%
+ーアル過程におけ%
+るISI分布の定義である.
+定常リニューアル%
+過程のISI分布とハザ%
+ード関数との間には,
+\ref{ISI_hazard}のような関係%
+があるから, \ref{ISI_inhomogeneous_Poisson}%
+と\ref{ISI_Point_Process}を見比べて%
+\begin{equation}
+r\left(  t_{i}\right)  =\lambda\left(  t_{i}\right)
+\label{intensity_Poisson_process}%
+\end{equation}
+であることがわかる.
+つまり$\lambda\left(  t_{i}\right)  $は定%
+常リニューアル過%
+程のハザード関数%
+-スパイクが時刻$t$ま%
+で生じず, 時刻$t$にお%
+いて生成される確%
+率-と同じ意味を持%
+つことがわかる. ハ%
+ザード関数も変動%
+レートも, その瞬間%
+にスパイクが発生%
+する確率を与え, 一%
+つのISIに注目した場%
+合は両者は同一視%
+できる. ただしリニ%
+ューアル過程の場%
+合には, スパイク発%
+生から経過した時%
+間を変数とする特%
+定のハザード関数%
+を考え, スパイクの%
+度に時刻が原点に%
+リセットされた. こ%
+れに対して, 非定常%
+ポワソン過程の場%
+合は瞬間スパイク%
+生成率が連綿と与%
+えられる. このため,
+非定常ポワソン過%
+程の時刻$t$の瞬間発%
+火率は過去の履歴%
+によらずに, $\lambda\left(  t\right)  $%
+のみできまる.
+
+以上の議論から, リ%
+スケールされた時%
+間軸$\Lambda$上で生成し%
+たスパイク時系列%
+のISIが記憶なしの特%
+徴をもつ指数分布%
+に従うとき, 実時間%
+における瞬間発火%
+率も過去の履歴に%
+よらないことが分%
+かった. これは, 章で%
+調べた記憶なしの%
+特徴(memoryless property%
+\index{memoryless property}%
+)の拡張になっていて,
+定常・非定常を問%
+わずポワソン過程%
+の特徴である.
+
+非定常ポワソン過%
+程はハザード関数%
+の定義に基づいて,
+履歴を考慮せず微%
+小区間毎に独立に%
+計算できる. これは%
+単に, 微小区間$\Delta$内%
+にスパイクが一つ%
+生じる確率が$\lambda\left(  t\right)
+\Delta$で与えられること%
+を示しているので%
+あって, これを非定%
+常ポワソン過程の%
+定義としてもよい.
+
+\begin{algorithm}
+強度を用いた直接%
+的な非定常ポワソ%
+ン過程の実現
+
+\begin{enumerate}
+\item 長さ$T$の時系列を%
+十分に小さな幅$\Delta$%
+の$N=T/\Delta$個の区間に分%
+ける.
+
+\item $i=1$, $j=1$.
+
+\item $j\leftarrow j+1$, $\quad j=N$で終了.
+
+\item $\left[  0,1\right]  $の区間の一%
+様乱数$\xi$を生成する.
+
+$\qquad\lambda\left(  j\Delta\right)  \Delta\geq\xi$\quad な%
+らば\quad$t_{i}=j\Delta,i\leftarrow i+1$.
+
+$\qquad\lambda\left(  j\Delta\right)  \Delta<\xi$\quad なら%
+ば\quad$3$へ.
+\end{enumerate}
+\end{algorithm}
+
+この直接的な方法%
+はもっとも実装が%
+簡潔だが, 乱数を$N$回%
+発生させる必要が%
+あり計算効率は著%
+しく悪い. 毎回乱数%
+を生成させるよりは,
+指数分布に従う乱%
+数を一回発生させ,
+その値になるまで%
+$\lambda\left(  j\Delta\right)  $を数値的%
+に足し込んでいく%
+（積分する）アル%
+ゴリズムの方が効%
+率がよい. ただし, こ%
+の方法も微小区間%
+に区切った関数の%
+数値積分が必要に%
+なってくる. それで%
+は次に, 簡潔でかつ%
+効率のよい数値計%
+算法としてよく用%
+いられる希薄化に%
+よる手法を紹介し%
+よう.
+
+\subsection{希薄化による数%
+値計算法}
+
+希薄化(Thinning%
+\index{thinning}%
+\cite{Daley88,Heyman1990})と呼ばれる%
+方法は積分操作を%
+必要としないため,
+計算時間が短くて%
+済む場合がある.
+
+まず$[0,T]$の範囲にレー%
+トが$M$の定常ポアソ%
+ン過程を生成する.
+ただし, $M$はどの時刻%
+の変動レートより%
+も大きい値とする%
+（つまり$t\in\lbrack0,T]$に対%
+して$\lambda\left(  t\right)  \leq M$）. 生%
+成されたスパイク%
+時系列を$\left\{  t_{1,}t_{2}\right\}  $.
+時刻$t_{j}$におけるスパ%
+イクは, 規格化した%
+変動レート$p\left(  t_{j}\right)  =\lambda
+\left(  t_{j}\right)  /M$の確率で残す.
+残ったスパイク時%
+系列$\left\{  t_{1}^{\ast},t_{2}^{\ast},\cdots\right\}  $%
+は変動レート$\lambda\left(  t\right)
+$のポワソン過程に%
+従う.
+
+\begin{algorithm}
+Shedler-Lewis Thinning Algorithmによる非%
+定常ポワソン過程%
+の実現
+
+\begin{enumerate}
+\item $\left[  0,T\right]  $の区間の変%
+動レート$\lambda\left(  t\right)  $を%
+用意する
+
+\item $M=\max\lambda\left(  t\right)  $をもとめ%
+る
+
+\item $i=1$
+
+\item レート$M$の指数分%
+布に従う乱数$X$を生%
+成する\marginpar{$\eta$を$\left[  0,1\right]
+$の区間の一様乱数%
+として、$X=-M^{-1}\log\eta$}
+
+\item $s=s+X$, $\quad s>T$ならば終了
+
+\item $\left[  0,1\right]  $の区間の一%
+様乱数$\xi$を生成する
+
+$\qquad\lambda\left(  s\right)  //M\geq\xi$\quad ならば$\quad
+t_{i}=s,$\quad$i\leftarrow i+1$
+
+\item $4$に戻る
+\end{enumerate}
+\end{algorithm}
+
+\section{非定常リニュー%
+アル過程の数値計算}
+
+\subsection{変動レートの時%
+間伸縮}
+
+非定常リニューア%
+ル過程は変動ポワ%
+ソン過程の場合を%
+拡張して考えると%
+わかりやすい. 非定%
+常ポワソン過程と%
+同様に時間伸縮し%
+た軸上で定常リニ%
+ューアル過程を考%
+える. 例として$\Lambda$上%
+の定常ガンマ過程%
+を考え, そのイベン%
+ト系列を$\left\{  \Lambda_{1},\Lambda_{2}%
+,\cdots\right\}  $とする. イベン%
+ト間隔$\Lambda_{i}-\Lambda_{i-1}$が平%
+均が$1$, 分散が$1/\kappa$であ%
+る標準ガンマ分布%
+\marginpar{ガンマ分布
+\par
+$\frac{\left(  \kappa\lambda\right)  ^{\kappa}}{\Gamma\left(  \kappa\right)
+}t^{\kappa-1}e^{-\kappa\lambda t}$
+\par
+期待値$1/\lambda$、分散$1/\kappa\lambda$}%
+\[
+g\left(  z;\kappa\right)  =\frac{1}{\Gamma\left(  \kappa\right)  }%
+\kappa\left(  \kappa z\right)  ^{\kappa-1}e^{-\kappa z}%
+\]
+に従うとする\cite{Berman1981,Barbieri2001}%
+. $\kappa$はshape parameter%
+\index{shape parameter}%
+と呼ばれる. 実時間%
+との対応は$\Lambda_{i}=\Lambda\left(
+t_{i}\right)  $だから, ガンマ%
+分布に従う乱数を%
+発生させ, 変数変換%
+の公式%
+\[
+z\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  =\Lambda\left(
+t_{i}\right)  -\Lambda\left(  t_{i-1}\right)  =\int_{t_{i-1}}^{t_{i}}%
+\lambda\left(  u\right)  du
+\]
+を満たす分布を$t_{i}$を%
+逐次的に求めれば,
+実時間でのスパイ%
+ク時系列を求める%
+ことができる.
+
+\subsection{条件付きISI分布}
+
+\subsubsection{ガンマ分布}
+
+$p\left(  t_{i}|t_{i-1},\left\{  \lambda_{t}\right\}  \right)  $%
+を求めよう. 分布$p\left(
+t_{i}|t_{i-1},\left\{  \lambda_{t}\right\}  \right)  $は次%
+のような$t_{i}$から$z$へ%
+の変数変換（タイ%
+ムリスケーリング%
+）を施すことで, 標%
+準ガンマ分布にな%
+るとする. すなわち,
+変数変換の公式から%
+\[
+g\left(  z|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  =\left\vert \frac{dz}%
+{dt}\right\vert ^{-1}p\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
+\]
+$dz/dt_{i}=\lambda\left(  t_{i}\right)  $に注意%
+して%
+\begin{align*}
+p\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)   &  =\left\vert
+\frac{dz}{dt_{i}}\right\vert g\left(  z|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
+\\
+&  =\lambda\left(  t_{i}\right)  \frac{1}{\Gamma\left(  \kappa\right)  }%
+\kappa\left[  \kappa\int_{t_{i-1}}^{t_{i}}\lambda\left(  u\right)  du\right]
+^{\kappa-1}\exp\left[  -\kappa\int_{t_{i-1}}^{t_{i}}\lambda\left(  u\right)
+du\right]
+\end{align*}%
+%TCIMACRO{\CustomNote{Prob_Solv_Hint}{$\lambda\left(  t\right)  $%
+%\U{304c}\U{5b9a}\U{6570}$\lambda$\U{306e}\U{6642}\U{306f}\U{3001}%
+%\U{5e73}\U{5747}$1/\lambda$\U{30fb}\U{5206}\U{6563}$1/\kappa$}}%
+%BeginExpansion
+\marginpar{$\lambda\left(  t\right)  $が定数$\lambda
+$の時は、平均$1/\lambda$・%
+分散$1/\kappa$}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{B}{\begin{table}[tp]}}%
+%BeginExpansion
+\begin{table}[tp]%
+%EndExpansion
+$%
+\begin{array}
+[t]{cc}%
+%TCIMACRO{\TeXButton{L}{\noindent\hspace*{-0.9\evensidemargin}}}%
+%BeginExpansion
+\noindent\hspace*{-0.9\evensidemargin}%
+%EndExpansion%
+%TCIMACRO{\FRAME{itbhFU}{3.0512in}{2.0356in}{0in}{\Qcb{\U{6307}\U{6570}%
+%\U{5206}\U{5e03}\U{3068}\U{30cf}\U{30b6}\U{30fc}\U{30c9}\U{95a2}%
+%\U{6570}\U{3002}\U{30ac}\U{30f3}\U{30de}\U{5206}\U{5e03}\U{3068}%
+%\U{30cf}\U{30b6}\U{30fc}\U{30c9}\U{95a2}\U{6570} $\kappa=3$}}{}{Plot}%
+%{\special{ language "Scientific Word";  type "MAPLEPLOT";  width 3.0512in;
+%height 2.0356in;  depth 0in;  display "USEDEF";  plot_snapshots TRUE;
+%mustRecompute FALSE;  lastEngine "MuPAD";  xmin "0.01";  xmax "7.798120";
+%xviewmin "0.01";  xviewmax "7.798120";  yviewmin "-0.000122";
+%yviewmax "1.218988";  viewset "XY";  rangeset "X";  plottype 4;
+%labeloverrides 2;
+%axesFont "Times New Roman,12,0000000000,useDefault,normal";  numpoints 100;
+%plotstyle "patch";  axesstyle "normal";  axestips FALSE;  xis \TEXUX{x};
+%var1name \TEXUX{$x$};
+%function \TEXUX{$\left[ \func{GammaDen}(x,\kappa ,1/\lambda )\right] _{\kappa =1,\lambda =1}$};
+%linecolor "red";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0.01,7.798120";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x00ff0000]";  curveStyle "Line";
+%function \TEXUX{$\left[ \frac{\func{GammaDen}(x,\kappa ,1/\lambda )}{1-\func{GammaDist}(x,\kappa ,1/\lambda )}\right] _{\kappa =1,\lambda =1}$};
+%linecolor "red";  linestyle 2;  pointstyle "point";  linethickness 2;
+%lineAttributes "Dash";  var1range "0.01,7.798120";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x00ff0000]";  curveStyle "Line";
+%function \TEXUX{$\left[ \func{GammaDen}(x,\kappa ,1/\lambda )\right] _{\kappa =5,\lambda =1}$};
+%linecolor "blue";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0.01,7.798120";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x000000ff]";  curveStyle "Line";
+%function \TEXUX{$\left[ \frac{\func{GammaDen}(x,\kappa ,1/\lambda )}{1-\func{GammaDist}(x,\kappa ,1/\lambda )}\right] _{\kappa =2,\lambda =1}$};
+%linecolor "blue";  linestyle 2;  pointstyle "point";  linethickness 2;
+%lineAttributes "Dash";  var1range "0.01,7.798120";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x000000ff]";  curveStyle "Line";
+%VCamFile 'KWK9JG0B.xvz';valid_file "T";
+%tempfilename 'KWK9JG0A.wmf';tempfile-properties "XPR";}} }%
+%BeginExpansion
+{\parbox[b]{3.0512in}{\begin{center}
+\includegraphics[
+natheight=2.035600in,
+natwidth=3.051200in,
+height=2.0356in,
+width=3.0512in
+]%
+{G:/10/proj/book/graphics/book__9.pdf}%
+\\
+指数分布とハザー%
+ド関数。ガンマ分%
+布とハザード関数 $\kappa=3$
+\end{center}}}
+%EndExpansion
+&
+%TCIMACRO{\FRAME{itbhFU}{3.0512in}{2.0356in}{0in}{\Qcb{\U{30ec}\U{30fc}%
+%\U{30c8}\U{95a2}\U{6570} $\lambda\left(  t\right)  $}}{}{Plot}%
+%{\special{ language "Scientific Word";  type "MAPLEPLOT";  width 3.0512in;
+%height 2.0356in;  depth 0in;  display "USEDEF";  plot_snapshots TRUE;
+%mustRecompute FALSE;  lastEngine "MuPAD";  xmin "0";  xmax "2.798899";
+%xviewmin "-0.000279890279946";  xviewmax "2.79917989028006";
+%yviewmin "-0.000099960489876";  yviewmax "1";  rangeset "X";  plottype 4;
+%labeloverrides 2;
+%axesFont "Times New Roman,12,0000000000,useDefault,normal";  numpoints 100;
+%plotstyle "patch";  axesstyle "normal";  axestips FALSE;  xis \TEXUX{x};
+%var1name \TEXUX{$x$};
+%function \TEXUX{$\left[ \limfunc{WeibullDen}(x,a,b)\right] _{a=2,b=1}$};
+%linecolor "blue";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0,2.798899";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x000000ff]";  curveStyle "Line";
+%function \TEXUX{$\left[ \func{WeibullDist}(x,a,b)\right] _{a=2,b=1}$};
+%linecolor "maroon";  linestyle 2;  pointstyle "point";  linethickness 3;
+%lineAttributes "Dash";  var1range "0,2.798899";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x00800000]";  curveStyle "Line";
+%VCamFile 'KWK9JG0C.xvz';valid_file "T";
+%tempfilename 'KWK9JG0B.wmf';tempfile-properties "XPR";}} }%
+%BeginExpansion
+{\parbox[b]{3.0512in}{\begin{center}
+\includegraphics[
+natheight=2.035600in,
+natwidth=3.051200in,
+height=2.0356in,
+width=3.0512in
+]%
+{G:/10/proj/book/graphics/book__10.pdf}%
+\\
+レート関数 $\lambda\left(  t\right)  $
+\end{center}}}
+%EndExpansion
+\\%
+%TCIMACRO{\TeXButton{L}{\noindent\hspace*{-0.9\evensidemargin}}}%
+%BeginExpansion
+\noindent\hspace*{-0.9\evensidemargin}%
+%EndExpansion%
+%TCIMACRO{\FRAME{itbhFU}{3.0512in}{2.0356in}{0in}{\Qcb{ISI\U{5206}\U{5e03}}}%
+%{}{Plot}{\special{ language "Scientific Word";  type "MAPLEPLOT";
+%width 3.0512in;  height 2.0356in;  depth 0in;  display "USEDEF";
+%plot_snapshots TRUE;  mustRecompute FALSE;  lastEngine "MuPAD";  xmin "0";
+%xmax "2.798899";  xviewmin "-0.000279890279946";
+%xviewmax "2.79917989028006";  yviewmin "-0.000064836532163";
+%yviewmax "0.648429509669327";  rangeset "X";  plottype 4;  labeloverrides 2;
+%axesFont "Times New Roman,12,0000000000,useDefault,normal";  numpoints 100;
+%plotstyle "patch";  axesstyle "normal";  axestips FALSE;  xis \TEXUX{x};
+%var1name \TEXUX{$x$};
+%function \TEXUX{$\left[ \func{WeibullDen}(x,a,b)\kappa /\Gamma \left( \kappa \right) \left\{ \kappa \func{WeibullDist}(x,a,b)\right\} ^{\kappa -1}\exp \left( -\kappa \func{WeibullDist}(x,a,b)\right) \right] _{a=2,b=1,\kappa =1}$};
+%linecolor "maroon";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0,2.798899";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x00800000]";  curveStyle "Line";
+%function \TEXUX{$\left[ \func{WeibullDen}(x,a,b)\kappa /\Gamma \left( \kappa \right) \left\{ \kappa \func{WeibullDist}(x,a,b)\right\} ^{\kappa -1}\exp \left( -\kappa \func{WeibullDist}(x,a,b)\right) \right] _{a=2,b=1,\kappa =5}$};
+%linecolor "blue";  linestyle 1;  pointstyle "point";  linethickness 3;
+%lineAttributes "Solid";  var1range "0,2.798899";  num-x-gridlines 100;
+%curveColor "[flat::RGB:0x000000ff]";  curveStyle "Line";
+%VCamFile 'KWK9JJ0D.xvz';valid_file "T";
+%tempfilename 'KWK9JJ0D.wmf';tempfile-properties "XPR";}} }%
+%BeginExpansion
+{\parbox[b]{3.0512in}{\begin{center}
+\includegraphics[
+natheight=2.035600in,
+natwidth=3.051200in,
+height=2.0356in,
+width=3.0512in
+]%
+{G:/10/proj/book/graphics/book__11.pdf}%
+\\
+ISI分布%
+\end{center}}}
+%EndExpansion
+&
+\end{array}
+$ \caption{}\label{TableKey copy(3)}%
+%TCIMACRO{\TeXButton{E}{\end{table}}}%
+%BeginExpansion
+\end{table}%
+%EndExpansion
+
+
+\subsubsection{ワイブル分布}
+
+平均$1$・分散$\Gamma\left(  1+2/\kappa\right)
+/\Gamma\left(  1+1/\kappa\right)  ^{2}-1$の標準%
+ワイブル分布は%
+\[
+g\left(  z;\kappa\right)  =\kappa\Gamma\left(  1+1/\kappa\right)  \left\{
+\Gamma\left(  1+1/\kappa\right)  t\right\}  ^{\kappa-1}\exp\left[  -\left\{
+\Gamma\left(  1+1/\kappa\right)  t\right\}  ^{\kappa}\right]
+\]
+$dz/dt_{i}=\lambda\left(  t_{i}\right)  $に注意%
+して%
+\begin{align*}
+p\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)   &  =\left\vert
+\frac{dz}{dt_{i}}\right\vert g\left(  z|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
+\\
+&  =\lambda\left(  t_{i}\right)  \kappa\Gamma\left(  1+1/\kappa\right)
+\left\{  \Gamma\left(  1+1/\kappa\right)  \int_{t_{i-1}}^{t_{i}}\lambda\left(
+u\right)  du\right\}  ^{\kappa-1}\exp\left[  -\left\{  \Gamma\left(
+1+1/\kappa\right)  \int_{t_{i-1}}^{t_{i}}\lambda\left(  u\right)  du\right\}
+^{\kappa}\right]
+\end{align*}
+
+
+\subsubsection{逆ガウス分布}
+
+同様にして, 逆ガウ%
+ス分布に従うリニ%
+ューアル過程は, 平均%
+$1$・分散$1/\kappa$の標準逆%
+ガウス分布%
+\[
+g\left(  z;\kappa\right)  =\sqrt{\frac{\kappa}{2\pi z^{3}}}\exp\left[
+-\frac{\kappa}{2z}\left(  z-1\right)  ^{2}\right]
+\]
+\marginpar{$\sqrt{\frac{\kappa}{2\pi z^{3}}}\exp\left[  -\frac{\kappa}%
+{2z}\left\{  \lambda z-1\right\}  ^{2}\right]  $
+\par
+期待値は$1/\lambda$、分散%
+は$1/\kappa\lambda^{3}$}を用いてISI分%
+布は%
+\begin{align*}
+p\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)   &  =\left\vert
+\frac{dz}{dt_{i}}\right\vert g\left(  z|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
+\\
+&  =\lambda\left(  t_{i}\right)  \sqrt{\frac{\kappa}{2\pi\left\{
+\int_{t_{i-1}}^{t_{i}}\lambda\left(  u\right)  du\right\}  ^{3}}}\exp\left[
+-\frac{\kappa}{2}\frac{\left\{  \int_{t_{i-1}}^{t_{i}}\lambda\left(  u\right)
+du-1\right\}  ^{2}}{\int_{t_{i-1}}^{t_{i}}\lambda\left(  u\right)  du}\right]
+\end{align*}
+\marginpar{%
+\[
+\sqrt{\frac{\kappa/\lambda}{2\pi T^{3}}}\exp\left[  -\frac{\kappa/\lambda}%
+{2T}\left\{  \lambda T-1\right\}  ^{2}\right]
+\]
+平均$1/\lambda$, 分散$1/\kappa\lambda^{2}$}
+
+\subsection{時間伸縮理論}
+
+条件付きISI分布が求%
+まれば, これからハ%
+ザード関数が求ま%
+るから%
+\[
+r\left(  t_{i}|t_{i-1},\left\{  \lambda_{t}\right\}  \right)  =\frac{p\left(
+t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  }{1-\int_{t_{i-1}}^{t_{i}%
+}p\left(  u|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  du}%
+\]
+ハザード関数は瞬%
+間スパイク生成率%
+を与えるから, 時間%
+依存ポワソン過程%
+のときと同じように,
+時間を十分小さな%
+幅$\Delta$のビンに区切%
+って確率$r\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}%
+:t_{i}}\right)  \Delta$でスパイクを%
+発生させればよい.
+もちろんこの方法%
+は効率が悪い. では,
+非定常ポワソン過%
+程の時と同様に$r\left(
+t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  \Delta$を積%
+分していってはど%
+うだろうか. 実はハ%
+ザード関数を時間%
+伸縮した軸上の定%
+常ポワソン過程の%
+逆写像として, 非定%
+常リニューアル過%
+程が得られる. この%
+方法は非常に汎用%
+性のある方法で, よ%
+り一般の点過程に%
+ついて成り立つか%
+ら証明はそこで示%
+そう. ここでは, この%
+時間伸縮理論に基%
+づいた数値計算ア%
+ルゴリズムをまと%
+めておく.
+
+\begin{algorithm}
+\begin{enumerate}
+\item
+\begin{algorithm}
+時間伸縮理論を用%
+いた非定常リニュ%
+ーアル過程の数値%
+計算
+\end{algorithm}
+
+\item $i=1,t_{1}=0.$
+
+\item レート$1$の指数分%
+布に従う乱数$\eta$を生%
+成する.
+
+\item 時間伸縮$\Lambda_{t}=\int_{0}^{t}\lambda\left(
+u\right)  du$により, 伸縮した%
+ISIを求める. $z_{t}=\Lambda_{t}-\Lambda_{t_{i-1}}$
+
+\item ISI分布を求める$p\left(
+t|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  =\lambda\left(  t\right)  g\left(
+z_{t}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  $
+
+\item ハザード関数を求%
+める
+
+$r\left(  t|t_{i-1},\left\{  \lambda_{t}\right\}  \right)  =\frac{p\left(
+t|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  }{1-\int_{t_{i-1}}^{t}p\left(
+u|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  du}$
+
+\item $\eta=\int_{t_{i-1}}^{t}r\left(  u|t_{i-1}\right)  du$を%
+満たす$t_{i}$を求める.
+
+\item $t_{i}\geq T$ならば終了.
+
+$t_{i}<T$ならば$i\leftarrow i+1.\ 2$へ.
+\end{enumerate}
+\end{algorithm}
+
+これのアルゴリズ%
+ムによる数値シミ%
+ュレーションの結%
+果を示す.%
+%TCIMACRO{\FRAME{ftbpFU}{5.1534in}{5.9197in}{0pt}{\Qcb{\U{6642}\U{9593}%
+%\U{4f9d}\U{5b58}\U{3059}\U{308b}\U{5f37}\U{5ea6}\U{306b}\U{5f93}%
+%\U{3046}\U{30dd}\U{30ef}\U{30bd}\U{30f3}\U{53ca}\U{3073}\U{30ea}%
+%\U{30cb}\U{30e5}\U{30fc}\U{30a2}\U{30eb}\U{904e}\U{7a0b}\U{306b}%
+%\U{3088}\U{308a}\U{751f}\U{6210}\U{3055}\U{308c}\U{308b}\U{30b9}%
+%\U{30d1}\U{30a4}\U{30af}\U{6642}\U{7cfb}\U{5217}. \U{9752}\U{8272}%
+%\U{306e}\U{70b9}\U{7dda}\U{304c}\U{6642}\U{9593}\U{4f9d}\U{5b58}%
+%\U{3059}\U{308b}\U{5909}\U{52d5}\U{30b9}\U{30d1}\U{30a4}\U{30af}%
+%\U{30ec}\U{30fc}\U{30c8}\U{3067}\U{3042}\U{308b}. \U{8d64}\U{8272}%
+%\U{306e}\U{5b9f}\U{7dda}\U{306f}\U{30b9}\U{30d1}\U{30a4}\U{30af}%
+%\U{767a}\U{706b}\U{3092}\U{8003}\U{616e}\U{3057}\U{305f}\U{5f37}%
+%\U{5ea6}\U{95a2}\U{6570}. (A) \U{975e}\U{4e00}\U{69d8}\U{30dd}\U{30ef}%
+%\U{30bd}\U{30f3}\U{904e}\U{7a0b}\ (B) \U{975e}\U{4e00}\U{69d8}\U{9006}%
+%\U{30ac}\U{30a6}\U{30b9}\U{904e}\U{7a0b}\ (C) \U{975e}\U{4e00}\U{69d8}%
+%\U{30ac}\U{30f3}\U{30de}\U{904e}\U{7a0b} \U{ff08}\U{898f}\U{5247}%
+%\U{767a}\U{706b}$\quad\kappa=1.8)$\quad(D) \U{975e}\U{4e00}\U{69d8}%
+%\U{30ac}\U{30f3}\U{30de}\U{904e}\U{7a0b} \U{ff08}\U{4e0d}\U{898f}%
+%\U{5247}\U{767a}\U{706b}$\quad\kappa=0.8$\U{ff09}}}%
+%{\Qlb{fig:simulated_pointprocesses}}{fig/pointprocesses.eps}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";  display "USEDEF";
+%valid_file "F";  width 5.1534in;  height 5.9197in;  depth 0pt;
+%original-width 0pt;  original-height 0pt;  cropleft "0";  croptop "1";
+%cropright "1";  cropbottom "0";
+%filename 'fig/renewal_simulation.eps';file-properties "XNPEU";}} }%
+%BeginExpansion
+\begin{figure}
+[ptb]
+\begin{center}
+\includegraphics[
+height=5.9197in,
+width=5.1534in
+]%
+{fig/renewal_simulation.eps}%
+\caption{時間依存する強%
+度に従うポワソン%
+及びリニューアル%
+過程により生成さ%
+れるスパイク時系列.
+青色の点線が時間%
+依存する変動スパ%
+イクレートである.
+赤色の実線はスパ%
+イク発火を考慮し%
+た強度関数. (A) 非一様%
+ポワソン過程\ (B) 非一%
+様逆ガウス過程\ (C) 非%
+一様ガンマ過程 （%
+規則発火$\quad\kappa=1.8)$\quad(D) 非%
+一様ガンマ過程 （%
+不規則発火$\quad\kappa=0.8$）}%
+\label{fig:simulated_pointprocesses}%
+\end{center}
+\end{figure}
+%EndExpansion
+
+
+使用したMatlabのコード.
+数値積分は台形則%
+を用いている%
+.\baselineskip=0.5\baselineskip
+
+\begin{verbatim}
+function x = PointProcess_Renewal(y,dt,ISI,k)
+%PointProcess_Renewal(y,dt)
+%y: Time-varying intensity
+%dt: Sampling resolution [s]
+%ISI: Gamma, InvGauss. ISI distribution
+%Author: H. Shimazaki, Ph.D. 2007
+
+
+L = length(y);
+x = zeros(1,round(mean(y)*L*dt + sqrt(mean(y)*L*dt)*3) );
+
+%Initialize parameters
+z = 0; P = 0; R = 0; j = 1;
+
+yb = y(1);
+pb = y(1) * feval(ISI,0,k);
+rb = 0;
+
+rs(1) = pb;
+
+eta = - log(rand);
+for i = 2: L
+    if eta > R
+        z = z + (yb+y(i))/2*dt;         %time-rescale
+        yb = y(i);
+
+        p = y(i) * feval(ISI,z,k);      %ISI
+        P = P + (pb+p)/2 *dt;
+        pb = p;
+
+        r = p / (1 - P);                %Intensity
+        R = R + (rb+r)/2*dt;
+        rb = r;
+    else
+        x(j) = i*dt; j = j + 1;         %Spike time
+
+        z = 0; P = 0; R = 0;
+
+        yb = y(i);
+        pb = y(i) * feval(ISI,0,k);
+        rb = 0;
+
+        eta = - log(rand);
+    end
+end
+
+x = x(x~=0);
+
+function y = Gamma(z,k)
+y = 1/gamma(k) * k * (k * z).^(k-1) .* exp(-k*z);
+
+function y = InvGauss(z,k)
+if z == 0
+    y = 0;
+else
+    y = sqrt( k/ (2*pi*z.^3) ) * exp( -k/2/z * (z-1)^2 );
+end
+\end{verbatim}
+
+\baselineskip=2\baselineskip.
+
+一般化線形モデル%
+\[
+r\left(  t|H_{t}\right)  =\exp[\sum_{i}\gamma_{i}t\Delta]
+\]
+
+
+\section{一般点過程の数%
+値計算}
+
+$N_{t}$を時刻$[0,t)$の間に発%
+生したスパイクの%
+数とする. $i$番目のス%
+パイクの発生時刻を%
+$t_{i}$とする. スパイク%
+発生時刻をまとめ%
+たベクトルを$H_{t}=\left\{  t_{1}%
+,t_{2},\cdots,t_{N_{t}}\right\}  $とする. 各%
+時刻の発火率が過%
+去のスパイクに依%
+存するとき時刻$[t,t+\Delta
+t)$の間にスパイクが%
+一つ発生する確率%
+は\cite{Cox62,Snyder75,Daley88,Johnson96}\marginpar{$o\left(  t,\Delta
+t\right)  $は$\Delta t$が０に近づ%
+くにつれて、小さ%
+くなる: $\lim_{\Delta\rightarrow0}o\left(  t,\Delta\right)
+/\Delta=0.$}%
+\begin{align}
+prob\left(  \text{one event in }[t,t+\Delta)|N_{t},H_{t}\right)   &  =r\left(
+t|N_{t},H_{t}\right)  \Delta\\
+prob\left(  \text{more than one event in }[t,t+\Delta)|N_{t},H_{t}\right)   &
+=o\left(  t,\Delta\right)
+\end{align}
+この式は十分に小%
+さい区間$[t,t+\Delta)$内のイ%
+ベントの発生確率%
+が強度$r\left(  t;N_{t},H_{t}\right)  $と%
+区間幅$\Delta$に比例し,
+またこの間に一つ%
+以上のスパイクが%
+発生しないことを%
+意味している.
+
+$r\left(  t;N_{t},H_{t}\right)  $は点過程%
+の理論では強度(intensity)%
+\index{intensity}%
+と呼ばれるが, ここ%
+ではスパイク発火%
+の瞬間レート(instantaneous rate of
+discharge)と解釈すればよい.
+強度は一般には過%
+去のスパイク発火%
+の履歴に依存して%
+いる. 強度が時刻$t$の%
+関数でないときは,
+その点過程は定常%
+であるという. 時刻%
+に依存する場合は%
+非定常と呼ばれる.
+\marginpar{ただしこれは点%
+過程の理論の場合%
+の通称であって確%
+率過程の意味での%
+定常・非定常とは%
+別の定義になって%
+いる。}強度関数が%
+与えられればその%
+点過程の統計的性%
+質はすべて決まる.
+強度が時刻と履歴%
+の何れにもに依存%
+しない場合, $r\left(  t;N_{t},H_{t}\right)
+=\lambda$であり, その点過%
+程は一様ポワソン%
+過程(homogeneous Poisson point
+process)\label{inhomogeneous Poisson process}と呼ば%
+れる. 強度が履歴に%
+は依存しないが時%
+刻に依存しない場合,
+$r\left(  t;N_{t},H_{t}\right)  =\lambda\left(  t\right)  $で%
+あり, その点過程は%
+非一様ポワソン過%
+程(inhomogeneous Poisson point process)%
+\index{inhomogeneous Poisson process}%
+, あるいは時間依存%
+ポワソン過程（time-dependent Poisson
+point process）と呼ばれる.\quad
+強度関数が最後の%
+スパイクの時刻$t_{N_{t}}$%
+にのみ依存すると%
+き$r\left(  t;N_{t},H_{t}\right)  =r\left(  t;N_{t},t_{N_{t}}\right)  $,
+点過程はリニュー%
+アル過程と呼ばれる.
+
+強度とISI分布の間には%
+\begin{equation}
+r\left(  t|H_{t}\right)  =\frac{p\left(  t|H_{t}\right)  }{1-\int_{0}%
+^{t}p\left(  u|H_{u}\right)  du} \label{intensity_point_process}%
+\end{equation}
+の関係がある. また,
+逆に条件付きISI分布は%
+\begin{equation}
+p\left(  t|H_{t}\right)  =r\left(  t|H_{t}\right)  \exp\left\{  -\int_{0}%
+^{t}r\left(  u|H_{u}\right)  du\right\}  \label{ISI_point_process}%
+\end{equation}
+で与えられる.
+
+\subsection{時間伸縮理論}
+
+\cite{Brown2001}強度が与えら%
+れた下で, 次のスパ%
+イクが生じるまで%
+の時間を数値計算%
+したい. スパイク間%
+隔の密度分布に従%
+う乱数を発生させ%
+ればよい. \marginpar{\textbf{逆関%
+数法}
+\par
+$\xi$を$[0,1]$の範囲の一様%
+乱数、$f\left(  x\right)  $を密度%
+関数とすると%
+\[
+\xi=\int_{0}^{\eta}f\left(  u\right)  du\equiv F\left(  \eta\right)
+\]
+を満たす$\eta=F^{-1}\left(  \xi\right)  $%
+は$f\left(  x\right)  $に従う乱数%
+になる。}%
+\index{time-rescaling theorem}%
+\begin{equation}
+p\left(  t|H_{t}\right)  =r\left(  t|H_{t}\right)  \exp\left\{  -\int_{0}%
+^{t}r\left(  u|H_{u}\right)  du\right\}
+\end{equation}
+
+
+$\xi$を一様乱数とする.
+累積分布関数を考%
+えると, \ref{cdf_hazard}からハ%
+ザード関数を用いて%
+\begin{align*}
+\xi &  =\int_{0}^{\eta}p\left(  u|H_{u}\right)  du\\
+&  =1-\exp\left\{  -\int_{0}^{\eta}r\left(  u|H_{u}\right)  du\right\}
+\end{align*}
+とすると$\eta$は分布$p\left(
+\tau|\tau^{\ast}\right)  $に従う乱数%
+である. これより%
+\begin{equation}
+-\log\left(  \xi\right)  =\int_{0}^{\eta}r\left(  u|H_{u}\right)  du
+\end{equation}
+$~\zeta=-\log\left(  \xi\right)  $は$-\log\left(  \xi\right)  $%
+は平均１の指数分%
+布に従う乱数である.
+$\Phi\left(  \eta\right)  =\int_{0}^{\eta}r\left(  u|H_{u}\right)  du$%
+とすると, 次のスパ%
+イクまでの時間は$\eta
+=\Phi^{-1}\left(  \zeta\right)  $で与えら%
+れる.
+
+\section{ポイントプロセ%
+スの尤度関数}
+
+\subsection{ポワソン過程 (Poisson
+Process)の尤度関数}
+
+時間依存ポワソン%
+過程に従うスパイ%
+ク時系列$\left\{  t_{i}\right\}  _{i=1}^{n}$%
+の確率密度分布(尤%
+度関数%
+\index{likelihood function}%
+)を求めよう. .
+\ref{inhomogeneous Poisson process}で見たよ%
+うに, 時刻$t_{i-1}$から$t_{i}$%
+までスパイクが生%
+じず, 時刻$t_{i}$におい%
+てスパイクが生じ%
+る確率は%
+\[
+p\left(  t_{i}|t_{i-1};\left\{  \lambda\left(  t\right)  \right\}  \right)
+=\lambda\left(  t_{i}\right)  \exp\left[  -\int_{t_{i-1}}^{t_{i}}%
+\lambda\left(  u\right)  du\right]
+\]
+従って, スパイク時%
+系列$\left\{  t_{i}\right\}  _{i=1}^{n}$は独%
+立に生じるから,
+\begin{align*}
+p\left(  \left\{  t_{i}\right\}  _{i=1}^{n}\right)   &  =%
+%TCIMACRO{\dprod \limits_{i=1}^{n}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{i=1}^{n}}
+%EndExpansion
+p\left(  t_{i}|t_{i-1}\right)  P\left(  t_{n}<T|t_{n-1}\right) \\
+&  =%
+%TCIMACRO{\dprod \limits_{i=1}^{n}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{i=1}^{n}}
+%EndExpansion
+\lambda\left(  t_{i}\right)  \exp\left[  -\int_{t_{i-1}}^{t_{i}}\lambda\left(
+u\right)  du\right]  \exp\left[  -\int_{t_{n}}^{T}\lambda\left(  u\right)
+du\right] \\
+&  =%
+%TCIMACRO{\dprod \limits_{i=1}^{n}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{i=1}^{n}}
+%EndExpansion
+\lambda\left(  t_{i}\right)  \exp\left[  -\int_{t_{0}}^{T}\lambda\left(
+u\right)  du\right]
+\end{align*}
+
+
+指数分布の導出で%
+見たように, 尤度も%
+いくつかの異なっ%
+た方法で導出する%
+ことができる. 区間$\left[
+0,T\right]  $を幅$\Delta$の$N$個の%
+区間に区切る. $\Delta$の%
+大きさは１つの区%
+間に高々１つのス%
+パイクしか入らな%
+い程度に小さくと%
+るとする. $i$番目の区%
+間にスパイクの入%
+る確率は$\lambda_{i\Delta}\Delta$, ま%
+た入らない確率は%
+$1-\lambda_{i\Delta}\Delta$である. 区間%
+毎に独立に考える%
+ことが出来るから,
+確率密度は%
+\begin{align*}
+p\left(  \left\{  t_{i}\right\}  _{i=1}^{n}\right)  \Delta^{n}  &  =%
+%TCIMACRO{\dprod \limits_{j:\text{\U{30b9}\U{30d1}\U{30a4}\U{30af}%
+%\U{3042}\U{308a}}}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{j:\text{スパイク%
+あり}}}
+%EndExpansion
+\lambda\left(  j\Delta\right)  \Delta%
+%TCIMACRO{\dprod \limits_{j:\text{\U{30b9}\U{30d1}\U{30a4}\U{30af}%
+%\U{306a}\U{3057}}}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{j:\text{スパイク%
+なし}}}
+%EndExpansion
+\left[  1-\lambda\left(  j\Delta\right)  \Delta\right] \\
+&  =%
+%TCIMACRO{\dprod \limits_{j:\text{\U{30b9}\U{30d1}\U{30a4}\U{30af}%
+%\U{3042}\U{308a}}}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{j:\text{スパイク%
+あり}}}
+%EndExpansion
+\frac{\lambda\left(  j\Delta\right)  \Delta}{1-\lambda\left(  j\Delta\right)
+\Delta}%
+%TCIMACRO{\dprod \limits_{j=1}^{K}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{j=1}^{K}}
+%EndExpansion
+\left[  1-\lambda\left(  j\Delta\right)  \Delta\right]
+\end{align*}
+\marginpar{for $-1<x<1$%
+\[
+\frac{1}{1-x}=1+x+x^{2}+x^{3}\cdots
+\]%
+\[
+\log\left(  1-x\right)  =-x-\frac{1}{2}x^{2}-\frac{1}{3}x^{3}\cdots\text{ }%
+\]
+}ここで第一成分は%
+\begin{align*}%
+%TCIMACRO{\dprod \limits_{j:\text{\U{30b9}\U{30d1}\U{30a4}\U{30af}%
+%\U{3042}\U{308a}}}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{j:\text{スパイク%
+あり}}}
+%EndExpansion
+\frac{\lambda\left(  j\Delta\right)  \Delta}{1-\lambda\left(  j\Delta\right)
+\Delta}  &  =%
+%TCIMACRO{\dprod \limits_{j:\text{\U{30b9}\U{30d1}\U{30a4}\U{30af}%
+%\U{3042}\U{308a}}}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{j:\text{スパイク%
+あり}}}
+%EndExpansion
+\lambda\left(  j\Delta\right)  \Delta\left[  1+\lambda\left(  j\Delta\right)
+\Delta+\left\{  \lambda\left(  j\Delta\right)  \Delta\right\}  ^{2}%
++\cdots\right] \\
+&  \rightarrow%
+%TCIMACRO{\dprod \limits_{i=1}^{n}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{i=1}^{n}}
+%EndExpansion
+\lambda\left(  t_{i}\right)  \text{ }\Delta\text{\ \ \ \ \ \ \ \ \ \ (as\ }%
+\Delta\rightarrow0\text{)}%
+\end{align*}
+また第二成分は%
+\begin{align*}%
+%TCIMACRO{\dprod \limits_{i=1}^{K}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{i=1}^{K}}
+%EndExpansion
+\left(  1-\lambda_{i\Delta}\Delta\right)   &  =\exp\left[  \sum_{i=1}^{K}%
+\log\left(  1-\lambda\left(  j\Delta\right)  \Delta\right)  \right] \\
+&  =\exp\left[  \sum_{i=1}^{K}\left[  -\lambda\left(  j\Delta\right)
+\Delta-\frac{1}{2}\left\{  \lambda\left(  j\Delta\right)  \Delta\right\}
+^{2}+\cdots\right]  \right] \\
+&  \rightarrow\exp\left[  -\int_{0}^{T}\lambda\left(  t\right)  dt\right]
+\text{\ \ \ \ \ \ \ \ \ \ (as\ }\Delta\rightarrow0\text{)}%
+\end{align*}
+従って, 確率密度は%
+\[
+p\left(  \left\{  t_{i}\right\}  _{i=1}^{n}\right)  =%
+%TCIMACRO{\dprod \limits_{i=1}^{n}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{i=1}^{n}}
+%EndExpansion
+\lambda\left(  t_{i}\right)  \exp\left[  -\int_{0}^{T}\lambda\left(  u\right)
+du\right]
+\]
+\bigskip
+
+\subsection{一般点過程の尤%
+度関数}
+
+一般の点過程の尤%
+度も, 非定常ポアソ%
+ン過程と同様の方%
+法で導出すること%
+ができる. 強度（瞬%
+間スパイク生成率%
+）が条件付き独立(conditionally
+independent)であるから, 非定%
+常ポアソン過程と%
+同じように%
+
+\[
+p\left(  \left\{  t_{i}\right\}  _{i=1}^{n}\right)  =%
+%TCIMACRO{\dprod \limits_{j:\text{\U{30b9}\U{30d1}\U{30a4}\U{30af}%
+%\U{3042}\U{308a}}}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{j:\text{スパイク%
+あり}}}
+%EndExpansion
+r\left(  t_{j}|H_{t_{i}}\right)  \Delta%
+%TCIMACRO{\dprod \limits_{j:\text{\U{30b9}\U{30d1}\U{30a4}\U{30af}%
+%\U{306a}\U{3057}}}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{j:\text{スパイク%
+なし}}}
+%EndExpansion
+\left[  1-r\left(  t_{j}|H_{t_{i}}\right)  \Delta\right]
+\]
+と書ける. 従って尤%
+度は%
+\[
+p\left(  \left\{  t_{i}\right\}  _{i=1}^{n}\right)  =%
+%TCIMACRO{\dprod \limits_{i=1}^{n}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{i=1}^{n}}
+%EndExpansion
+r\left(  t_{i}|H_{t_{i}}\right)  \exp\left[  -\int_{0}^{T}r\left(
+u|H_{u}\right)  du\right]
+\]
+となる. この式はまた%
+\[
+p\left(  \left\{  t_{i}\right\}  _{i=1}^{n}\right)  =\exp\left[  \int\log
+r\left(  u|H_{u_{i}}\right)  dN_{u}-\int_{0}^{T}r\left(  u|H_{u}\right)
+du\right]
+\]
+と書かれることも%
+ある. ここで$N_{t}$は計%
+数過程と呼ばれ時刻%
+$t$までのに生じたス%
+パイク数を示す. $dN_{u}$
+はその微分で積分%
+のうちスパイクが%
+生じた事項のみの%
+和をとることを表%
+している. そうする%
+と前の式と一致す%
+ることがわかるだ%
+ろう. この式の導出%
+を確認のために以%
+下に示す.
+\begin{align*}
+p\left(  \left\{  t_{i}\right\}  _{i=1}^{n}\right)   &  =%
+%TCIMACRO{\dprod \limits_{k=1}^{K}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{k=1}^{K}}
+%EndExpansion
+\left[  r\left(  k\Delta|H_{k\Delta}\right)  \Delta\right]  ^{dN_{k\Delta}}%
+%TCIMACRO{\dprod \limits_{k=1}^{K}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{k=1}^{K}}
+%EndExpansion
+\left[  1-r\left(  k\Delta|H_{k\Delta}\right)  \Delta\right] \\
+&  =\exp\log\left[
+%TCIMACRO{\dprod \limits_{k=1}^{K}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{k=1}^{K}}
+%EndExpansion
+\left[  r\left(  k\Delta|H_{k\Delta}\right)  \Delta\right]  ^{dN_{k\Delta}%
+}\right]  \exp\left[  \sum_{i=1}^{K}-r\left(  k\Delta|H_{k\Delta}\right)
+\Delta\right] \\
+&  =\exp\left[  \sum_{k=1}^{K}dN_{k\Delta}\log\left\{  r\left(  k\Delta
+|H_{k\Delta}\right)  \Delta\right\}  -\sum_{i=1}^{K}r\left(  k\Delta
+|H_{k\Delta}\right)  \Delta\right] \\
+&  \rightarrow\exp\left[  \int_{0}^{T}\log r\left(  u|H_{u}\right)  dN\left(
+u\right)  -\int_{0}^{T}r\left(  k\Delta|H_{u}\right)  du\right]
+\end{align*}
+
+
+\chapter{スパイクレート%
+推定}
+
+\section{ヒストグラム/カ%
+ーネル法}
+
+電気神経生理学の%
+動物実験では感覚%
+刺激・行動・注意%
+等と神経細胞の発%
+火頻度（レート）%
+の相関関係がよく%
+調べられる. 広く使%
+われているレート%
+推定の手法に, 同一%
+刺激下で行われた%
+複数回の試行のス%
+パイク時系列を適%
+当な時間幅をもつ%
+区間に分割し, その%
+中でのイベント生%
+成率（発火率）を%
+棒グラフとして表す
+Peristimulus Time Histogram (PSTH)がある. PSTHの%
+形状は分割する区%
+間の時間幅に依存%
+するにもかかわらず,
+区間幅は多くの場%
+合研究者により恣%
+意的に与えられて%
+いる. 実験データか%
+ら最適区間幅を導%
+出する手順や有限%
+区間幅を得るのに%
+必要な最小試行数%
+の推定方法などが%
+求められる.
+
+ヒストグラムとカ%
+ーネル法による推%
+定値を$\hat{\lambda}_{t}$をとする.
+$\lambda_{t}$をポワソン過程%
+のレートとする。%
+本節では背後のレ%
+ートをもっともよ%
+く表現するヒスト%
+グラムの作成方法%
+を考える. このため%
+には、二つの関数%
+がどれぐらい似て%
+いるかを表す基準%
+が必要となる。こ%
+こでは積分二乗誤差(mean
+integrated squared error, MISE),
+\begin{equation}
+\mbox{MISE}\equiv\frac{1}{T}\int_{0}^{T}E\,(\hat{\lambda}_{t}-\lambda_{t}%
+)^{2}\,dt,
+\end{equation}
+と呼ばれる基準を%
+用いる. ここで$E$はポ%
+イントプロセスに%
+関する期待値. MISEを最%
+小にするヒストグ%
+ラムが最適である%
+。ここで問題とな%
+るのは、当然なが%
+ら背後のスパイク%
+レート$\lambda_{t}$は未知で%
+あることである。
+
+\subsection{スパイク時系列%
+からのヒストグラ%
+ムの作成}
+
+長さ$T$の時間依存Poisson過%
+程のレート（強度%
+過程）を$\lambda_{t}$ ($t\in\lbrack0,\,T]$%
+)とする. 区間$[0,\,\Delta]$の%
+棒ヒストグラムの%
+真の高さは
+\begin{equation}
+\theta=\frac{1}{\Delta}\int_{0}^{\Delta}{\lambda_{t}dt}.
+\end{equation}
+で与えられる. この%
+区間内の$n$回の試行%
+数の総スパイク数$k$%
+は次のPoisson分布で与え%
+られる.
+\begin{equation}
+p(k|n\Lambda\Delta)=\frac{\left(  n\Lambda\Delta\right)  ^{k}}{k!}%
+e^{-n\Lambda\Delta} \label{eq:def_poisson}%
+\end{equation}
+従って $\Lambda$の不偏推%
+定量である$\hat{\Lambda}=k/(n\Delta)$%
+がデータから求め%
+られるヒストグラ%
+ムの高さである.
+
+\subsection{平均積分二乗誤%
+差及びコスト関数%
+の導入}%
+
+\begin{equation}
+\mathcal{MISE}=\left\langle {E_{\Lambda}\left[  {\frac{1}{\Delta}\int
+_{0}^{\Delta}{(\,{\lambda_{t}-\hat{\Lambda}}\,)^{2}dt}}\right]  }\right\rangle
+\label{MSE}%
+\end{equation}
+ここで $\left\langle \,\cdot\,\right\rangle $は%
+レート過程$\lambda_{t}$の経%
+路によるアンサン%
+ブル平均を意味し, $E_{\Lambda
+}\left[  \,\cdot\,\right]  $はレート$\lambda_{t}%
+$の区間幅$\Delta$内での%
+時間平均が$\Lambda$であ%
+る場合のスパイク%
+数の条件付き確率%
+分布(式\ref{eq:def_poisson})による%
+平均操作を表す.
+
+MISEを区間幅$\Delta$内での%
+レートのゆらぎと%
+スパイク生成のゆ%
+らぎに分割し, さら%
+に区間幅$\Delta$の選択%
+に依らない項を除%
+いたコスト関数を%
+導入することがで%
+きる.
+\begin{align}
+C(\Delta)  &  \equiv\mathcal{E}-\left\langle {\left(  {\lambda_{t}%
+-\langle\Lambda\rangle}\right)  ^{2}}\right\rangle \nonumber\\
+&  =\left\langle E_{\Lambda}\left[  (\hat{\Lambda}-\Lambda)^{2}\right]
+\right\rangle -\left\langle {\left(  {\Lambda-\langle\Lambda\rangle}\right)
+^{2}}\right\rangle \label{cost}%
+\end{align}
+式\ref{cost}は$\Lambda$の分散を%
+第２項に含んでい%
+るので, 観測量のみ%
+からなる式に書き%
+直し次式を得る.
+\begin{equation}
+C\left(  \Delta\right)  =2\left\langle E_{\Lambda}\left[  (\hat{\Lambda
+}-\Lambda)^{2}\right]  \right\rangle -\left\langle E_{\Lambda}\left[
+({\hat{\Lambda}-\langle\Lambda\rangle})^{2}\right]  \right\rangle \label{Cn}%
+\end{equation}
+ヒストグラムの最%
+適区間幅決定の手%
+順を以下にまとめ,
+図\ref{CostFunction}-aに(i)-(iv)の手順%
+から得られたコス%
+ト関数を示す.
+
+\bigskip
+
+We consider sequences of spikes repeatedly recorded from a single neuron under
+identical experimental conditions. A recent analysis revealed that \textit{in
+vivo} spike trains are not simply random, but possess inter-spike-interval
+distributions intrinsic and specific to individual neurons. However, spikes
+accumulated from a large number of spike trains are in the majority mutually
+independent, and can be regarded as being derived from a time-dependent
+Poisson point process~\cite{Snyder75,Daley88,Kass05}.
+
+\bigskip 推定量 $\hat{\lambda}_{t}$と背%
+後のレート$\lambda_{t}$
+
+スパイク時系列の%
+レート$\lambda_{t}$とヒスト%
+グラム $\hat{\lambda}_{t}$ の当て%
+はまりの良さは平%
+均積分二乗誤差(Mean Integrated
+Squared Error, MISE)で評価する.
+\begin{equation}
+\mbox{MISE}\equiv\frac{1}{T}\int_{0}^{T}E\,(\hat{\lambda}_{t}-\lambda_{t}%
+)^{2}\,dt, \label{eq:def_esterr}%
+\end{equation}
+ここで$E$はレート$\lambda_{t}%
+$の点過程から生成%
+されるサンプルに%
+ついて平均をとる%
+操作（期待値）を%
+意味する. ここで. We begin with a
+bar-graph time histogram as $\hat{\lambda}_{t}$, and explore a method to
+select the bin size that minimizes the MISE. The difficulty of the present
+problem comes from the fact that the underlying spike rate $\lambda_{t}$ is
+not known.
+
+%%%%%FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+\begin{figure}[h]
+\begin{center}
+%\includegraphics[width=4.25in]{2BarSchematic}
+%width=8.7cm
+\end{center}
+\caption{The Bar-PSTH. A: an underlying spike rate, $\lambda_{t}$. The
+horizontal bars indicate the time averaged rates $\theta$ for individual bins
+of width $\Delta$. B: sequences of spikes derived from the underlying rate. C:
+a time histogram for the sample sequences of spikes. The estimated rate
+$\hat{\theta}$ is the total number of spikes $k$ that entered each bin,
+divided by the number of sequences $n$ and the bin size $\Delta$. }%
+\label{BarSchematic}%
+\end{figure}
+%%%%%FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+
+ヒストグラムは幅$\Delta
+$（ビン幅という）%
+の区間に含まれる%
+スパイクの数を数%
+えることで簡単に%
+作れる. is constructed simply by counting the number of
+spikes that belong to each bin of width $\Delta$. For an observation period
+$T$, we obtain $N=\lfloor T/\Delta\rfloor$ intervals. The number of spikes
+accumulated from all $n$ sequences in the $i$th interval is counted as $k_{i}%
+$. The bar height at the $i$th bin is given as $k_{i}/n\Delta$.
+Figure~\ref{BarSchematic} shows the schematic diagram for the construction of
+a bar-graph time histogram.
+
+Given a bin of width $\Delta$, the expected height of a bar graph for $t
+\in[0, \Delta]$ is the time-averaged rate,
+\begin{equation}
+\theta= \frac{1}{\Delta}\int_{0}^{\Delta}{\lambda_{t} \,dt}.
+\end{equation}
+The total number of spikes $k$ from $n$ spike sequences that enter this bin of
+width $\Delta$ obeys the Poisson distribution
+\begin{equation}
+p(k \,|\, n \Delta\theta) =\frac{\left(  n \Delta\theta\right)  ^{k}}{k!}
+e^{-n \Delta\theta} \, , \label{eq:def_poisson}%
+\end{equation}
+whose expectation is $n\Delta\theta$. The unbiased estimator for $\theta$ is
+denoted as $\hat{\theta}=k/(n\Delta)$, which is the empirical height of the
+bar graph for $t \in[0, \Delta]$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Selection of the bin size}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+By segmenting the total observation period $T$ into $N$ intervals of size
+$\Delta$, the MISE defined in Eq.~\ref{eq:def_esterr} can be rewritten as
+\begin{equation}
+\label{MISE1}\mbox{MISE} = \frac{1}{\Delta}\int_{0}^{\Delta}\frac{1}{N}
+\sum_{i=1}^{N} \, \left\{  E \, (\, {\hat\theta_{i} - \lambda_{t+(i-1)\Delta}
+} \,)^{2} \right\}  \,dt,
+\end{equation}
+where $\hat{\theta}_{i} \equiv k_{i}/(n\Delta)$. Hereafter we denote the
+average over the segmented rate $\lambda_{t+(i-1)\Delta}$ as an average over
+an ensemble of (segmented) rate functions $\{ \lambda_{t} \}$ defined on an
+interval of $t \in[0, \Delta]$, as
+\begin{equation}
+\mbox{MISE} =\frac{1}{\Delta}\int_{0}^{\Delta}\left\langle {E \, (\,
+{\hat\theta- \lambda_{t} } \,)^{2} } \right\rangle \,dt.
+\end{equation}
+The expectation $E$ refers to the average over the spike count, or
+$\hat{\theta}=k/(n\Delta)$, given a rate function $\lambda_{t}$, or its mean
+value $\theta$.
+
+The MISE can be decomposed into two parts,
+\begin{align}
+\mbox{MISE} = \left\langle {E {( {\hat\theta- \theta} )^{2} } } \right\rangle
++ \frac{1}{\Delta}\int_{0}^{\Delta}{\left\langle {\left(  {\lambda_{t} -
+\theta} \right)  ^{2} } \right\rangle dt} . \label{MISE2}%
+\end{align}
+The first and second terms are, respectively, the stochastic fluctuation of
+the estimator $\hat{\theta}$ around the expected mean rate $\theta$, and the
+averaged temporal fluctuation of $\lambda_{t} $ around its mean $\theta$ over
+an interval of length $\Delta$.
+
+The second term of Eq.~\ref{MISE2} can further be decomposed into two parts,
+\begin{equation}
+\frac{1}{\Delta}\int_{0}^{\Delta}{\left\langle ( \lambda_{t} - \langle
+\theta\rangle+ \langle\theta\rangle- \theta)^{2} \right\rangle dt} = \frac
+{1}{\Delta}\int_{0}^{\Delta}\left\langle {\left(  {\lambda_{t} - \langle
+\theta\rangle} \right)  ^{2} } \right\rangle \, dt - \left\langle {\left(
+{\theta- \langle\theta\rangle} \right)  ^{2} } \right\rangle . \label{MISE3}%
+\end{equation}
+The first term in Eq.~\ref{MISE3} represents a mean squared fluctuation of the
+underlying rate $\lambda_{t} $ from the mean rate $\left\langle \theta
+\right\rangle $, and is independent of the bin size $\Delta$, because
+\begin{equation}
+\frac{1}{\Delta}\int_{0}^{\Delta}\left\langle {\left(  {\lambda_{t} -
+\langle\theta\rangle} \right)  ^{2} } \right\rangle \, dt = \frac{1}{T}
+\int_{0}^{T} \left(  {\lambda_{t} - \langle\theta\rangle} \right)  ^{2} \, dt.
+\label{variance_rate}%
+\end{equation}
+We define a cost function by subtracting this term from the original MISE,
+\begin{align}
+C_{n}(\Delta)  &  \equiv\mbox{MISE} - \frac{1}{T} \int_{0}^{T} \left(
+{\lambda_{t} - \langle\theta\rangle} \right)  ^{2} \, dt\nonumber\\
+&  = \left\langle E(\hat\theta- \theta)^{2} \right\rangle - \left\langle
+{\left(  {\theta- \langle\theta\rangle} \right)  ^{2} } \right\rangle .
+\label{cost}%
+\end{align}
+This cost function corresponds to the `risk function' in the report by Rudemo,
+(Eq.~2.3), obtained by direct decomposition of the MISE~\cite{Rudemo82}. The
+second term in Eq.~\ref{cost} represents the temporal fluctuation of the
+expected mean rate $\theta$ for individual intervals of period $\Delta$. As
+the expected mean rate $\theta$ is not an observable quantity, we have to
+replace the fluctuation of the expected mean rate with that of the observable
+estimator $\hat{\theta}$. Using the decomposition rule for an unbiased
+estimator ($E\hat{\theta}=\theta)$,
+\begin{equation}
+\label{varLambdah}\left\langle E ( {\hat\theta- \langle E\hat\theta\rangle}
+)^{2} \right\rangle = \left\langle E ( \hat\theta- \theta)^{2} \right\rangle +
+\left\langle {\left(  {\theta- \langle\theta\rangle} \right)  ^{2} }
+\right\rangle ,
+\end{equation}
+the cost function is transformed into
+\begin{equation}
+C_{n}\left(  \Delta\right)  = 2 \left\langle E (\hat\theta- \theta)^{2}
+\right\rangle - \left\langle E ( {\hat\theta- \langle E\hat\theta\rangle}
+)^{2} \right\rangle . \label{Cn}%
+\end{equation}
+
+
+Due to the assumed Poisson nature of the point process, the number of spikes
+$k$ counted in each bin obeys a Poisson distribution; the variance of $k$ is
+equal to the mean. For the estimated rate defined as $\hat{\theta}%
+=k/(n\Delta)$, this variance-mean relation corresponds to
+\begin{equation}
+E (\hat\theta- \theta)^{2} = \frac{1}{n\Delta}E {\hat\theta} .
+\label{eq:variancemean}%
+\end{equation}
+By incorporating Eq.~\ref{eq:variancemean} into Eq.~\ref{Cn}, the cost
+function is given as a function of the estimator $\hat{\theta}$,
+\begin{equation}
+C_{n}\left(  \Delta\right)  = \frac{2}{{n\Delta}} \left\langle E \hat
+\theta\right\rangle - \left\langle E ( {\hat\theta- \langle E\hat\theta
+\rangle} )^{2} \right\rangle . \label{eq:CostEstimated}%
+\end{equation}
+The optimal bin size is obtained by minimizing the cost function $C_{n}
+(\Delta)$, as
+\begin{equation}
+\Delta^{*} \equiv\arg\min_{\Delta}C_{n}(\Delta). \label{eq: optbinsize}%
+\end{equation}
+By replacing the expectation with the sample spike count, the cost function
+(Eq.~\ref{eq:CostEstimated}) is converted into a useful recipe, summarized as
+`Algorithm 1.'
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{quote}
+\textbf{Algorithm 1: A method for bin size selection for a Bar-PSTH} \vskip1mm
+\hrule width \textwidth
+
+
+
+\end{quote}
+
+\begin{enumerate}
+\item {}[(i)]
+
+\item Divide the observation period $T$ into $N$ bins of width $\Delta$, and
+count the number of spikes $k_{i}$ from all $n$ sequences that enter the $i$th bin.
+
+\item Construct the mean and variance of the number of spikes $\{k_{i}\}$ as,
+\[
+\bar{k}\equiv\frac{1}{N}\sum_{i=1}^{N}k_{i}\mbox{, and }\displaystyle
+v\equiv\frac{1}{N}\sum_{i=1}^{N}(k_{i}-\bar{k})^{2}.
+\]
+
+\end{enumerate}
+
+Compute the cost function,
+\[
+C_{n}(\Delta)=\frac{2\bar{k}-v}{(n\Delta)^{2}}.
+\]
+
+
+\begin{enumerate}
+\item Repeat i through iii while changing the bin size $\Delta$ to search for
+$\Delta^{\ast}$ that minimizes $C_{n}(\Delta)$.
+\end{enumerate}
+
+
+
+\bibliographystyle{apalike}
+\bibliography{../bib/references}
+
+
+\bigskip%
+%TCIMACRO{\TeXButton{Place Index Here}{\printindex}}%
+%BeginExpansion
+\printindex
+%EndExpansions
+
+
+
+\end{document}

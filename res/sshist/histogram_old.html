@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- DW6 -->
+<head>
+<!-- Copyright 2005 Macromedia, Inc. All rights reserved. -->
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis" />
+<title>Histogram</title>
+<script src="../java/bin/bin.js" language="JavaScript">
+<!--type="text/javascript"
+//-->
+</script>
+<link rel="stylesheet" href="../css/2col_rightNav.css" type="text/css" />
+<style type="text/css">
+<!--
+.style1 {font-size: small}
+.style2 {color: #FF0000;
+	font-weight: bold;
+}
+.style6 {font-size: x-small}
+.style9 {color: #333333}
+.style4 {font-size: x-large}
+-->
+</style>
+</head>
+<!-- The structure of this file is exactly the same as 2col_leftNav.html;
+     the only difference between the two is the stylesheet they use -->
+<body>
+<div id="masthead">
+  <h1 id="siteName">Histogram Bin Size Selection  </h1>
+  <div id="globalNav"> <a href="http://www.ton.scphys.kyoto-u.ac.jp/nonlinear/english/index.html">Nonlinear Dynamics Lab </a> | <a href="#">global link</a> | <a href="#">global link</a></div>
+</div>
+<!-- end masthead -->
+<div id="content">
+  <div id="breadCrumb"><a href="#Method" class="style9">Method</a> /<a href="#online"></a> / <a href="#why">Why  an optimal bin size?</a>/ <a href="#matlab">Matlab Programs</a> / <a href="#FAQ">FAQ</a> /</div>
+  <h2 id="pageName"> Histogram   </h2>
+  <div class="feature">
+    <p>&nbsp;</p>
+  </div>
+  <div class="story">
+    <h1>A Method for Selecting the Bin Size of a Histogram <a name="Method" id="Method"></a></h1>
+    <p>(i) Divide the data range into <img
+ width="19" height="14" align="bottom" border="0"
+ src="../hist_gif/img55.gif"
+ alt="$N$" /> bins of width <img
+ width="17" height="14" align="bottom" border="0"
+ src="../hist_gif/img3.gif"
+ alt="$\Delta $" />. Count the number of events <img
+ width="18" height="30" align="top" border="0"
+ src="../hist_gif/img48.gif"
+ alt="$k_i$" /> that enter the i'th bin.</p>
+    (ii) Calculate the mean and variance of the number of events as,
+    <div align="center">
+      <!-- MATH
+ \begin{displaymath}
+\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and }  \displaystyle s^2 \equiv \frac{1}{N-1} \sum_{i=1}^{N} (k_i-\bar{k})^2.
+\end{displaymath}
+ -->
+      <img src="../hist_gif/img23.gif" width="110" height="78" align="middle" /> and <img src="../hist_gif/img24.gif" width="167" height="78" align="middle" /></div>
+    (iii) Compute a formula,
+    <div align="center">
+      <!-- MATH
+ \begin{displaymath}
+\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and }  \displaystyle s^2 \equiv \frac{1}{N-1} \sum_{i=1}^{N} (k_i-\bar{k})^2.
+\end{displaymath}
+ -->
+      <img src="../hist_gif/img9.gif" width="136" height="61" /></div>
+    <p>(iv) Repeat i-iii while changing the bin size <img
+ width="17" height="14" align="bottom" border="0"
+ src="../hist_gif/img3.gif"
+ alt="$\Delta $" />. Find <img
+ width="25" height="14" align="bottom" border="0"
+ src="../hist_gif/img76.gif"
+ alt="$\Delta^{*}$" /> that minimizes <img
+ width="50" height="32" align="middle" border="0"
+ src="../hist_gif/img7.gif"
+ alt="$C_n (\Delta )$" />.</p>
+  </div>
+  <div class="story">
+    <h2 align="left">An Optimized  Histogram <a name="Example" id="Example"></a></h2>
+    <p align="center"><img src="../hist_gif/Oldfaithful.gif" alt="Oldfaithful" width="323" height="288" /></p>
+    <p align="center">A histogram with bin width optimized by the above method. <br />
+      Data: the duration for eruptions of  
+      the Old Faithful geyser in Yellowstone National Park (in minutes)</p>
+  </div>
+  <div class="story">
+    <h2>Web Application for  Bin Size Selection (Ver. 0.10 beta) <a name="WebApp" id="WebApp"></a></h2>
+    <p>This web application calculates the optimal bin size of the data you post.</p>
+    <p>*The data is   processed on your own computer (the data is not transferred to our or any other server). </p>
+    <h4>1. Post Data</h4>
+    <p>Please `Copy&amp;Paste' your data in a text area below. <br />
+        <span class="style1">Each data value must be separated by 
+          a colon(,), a semicolon(;), a blank space( ), a tab(\t), or a return(\n). </span> </p>
+    <form name="DATAFORM" id="DATAFORM" >
+      <textarea name="TEXT" rows="10" cols="70" wrap="off" onkeyup="Initialize_Parameters()">
+4.37 3.87 4.00 4.03 3.50 4.08 2.25 4.70 1.73 4.93 1.73 4.62
+3.43 4.25 1.68 3.92 3.68 3.10 4.03 1.77 4.08 1.75 3.20 1.85
+4.62 1.97 4.50 3.92 4.35 2.33 3.83 1.88 4.60 1.80 4.73 1.77
+4.57 1.85 3.52 4.00 3.70 3.72 4.25 3.58 3.80 3.77 3.75 2.50
+4.50 4.10 3.70 3.80 3.43 4.00 2.27 4.40 4.05 4.25 3.33 2.00
+4.33 2.93 4.58 1.90 3.58 3.73 3.73 1.82 4.63 3.50 4.00 3.67
+1.67 4.60 1.67 4.00 1.80 4.42 1.90 4.63 2.93 3.50 1.97 4.28
+1.83 4.13 1.83 4.65 4.20 3.93 4.33 1.83 4.53 2.03 4.18 4.43
+4.07 4.13 3.95 4.10 2.27 4.58 1.90 4.50 1.95 4.83 4.12</textarea>
+      <span class="style6"><br />
+      <span class="style1">Data: the duration for eruptions of the Old Faithful geyser in minutes</span></span>
+      <input name="reset" type="reset" value="Reset to Sample Data" />
+    </form>
+    <form name="PARAMETERS" id="PARAMETERS">
+      <h4><strong>2. Set Parameters</strong> <span class="style1">
+        <input name="button" type="button" onclick="Initialize_Parameters()" value="Set paramters from the data" />
+      </span></h4>
+      <p>The range from
+        <input name="DATA_MIN" type="text" value="1.6" size="10" />
+        to
+        <input name="DATA_MAX" type="text" value="5" size="10" />
+        of the data is used to make a histogram.<br />
+        Search the bin sizes from
+        <input name="BIN_MIN" type="text" value="0.02" size="10" />
+        to
+        <input name="BIN_MAX" type="text" value="1" size="10" />
+        . <br />
+        The number of sample bin sizes to check within the range is
+        <input name="BIN_DIV" type="text" value="30" size="10" />
+        . <br />
+        <br />
+        The number of repeated trials to obtain the data was
+        <input name="DATA_N" type="text" value="1" size="10" />
+        . (optional)</p>
+    </form>
+    <form name="BinSelectionForm" id="BinSelectionForm">
+      <!--
+<object id="BinSelection" width=10 height=10
+classid="CLSID:8AD9C840-044E-11d1-B3E9-00805F499D93" >
+<PARAM name="code" value="BinSelction.class">
+<PARAM NAME="codebase" value="1.0.2">
+<PARAM NAME="level" value="5">
+...
+</object>
+-->
+      <h4>3. Select a Bin Size</h4>
+      <p><span class="style2">To obtain an optimal bin size of your data, push
+        <input type="button" name="Button" value="Obtain an Optimal Bin Size" onclick="BinSelectionApplet(); StartApplet(); alert('An optimal bin size of your data is '+OptimalBinSize().toPrecision(3)); javascript:urchinTracker ('/bin_script/calculation');" language="JavaScript" />
+        .</span><br />
+        To obtain details, push
+        <input name="button" type="button" onclick="BinSelectionApplet();Results_In_Window(); javascript:urchinTracker ('/bin_script/datasheet');" value="Output Data Sheet of Your Optimized Histogram" />
+        .
+        <applet code="BinSelection" codebase="../java/bin" name="BinSelection" width="0" height="0" id="BinSelection">
+        </applet>
+      </p>
+    </form>
+    <form name="FormApplet" id="FormApplet">
+      <table width="600" border="0" align="center">
+        <tr>
+          <td width="270" height="342"><strong>
+            <applet code="DrawCostFunction" codebase="../java/bin" name="DrawCostFunction" width="250" height="250" hspace="10" vspace="10" id="DrawCostFunction">
+            </applet>
+          </strong></td>
+          <td><strong>
+            <applet code="DrawHistogram" codebase="../java/bin" name="DrawHistogram" width="270" height="320" hspace="10" vspace="10" id="DrawHistogram">
+            </applet>
+          </strong></td>
+        </tr>
+      </table>
+      <h4>4. Draw a Histogram and a cost function
+        <input type="button" name="Button" value="Redraw a Histogram" onclick="BinSelectionApplet(); StartApplet();" language="JavaScript" />
+      </h4>
+    </form>
+    <p>*Java and Javascript programs are tested for IE6 and Firefox 1.5on Windows. Firefox 1.5 on Linux. Firefox 1.5 and Safari on MacOS.
+      The program does not work in Opera. </p>
+    <p class="style1">06/11/08 Ver. 0.10 Improved datasheet output. </p>
+    <p>Web Application for Bin Size Selection  &copy; 2006 Hideaki Shimazaki</p>
+  </div>
+  <div class="story">
+    <h2>FAQ<a name="FAQ" id="FAQ"></a></h2>
+    <p><span class="style4">Q.</span> It seems like that <a href="#Ref">your 
+        theory</a> assumes a time histogram. 
+    Can I apply the proposed method to a histogram for a probability distribution? </p>
+    <p><span class="style4">A.</span> Yes.</p>
+    <hr />
+    <p><span class="style4">Q.</span> I obtained a very small bin width, which is likely to be erroneous. Why? </p>
+    <p><span class="style4">A.</span> You probably  searched smaller bin widths than the sampling resolution of your data. Please begin the search from the bin width at least twice as large as your sampling resolution. In addition, please check if your data contains  duplicated samples. A small bin width will be selected for such highly correlated samples. </p>
+    <hr />
+    <span class="style4">Q.</span> I have used the Scott's method
+    <div align="center"> Optimal Bin Size= 3.49*s*n^(-1/3) , </div>
+    and obtained bin size that differs from the result obtained by the present method.
+    </p>
+    <p><span class="style4">A.</span> They should be different. Three assumptions were made to obtain the Scott's result. First, the Scott's result is asymptotically true (i.e. it is true for large sample size n). Second, the scaling exponent -1/3 is true if the density is a smooth function. Third, the coefficient 3.49 was obtained, assuming the gaussian density function as a reference. The present method does not require these assumptions. </p>
+    <hr />
+    <p><span class="style4">Q.</span> I want to make a 2-dimensional histogram. Can I use this method? </p>
+    <p><span class="style4">A.</span> Yes. The 'bin size' of a 2-d histogram is the area of a segmented square cell. The mean and the variance are simply computed from the event counts in all the bins of the 2-dimensional histogram. </p>
+    <hr />
+    <p><span class="style4">Q.</span> Can I use unbiased variance in the formula of bin size selection?</p>
+    <p><span class="style4">A.</span> No. Please use the (biased) variance displayed in the method. Please note that a built-in function for variance calculation in a software may returns unbiased variance in default. </p>
+    <hr />
+    <p>The FAQ  includes my (HS) opinion. They are not opinions neither by my collaborators or the institution I belong to. </p>
+    <h2>&nbsp;</h2>
+  </div>
+  <div class="story">
+    <h2>Reference<a name="Ref" id="Ref"></a></h2>
+    <p>Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram <em>Neural Computation</em> [<a href="../pdf/shimazaki_neco07.pdf" onclick="javascript:urchinTracker ('/downloads/sshistogram.pdf');">pdf</a>] </p>
+    <p>A short summary: Shimazaki H. and Shinomoto S., A recipe for optimizing a time-histogram <em>Neural Information Processing Systems </em> Vol. 19, 2007  [<a href="http://books.nips.cc/papers/files/nips19/NIPS2006_0137.pdf" onclick="javascript:urchinTracker ('/downloads/nips2006.pdf');">pdf</a>] </p>
+    <h2>&nbsp;</h2>
+    <p>&nbsp;</p>
+  </div>
+  <div class="story">
+    <h2>&nbsp;</h2>
+    <h2>What is an Optimal Bin Size? <a name="OptBin" id="OptBin"></a></h2>
+    <p>When you make a histogram, you need to choose a bin size. How large (or small) the bin size should be? </p>
+    <ul>
+      <li>If you choose too small bin size, the bar height at each bin suffers from significantly large statistical fluctuation due to the paucity of data samples in each bin. </li>
+      <li>If you choose too large bin size, the histogram can not represent the shape of the underlying distribution because the resolution isn't good enough. </li>
+    </ul>
+    <p>There is an optimal bin size that remedies these two opposite problems. The Java Applet below demonstrates the problem of the bin size selection. </p>
+    <p>In the applet, data is shown in the upper box and its histogram  in the bottom box. The data is an example from  Neuroscience: the data is a timing of neuronal firing (spikes), and they are obtained by repeating trials. Twenty sequences (trials) are drawn in the data box. However, the data can be anything (weight, height, or test score etc.), and can be one sequence. </p>
+    <p>The histogram is shown in the bottom box by red color. The blue line is the distribution (or rate) that produced data samples in the box above. Our aim is to choose a histogram that best represents this blue line. </p>
+    <p>
+      <applet code="BarHisto" codebase="../java/bin" name="BarHisto" width="330" height="280" hspace="20" vspace="20" align="left" id="BarHisto">
+      </applet>
+      As a first step, change the bin size of a histogram in the applet  by using the scroll bar at the bottom. With too small a bin size, you get a jagged histogram. With too large a bin size, you obtain a flat histogram. </p>
+    <p>Now bring the scroll bar left to make the bin size thin, and push `redraw' button several times. The `redraw' button regenerates sample points based on the blue density distribution. Please confirm that the shape of the histogram drastically changes. If you are told to tell which of the two hills of the distribution is taller, can you tell? Although the right hill   is taller than the left  (blue line), the maximum height of a histogram appears at left side quite often. </p>
+    <p>As a second step,  bring your scroll bar right to make the bin size broad, and push `redraw' several times. Please confirm that the shape of the histogram does not change very much. In addition, you  may notice the right hand side of the hills is higher than the left hand side most of the time. However, can you tell where is the highest point of the hill? The resolution of the histogram is not good enough. </p>
+    <p>When you make a histogram, you need to choose a bin size that compromises the conflict between the sample error and the resolution. Now please check the `error check box' on. Yellow area appears, which indicates an error between the histogram and the underlying distribution. You could turn off the histogram check box. Please examine where the total error becomes the smallest by your eyes. You would find that the error becomes the smallest when you bring the scroll bar handle about one fourth of the total length from the left. Please push the `redraw' button several times to check the statistical fluctuation of errors. The optimal bin size of a histogram is the bin size that produces the smallest total errors (yellow area) on average of many realizations of sampled data (i.e. average over many pushes of `redraw' button). </p>
+    <p>At this moment, you might say, &quot;Okay, I now understand what an optimal bin size is. But, how can we know it? After all, we do not know the blue underlying distribution. So we can not know the errors. We can never know the optimal bin size from  data.&quot;</p>
+    <p>This statement is not true. Indeed, the errors can be estimated from the data. The above method  computes the estimated errors for several candidate bin sizes, and choose the bin size that produces the smallest `estimated' error. For the details of the method, please refer to Shimazaki and Shinomoto in <em>Neural Computation</em>. </p>
+  </div>
+  <div class="story">
+    <h2>&nbsp;</h2>
+    <h2>A Sample Matlab Program <a name="Matlab" id="Matlab"></a> </h2>
+    <p>Copy and Paste a sample program <a href="../code/sample.m" onclick="javascript:urchinTracker ('/downloads/sample.m');">sample.m</a> . </p>
+    <pre width="80">
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 2006 Author Hideaki Shimazaki
+% Department of Physics, Kyoto University
+% shimazaki at ton.scphys.kyoto-u.ac.jp
+% Please feel free to use/modify/distribute this program.
+%
+% Data: the duration for eruptions of  
+% the Old Faithful geyser in Yellowstone National Park (in minutes)
+clear all;
+x = [4.37 3.87 4.00 4.03 3.50 4.08 2.25 4.70 1.73 4.93 1.73 4.62 ...
+     3.43 4.25 1.68 3.92 3.68 3.10 4.03 1.77 4.08 1.75 3.20 1.85 ...
+     4.62 1.97 4.50 3.92 4.35 2.33 3.83 1.88 4.60 1.80 4.73 1.77 ...
+     4.57 1.85 3.52 4.00 3.70 3.72 4.25 3.58 3.80 3.77 3.75 2.50 ...
+     4.50 4.10 3.70 3.80 3.43 4.00 2.27 4.40 4.05 4.25 3.33 2.00 ...
+     4.33 2.93 4.58 1.90 3.58 3.73 3.73 1.82 4.63 3.50 4.00 3.67 ...
+     1.67 4.60 1.67 4.00 1.80 4.42 1.90 4.63 2.93 3.50 1.97 4.28 ...
+     1.83 4.13 1.83 4.65 4.20 3.93 4.33 1.83 4.53 2.03 4.18 4.43 ...
+     4.07 4.13 3.95 4.10 2.27 4.58 1.90 4.50 1.95 4.83 4.12];
+
+x_min = min(x);
+x_max = max(x);
+
+N_MIN = 4;              % Minimum number of bins (integer)
+                        % N_MIN must be more than 1 (N_MIN &gt; 1).
+N_MAX = 50;             % Maximum number of bins (integer)
+
+N = N_MIN:N_MAX;                      % # of Bins
+D = (x_max - x_min) ./ N;             % Bin Size Vector
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Computation of the Cost Function
+for i = 1: length(N)
+	edges = linspace(x_min,x_max,N(i));	% Bin edges
+
+	ki = histc(x,edges);            % Count # of events in bins
+	ki = ki(1:end-1);
+	
+	k = mean(ki);                   % Mean of event count
+	v = sum( (ki-k).^2 )/N(i);      % Variance of event count
+	
+	C(i) = ( 2*k - v ) / D(i)^2;    % The Cost Function
+
+end
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Optimal Bin Size Selectioin
+[Cmin idx] = min(C);                    
+optD = D(idx);                         % *Optimal bin size
+edges = linspace(x_min,x_max,N(idx));  % Optimal segmentation
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Display an Optimal Histogram and the Cost Function
+subplot(1,2,1); hist(x,edges); axis square;
+subplot(1,2,2); plot(D,C,'k.',optD,Cmin,'r*'); axis square;</pre>
+    <p>&nbsp;</p>
+  </div>
+  <div class="story">
+    <h2>&nbsp;</h2>
+    <h2>A Sample Matlab Program <a name="Matlab" id="Matlab"></a> </h2>
+    <p>&nbsp;</p>
+  </div>
+  <div class="story">
+    <h2>&nbsp;</h2>
+    <h2>A Sample Matlab Program <a name="Matlab" id="Matlab"></a> </h2>
+    <p>&nbsp;</p>
+  </div>
+  <div class="story">
+    <table width="100%" border="1">
+      <tr>
+        <td width="8%" nowrap="nowrap">&nbsp;</td>
+        <td width="13%">&nbsp;</td>
+        <td width="26%">&nbsp;</td>
+        <td width="12%">Programs (m-files)</td>
+        <td width="28%">Data</td>
+        <td width="13%">Programs for data presentation</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">Figure 2</td>
+        <td>Bar Histogram</td>
+        <td>data/GaussT20mu30s10g10 y X</td>
+        <td>BarHisto.m</td>
+        <td>data/BarGaussCost.mat</td>
+        <td>FIG2.m</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">Figure 3</td>
+        <td>Criticality</td>
+        <td>&nbsp;</td>
+        <td><p>BarHisto.m</p>
+        <p>&nbsp;</p></td>
+        <td><p>data/BarGaussCriticality2.mat</p>
+        <p>data/BarGaussCriticalityN9.mat </p></td>
+        <td><p>FIG3.m </p>
+        <p>FIG3c.m</p></td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">Figure 4</td>
+        <td>Line-Histo</td>
+        <td>&nbsp;</td>
+        <td>LineHisto.m</td>
+        <td>data/LineGaussCost2</td>
+        <td>FIG4.m</td>
+      </tr>
+      <tr>
+        <td height="29" nowrap="nowrap">Figure 5</td>
+        <td height="29">Scaling</td>
+        <td height="29">GaussT20mu30g100s13 y</td>
+        <td height="29">BarHisto.m</td>
+        <td height="29"><p>data/BarGaussScaling.mat</p>
+        <p>data/BarOUPScaling.mat</p></td>
+        <td height="29">FIG5.m</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>LineHisto.m</td>
+        <td><p>data/LineGaussScaling3.mat</p>
+        <p>data/LineOUPScaling3.mat</p></td>
+        <td>FIG7.m</td>
+      </tr>
+      <tr>
+        <td nowrap="nowrap">Figure 6</td>
+        <td>Experimental Data</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><p>../data/britten/mat/j024.mat</p></td>
+        <td>FIG_Data.m</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <table width="100%" border="1">
+      <tr>
+        <td width="12%">Figure 1</td>
+        <td width="15%">Bar Histogram</td>
+        <td width="21%">BarHisto.m</td>
+        <td width="27%">data/FIG1_NIPS3.mat</td>
+        <td width="25%">FIG1_NIPS.m</td>
+      </tr>
+      <tr>
+        <td width="12%" height="24">Figure 2</td>
+        <td width="15%" height="24">Criticality</td>
+        <td width="21%" height="24">BarHisto.m</td>
+        <td width="27%" height="24"><p>data/FIG2_NIPS.mat<br />
+        data/FIG2c_NIPS2.mat</p></td>
+        <td width="25%" height="24"><p>FIG2_NIPS.m<br />FIG2c_NIPS.m</p>
+        </td>
+      </tr>
+    </table>
+    <h3>&nbsp;</h3>
+  </div>
+</div>
+<!--end content -->
+<div id="navBar">
+  <div id="search">
+    <form action="#">
+      <label>search</label>
+      <input name="searchFor" type="text" size="10" />
+      <input name="goButton" type="submit" value="go" />
+    </form>
+  </div>
+  <div id="sectionLinks">
+    <ul>
+      <li><a href="#Method">Method</a></li>
+	  <li><a href="#Example">Example</a></li>
+      <li><a href="#WebApp">Web Application </a><a href="#FAQ">FAQ</a></li>
+      <li><a href="../hist_jp/index.html">Illustration</a></li>
+      <li><a href="#"></a></li>
+    </ul>
+  </div>
+  <div class="relatedLinks">
+    <h3>Sample Programs </h3>
+    <ul>
+      <li><a href="#Matlab">Matlab</a></li>
+      <li><a href="#R">R</a></li>
+      <li><a href="#Mathematica">Mathematica</a></li>
+      <li><a href="#"></a></li>
+      <li></li>
+    </ul>
+  </div>
+  <div class="relatedLinks">
+    <h3>References</h3>
+    <ul>
+      
+      <li><a href="http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/index_en.html"></a></li>
+      <li><a href="http://www.ton.scphys.kyoto-u.ac.jp/~shino/english.html">Shigeru Shinomoto </a></li>
+      <li><a href="#">Koyama Shinsuke </a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#">Related Link</a></li>
+      <li><a href="#">Related Link</a></li>
+      <li><a href="#">Related Link</a></li>
+    </ul>
+  </div>
+  <div id="advert"> <img src="" alt="" width="107" height="66" /> Ad copy ad copy ad copy. Ad copy ad copy. </div>
+  <div id="headlines">
+    <h3>Headlines</h3>
+    <p> Headline <a href="#">full story...</a> </p>
+    <p> <a href="#">..</a> </p>
+  </div>
+</div>
+<!--end navBar div -->
+<div id="siteInfo"> <img src="" width="44" height="22" /> <a href="#">About Us</a> | <a href="#">Site Map</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a> | &copy;2006 Hidaeki Shimazaki </div>
+<br />
+</body>
+</html>

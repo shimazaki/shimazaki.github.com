@@ -1,0 +1,297 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- Created from PDF via Acrobat SaveAsXML -->
+<!-- Mapping table version: 28-February-2003 -->
+<HTML>
+<HEAD>
+<META
+ name="dc.creator"
+ content="Hideaki Shimazaki" >
+<META
+ name="dc.title"
+ content="Slide 1" >
+<META
+ name="dc.date"
+ content="2006-12-20T21:03:42+09:00" >
+<META
+ name="dc.date.modified"
+ content="2006-12-20T21:03:51+09:00" >
+<META
+ name="generator"
+ content="Adobe Acrobat Exchange-Pro 7.8" >
+</HEAD>
+<BODY bgcolor=white text=black link=blue vlink=purple alink=fushia >
+<HR>
+<UL>
+<LI>
+<A href="#LinkTarget_259">How many trials are required to make a Histogram?</A>
+</LI>
+<LI>
+<A href="#LinkTarget_236">Rate modulation of an MT neuron</A>
+</LI>
+<LI>
+<A href="#LinkTarget_126">Reference</A>
+</LI>
+</UL>
+</HR>
+<DIV class="Sect" 
+
+><DIV 
+
+><P 
+ align="left"
+><FONT size="+2" color="#000000"></B>The time-histogram method is a handy tool for capturing the instantaneous rate of spike occurrence. In most of the neurophysiological literature, the bin size that critically determines the goodnessof the fit of the time-histogram to the underlying rate has been selected by individualresearchers in an unsystematic manner. We propose an objective method for selecting the bin size of a time-histogram from the spike data, so that the resulting time-histogram best approximates the unknown underlying rate.</P
+><P 
+ align="left"
+>The resolution of the histogram increases, or the optimal binsize decreases, with the number of spike sequences sampled. It is notable that the optimal bin size diverges if only a small number of experimental trials are available from a moderately fluctuating rate process.In this case, any attempt at characterizing the underlying spike rate will lead to spurious results. Given a paucity of data, our method can also suggest how many more trials are needed until the set of data can be analyzed with the required resolution.</P
+></DIV
+><IMG Alt="Text Box: Abstract" width="74" height="938"
+ src="images/NIPS06_Poster_img_0.png" ></DIV
+><DIV class="Sect" 
+
+><IMG width="296" height="439"
+ src="images/NIPS06_Poster_img_1.png" ><IMG width="577" height="490"
+ src="images/NIPS06_Poster_img_2.png" ><IMG width="338" height="439"
+ src="images/NIPS06_Poster_img_3.png" ><IMG Alt="Text Box: Optimizing a time-histogram" width="77" height="760"
+ src="images/NIPS06_Poster_img_4.png" ></DIV
+><DIV class="Sect" 
+
+><DIV 
+
+><P 
+ align="center"
+><FONT size="+3" color="#C0C0C0">How many trials are required to make a Histogram?</P
+></DIV
+><DIV 
+
+><P 
+ align="left"
+><FONT size="+2" color="#000000"># of sequences used</P
+></DIV
+><IMG ID="LinkTarget_259" width="627" height="1233"
+ src="images/NIPS06_Poster_img_5.png" ></DIV
+><DIV class="Sect" 
+
+><DIV 
+
+><P 
+ align="center"
+><FONT size="+3" color="#C0C0C0">Rate modulation of an MT neuron</P
+></DIV
+><DIV 
+
+><P 
+ align="left"
+><FONT size="+3" color="#0000FF">Extrapolation</P
+></DIV
+><DIV 
+
+><P 
+ align="center"
+><FONT size="+3" color="#FF0000">Too few to make </P
+><P 
+ align="center"
+>a Histogram <FONT size="+3">!</P
+></DIV
+><DIV 
+
+><P 
+ align="center"
+><FONT size="+3" color="#0000FF">Estimation: </P
+><P 
+ align="center"
+><FONT color="#000000">At least <FONT size="+3" color="#FF0000">12<FONT size="+3" color="#000000">trials are required.</P
+></DIV
+><IMG ID="LinkTarget_236" width="552" height="507"
+ src="images/NIPS06_Poster_img_6.png" ><IMG Alt="Text Box: Data : Britten et al. (2004) neural signal archive" width="30" height="475"
+ src="images/NIPS06_Poster_img_7.png" ><IMG width="79" height="690"
+ src="images/NIPS06_Poster_img_8.png" ><IMG width="49" height="101"
+ src="images/NIPS06_Poster_img_9.png" ><IMG width="49" height="101"
+ src="images/NIPS06_Poster_img_10.png" ><IMG width="71" height="84"
+ src="images/NIPS06_Poster_img_11.png" ></DIV
+><DIV class="Sect" 
+
+><DIV 
+
+><P 
+ align="left"
+><FONT size="+3">Repeat i through iii while changing the bin size &Delta;. </P
+><P 
+ align="left"
+>Find &Delta;* that minimize the cost function. </P
+></DIV
+><DIV 
+
+><P 
+ align="left"
+>Divide spike sequences with length T[s] into Nbins of width &Delta;.</P
+></DIV
+><DIV 
+
+><P 
+ align="left"
+><FONT size="+3">Method I. Selection of the Bin Size</P
+></DIV
+><IMG Alt="Text Box: Methods" width="81" height="938"
+ src="images/NIPS06_Poster_img_12.png" ><IMG width="305" height="683"
+ src="images/NIPS06_Poster_img_13.png" ><IMG Alt="Text Box: (i)" width="32" height="25"
+ src="images/NIPS06_Poster_img_14.png" ><IMG Alt="Text Box: (ii)" width="32" height="33"
+ src="images/NIPS06_Poster_img_15.png" ><IMG Alt="Text Box: (iii)" width="32" height="41"
+ src="images/NIPS06_Poster_img_16.png" ><IMG Alt="Text Box: (iv)" width="32" height="37"
+ src="images/NIPS06_Poster_img_17.png" ></DIV
+><DIV class="Sect" 
+
+><DIV 
+
+><P 
+ align="left"
+>Method II. Extrapolation of the Bin Size</P
+></DIV
+><IMG width="274" height="927"
+ src="images/NIPS06_Poster_img_18.png" ><IMG Alt="Text Box: Search for &Delta;m that minimizes the extrapolated cost function ." width="40" height="905"
+ src="images/NIPS06_Poster_img_19.png" ><IMG Alt="Text Box: Repeat A and B while changing , and plot 1=1/&Delta;m vs. 1/m  to search for the critical value 1/m = 1/nc  above which 1/ &Delta;m practically vanishes." width="118" height="864"
+ src="images/NIPS06_Poster_img_20.png" ><IMG Alt="Text Box: (A)" width="32" height="32"
+ src="images/NIPS06_Poster_img_21.png" ></DIV
+><DIV class="Sect" 
+
+><DIV 
+
+><P 
+ align="left"
+><FONT size="+2">A histogram bar-height is an estimator of &theta;:</P
+></DIV
+><DIV 
+
+><P 
+ align="left"
+>The mean underlying rate in an interval [0, &Delta;]:</P
+></DIV
+><DIV 
+
+><P 
+ align="left"
+><FONT color="#FF0000">*<FONT color="#000000">When the spikes are obtained by repeating an independent trial, the accumulated data obeys the Poisson point process due to a general limit theorem.</P
+></DIV
+><IMG width="472" height="401"
+ src="images/NIPS06_Poster_img_22.png" ><IMG width="71" height="228"
+ src="images/NIPS06_Poster_img_23.png" ><IMG width="144" height="443"
+ src="images/NIPS06_Poster_img_24.png" ><IMG width="74" height="91"
+ src="images/NIPS06_Poster_img_25.png" ><IMG Alt="Text Box: Theory" width="79" height="938"
+ src="images/NIPS06_Poster_img_26.png" ></DIV
+><DIV class="Sect" 
+
+><DIV 
+
+><P 
+ align="left"
+><FONT color="#31319A">Expectation by the Poisson statistics, given the rate.</P
+></DIV
+><DIV 
+
+><P 
+ align="left"
+><FONT size="+2" color="#000000">Decomposition of the Systematic Error</P
+></DIV
+><DIV 
+
+><P 
+ align="left"
+><FONT size="+2" color="#31319A">Average over segmented bins.</P
+></DIV
+><DIV 
+
+><P 
+ align="left"
+><FONT size="+3" color="#000000">Method I. Selection of the Bin Size</P
+></DIV
+><IMG width="121" height="868"
+ src="images/NIPS06_Poster_img_27.png" ><IMG width="119" height="970"
+ src="images/NIPS06_Poster_img_28.png" ><IMG width="170" height="726"
+ src="images/NIPS06_Poster_img_29.png" ></DIV
+><DIV class="Sect" 
+
+><DIV 
+
+><P 
+ align="left"
+><FONT size="+2" color="#FF0000">Variance of a Histogram</P
+></DIV
+><DIV 
+
+><P 
+ align="left"
+><FONT size="+2" color="#000000">Introduction of the cost function:</P
+></DIV
+><DIV 
+
+><P 
+ align="left"
+>The variance decomposition: </P
+></DIV
+><DIV 
+
+><P 
+ align="right"
+><FONT size="+2" color="#FF0000">Mean of a Histogram</P
+></DIV
+><DIV 
+
+><P 
+ align="left"
+><FONT size="+2" color="#000000">The Poisson statistics obeys:</P
+></DIV
+><IMG width="170" height="829"
+ src="images/NIPS06_Poster_img_30.png" ><IMG width="83" height="678"
+ src="images/NIPS06_Poster_img_31.png" ><IMG width="87" height="646"
+ src="images/NIPS06_Poster_img_32.png" ><IMG width="94" height="599"
+ src="images/NIPS06_Poster_img_33.png" ><IMG width="65" height="334"
+ src="images/NIPS06_Poster_img_34.png" ></DIV
+><DIV class="Sect" 
+
+><DIV 
+
+><P 
+ align="left"
+><FONT size="+3">Method II. Extrapolation of the Bin Size</P
+></DIV
+><DIV 
+
+><P 
+ align="left"
+><FONT size="+2">The variance decomposition: </P
+></DIV
+><DIV 
+
+><P 
+ align="left"
+>The cost function for m experimental trials:</P
+></DIV
+><DIV 
+
+><P 
+ align="left"
+>The extrapolated cost function:</P
+></DIV
+><DIV 
+
+><P 
+ align="left"
+>The Poisson statistics obeys:</P
+></DIV
+><IMG width="178" height="655"
+ src="images/NIPS06_Poster_img_35.png" ><IMG width="117" height="651"
+ src="images/NIPS06_Poster_img_36.png" ><IMG width="65" height="477"
+ src="images/NIPS06_Poster_img_37.png" ><IMG width="69" height="559"
+ src="images/NIPS06_Poster_img_38.png" ></DIV
+><DIV class="Sect" 
+
+><DIV 
+
+><P 
+ align="center" ID="LinkTarget_126"
+><FONT size="+3">Reference</P
+></DIV
+><IMG Alt="Text Box: A Method for Selecting the Bin Size of a Time HistogramHideaki Shimazaki and Shigeru ShinomotoNeural Computation in Press      Web Application for the Bin Size Selection  Matlab / Mathematica / R sample codesare available at our homepag" width="458" height="775"
+ src="images/NIPS06_Poster_img_39.png" ><IMG Alt="Text Box: See alsoKoyama, S. and Shinomoto, S. Histogram bin width selection for time-dependent poisson processes. J. Phys. A, 37(29):7255&ndash;7265. 2004" width="79" height="702"
+ src="images/NIPS06_Poster_img_40.png" ></DIV
+></BODY>
+</HTML>

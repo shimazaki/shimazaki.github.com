@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<!--Converted with jLaTeX2HTML 2002-2-1 (1.70) JA patch-1.9
+patched version by:  Kenshi Muto, Debian Project.
+* modified by:  Shige TAKENO
+LaTeX2HTML 2002-2-1 (1.70),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Bibliography</TITLE>
+<META NAME="description" CONTENT="Bibliography">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002-2-1 JA patch-1.9">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="../css/latex2html.css">
+
+<LINK REL="next" HREF="node16.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="book.html">
+<LINK REL="next" HREF="node16.html">
+<META http-equiv=Content-Type content="text/html; charset=shift_jis">
+<script src=http://www.google-analytics.com/urchin.js type=text/javascript></script>
+<script type=text/javascript>_uacct="UA-745872-1";urchinTracker();</script>
+</HEAD>
+
+<BODY>
+    <a name=top id=top> </a>
+    <div id=NaviLayer>  
+    <table width=180 border=0 cellpadding=0 cellspacing=0>
+    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
+    <tr><td height=28 valign=top><b>Spike Density Estimation</b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../histogram.html>Histogram Method</a></b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../kernel.html>Kernel Method</a></b></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Share it with your friend</b></td></tr>
+    <tr><td valign=top><a class=addthis_button href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcbd554189b9a7"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width=125 height=16 alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcbd554189b9a7"></script></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Tweet</b></td></tr>
+    <tr><td valign=top><iframe src=../../tweet.html width=180 height=600 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
+    <tr><td height=28 valign=top></td></tr>
+    </table></div>
+<!--Navigation Panel-->
+<A NAME="tex2html449"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html443"
+  HREF="book.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html437"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html445"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html447"
+  HREF="node16.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html450"
+  HREF="node16.html">Index</A>
+<B> Up:</B> <A NAME="tex2html444"
+  HREF="book.html">スパイク統計モデル入門</A>
+<B> Previous:</B> <A NAME="tex2html438"
+  HREF="node14.html">補遺 統計的推測</A>
+ &nbsp; <B>  <A NAME="tex2html446"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html448"
+  HREF="node16.html">Index</A></B> 
+<BR><BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION03000000000000000000">
+Bibliography</A>
+</H2><DL COMPACT><DD><P></P><DT><A NAME="Barbieri01">Barbieri et&nbsp;al., 2001</A>
+<DD>
+Barbieri, R., Quirk, M.&nbsp;C., Frank, L.&nbsp;M., Wilson, M.&nbsp;A., and Brown, E.&nbsp;N.
+  (2001).
+<BR>Construction and analysis of non-poisson stimulus-response models of
+  neural spiking activity.
+<BR><EM>J Neurosci Methods</EM>, 105(1):25-37.
+
+<P></P><DT><A NAME="Berman81">Berman, 1981</A>
+<DD>
+Berman, M. (1981).
+<BR>Inhomogeneous and modulated gamma processes.
+<BR><EM>Biometrika</EM>, 68(1):143-152.
+
+<P></P><DT><A NAME="Brown01">Brown et&nbsp;al., 2001</A>
+<DD>
+Brown, E.&nbsp;N., Barbieri, R., Ventura, V., Kass, R.&nbsp;E., and Frank, L.&nbsp;M. (2001).
+<BR>The time-rescaling theorem and its application to neural spike train
+  data analysis.
+<BR><EM>Neural Computation</EM>, 14(2):325-346.
+
+<P></P><DT><A NAME="Cox62">Cox, 1962</A>
+<DD>
+Cox, R.&nbsp;D. (1962).
+<BR><EM>Renewal Theory</EM>.
+<BR>John Wiley &amp; Sons Inc, London.
+
+<P></P><DT><A NAME="Daley88">Daley and Vere-Jones, 1988</A>
+<DD>
+Daley, D. and Vere-Jones, D. (1988).
+<BR><EM>An Introduction to the Theory of Point Processes</EM>.
+<BR>Springer-Verlag, New York, USA.
+
+<P></P><DT><A NAME="Heyman90">Heyman and Sobel, 1990</A>
+<DD>
+Heyman, D. and Sobel, M., editors (1990).
+<BR><EM>Stochastic Models</EM>, volume&nbsp;2 of <EM>Handbooks in Operations
+  Research and Management Science</EM>.
+<BR>Elsevier Science Publishers.
+
+<P></P><DT><A NAME="Johnson96">Johnson, 1996</A>
+<DD>
+Johnson, D.&nbsp;H. (1996).
+<BR>Point process models of single-neuron discharges.
+<BR><EM>Journal of Computational Neuroscience</EM>, 3(4):275-299.
+
+<P></P><DT><A NAME="Ogata81">Ogata, 1981</A>
+<DD>
+Ogata, Y. (1981).
+<BR>On lewis' simulation method for point processes.
+<BR>27(1):23-31.
+
+<P></P><DT><A NAME="Shimazaki07a">Shimazaki and Shinomoto, 2007</A>
+<DD>
+Shimazaki, H. and Shinomoto, S. (2007).
+<BR>A method for selecting the bin size of a time histogram.
+<BR><EM>Neural Comput</EM>, 19(6):1503-1527.
+
+<P></P><DT><A NAME="Shimazaki10">Shimazaki and Shinomoto, 2010</A>
+<DD>
+Shimazaki, H. and Shinomoto, S. (2010).
+<BR>Kernel bandwidth optimization in spike rate estimation.
+<BR><EM>J Comput Neurosci</EM>, 29:171-182.
+
+<P></P><DT><A NAME="Snyder75">Snyder, 1975</A>
+<DD>
+Snyder, D. (1975).
+<BR><EM>Random Point Processes</EM>.
+<BR>John Wiley &amp; Sons, Inc., New York.
+</DL>
+
+<P>
+
+<P><P><BR>
+<BR><HR>
+<ADDRESS>
+AddressShimazaki
+</ADDRESS>
+</BODY>
+</HTML>

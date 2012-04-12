@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis" />
+<title>無題ドキュメント</title>
+</head>
+
+<body leftmargin="20">
+<table width="800" border="0" cellspacing="0" cellpadding="0" align="left">
+  <tr><td> bs </td>td></tr></table>
+  
+<p>Matlabの恐るべき事実　Michelの指摘による</p>
+<p>Matlabのpiは4atan(1)を計算している。従ってpiを使うと計算速度はかなり遅くなる。</p>
+<p>実際メモリーから呼び出すのと、この簡単な計算を行うのとどっちが早いか計算してみた。</p>
+<p>10万回piを呼び出すことを100回行い、平均値と標準誤差を計算してみると</p>
+<p>pi 平均　0.1102　標準誤差 0.494 </p>
+<p>PI 平均　0.0475 標準誤差 0.0236 </p>
+<p>piは倍近くかかっている！</p>
+<p>I was a bit astonished by Michel's information that in Matlab pi computes 4atan(1). </p>
+<p>So I called pi 100,000 times. I repeated this 100 times. As a comparison, I memorized pi as PI = pi, and did the same thing. </p>
+<p>The result of the mean computing time and standard errors were </p>
+<p>pi: mean 0.1102 [s] SD 0.494 PI: mean 0.0475 [s] SD 0.0236</p>
+<p>&nbsp;</p>
+<p><span class="style4">Q.</span> I  have  data with low sampling resolution. </p>
+<p><span class="style4">A.</span> In addition, please
+  check if your data contains duplicated samples. A small bin width will
+  be selected for such highly correlated samples. See below for the solution to the duplicated data due to the low sampling resolution. To obtain the optimal bin size correctly, it is recommended to replace your data x with x+r,
+  where r is an uniform random variable drawn from [-dx/2, dx/2].
+  dx is sampling resolution of data acquisition. 
+  You repeat this to all samples x with independently drawn r.
+  Use this randomized data to obtain the optimal bin size. 
+  To draw histogram, use the original data. See the difference with the following examples. </p>
+<p> Copy and paste rounded data </p>
+<div class="style23">5.1	5.1	4.9	5	5	4.9	5	5	4.9	4.8	4.9	5	4.8	5.1	4.9	4.8	5	5.1	5	5	5	5	5.1	5	5.1	5.1	5	5	4.9	4.9	5	5	4.9	5.1	5	5.3	5	4.9	5	5	4.9	5	4.9	5	5	5.1	5.1	4.7	5	5.1	5.4	5.7	5.5	5.7	5.6	5.5	5.5	5.5	5.3	5.5	5.5	5.3	5.7	5.3	5.4	5.3	5.7	5.4	5.2	5.7	5.8	5.6	5.5	5.3	5.3	5.7	5.7	5.4	5.7	5.5	5.4	5.3	5.6	5.1	5.2	5.9	5.5	6	5.5	5.5	5.7	5.5	5.4	5.8	5.3	5.7	5.4	5.6	5.7	5.3</div>
+Try the jittered data.
+<div class="style23">5.1488	5.067	4.8758	4.9897	4.9574	4.9184	4.9902	5.0483	4.8902	4.8121	4.8654	4.9881	4.7661	5.1258	4.9371	4.7851	5.0186	5.0794	5.0031	5.0332	5.0097	4.9835	5.0799	4.9953	5.0923	5.086	5.0058	5.0243	4.8924	4.8929	4.9625	4.9524	4.879	5.0818	5.0154	5.3457	5.0436	4.8958	4.974	5.0264	4.9259	5.0241	4.9244	4.9606	5.0182	5.0963	5.0712	4.6599	5.0324	5.0675	5.3664	5.7166	5.5394	5.7017	5.6203	5.4654	5.5453	5.5041	5.318	5.4537	5.5309	5.3249	5.662	5.3025	5.3826	5.3046	5.6899	5.3915	5.1681	5.6755	5.7521	5.6424	5.5154	5.3433	5.2664	5.7421	5.7295	5.4077	5.694	5.4758	5.4252	5.2729	5.5564	5.1267	5.2171	5.9215	5.5142	5.9919	5.4891	5.5316	5.6817	5.5315	5.4289	5.8352	5.3006	5.7136	5.4451	5.5944	5.656	5.3367 </div>
+</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr />
+<p><b>進化力学系の非平衡相転移</b></p>
+<table width="272" border="0" align="right" height="294" cellpadding="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF">
+  <tr>
+    <td width="306" nowrap height="2"><p><font size="-2">Illustration of Evolutionary Game Process. Diffrent 
+      colors are gains of each player. New players join the game every 
+      time step. x-axis: time, y axis: gains.</font></p></td>
+  </tr>
+  <tr>
+    <td width="306" nowrap><p><b><img src="../ton/pics/non-bec_s.jpg" width="300" height="99" /></b></p></td>
+  </tr>
+  <tr>
+    <td width="306" nowrap><font size="-2"><b>Co-existence of players</b>: 
+      each area obeys<b> Bose Distribution</b>.</font></td>
+  </tr>
+  <tr>
+    <td width="306" nowrap><b><img src="../ton/pics/bec_s.jpg" width="300" height="99" /></b></td>
+  </tr>
+  <tr>
+    <td width="306" nowrap height="2"><p><font size="-2"><b>Dominance</b> by a single player is described 
+      by <b>Bose-Einstein Condensation</b>.</font></p></td>
+  </tr>
+</table>
+<p>多数のプレーヤー(種)が限られた資源(個体数)を奪い合う離散力学系の競争のモデルを考察する. 例として無性生物種間の生存競争への適用を念頭に議論する. 
+  幾何級数的個体数増加に対する調整項として１ステップ毎に全個体数が一定になるよう正規化項を導入する. また系には１ステップ毎に新しく種が参入し, 
+  参入した種の増殖能力(適応度)は確率的に与えられるとする. このモデルでは種に割り当てられる適応度の確率分布如何によって力学系の振る舞いが大きく異なる. 
+  一方の相では参入する全種が増加することなく共存する. 他方の相では一部の種が資源を搾取し, 適応進化が始まる. 個体数増加が確率的に与えられるモデルでも同様に, 
+  支配的な種が浮動的に入れ替わる相と適応進化を伴って表れる相の二つが存在する. 適応度の分布を調節するパラメータを導入することでこの非平衡系での相転移を解析した.<br />
+</p>
+<p>Shimazaki H. and Niebur E., Phase transitions in multiplicative competitive 
+  processes, <i>Physical Review E </i>(2005) 72(1), 011912 [<a href="ton/bec/bec.html">Full 
+    Text</a>, <a href="ton/pdf/shimazaki_pre05.pdf" onclick="javascript:urchinTracker ('/downloads/shimazaki_pre05.pdf');">PDF</a>, <a href="http://link.aps.org/abstract/PRE/v72/e011912">link</a>] </p>
+<p>島崎秀昭, 離散力学系の競争モデルに見られる相転移 --統計物理学の視点から-- [<a href="ton/pdf/econophys06.pdf" onclick="javascript:urchinTracker ('/downloads/bec_jp.pdf');">PDF</a>] </p>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002-2-1 (1.70) JA patch-1.9
+patched version by:  Kenshi Muto, Debian Project.
+* modified by:  Shige TAKENO
+LaTeX2HTML 2002-2-1 (1.70),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Contents</TITLE>
+<META NAME="description" CONTENT="Contents">
+<META NAME="keywords" CONTENT="hist_jp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002-2-1 JA patch-1.9">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="../css/latex2html.css">
+
+<LINK REL="next" HREF="node2.html">
+<LINK REL="previous" HREF="hist_jp.html">
+<LINK REL="up" HREF="hist_jp.html">
+<LINK REL="next" HREF="node2.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html31"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html21"
+  HREF="hist_jp.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html27"
+  HREF="hist_jp.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A>  
+<A NAME="tex2html29"
+  HREF="node10.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+ &nbsp; <A HREF=../index.html><B> <IMG SRC=../icons/home.gif BORDER=0></B></A>
+<BR>
+<B> Next:</B> <A NAME="tex2html32"
+  HREF="node2.html">序論</A>
+<B> Up:</B> <A NAME="tex2html28"
+  HREF="hist_jp.html">スパイク時系列のヒストグラム作成における最適区間幅決定のレシピ</A>
+<B> Previous:</B> <A NAME="tex2html22"
+  HREF="hist_jp.html">スパイク時系列のヒストグラム作成における最適区間幅決定のレシピ</A>
+ &nbsp; <B>  <A NAME="tex2html30"
+  HREF="node10.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<BR>
+
+<H2><A NAME="SECTION00010000000000000000">
+Contents</A>
+</H2>
+<!--Table of Contents-->
+
+<UL>
+<LI><A NAME="tex2html33"
+  HREF="node2.html">序論</A>
+<LI><A NAME="tex2html34"
+  HREF="node3.html">方法 </A>
+<UL>
+<LI><A NAME="tex2html35"
+  HREF="node4.html">スパイク時系列からのヒストグラムの作成</A>
+<LI><A NAME="tex2html36"
+  HREF="node5.html">平均積分二乗誤差及びコスト関数の導入</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html37"
+  HREF="node6.html">議論と発展</A>
+<UL>
+<LI><A NAME="tex2html38"
+  HREF="node7.html">最適区間幅の理論値のスケーリング則と発散</A>
+<LI><A NAME="tex2html39"
+  HREF="node8.html">データからのスケーリング指数の同定とヒストグラム作成に必要な最小試行回数の推定　</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html40"
+  HREF="node9.html">Bibliography</A>
+<LI><A NAME="tex2html41"
+  HREF="node10.html">Index</A>
+</UL>
+<!--End of Table of Contents-->
+
+<P>
+
+<H3>Abstract:</H3>
+<DIV>
+Time histograms are widely used to quantify the rate of discharges of neuronal spike trains.
+Nevertheless ad hoc bin width of the histogram is often used in literatures. 
+We give a recipe to determine an optimal bin width of a time histogram of spike sequences. 
+The optimal bin width diverges for a small number of trials, and scales differently for a large number of trials, depending on the smoothness of the underlying rate. We thus provide the method to estimate the minimum number of spike sequences to construct a meaningful time histogram as well as the exponent of the scaling relation. 
+</DIV>
+<P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html31"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html21"
+  HREF="hist_jp.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html27"
+  HREF="hist_jp.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A>  
+<A NAME="tex2html29"
+  HREF="node10.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html32"
+  HREF="node2.html">序論</A>
+<B> Up:</B> <A NAME="tex2html28"
+  HREF="hist_jp.html">スパイク時系列のヒストグラム作成における最適区間幅決定のレシピ</A>
+<B> Previous:</B> <A NAME="tex2html22"
+  HREF="hist_jp.html">スパイク時系列のヒストグラム作成における最適区間幅決定のレシピ</A>
+ &nbsp; <B>  <A NAME="tex2html30"
+  HREF="node10.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+hideaki
+2006-07-11
+</ADDRESS>
+</BODY>
+</HTML>

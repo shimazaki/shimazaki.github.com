@@ -1,0 +1,3534 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> -->
+
+<!--Converted with jLaTeX2HTML 2002-2-1 (1.70) JA patch-1.9
+patched version by:  Kenshi Muto, Debian Project.
+* modified by:  Shige TAKENO
+LaTeX2HTML 2002-2-1 (1.70),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>A Method for Selecting the Bin Size of a Time Histogram</TITLE>
+<META NAME="description" CONTENT="A Method for Selecting the Bin Size of a Time Histogram">
+<META NAME="keywords" CONTENT="sshistogram5">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002-2-1 JA patch-1.9">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sshistogram5.css">
+
+<!-- To delete x-scroll in inline frame -->
+<STYLE type="text/css"> <!-- BODY { overflow-x : hidden ;} //--> </STYLE>
+
+</HEAD>
+
+<BODY>
+<!--Navigation Panel-->
+<SMALL>doi:10.1162/neco.2007.19.6.1503</SMALL>
+<hr />
+<h2 ALIGN="left">A Method for Selecting the Bin Size of a Time Histogram</h2>
+<DIV>
+
+<P ALIGN="left"><STRONG>Hideaki Shimazaki and Shigeru Shinomoto</STRONG> <br>
+Department of Physics, Kyoto University, Kyoto 606-8502, Japan</P>
+<P ALIGN="left"><I><I>Neural Computation</I></I> Vol. 19(6) 1503-1527 (2007)</P>
+</DIV>
+
+<P>
+<H3>Abstract:</H3>
+<DIV> The time-histogram method is the most basic tool for capturing a time-dependent rate of neuronal spikes.
+Generally in the neurophysiological literature, the bin size that critically determines the goodness of the fit of the time histogram to the underlying spike rate has been subjectively selected by individual researchers.
+Here, we propose a method for objectively selecting the bin size from the spike-count statistics alone, so that the resulting bar- or line-graph time histogram best represents the unknown underlying spike rate.
+For a small number of spike sequences generated from a modestly fluctuating rate, the optimal bin size may diverge, indicating that any time histogram is likely to capture a spurious rate.
+Given a paucity of data, the present method can nevertheless suggest how many experimental trials should be added in order to obtain a meaningful time-dependent histogram with the required accuracy.
+</DIV>
+<P>
+
+<P>
+<P>
+
+<h2><A NAME="SECTION00010000000000000000">
+  Introduction</A></h2>
+<P>
+Neurophysiological studies are based upon the idea that information is transmitted between cortical neurons by spikes&nbsp;[<A
+ HREF="sshistogram5.html#Johnson96">Johnson, 1996</A>,<A
+ HREF="sshistogram5.html#Dayan01">Dayan and Abbott, 2001</A>].
+A number of filtering algorithms have been proposed for estimating the instantaneous activity of an individual neuron or the joint activity of multiple neurons&nbsp;[<A
+ HREF="sshistogram5.html#DiMatteo01">DiMatteo et&nbsp;al., 2001</A>,<A
+ HREF="sshistogram5.html#Wiener02">Wiener and Richmond, 2002</A>,<A
+ HREF="sshistogram5.html#Sanger02">Sanger, 2002</A>,<A
+ HREF="sshistogram5.html#Kass03">Kass et&nbsp;al., 2003</A>,<A
+ HREF="sshistogram5.html#Brockwell04">Brockwell et&nbsp;al., 2004</A>,<A
+ HREF="sshistogram5.html#Kass05">Kass et&nbsp;al., 2005</A>,<A
+ HREF="sshistogram5.html#Brown04">Brown et&nbsp;al., 2004</A>].
+The most basic and frequently used tool for spike-rate estimation is the time-histogram method.
+For instance, one aligns spike sequences at the onset of stimuli repeatedly applied to an animal, and describes the response of a single neuron with a peri-stimulus time histogram (PSTH) or the responses of multiple neurons with a joint PSTH&nbsp;[<A
+ HREF="sshistogram5.html#Adrian28">Adrian, 1928</A>,<A
+ HREF="sshistogram5.html#Gerstein60">Gerstein and Kiang, 1960</A>,<A
+ HREF="sshistogram5.html#Gerstein69">Gerstein and Perkel, 1969</A>,<A
+ HREF="sshistogram5.html#Abeles82">Abeles, 1982</A>].
+
+<P>
+The shape of a PSTH is largely dependent on the choice of the bin size.
+With a bin size that is too large, one cannot represent the time-dependent spike rate.
+On the other hand, with a bin size that is too small, the time histogram fluctuates largely and one cannot discern the underlying spike rate.
+There is an appropriate bin size for each set of spike sequences, which is based on the goodness of the fit of the PSTH to the underlying spike rate.
+For most previously published PSTHs, however, the bin size has been subjectively selected by the authors.
+
+<P>
+For data points distributed compactly, there are classical theories about how the optimal bin size scales with the total number of data points <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$">.
+It was proven that the optimal bin size scales as <IMG
+ WIDTH="48" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img39.gif"
+ ALT="$n^{-1/3}$"> with regard to the bar-graph-density estimator&nbsp;[<A
+ HREF="sshistogram5.html#Revesz68">R&#233;v&#233;sz, 1968</A>,<A
+ HREF="sshistogram5.html#Scott79">Scott, 1979</A>].
+It was recently found that for two types of infinitely long spike sequences, whose rates fluctuate either smoothly or jaggedly, the optimal bin sizes exhibit different scaling relations with respect to the number of sequences, time scale, and amplitude of rate modulation&nbsp;[<A
+ HREF="sshistogram5.html#Koyama04">Koyama and Shinomoto, 2004</A>].
+
+<P>
+Though interesting, the scaling relations are valid only for a large amount of data, and are of limited use in selecting a bin size.
+We devised a method of selecting the bin size of a time histogram from the spike data.
+In the course of our study, we realized that a theory on the empirical choice of the histogram bin size for a probability density function was presented by Rudemo in 1982 (Scandinavian Journal of Statistics 9: 65-78).
+Although applicable to a Poisson point process, this theory appears to have rarely been used by neurophysiologists in the analyses of PSTHs.
+In the actual procedure of neurophysiological experiments, the number of trials (spike sequences) plays an important role in determining the resolution of a PSTH and thus in designing experiments.
+Therefore it is preferable to have a theory that accords with the common protocol of neurophysiological experiments in which a stimulus is repeated to extract a signal from a neuron.
+Given a set of experimental data, we wish to not only determine the optimal bin size, but also estimate how many more experimental trials should be performed in order to obtain a resolution we deem sufficient.
+
+<P>
+For a small number of spike sequences derived from a modestly fluctuating rate, the estimated optimal bin size may diverge, implying that by constructing a PSTH, it is likely that one obtains spurious results for the spike-rate estimation&nbsp;[<A
+ HREF="sshistogram5.html#Koyama04">Koyama and Shinomoto, 2004</A>]. Because a shortage of data underlies this divergence, one can carry out more experiments to obtain a reliable rate estimation.
+Our method can suggest how many sequences should be added in order to obtain a meaningful time histogram with the required accuracy.
+As an application of this method, we also show that the scaling relations of the optimal bin size that appears for a large number of spike sequences can be examined from a relatively small amount of data.
+The degree of the smoothness of an underlying rate process can be estimated by this method.
+In addition to a bar-graph (piecewise constant) time histogram, we also designed a method for creating a line-graph (piecewise linear) time histogram, which is superior to a bar-graph in the goodness of the fit to the underlying spike rate and in comparing multiple responses to different stimulus conditions.
+
+<P>
+These empirical methods for the bin size selection for a bar- and a line-graph histogram, estimation of the number of sequences required for the histogram, and estimation of the scaling exponents of the optimal bin size were corroborated by theoretical analysis derived for a generic stochastic rate process.
+In the next section, we develop the bar-graph (peri-stimulus) time histogram (Bar-PSTH) method, which is the most frequently used PSTH. In <B>Appendix</B>, we develop the line-graph (peri-stimulus) time histogram (Line-PSTH) method.
+
+<P>
+
+<h2><A NAME="SECTION00020000000000000000">
+  Optimization of the bar-graph time histogram</A></h2>
+<P>
+We consider sequences of spikes repeatedly recorded from a single neuron under identical experimental conditions.
+A recent analysis revealed that <I>in vivo</I> spike trains are not simply random, but possess inter-spike-interval distributions intrinsic and specific to individual neurons&nbsp;[<A
+ HREF="sshistogram5.html#Shinomoto03">Shinomoto et&nbsp;al., 2003</A>,<A
+ HREF="sshistogram5.html#Shinomoto05">Shinomoto et&nbsp;al., 2005</A>].
+However, spikes accumulated from a large number of spike trains are in the majority mutually independent, and can be regarded as being derived from a time-dependent Poisson point process&nbsp;[<A
+ HREF="sshistogram5.html#Snyder75">Snyder, 1975</A>,<A
+ HREF="sshistogram5.html#Daley88">Daley and Vere-Jones, 1988</A>,<A
+ HREF="sshistogram5.html#Kass05">Kass et&nbsp;al., 2005</A>].
+
+<P>
+It would be natural to assess the goodness of the fit of the estimator <!-- MATH
+ $\hat \lambda_t$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.gif"
+ ALT="$\hat \lambda_t$"> to the underlying spike rate <IMG
+ WIDTH="21" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\lambda_t$"> over the total observation period <IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$T$"> by the mean integrated squared error (MISE),
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\mbox{MISE} \equiv \frac{1}{T}\int_0^T E\,( \hat{\lambda}_t - \lambda_t)^2 \,dt,
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:def_esterr"></A><IMG
+ WIDTH="243" HEIGHT="47" BORDER="0"
+ SRC="img42.gif"
+ ALT="\begin{displaymath}
+\mbox{MISE} \equiv \frac{1}{T}\int_0^T E ( \hat{\lambda}_t - \lambda_t)^2  dt,
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$E$"> refers to the expectation over different realizations of point events, given <IMG
+ WIDTH="21" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\lambda_t$">.
+We begin with a bar-graph time histogram as <!-- MATH
+ $\hat \lambda_t$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.gif"
+ ALT="$\hat \lambda_t$">, and explore a method to select the bin size that minimizes the MISE.
+The difficulty of the present problem comes from the fact that the underlying spike rate <IMG
+ WIDTH="21" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\lambda_t$"> is not known.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="BarSchematic"></A><A NAME="880"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1:</STRONG>
+The Bar-PSTH. A: an underlying spike rate, <IMG
+ WIDTH="21" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\lambda_t$">.
+The horizontal bars indicate the time averaged rates <IMG
+ WIDTH="14" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\theta$"> for individual bins of width <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $">. B: sequences of spikes derived from the underlying rate. C: a time histogram for the sample sequences of spikes.
+The estimated rate <!-- MATH
+ $\hat {\theta }$
+ -->
+<IMG
+ WIDTH="14" HEIGHT="23" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.gif"
+ ALT="$\hat {\theta }$"> is the total number of spikes <IMG
+ WIDTH="15" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.gif"
+ ALT="$k$"> that entered each bin, divided by the number of sequences <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$"> and the bin size <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $">.
+</CAPTION>
+<TR><TD><DIV ALIGN="CENTER">
+<IMG
+ WIDTH="485" HEIGHT="369" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.gif"
+ ALT="\includegraphics[width=4.25in]{2BarSchematic}"> 
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+A bar-graph time histogram is constructed simply by counting the number of spikes that belong to each bin of width <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $">.
+For an observation period <IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$T$">, we obtain <!-- MATH
+ $N = \lfloor T/\Delta \rfloor$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.gif"
+ ALT="$N = \lfloor T/\Delta \rfloor$"> intervals.
+The number of spikes accumulated from all <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$"> sequences in the <IMG
+ WIDTH="11" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img47.gif"
+ ALT="$i$">th interval is counted as <IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img48.gif"
+ ALT="$k_i$">.
+The bar height at the <IMG
+ WIDTH="11" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img47.gif"
+ ALT="$i$">th bin is given as <!-- MATH
+ $k_i / n \Delta$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img49.gif"
+ ALT="$k_i / n \Delta$">.
+Figure&nbsp;<A HREF="#BarSchematic">1</A> shows the schematic diagram for the construction of a bar-graph time histogram.
+
+<P>
+Given a bin of width <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $">, the expected height of a bar graph for <!-- MATH
+ $t \in [0, \Delta]$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.gif"
+ ALT="$t \in [0, \Delta]$"> is the time-averaged rate,
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\theta  = \frac{1}{\Delta }\int_0^\Delta  {\lambda _t \,dt}.
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="128" HEIGHT="47" BORDER="0"
+ SRC="img51.gif"
+ ALT="\begin{displaymath}
+\theta = \frac{1}{\Delta }\int_0^\Delta {\lambda _t  dt}.
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The total number of spikes <IMG
+ WIDTH="15" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.gif"
+ ALT="$k$"> from <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$"> spike sequences that enter this bin of width <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $"> obeys the Poisson distribution
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+p(k \,|\, n \Delta \theta) =\frac{\left( n \Delta \theta \right)^{k}}{k!} e^{-n \Delta \theta} \, ,
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:def_poisson"></A><IMG
+ WIDTH="224" HEIGHT="51" BORDER="0"
+ SRC="img52.gif"
+ ALT="\begin{displaymath}
+p(k  \vert  n \Delta \theta) =\frac{\left( n \Delta \theta \right)^{k}}{k!} e^{-n \Delta \theta}   ,
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(3)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+whose expectation is <!-- MATH
+ $n\Delta \theta$
+ -->
+<IMG
+ WIDTH="41" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img53.gif"
+ ALT="$n\Delta \theta $">.
+The unbiased estimator for <IMG
+ WIDTH="14" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\theta$"> is denoted as <!-- MATH
+ $\hat {\theta}=k/(n\Delta )$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.gif"
+ ALT="$\hat {\theta}=k/(n\Delta )$">, which is the empirical height of the bar graph for <!-- MATH
+ $t \in [0, \Delta]$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.gif"
+ ALT="$t \in [0, \Delta]$">.
+
+<P>
+
+<h3><A NAME="SECTION00021000000000000000">
+  Selection of the bin size</A></h3>
+<P>
+By segmenting the total observation period <IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$T$"> into <IMG
+ WIDTH="22" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$N$"> intervals of size <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $">, the MISE defined in Eq.&nbsp;<A HREF="#eq:def_esterr">1</A> can be rewritten as
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\mbox{MISE} = \frac{1}{\Delta }\int_0^\Delta \frac{1}{N} \sum_{i=1}^{N}  \,  \left\{  E \, (\, {\hat \theta_i - \lambda _{t+(i-1)\Delta} } \,)^2 \right\} \,dt,
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="MISE1"></A><IMG
+ WIDTH="381" HEIGHT="59" BORDER="0"
+ SRC="img56.gif"
+ ALT="\begin{displaymath}
+\mbox{MISE} = \frac{1}{\Delta }\int_0^\Delta \frac{1}{N} \su...
+...hat \theta_i - \lambda _{t+(i-1)\Delta} }  )^2 \right\}  dt,
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(4)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <!-- MATH
+ $\hat{\theta}_i \equiv k_i/(n\Delta )$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.gif"
+ ALT="$\hat{\theta}_i \equiv k_i/(n\Delta )$">.
+Hereafter we denote the average over the segmented rate <!-- MATH
+ $\lambda _{t+(i-1)\Delta}$
+ -->
+<IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.gif"
+ ALT="$\lambda _{t+(i-1)\Delta}$"> as an average over an ensemble of (segmented) rate functions <!-- MATH
+ $\{ \lambda _{t} \}$
+ -->
+<IMG
+ WIDTH="40" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.gif"
+ ALT="$\{ \lambda _{t} \}$"> defined on an interval of <!-- MATH
+ $t \in [0, \Delta]$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.gif"
+ ALT="$t \in [0, \Delta]$">, as
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\mbox{MISE} =\frac{1}{\Delta }\int_0^\Delta \left\langle  {E \, (\, {\hat \theta - \lambda _t } \,)^2 } \right\rangle\,dt.
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="267" HEIGHT="47" BORDER="0"
+ SRC="img60.gif"
+ ALT="\begin{displaymath}
+\mbox{MISE} =\frac{1}{\Delta }\int_0^\Delta \left\langle {E   (  {\hat \theta - \lambda _t }  )^2 } \right\rangle dt.
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The expectation <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$E$"> refers to the average over the spike count, or <!-- MATH
+ $\hat{\theta}=k/(n\Delta )$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.gif"
+ ALT="$\hat {\theta}=k/(n\Delta )$">, given a rate function <IMG
+ WIDTH="21" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.gif"
+ ALT="$\lambda _{t}$">, or its mean value <IMG
+ WIDTH="14" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\theta$">.
+
+<P>
+The MISE can be decomposed into two parts,
+<BR>
+<DIV ALIGN="CENTER"><A NAME="MISE2"></A>
+<!-- MATH
+ \begin{eqnarray}
+\mbox{MISE} = \left\langle {E {( {\hat \theta  - \theta } )^2 } } \right\rangle
+  +
+  \frac{1}{\Delta }\int_0^\Delta  {\left\langle {\left( {\lambda _t  - \theta } \right)^2 } \right\rangle dt} .
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD ALIGN="RIGHT" NOWRAP><div align="center"><IMG
+ WIDTH="367" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img62.gif"
+ ALT="$\displaystyle \mbox{MISE} = \left\langle {E {( {\hat \theta - \theta } )^2 } } ...
+...ta {\left\langle {\left( {\lambda _t - \theta } \right)^2 } \right\rangle dt} .$"></div></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(6)</TD></TR>
+</TABLE>
+</DIV><BR CLEAR="ALL"><P></P>
+The first and second terms are, respectively, the stochastic fluctuation of the estimator <IMG
+ WIDTH="14" HEIGHT="23" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.gif"
+ ALT="$\hat {\theta }$"> around the expected mean rate <IMG
+ WIDTH="14" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\theta$">, and the averaged temporal fluctuation of <IMG
+ WIDTH="21" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\lambda_t$"> around its mean <IMG
+ WIDTH="14" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\theta$"> over an interval of length <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $">.
+
+<P>
+The second term of Eq.&nbsp;<A HREF="#MISE2">6</A> can further be decomposed into two parts,
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\frac{1}{\Delta }\int_0^\Delta  {\left\langle ( \lambda _t  - \langle \theta \rangle +  \langle \theta \rangle - \theta)^2 \right\rangle dt}
+= \frac{1}{\Delta }\int_0^\Delta  \left\langle {\left( {\lambda _t  - \langle\theta\rangle } \right)^2 } \right\rangle \, dt - \left\langle {\left( {\theta  - \langle\theta\rangle} \right)^2 } \right\rangle .
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="MISE3"></A><IMG
+ WIDTH="584" HEIGHT="47" BORDER="0"
+ SRC="img63.gif"
+ ALT="\begin{displaymath}
+\frac{1}{\Delta }\int_0^\Delta {\left\langle ( \lambda _t - ...
+...t( {\theta - \langle\theta\rangle} \right)^2 } \right\rangle .
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(7)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The first term in Eq.&nbsp;<A HREF="#MISE3">7</A> represents a mean squared fluctuation of the underlying rate <IMG
+ WIDTH="21" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\lambda_t$"> from the mean rate <!-- MATH
+ $\left\langle \theta \right\rangle$
+ -->
+<IMG
+ WIDTH="29" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.gif"
+ ALT="$\left\langle \theta \right\rangle$">, and is independent of the bin size <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $">, because
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\frac{1}{\Delta }\int_0^\Delta  \left\langle {\left( {\lambda _t  - \langle\theta\rangle } \right)^2 } \right\rangle \, dt = \frac{1}{T} \int_0^T \left( {\lambda _t  - \langle\theta\rangle } \right)^2 \, dt.
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="variance_rate"></A><IMG
+ WIDTH="368" HEIGHT="47" BORDER="0"
+ SRC="img65.gif"
+ ALT="\begin{displaymath}
+\frac{1}{\Delta }\int_0^\Delta \left\langle {\left( {\lambda...
+...T \left( {\lambda _t - \langle\theta\rangle } \right)^2   dt.
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(8)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+We define a cost function by subtracting this term from the original MISE,
+<BR>
+<DIV ALIGN="CENTER"><A NAME="cost"></A>
+<!-- MATH
+ \begin{eqnarray}
+C_n(\Delta) &\equiv& \mbox{MISE} - \frac{1}{T} \int_0^T \left( {\lambda _t  - \langle\theta\rangle } \right)^2 \, dt \nonumber \\
+&=& \left\langle E(\hat \theta  - \theta)^2 \right\rangle - \left\langle {\left( {\theta  - \langle\theta\rangle} \right)^2 } \right\rangle.
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD width="193" ALIGN="RIGHT" NOWRAP><IMG
+ WIDTH="57" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img66.gif"
+ ALT="$\displaystyle C_n(\Delta)$"></TD>
+<TD width="20" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img67.gif"
+ ALT="$\textstyle \equiv$"></TD>
+<TD width="234" ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="234" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.gif"
+ ALT="$\displaystyle \mbox{MISE} - \frac{1}{T} \int_0^T \left( {\lambda _t - \langle\theta\rangle } \right)^2   dt$"></TD>
+<TD WIDTH=436 ALIGN="RIGHT">&nbsp;</TD>
+</TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="233" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.gif"
+ ALT="$\displaystyle \left\langle E(\hat \theta - \theta)^2 \right\rangle - \left\langle {\left( {\theta - \langle\theta\rangle} \right)^2 } \right\rangle.$"></TD>
+<TD WIDTH=436 ALIGN="RIGHT">
+(9)</TD>
+</TR>
+</TABLE></DIV><BR CLEAR="ALL"><P></P>
+This cost function corresponds to the `risk function' in the report by Rudemo, (Eq.&nbsp;2.3), obtained by direct decomposition of the MISE&nbsp;[<A
+ HREF="sshistogram5.html#Rudemo82">Rudemo, 1982</A>].
+The second term in Eq.&nbsp;<A HREF="#cost">9</A> represents the temporal fluctuation of the expected mean rate <IMG
+ WIDTH="14" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\theta$"> for individual intervals of period <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $">.
+As the expected mean rate <IMG
+ WIDTH="14" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\theta$"> is not an observable quantity, we have to replace the fluctuation of the expected mean rate with that of the observable estimator <!-- MATH
+ $\hat {\theta }$
+ -->
+<IMG
+ WIDTH="14" HEIGHT="23" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.gif"
+ ALT="$\hat {\theta }$">.
+Using the decomposition rule for an unbiased estimator (<!-- MATH
+ $E\hat {\theta }=\theta )$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img71.gif"
+ ALT="$E\hat {\theta }=\theta )$">,
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\left\langle E ( {\hat \theta  - \langle E\hat \theta \rangle } )^2  \right\rangle
+= \left\langle E ( \hat \theta  - \theta )^2 \right\rangle
++ \left\langle {\left( {\theta  - \langle \theta \rangle} \right)^2 } \right\rangle,
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="varLambdah"></A><IMG
+ WIDTH="378" HEIGHT="38" BORDER="0"
+ SRC="img72.gif"
+ ALT="\begin{displaymath}
+\left\langle E ( {\hat \theta - \langle E\hat \theta \rangle...
+...( {\theta - \langle \theta \rangle} \right)^2 } \right\rangle,
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(10)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+the cost function is transformed into
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+C_n\left( \Delta  \right) =
+2 \left\langle E (\hat \theta  - \theta )^2 \right\rangle
+- \left\langle E  ( {\hat \theta  - \langle E\hat \theta \rangle } )^2  \right\rangle.
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="Cn"></A><IMG
+ WIDTH="350" HEIGHT="38" BORDER="0"
+ SRC="img73.gif"
+ ALT="\begin{displaymath}
+C_n\left( \Delta \right) =
+2 \left\langle E (\hat \theta - \...
+...hat \theta - \langle E\hat \theta \rangle } )^2 \right\rangle.
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(11)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+Due to the assumed Poisson nature of the point process, the number of spikes <IMG
+ WIDTH="15" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.gif"
+ ALT="$k$"> counted in each bin obeys a Poisson distribution; the variance of <IMG
+ WIDTH="15" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.gif"
+ ALT="$k$"> is equal to the mean.
+For the estimated rate defined as <!-- MATH
+ $\hat {\theta}=k/(n\Delta )$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.gif"
+ ALT="$\hat {\theta}=k/(n\Delta )$">, this variance-mean relation corresponds to
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+E (\hat \theta - \theta)^2
+= \frac{1}{n\Delta}E {\hat \theta} .
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:variancemean"></A><IMG
+ WIDTH="162" HEIGHT="45" BORDER="0"
+ SRC="img74.gif"
+ ALT="\begin{displaymath}
+E (\hat \theta - \theta)^2
+= \frac{1}{n\Delta}E {\hat \theta} .
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(12)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+By incorporating Eq.&nbsp;<A HREF="#eq:variancemean">12</A> into Eq.&nbsp;<A HREF="#Cn">11</A>, the cost function is given as a function of the estimator <!-- MATH
+ $\hat {\theta }$
+ -->
+<IMG
+ WIDTH="14" HEIGHT="23" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.gif"
+ ALT="$\hat {\theta }$">,
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+C_n\left( \Delta  \right) =
+\frac{2}{{n\Delta}} \left\langle E \hat \theta \right\rangle
+- \left\langle E ( {\hat \theta  - \langle E\hat \theta \rangle } )^2  \right\rangle.
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:CostEstimated"></A><IMG
+ WIDTH="316" HEIGHT="45" BORDER="0"
+ SRC="img75.gif"
+ ALT="\begin{displaymath}
+C_n\left( \Delta \right) =
+\frac{2}{{n\Delta}} \left\langle ...
+...hat \theta - \langle E\hat \theta \rangle } )^2 \right\rangle.
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(13)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The optimal bin size is obtained by minimizing the cost function <IMG
+ WIDTH="57" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$C_n (\Delta )$">, as
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\Delta^{*} \equiv \arg\min_{\Delta}C_n(\Delta).
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:_optbinsize"></A><IMG
+ WIDTH="168" HEIGHT="41" BORDER="0"
+ SRC="img76.gif"
+ ALT="\begin{displaymath}
+\Delta^{*} \equiv \arg\min_{\Delta}C_n(\Delta).
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(14)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+By replacing the expectation with the sample spike count, the cost function (Eq.&nbsp;<A HREF="#eq:CostEstimated">13</A>) is converted into a useful recipe, summarized as `Algorithm 1.'
+
+<P>
+<BLOCKQUOTE>
+<B>Algorithm 1: A method for bin size selection for a Bar-PSTH</B>
+<HR>width </BLOCKQUOTE><DL COMPACT>
+<DT>(i)</DT>
+<DD>Divide the observation period <IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$T$"> into <IMG
+ WIDTH="22" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$N$"> bins of width <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $">, and count the number of spikes <IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img48.gif"
+ ALT="$k_i$"> from all <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$"> sequences that enter the <IMG
+ WIDTH="11" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img47.gif"
+ ALT="$i$">th bin.
+    
+</DD>
+<DT>(ii)</DT>
+<DD>Construct the mean and variance of the number of spikes <IMG
+ WIDTH="39" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.gif"
+ ALT="$\{k_i\}$"> as,
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and }  \displaystyle v \equiv \frac{1}{N} \sum_{i=1}^{N} (k_i-\bar{k})^2.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="305" HEIGHT="59" BORDER="0"
+ SRC="img78.gif"
+ ALT="\begin{displaymath}\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and } \displaystyle v \equiv \frac{1}{N} \sum_{i=1}^{N} (k_i-\bar{k})^2. \end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+    
+</DD>
+<DT>(iii)</DT>
+<DD>Compute the cost function,
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+C_n(\Delta) = \frac{2 \bar{k} - v}{(n \Delta)^2}.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="138" HEIGHT="54" BORDER="0"
+ SRC="img79.gif"
+ ALT="\begin{displaymath}C_n(\Delta) = \frac{2 \bar{k} - v}{(n \Delta)^2}.\end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+    
+</DD>
+<DT>(iv)</DT>
+<DD>Repeat i through iii while changing the bin size <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $"> to search for <IMG
+ WIDTH="28" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img80.gif"
+ ALT="$\Delta^{*}$"> that minimizes <IMG
+ WIDTH="57" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$C_n (\Delta )$">.
+</DD>
+</DL><BLOCKQUOTE><HR>
+</BLOCKQUOTE>
+
+<P>
+
+<h3><A NAME="SECTION00022000000000000000">
+  Extrapolation of the cost function</A></h3>
+<P>
+With the method developed in the preceding subsection, we can determine the optimal bin size for a given set of experimental data.
+In this section, we develop a method to estimate how the optimal bin size decreases when more experimental trials are added to the data set:
+Given <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$"> sequences, the method provides the cost function for <IMG
+ WIDTH="67" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img81.gif"
+ ALT="$m (\neq n)$"> sequences.
+
+<P>
+Assume that we are in possession of <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$"> spike sequences.
+The fluctuation of the expected mean rate <!-- MATH
+ $\left\langle ( \theta -\left\langle \theta \right\rangle )^2 \right\rangle$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$\left\langle ( \theta -\left\langle \theta \right\rangle )^2 \right\rangle$"> in Eq.&nbsp;<A HREF="#varLambdah">10</A> is replaced with the empirical fluctuation of the time histogram <!-- MATH
+ $\mathop {\hat {\theta}}\nolimits_n$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.gif"
+ ALT="$\mathop {\hat {\theta}}\nolimits_n$"> using the decomposition rule for the unbiased estimator <IMG
+ WIDTH="22" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img84.gif"
+ ALT="$\hat \theta_n $"> satisfying <!-- MATH
+ $E\hat \theta_n =\theta$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img85.gif"
+ ALT="$E\hat \theta_n =\theta $">,
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\left\langle E ( {\hat \theta_n  - \langle E\hat \theta_n \rangle } )^2  \right\rangle
+= \left\langle E (\hat \theta_n  - \theta )^2 \right\rangle
++ \left\langle { ( {\theta  - \langle \theta \rangle} )^2 } \right\rangle.
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="varLambdahm"></A><IMG
+ WIDTH="404" HEIGHT="38" BORDER="0"
+ SRC="img86.gif"
+ ALT="\begin{displaymath}
+\left\langle E ( {\hat \theta_n - \langle E\hat \theta_n \ra...
+...gle { ( {\theta - \langle \theta \rangle} )^2 } \right\rangle.
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(15)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The expected cost function for <IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$m$"> sequences can thus be obtained by substituting the above equation into Eq.&nbsp;<A HREF="#cost">9</A>, yielding
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+C_{m}\left( \Delta | n \right) =
+\left\langle E (\hat \theta_m  - \theta )^2  \right\rangle+
+\left\langle E (\hat \theta_n  - \theta )^2  \right\rangle
+- \left\langle E ( {\hat \theta_n  - \langle E\hat \theta_n \rangle } )^2  \right\rangle.
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="516" HEIGHT="38" BORDER="0"
+ SRC="img87.gif"
+ ALT="\begin{displaymath}
+C_{m}\left( \Delta \vert n \right) =
+\left\langle E (\hat \t...
+...\theta_n - \langle E\hat \theta_n \rangle } )^2 \right\rangle.
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(16)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Using the variance-mean relation for a Poisson distribution, Eq.&nbsp;<A HREF="#eq:variancemean">12</A>, and
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+E  (\hat \theta_m - \theta )^2
+= \frac{1}{m\Delta}E {\hat \theta_m }
+= \frac{1}{m\Delta}E {\hat \theta_n } ,
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="variancemeannm"></A><IMG
+ WIDTH="285" HEIGHT="45" BORDER="0"
+ SRC="img88.gif"
+ ALT="\begin{displaymath}
+E (\hat \theta_m - \theta )^2
+= \frac{1}{m\Delta}E {\hat \theta_m }
+= \frac{1}{m\Delta}E {\hat \theta_n } ,
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(17)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+we obtain
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+C_{m}\left( \Delta | n \right) =
+\left( \frac{1}{m}-\frac{1}{n} \right)
+\frac{1}{\Delta} \left\langle E {\hat \theta_n }  \right\rangle
++ C_n\left( \Delta  \right),
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="c1c2nm"></A><IMG
+ WIDTH="347" HEIGHT="46" BORDER="0"
+ SRC="img89.gif"
+ ALT="\begin{displaymath}
+C_{m}\left( \Delta \vert n \right) =
+\left( \frac{1}{m}-\fra...
+...e E {\hat \theta_n } \right\rangle
++ C_n\left( \Delta \right),
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(18)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <!-- MATH
+ $C_n \left( \Delta \right)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.gif"
+ ALT="$C_n \left( \Delta \right)$"> is the original cost function (Eq.&nbsp;<A HREF="#eq:CostEstimated">13</A>) computed using the estimators <IMG
+ WIDTH="22" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img84.gif"
+ ALT="$\hat \theta_n $">.
+By replacing the expectation with sample spike count averages, the cost function for <IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$m$"> sequences can be extrapolated with this formula, using the sample mean <IMG
+ WIDTH="15" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.gif"
+ ALT="$\bar{k}$"> and variance <IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img92.gif"
+ ALT="$v$"> of the numbers of spikes, given <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$"> sequences and the bin size <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $">.
+The extrapolation method is summarized as `Algorithm 2.'
+
+<P>
+<BLOCKQUOTE>
+<B>Algorithm 2: A method for extrapolating the cost function for a Bar-PSTH</B>
+<HR>width </BLOCKQUOTE><DL COMPACT>
+<DT>(a)</DT>
+<DD>Construct the extrapolated cost function,
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+C_{m}\left( \Delta | n \right) = \left(\frac{1}{m}-\frac{1}{n}\right)\frac{\bar{k}}{n\Delta^2}+ C_n(\Delta),
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="303" HEIGHT="50" BORDER="0"
+ SRC="img93.gif"
+ ALT="\begin{displaymath}C_{m}\left( \Delta \vert n \right) = \left(\frac{1}{m}-\frac{1}{n}\right)\frac{\bar{k}}{n\Delta^2}+ C_n(\Delta), \end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+using the sample mean <IMG
+ WIDTH="15" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.gif"
+ ALT="$\bar{k}$"> and variance <IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img92.gif"
+ ALT="$v$"> of the number of spikes obtained from <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$"> sequences of spikes. <IMG
+ WIDTH="57" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$C_n (\Delta )$"> is the cost function computed for <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$"> sequences of spikes with the Algorithm 1.
+    
+</DD>
+<DT>(b)</DT>
+<DD>Search for <IMG
+ WIDTH="33" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img94.gif"
+ ALT="$\Delta^{*}_m$"> that minimizes <!-- MATH
+ $C_{m}\left( \Delta | n \right)$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.gif"
+ ALT="$C_{m}\left( \Delta \vert n \right)$">.
+    
+</DD>
+<DT>(c)</DT>
+<DD>Repeat A and B while changing <IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$m$">, and plot <!-- MATH
+ $1/\Delta^{*}_m$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.gif"
+ ALT="$1/\Delta^{*}_m$"> vs <IMG
+ WIDTH="40" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.gif"
+ ALT="$1/m$"> to search for the critical value <!-- MATH
+ $1/m=1/\hat n_c$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img97.gif"
+ ALT="$1/m=1/\hat n_c$"> above which <!-- MATH
+ $1/\Delta^{*}_m$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.gif"
+ ALT="$1/\Delta^{*}_m$"> practically vanishes.
+</DD>
+</DL><BLOCKQUOTE><HR>
+</BLOCKQUOTE>
+
+<P>
+It may come to pass that the original cost function <IMG
+ WIDTH="57" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$C_n (\Delta )$"> computed for <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$"> spike sequences does not have a minimum, or have a minimum at a bin size comparable to the observation period <IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$T$">.
+Because of the paucity of data, one may consider carrying out more experiments to obtain a reliable rate estimation.
+The critical number of sequences <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img98.gif"
+ ALT="$n_{c}$"> above which the cost function has a finite bin size <IMG
+ WIDTH="28" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$\Delta ^\ast $"> may be estimated in the following manner.
+With a large <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $">, the cost function can be expanded as
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+C_n(\Delta) \sim \mu \left( {\frac{1}{n} - \frac{1}{{n_c }}} \right)\frac{1}{\Delta}  + u\frac{1}{\Delta^2},
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:expansion"></A><IMG
+ WIDTH="263" HEIGHT="48" BORDER="0"
+ SRC="img100.gif"
+ ALT="\begin{displaymath}
+C_n(\Delta) \sim \mu \left( {\frac{1}{n} - \frac{1}{{n_c }}} \right)\frac{1}{\Delta} + u\frac{1}{\Delta^2},
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(19)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where we have introduced <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$n_c $"> and <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img101.gif"
+ ALT="$u$">, which are independent of <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$">.
+The optimal bin size undergoes a phase transition from the vanishing <IMG
+ WIDTH="47" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.gif"
+ ALT="$1/\Delta^\ast $"> for <IMG
+ WIDTH="59" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.gif"
+ ALT="$n&lt;n_c $"> to a finite <!-- MATH
+ $1/\Delta ^\ast$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.gif"
+ ALT="$1/\Delta^\ast $"> for <IMG
+ WIDTH="59" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.gif"
+ ALT="$n&gt;n_c $">.
+The inverse optimal bin size is expanded in the vicinity of <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$n_c $"> as <!-- MATH
+ $1/\Delta ^\ast \propto \left( {1/n-1/n_c } \right)$
+ -->
+<IMG
+ WIDTH="176" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img105.gif"
+ ALT="$1/\Delta ^\ast \propto \left( {1/n-1/n_c } \right)$">.
+We can estimate the critical value <IMG
+ WIDTH="23" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$\hat n_c$"> (see Fig.&nbsp;<A HREF="#Extrapolation">3</A>) by applying this asymptotic relation to the set of <!-- MATH
+ $\hat \Delta_m^\ast$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.gif"
+ ALT="$\hat \Delta_m^\ast$"> estimated from <!-- MATH
+ $C_m (\Delta \vert n)$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.gif"
+ ALT="$C_m (\Delta \vert n)$"> for various values of <IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$m$">:
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\frac{1}{\Delta^{*}_m} \propto \left( {\frac{1}{m} - \frac{1}{{\hat n_c }}} \right).
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="criticalmc"></A><IMG
+ WIDTH="151" HEIGHT="50" BORDER="0"
+ SRC="img109.gif"
+ ALT="\begin{displaymath}
+\frac{1}{\Delta^{*}_m} \propto \left( {\frac{1}{m} - \frac{1}{{\hat n_c }}} \right).
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(20)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The minimum number of sequences required for the construction of a Bar-PSTH is estimated from <!-- MATH
+ $\lceil \hat n_c \rceil$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img110.gif"
+ ALT="$\lceil \hat n_c \rceil$">.
+It should be noted that there are cases that the optimal bin size exhibits a discontinuous divergence from a finite value.
+Even in such cases, the plot of <!-- MATH
+ $\{1/m, 1/\Delta^{*}\}$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img111.gif"
+ ALT="$\{1/m, 1/\Delta^{*}\}$"> could be useful in exploring the discontinuous transition from nonvanishing values of <IMG
+ WIDTH="47" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.gif"
+ ALT="$1/\Delta^{*}$"> to practically vanishing values.
+
+<P>
+In the opposite extreme, with a sufficiently large number of spike sequences, our method selects a small bin size.
+It is known that the optimal bin size exhibits a power-law scaling with respect to the number of sequences <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$">.
+The exponent of the scaling relation depends on the smoothness of the underlying rate&nbsp;[<A
+ HREF="sshistogram5.html#Koyama04">Koyama and Shinomoto, 2004</A>].
+Given a large number of spike sequences, the presently developed method for extrapolating the cost function can also be utilized to estimate the optimal bin size for a larger number of spike sequence <IMG
+ WIDTH="57" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img113.gif"
+ ALT="$m &gt; n$">, and further estimate the scaling exponent representing the smoothness of the underlying rate.
+
+<P>
+
+<h3><A NAME="SECTION00023000000000000000">
+  Theoretical analysis on the optimal bin size</A></h3>
+<P>
+To verify the above mentioned empirical methods, we obtain the `theoretical' cost function of a Bar-PSTH directly from a process with a known underlying rate.
+Note that this theoretical cost function is not available in real experimental conditions in which the underlying rate is not known.
+
+<P>
+The present estimator <!-- MATH
+ $\hat {\theta }\equiv k/(n\Delta )$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img114.gif"
+ ALT="$\hat {\theta }\equiv k/(n\Delta )$"> is a uniformly minimum variance unbiased estimator (UMVUE) of <IMG
+ WIDTH="14" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\theta$">, which achieves the lower bound of the Cram&#233;r-Rao inequality&nbsp;[<A
+ HREF="sshistogram5.html#Blahut87">Blahut, 1987</A>,<A
+ HREF="sshistogram5.html#Cover91">Cover and Thomas, 1991</A>],
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+E (\hat \theta  - \theta)^2 =
+\left[ - \sum_{k=0}^{\infty} p\left( k \,|\, n \Delta \theta \right) \frac{\partial^2 \log p\left( k \,|\, n \Delta \theta \right)} {\partial \theta^2 } \right]^{-1}
+= \frac{\theta }{{n\Delta }}.
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="FIpoiss"></A><IMG
+ WIDTH="472" HEIGHT="60" BORDER="0"
+ SRC="img115.gif"
+ ALT="\begin{displaymath}
+E (\hat \theta - \theta)^2 =
+\left[ - \sum_{k=0}^{\infty} p\...
+...\partial \theta^2 } \right]^{-1}
+= \frac{\theta }{{n\Delta }}.
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(21)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Inserting this into Eq.&nbsp;<A HREF="#cost">9</A>, the cost function is represented as
+<BR>
+<DIV ALIGN="CENTER"><A NAME="CLB2"></A>
+<!-- MATH
+ \begin{eqnarray}
+C_n\left( \Delta \right) &=& \frac{\left\langle\theta\right\rangle}{n \Delta} - \left\langle {\left( {\theta  - \langle\theta\rangle} \right)^2 } \right\rangle \nonumber \\
+&=& \frac{\mu}{n \Delta} - \frac{1}{{\Delta ^2 }}\int_0^\Delta  {\int_0^\Delta  {\phi \left( {t_1  - t_2 } \right)\,dt_1 dt_2 } },
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="99%">
+<TR VALIGN="MIDDLE"><TD width="196" ALIGN="RIGHT" NOWRAP><IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img116.gif"
+ ALT="$\displaystyle C_n\left( \Delta \right)$"></TD>
+<TD width="26" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$\textstyle =$"></TD>
+<TD width="292" ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="157" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img117.gif"
+ ALT="$\displaystyle \frac{\left\langle\theta\right\rangle}{n \Delta} - \left\langle {\left( {\theta - \langle\theta\rangle} \right)^2 } \right\rangle$"></TD>
+<TD WIDTH=360 ALIGN="RIGHT">&nbsp;</TD>
+</TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="292" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img118.gif"
+ ALT="$\displaystyle \frac{\mu}{n \Delta} - \frac{1}{{\Delta ^2 }}\int_0^\Delta {\int_0^\Delta {\phi \left( {t_1 - t_2 } \right) dt_1 dt_2 } },$"></TD>
+<TD ALIGN="RIGHT">
+(22)</TD>
+</TR>
+</TABLE></DIV><BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $\mu = \langle \theta \rangle$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img119.gif"
+ ALT="$\mu = \langle \theta \rangle$"> is the mean rate, and <!-- MATH
+ $\phi (t_1-t_2) = \langle (\lambda_{t_1} - \mu)(\lambda_{t_2} - \mu)\rangle$
+ -->
+<img
+ width="267" height="37" align="MIDDLE" border="0"
+ src="img120.gif"
+ alt="$\phi (t_1-t_2) = \langle (\lambda_{t_1} - \mu)(\lambda_{t_2} - \mu)\rangle$">is the autocorrelation function of the rate fluctuation, <IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$\lambda_t-\mu $">.
+To obtain the last equation, we used
+<BR>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+\left\langle {\left( {\theta  - \langle\theta\rangle} \right)^2 } \right\rangle
+&=& \left\langle {\left\{ {\frac{1}{\Delta }\int_0^\Delta  {\left( {\lambda _t  - \mu } \right)dt} } \right\}^2 } \right\rangle \nonumber \\
+&=& \frac{1}{{\Delta ^2 }}\int_0^\Delta  {\int_0^\Delta  {\left\langle {\left( {\lambda _{t_1 }  - \mu } \right)\left( {\lambda _{t_2 }  - \mu } \right)} \right\rangle \,dt_1 } dt_2 } .
+\end{eqnarray}
+ -->
+<TABLE ALIGN="left" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD width="177" ALIGN="RIGHT" NOWRAP><IMG
+ WIDTH="103" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img122.gif"
+ ALT="$\displaystyle \left\langle {\left( {\theta - \langle\theta\rangle} \right)^2 } \right\rangle$"></TD>
+<TD width="21" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$\textstyle =$"></TD>
+<TD width="320" ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="203" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.gif"
+ ALT="$\displaystyle \left\langle {\left\{ {\frac{1}{\Delta }\int_0^\Delta {\left( {\lambda _t - \mu } \right)dt} } \right\}^2 } \right\rangle$"></TD>
+<TD WIDTH=365 ALIGN="RIGHT">&nbsp;</TD>
+</TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><img
+ width="320" height="60" align="MIDDLE" border="0"
+ src="img124.gif"
+ alt="$\displaystyle \frac{1}{{\Delta ^2 }}\int_0^\Delta {\int_0^\Delta {\left\langle ...
+...\right)\left( {\lambda _{t_2 } - \mu } \right)} \right\rangle  dt_1 } dt_2 } .$"></TD>
+<TD WIDTH=365 ALIGN="RIGHT">
+(23)</TD>
+</TR>
+</TABLE>
+</DIV><BR CLEAR="ALL"><P></P>
+
+<P>
+The cost function with a large bin size can be rewritten as
+<BR>
+<div align="left"><A NAME="eq:double"></A>
+  <!-- MATH
+ \begin{eqnarray}
+C_n\left( \Delta \right) &=& \frac{\mu}{n \Delta} - \frac{1}{\Delta^2} \int_{-\Delta}^{\Delta} (\Delta-|t|) \phi(t) \,dt \nonumber \\
+&\sim& \frac{\mu}{n \Delta} - \frac{1}{\Delta} \int_{-\infty}^{\infty} \phi(t) \,dt + \frac{1}{{\Delta ^2 }} \int_{-\infty}^{\infty} |t| \phi(t) \,dt,
+\end{eqnarray}
+ -->
+  <TABLE ALIGN="left" CELLPADDING="0" WIDTH="100%">
+    <TR VALIGN="MIDDLE"><TD width="174" ALIGN="RIGHT" NOWRAP><IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img116.gif"
+ ALT="$\displaystyle C_n\left( \Delta \right)$"></TD>
+    <TD width="20" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$\textstyle =$"></TD>
+    <TD width="375" ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="243" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.gif"
+ ALT="$\displaystyle \frac{\mu}{n \Delta} - \frac{1}{\Delta^2} \int_{-\Delta}^{\Delta} (\Delta-\vert t\vert) \phi(t)  dt$"></TD>
+    <TD WIDTH=314 ALIGN="RIGHT">&nbsp;</TD>
+    </TR>
+    <TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+    <TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img126.gif"
+ ALT="$\textstyle \sim$"></TD>
+    <TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="335" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img127.gif"
+ ALT="$\displaystyle \frac{\mu}{n \Delta} - \frac{1}{\Delta} \int_{-\infty}^{\infty} \...
+...,dt + \frac{1}{{\Delta ^2 }} \int_{-\infty}^{\infty} \vert t\vert \phi(t)  dt,$"></TD>
+    <TD WIDTH=314 ALIGN="RIGHT">
+      (24)</TD>
+    </TR>
+  </TABLE>
+</div>
+<BR CLEAR="ALL"><P></P>
+based on the symmetry <!-- MATH
+ $\phi (t) = \phi (-t)$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.gif"
+ ALT="$\phi (t) = \phi (-t)$"> for a stationary process. Eq.&nbsp;<A HREF="#eq:double">24</A> can be identified with Eq.&nbsp;<A HREF="#eq:expansion">19</A> with parameters
+<BR>
+<DIV ALIGN="CENTER"><A NAME="nc"></A>
+<!-- MATH
+ \begin{eqnarray}
+n_c &=& \frac{\mu}{ \int_{-\infty }^\infty \phi(t) \,dt }\,,\\
+u &=& \int_{-\infty}^{\infty} |t| \phi(t) \,dt.
+\end{eqnarray}
+ -->
+<TABLE ALIGN="left" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD width="176" ALIGN="RIGHT" NOWRAP><IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img129.gif"
+ ALT="$\displaystyle n_c$"></TD>
+<TD width="19" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$\textstyle =$"></TD>
+<TD width="363" ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="104" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img130.gif"
+ ALT="$\displaystyle \frac{\mu}{ \int_{-\infty }^\infty \phi(t)  dt } ,$"></TD>
+<TD WIDTH=325 ALIGN="RIGHT">
+(25)</TD>
+</TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img131.gif"
+ ALT="$\displaystyle u$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="116" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.gif"
+ ALT="$\displaystyle \int_{-\infty}^{\infty} \vert t\vert \phi(t)  dt.$"></TD>
+<TD WIDTH=325 ALIGN="RIGHT">
+(26)</TD>
+</TR>
+</TABLE></DIV><BR CLEAR="ALL"><P></P>
+For the process giving the correlation of the form <!-- MATH
+ $\phi \left( t \right)=\sigma ^2e^{-\vert t\vert /\tau }$
+ -->
+<IMG
+ WIDTH="131" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.gif"
+ ALT="$\phi \left( t \right)=\sigma ^2e^{-\vert t\vert /\tau }$"> and the process giving a Gaussian correlation <!-- MATH
+ $\phi (t)=\sigma ^2e^{-t^2/\tau ^2}$
+ -->
+<IMG
+ WIDTH="133" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\phi (t)=\sigma ^2e^{-t^2/\tau ^2}$"> used in the simulation in the next section, the critical numbers are obtained as <!-- MATH
+ $n_c = \mu / 2 \sigma^2 \tau$
+ -->
+<IMG
+ WIDTH="107" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img134.gif"
+ ALT="$n_c = \mu / 2 \sigma^2 \tau$"> and <!-- MATH
+ $n_c = \mu / \sigma^2 \tau \sqrt{\pi}$
+ -->
+<IMG
+ WIDTH="125" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.gif"
+ ALT="$n_c = \mu / \sigma^2 \tau \sqrt{\pi}$">, respectively.
+
+<P>
+Based on the same theoretical cost function Eq.&nbsp;<A HREF="#CLB2">22</A>, we can also derive scaling relations of the optimal bin size, which is achievable with a large number of spike sequences.
+With a small <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $">, the correlation of rate fluctuation <IMG
+ WIDTH="37" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img136.gif"
+ ALT="$\phi (t)$"> can be expanded as <!-- MATH
+ $\phi \left( t \right)=\phi \left( 0 \right)+{\phi}'\left( {0_+ } \right)\vert t\vert +\textstyle{1 \over 2}{\phi }''\left( 0 \right)t^2+O\left( {\vert t\vert ^3} \right)$
+ -->
+<IMG
+ WIDTH="379" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img137.gif"
+ ALT="$\phi \left( t \right)=\phi \left( 0 \right)+{\phi}'\left( {0_+ } \right)\vert t...
+...tstyle{1 \over 2}{\phi }''\left( 0 \right)t^2+O\left( {\vert t\vert ^3} \right)$">, and we obtain an expansion of Eq.&nbsp;<A HREF="#CLB2">22</A> with respect to <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $">,
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+C_n(\Delta) = \frac{\mu}{n \Delta} - \phi \left( 0 \right) - \frac{1}{3}\phi '\left( 0_{+} \right)\Delta  - \frac{1}{12}\phi ''\left( 0 \right)\Delta ^2 + O(\Delta ^3).
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="LB"></A><IMG
+ WIDTH="476" HEIGHT="45" BORDER="0"
+ SRC="img138.gif"
+ ALT="\begin{displaymath}
+C_n(\Delta) = \frac{\mu}{n \Delta} - \phi \left( 0 \right) -...
+...- \frac{1}{12}\phi ''\left( 0 \right)\Delta ^2 + O(\Delta ^3).
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(27)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+The optimal bin size <IMG
+ WIDTH="28" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$\Delta ^\ast $"> is obtained from <!-- MATH
+ $dC_n \left( \Delta \right)/d\Delta =0$
+ -->
+<IMG
+ WIDTH="142" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.gif"
+ ALT="$dC_n \left( \Delta \right)/d\Delta =0$">. For a rate that fluctuates smoothly in time, the correlation function is a smooth function of <IMG
+ WIDTH="12" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img140.gif"
+ ALT="$t$">, resulting in <IMG
+ WIDTH="79" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.gif"
+ ALT="${\phi}'(0)=0$"> due to the symmetry <!-- MATH
+ $\phi (t)=\phi (-t)$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.gif"
+ ALT="$\phi (t) = \phi (-t)$">. In this case, we obtain the scaling relation
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\Delta ^ *   \sim \left( { - \frac{6 \mu }{{\phi ''\left( 0 \right)n}}} \right)^{1/3}.
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="scaling13"></A><IMG
+ WIDTH="180" HEIGHT="59" BORDER="0"
+ SRC="img142.gif"
+ ALT="\begin{displaymath}
+\Delta ^ * \sim \left( { - \frac{6 \mu }{{\phi ''\left( 0 \right)n}}} \right)^{1/3}.
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(28)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+For a rate that fluctuates in a zigzag pattern, in which the correlation of rate fluctuation has a cusp at <IMG
+ WIDTH="46" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img143.gif"
+ ALT="$t=0$"> (<!-- MATH
+ ${\phi }'(0_+ )<0)$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img144.gif"
+ ALT="${\phi }'(0_+ )&lt;0)$">, we obtain the scaling relation
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\Delta ^* \sim \left(- \frac{3 \mu}{\phi'(0_{+}) n}\right)^{1/2} ,
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="scaling12"></A><IMG
+ WIDTH="183" HEIGHT="59" BORDER="0"
+ SRC="img145.gif"
+ ALT="\begin{displaymath}
+\Delta ^* \sim \left(- \frac{3 \mu}{\phi'(0_{+}) n}\right)^{1/2} ,
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(29)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+by ignoring the second order term.
+Examples that exhibit this type of scaling are the Ornstein-Uhlenbeck process and the random telegraph process&nbsp;[<A
+ HREF="sshistogram5.html#Kubo85">Kubo and Hashitsume, 1985</A>,<A
+ HREF="sshistogram5.html#Gardiner85">Gardiner, 1985</A>].
+
+<P>
+The scaling relations Eq.&nbsp;<A HREF="#scaling13">28</A> and Eq.&nbsp;<A HREF="#scaling12">29</A> are the generalization of the ones found in Koyama &amp; Shinomoto (2004) for two specific time-dependent Poisson processes.
+
+<P>
+
+<h2><A NAME="SECTION00030000000000000000">
+  Application of the method to spike data</A></h2>
+<P>
+In this section, we apply the presently developed methods for the bar-graph (peri-stimulus) time histogram (Bar-PSTH) and the line-graph (peri-stimulus) time histogram (Line-PSTH) to (1) spike sequences (point events) generated by the simulations of time dependent Poisson processes and (2) spike sequences recorded from a neuron in area MT.
+The methods for a Line-PSTH are summarized in <B>Appendix</B>.
+
+<P>
+
+<H2><A NAME="SECTION00031000000000000000">
+Application to simulation data</A>
+</H2>
+
+<P>
+We applied the method for estimating the optimal bin size of a Bar-PSTH to a set of spike sequences derived from a time-dependent Poisson process.
+Figure&nbsp;<A HREF="#BarCostFunction">2</A>A shows the `empirical' cost function <IMG
+ WIDTH="57" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$C_n (\Delta )$"> computed from a set of <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$"> spike sequences.
+The empirical cost function is in good agreement with the `theoretical' cost function computed from the mean spike rate <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\mu $"> and the correlation <IMG
+ WIDTH="37" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img136.gif"
+ ALT="$\phi (t)$"> of the rate fluctuation, according to Eq.&nbsp;<A HREF="#CLB2">22</A>.
+In Figure&nbsp;<A HREF="#BarCostFunction">2</A>D, a time histogram with the optimal bin size is compared with those with non-optimal bin sizes, demonstrating the effectiveness of optimizing the bin size.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="BarCostFunction"></A><A NAME="912"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2:</STRONG>
+Construction of the optimal Bar-PSTH from spike sequences.
+A: (Dots): an `empirical' cost function, <IMG
+ WIDTH="57" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$C_n (\Delta )$">, computed from spike data according to the Algorithm 1.
+Here, 50 sequences of spikes for an interval of 20 [s] are derived from a time-dependent Poisson process characterized by the mean rate <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\mu $"> and the correlation of the rate fluctuation <!-- MATH
+ $\phi (t)=\sigma ^2e^{-t^2/\tau ^2}$
+ -->
+<IMG
+ WIDTH="133" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\phi (t)=\sigma ^2e^{-t^2/\tau ^2}$">, with <IMG
+ WIDTH="60" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$\mu =30$"> [sp/s], <IMG
+ WIDTH="60" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.gif"
+ ALT="$\sigma =10$"> [sp/s], and <IMG
+ WIDTH="64" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.gif"
+ ALT="$\tau =0.1$"> [s].
+(Solid line): the `theoretical' cost function computed directly from the underlying fluctuating rate using Eq.&nbsp;<A HREF="#CLB2">22</A>.
+B: the underlying fluctuating rate <IMG
+ WIDTH="21" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\lambda_t$">.
+C: spike sequences derived from the rate.
+D: time histograms made using three types of bin sizes: too small, optimal, and too large.
+</CAPTION>
+<TR><TD><DIV ALIGN="CENTER">
+<IMG
+ WIDTH="486" HEIGHT="433" ALIGN="BOTTOM" BORDER="0"
+ SRC="img146.gif"
+ ALT="\includegraphics[width=4.25in]{2BarCostFunction}"> 
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The Algorithm 2 provides an estimate of how many sequences should be added for the construction of a Bar-PSTH with the resolution we deem sufficient.
+In this method, the cost function of <IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$m$"> sequences is obtained by modifying the original cost function, <!-- MATH
+ $C_n \left( \Delta \right)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.gif"
+ ALT="$C_n \left( \Delta \right)$">, computed from the spike count statistics of <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$"> sequences of spikes.
+In the subsequent applications of this extrapolation method, the original cost function, <!-- MATH
+ $C_n \left( \Delta \right)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.gif"
+ ALT="$C_n \left( \Delta \right)$">, was obtained by averaging over the initial partitioning positions.
+
+<P>
+We applied this extrapolation method for a Bar-PSTH to a set of spike sequences derived from the smoothly regulated Poisson process.
+Figure&nbsp;<A HREF="#Extrapolation">3</A>A depicts the extrapolated cost function <!-- MATH
+ $C_m \left( {\Delta \vert n} \right)$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.gif"
+ ALT="$C_m \left( {\Delta \vert n} \right)$"> for several values of <IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$m$">, computed from a given set of <IMG
+ WIDTH="69" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img148.gif"
+ ALT="$n(=30)$"> spike sequences.
+Figure&nbsp;<A HREF="#Extrapolation">3</A>B represents the dependence of an inverse optimal bin size <!-- MATH
+ $1/\Delta_m^\ast$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$1/\Delta_m^\ast $"> on <IMG
+ WIDTH="40" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.gif"
+ ALT="$1/m$">.
+The inverse optimal bin size, <!-- MATH
+ $1/\Delta _m^\ast$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$1/\Delta_m^\ast $">, stays near <IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img149.gif"
+ ALT="$0$"> for <!-- MATH
+ $1/m>1/\hat n_c$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.gif"
+ ALT="$1/m&gt;1/\hat n_c$">, and departs from <IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img149.gif"
+ ALT="$0$"> linearly with <IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$m$"> for <!-- MATH
+ $1/m\le 1/\mathop {\hat {n}}\nolimits_c$
+ -->
+<IMG
+ WIDTH="105" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img151.gif"
+ ALT="$1/m\le 1/\mathop {\hat {n}}\nolimits_c $">.
+By fitting the linear function, we estimated the critical number of sequences <IMG
+ WIDTH="23" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$\hat n_c$">.
+In Figure&nbsp;<A HREF="#Extrapolation">3</A>C, the critical number of sequences <IMG
+ WIDTH="23" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$\hat n_c$"> estimated from a smaller or larger <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$"> is compared to the theoretical value of <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$n_c $"> computed from Eq.&nbsp;<A HREF="#nc">25</A>.
+It is noteworthy that the estimated <IMG
+ WIDTH="23" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$\hat n_c$"> approximates the theoretical <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$n_c $"> well even from a fairly small number of spike sequences, with which the estimated optimal bin size diverges.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="Extrapolation"></A><A NAME="914"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+The extrapolation method.
+A: extrapolated cost functions <!-- MATH
+ $C_m \left( {\Delta \vert n} \right)$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.gif"
+ ALT="$C_m \left( {\Delta \vert n} \right)$"> of a Bar-PSTH for several values of <IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$m$">, computed from 30 sequences of spikes derived from a Poisson process characterized by the mean rate <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\mu $"> and the correlation of the rate fluctuation <!-- MATH
+ $\phi (t)=\sigma ^2e^{-t^2/\tau ^2}$
+ -->
+<IMG
+ WIDTH="133" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\phi (t)=\sigma ^2e^{-t^2/\tau ^2}$">, with <IMG
+ WIDTH="60" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$\mu =30$">, <IMG
+ WIDTH="51" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.gif"
+ ALT="$\sigma =2$">, and <IMG
+ WIDTH="64" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.gif"
+ ALT="$\tau =0.1$">.
+The modestly fluctuating rate with <IMG
+ WIDTH="51" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.gif"
+ ALT="$\sigma =2$"> is used as compared with the rate with <IMG
+ WIDTH="60" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.gif"
+ ALT="$\sigma =10$"> used in Fig. 1.
+B: the inverse optimal bin size <!-- MATH
+ $1/\Delta _m^\ast$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$1/\Delta_m^\ast $"> plotted against <IMG
+ WIDTH="40" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.gif"
+ ALT="$1/m$">.
+A solid line is a linear function fitted to the data.
+C: the critical number of sequences <IMG
+ WIDTH="23" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$\hat n_c$"> extrapolated from a smaller or larger number of spike sequences.
+The horizontal axis represents the number of spike sequences <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$"> used to obtain the extrapolated cost function <!-- MATH
+ $C_m \left( {\Delta \vert n} \right)$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.gif"
+ ALT="$C_m \left( {\Delta \vert n} \right)$">.
+The vertical axis represents an extrapolated critical number <IMG
+ WIDTH="23" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$\hat n_c$">.
+The dashed lines represent a theoretical value <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$n_c $"> computed using Eq.&nbsp;<A HREF="#nc">25</A>, and a diagonal.
+</CAPTION>
+<TR><TD><DIV ALIGN="CENTER">
+<IMG
+ WIDTH="488" HEIGHT="407" ALIGN="BOTTOM" BORDER="0"
+ SRC="img152.gif"
+ ALT="\includegraphics[width=4.25in]{2BarCriticality}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+We also constructed a method for selecting bin size of a Line-PSTH, which is summarized as `Algorithm 3' in <B>Appendix</B>.
+Figure&nbsp;<A HREF="#LineBar">4</A> compares the optimal Bar-PSTH and the optimal Line-PSTH obtained from the same set of spike sequences, demonstrating the superiority of the Line-PSTH to the Bar-PSTH in the sense of the MISE.
+In addition, the Line-PSTH is suitable for the comparison of multiple time-dependent rates, as is the case for filtering methods.
+The extrapolation method for a Line-PSTH is summarized as `Algorithm 4' in <B>Appendix</B>.
+
+<DIV ALIGN="CENTER"><A NAME="LineBar"></A><A NAME="915"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4:</STRONG>
+The comparison of the optimal Bar-PSTH and the optimal Line-PSTH.
+The spike data used are the same as the data used in Fig.&nbsp;<A HREF="#BarCostFunction">2</A>.
+A: the optimal Bar-PSTH constructed from the spike sequences derived from an underlying fluctuating rate process (dashed line).
+B: the optimal Line-PSTH constructed from the same set of spike sequences.
+</CAPTION>
+<TR><TD><DIV ALIGN="CENTER">
+<IMG
+ WIDTH="488" HEIGHT="181" ALIGN="BOTTOM" BORDER="0"
+ SRC="img153.gif"
+ ALT="\includegraphics[width=4.25in]{2LineBar}"> 
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+With the extrapolation method for a Bar-PSTH (Algorithm 2), one can also estimate how much the optimal bin size decreases (<I>i.e.</I>, the resolution increases) with the number of spike sequences.
+Figure&nbsp;<A HREF="#Scaling">5</A>A shows log-log plots of the optimal bin sizes <IMG
+ WIDTH="33" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.gif"
+ ALT="$\Delta_m^\ast $"> versus <IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$m$"> with respect to two rate processes that fluctuate either smoothly according to the stochastic process characterized by the mean spike rate <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\mu $"> and the correlation of the rate process <!-- MATH
+ $\phi \left( t \right)=\sigma ^2e^{-t^2/\tau ^2}$
+ -->
+<IMG
+ WIDTH="137" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$\phi \left( t \right)=\sigma ^2e^{-t^2/\tau ^2}$"> or in a zigzag pattern according to the Ornstein-Uhlenbeck process characterized by the mean rate <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\mu $"> and the
+correlation of the rate process <!-- MATH
+ $\phi \left( t \right)=\sigma ^2e^{-\vert
+t\vert /\tau }$
+ -->
+<IMG
+ WIDTH="131" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.gif"
+ ALT="$\phi \left( t \right)=\sigma ^2e^{-\vert t\vert /\tau }$">.
+These plots exhibit power-law scaling relations with distinctly different scaling exponents. The estimated exponents (<IMG
+ WIDTH="109" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.gif"
+ ALT="$-0.34\pm 0.04$"> for the smooth rate process and <IMG
+ WIDTH="109" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.gif"
+ ALT="$-0.56\pm 0.04$"> for the zigzag rate process) are close to the exponents of <IMG
+ WIDTH="53" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$m^{-1/3}$"> and <IMG
+ WIDTH="53" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img155.gif"
+ ALT="$m^{-1/2}$"> that were obtained analytically as in Eqs.&nbsp;<A HREF="#scaling13">28</A> and&nbsp;<A HREF="#scaling12">29</A> (see also ref.&nbsp;Koyama &amp; Shinomoto, 2004).
+In this way, we can estimate the degree of smoothness of the underlying rate from a reasonable amount of spike data.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="Scaling"></A><A NAME="916"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5:</STRONG>
+Scaling relations for the Bar-PSTH and the Line-PSTH.
+The optimal bin sizes <!-- MATH
+ $\Delta _m^\ast$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.gif"
+ ALT="$\Delta_m^\ast $"> are estimated from the extrapolated cost function <!-- MATH
+ $C_m \left( {\Delta \vert n} \right)$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.gif"
+ ALT="$C_m \left( {\Delta \vert n} \right)$">, computed from <IMG
+ WIDTH="33" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$100$"> sequences of spikes.
+The optimal bin sizes <!-- MATH
+ $\Delta _m^\ast$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.gif"
+ ALT="$\Delta_m^\ast $"> versus <IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$m$"> is shown in log-log scale.
+Two types of rate processes were examined; one that fluctuates smoothly, which is characterized by the correlation of the rate fluctuation <!-- MATH
+ $\phi \left( t \right)=\sigma ^2e^{-t^2/\tau ^2}$
+ -->
+<IMG
+ WIDTH="137" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$\phi \left( t \right)=\sigma ^2e^{-t^2/\tau ^2}$">, and the other that fluctuates jaggedly, which is characterized by the correlation of the rate fluctuation <!-- MATH
+ $\phi \left( t \right)=\sigma ^2e^{-\vert t\vert /\tau }$
+ -->
+<IMG
+ WIDTH="131" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.gif"
+ ALT="$\phi \left( t \right)=\sigma ^2e^{-\vert t\vert /\tau }$">.
+The parameter values are the same as the ones used in Fig.&nbsp;<A HREF="#BarCostFunction">2</A>.
+A: log-log plots of the optimal bin size with respect to <IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$m$"> for a Bar-PSTH.
+Lines are fitted to the data in an interval of <IMG
+ WIDTH="110" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.gif"
+ ALT="$m\in [50,500]$">, whose regression coefficients, <IMG
+ WIDTH="109" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.gif"
+ ALT="$-0.34\pm 0.04$"> and <IMG
+ WIDTH="109" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.gif"
+ ALT="$-0.56\pm 0.04$">, correspond to the scaling exponents for a Bar-PSTH.
+B: log-log plots of the optimal bin size with respect to <IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$m$"> for a Line-PSTH.
+Lines are fitted to the data in an interval of <!-- MATH
+ $m \in [50,500]$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.gif"
+ ALT="$m\in [50,500]$">, whose regression coefficients, <IMG
+ WIDTH="109" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.gif"
+ ALT="$-0.24\pm 0.04$"> and <IMG
+ WIDTH="109" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$-0.50\pm 0.05$">, correspond to the scaling exponents for a Line-PSTH.
+</CAPTION>
+<TR><TD><DIV ALIGN="CENTER">
+<IMG
+ WIDTH="488" HEIGHT="293" ALIGN="BOTTOM" BORDER="0"
+ SRC="img156.gif"
+ ALT="\includegraphics[width=4.25in]{2Scaling}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+With the extrapolation method for a Line-PSTH (Algorithm 4 in <B>Appendix</B>), the scaling relations for a Line-PSTH can be examined in a similar manner.
+Figure&nbsp;<A HREF="#Scaling">5</A>B represents the optimal bin sizes computed for two rate processes that either fluctuate smoothly or in a zigzag pattern.
+The estimated exponents are <IMG
+ WIDTH="109" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.gif"
+ ALT="$-0.24\pm 0.04$"> for the smooth rate process and <IMG
+ WIDTH="109" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$-0.50\pm 0.05$"> for the zigzag rate process.
+The exponents obtained by the extrapolation method are similar to the analytically obtained exponents, <IMG
+ WIDTH="53" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img157.gif"
+ ALT="$m^{-1/5}$"> and <IMG
+ WIDTH="53" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img155.gif"
+ ALT="$m^{-1/2}$"> respectively (see Eqs.&nbsp;<A HREF="#linearscaling15">41</A> and <A HREF="#linearscaling12">42</A>).
+Note that for the smoothly fluctuating rate process, the scaling relation for the Line-PSTH is <IMG
+ WIDTH="53" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img157.gif"
+ ALT="$m^{-1/5}$">, whereas the scaling relation for a Bar-PSTH is <IMG
+ WIDTH="53" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$m^{-1/3}$">.
+In contrast, for the rate process that fluctuates jaggedly, the exponents of the scaling relations for both a Bar-PSTH and a Line-PSTH are <IMG
+ WIDTH="53" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img155.gif"
+ ALT="$m^{-1/2}$">.
+
+<P>
+
+<h3><A NAME="SECTION00032000000000000000">
+  Application to experimental data</A></h3>
+<P>
+We also applied our method for optimizing a Bar-PSTH to publicly available neuronal spike data&nbsp;[<A
+ HREF="sshistogram5.html#Britten_nsa2004_1">Britten et&nbsp;al., 2004</A>].
+The details of the experimental methods are described in the reference articles&nbsp;[<A
+ HREF="sshistogram5.html#Newsome89">Newsome et&nbsp;al., 1989</A>,<A
+ HREF="sshistogram5.html#Britten92">Britten et&nbsp;al., 1992</A>].
+It was reported that the neurons in area MT exhibit highly reproducible temporal responses to identical visual stimuli&nbsp;[<A
+ HREF="sshistogram5.html#Bair96">Bair and Koch, 1996</A>].
+The estimation of a time-dependent rate by a PSTH is, however, sensitive to the choice of the bin size.
+Therefore it would be preferable that such an appraisal of the reproducibility is tested with our objective method of optimizing the bin size.
+To make a reliable estimate of the optimal bin size from the spike sequences of a short observation period, we took an average of the cost functions computed under different partitioning positions.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="Experimental"></A><A NAME="917"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6:</STRONG>
+The Bar-PSTHs for the spike sequences recorded from a MT neuron (w052 in nsa2004.1, Britten et al., 2004).
+(Left): the cost function (averaged over different partitioning positions)
+(Right): spike sequences sampled and the optimal Bar-PSTH for the first 1 [s] of the recording period 2 [s].
+A: the first 5 spike sequences.
+B: the first 20 spike sequences that include 5 sequences of A.
+C: the total 50 spike sequences that include 20 sequences of B.
+</CAPTION>
+<TR><TD><DIV ALIGN="CENTER">
+<IMG
+ WIDTH="483" HEIGHT="547" ALIGN="BOTTOM" BORDER="0"
+ SRC="img158.gif"
+ ALT="\includegraphics[width=4.25in]{2Experimental}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+We examine here the data recorded from a neuron under the repeated application of a random dot visual stimulus with 3.2% of coherent motion (w052, nsa2004.1, Britten et al., 2004).
+The method for a Bar-PSTH was applied to the data, with close attention paid to how the optimal bin size changes with the number of spike sequences sampled.
+Figure&nbsp;<A HREF="#Experimental">6</A> depicts the results for the first <IMG
+ WIDTH="50" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img159.gif"
+ ALT="$n=5$">, the first <IMG
+ WIDTH="60" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img160.gif"
+ ALT="$n=20$"> and the total <IMG
+ WIDTH="60" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img161.gif"
+ ALT="$n=50$"> sequences of spikes.
+
+<P>
+The optimal bin size practically diverges (<IMG
+ WIDTH="90" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img162.gif"
+ ALT="$\Delta^*=1000$"> [ms]) for the <IMG
+ WIDTH="50" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img159.gif"
+ ALT="$n=5$"> sequences, implying that with this small amount of data a discussion about the time-dependent response does not make sense, as far as we rely on the histogram method.
+Even in this stage, it is possible to extrapolate the cost function by means of Algorithm 2.
+The critical number of trials, above which the optimal bin size is finite, was estimated as <!-- MATH
+ $\hat n_c \approx 12$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img163.gif"
+ ALT="$\hat n_c \approx 12$">.
+By increasing the number of spikes to <IMG
+ WIDTH="60" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img160.gif"
+ ALT="$n=20$">, we obtained the optimal bin size <IMG
+ WIDTH="72" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img164.gif"
+ ALT="$\Delta^*=33$"> [ms], implying that a discussion about the neuronal response is possible based on this amount of data.
+The critical number of trials estimated from this data set (<IMG
+ WIDTH="60" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img160.gif"
+ ALT="$n=20$">) is <!-- MATH
+ $\hat n_c \approx 10$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img165.gif"
+ ALT="$\hat n_c \approx 10$">.
+The optimal bin size for the total <IMG
+ WIDTH="23" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img166.gif"
+ ALT="$50$"> sequences is <IMG
+ WIDTH="72" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img167.gif"
+ ALT="$\Delta^*=23$"> [ms].
+The critical number of sequences estimated from the total <IMG
+ WIDTH="23" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img166.gif"
+ ALT="$50$"> sequences is <!-- MATH
+ $\hat n_c \approx 12$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img163.gif"
+ ALT="$\hat n_c \approx 12$">.
+
+<P>
+Algorithm 1 confirms that the temporal rate modulation can be discussed with a sufficiently large number of sequences, such as <IMG
+ WIDTH="60" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img160.gif"
+ ALT="$n=20$"> or <IMG
+ WIDTH="60" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img161.gif"
+ ALT="$n=50$">.
+With the Algorithm 2, three sets of sequences with <IMG
+ WIDTH="50" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img159.gif"
+ ALT="$n=5$">, <IMG
+ WIDTH="23" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.gif"
+ ALT="$20$"> and <IMG
+ WIDTH="23" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img166.gif"
+ ALT="$50$"> suggest the critical number of sequence to be <!-- MATH
+ $\hat n_c \approx 10$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img165.gif"
+ ALT="$\hat n_c \approx 10$">-<IMG
+ WIDTH="23" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img169.gif"
+ ALT="$12$">.
+
+<P>
+
+<h2><A NAME="SECTION00040000000000000000">
+  Discussion</A></h2>
+<P>
+We have developed a method for selecting the bin size, so that the Bar-PSTH (Section 2) or the Line-PSTH (<B>Appendix</B>) best represents the (unknown) underlying spike rate.
+The suitability of this method was demonstrated by applying it to not only model spike sequences generated by time-dependent Poisson processes, but also real spike sequences recorded from cortical area MT of a monkey.
+
+<P>
+For a small number of spike sequences derived from a modestly fluctuating rate, the cost function does not have a minimum (<!-- MATH
+ $C_n (T)<C_n (\Delta )$
+ -->
+<IMG
+ WIDTH="133" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img170.gif"
+ ALT="$C_n (T)&lt;C_n (\Delta )$"> for any <IMG
+ WIDTH="66" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img171.gif"
+ ALT="$\Delta &lt;T)$">, or has a minimum at a bin size <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $"> that is comparable to the observation period <IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$T$">, implying that the time-dependent rate can not be captured by means of the time histogram method.
+Our method can nevertheless extrapolate the cost function for any number of spike sequences, and suggest how many sequences should be added in order to obtain a meaningful time histogram with the resolution we require.
+The presently examined model data and real data illustrated that the optimal bin size may `diverge' (<!-- MATH
+ $\Delta ^\ast =O(T)$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img172.gif"
+ ALT="$\Delta ^\ast =O(T)$">), and even under such conditions our extrapolation method works reasonably well.
+
+<P>
+In the present study, we adopted the mean integrated squared error (MISE) as measuring the goodness of the fit of a PSTH to the underlying spike rate.
+There were studies of the density estimation based on other standards such as the Kullback-Leibler divergence&nbsp;[<A
+ HREF="sshistogram5.html#Hall90">Hall, 1990</A>] and the Hellinger distance&nbsp;[<A
+ HREF="sshistogram5.html#Kanazawa93">Kanazawa, 1993</A>].
+To our knowledge, however, there are yet no practical algorithms based on these standards that optimize the bin size solely with raw data.
+It is interesting to explore practical methods based on other standards to the estimation of the time dependent rate, and compare them with the presently developed MISE criterion.
+
+<P>
+Use of regular (equal) bin size is a constraint particular to the present method.
+The regular histogram is suitable for stationary time-dependent rates.
+In practical applications, however, the rate does not necessarily fluctuate in a stationary fashion, but can change abruptly during a localized period of time.
+In such a situation, a histogram with variable bin width can better fit to the underlying rate than a regular histogram can.
+In order to make a better estimate of the underlying rate in the sense of the MISE, it is desirable to develop an adaptive method that adjusts the bin size over time. It is also desirable to develop the present optimization method for the Bar-PSTH and the Line-PSTH into a method for higher order spline fittings that can be compared with filtering methods.
+Nevertheless, as long as the Bar-PSTHs or the Line-PSTHs are used as conventional rate-estimation tools, the present method for selecting the bin size should be used for their construction.
+
+<P>
+
+<h4><A NAME="SECTION00041000000000000000">
+  Acknowledgements</A></h4>
+<P>
+The authors thank Shinsuke Koyama, Takeaki Shimokawa and Kensuke Arai for helpful discussions.
+The authors also acknowledge K. H. Britten, M. N. Shadlen, W. T. Newsome, J. A. Movshon who have made their data available to the public.
+This study is supported in part by Grants-in-Aid for Scientific Research to SS from the Ministry of Education, Culture, Sports, Science and Technology of Japan (16300068, 18020015) and the 21st Century COE ``Center for Diversity and Universality in Physics".
+HS is supported by the Research Fellowship of the Japan Society for the Promotion of Science for Young Scientists.
+
+<P>
+
+<h2><A NAME="SECTION00050000000000000000">
+  Appendix: Optimization of the line-graph time histogram</A></h2>
+<P>
+A line graph can be constructed by simply connecting top-centers of adjacent bar graphs of the height <!-- MATH
+ $k_i /(n\Delta )$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img173.gif"
+ ALT="$k_i /(n\Delta )$">.
+Figure&nbsp;<A HREF="#LineSchematic">7</A> schematically shows the construction of a line-graph time histogram.
+For the same set of spike sequences, the optimal bin size (window size) of a Line-PSTH is, however, different from that of a Bar-PSTH. We develop here a method for selecting the bin size for a Line-PSTH.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="LineSchematic"></A><A NAME="918"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 7:</STRONG>
+The Line-PSTH.
+A: an underlying spike rate, <IMG
+ WIDTH="21" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\lambda_t$">. The horizontal bars indicate the original bar graphs <IMG
+ WIDTH="25" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\theta^{-}$"> and <IMG
+ WIDTH="25" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$\theta^{+}$"> for adjacent intervals <IMG
+ WIDTH="63" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.gif"
+ ALT="$[-\Delta, 0]$"> and <IMG
+ WIDTH="49" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$[0, \Delta]$">. The expected line graph <IMG
+ WIDTH="23" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.gif"
+ ALT="$L_t$"> is a line connecting the two top-centers of adjacent expected bar graphs <!-- MATH
+ $(-\frac{\Delta}{2}, \theta^{-})$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img174.gif"
+ ALT="$(-\frac{\Delta}{2}, \theta^{-})$"> and <!-- MATH
+ $(\frac{\Delta}{2}, \theta^{+})$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img175.gif"
+ ALT="$(\frac{\Delta}{2}, \theta^{+})$">.
+B: sequences of spikes derived from the underlying rate.
+C: a time histogram for the sample sequences of spikes. The empirical line graph <IMG
+ WIDTH="23" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img176.gif"
+ ALT="$\hat L_t$"> is a line connecting the two top-centers of adjacent empirical bar graphs <!-- MATH
+ $(-\frac{\Delta}{2},\hat \theta^{-})$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img177.gif"
+ ALT="$(-\frac{\Delta}{2},\hat \theta^{-})$"> and <!-- MATH
+ $(\frac{\Delta}{2},\hat \theta^{+})$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img178.gif"
+ ALT="$(\frac{\Delta}{2},\hat \theta^{+})$">.
+</CAPTION>
+<TR><TD><DIV ALIGN="CENTER">
+<IMG
+ WIDTH="487" HEIGHT="379" ALIGN="BOTTOM" BORDER="0"
+ SRC="img179.gif"
+ ALT="\includegraphics[width=4.25in]{2LineSchematic}"> 
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The expected heights of adjacent bar graphs for intervals of <IMG
+ WIDTH="63" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.gif"
+ ALT="$[-\Delta, 0]$"> and <IMG
+ WIDTH="49" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$[0, \Delta]$"> are
+<P></P><DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\theta^{-} &\equiv& \frac{1}{\Delta }\int_{ - \Delta }^0 {\lambda _t \,dt},\\
+\theta^{+} &\equiv& \frac{1}{\Delta }\int_0^\Delta  {\lambda _t \,dt}.
+\end{eqnarray*}
+ -->
+<IMG
+ WIDTH="164" HEIGHT="94" BORDER="0"
+ SRC="img180.gif"
+ ALT="\begin{eqnarray*}
+\theta^{-} &amp;\equiv&amp; \frac{1}{\Delta }\int_{ - \Delta }^0 {\lam...
+...a^{+} &amp;\equiv&amp; \frac{1}{\Delta }\int_0^\Delta {\lambda _t  dt}.
+\end{eqnarray*}"></DIV>
+<BR CLEAR="ALL"><P></P>
+The expected line graph <IMG
+ WIDTH="23" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.gif"
+ ALT="$L_t$"> in an interval of <!-- MATH
+ $[-\textstyle{\Delta \over 2},\textstyle{\Delta \over 2}]$
+ -->
+<IMG
+ WIDTH="68" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img181.gif"
+ ALT="$[-\textstyle{\Delta \over 2},\textstyle{\Delta \over 2}]$"> is a line connecting top-centers of these bar graphs,
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+L_t  = \frac{{\theta^{+}  + \theta^{-} }}{2} + \frac{{\theta^{+}  - \theta^{-} }}{\Delta }t.
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="defLambda"></A><IMG
+ WIDTH="213" HEIGHT="47" BORDER="0"
+ SRC="img182.gif"
+ ALT="\begin{displaymath}
+L_t = \frac{{\theta^{+} + \theta^{-} }}{2} + \frac{{\theta^{+} - \theta^{-} }}{\Delta }t.
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(30)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The unbiased estimators of the original bar graphs are <!-- MATH
+ $\hat {\theta}^-=k^-/(n\Delta )$
+ -->
+<IMG
+ WIDTH="123" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img183.gif"
+ ALT="$\hat {\theta}^-=k^-/(n\Delta )$"> and <!-- MATH
+ $\hat {\theta }^+=k^+/(n\Delta )$
+ -->
+<IMG
+ WIDTH="123" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img184.gif"
+ ALT="$\hat {\theta }^+=k^+/(n\Delta )$">, where <IMG
+ WIDTH="26" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img185.gif"
+ ALT="$k^-$"> and <IMG
+ WIDTH="26" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img186.gif"
+ ALT="$k^+$"> are the numbers of spikes from <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$"> spike sequences that enter the intervals <IMG
+ WIDTH="63" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.gif"
+ ALT="$[-\Delta, 0]$"> and <IMG
+ WIDTH="49" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$[0, \Delta]$">, respectively.
+The empirical line graph <IMG
+ WIDTH="23" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img176.gif"
+ ALT="$\hat L_t$"> in an interval of <!-- MATH
+ $[-\textstyle{\Delta \over 2},\textstyle{\Delta \over 2}]$
+ -->
+<IMG
+ WIDTH="68" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img181.gif"
+ ALT="$[-\textstyle{\Delta \over 2},\textstyle{\Delta \over 2}]$"> is a line connecting two top-centers of adjacent empirical bar graphs,
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\hat L_t  = \frac{{\hat \theta^{+}  + \hat \theta^{-} }}{2} + \frac{{\hat \theta^{+}  - \hat \theta^{-} }}{\Delta }t.
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="defhatlambda"></A><IMG
+ WIDTH="213" HEIGHT="51" BORDER="0"
+ SRC="img187.gif"
+ ALT="\begin{displaymath}
+\hat L_t = \frac{{\hat \theta^{+} + \hat \theta^{-} }}{2} + \frac{{\hat \theta^{+} - \hat \theta^{-} }}{\Delta }t.
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(31)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+
+<h3><A NAME="SECTION00051000000000000000">
+  Selection of the bin size</A></h3>
+<P>
+The time average of the MISE (Eq.&nbsp;<A HREF="#eq:def_esterr">1</A>) is rewritten by the average over the <IMG
+ WIDTH="22" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$N$"> segmented rates,
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\mbox{MISE} = \frac{1}{\Delta }\int_{ - \Delta /2}^{  \Delta /2} { \left\langle  E\,( {\hat L_t - \lambda _t } )^2 \right\rangle \,dt}.
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="287" HEIGHT="51" BORDER="0"
+ SRC="img188.gif"
+ ALT="\begin{displaymath}
+\mbox{MISE} = \frac{1}{\Delta }\int_{ - \Delta /2}^{ \Delta...
+...\langle E ( {\hat L_t - \lambda _t } )^2 \right\rangle  dt}.
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(32)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The MISE can be decomposed into two parts,
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\mbox{MISE} = \frac{1}{\Delta }\int_{ - \Delta /2}^{ \Delta /2}  \left\langle {E {( {\hat L_t  - L_t } )^2 }} \right\rangle \,dt + \frac{1}{\Delta }\int_{ - \Delta /2}^{ \Delta /2} \left\langle{\left( {\lambda _t  - L_t } \right)^2 }\right\rangle \,dt .
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="MISE_LINEGRAPH"></A><IMG
+ WIDTH="502" HEIGHT="51" BORDER="0"
+ SRC="img189.gif"
+ ALT="\begin{displaymath}
+\mbox{MISE} = \frac{1}{\Delta }\int_{ - \Delta /2}^{ \Delta ...
+...gle{\left( {\lambda _t - L_t } \right)^2 }\right\rangle  dt .
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(33)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+The first term of Eq.&nbsp;<A HREF="#MISE_LINEGRAPH">33</A> is the stochastic fluctuation of the empirical linear estimator <IMG
+ WIDTH="23" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img176.gif"
+ ALT="$\hat L_t$"> due to the stochastic point events, which can be computed as
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\frac{1}{\Delta }\int_{ - \Delta /2}^{ \Delta /2}  \left\langle E {( {\hat L_t  - L_t } )^2 }\right\rangle \,dt
+  = \frac{2}{3} \left\langle E( {\hat \theta ^ +   - \theta ^ +  } )^2 \right\rangle .
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="378" HEIGHT="51" BORDER="0"
+ SRC="img190.gif"
+ ALT="\begin{displaymath}
+\frac{1}{\Delta }\int_{ - \Delta /2}^{ \Delta /2} \left\lang...
+...\langle E( {\hat \theta ^ + - \theta ^ + } )^2 \right\rangle .
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(34)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Here we have used the relations, <!-- MATH
+ $E{( {\hat {\theta }^+-\theta ^+} )( {\hat {\theta }^- -\theta ^-} )} =0$
+ -->
+<IMG
+ WIDTH="212" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.gif"
+ ALT="$E{( {\hat {\theta }^+-\theta ^+} )( {\hat {\theta }^-\theta ^-} )} =0$"> and <!-- MATH
+ $\left\langle {E( {\hat \theta ^ +   - \theta ^ +  } )^2 } \right\rangle  = \left\langle {E( {\hat \theta ^ -   - \theta ^ -  } )^2 } \right\rangle$
+ -->
+<IMG
+ WIDTH="272" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img192.gif"
+ ALT="$\left\langle {E( {\hat \theta ^ + - \theta ^ + } )^2 } \right\rangle = \left\langle {E( {\hat \theta ^ - - \theta ^ - } )^2 } \right\rangle$">.
+
+<P>
+The second term of Eq.&nbsp;<A HREF="#MISE_LINEGRAPH">33</A> is the temporal fluctuation of <IMG
+ WIDTH="21" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\lambda_t$"> around the expected linear estimator <IMG
+ WIDTH="23" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.gif"
+ ALT="$L_t$">.
+We expands the second term by inserting <!-- MATH
+ $\mu=\left\langle {\theta ^-} \right\rangle
+=\left\langle {\theta ^+} \right\rangle$
+ -->
+<IMG
+ WIDTH="137" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img193.gif"
+ ALT="$\mu=\left\langle {\theta ^-} \right\rangle
+=\left\langle {\theta ^+} \right\rangle$">, and obtain
+<BR>
+<DIV ALIGN="CENTER"><A NAME="SysErExpanded"></A>
+<!-- MATH
+ \begin{eqnarray}
+\frac{1}{\Delta }\int_{ - \Delta /2}^{ \Delta /2} \left\langle\left( {\lambda _t  - L_t } \right)^2\right\rangle  \,dt
+&=& \frac{1}{\Delta }\int_{ - \Delta /2}^{\Delta /2} {\left\langle \left( {\lambda _t  - \mu } \right)^2 \right\rangle dt} \nonumber\\
+&&- \frac{2}{\Delta }\int_{ - \Delta /2}^{\Delta /2} {\left\langle \left( {\lambda _t  - \mu } \right)\left( {L_t  - \mu } \right) \right\rangle dt} + \frac{1}{\Delta }\int_{ - \Delta /2}^{\Delta /2} {\left\langle \left( {L_t  - \mu } \right)^2 \right\rangle dt}  \nonumber\\
+   &=& \frac{1}{\Delta }\int_{ - \Delta /2}^{\Delta /2} {\left\langle \left( {\lambda _t  - \mu } \right)^2 \right\rangle dt} \nonumber\\
+&&- \left\{ 2\left\langle {\left( {\theta ^ +   - \mu } \right)\left( {\theta ^0  - \mu } \right)} \right\rangle  + 2\left\langle {\left( {\theta ^ +   - \mu } \right)\theta ^* } \right\rangle  \right\} \nonumber\\
+   && + \left\{ \frac{2}{3}\left\langle {( {\theta ^ +   - \mu } )^2 } \right\rangle  + \frac{1}{3}\left\langle {( {\theta ^ +   - \mu } )( {\theta ^ -   - \mu } )} \right\rangle  \right\},
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="70%">
+<TR VALIGN="MIDDLE">
+  <TD colspan="2" ALIGN="RIGHT" NOWRAP><IMG
+ WIDTH="198" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img194.gif"
+ ALT="$\displaystyle \frac{1}{\Delta }\int_{ - \Delta /2}^{ \Delta /2} \left\langle\left( {\lambda _t - L_t } \right)^2\right\rangle  dt$"></TD>
+  <TD width="19" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$\textstyle =$"></TD>
+<TD width="273" ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="188" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.gif"
+ ALT="$\displaystyle \frac{1}{\Delta }\int_{ - \Delta /2}^{\Delta /2} {\left\langle \left( {\lambda _t - \mu } \right)^2 \right\rangle dt}$"></TD>
+<TD WIDTH=329 ALIGN="RIGHT">&nbsp;</TD>
+</TR>
+<TR VALIGN="MIDDLE">
+  <TD width="138" ALIGN="RIGHT" NOWRAP>&nbsp;</TD>
+  <TD colspan="3" ALIGN="RIGHT" NOWRAP><div align="left"><IMG
+ WIDTH="469" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img196.gif"
+ ALT="$\displaystyle - \frac{2}{\Delta }\int_{ - \Delta /2}^{\Delta /2} {\left\langle ...
+...a /2}^{\Delta /2} {\left\langle \left( {L_t - \mu } \right)^2 \right\rangle dt}$"></div></TD>
+<TD WIDTH=329 ALIGN="RIGHT">&nbsp;</TD>
+</TR>
+<TR VALIGN="MIDDLE">
+  <TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+  <TD width="59" ALIGN="RIGHT" NOWRAP>&nbsp;</TD>
+  <TD ALIGN="CENTER" NOWRAP><img
+ width="19" height="33" align="MIDDLE" border="0"
+ src="img69.gif"
+ alt="$\textstyle =$"></TD>
+  <TD ALIGN="LEFT" NOWRAP><img
+ width="188" height="62" align="MIDDLE" border="0"
+ src="img195.gif"
+ alt="$\displaystyle \frac{1}{\Delta }\int_{ - \Delta /2}^{\Delta /2} {\left\langle \left( {\lambda _t - \mu } \right)^2 \right\rangle dt}$"></TD>
+  <TD ALIGN="RIGHT">&nbsp;</TD>
+</TR>
+<TR VALIGN="MIDDLE">
+  <TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+  <TD colspan="3" ALIGN="RIGHT" NOWRAP><div align="left"><img
+ width="373" height="46" align="MIDDLE" border="0"
+ src="img197.gif"
+ alt="$\displaystyle - \left\{ 2\left\langle {\left( {\theta ^ + - \mu } \right)\left(...
+...ft\langle {\left( {\theta ^ + - \mu } \right)\theta ^* } \right\rangle \right\}$"></div></TD>
+<TD WIDTH=329 ALIGN="RIGHT">&nbsp;</TD>
+</TR>
+
+<TR VALIGN="MIDDLE">
+  <TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+  <TD colspan="3" ALIGN="RIGHT" NOWRAP><div align="left"><IMG
+ WIDTH="366" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img198.gif"
+ ALT="$\displaystyle + \left\{ \frac{2}{3}\left\langle {( {\theta ^ + - \mu } )^2 } \r...
+...langle {( {\theta ^ + - \mu } )( {\theta ^ - - \mu } )} \right\rangle \right\},$"></div></TD>
+<TD WIDTH=329 ALIGN="RIGHT">
+(35)</TD>
+</TR>
+</TABLE>
+</DIV>
+where
+<P></P><DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\theta^{0} &\equiv& \frac{1}{\Delta }\int_{ - \Delta /2}^{\Delta /2} {\lambda _t \,dt},\\
+\theta^{*} &\equiv& \frac{2}{\Delta^2 }\int_{ - \Delta /2}^{\Delta /2} {t \lambda _t \,dt}.
+\end{eqnarray*}
+ -->
+<IMG
+ WIDTH="188" HEIGHT="101" BORDER="0"
+ SRC="img199.gif"
+ ALT="\begin{eqnarray*}
+\theta^{0} &amp;\equiv&amp; \frac{1}{\Delta }\int_{ - \Delta /2}^{\Del...
+...}{\Delta^2 }\int_{ - \Delta /2}^{\Delta /2} {t \lambda _t  dt}.
+\end{eqnarray*}"></DIV>
+<BR CLEAR="ALL"><P></P>
+To obtain the above equation, we have used relations,
+<!-- MATH
+ $\left\langle {\theta ^-} \right\rangle =\left\langle {\theta ^+} \right\rangle =\left\langle {\theta ^0} \right\rangle =\mu$
+ -->
+<IMG
+ WIDTH="194" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img200.gif"
+ ALT="$\left\langle {\theta ^-} \right\rangle =\left\langle {\theta ^+} \right\rangle =\left\langle {\theta ^0} \right\rangle =\mu $">, <!-- MATH
+ $\left\langle {\theta ^\ast } \right\rangle =0$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img201.gif"
+ ALT="$\left\langle {\theta ^\ast } \right\rangle =0$">, <!-- MATH
+ $\left\langle {( {\theta ^ +   - \mu } )^2 } \right\rangle  = \left\langle {( {\theta ^ -   - \mu } )^2 } \right\rangle$
+ -->
+<IMG
+ WIDTH="214" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.gif"
+ ALT="$\left\langle {( {\theta ^ + - \mu } )^2 } \right\rangle = \left\langle {( {\theta ^ - - \mu } )^2 } \right\rangle$">, <!-- MATH
+ $\left\langle {\left( {\theta ^ +   - \mu } \right)\left( {\theta ^0  - \mu } \right)} \right\rangle  = \left\langle {\left( {\theta ^ -   - \mu } \right)\left( {\theta ^0  - \mu } \right)} \right\rangle$
+ -->
+<IMG
+ WIDTH="337" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img203.gif"
+ ALT="$\left\langle {\left( {\theta ^ + - \mu } \right)\left( {\theta ^0 - \mu } \righ...
+...ft( {\theta ^ - - \mu } \right)\left( {\theta ^0 - \mu } \right)} \right\rangle$">, and <!-- MATH
+ $\left\langle {\left( {\theta ^ +   - \mu } \right)\theta ^* } \right\rangle  =  - \left\langle {\left( {\theta ^ -   - \mu } \right)\theta ^* } \right\rangle$
+ -->
+<IMG
+ WIDTH="257" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.gif"
+ ALT="$\left\langle {\left( {\theta ^ + - \mu } \right)\theta ^* } \right\rangle = - \left\langle {\left( {\theta ^ - - \mu } \right)\theta ^* } \right\rangle$">.
+
+<P>
+The first term of Eq.&nbsp;<A HREF="#SysErExpanded">35</A> represents a mean squared fluctuation of the underlying rate, and is independent of the choice of the bin size <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $"> (See Eq.&nbsp;<A HREF="#variance_rate">8</A>).
+We introduce the cost function by subtracting the variance of the underlying rate from the original MISE:
+<BR>
+<DIV ALIGN="CENTER"><A NAME="empiricalCostFunctionLineGraph"></A>
+<!-- MATH
+ \begin{eqnarray}
+C_n\left( \Delta  \right) &\equiv& \mbox{MISE} - \frac{1}{T} \int_{0}^{T} (\lambda_t - \mu)^2 \,dt \nonumber \\
+&=& \frac{2}{3}\left\langle {E {({\hat {\theta }^+-\theta ^+} )}^2  } \right\rangle  -2\left\langle {( {\theta ^+-\mu })( {\theta ^0-\mu })} \right\rangle -2\left\langle {( {\theta ^+-\mu })\theta ^\ast } \right\rangle  \nonumber\\
+&& + \frac{2}{3}\left\langle {E {( {\theta ^+-\mu } )}^2  } \right\rangle +\frac{1}{3}\left\langle {( {\theta ^+ -\mu } )( {\theta ^- -\mu } )} \right\rangle ,
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img116.gif"
+ ALT="$\displaystyle C_n\left( \Delta \right)$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img67.gif"
+ ALT="$\textstyle \equiv$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="215" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img205.gif"
+ ALT="$\displaystyle \mbox{MISE} - \frac{1}{T} \int_{0}^{T} (\lambda_t - \mu)^2  dt$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">&nbsp;
+</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="479" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img206.gif"
+ ALT="$\displaystyle \frac{2}{3}\left\langle {E {({\hat {\theta }^+-\theta ^+} )}^2 } ...
+...} \right\rangle -2\left\langle {( {\theta ^+-\mu })\theta ^\ast } \right\rangle$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">&nbsp;
+</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="354" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img207.gif"
+ ALT="$\displaystyle + \frac{2}{3}\left\langle {E {( {\theta ^+-\mu } )}^2 } \right\ra...
+...c{1}{3}\left\langle {( {\theta ^+ -\mu } )( {\theta ^-\mu } )} \right\rangle ,$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(36)</TD></TR>
+</TABLE></DIV><BR CLEAR="ALL"><P></P>
+
+<P>
+The first term of Eq.&nbsp;<A HREF="#empiricalCostFunctionLineGraph">36</A> can be estimated from the data, using the variance-mean relation (Eq.&nbsp;<A HREF="#eq:variancemean">12</A>).
+The last four terms of Eq.&nbsp;<A HREF="#empiricalCostFunctionLineGraph">36</A> are the covariances of the expected rates <!-- MATH
+ $\theta ^-,\theta ^+,\theta ^0$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.gif"
+ ALT="$\theta ^-,\theta ^+,\theta ^0$">, and <IMG
+ WIDTH="21" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img209.gif"
+ ALT="$\theta ^\ast $">, which are not observables. We can estimate them by using the covariance decomposition rule for unbiased estimators:
+<BR>
+<DIV ALIGN="CENTER"><A NAME="eq:covariancedecomposition"></A>
+<!-- MATH
+ \begin{eqnarray}
+\left\langle {( {\theta ^+-\langle {\theta ^+} \rangle } ) ( {\theta ^p-\langle {\theta ^p} \rangle } )} \right\rangle &=&
+\left\langle {E\left[ {\left( {\hat {\theta }^+-\left\langle {E {\hat {\theta }^+} } \right\rangle } \right)\left( {\hat {\theta }^p-\left\langle {E {\hat {\theta }^p}} \right\rangle } \right)} \right]} \right\rangle \nonumber\\
+&& - \left\langle {E\left[ {\left( {\hat {\theta }^+-\theta ^+} \right)\left( {\hat {\theta }^p-\theta ^p} \right)} \right]} \right\rangle .
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="204" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$\displaystyle \left\langle {( {\theta ^+-\langle {\theta ^+} \rangle } ) ( {\theta ^p-\langle {\theta ^p} \rangle } )} \right\rangle$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="289" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img211.gif"
+ ALT="$\displaystyle \left\langle {E\left[ {\left( {\hat {\theta }^+-\left\langle {E {...
+...t\langle {E {\hat {\theta }^p}} \right\rangle } \right)} \right]} \right\rangle$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">&nbsp;
+</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="246" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img212.gif"
+ ALT="$\displaystyle - \left\langle {E\left[ {\left( {\hat {\theta }^+-\theta ^+} \right)\left( {\hat {\theta }^p-\theta ^p} \right)} \right]} \right\rangle .$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(37)</TD></TR>
+</TABLE></DIV><BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img213.gif"
+ ALT="$p$"> denotes <IMG
+ WIDTH="60" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img214.gif"
+ ALT="$-,+,0$">, or <IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img215.gif"
+ ALT="$\ast $">. The first term of Eq.&nbsp;<A HREF="#eq:covariancedecomposition">37</A> can be computed directly from the data, using the relation <!-- MATH
+ $\left\langle {E\hat {\theta }^-} \right\rangle =\left\langle {E\hat {\theta }^+} \right\rangle =\left\langle {E\hat {\theta }^0} \right\rangle =\mu$
+ -->
+<IMG
+ WIDTH="253" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img216.gif"
+ ALT="$\left\langle {E\hat {\theta }^-} \right\rangle =\left\langle {E\hat {\theta }^+} \right\rangle =\left\langle {E\hat {\theta }^0} \right\rangle =\mu $">, and <!-- MATH
+ $\left\langle {E\hat {\theta }^\ast} \right\rangle =0$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img217.gif"
+ ALT="$\left\langle {E\hat {\theta }^\ast} \right\rangle =0$">.
+Unlike the Bar-PSTH, however, the mean-variance relation for the Poisson statistics is not directly applicable to the second term.
+We suggest estimating these covariance terms from multiple sample sequences, as in `Algorithm 3.'.
+
+<P>
+<BLOCKQUOTE>
+<B>Algorithm 3: A method for bin size selection for a Line-PSTH </B>
+<HR>width </BLOCKQUOTE><DL COMPACT>
+<DT>(i)</DT>
+<DD>Divide the observation period <IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$T$"> into <IMG
+ WIDTH="54" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img218.gif"
+ ALT="$N+1$"> bins of width <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $">. 
+<BR>Count the number of spikes <IMG
+ WIDTH="43" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img219.gif"
+ ALT="$k_{i}(j)$"> that enter <IMG
+ WIDTH="11" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img47.gif"
+ ALT="$i$">th bin from <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.gif"
+ ALT="$j$">th sequence. 
+<BR>Define <!-- MATH
+ $k_{i}^{(-)}(j) \equiv k_{i}(j)$
+ -->
+<IMG
+ WIDTH="124" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img221.gif"
+ ALT="$k_{i}^{(-)}(j) \equiv k_{i}(j)$"> and <!-- MATH
+ $k_{i}^{(+)}(j) \equiv k_{i+1}(j)$
+ -->
+<IMG
+ WIDTH="141" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img222.gif"
+ ALT="$k_{i}^{(+)}(j) \equiv k_{i+1}(j)$"> <!-- MATH
+ $(i=1,2,\cdots,N)$
+ -->
+<IMG
+ WIDTH="137" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.gif"
+ ALT="$(i=1,2,\cdots,N)$">.
+<BR>Divide the period <!-- MATH
+ $[\Delta/2, T-\Delta/2]$
+ -->
+<IMG
+ WIDTH="129" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img224.gif"
+ ALT="$[\Delta/2, T-\Delta/2]$"> into <IMG
+ WIDTH="22" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$N$"> bins of width <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $">. 
+<BR>Count the number of spikes <!-- MATH
+ $k_{i}^{(0)}(j)$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img225.gif"
+ ALT="$k_{i}^{(0)}(j)$"> that enter <IMG
+ WIDTH="11" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img47.gif"
+ ALT="$i$">th bin from <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.gif"
+ ALT="$j$">th sequence.
+<BR>In each bin, compute <!-- MATH
+ $k_{i}^{(*)}(j) \equiv 2 \sum_{\ell} t_{i}^{\ell}(j)/ \Delta$
+ -->
+<IMG
+ WIDTH="182" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img226.gif"
+ ALT="$k_{i}^{(*)}(j) \equiv 2 \sum_{\ell} t_{i}^{\ell}(j)/ \Delta$">, where <!-- MATH
+ $t_{i}^{\ell}(j)$
+ -->
+<IMG
+ WIDTH="41" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img227.gif"
+ ALT="$t_{i}^{\ell}(j)$"> is the time of
+the <IMG
+ WIDTH="13" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img228.gif"
+ ALT="$\ell$">th spike that enters the <IMG
+ WIDTH="11" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img47.gif"
+ ALT="$i$">th bin, measured from the center of each bin.
+    
+</DD>
+<DT>(ii)</DT>
+<DD>Sum up <!-- MATH
+ $k_{i}^{(p)}(j)$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img229.gif"
+ ALT="$k_{i}^{(p)}(j)$"> for all sequences: <!-- MATH
+ $\displaystyle k_i^{(p)} \equiv \sum_{j = 1}^n k_{i}^{(p)}(j)$
+ -->
+<IMG
+ WIDTH="137" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img230.gif"
+ ALT="$\displaystyle k_i^{(p)} \equiv \sum_{j = 1}^n k_{i}^{(p)}(j)$">, where <!-- MATH
+ $p=\{-, +, 0, *\}$
+ -->
+<IMG
+ WIDTH="132" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img231.gif"
+ ALT="$p=\{-, +, 0, *\}$">. 
+<BR>Average those spike counts with respect to all the bins: <!-- MATH
+ $\displaystyle \bar k^{(p)} \equiv \frac{1}{N}\sum_{i = 1}^{N} {k_i^{(p)} }$
+ -->
+<IMG
+ WIDTH="137" HEIGHT="70" ALIGN="MIDDLE" BORDER="0"
+ SRC="img232.gif"
+ ALT="$\displaystyle \bar k^{(p)} \equiv \frac{1}{N}\sum_{i = 1}^{N} {k_i^{(p)} }$">. 
+<BR>Compute covariances of  <IMG
+ WIDTH="37" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img233.gif"
+ ALT="$k_i^{(+)}$"> and <IMG
+ WIDTH="33" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img234.gif"
+ ALT="$k_i^{(p)}$">:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+c^{(+,\,p)} \equiv \frac{1}{{N}}\sum_{i = 1}^{N} {\left( {k_i^{(+)}  - \bar k^{(+)} } \right)\left( {k_i^{(p)}  - \bar k^{(p)} } \right)}.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="331" HEIGHT="59" BORDER="0"
+ SRC="img235.gif"
+ ALT="\begin{displaymath}c^{(+, p)} \equiv \frac{1}{{N}}\sum_{i = 1}^{N} {\left( {k_i...
+... k^{(+)} } \right)\left( {k_i^{(p)} - \bar k^{(p)} } \right)}. \end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+Compute covariances of <!-- MATH
+ $k_{i}^{(+)}(j)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img236.gif"
+ ALT="$k_{i}^{(+)}(j)$"> and <!-- MATH
+ $k_{i}^{(p)}(j)$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img229.gif"
+ ALT="$k_{i}^{(p)}(j)$"> with respect to sequences, 
+<BR>and average over time:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\bar c^{(+,\,p)} \equiv \frac{1}{{N}}\sum_{i = 1}^{N} \frac{1}{{n-1}}\sum_{j = 1}^n \left( {k_{i}^{(+)}(j)  - \frac{k_i^{(+)}}{n} } \right)\left( {k_{i}^{(p)} (j)  - \frac{k_i^{(p)}}{n} } \right).
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="484" HEIGHT="64" BORDER="0"
+ SRC="img237.gif"
+ ALT="\begin{displaymath}\bar c^{(+, p)} \equiv \frac{1}{{N}}\sum_{i = 1}^{N} \frac{1...
+...right)\left( {k_{i}^{(p)} (j) - \frac{k_i^{(p)}}{n} } \right). \end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+Finally, compute
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\sigma^{(+,\,p)} \equiv \frac{c^{(+,\,p)}}{ (n \Delta)^2} - \frac{\bar c^{(+,\,p)}}{n \Delta^2}.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="198" HEIGHT="54" BORDER="0"
+ SRC="img238.gif"
+ ALT="\begin{displaymath}\sigma^{(+, p)} \equiv \frac{c^{(+, p)}}{ (n \Delta)^2} - \frac{\bar c^{(+, p)}}{n \Delta^2}. \end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+    
+</DD>
+<DT>(iii)</DT>
+<DD>Compute the cost function:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+C_n(\Delta)=\frac{2}{3} \frac{\bar k^{(+)}}{(n \Delta)^2}  - 2 \sigma^{(+,\,0)} - 2 \sigma^{(+,\,*)} + \frac{2}{3}\sigma^{(+,\,+)} + \frac{1}{3}\sigma^{(+,\,-)}.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="476" HEIGHT="54" BORDER="0"
+ SRC="img239.gif"
+ ALT="\begin{displaymath}C_n(\Delta)=\frac{2}{3} \frac{\bar k^{(+)}}{(n \Delta)^2} - 2...
+...} + \frac{2}{3}\sigma^{(+, +)} + \frac{1}{3}\sigma^{(+, -)}. \end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+    
+</DD>
+<DT>(iv)</DT>
+<DD>Repeat i through iii while changing <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $"> to search for <IMG
+ WIDTH="28" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img240.gif"
+ ALT="$\Delta^*$"> that minimizes <IMG
+ WIDTH="57" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$C_n (\Delta )$">.
+</DD>
+</DL><BLOCKQUOTE><HR>
+</BLOCKQUOTE>
+
+<P>
+
+<h3><A NAME="SECTION00052000000000000000">
+  Extrapolation of the cost function</A></h3>
+<P>
+As in the case of the Bar-PSTH, the cost function for any <IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$m$"> sequences of spike trains can be extrapolated using the variance-mean relation for the Poisson statistics,
+<BR>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+C_m\left( \Delta | n \right) =
+\frac{2}{3 \Delta} \left(\frac{1}{m}-\frac{1}{n}\right)\left\langle {E \hat \theta^{+}_n} \right\rangle
++ C_n\left( \Delta  \right),
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD ALIGN="RIGHT" NOWRAP><div align="center"><IMG
+ WIDTH="365" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img241.gif"
+ ALT="$\displaystyle C_m\left( \Delta \vert n \right) =
+\frac{2}{3 \Delta} \left(\frac...
+...ht)\left\langle {E \hat \theta^{+}_n} \right\rangle
++ C_n\left( \Delta \right),$"></div></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(38)</TD></TR>
+</TABLE>
+</DIV><BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $C_n \left( \Delta \right)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.gif"
+ ALT="$C_n \left( \Delta \right)$"> is the original cost function (Eq.&nbsp;<A HREF="#empiricalCostFunctionLineGraph">36</A>).
+With the original cost function <!-- MATH
+ $C_n \left( \Delta \right)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.gif"
+ ALT="$C_n \left( \Delta \right)$">, we can easily estimate a cost function for <IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$m$"> sequences with `Algorithm 4'.
+
+<P>
+<BLOCKQUOTE>
+<B>Algorithm 4: A method for extrapolating the cost function for a Line-PSTH </B>
+<HR>width </BLOCKQUOTE><DL COMPACT>
+<DT>(a)</DT>
+<DD>Construct the extrapolated cost function
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+C_{m}\left( \Delta | n \right) = \frac{2}{3} \left(\frac{1}{m}-\frac{1}{n}\right)\frac{\bar k^{(+)}}{n\Delta^2}+ C_n(\Delta),
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="319" HEIGHT="50" BORDER="0"
+ SRC="img242.gif"
+ ALT="\begin{displaymath}C_{m}\left( \Delta \vert n \right) = \frac{2}{3} \left(\frac{...
+...\frac{1}{n}\right)\frac{\bar k^{(+)}}{n\Delta^2}+ C_n(\Delta), \end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="57" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$C_n (\Delta )$"> is the cost function for the line-graph time histogram
+computed for <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$n$"> sequences of spikes with the Algorithm 3.
+    
+</DD>
+<DT>(b)</DT>
+<DD>Search for <IMG
+ WIDTH="33" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img94.gif"
+ ALT="$\Delta^{*}_m$"> that minimizes <!-- MATH
+ $C_{m}\left( \Delta | n \right)$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.gif"
+ ALT="$C_{m}\left( \Delta \vert n \right)$">.
+    
+</DD>
+<DT>(c)</DT>
+<DD>Repeat A and B while changing <IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$m$">, and plot <!-- MATH
+ $1/\Delta^{*}_m$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.gif"
+ ALT="$1/\Delta^{*}_m$"> vs <IMG
+ WIDTH="40" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.gif"
+ ALT="$1/m$"> to search for the critical value <!-- MATH
+ $1/m=1/\hat n_c$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img97.gif"
+ ALT="$1/m=1/\hat n_c$"> above which <!-- MATH
+ $1/\Delta^{*}_m$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.gif"
+ ALT="$1/\Delta^{*}_m$"> practically vanishes.
+</DD>
+</DL><BLOCKQUOTE><HR>
+</BLOCKQUOTE>
+
+<P>
+
+<h3><A NAME="SECTION00053000000000000000">
+  Scaling relations of the optimal bin sizes</A></h3>
+<P>
+We can obtain a `theoretical' cost function of a Line-PSTH directly from the mean spike rate <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\mu $"> and the correlation <IMG
+ WIDTH="37" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img136.gif"
+ ALT="$\phi (t)$"> of the rate fluctuation.
+According to the mean-variance relation based on the Cram&#233;r-Rao (in)equality (Eq.&nbsp;<A HREF="#FIpoiss">21</A>), the cost function (Eq.&nbsp;<A HREF="#empiricalCostFunctionLineGraph">36</A>) is given by
+<BR>
+<DIV ALIGN="CENTER"><A NAME="lineCLB2"></A>
+<!-- MATH
+ \begin{eqnarray}
+C_n\left( \Delta  \right)
+&=& \frac{2 \mu}{3 n \Delta} - \frac{2}{{\Delta ^2 }} \int_0^\Delta  {\int_{-\Delta/2}^{\Delta/2}  {\left( 1+\frac{2t_2}{\Delta} \right) \phi \left( {t_1  - t_2 } \right)  \,dt_1 dt_2 } } \nonumber \\
+&&+ \frac{2}{{3 \Delta ^2 }} \int_0^\Delta  {\int_0^\Delta  {\phi \left( {t_1  - t_2 } \right)\,dt_1 dt_2 } }
++ \frac{1}{{3 \Delta ^2 }} \int_0^\Delta  {\int_{-\Delta}^0  {\phi \left( {t_1  - t_2 } \right)\,dt_1 dt_2 } }.
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD width="60" ALIGN="RIGHT" NOWRAP><IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img116.gif"
+ ALT="$\displaystyle C_n\left( \Delta \right)$"></TD>
+<TD width="19" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$\textstyle =$"></TD>
+<TD width="525" ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="399" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img243.gif"
+ ALT="$\displaystyle \frac{2 \mu}{3 n \Delta} - \frac{2}{{\Delta ^2 }} \int_0^\Delta {...
+... 1+\frac{2t_2}{\Delta} \right) \phi \left( {t_1 - t_2 } \right)  dt_1 dt_2 } }$"></TD>
+<TD WIDTH=279 ALIGN="RIGHT">&nbsp;</TD>
+</TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><img
+ width="525" height="60" align="MIDDLE" border="0"
+ src="img244.gif"
+ alt="$\displaystyle + \frac{2}{{3 \Delta ^2 }} \int_0^\Delta {\int_0^\Delta {\phi \le...
+...nt_0^\Delta {\int_{-\Delta}^0 {\phi \left( {t_1 - t_2 } \right) dt_1 dt_2 } }.$"></TD>
+<TD WIDTH=279 ALIGN="RIGHT">
+(39)</TD>
+</TR>
+</TABLE>
+</DIV><BR CLEAR="ALL">
+By expanding the correlation of the rate fluctuation,
+<BR>
+<P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\phi \left( t \right) = \phi \left( 0 \right) + \phi '\left( 0_{+} \right)|t| + \frac{1}{2}\phi ''\left( 0 \right)t^2  + \frac{1}{6} \phi'''\left( 0_{+} \right)|t|^3 + \frac{1}{24} \phi''''\left( 0 \right) t^4 + O\left( {|t|^5 } \right),
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="587" HEIGHT="45" BORDER="0"
+ SRC="img245.gif"
+ ALT="\begin{displaymath}\phi \left( t \right) = \phi \left( 0 \right) + \phi '\left( ...
+...hi''''\left( 0 \right) t^4 + O\left( {\vert t\vert^5 } \right),\end{displaymath}">
+</DIV><BR CLEAR="ALL">
+we obtain
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+C_n(\Delta) = \frac{2 \mu}{3 n \Delta} - \phi\left( 0 \right) - \frac{37}{144}\phi '\left( 0_{+} \right) \Delta  + \frac{181}{5760}\phi'''\left( 0_{+} \right)\Delta ^3 + \frac{49}{2880}\phi''''\left( 0 \right)\Delta ^4 + O(\Delta ^5).
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD width="662" ALIGN="CENTER" NOWRAP><div align="left"><A NAME="lineLB"></A></div></TD>
+<TD WIDTH=221 ALIGN="RIGHT">&nbsp;</TD>
+</TR>
+</TABLE>
+</DIV>
+<P>(40)<img
+ width="639" height="45" border="0"
+ src="img246.gif"
+ alt="\begin{displaymath}
+C_n(\Delta) = \frac{2 \mu}{3 n \Delta} - \phi\left( 0 \right...
+...rac{49}{2880}\phi''''\left( 0 \right)\Delta ^4 + O(\Delta ^5).
+\end{displaymath}"></P>
+Unlike the Bar-PSTH, the line graph successfully approximates the original rate to first order in <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta $">, and therefore the <IMG
+ WIDTH="57" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img247.gif"
+ ALT="$O(\Delta ^2)$"> term in the cost function vanishes for a Line-PSTH.
+
+<P>
+The optimal bin size <IMG
+ WIDTH="28" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$\Delta ^\ast $"> is obtained from <!-- MATH
+ $dC_n \left( \Delta \right)/d\Delta =0$
+ -->
+<IMG
+ WIDTH="142" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.gif"
+ ALT="$dC_n \left( \Delta \right)/d\Delta =0$">. For a rate process that fluctuates smoothly in time, the correlation function is a smooth function, resulting in <IMG
+ WIDTH="79" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.gif"
+ ALT="${\phi}'(0)=0$"> and <!-- MATH
+ ${\phi }'''(0)=0$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img248.gif"
+ ALT="${\phi }'''(0)=0$"> due to the symmetry <!-- MATH
+ $\phi (t)=\phi (-t)$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.gif"
+ ALT="$\phi (t) = \phi (-t)$">, and we obtain the scaling relation
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\Delta ^ *   \sim \left( { \frac{1280 \mu }{{181 \phi ''''\left( 0 \right)n}}} \right)^{1/5}.
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="linearscaling15"></A><IMG
+ WIDTH="201" HEIGHT="59" BORDER="0"
+ SRC="img249.gif"
+ ALT="\begin{displaymath}
+\Delta ^ * \sim \left( { \frac{1280 \mu }{{181 \phi ''''\left( 0 \right)n}}} \right)^{1/5}.
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(41)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The exponent <IMG
+ WIDTH="48" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.gif"
+ ALT="$-1/5$"> for a Line-PSTH is different than the exponent <IMG
+ WIDTH="48" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img251.gif"
+ ALT="$-1/3$"> for a Bar-PSTH (Eq.&nbsp;<A HREF="#scaling13">28</A>).
+
+<P>
+If the correlation of rate fluctuation has a cusp at <IMG
+ WIDTH="46" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img143.gif"
+ ALT="$t=0$"> (<!-- MATH
+ ${\phi }'(0_+ )<0)$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img144.gif"
+ ALT="${\phi }'(0_+ )&lt;0)$">, we obtain the scaling relation
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\Delta ^* \sim \left( - \frac{96 \mu}{37 \phi'(0_{+}) n} \right)^{1/2},
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="linearscaling12"></A><IMG
+ WIDTH="201" HEIGHT="59" BORDER="0"
+ SRC="img252.gif"
+ ALT="\begin{displaymath}
+\Delta ^* \sim \left( - \frac{96 \mu}{37 \phi'(0_{+}) n} \right)^{1/2},
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(42)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+by ignoring the higher order terms.
+The exponent <IMG
+ WIDTH="48" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.gif"
+ ALT="$-1/2$"> for a Line-PSTH is the same as the exponent for a Bar-PSTH (Eq.&nbsp;<A HREF="#scaling12">29</A>).
+
+<P>
+ 
+<h3><A NAME="SECTION00060000000000000000">
+  Bibliography</A></h3>
+<DL COMPACT>
+  <DD>
+  
+  <DT><A NAME="Abeles82">Abeles, 1982</A>
+<DD>
+Abeles, M. (1982).
+<BR>Quantification, smoothing, and confidence-limits for single-units
+  histograms.
+<BR><EM>Journal of Neuroscience Methods</EM>, 5(4):317-325.
+<P></P><DT><A NAME="Adrian28">Adrian, 1928</A>
+<DD>
+Adrian, E. (1928).
+<BR><EM>The Basis of Sensation: The Action of the Sense Organs</EM>.
+<BR>W.W. Norton, New York.
+<P></P><DT><A NAME="Bair96">Bair and Koch, 1996</A>
+<DD>
+Bair, W. and Koch, C. (1996).
+<BR>Temporal precision of spike trains in extrastriate cortex of the
+  behaving macaque monkey.
+<BR><EM>Neural Computation</EM>, 8(6):1185-1202.
+
+<P>
+<DT><A NAME="Blahut87">Blahut, 1987</A>
+<DD>
+Blahut, R. (1987).
+<BR><EM>Principles and practice of information theory</EM>.
+<BR>Addison-Wesley, Reading, Mass.
+<P></P><DT><A NAME="Britten92">Britten et&nbsp;al., 1992</A>
+<DD>
+Britten, K.&nbsp;H., Shadlen, M.&nbsp;N., Newsome, W.&nbsp;T., and Movshon, J.&nbsp;A. (1992).
+<BR>The analysis of visual-motion - a comparison of neuronal and
+  psychophysical performance.
+<BR><EM>Journal of Neuroscience</EM>, 12(12):4745-4765.
+<P></P><DT><A NAME="Britten_nsa2004_1">Britten et&nbsp;al., 2004</A>
+<DD>
+Britten, K.&nbsp;H., Shadlen, M.&nbsp;N., Newsome, W.&nbsp;T., and Movshon, J.&nbsp;A. (2004).
+<BR>Responses of single neurons in macaque MT/V5 as a function of motion
+  coherence in stochastic dot stimuli.
+<BR><EM>The Neural Signal Archive</EM>, page nsa2004.1.
+<BR>http://www.neuralsignal.org.
+
+<P>
+<DT><A NAME="Brockwell04">Brockwell et&nbsp;al., 2004</A>
+<DD>
+Brockwell, A.&nbsp;E., Rojas, A.&nbsp;L., and Kass, R.&nbsp;E. (2004).
+<BR>Recursive bayesian decoding of motor cortical signals by particle
+  filtering.
+<BR><EM>Journal of Neurophysiology</EM>, 91(4):1899-1907.
+
+<P>
+<DT><A NAME="Brown04">Brown et&nbsp;al., 2004</A>
+<DD>
+Brown, E.&nbsp;N., Kass, R.&nbsp;E., and Mitra, P.&nbsp;P. (2004).
+<BR>Multiple neural spike train data analysis: state-of-the-art and
+  future challenges.
+<BR><EM>Nature Neuroscience</EM>, 7(5):456-461.
+
+<P>
+<DT><A NAME="Cover91">Cover and Thomas, 1991</A>
+<DD>
+Cover, T.&nbsp;M. and Thomas, J.&nbsp;A. (1991).
+<BR><EM>Elements of Information Theory</EM>.
+<BR>John Wiley &amp; Sons, Inc., New York.
+
+<P>
+<DT><A NAME="Daley88">Daley and Vere-Jones, 1988</A>
+<DD>
+Daley, D. and Vere-Jones, D. (1988).
+<BR><EM>An Introduction to the Theory of Point Processes</EM>.
+<BR>Springer-Verlag, New York.
+
+<P>
+<DT><A NAME="Dayan01">Dayan and Abbott, 2001</A>
+<DD>
+Dayan, P. and Abbott, L. (2001).
+<BR><EM>Theoretical Neuroscience: Computational and Mathematical
+  Modeling of Neural Systems</EM>.
+<BR>The MIT Press, Cambridge.
+
+<P>
+<DT><A NAME="DiMatteo01">DiMatteo et&nbsp;al., 2001</A>
+<DD>
+DiMatteo, I., Genovese, C.&nbsp;R., and Kass, R.&nbsp;E. (2001).
+<BR>Bayesian curve-fitting with free-knot splines.
+<BR><EM>Biometrika</EM>, 88(4):1055-1071.
+
+<P>
+<DT><A NAME="Gardiner85">Gardiner, 1985</A>
+<DD>
+Gardiner, C. (1985).
+<BR><EM>Handbook of stochastic methods: for physics, chemistry and the
+  naural sciences</EM>.
+<BR>Springer-Verlag, Berlin.
+
+<P>
+<DT><A NAME="Gerstein60">Gerstein and Kiang, 1960</A>
+<DD>
+Gerstein, G.&nbsp;L. and Kiang, N. Y.&nbsp;S. (1960).
+<BR>An approach to the quantitative analysis of electrophysiological data
+  from single neurons.
+<BR><EM>Biophysical Journal</EM>, 1(1):15-28.
+
+<P>
+<DT><A NAME="Gerstein69">Gerstein and Perkel, 1969</A>
+<DD>
+Gerstein, G.&nbsp;L. and Perkel, D.&nbsp;H. (1969).
+<BR>Simultaneously recorded trains of action potentials - analysis and
+  functional interpretation.
+<BR><EM>Science</EM>, 164(3881):828-830.
+
+<P>
+<DT><A NAME="Hall90">Hall, 1990</A>
+<DD>
+Hall, P. (1990).
+<BR>Akaikes information criterion and kullback-leibler loss for histogram
+  density-estimation.
+<BR><EM>Probability Theory and Related Fields</EM>, 85(4):449-467.
+
+<P>
+<DT><A NAME="Johnson96">Johnson, 1996</A>
+<DD>
+Johnson, D.&nbsp;H. (1996).
+<BR>Point process models of single-neuron discharges.
+<BR><EM>Journal of Computational Neuroscience</EM>, 3(4):275-299.
+
+<P>
+<DT><A NAME="Kanazawa93">Kanazawa, 1993</A>
+<DD>
+Kanazawa, Y. (1993).
+<BR>Hellinger distance and akaike information criterion for the
+  histogram.
+<BR><EM>Statistics &amp; Probability Letters</EM>, 17(4):293-298.
+
+<P>
+<DT><A NAME="Kass05">Kass et&nbsp;al., 2005</A>
+<DD>
+Kass, R.&nbsp;E., Ventura, V., and Brown, E.&nbsp;N. (2005).
+<BR>Statistical issues in the analysis of neuronal data.
+<BR><EM>Journal of Neurophysiology</EM>, 94(1):8-25.
+
+<P>
+<DT><A NAME="Kass03">Kass et&nbsp;al., 2003</A>
+<DD>
+Kass, R.&nbsp;E., Ventura, V., and Cai, C. (2003).
+<BR>Statistical smoothing of neuronal data.
+<BR><EM>Network-Computation in Neural Systems</EM>, 14(1):5-15.
+
+<P>
+<DT><A NAME="Koyama04">Koyama and Shinomoto, 2004</A>
+<DD>
+Koyama, S. and Shinomoto, S. (2004).
+<BR>Histogram bin width selection for time-dependent poisson processes.
+<BR><EM>Journal of Physics A-Mathematical and General</EM>,
+  37(29):7255-7265.
+
+<P>
+<DT><A NAME="Kubo85">Kubo and Hashitsume, 1985</A>
+<DD>
+Kubo, R.&nbsp;Toda, M. and Hashitsume, N. (1985).
+<BR><EM>Nonequilibrium statistical mechanics</EM>.
+<BR>Springer-Verlag, Berlin.
+<P></P><DT><A NAME="Newsome89">Newsome et&nbsp;al., 1989</A>
+<DD>
+Newsome, W.&nbsp;T., Britten, K.&nbsp;H., and Movshon, J.&nbsp;A. (1989).
+<BR>Neuronal correlates of a perceptual decision.
+<BR><EM>Nature</EM>, 341(6237):52-54.
+
+<P>
+<DT><A NAME="Revesz68">R&#233;v&#233;sz, 1968</A>
+<DD>
+R&#233;v&#233;sz, P. (1968).
+<BR><EM>The laws of large numbers</EM>.
+<BR>Academic Press, New York.
+
+<P>
+<DT><A NAME="Rudemo82">Rudemo, 1982</A>
+<DD>
+Rudemo, M. (1982).
+<BR>Empirical choice of histograms and kernel density estimators.
+<BR><EM>Scandinavian Journal of Statistics</EM>, 9(2):65-78.
+
+<P>
+<DT><A NAME="Sanger02">Sanger, 2002</A>
+<DD>
+Sanger, T.&nbsp;D. (2002).
+<BR>Decoding neural spike trains: Calculating the probability that a
+  spike train and an external signal are related.
+<BR><EM>Journal of Neurophysiology</EM>, 87(3):1659-1663.
+
+<P>
+<DT><A NAME="Scott79">Scott, 1979</A>
+<DD>
+Scott, D.&nbsp;W. (1979).
+<BR>Optimal and data-based histograms.
+<BR><EM>Biometrika</EM>, 66(3):605-610.
+<P></P><DT><A NAME="Shinomoto05">Shinomoto et&nbsp;al., 2005</A>
+<DD>
+Shinomoto, S., Miyazaki, Y., Tamura, H., and Fujita, I. (2005).
+<BR>Regional and laminar differences in in vivo firing patterns of
+  primate cortical neurons.
+<BR><EM>Journal of Neurophysiology</EM>, 94(1):567-575.
+
+<P>
+<DT><A NAME="Shinomoto03">Shinomoto et&nbsp;al., 2003</A>
+<DD>
+Shinomoto, S., Shima, K., and Tanji, J. (2003).
+<BR>Differences in spiking patterns among cortical neurons.
+<BR><EM>Neural Computation</EM>, 15(12):2823-2842.
+
+<P>
+<DT><A NAME="Snyder75">Snyder, 1975</A>
+<DD>
+Snyder, D. (1975).
+<BR><EM>Random Point Processes</EM>.
+<BR>John Wiley &amp; Sons, Inc., New York.
+<P></P><DT><A NAME="Wiener02">Wiener and Richmond, 2002</A>
+<DD>
+Wiener, M.&nbsp;C. and Richmond, B.&nbsp;J. (2002).
+<BR>Model based decoding of spike trains.
+<BR><EM>Biosystems</EM>, 67(1-3):295-300.
+
+</DL>
+
+<HR>
+<!--Navigation Panel--><!--End of Navigation Panel-->
+<ADDRESS>
+</ADDRESS>
+</BODY>
+</HTML>

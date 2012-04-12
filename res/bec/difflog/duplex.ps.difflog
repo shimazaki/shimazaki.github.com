@@ -1,0 +1,9 @@
+# diffLog ver 0.3 charset=SJIS
+# 2004/09/04 11:45:54 1.1
+0a1,2
+> %!
+> <</Duplex true /Tumble false >> setpagedevice[EOF]
+# 2004/09/04 11:46:21 1.2
+# latest
+%!
+<</Duplex true /Tumble false >> setpagedevice

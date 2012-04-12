@@ -1,0 +1,675 @@
+
+<tex2html_mydb_mark>#1904#$\lambda =1,3,5$
+<tex2html_mydb_mark>#1905#$\hskip 1em\relax \kappa =1.8)$
+<tex2html_mydb_mark>#1906#$\hskip 1em\relax \kappa =0.8$
+<tex2html_mydb_mark>#1907#$\lambda _{t}$
+<tex2html_mydb_mark>#1908#$\mathaccentV {hat}05E{\theta }$
+<tex2html_mydb_mark>#1909#$f\left(  x\right)
+=\lambda e^{-\lambda x}$
+<tex2html_mydb_mark>#1910#\begin{displaymath}
+f\left(  t\right)  =\lim_{\Delta x\rightarrow0+}\frac{P\left(  t<X\leq
+t+\Delta\right)  }{\Delta}%
+\end{displaymath}
+<tex2html_mydb_mark>#1911#\begin{equation}
+P\left(  X>s+t|X>t\right)  =P\left(  X>s\right)%
+\end{equation}
+<tex2html_mydb_mark>#1912#$P\left(  X>s+t|X>t\right)$
+<tex2html_mydb_mark>#1913#$P\left(  X>s\right)$
+<tex2html_mydb_mark>#1914#\begin{displaymath}
+P\left(  X>s+t\right)  =P\left(  X>s\right)  P\left(  X>t\right)
+\end{displaymath}
+<tex2html_mydb_mark>#1915#$w\left(  s+t\right)
+=w\left(  s\right)  w\left(  t\right)$
+<tex2html_mydb_mark>#1916#\begin{displaymath}
+\log w\left(  s+t\right)  =\log w\left(  s\right)  +\log w\left(  t\right)
+\end{displaymath}
+<tex2html_mydb_mark>#1917#\begin{displaymath}
+w\left(  1\right)  =w\left(  \frac{1}{n}+\frac{1}{n}+\cdots+\frac{1}%
+{n}\right)  =\left\{  w\left(  \frac{1}{n}\right)  \right\}  ^{n}%
+\end{displaymath}
+<tex2html_mydb_mark>#1918#$w\left(  1/n\right)
+=w\left(  1\right)  ^{1/n}$
+<tex2html_mydb_mark>#1919#$w\left(
+x\right)  =\left\{  w\left(  1\right)  \right\}  ^{x}=e^{x\ln w\left(
+1\right)  }$
+<tex2html_mydb_mark>#1920#$w\left(  x\right)  =e^{-\lambda
+x}$
+<tex2html_mydb_mark>#1921#$\lambda=-\ln w\left(  1\right)$
+<tex2html_mydb_mark>#1922#\begin{displaymath}
+P\left(  X>x\right)  =e^{-\lambda x}%
+\end{displaymath}
+<tex2html_mydb_mark>#1923#\begin{displaymath}
+f\left(  x\right)  =\lambda e^{-\lambda x}%
+\end{displaymath}
+<tex2html_mydb_mark>#1924#\begin{displaymath}
+P\left(  N_{T}=0\right)  =\bar{F}\left(  T\right)  =e^{-\lambda T}%
+\end{displaymath}
+<tex2html_mydb_mark>#1925#\begin{equation}
+P\left(  N_{t}=n\right)  =\frac{1}{n!}\left(  \lambda T\right)  ^{n}%
+e^{-\lambda T}%
+\end{equation}
+<tex2html_mydb_mark>#1926#$\lambda=1,3,5$
+<tex2html_mydb_mark>#1927#$\lambda=1,3,5$
+<tex2html_mydb_mark>#1928#\begin{equation}
+f^{\ast}\left(  u\right)  =\exp\left[  \lambda\left(  e^{iu}-1\right)
+\right]
+\end{equation}
+<tex2html_mydb_mark>#1929#$\exp\left[  x\right]
+=\sum_{n=0}^{\infty}\frac{x^{n}}{n!}$
+<tex2html_mydb_mark>#1930#$f\left(  s_{1}\right)$
+<tex2html_mydb_mark>#1931#$f\left(
+T-s_{1}\right)$
+<tex2html_mydb_mark>#1932#\begin{equation}
+f\left(  T\right)  =\frac{1}{\left(  n-1\right)  !}\lambda^{n}T^{n-1}%
+e^{-\lambda T}%
+\end{equation}
+<tex2html_mydb_mark>#1933#$n/\lambda^{2}$
+<tex2html_mydb_mark>#1934#$G_{n}^{\ast}\left(
+s\right)$
+<tex2html_mydb_mark>#1935#$u=\left(  \lambda+s\right)  t$
+<tex2html_mydb_mark>#1936#$X_{1}+X_{2}+\cdots+X_{n}$
+<tex2html_mydb_mark>#1937#$f_{n}^{\ast}\left(  s\right)$
+<tex2html_mydb_mark>#1938#\begin{displaymath}
+f_{n}^{\ast}\left(  s\right)  =\left\{  f_{1}^{\ast}\left(  s\right)
+\right\}  ^{n}%
+\end{displaymath}
+<tex2html_mydb_mark>#1939#$f_{1}^{\ast}\left(  s\right)$
+<tex2html_mydb_mark>#1940#\begin{displaymath}
+f_{n}^{\ast}\left(  s\right)  =\left(  \frac{\lambda}{\lambda+s}\right)  ^{n}%
+\end{displaymath}
+<tex2html_mydb_mark>#1941#\begin{displaymath}
+%
+\mathcal{L}%
+^{-1}\left[  f_{n}^{\ast}\left(  s\right)  \right]  =\frac{\lambda^{n}}%
+{\Gamma\left(  n\right)  }t^{n-1}e^{-\lambda t}%
+\end{displaymath}
+<tex2html_mydb_mark>#1942#\begin{equation}
+P\left(  N_{T}<n\right)  =P\left(  S_{n}>T\right)%
+\end{equation}
+<tex2html_mydb_mark>#1943#\begin{displaymath}
+P\left(  N_{T}<n\right)  =\sum_{k=0}^{n-1}\frac{\left(  \lambda T\right)
+^{k}}{k!}e^{-\lambda T}%
+\end{displaymath}
+<tex2html_mydb_mark>#1944#$P\left(  N_{T}=n\right)  =P\left(  N_{T}%
+<n+1\right)  -P\left(  N_{T}<n\right)$
+<tex2html_mydb_mark>#1945#\begin{equation}
+P\left(  N_{T}=n\right)  =\frac{\left(  \lambda T\right)  ^{n}}{n!}e^{-\lambda
+T}%
+\end{equation}
+<tex2html_mydb_mark>#1946#$\lambda\left[
+\text{spike}/s\right]$
+<tex2html_mydb_mark>#1947#$\lambda\Delta$
+<tex2html_mydb_mark>#1948#\begin{displaymath}
+f\left(  T\right)  \Delta=\left(  1-\lambda\Delta\right)  ^{N-1}\lambda
+\Delta=\left(  1-\lambda\Delta\right)  ^{N}\frac{\lambda\Delta}{1-\lambda
+\Delta}%
+\end{displaymath}
+<tex2html_mydb_mark>#1949#$\left\vert x\right\vert <1$
+<tex2html_mydb_mark>#1950#\begin{displaymath}
+\frac{1}{1-x}=1+x+x^{2}+x^{3}\cdots
+\end{displaymath}
+<tex2html_mydb_mark>#1951#\begin{displaymath}
+\log\left(  1-x\right)  =-x-\frac{1}{2}x^{2}-\frac{1}{3}x^{3}\cdots\text{ }%
+\end{displaymath}
+<tex2html_mydb_mark>#1952#\begin{displaymath}
+f\left(  T\right)  =\lambda e^{-\lambda T}%
+\end{displaymath}
+<tex2html_mydb_mark>#1953#\begin{displaymath}
+\lim_{\Delta\rightarrow0}\left(  1-\lambda\Delta\right)  ^{N}=\lim
+_{N\rightarrow\infty}\left(  1-\lambda T\frac{1}{N}\right)  ^{N}=e^{-\lambda
+T}%
+\end{displaymath}
+<tex2html_mydb_mark>#1954#$\bar{F}\left(
+T\right)$
+<tex2html_mydb_mark>#1955#$f\left(
+T\right)  =\lambda e^{-\lambda T}$
+<tex2html_mydb_mark>#1956#$\ln N!\sim N\ln N-N$
+<tex2html_mydb_mark>#1957#\begin{displaymath}
+f\left(  t\right)  =\lim_{\Delta\rightarrow0+}\frac{P\left(  t<T\leq
+t+\Delta\right)  }{\Delta}%
+\end{displaymath}
+<tex2html_mydb_mark>#1958#\begin{equation}
+\overline{F}\left(  t\right)  =P\left(  X>t\right)  =\int_{t}^{\infty}f\left(
+u\right)  du
+\end{equation}
+<tex2html_mydb_mark>#1959#\begin{equation}
+F\left(  t\right)  =P\left(  X<t\right)  =\int_{0}^{t}f\left(  u\right)  du
+\end{equation}
+<tex2html_mydb_mark>#1960#\begin{displaymath}
+r\left(  t\right)  =\lim_{\Delta\rightarrow0+}\frac{prob\left(  t<X\leq
+t+\Delta|t<X\right)  }{\Delta}%
+\end{displaymath}
+<tex2html_mydb_mark>#1961#\begin{equation}
+r\left(  t\right)  =\frac{f\left(  t\right)  }{1-\int_{0}^{t}f\left(
+u\right)  du}%
+\end{equation}
+<tex2html_mydb_mark>#1962#\begin{displaymath}
+r\left(  t\right)  =-\frac{\overline{F}^{,}\left(  t\right)  }{\overline
+{F}\left(  t\right)  }=-\frac{d}{dt}\left\{  \log\overline{F}\left(  t\right)
+\right\}
+\end{displaymath}
+<tex2html_mydb_mark>#1963#\begin{displaymath}
+\overline{F}\left(  t\right)  =\exp\left\{  -\int_{0}^{t}r\left(  u\right)
+du\right\}
+\end{displaymath}
+<tex2html_mydb_mark>#1964#\begin{equation}
+F\left(  t\right)  =1-\exp\left\{  -\int_{0}^{t}r\left(  u\right)  du\right\}
+%
+\end{equation}
+<tex2html_mydb_mark>#1965#\begin{equation}
+f\left(  t\right)  =r\left(  t\right)  \exp\left\{  -\int_{0}^{t}r\left(
+u\right)  du\right\}%
+\end{equation}
+<tex2html_mydb_mark>#1966#$r\left(  t\right)  =\lambda$
+<tex2html_mydb_mark>#1967#$\lambda=1,$
+<tex2html_mydb_mark>#1968#$\kappa=0.5,1,2$
+<tex2html_mydb_mark>#1969#$\kappa=0.5,1,2$
+<tex2html_mydb_mark>#1970#$\lambda=1/2$
+<tex2html_mydb_mark>#1971#$\kappa=n/2$
+<tex2html_mydb_mark>#1972#$\Gamma\left(  \kappa\right)  =\int
+_{0}^{\infty}u^{\kappa-1}e^{-u}du$
+<tex2html_mydb_mark>#1973#\begin{equation}
+f\left(  t;\lambda,\kappa\right)  =\frac{\left(  \kappa\lambda\right)
+^{\kappa}}{\Gamma\left(  \kappa\right)  }t^{\kappa-1}e^{-\kappa\lambda t}%
+\end{equation}
+<tex2html_mydb_mark>#1974#$1/\kappa\lambda$
+<tex2html_mydb_mark>#1975#$CV=1/\sqrt{\kappa}$
+<tex2html_mydb_mark>#1976#\begin{equation}
+r\left(  t;\lambda,\kappa\right)  =\frac{f\left(  t\right)  }{\overline
+{F}\left(  t\right)  }=\frac{\left(  \lambda t\right)  ^{\kappa-1}e^{-\lambda
+t}}{1-\int_{0}^{x}\left(  \lambda u\right)  ^{\kappa-1}e^{-\lambda u}du}%
+\end{equation}
+<tex2html_mydb_mark>#1977#$%
+{\begin{center}
+\includegraphics[
+natheight=2.059600in,
+natwidth=3.088500in,
+height=2.0596in,
+width=3.0885in
+]%
+{G:/10/proj/book/graphics/book__4.pdf}%
+\newline ワイブル分布$\lambda=1,\kappa=0.5,1,1,3$
+\end{center}}$
+<tex2html_mydb_mark>#1978#$%
+{\begin{center}
+\includegraphics[
+natheight=2.059600in,
+natwidth=3.088500in,
+height=2.0596in,
+width=3.0885in
+]%
+{G:/10/proj/book/graphics/book__5.pdf}%
+\newline ワイブル分布$\lambda=1,\kappa=0.5,1,1,3$
+\end{center}}$
+<tex2html_mydb_mark>#1979#$%
+\raisebox{-0.1153in}{\begin{center}
+\includegraphics[
+natheight=2.059600in,
+natwidth=3.088500in,
+height=2.0596in,
+width=3.0885in
+]%
+{G:/10/proj/book/graphics/book__6.pdf}%
+\newline ワイブル分布のハ%
+ザード関数$\lambda=1,\kappa=0.5,1,1,3$
+\end{center}}$
+<tex2html_mydb_mark>#1980#\begin{displaymath}
+r\left(  x\right)  =\frac{\kappa}{\mu}\left(  \frac{x}{\mu}\right)
+^{\kappa-1}%
+\end{displaymath}
+<tex2html_mydb_mark>#1981#\begin{displaymath}
+f\left(  x\right)  =\frac{\kappa}{\beta}\left(  \frac{x}{\beta}\right)
+^{\kappa-1}\exp\left\{  -\left(  \frac{x}{\beta}\right)  ^{\kappa}\right\}
+\end{displaymath}
+<tex2html_mydb_mark>#1982#\begin{displaymath}
+F\left(  x\right)  =1-\exp\left\{  -\left(  \frac{x}{\beta}\right)  ^{\kappa
+}\right\}
+\end{displaymath}
+<tex2html_mydb_mark>#1983#$\beta\Gamma\left(  1+1/\kappa\right)$
+<tex2html_mydb_mark>#1984#$\beta^{2}\left[  \Gamma\left(  1+2/\kappa\right)  -\Gamma^{2}\left(
+1+1/\kappa\right)  \right]$
+<tex2html_mydb_mark>#1985#$\beta\Gamma\left(  1+1/\kappa\right)
+=1/\lambda$
+<tex2html_mydb_mark>#1986#\begin{displaymath}
+f\left(  t;\lambda,\kappa\right)  =\kappa\lambda\Gamma\left(  1+1/\kappa
+\right)  \left\{  \Gamma\left(  1+1/\kappa\right)  \lambda t\right\}
+^{\kappa-1}\exp\left[  -\left\{  \Gamma\left(  1+1/\kappa\right)  \lambda
+t\right\}  ^{\kappa}\right]
+\end{displaymath}
+<tex2html_mydb_mark>#1987#$1/\lambda^{2}\left[  \Gamma\left(  1+2/\kappa\right)
+/\Gamma\left(  1+1/\kappa\right)  ^{2}-1\right]$
+<tex2html_mydb_mark>#1988#\begin{displaymath}
+F\left(  t;\lambda,\kappa\right)  =1-\exp\left[  -\left\{  \Gamma\left(
+1+1/\kappa\right)  \lambda t\right\}  ^{\kappa}\right]
+\end{displaymath}
+<tex2html_mydb_mark>#1989#\begin{displaymath}
+f\left(  t;\lambda,\kappa\right)  =\sqrt{\frac{\kappa}{2\pi t^{3}}}\exp\left[
+-\frac{\kappa}{2t}\left(  \lambda t-1\right)  ^{2}\right]  \text{ \ \ for
+}x>0\text{, }0\text{ for }x<0
+\end{displaymath}
+<tex2html_mydb_mark>#1990#$1/\kappa
+\lambda^{3}$
+<tex2html_mydb_mark>#1991#$CV=1/\kappa\lambda^{2}で あ
+る .\$
+<tex2html_mydb_mark>#1992#\begin{displaymath}
+F\left(  t;\lambda,\kappa\right)  =\frac{1}{2}\left\{  1+\operatorname{erf}%
+\left[  \sqrt{\frac{\kappa}{2t}}\left(  \lambda t-1\right)  \right]  \right\}
++\frac{1}{2}e^{2\lambda\kappa}\left\{  1-\operatorname{erf}\left[  \sqrt
+{\frac{\kappa}{2t}}\left(  \lambda t+1\right)  \right]  \right\}
+\end{displaymath}
+<tex2html_mydb_mark>#1993#$\kappa=0.5$
+<tex2html_mydb_mark>#1994#$\kappa=0.5$
+<tex2html_mydb_mark>#1995#$\lambda_{t}$
+<tex2html_mydb_mark>#1996#\begin{equation}
+\Lambda\left(  t\right)  =\int_{0}^{t}\lambda\left(  u\right)  du
+%
+\end{equation}
+<tex2html_mydb_mark>#1997#$\Lambda\left(  t\right)$
+<tex2html_mydb_mark>#1998#$\lambda_{t}$
+<tex2html_mydb_mark>#1999#$\Lambda
+_{1},\Lambda_{2}$
+<tex2html_mydb_mark>#2000#$\Lambda
+_{3},\Lambda_{4}$
+<tex2html_mydb_mark>#2001#$t_{1},t_{2}$
+<tex2html_mydb_mark>#2002#$t_{3},t_{4}$
+<tex2html_mydb_mark>#2003#$\left\{  \Lambda_{1},\Lambda_{2},\cdots\right\}$
+<tex2html_mydb_mark>#2004#$\Lambda_{i}-\Lambda_{i-1}$
+<tex2html_mydb_mark>#2005#\begin{displaymath}
+g\left(  z\right)  =\exp\left[  -z\right]
+\end{displaymath}
+<tex2html_mydb_mark>#2006#$\Lambda_{i}=\Lambda\left(
+t_{i}\right)$
+<tex2html_mydb_mark>#2007#\begin{displaymath}
+z\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  \equiv\Lambda\left(
+t_{i}\right)  -\Lambda\left(  t_{i-1}\right)  =\int_{t_{i-1}}^{t_{i}}%
+\lambda\left(  u\right)  du
+\end{displaymath}
+<tex2html_mydb_mark>#2008#$i=1,t_{1}=0.$
+<tex2html_mydb_mark>#2009#$\eta=\int_{t_{i-1}}^{t_{i}}\lambda\left(  u\right)  du$
+<tex2html_mydb_mark>#2010#$t_{i}\geq T$
+<tex2html_mydb_mark>#2011#$i\leftarrow i+1.\ 2$
+<tex2html_mydb_mark>#2012#$f\left(  x\right)$
+<tex2html_mydb_mark>#2013#$y=g\left(  x\right)$
+<tex2html_mydb_mark>#2014#$p\left(  y\right)$
+<tex2html_mydb_mark>#2015#$f\left(  x\right)
+,g\left(  x\right)$
+<tex2html_mydb_mark>#2016#$p\left(  y\right)$
+<tex2html_mydb_mark>#2017#\begin{displaymath}
+p\left(  y\right)  =f\left(  x\right)  \left\vert \frac{dx}{dy}\right\vert
+=f\left(  x\right)  \left\vert g^{\prime}\left(  x\right)  \right\vert ^{-1}%
+\end{displaymath}
+<tex2html_mydb_mark>#2018#$p\left(  y\right)  =f\left(
+g^{-1}\left(  y\right)  \right)  \left\vert g^{\prime}\left(  g^{-1}\left(
+y\right)  \right)  \right\vert$
+<tex2html_mydb_mark>#2019#$p\left(  y\right)
+\left\vert dy\right\vert =f\left(  x\right)  \left\vert dx\right\vert$
+<tex2html_mydb_mark>#2020#$\left\vert dy\right\vert =\left\vert g^{\prime
+}\left(  x\right)  dx\right\vert$
+<tex2html_mydb_mark>#2021#\begin{displaymath}
+y=g\left(  x\right)  =\int_{-\infty}^{x}f\left(  u\right)  du
+\end{displaymath}
+<tex2html_mydb_mark>#2022#$f\left(  x\right)$
+<tex2html_mydb_mark>#2023#$g\left(  x\right)$
+<tex2html_mydb_mark>#2024#$y\in\left[  0,1\right]$
+<tex2html_mydb_mark>#2025#\begin{displaymath}
+p\left(  y\right)  =f\left(  x\right)  \left\vert g^{\prime}\left(  x\right)
+\right\vert ^{-1}=f\left(  x\right)  \left\vert f\left(  x\right)  \right\vert
+^{-1}=1
+\end{displaymath}
+<tex2html_mydb_mark>#2026#$\left[  0,1\right]$
+<tex2html_mydb_mark>#2027#$\left[  0,1\right]$
+<tex2html_mydb_mark>#2028#$\left[  0,1\right]$
+<tex2html_mydb_mark>#2029#\begin{displaymath}
+\xi=\int_{-\infty}^{\eta}f\left(  x\right)  dx
+\end{displaymath}
+<tex2html_mydb_mark>#2030#$f\left(  \eta\right)$
+<tex2html_mydb_mark>#2031#$F\left(  \eta\right)  =\int_{-\infty}^{\eta
+}f\left(  x\right)  dx$
+<tex2html_mydb_mark>#2032#$\eta=F^{-1}\left(
+\xi\right)$
+<tex2html_mydb_mark>#2033#$F^{-1}\left(  \xi\right)$
+<tex2html_mydb_mark>#2034#$f\left(
+\eta\right)  =F^{\prime}\left(  \eta\right)$
+<tex2html_mydb_mark>#2035#\begin{displaymath}
+\xi=\int_{0}^{\eta}\lambda e^{-\lambda x}dx=\left[  -e^{-\lambda x}\right]
+_{0}^{\eta}=1-e^{-\lambda\eta}%
+\end{displaymath}
+<tex2html_mydb_mark>#2036#\begin{displaymath}
+\eta=-\lambda^{-1}\log\xi
+\end{displaymath}
+<tex2html_mydb_mark>#2037#$n/\lambda^{2}$
+<tex2html_mydb_mark>#2038#$\lambda e^{-\lambda
+t}$
+<tex2html_mydb_mark>#2039#$i=1,t_{1}=0$
+<tex2html_mydb_mark>#2040#$\left[  0,1\right]$
+<tex2html_mydb_mark>#2041#$\xi=\lambda\left(  t_{i}\right)  \exp\left[  -\int_{t_{i-1}}^{t_{i}%
+}\lambda\left(  u\right)  du\right]$
+<tex2html_mydb_mark>#2042#$t_{i}\geq T$
+<tex2html_mydb_mark>#2043#$i\leftarrow i+1.\ 2$
+<tex2html_mydb_mark>#2044#$t_{i}=0,t_{i-1}=t$
+<tex2html_mydb_mark>#2045#\begin{equation}
+r\left(  t_{i}\right)  =\lambda\left(  t_{i}\right)
+%
+\end{equation}
+<tex2html_mydb_mark>#2046#$\lambda\left(  t_{i}\right)$
+<tex2html_mydb_mark>#2047#$\lambda\left(  t\right)$
+<tex2html_mydb_mark>#2048#$\lambda\left(  t\right)
+\Delta$
+<tex2html_mydb_mark>#2049#$N=T/\Delta$
+<tex2html_mydb_mark>#2050#$j\leftarrow j+1$
+<tex2html_mydb_mark>#2051#$\left[  0,1\right]$
+<tex2html_mydb_mark>#2052#$\qquad\lambda\left(  j\Delta\right)  \Delta\geq\xi$
+<tex2html_mydb_mark>#2053#$t_{i}=j\Delta,i\leftarrow i+1$
+<tex2html_mydb_mark>#2054#$\qquad\lambda\left(  j\Delta\right)  \Delta<\xi$
+<tex2html_mydb_mark>#2055#$\lambda\left(  j\Delta\right)$
+<tex2html_mydb_mark>#2056#$t\in\lbrack0,T]$
+<tex2html_mydb_mark>#2057#$\lambda\left(  t\right)  \leq M$
+<tex2html_mydb_mark>#2058#$\left\{  t_{1,}t_{2}\right\}$
+<tex2html_mydb_mark>#2059#$p\left(  t_{j}\right)  =\lambda
+\left(  t_{j}\right)  /M$
+<tex2html_mydb_mark>#2060#$\left\{  t_{1}^{\ast},t_{2}^{\ast},\cdots\right\}$
+<tex2html_mydb_mark>#2061#$\lambda\left(  t\right)$
+<tex2html_mydb_mark>#2062#$\left[  0,T\right]$
+<tex2html_mydb_mark>#2063#$\lambda\left(  t\right)$
+<tex2html_mydb_mark>#2064#$M=\max\lambda\left(  t\right)$
+<tex2html_mydb_mark>#2065#$\left[  0,1\right]$
+<tex2html_mydb_mark>#2066#$X=-M^{-1}\log\eta$
+<tex2html_mydb_mark>#2067#$\left[  0,1\right]$
+<tex2html_mydb_mark>#2068#$\qquad\lambda\left(  s\right)  //M\geq\xi$
+<tex2html_mydb_mark>#2069#$\quad
+t_{i}=s,$
+<tex2html_mydb_mark>#2070#$i\leftarrow i+1$
+<tex2html_mydb_mark>#2071#$\left\{  \Lambda_{1},\Lambda_{2}%
+,\cdots\right\}$
+<tex2html_mydb_mark>#2072#$\Lambda_{i}-\Lambda_{i-1}$
+<tex2html_mydb_mark>#2073#$\frac{\left(  \kappa\lambda\right)  ^{\kappa}}{\Gamma\left(  \kappa\right)
+}t^{\kappa-1}e^{-\kappa\lambda t}$
+<tex2html_mydb_mark>#2074#$1/\kappa\lambda$
+<tex2html_mydb_mark>#2075#\begin{displaymath}
+g\left(  z;\kappa\right)  =\frac{1}{\Gamma\left(  \kappa\right)  }%
+\kappa\left(  \kappa z\right)  ^{\kappa-1}e^{-\kappa z}%
+\end{displaymath}
+<tex2html_mydb_mark>#2076#$\Lambda_{i}=\Lambda\left(
+t_{i}\right)$
+<tex2html_mydb_mark>#2077#\begin{displaymath}
+z\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  =\Lambda\left(
+t_{i}\right)  -\Lambda\left(  t_{i-1}\right)  =\int_{t_{i-1}}^{t_{i}}%
+\lambda\left(  u\right)  du
+\end{displaymath}
+<tex2html_mydb_mark>#2078#$p\left(  t_{i}|t_{i-1},\left\{  \lambda_{t}\right\}  \right)$
+<tex2html_mydb_mark>#2079#$p\left(
+t_{i}|t_{i-1},\left\{  \lambda_{t}\right\}  \right)$
+<tex2html_mydb_mark>#2080#\begin{displaymath}
+g\left(  z|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  =\left\vert \frac{dz}%
+{dt}\right\vert ^{-1}p\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
+\end{displaymath}
+<tex2html_mydb_mark>#2081#$dz/dt_{i}=\lambda\left(  t_{i}\right)$
+<tex2html_mydb_mark>#2082#$\lambda\left(  t\right)$
+<tex2html_mydb_mark>#2083#$\Gamma\left(  1+2/\kappa\right)
+/\Gamma\left(  1+1/\kappa\right)  ^{2}-1$
+<tex2html_mydb_mark>#2084#\begin{displaymath}
+g\left(  z;\kappa\right)  =\kappa\Gamma\left(  1+1/\kappa\right)  \left\{
+\Gamma\left(  1+1/\kappa\right)  t\right\}  ^{\kappa-1}\exp\left[  -\left\{
+\Gamma\left(  1+1/\kappa\right)  t\right\}  ^{\kappa}\right]
+\end{displaymath}
+<tex2html_mydb_mark>#2085#$dz/dt_{i}=\lambda\left(  t_{i}\right)$
+<tex2html_mydb_mark>#2086#\begin{displaymath}
+g\left(  z;\kappa\right)  =\sqrt{\frac{\kappa}{2\pi z^{3}}}\exp\left[
+-\frac{\kappa}{2z}\left(  z-1\right)  ^{2}\right]
+\end{displaymath}
+<tex2html_mydb_mark>#2087#$\sqrt{\frac{\kappa}{2\pi z^{3}}}\exp\left[  -\frac{\kappa}%
+{2z}\left\{  \lambda z-1\right\}  ^{2}\right]$
+<tex2html_mydb_mark>#2088#$1/\kappa\lambda^{3}$
+<tex2html_mydb_mark>#2089#\begin{displaymath}
+\sqrt{\frac{\kappa/\lambda}{2\pi T^{3}}}\exp\left[  -\frac{\kappa/\lambda}%
+{2T}\left\{  \lambda T-1\right\}  ^{2}\right]
+\end{displaymath}
+<tex2html_mydb_mark>#2090#$1/\kappa\lambda^{2}$
+<tex2html_mydb_mark>#2091#\begin{displaymath}
+r\left(  t_{i}|t_{i-1},\left\{  \lambda_{t}\right\}  \right)  =\frac{p\left(
+t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  }{1-\int_{t_{i-1}}^{t_{i}%
+}p\left(  u|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  du}%
+\end{displaymath}
+<tex2html_mydb_mark>#2092#$r\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}%
+:t_{i}}\right)  \Delta$
+<tex2html_mydb_mark>#2093#$r\left(
+t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  \Delta$
+<tex2html_mydb_mark>#2094#$i=1,t_{1}=0.$
+<tex2html_mydb_mark>#2095#$\Lambda_{t}=\int_{0}^{t}\lambda\left(
+u\right)  du$
+<tex2html_mydb_mark>#2096#$z_{t}=\Lambda_{t}-\Lambda_{t_{i-1}}$
+<tex2html_mydb_mark>#2097#$p\left(
+t|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  =\lambda\left(  t\right)  g\left(
+z_{t}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$
+<tex2html_mydb_mark>#2098#$r\left(  t|t_{i-1},\left\{  \lambda_{t}\right\}  \right)  =\frac{p\left(
+t|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  }{1-\int_{t_{i-1}}^{t}p\left(
+u|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  du}$
+<tex2html_mydb_mark>#2099#$\eta=\int_{t_{i-1}}^{t}r\left(  u|t_{i-1}\right)  du$
+<tex2html_mydb_mark>#2100#$t_{i}\geq T$
+<tex2html_mydb_mark>#2101#$i\leftarrow i+1.\ 2$
+<tex2html_mydb_mark>#2102#$\quad\kappa=1.8)$
+<tex2html_mydb_mark>#2103#$\quad\kappa=0.8$
+<tex2html_mydb_mark>#2104#$\quad\kappa=1.8)$
+<tex2html_mydb_mark>#2105#$\quad\kappa=0.8$
+<tex2html_mydb_mark>#2106#\begin{displaymath}
+r\left(  t|H_{t}\right)  =\exp[\sum_{i}\gamma_{i}t\Delta]
+\end{displaymath}
+<tex2html_mydb_mark>#2107#$H_{t}=\left\{  t_{1}%
+,t_{2},\cdots,t_{N_{t}}\right\}$
+<tex2html_mydb_mark>#2108#$[t,t+\Delta
+t)$
+<tex2html_mydb_mark>#2109#$o\left(  t,\Delta
+t\right)$
+<tex2html_mydb_mark>#2110#$\lim_{\Delta\rightarrow0}o\left(  t,\Delta\right)
+/\Delta=0.$
+<tex2html_mydb_mark>#2111#$[t,t+\Delta)$
+<tex2html_mydb_mark>#2112#$r\left(  t;N_{t},H_{t}\right)$
+<tex2html_mydb_mark>#2113#$r\left(  t;N_{t},H_{t}\right)$
+<tex2html_mydb_mark>#2114#$r\left(  t;N_{t},H_{t}\right)
+=\lambda$
+<tex2html_mydb_mark>#2115#$r\left(  t;N_{t},H_{t}\right)  =\lambda\left(  t\right)$
+<tex2html_mydb_mark>#2116#$r\left(  t;N_{t},H_{t}\right)  =r\left(  t;N_{t},t_{N_{t}}\right)$
+<tex2html_mydb_mark>#2117#\begin{equation}
+r\left(  t|H_{t}\right)  =\frac{p\left(  t|H_{t}\right)  }{1-\int_{0}%
+^{t}p\left(  u|H_{u}\right)  du}%
+\end{equation}
+<tex2html_mydb_mark>#2118#\begin{equation}
+p\left(  t|H_{t}\right)  =r\left(  t|H_{t}\right)  \exp\left\{  -\int_{0}%
+^{t}r\left(  u|H_{u}\right)  du\right\}%
+\end{equation}
+<tex2html_mydb_mark>#2119#$f\left(  x\right)$
+<tex2html_mydb_mark>#2120#\begin{displaymath}
+\xi=\int_{0}^{\eta}f\left(  u\right)  du\equiv F\left(  \eta\right)
+\end{displaymath}
+<tex2html_mydb_mark>#2121#$\eta=F^{-1}\left(  \xi\right)$
+<tex2html_mydb_mark>#2122#$f\left(  x\right)$
+<tex2html_mydb_mark>#2123#\begin{equation}
+p\left(  t|H_{t}\right)  =r\left(  t|H_{t}\right)  \exp\left\{  -\int_{0}%
+^{t}r\left(  u|H_{u}\right)  du\right\}
+\end{equation}
+<tex2html_mydb_mark>#2124#$p\left(
+\tau|\tau^{\ast}\right)$
+<tex2html_mydb_mark>#2125#\begin{equation}
+-\log\left(  \xi\right)  =\int_{0}^{\eta}r\left(  u|H_{u}\right)  du
+\end{equation}
+<tex2html_mydb_mark>#2126#$~\zeta=-\log\left(  \xi\right)$
+<tex2html_mydb_mark>#2127#$-\log\left(  \xi\right)$
+<tex2html_mydb_mark>#2128#$\Phi\left(  \eta\right)  =\int_{0}^{\eta}r\left(  u|H_{u}\right)  du$
+<tex2html_mydb_mark>#2129#$\eta
+=\Phi^{-1}\left(  \zeta\right)$
+<tex2html_mydb_mark>#2130#$\left\{  t_{i}\right\}  _{i=1}^{n}$
+<tex2html_mydb_mark>#2131#\begin{displaymath}
+p\left(  t_{i}|t_{i-1};\left\{  \lambda\left(  t\right)  \right\}  \right)
+=\lambda\left(  t_{i}\right)  \exp\left[  -\int_{t_{i-1}}^{t_{i}}%
+\lambda\left(  u\right)  du\right]
+\end{displaymath}
+<tex2html_mydb_mark>#2132#$\left\{  t_{i}\right\}  _{i=1}^{n}$
+<tex2html_mydb_mark>#2133#$\left[
+0,T\right]$
+<tex2html_mydb_mark>#2134#$\lambda_{i\Delta}\Delta$
+<tex2html_mydb_mark>#2135#$1-\lambda_{i\Delta}\Delta$
+<tex2html_mydb_mark>#2136#\begin{displaymath}
+\frac{1}{1-x}=1+x+x^{2}+x^{3}\cdots
+\end{displaymath}
+<tex2html_mydb_mark>#2137#\begin{displaymath}
+\log\left(  1-x\right)  =-x-\frac{1}{2}x^{2}-\frac{1}{3}x^{3}\cdots\text{ }%
+\end{displaymath}
+<tex2html_mydb_mark>#2138#\begin{displaymath}
+p\left(  \left\{  t_{i}\right\}  _{i=1}^{n}\right)  =%
+{\displaystyle\prod\limits_{i=1}^{n}}
+\lambda\left(  t_{i}\right)  \exp\left[  -\int_{0}^{T}\lambda\left(  u\right)
+du\right]
+\end{displaymath}
+<tex2html_mydb_mark>#2139#\begin{displaymath}
+p\left(  \left\{  t_{i}\right\}  _{i=1}^{n}\right)  =%
+{\displaystyle\prod\limits_{j:\text{スパイク%
+あり}}}
+r\left(  t_{j}|H_{t_{i}}\right)  \Delta {\displaystyle\prod\limits_{j:\text{スパイク%
+なし}}}
+\left[  1-r\left(  t_{j}|H_{t_{i}}\right)  \Delta\right]
+\end{displaymath}
+<tex2html_mydb_mark>#2140#\begin{displaymath}
+p\left(  \left\{  t_{i}\right\}  _{i=1}^{n}\right)  =%
+{\displaystyle\prod\limits_{i=1}^{n}}
+r\left(  t_{i}|H_{t_{i}}\right)  \exp\left[  -\int_{0}^{T}r\left(
+u|H_{u}\right)  du\right]
+\end{displaymath}
+<tex2html_mydb_mark>#2141#\begin{displaymath}
+p\left(  \left\{  t_{i}\right\}  _{i=1}^{n}\right)  =\exp\left[  \int\log
+r\left(  u|H_{u_{i}}\right)  dN_{u}-\int_{0}^{T}r\left(  u|H_{u}\right)
+du\right]
+\end{displaymath}
+<tex2html_mydb_mark>#2142#$\hat{\lambda}_{t}$
+<tex2html_mydb_mark>#2143#$\lambda_{t}$
+<tex2html_mydb_mark>#2144#\begin{equation}
+\mbox{MISE}\equiv\frac{1}{T}\int_{0}^{T}E\,(\hat{\lambda}_{t}-\lambda_{t}%
+)^{2}\,dt,
+\end{equation}
+<tex2html_mydb_mark>#2145#$\lambda_{t}$
+<tex2html_mydb_mark>#2146#$\lambda_{t}$
+<tex2html_mydb_mark>#2147#$t\in\lbrack0,\,T]$
+<tex2html_mydb_mark>#2148#$[0,\,\Delta]$
+<tex2html_mydb_mark>#2149#\begin{equation}
+\theta=\frac{1}{\Delta}\int_{0}^{\Delta}{\lambda_{t}dt}.
+\end{equation}
+<tex2html_mydb_mark>#2150#\begin{equation}
+p(k|n\Lambda\Delta)=\frac{\left(  n\Lambda\Delta\right)  ^{k}}{k!}%
+e^{-n\Lambda\Delta}%
+\end{equation}
+<tex2html_mydb_mark>#2151#$\hat{\Lambda}=k/(n\Delta)$
+<tex2html_mydb_mark>#2152#\begin{equation}
+\mathcal{MISE}=\left\langle {E_{\Lambda}\left[  {\frac{1}{\Delta}\int
+_{0}^{\Delta}{(\,{\lambda_{t}-\hat{\Lambda}}\,)^{2}dt}}\right]  }\right\rangle
+%
+\end{equation}
+<tex2html_mydb_mark>#2153#$\left\langle \,\cdot\,\right\rangle$
+<tex2html_mydb_mark>#2154#$\lambda_{t}$
+<tex2html_mydb_mark>#2155#$E_{\Lambda
+}\left[  \,\cdot\,\right]$
+<tex2html_mydb_mark>#2156#$\lambda_{t}%$
+<tex2html_mydb_mark>#2157#\begin{equation}
+C\left(  \Delta\right)  =2\left\langle E_{\Lambda}\left[  (\hat{\Lambda
+}-\Lambda)^{2}\right]  \right\rangle -\left\langle E_{\Lambda}\left[
+({\hat{\Lambda}-\langle\Lambda\rangle})^{2}\right]  \right\rangle%
+\end{equation}
+<tex2html_mydb_mark>#2158#$\hat{\lambda}_{t}$
+<tex2html_mydb_mark>#2159#$\lambda_{t}$
+<tex2html_mydb_mark>#2160#$\lambda_{t}$
+<tex2html_mydb_mark>#2161#$\hat{\lambda}_{t}$
+<tex2html_mydb_mark>#2162#\begin{equation}
+\mbox{MISE}\equiv\frac{1}{T}\int_{0}^{T}E\,(\hat{\lambda}_{t}-\lambda_{t}%
+)^{2}\,dt,%
+\end{equation}
+<tex2html_mydb_mark>#2163#$\lambda_{t}%$
+<tex2html_mydb_mark>#2164#$\hat{\lambda}_{t}$
+<tex2html_mydb_mark>#2165#$\lambda_{t}$
+<tex2html_mydb_mark>#2166#$\lambda_{t}$
+<tex2html_mydb_mark>#2167#$\hat{\theta}$
+<tex2html_mydb_mark>#2168#$\lambda_{t}$
+<tex2html_mydb_mark>#2169#$\hat{\theta}$
+<tex2html_mydb_mark>#2170#$N=\lfloor T/\Delta\rfloor$
+<tex2html_mydb_mark>#2171#$k_{i}/n\Delta$
+<tex2html_mydb_mark>#2172#$t
+\in[0, \Delta]$
+<tex2html_mydb_mark>#2173#\begin{equation}
+\theta= \frac{1}{\Delta}\int_{0}^{\Delta}{\lambda_{t} \,dt}.
+\end{equation}
+<tex2html_mydb_mark>#2174#\begin{equation}
+p(k \,|\, n \Delta\theta) =\frac{\left(  n \Delta\theta\right)  ^{k}}{k!}
+e^{-n \Delta\theta} \, ,%
+\end{equation}
+<tex2html_mydb_mark>#2175#$n\Delta\theta$
+<tex2html_mydb_mark>#2176#$\hat{\theta}=k/(n\Delta)$
+<tex2html_mydb_mark>#2177#$t \in[0, \Delta]$
+<tex2html_mydb_mark>#2178#\begin{equation}
+\mbox{MISE} = \frac{1}{\Delta}\int_{0}^{\Delta}\frac{1}{N}
+\sum_{i=1}^{N} \, \left\{  E \, (\, {\hat\theta_{i} - \lambda_{t+(i-1)\Delta}
+} \,)^{2} \right\}  \,dt,
+\end{equation}
+<tex2html_mydb_mark>#2179#$\hat{\theta}_{i} \equiv k_{i}/(n\Delta)$
+<tex2html_mydb_mark>#2180#$\lambda_{t+(i-1)\Delta}$
+<tex2html_mydb_mark>#2181#$\{ \lambda_{t} \}$
+<tex2html_mydb_mark>#2182#$t \in[0, \Delta]$
+<tex2html_mydb_mark>#2183#\begin{equation}
+\mbox{MISE} =\frac{1}{\Delta}\int_{0}^{\Delta}\left\langle {E \, (\,
+{\hat\theta- \lambda_{t} } \,)^{2} } \right\rangle \,dt.
+\end{equation}
+<tex2html_mydb_mark>#2184#$\hat{\theta}=k/(n\Delta)$
+<tex2html_mydb_mark>#2185#$\lambda_{t}$
+<tex2html_mydb_mark>#2186#$\hat{\theta}$
+<tex2html_mydb_mark>#2187#$\lambda_{t}$
+<tex2html_mydb_mark>#2188#\begin{equation}
+\frac{1}{\Delta}\int_{0}^{\Delta}{\left\langle ( \lambda_{t} - \langle
+\theta\rangle+ \langle\theta\rangle- \theta)^{2} \right\rangle dt} = \frac
+{1}{\Delta}\int_{0}^{\Delta}\left\langle {\left(  {\lambda_{t} - \langle
+\theta\rangle} \right)  ^{2} } \right\rangle \, dt - \left\langle {\left(
+{\theta- \langle\theta\rangle} \right)  ^{2} } \right\rangle .%
+\end{equation}
+<tex2html_mydb_mark>#2189#$\lambda_{t}$
+<tex2html_mydb_mark>#2190#$\left\langle \theta
+\right\rangle$
+<tex2html_mydb_mark>#2191#\begin{equation}
+\frac{1}{\Delta}\int_{0}^{\Delta}\left\langle {\left(  {\lambda_{t} -
+\langle\theta\rangle} \right)  ^{2} } \right\rangle \, dt = \frac{1}{T}
+\int_{0}^{T} \left(  {\lambda_{t} - \langle\theta\rangle} \right)  ^{2} \, dt.
+%
+\end{equation}
+<tex2html_mydb_mark>#2192#$\hat{\theta}$
+<tex2html_mydb_mark>#2193#$E\hat{\theta}=\theta)$
+<tex2html_mydb_mark>#2194#\begin{equation}
+\left\langle E ( {\hat\theta- \langle E\hat\theta\rangle}
+)^{2} \right\rangle = \left\langle E ( \hat\theta- \theta)^{2} \right\rangle +
+\left\langle {\left(  {\theta- \langle\theta\rangle} \right)  ^{2} }
+\right\rangle ,
+\end{equation}
+<tex2html_mydb_mark>#2195#\begin{equation}
+C_{n}\left(  \Delta\right)  = 2 \left\langle E (\hat\theta- \theta)^{2}
+\right\rangle - \left\langle E ( {\hat\theta- \langle E\hat\theta\rangle}
+)^{2} \right\rangle .%
+\end{equation}
+<tex2html_mydb_mark>#2196#$\hat{\theta}%
+=k/(n\Delta)$
+<tex2html_mydb_mark>#2197#\begin{equation}
+E (\hat\theta- \theta)^{2} = \frac{1}{n\Delta}E {\hat\theta} .
+%
+\end{equation}
+<tex2html_mydb_mark>#2198#$\hat{\theta}$
+<tex2html_mydb_mark>#2199#\begin{equation}
+C_{n}\left(  \Delta\right)  = \frac{2}{{n\Delta}} \left\langle E \hat
+\theta\right\rangle - \left\langle E ( {\hat\theta- \langle E\hat\theta
+\rangle} )^{2} \right\rangle .%
+\end{equation}
+<tex2html_mydb_mark>#2200#$C_{n}
+(\Delta)$
+<tex2html_mydb_mark>#2201#\begin{equation}
+\Delta^{*} \equiv\arg\min_{\Delta}C_{n}(\Delta).%
+\end{equation}
+<tex2html_mydb_mark>#2202#\begin{displaymath}
+\bar{k}\equiv\frac{1}{N}\sum_{i=1}^{N}k_{i}\mbox{, and }\displaystyle
+v\equiv\frac{1}{N}\sum_{i=1}^{N}(k_{i}-\bar{k})^{2}.
+\end{displaymath}
+<tex2html_mydb_mark>#2203#\begin{displaymath}
+C_{n}(\Delta)=\frac{2\bar{k}-v}{(n\Delta)^{2}}.
+\end{displaymath}
+<tex2html_mydb_mark>#2204#$\Delta^{\ast}$
+<tex2html_mydb_mark>#2205#$C_{n}(\Delta)$

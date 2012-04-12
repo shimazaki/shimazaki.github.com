@@ -1,0 +1,455 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:st1="schemas-densijiten-jp/ddviewer" xmlns="http://www.w3.org/TR/REC-html40"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 11">
+<meta name="Originator" content="Microsoft Word 11">
+<link rel="File-List" href="http://www.ton.scphys.kyoto-u.ac.jp/%7Eshino/sshist/bin_script.files/filelist.xml">
+<link rel="Edit-Time-Data" href="http://www.ton.scphys.kyoto-u.ac.jp/%7Eshino/sshist/bin_script.files/editdata.mso"><!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><title>A Method for Selecting the Bin Size of a Time Histogram</title>
+
+
+<o:smarttagtype namespaceuri="schemas-densijiten-jp/ddviewer" name="DDviewer"></o:smarttagtype><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Shinomoto</o:Author>
+  <o:LastAuthor>Shinomoto</o:LastAuthor>
+  <o:Revision>16</o:Revision>
+  <o:TotalTime>146</o:TotalTime>
+  <o:Created>2007-02-22T23:28:00Z</o:Created>
+  <o:LastSaved>2007-04-02T05:08:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>848</o:Words>
+  <o:Characters>4834</o:Characters>
+  <o:Company>&#65323;&#65369;&#65359;&#65364;&#65359;&#12288;&#65333;&#65358;&#65353;&#65366;&#65294;</o:Company>
+  <o:Lines>40</o:Lines>
+  <o:Paragraphs>11</o:Paragraphs>
+  <o:CharactersWithSpaces>5671</o:CharactersWithSpaces>
+  <o:Version>11.8122</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>BestFit</w:Zoom>
+  <w:FormsDesign/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-alt:"MS Mincho";
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:Century;
+	panose-1:2 4 6 4 5 5 5 2 3 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536871559 0 0 0 415 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0mm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";}
+h3
+	{mso-margin-top-alt:auto;
+	margin-right:0mm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h4
+	{mso-margin-top-alt:auto;
+	margin-right:0mm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0mm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";}
+pre
+	{margin:0mm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"MS Mincho";}
+p.style4, li.style4, div.style4
+	{mso-style-name:style4;
+	mso-margin-top-alt:auto;
+	margin-right:0mm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";}
+p.style1, li.style1, div.style1
+	{mso-style-name:style1;
+	mso-margin-top-alt:auto;
+	margin-right:0mm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";}
+p.style2, li.style2, div.style2
+	{mso-style-name:style2;
+	mso-margin-top-alt:auto;
+	margin-right:0mm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";
+	color:red;
+	font-weight:bold;}
+p.style6, li.style6, div.style6
+	{mso-style-name:style6;
+	mso-margin-top-alt:auto;
+	margin-right:0mm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";}
+p.style9, li.style9, div.style9
+	{mso-style-name:style9;
+	mso-margin-top-alt:auto;
+	margin-right:0mm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0mm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"MS Mincho";
+	color:#333333;}
+span.style11
+	{mso-style-name:style11;
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;}
+span.style61
+	{mso-style-name:style61;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+span.style21
+	{mso-style-name:style21;
+	color:red;
+	font-weight:bold;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:99.25pt 30.0mm 30.0mm 30.0mm;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:\6A19\6E96\306E\8868;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0mm 5.4pt 0mm 5.4pt;
+	mso-para-margin:0mm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+
+<script src="bin_script_files/bin.js" type="text/javascript">
+<!--type="text/javascript"
+//-->
+</script><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026">
+  <v:textbox inset="5.85pt,.7pt,5.85pt,.7pt"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]--></head><body style="" lang="JA" link="blue" vlink="blue">
+
+<div class="Section1">
+
+<blockquote style="margin-top: 5pt; margin-bottom: 5pt;">
+
+<p style="text-align: right;" align="right"><span style="font-size: 10.5pt; font-family: Verdana; color: green;" lang="EN-US">Visitors <st1:ddviewer w:st="on">s<st1:ddviewer w:st="on">ince</st1:ddviewer></st1:ddviewer> Dec 12-th 2006 is </span><span style="font-family: Verdana; color: green;" lang="EN-US"><img id="_x0000_i1036" src="bin_script_files/count.png" alt="Counter" height="10" width="40"><o:p></o:p></span></p>
+
+<h1><span style="background: rgb(217, 217, 217) none repeat scroll 0%; font-family: Verdana; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" lang="EN-US">A <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">Meth</st1:ddviewer>o</st1:ddviewer>d</st1:ddviewer> for <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">Sele</st1:ddviewer>ct</st1:ddviewer>ing the
+Bin <st1:ddviewer w:st="on">Size</st1:ddviewer> of a <st1:ddviewer w:st="on">Time</st1:ddviewer>
+<st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">Hist</st1:ddviewer>o</st1:ddviewer><st1:ddviewer w:st="on">gram</st1:ddviewer></st1:ddviewer> <o:p></o:p></span></h1>
+
+<h3><st1:ddviewer w:st="on"><span style="font-size: 10.5pt; font-family: Verdana; color: green; font-weight: normal;" lang="EN-US">This</span></st1:ddviewer><span style="font-size: 10.5pt; font-family: Verdana; color: green; font-weight: normal;" lang="EN-US"> <st1:ddviewer w:st="on">page</st1:ddviewer>
+was <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">c<st1:ddviewer w:st="on">reat</st1:ddviewer></st1:ddviewer>e</st1:ddviewer>d
+by <a href="http://2000.jukuin.keio.ac.jp/shimazaki/"><span style="color: green;">Hideaki
+Shimazaki</span></a> in <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">coll</st1:ddviewer>a</st1:ddviewer>b</st1:ddviewer><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">orat</st1:ddviewer>ion</st1:ddviewer></st1:ddviewer>
+<st1:ddviewer w:st="on">with</st1:ddviewer> <a href="http://www.ton.scphys.kyoto-u.ac.jp/%7Eshino/english.html"><span style="color: green;">Shigeru Shinomoto</span></a> <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">base</st1:ddviewer>d</st1:ddviewer> on the <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">theo</st1:ddviewer>r</st1:ddviewer>y</st1:ddviewer>
+<st1:ddviewer w:st="on"><st1:ddviewer w:st="on">publ</st1:ddviewer>ish</st1:ddviewer>ed
+in <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><em><span style="background: rgb(217, 217, 217) none repeat scroll 0%; font-family: Verdana; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">Neur</span></em></st1:ddviewer><em><span style="background: rgb(217, 217, 217) none repeat scroll 0%; font-family: Verdana; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">a</span></em></st1:ddviewer><em><span style="background: rgb(217, 217, 217) none repeat scroll 0%; font-family: Verdana; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">l</span></em></st1:ddviewer><em><span style="background: rgb(217, 217, 217) none repeat scroll 0%; font-family: Verdana; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"> <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">Comp</st1:ddviewer>u<st1:ddviewer w:st="on">tati</st1:ddviewer>on</st1:ddviewer></span></em><span style="background: rgb(217, 217, 217) none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"> 2007, in
+<st1:ddviewer w:st="on"><st1:ddviewer w:st="on">pres</st1:ddviewer>s</st1:ddviewer>
+[<a href="http://www.ton.scphys.kyoto-u.ac.jp/%7Eshino/papersPDF/NeCo07.pdf"><span style="color: green;">pdf</span></a>]</span>, and <st1:ddviewer w:st="on"><i style=""><span style="background: rgb(217, 217, 217) none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">Ad<st1:ddviewer w:st="on">v<st1:ddviewer w:st="on">ance</st1:ddviewer></st1:ddviewer></span></i></st1:ddviewer><i style=""><span style="background: rgb(217, 217, 217) none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">s in <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><em><span style="font-family: Verdana;">Neur</span></em></st1:ddviewer><em><span style="font-family: Verdana;">a</span></em></st1:ddviewer><em><span style="font-family: Verdana;">l</span></em></st1:ddviewer><em><span style="font-family: Verdana;"> <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">Info</st1:ddviewer>rm</st1:ddviewer><st1:ddviewer w:st="on">ation</st1:ddviewer></st1:ddviewer>
+<st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">Proc</st1:ddviewer>ess</st1:ddviewer>ing</st1:ddviewer>
+<st1:ddviewer w:st="on"><st1:ddviewer w:st="on">Syst</st1:ddviewer>em</st1:ddviewer>s
+</span></em></span></i><span style="background: rgb(217, 217, 217) none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">Vol. 19, 2007, in <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">pres</st1:ddviewer>s</st1:ddviewer> [<a href="http://www.ton.scphys.kyoto-u.ac.jp/%7Eshino/papersPDF/ssNIPS07.pdf"><span style="color: green;">pdf</span></a>]</span>.<o:p></o:p></span></h3>
+
+<h3><span style="font-size: 10.5pt; font-family: Verdana; color: blue; font-weight: normal;" lang="EN-US">The <st1:ddviewer w:st="on">time</st1:ddviewer>-<st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">hist</st1:ddviewer>o</st1:ddviewer><st1:ddviewer w:st="on">gram</st1:ddviewer></st1:ddviewer> <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">meth</st1:ddviewer>o</st1:ddviewer>d</st1:ddviewer>
+is a <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">hand</st1:ddviewer>y</st1:ddviewer>
+<st1:ddviewer w:st="on">tool</st1:ddviewer> for <st1:ddviewer w:st="on">capt</st1:ddviewer><st1:ddviewer w:st="on">urin</st1:ddviewer>g the <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">inst</st1:ddviewer>ant</st1:ddviewer>an<st1:ddviewer w:st="on">eous</st1:ddviewer></st1:ddviewer>
+<st1:ddviewer w:st="on">rate</st1:ddviewer> of <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">spik</st1:ddviewer>e</st1:ddviewer> <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">occur</st1:ddviewer>r<st1:ddviewer w:st="on">ence</st1:ddviewer></st1:ddviewer>.
+The bin <st1:ddviewer w:st="on">width</st1:ddviewer> <st1:ddviewer w:st="on">that</st1:ddviewer>
+<st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">crit</st1:ddviewer>ic</st1:ddviewer>a</st1:ddviewer>l</st1:ddviewer>ly</st1:ddviewer>
+<st1:ddviewer w:st="on"><st1:ddviewer w:st="on">deter</st1:ddviewer><st1:ddviewer w:st="on">mine</st1:ddviewer></st1:ddviewer>s the <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">good</st1:ddviewer><st1:ddviewer w:st="on">ness</st1:ddviewer></st1:ddviewer>
+of the fit of PSTH to the <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">unde</st1:ddviewer>r</st1:ddviewer><st1:ddviewer w:st="on">l<st1:ddviewer w:st="on">ying</st1:ddviewer></st1:ddviewer></st1:ddviewer> <st1:ddviewer w:st="on">rate</st1:ddviewer> has <st1:ddviewer w:st="on">been</st1:ddviewer> <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">sele</st1:ddviewer>ct</st1:ddviewer>ed</st1:ddviewer>
+by <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">indi</st1:ddviewer>v</st1:ddviewer>id</st1:ddviewer>ual</st1:ddviewer>
+<st1:ddviewer w:st="on"><st1:ddviewer w:st="on">re<st1:ddviewer w:st="on"><st1:ddviewer w:st="on">sear</st1:ddviewer>ch</st1:ddviewer></st1:ddviewer>er</st1:ddviewer>s
+in an <st1:ddviewer w:st="on">un<st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">syst</st1:ddviewer>em</st1:ddviewer><st1:ddviewer w:st="on">atic</st1:ddviewer></st1:ddviewer></st1:ddviewer>
+<st1:ddviewer w:st="on"><st1:ddviewer w:st="on">mann</st1:ddviewer>er</st1:ddviewer>.
+<st1:ddviewer w:st="on"><st1:ddviewer w:st="on">Re<st1:ddviewer w:st="on">cent</st1:ddviewer></st1:ddviewer>ly</st1:ddviewer>,
+we <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">e<st1:ddviewer w:st="on">stab</st1:ddviewer></st1:ddviewer>lish</st1:ddviewer>ed</st1:ddviewer>
+a <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">meth</st1:ddviewer>o</st1:ddviewer>d</st1:ddviewer>
+for optimi<st1:ddviewer w:st="on">zing</st1:ddviewer> the bin <st1:ddviewer w:st="on">size</st1:ddviewer>, so <st1:ddviewer w:st="on">that</st1:ddviewer>
+the <st1:ddviewer w:st="on">time</st1:ddviewer>-<st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">hist</st1:ddviewer>o</st1:ddviewer><st1:ddviewer w:st="on">gram</st1:ddviewer></st1:ddviewer> <st1:ddviewer w:st="on">best</st1:ddviewer>
+<st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">appr</st1:ddviewer>o</st1:ddviewer>x</st1:ddviewer>i<st1:ddviewer w:st="on">mate</st1:ddviewer></st1:ddviewer>s the <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">unkn</st1:ddviewer>own</st1:ddviewer> <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">unde</st1:ddviewer>r</st1:ddviewer><st1:ddviewer w:st="on">l<st1:ddviewer w:st="on">ying</st1:ddviewer></st1:ddviewer></st1:ddviewer>
+<st1:ddviewer w:st="on">rate</st1:ddviewer> on the <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">basi</st1:ddviewer>s</st1:ddviewer> of <st1:ddviewer w:st="on">mean</st1:ddviewer>
+<st1:ddviewer w:st="on"><st1:ddviewer w:st="on">inte<st1:ddviewer w:st="on"><st1:ddviewer w:st="on">grat</st1:ddviewer>e</st1:ddviewer></st1:ddviewer>d</st1:ddviewer>
+<st1:ddviewer w:st="on">s<st1:ddviewer w:st="on"><st1:ddviewer w:st="on">quar</st1:ddviewer>e</st1:ddviewer></st1:ddviewer>d
+<st1:ddviewer w:st="on">error</st1:ddviewer>. </span><st1:ddviewer w:st="on"><span style="font-size: 10.5pt; font-family: Verdana; color: red; font-weight: normal;" lang="EN-US">Here</span></st1:ddviewer><span style="font-size: 10.5pt; font-family: Verdana; color: red; font-weight: normal;" lang="EN-US">, we <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">pres</st1:ddviewer>e</st1:ddviewer>nt</st1:ddviewer> a web <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">appl</st1:ddviewer>i<st1:ddviewer w:st="on">c<st1:ddviewer w:st="on">ation</st1:ddviewer></st1:ddviewer></st1:ddviewer> <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">prog</st1:ddviewer>ram</st1:ddviewer> <st1:ddviewer w:st="on">that</st1:ddviewer> <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">perf</st1:ddviewer>orm</st1:ddviewer>s
+<st1:ddviewer w:st="on">this</st1:ddviewer> <st1:ddviewer w:st="on">optim<st1:ddviewer w:st="on">i<st1:ddviewer w:st="on">zati</st1:ddviewer>on</st1:ddviewer></st1:ddviewer>.
+You can <st1:ddviewer w:st="on">ob<st1:ddviewer w:st="on">tain</st1:ddviewer></st1:ddviewer>
+the <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">optima</st1:ddviewer>l</st1:ddviewer>
+bin <st1:ddviewer w:st="on">size</st1:ddviewer> and see the <st1:ddviewer w:st="on">opti<st1:ddviewer w:st="on">mize</st1:ddviewer></st1:ddviewer>d <st1:ddviewer w:st="on">time</st1:ddviewer> <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">hist</st1:ddviewer>o</st1:ddviewer><st1:ddviewer w:st="on">gram</st1:ddviewer></st1:ddviewer>,
+by <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">simp</st1:ddviewer>ly</st1:ddviewer>
+<st1:ddviewer w:st="on">copy</st1:ddviewer>-and-<st1:ddviewer w:st="on"><st1:ddviewer w:st="on">past</st1:ddviewer>ing</st1:ddviewer> <st1:ddviewer w:st="on">your</st1:ddviewer>
+<st1:ddviewer w:st="on"><st1:ddviewer w:st="on">spik</st1:ddviewer>e</st1:ddviewer>
+<st1:ddviewer w:st="on">data</st1:ddviewer>. <o:p></o:p></span></h3>
+
+<h2><span style="font-family: Verdana;" lang="EN-US">Web <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">Appl</st1:ddviewer>i<st1:ddviewer w:st="on">c<st1:ddviewer w:st="on">ation</st1:ddviewer></st1:ddviewer></st1:ddviewer>
+for Bin <st1:ddviewer w:st="on">Size</st1:ddviewer> <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">Sele</st1:ddviewer>ct</st1:ddviewer>ion</st1:ddviewer>
+</span><a name="WebApp" id="WebApp"></a></h2>
+
+<table class="MsoNormalTable" style="width: 525pt;" border="1" cellpadding="0" width="700">
+ <tbody><tr style="height: 22.5pt;">
+  <td style="padding: 0.75pt; width: 525pt; height: 22.5pt;" width="700">
+  <p><b style=""><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US"><span style="">&nbsp;</span>1. <st1:ddviewer w:st="on">Copy</st1:ddviewer>-and-<st1:ddviewer w:st="on"><st1:ddviewer w:st="on">past</st1:ddviewer>e</st1:ddviewer> <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">spik</st1:ddviewer>e</st1:ddviewer> <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">sequ</st1:ddviewer><st1:ddviewer w:st="on">ence</st1:ddviewer></st1:ddviewer>s<o:p></o:p></span></b></p>
+  <p><st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><span class="style11"><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">Nume</span></span></st1:ddviewer><span class="style11"><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">ral</span></span></st1:ddviewer><span class="style11"><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">s
+  <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">repr</st1:ddviewer>e<st1:ddviewer w:st="on">sent</st1:ddviewer></st1:ddviewer>ing <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">spik</st1:ddviewer>e</st1:ddviewer> <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">time</st1:ddviewer>s</st1:ddviewer> <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">shou</st1:ddviewer>ld</st1:ddviewer> be <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">sepa</st1:ddviewer><st1:ddviewer w:st="on">rate</st1:ddviewer></st1:ddviewer>d
+  by a <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">blan</st1:ddviewer>k</st1:ddviewer>
+  <st1:ddviewer w:st="on">s<st1:ddviewer w:st="on">pace</st1:ddviewer></st1:ddviewer>(
+  ), a <st1:ddviewer w:st="on"><st1:ddviewer w:st="on">colo</st1:ddviewer>n</st1:ddviewer>(,),
+  a <st1:ddviewer w:st="on"><st1:ddviewer w:st="on"><st1:ddviewer w:st="on">semi</st1:ddviewer>c</st1:ddviewer>olon</st1:ddviewer>(;),
+  a tab(\t), or a <st1:ddviewer w:st="on">re<st1:ddviewer w:st="on">turn</st1:ddviewer></st1:ddviewer>(\n).
+  </span></span><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US"><o:p></o:p></span></p>
+  <form name="DATAFORM" id="DATAFORM">
+  <p class="MsoNormal"><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US"><textarea rows="5" cols="66" name="TEXT" onkeyup="Initialize_Parameters()">4.37 3.87 4.00 4.03 3.50 4.08 2.25 4.70 1.73 4.93 1.73 4.62
+3.43 4.25 1.68 3.92 3.68 3.10 4.03 1.77 4.08 1.75 3.20 1.85
+4.62 1.97 4.50 3.92 4.35 2.33 3.83 1.88 4.60 1.80 4.73 1.77
+4.57 1.85 3.52 4.00 3.70 3.72 4.25 3.58 3.80 3.77 3.75 2.50
+4.50 4.10 3.70 3.80 3.43 4.00 2.27 4.40 4.05 4.25 3.33 2.00
+4.33 2.93 4.58 1.90 3.58 3.73 3.73 1.82 4.63 3.50 4.00 3.67
+1.67 4.60 1.67 4.00 1.80 4.42 1.90 4.63 2.93 3.50 1.97 4.28
+1.83 4.13 1.83 4.65 4.20 3.93 4.33 1.83 4.53 2.03 4.18 4.43
+4.07 4.13 3.95 4.10 2.27 4.58 1.90 4.50 1.95 4.83 4.12</textarea><br>
+<input value="Reset to Sample Data" name="reset" type="reset"><o:p></o:p></span></p>
+  </form>
+  <form name="PARAMETERS" id="PARAMETERS">
+  <h4><strong><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">2. Set Parameters</span></strong><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US"> <o:p></o:p></span></h4>
+  <p><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">
+  <input name="button" value="Set paramters from the data" onclick="Initialize_Parameters()" type="button">
+  The range from <input name="DATA_MIN" value="1.6" type="text">to <input name="DATA_MAX" value="5" type="text">of
+  the data is used to make a histogram. Search the bin sizes from <input name="BIN_MIN" value="0.02" type="text">to<input name="BIN_MAX" value="1" type="text">
+  .<span style="">&nbsp; </span>The number of sample bin sizes to
+  check within the range is <input name="BIN_DIV" value="30" type="text">.<span style="">&nbsp; </span>The number of repeated trials to obtain the
+  data was <input name="DATA_N" value="1" type="text">. (optional)<o:p></o:p></span></p>
+  </form>
+  <form name="BinSelectionForm" id="BinSelectionForm">
+  <h4><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US"><!--
+<object id="BinSelection" width=10 height=10
+classid="CLSID:8AD9C840-044E-11d1-B3E9-00805F499D93" >
+<PARAM name="code" value="BinSelction.class">
+<PARAM NAME="codebase" value="1.0.2">
+<PARAM NAME="level" value="5">
+...
+</object>
+-->3. Select a Bin Size<o:p></o:p></span></h4>
+  <p><span class="style21"><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">To obtain an optimal bin size of your data, push 
+  <input name="Button" value="Obtain an Optimal Bin Size" onclick="BinSelectionApplet(); StartApplet(); alert('An optimal bin size of your data is '+OptimalBinSize().toPrecision(3));" language="JavaScript" type="button">
+  .</span></span><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US"><br>
+  To obtain details, push 
+  <input name="button" value="Output Data Sheet of Your Optimized Histogram" onclick="BinSelectionApplet();Results_In_Window(); " type="button">
+  . 
+  <applet code="bin_script_files/BinSelection.htm" name="BinSelection" id="BinSelection" height="0" width="0">
+  </applet>
+  <o:p></o:p></span></p>
+  </form>
+  <form name="FormApplet" id="FormApplet">
+  <div align="center">
+  <table class="MsoNormalTable" style="width: 450pt;" border="0" cellpadding="0" width="600">
+   <tbody><tr style="height: 186.9pt;">
+    <td style="padding: 0.75pt; width: 202.5pt; height: 186.9pt;" width="270">
+    <p class="MsoNormal"><span style="font-size: 10pt;" lang="EN-US">
+    <applet code="bin_script_files/DrawCostFunction.htm" name="DrawCostFunction" id="DrawCostFunction" height="250" hspace="10" vspace="10" width="250">
+    </applet>
+    </span><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US"><o:p></o:p></span></p>
+    </td>
+    <td style="padding: 0.75pt; height: 186.9pt;">
+    <p class="MsoNormal"><span style="font-size: 10pt;" lang="EN-US">
+    <applet code="bin_script_files/DrawHistogram.htm" name="DrawHistogram" id="DrawHistogram" height="320" hspace="10" vspace="10" width="270">
+    </applet>
+    </span><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US"><o:p></o:p></span></p>
+    </td>
+   </tr>
+  </tbody></table>
+  </div>
+  <h4><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">4. Draw a Histogram and a Cost Function <o:p></o:p></span></h4>
+  </form>
+  <p><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">
+  <input name="Button" value="Redraw a Histogram" onclick="BinSelectionApplet(); StartApplet();" language="JavaScript" type="button">
+  *Java and Javascript programs are tested for IE6 and Firefox 1.5on Windows.
+  Firefox 1.5 on Linux. Firefox 1.5 and Safari on MacOS. The program does not
+  work in Opera. Web Application for Bin Size Selection © 2006 Hideaki
+  Shimazaki</span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p><b style=""><span style="font-size: 14pt; font-family: Verdana;" lang="EN-US">&nbsp;The underlying <a name="Method"></a>formula:<o:p></o:p></span></b></p>
+
+<table class="MsoNormalTable" style="width: 525pt;" border="1" cellpadding="0" width="700">
+ <tbody><tr style="">
+  <td style="padding: 0.75pt;">
+  <p><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">(i) Divide
+  the observation period <img id="_x0000_i1089" src="bin_script_files/img41.gif" alt="$N$" align="bottom" border="0" height="14" width="16">into <img id="_x0000_i1090" src="bin_script_files/img55.gif" alt="$N$" align="bottom" border="0" height="14" width="19">bins
+  of width <img id="_x0000_i1091" src="bin_script_files/img3.gif" alt="$\Delta $" align="bottom" border="0" height="14" width="17">. Count the number of
+  spikes <img id="_x0000_i1092" src="bin_script_files/img48.gif" alt="$k_i$" align="top" border="0" height="30" width="18">from all <img id="_x0000_i1093" src="bin_script_files/img6.gif" alt="$N$" align="bottom" border="0" height="13" width="14">sequences that enter the i'th bin.<o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">(ii)
+  Calculate the mean and variance of the number of events as, <o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US"><!-- MATH
+ \begin{displaymath}
+\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and }  \displaystyle s^2 \equiv \frac{1}{N-1} \sum_{i=1}^{N} (k_i-\bar{k})^2.
+\end{displaymath}
+ --><img id="_x0000_i1094" src="bin_script_files/img23.gif" align="middle" border="0" height="78" width="110">and <img id="_x0000_i1095" src="bin_script_files/img24.gif" align="middle" border="0" height="78" width="167"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">(iii)
+  Compute a formula, <o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US"><!-- MATH
+ \begin{displaymath}
+\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and }  \displaystyle s^2 \equiv \frac{1}{N-1} \sum_{i=1}^{N} (k_i-\bar{k})^2.
+\end{displaymath}
+ --><img id="_x0000_i1096" src="bin_script_files/img25.gif" border="0" height="61" width="144"><o:p></o:p></span></p>
+  <p><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">(iv) Repeat
+  i-iii while changing the bin size <img id="_x0000_i1097" src="bin_script_files/img3.gif" alt="$\Delta $" align="bottom" border="0" height="14" width="17">. Find
+  <img id="_x0000_i1098" src="bin_script_files/img76.gif" alt="$\Delta^{*}$" align="bottom" border="0" height="14" width="25">that minimizes <img id="_x0000_i1099" src="bin_script_files/img7.gif" alt="$C_n (\Delta )$" align="middle" border="0" height="32" width="50">. </span><span style="font-size: 11pt; font-family: Verdana;" lang="EN-US"><a href="#Ref"></a><o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<div style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 1pt; padding: 0mm 0mm 1pt;">
+
+<h3 style="border: medium none ; padding: 0mm;"><span style="font-size: 10.5pt; font-family: Verdana; color: blue; font-weight: normal;" lang="EN-US">Note
+that the optimal bin size diverges if only a small number of experimental
+trials are available from a moderately fluctuating rate process. In this case,
+any attempt to characterize the underlying spike rate will lead to spurious
+results. We also developed a formula with which one can estimate how many more
+trials are needed until the set of data can be analyzed with the required
+resolution. Please have a look at our papers. We wish to implement the web
+application program of this extrapolation method, in near future. For the
+derivation of the formula, see<span style="background: rgb(217, 217, 217) none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"> <em><span style="font-family: Verdana;">Neural
+Computation</span></em> 2007, in press [<a href="http://www.ton.scphys.kyoto-u.ac.jp/%7Eshino/papersPDF/NeCo07.pdf">pdf</a>]</span>,
+or <i style=""><span style="background: rgb(217, 217, 217) none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">Advances in</span></i><span style="background: rgb(217, 217, 217) none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"> <em><span style="font-family: Verdana;">Neural Information Processing Systems </span></em>Vol.
+19, 2007, in press [<a href="http://www.ton.scphys.kyoto-u.ac.jp/%7Eshino/papersPDF/ssNIPS07.pdf">pdf</a>].<o:p></o:p></span></span></h3>
+
+<h3 style="border: medium none ; padding: 0mm;"><span style="font-size: 10.5pt; font-family: Verdana; color: blue; font-weight: normal;" lang="EN-US"><o:p>&nbsp;</o:p></span></h3>
+
+</div>
+
+<p><b style=""><span style="font-size: 10.5pt; font-family: Verdana; color: green;" lang="EN-US"><a href="http://www.ton.scphys.kyoto-u.ac.jp/%7Eshino/toolbox/english.htm"><span style="color: green;">HOMEPAGE of SULAB (Single Unit Laboratory)</span></a>: You
+may also find other web applications that help you to e<st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on">stim</st1:ddviewer>ate <st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on"><st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on"><st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on">inst</st1:ddviewer>ant</st1:ddviewer>an<st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on">eous</st1:ddviewer></st1:ddviewer> <st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on">rate</st1:ddviewer> and <st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on"><st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on"><st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on">extr</st1:ddviewer>a</st1:ddviewer>ct</st1:ddviewer> a
+<st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on"><st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on">weal</st1:ddviewer>th</st1:ddviewer> of <st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on"><st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on"><st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on">info</st1:ddviewer>rm</st1:ddviewer><st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on">ation from</st1:ddviewer></st1:ddviewer> <st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on">fi<st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on">ring</st1:ddviewer></st1:ddviewer> <st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on"><st1:ddviewer style="background-position: left bottom; background-image: url(res://ietag.dll/#34/#1001); background-repeat: repeat-x;" tabindex="0" w:st="on">patt</st1:ddviewer>er</st1:ddviewer>ns of your
+experimental data. <o:p></o:p></span></b></p>
+
+<h3 style="margin: 5pt 36pt;"><span lang="EN-US"><o:p>&nbsp;</o:p></span></h3>
+
+</blockquote>
+
+</div>
+
+</body></html>

@@ -1,0 +1,262 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="Edit-Time-Data" href="http://www.ton.scphys.kyoto-u.ac.jp/%7Eshino/sshist/bin_script.files/editdata.mso">
+<title>A Method for Selecting the Bin Size of a Time Histogram</title>
+<o:smarttagtype namespaceuri="schemas-densijiten-jp/ddviewer" name="DDviewer"></o:smarttagtype>
+<style>
+<!--
+h3
+	{font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h4
+	{font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{font-size:12.0pt;
+	font-family:"Times New Roman";}
+pre
+	{tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.style4, li.style4, div.style4
+	{font-size:24.0pt;
+	font-family:"Times New Roman";}
+p.style1, li.style1, div.style1
+	{font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.style2, li.style2, div.style2
+	{font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:red;
+	font-weight:bold;}
+p.style6, li.style6, div.style6
+	{font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.style9, li.style9, div.style9
+	{font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:#333333;}
+span.style11
+span.style61
+span.style21
+	{color:red;
+	font-weight:bold;}
+.style3 {color: #FF0000;
+	font-weight: bold;}
+.style4 {font-family: "Times New Roman", Times, serif;
+	font-weight: bold;}
+.style5 {font-family: "Times New Roman", Times, serif}
+-->
+</style>
+<script src="bin2/bin.js" type="text/javascript">
+<!--type="text/javascript"
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" link="blue" vlink="blue" lang="JA">
+<div class="Section1">
+  <blockquote>
+    <p style="text-align: right;" align="right"><span style="font-size: 10.5pt; font-family: Verdana; color: green;" lang="EN-US">Visitors
+      
+      since Dec 12-th 2006 is </span><span style="font-family: Verdana; color: green;" lang="EN-US"><img id="_x0000_i1036" src="bin_script_files/count.png" alt="Counter" height="10" width="40"></span></p>
+    <h1><span style="background: rgb(217, 217, 217) none repeat scroll 0%; font-family: Verdana; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" lang="EN-US">A
+      
+      
+      
+      Method for
+      
+      
+      Selecting the
+      Bin
+      
+      Size of a
+      
+      Time
+      
+      
+      
+      Histogram </span></h1>
+    <h3>
+      
+      <span style="font-size: 10.5pt; font-family: Verdana; color: green; font-weight: normal;" lang="EN-US">This
+      
+      page
+      was
+      
+      
+      created
+      by <a href="http://2000.jukuin.keio.ac.jp/shimazaki/"><span style="color: green;">Hideaki
+      Shimazaki</span></a> in
+      
+      
+      
+      
+      collaboration
+      
+      with <a href="http://www.ton.scphys.kyoto-u.ac.jp/%7Eshino/english.html"><span style="color: green;">Shigeru Shinomoto</span></a>
+      
+      
+      based on the
+      
+      
+      
+      theory
+      
+      
+      published
+      in
+      
+      
+      
+      <em><span style="background: rgb(217, 217, 217) none repeat scroll 0%; font-family: Verdana; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">Neur</span></em><em><span style="background: rgb(217, 217, 217) none repeat scroll 0%; font-family: Verdana; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">a</span></em><em><span style="background: rgb(217, 217, 217) none repeat scroll 0%; font-family: Verdana; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">l</span></em><em><span style="background: rgb(217, 217, 217) none repeat scroll 0%; font-family: Verdana; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
+      
+      
+      Computation</span></em><span style="background: rgb(217, 217, 217) none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"> 2007, in
+      
+      
+      press
+      [<a href="http://www.ton.scphys.kyoto-u.ac.jp/%7Eshino/papersPDF/NeCo07.pdf"><span style="color: green;">pdf</span></a>]</span>, and
+      
+      <i><span style="background: rgb(217, 217, 217) none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">Advance</span></i><i><span style="background: rgb(217, 217, 217) none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">s in
+      
+      
+      
+      <em><span style="font-family: Verdana;">Neur</span></em><em><span style="font-family: Verdana;">a</span></em><em><span style="font-family: Verdana;">l</span></em><em><span style="font-family: Verdana;">
+      
+      
+      
+      Information
+      
+      
+      
+      Processing
+      
+      
+      Systems </span></em></span></i><span style="background: rgb(217, 217, 217) none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">Vol. 19, 2007, in
+      
+      
+      press [<a href="http://www.ton.scphys.kyoto-u.ac.jp/%7Eshino/papersPDF/ssNIPS07.pdf"><span style="color: green;">pdf</span></a>]</span>.</span></h3>
+    <h3><span style="font-size: 10.5pt; font-family: Verdana; color: blue; font-weight: normal;" lang="EN-US">The time-histogram method is a handy tool for capturing the instantaneous rate of spike occurrence. The bin width that critically determines the goodness of the fit of PSTH to the underlying rate has been selected by individual researchers in an unsystematic manner. Recently, we established a method for optimizing the bin size, so that the time-histogram best approximates the unknown underlying rate on the basis of mean integrated squared error. </span>      <span style="font-size: 10.5pt; font-family: Verdana; color: red; font-weight: normal;" lang="EN-US">Here, we present a web application program that performs this optimization. You can obtain the optimal bin size and see the optimized time histogram, by simply copy-and-pasting your spike data. </span></h3>
+    <h2><span style="font-family: Verdana;" lang="EN-US">Web Application for Bin Size Selection</span></h2>
+    <table width="700" border="1" cellpadding="0">
+      <tr>
+        <td width="700" ><table width="700" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td><strong>&nbsp;<span class="style5">1. Copy-and-paste spike sequences</span></strong><br>
+			  
+			  Please separate each data by                 a   space( ), a colon(,), a semicolon(;),  a tab(\t), or a return(\n).</td>
+            </tr>
+            <tr>
+              <td><form name="DATAFORM" id="DATAFORM">
+                  <p><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">
+                    <textarea rows="5" cols="60" name="TEXT" onKeyUp="Initialize_Parameters()">4.37 3.87 4.00 4.03 3.50 4.08 2.25 4.70 1.73 4.93 1.73 4.62
+3.43 4.25 1.68 3.92 3.68 3.10 4.03 1.77 4.08 1.75 3.20 1.85
+4.62 1.97 4.50 3.92 4.35 2.33 3.83 1.88 4.60 1.80 4.73 1.77
+4.57 1.85 3.52 4.00 3.70 3.72 4.25 3.58 3.80 3.77 3.75 2.50
+4.50 4.10 3.70 3.80 3.43 4.00 2.27 4.40 4.05 4.25 3.33 2.00
+4.33 2.93 4.58 1.90 3.58 3.73 3.73 1.82 4.63 3.50 4.00 3.67
+1.67 4.60 1.67 4.00 1.80 4.42 1.90 4.63 2.93 3.50 1.97 4.28
+1.83 4.13 1.83 4.65 4.20 3.93 4.33 1.83 4.53 2.03 4.18 4.43
+4.07 4.13 3.95 4.10 2.27 4.58 1.90 4.50 1.95 4.83 4.12</textarea>
+                    <br>
+                    <input value="Reset to Sample Data" name="reset" type="reset">
+                    </span></p>
+                  <br>
+                  <span class="style5"><strong>2. Select a Bin Size</strong><br>
+                  </span>
+                  <input name="Button" value="Obtain the Optimal Bin Size" onClick="PostData(); Initialize_Parameters(); BinSelectionApplet(); StartApplet(); alert('The optimal bin size is '+OptimalBinSize().toPrecision(3));" language="JavaScript" type="button">
+                </form>
+                <form name="FormApplet" id="FormApplet">
+                  <applet code="DrawHistogram" codebase="bin2" name="DrawHistogram" width="500" height="370" hspace="0" vspace="0" align="middle" id="DrawHistogram">
+                  </applet>
+                </form></td>
+            <tr>
+              <td><span class="style4">3. To obtain details, push</span>
+                <input name="button2" value="Output Data Sheet" onClick="BinSelectionApplet();Results_In_Window(); " type="button">
+                <form name="BinSelectionForm" id="BinSelectionForm">
+                  <applet code="BinSelection" codebase="bin2" name="BinSelection" id="BinSelection" height="0" width="0">
+                  </applet>
+                </form>
+                <p align="left">&nbsp;</p>
+                <p align="center"><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">Web Application for the Bin Size Selection © 2006 2007 Hideaki
+                  Shimazaki</span></p></td>
+            <tr>
+          </table></td>
+      </tr>
+    </table>
+    <p><b><span style="font-size: 14pt; font-family: Verdana;" lang="EN-US">&nbsp;The underlying <a name="Method"></a>formula:</span></b></p>
+    <table border="1" cellpadding="0" width="700">
+      <tbody>
+        <tr>
+          <td><p><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">(i) Divide
+              the observation period <img id="_x0000_i1089" src="bin_script_files/img41.gif" alt="$N$" align="bottom" border="0" height="14" width="16">into <img id="_x0000_i1090" src="bin_script_files/img55.gif" alt="$N$" align="bottom" border="0" height="14" width="19">bins
+              of width <img id="_x0000_i1091" src="bin_script_files/img3.gif" alt="$\Delta $" align="bottom" border="0" height="14" width="17">. Count the number of
+              spikes <img id="_x0000_i1092" src="bin_script_files/img48.gif" alt="$k_i$" align="top" border="0" height="30" width="18">from all <img id="_x0000_i1093" src="bin_script_files/img6.gif" alt="$N$" align="bottom" border="0" height="13" width="14">sequences that enter the i'th bin.</span></p>
+            <p><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">(ii)
+              Calculate the mean and variance of the number of events as, </span></p>
+            <p style="text-align: center;" align="center"><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">
+              <!-- MATH
+ \begin{displaymath}
+\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and }  \displaystyle s^2 \equiv \frac{1}{N-1} \sum_{i=1}^{N} (k_i-\bar{k})^2.
+\end{displaymath}
+ -->
+              <img id="_x0000_i1094" src="bin_script_files/img23.gif" align="middle" border="0" height="78" width="110">and <img id="_x0000_i1095" src="bin_script_files/img24.gif" align="middle" border="0" height="78" width="167"></span></p>
+            <p><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">(iii)
+              Compute a formula, </span></p>
+            <p style="text-align: center;" align="center"><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">
+              <!-- MATH
+ \begin{displaymath}
+\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and }  \displaystyle s^2 \equiv \frac{1}{N-1} \sum_{i=1}^{N} (k_i-\bar{k})^2.
+\end{displaymath}
+ -->
+              <img id="_x0000_i1096" src="bin_script_files/img25.gif" border="0" height="61" width="144"></span></p>
+            <p><span style="font-size: 10.5pt; font-family: Verdana;" lang="EN-US">(iv) Repeat
+              i-iii while changing the bin size <img id="_x0000_i1097" src="bin_script_files/img3.gif" alt="$\Delta $" align="bottom" border="0" height="14" width="17">. Find <img id="_x0000_i1098" src="bin_script_files/img76.gif" alt="$\Delta^{*}$" align="bottom" border="0" height="14" width="25">that minimizes <img id="_x0000_i1099" src="bin_script_files/img7.gif" alt="$C_n (\Delta )$" align="middle" border="0" height="32" width="50">. </span><span style="font-size: 11pt; font-family: Verdana;" lang="EN-US"></span></p></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color windowtext; border-width: medium medium 1pt; padding: 0mm 0mm 1pt;">
+      <h3 style="border: medium none ; padding: 0mm;"><span style="font-size: 10.5pt; font-family: Verdana; color: blue; font-weight: normal;" lang="EN-US">Note that the optimal bin size diverges if only a small number of experimental trials are available from a moderately fluctuating rate process. In this case, any attempt to characterize the underlying spike rate will lead to spurious results. We also developed a formula with which one can estimate how many more trials are needed until the set of data can be analyzed with the required resolution. We wish to implement the web application program of this extrapolation method, in near future. For the derivation of the formula, see references below.<span style="background: rgb(217, 217, 217) none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span></span></h3>
+      <h3 style="border: medium none ; padding: 0mm;"><span style="font-size: 10.5pt; font-family: Verdana; color: blue; font-weight: normal;" lang="EN-US">&nbsp;</span></h3>
+    </div>
+    <p><b><span style="font-size: 10.5pt; font-family: Verdana; color: green;" lang="EN-US"><a href="http://www.ton.scphys.kyoto-u.ac.jp/%7Eshino/toolbox/english.htm"><span style="color: green;">HOMEPAGE of SULAB (Single Unit Laboratory)</span></a>: You
+      may also find other web applications that help you to estimate
+      
+      
+      
+      instantaneous
+      
+      rate and
+      
+      
+      
+      extract a
+      
+      
+      wealth of
+      
+      
+      
+      information from
+      
+      firing
+      
+      
+      patterns of your
+      experimental data. </span></b></p>
+    <h3><span lang="EN-US">&nbsp;</span></h3>
+  </blockquote>
+</div>
+</body>
+</html>

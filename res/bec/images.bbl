@@ -1,0 +1,73 @@
+\begin{thebibliography}{8}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname bibnamefont\endcsname\relax
+  \def\bibnamefont#1{#1}\fi
+\expandafter\ifx\csname bibfnamefont\endcsname\relax
+  \def\bibfnamefont#1{#1}\fi
+\expandafter\ifx\csname citenamefont\endcsname\relax
+  \def\citenamefont#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{\citenamefont{Bianconi and Barabasi}(2001)}]{Bianconi01}
+\bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{Bianconi}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.~L.} \bibnamefont{Barabasi}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{86}},
+  \bibinfo{pages}{5632} (\bibinfo{year}{2001}).
+
+\bibitem[{\citenamefont{Volkov et~al.}(2004)\citenamefont{Volkov, Banavar, and
+  Maritan}}]{Volkov04}
+\bibinfo{author}{\bibfnamefont{I.}~\bibnamefont{Volkov}},
+  \bibinfo{author}{\bibfnamefont{J.~R.} \bibnamefont{Banavar}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Maritan}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{92}},
+  \bibinfo{pages}{218703} (\bibinfo{year}{2004}).
+
+\bibitem[{\citenamefont{Fisher}(1958)}]{Fisher58}
+\bibinfo{author}{\bibfnamefont{R.~A.} \bibnamefont{Fisher}},
+  \emph{\bibinfo{title}{The genetical theory of natural selection}}
+  (\bibinfo{publisher}{Dover}, \bibinfo{address}{New York},
+  \bibinfo{year}{1958}).
+
+\bibitem[{\citenamefont{de~Visser et~al.}(1999)\citenamefont{de~Visser, Zeyl,
+  Gerrish, Blanchard, and Lenski}}]{deVisser99}
+\bibinfo{author}{\bibfnamefont{J.~A. G.~M.} \bibnamefont{de~Visser}},
+  \bibinfo{author}{\bibfnamefont{C.~W.} \bibnamefont{Zeyl}},
+  \bibinfo{author}{\bibfnamefont{P.~J.} \bibnamefont{Gerrish}},
+  \bibinfo{author}{\bibfnamefont{J.~L.} \bibnamefont{Blanchard}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{R.~E.}
+  \bibnamefont{Lenski}}, \bibinfo{journal}{Science}
+  \textbf{\bibinfo{volume}{283}}, \bibinfo{pages}{404} (\bibinfo{year}{1999}).
+
+\bibitem[{\citenamefont{Gerrish and Lenski}(1998)}]{Gerrish98}
+\bibinfo{author}{\bibfnamefont{P.~J.} \bibnamefont{Gerrish}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{R.~E.} \bibnamefont{Lenski}},
+  \bibinfo{journal}{Genetica} \textbf{\bibinfo{volume}{103}},
+  \bibinfo{pages}{127} (\bibinfo{year}{1998}).
+
+\bibitem[{\citenamefont{Elena et~al.}(1996)\citenamefont{Elena, Cooper, and
+  Lenski}}]{Elena96}
+\bibinfo{author}{\bibfnamefont{S.~F.} \bibnamefont{Elena}},
+  \bibinfo{author}{\bibfnamefont{V.~S.} \bibnamefont{Cooper}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{R.~E.}
+  \bibnamefont{Lenski}}, \bibinfo{journal}{Science}
+  \textbf{\bibinfo{volume}{272}}, \bibinfo{pages}{1802} (\bibinfo{year}{1996}).
+
+\bibitem[{\citenamefont{Bak et~al.}(1987)\citenamefont{Bak, Tang, and
+  Wiesenfeld}}]{Bak87}
+\bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{Bak}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Tang}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Wiesenfeld}},
+  \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{59}},
+  \bibinfo{pages}{381} (\bibinfo{year}{1987}).
+
+\bibitem[{\citenamefont{Kauffman and Johnsen}(1991)}]{Kauffman91}
+\bibinfo{author}{\bibfnamefont{S.~A.} \bibnamefont{Kauffman}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Johnsen}},
+  \bibinfo{journal}{J. Theor. Biol.} \textbf{\bibinfo{volume}{149}},
+  \bibinfo{pages}{467} (\bibinfo{year}{1991}).
+
+\end{thebibliography}

@@ -1,0 +1,1490 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Phase Transitions in Multiplicative Competitive Processes</TITLE>
+<META NAME="ROBOTS" CONTENT="ALL">
+<META name="description" content="Hideaki Shimazaki Ernst Niebur Phase Transitions in Multiplicative Competitive Processes">
+<META name="keywords" content="Evolution,Discrete,Dynamical,System,Multiplicative,Process,Phase,Transition,Bose-Einstein,Condensation,Self-Organized,Criticality,We,introduce,a,discrete,multiplicative,process,as,a,generic,model,of,competition.,Players,with,different,abilities,successively,join,the,game,and,compete,for,finite,resources.,Emergence,of,dominant,players,and,evolutionary,development,occur,as,a,phase,transition.,The,competitive,dynamics,underlying,this,transition,is,understood,from,a,formal,analogy,to,statistical,mechanics.,The,theory,is,applicable,to,bacterial,competition,,predicting,novel,population,dynamics,near,criticality.">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="../bec.css">
+
+<LINK REL="next" HREF="../node1.html">
+</HEAD>
+
+<BODY leftmargin="40" topmargin="20" marginwidth="100" >
+<!--Navigation Panel-->
+<p><A NAME="tex2html3"
+  HREF="../node1.html"> <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:///C|/TEXUTILS/L2H/icons/next.png"></A> <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:///C|/TEXUTILS/L2H/icons/up_g.png"> <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:///C|/TEXUTILS/L2H/icons/prev_g.png"> <BR>
+  <B> Next:</B> <A NAME="tex2html4"
+  HREF="../node1.html">Bibliography</A> <BR>
+  <BR>
+  <!--End of Navigation Panel-->
+</p>
+<p>Physical Review E (2005) 72(1), 011912 &copy; 2005 The American Physical Scociety 
+</p>
+<P>
+<H1 ALIGN="CENTER">Phase Transitions in Multiplicative Competitive Processes</H1>
+<DIV>
+
+<P ALIGN="CENTER"><STRONG>Hideaki Shimazaki</STRONG></P>
+<P ALIGN="CENTER"><I>Department of Physics, Graduate School of Science, Kyoto University, Kyoto 606-8502, Japan</I></P>
+
+
+<P ALIGN="CENTER"><STRONG>Ernst Niebur</STRONG></P>
+<P ALIGN="CENTER"><I>Department of Neuroscience, Zanvyl Krieger Mind/Brain Institute, School of Medicine, Johns Hopkins University, Baltimore, Maryland 21218</I></P>
+</DIV>
+<P>
+
+<H3>Abstract:</H3>
+<DIV> 
+  <p>We introduce a discrete multiplicative process as a generic model of competition. 
+    Players with different abilities successively join the game and compete for 
+    finite resources. Emergence of dominant players and evolutionary development 
+    occur as a phase transition. The competitive dynamics underlying this transition 
+    is understood from a formal analogy to statistical mechanics. The theory is 
+    applicable to bacterial competition, predicting novel population dynamics 
+    near criticality. </p>
+  <p>&nbsp; </p>
+  <hr>
+</DIV>
+<P>
+
+<P> Competition occurs when two or more players such as organisms, individuals 
+  or companies strive for common but limited resources. It plays a significant 
+  role in biological and social activities, and is the basis of evolution. Most 
+  natural competition processes allow the introduction of new players, which is 
+  a hallmark of an open, nonequilibrium system. In this contribution, we introduce 
+  an irreversible discrete multiplicative process with normalization at each time 
+  step as a generic model of competition. Players with different abilities successively 
+  join the game and compete for finite resources. The model shows macroscopically 
+  observable changes in its behavior; at a singularity in the statistical distribution 
+  of the players' abilities, certain players become dominant over all others. 
+  The emergence of dominant players and the evolutionary development of the system 
+  occur as a transition from stationary to nonstationary state of the multiplicative 
+  process. We analyze the phase transition in the mathematical framework of Bose-Einstein 
+  condensation (BEC), although, of course, systems modelled are classical and 
+  not quantum mechanical. The same approach has been applied successfully to models 
+  of complex networks [<A
+ HREF="../node1.html#Bianconi01">Bianconi and Barabasi(2001)</A>] and ecosystems 
+  [<A
+ HREF="../node1.html#Volkov04">Volkov et&nbsp;al.(2004)</A>] that behave analogously 
+  to a Bose gas. We show that this approach is applicable to bacterial competition, 
+  providing surprising insights and predictions to their dynamics. 
+<P>
+Before we present the model, we first introduce a general framework
+for how our multiplicative competition model is related to a
+statistical mechanics concept.
+Let <!-- MATH
+ $\varphi(\epsilon)$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img31.png"
+ ALT="$\varphi(\epsilon)$"> be a function that satisfies the following
+conditions for an arbitrary <IMG
+ WIDTH="24" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img32.png"
+ ALT="$C^2$"> density function <!-- MATH
+ $g(\epsilon ) (\geq 0)$
+ -->
+<IMG
+ WIDTH="68" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img33.png"
+ ALT="$g(\epsilon ) (\geq 0)$">
+defined on <!-- MATH
+ $\epsilon \in [0,\epsilon_{\max}]$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img34.png"
+ ALT="$\epsilon \in [0,\epsilon_{\max}]$">,
+<BR>
+<DIV ALIGN="CENTER"><A NAME="33"></A><A NAME="34"></A><A NAME="35"></A>
+<!-- MATH
+ \begin{eqnarray}
+\int{d\epsilon \, g(\epsilon)} &=& 1,\\
+\int{d\epsilon \, g(\epsilon)\varphi (\epsilon)} &=& m + y_0,\\
+\int{d\epsilon \, g(\epsilon)e^{- \beta \epsilon} \varphi(\epsilon)} &=& M.
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE">
+      <TD NOWRAP ALIGN="RIGHT" width="392"><IMG
+ WIDTH="67" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img35.png"
+ ALT="$\displaystyle \int{d\epsilon \, g(\epsilon)}$"></TD>
+      <TD ALIGN="CENTER" NOWRAP width="39"><IMG
+ WIDTH="16" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img36.png"
+ ALT="$\textstyle =$"></TD>
+      <TD ALIGN="LEFT" NOWRAP width="368"><IMG
+ WIDTH="16" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img37.png"
+ ALT="$\displaystyle 1,$"></TD>
+      <TD WIDTH=18 ALIGN="RIGHT"> (1)</TD>
+    </TR>
+<TR VALIGN="MIDDLE">
+      <TD NOWRAP ALIGN="RIGHT" width="392"><IMG
+ WIDTH="96" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img38.png"
+ ALT="$\displaystyle \int{d\epsilon \, g(\epsilon)\varphi (\epsilon)}$"></TD>
+      <TD ALIGN="CENTER" NOWRAP width="39"><IMG
+ WIDTH="16" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img36.png"
+ ALT="$\textstyle =$"></TD>
+      <TD ALIGN="LEFT" NOWRAP width="368"><IMG
+ WIDTH="57" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img39.png"
+ ALT="$\displaystyle m + y_0,$"></TD>
+      <TD WIDTH=18 ALIGN="RIGHT"> (2)</TD>
+    </TR>
+<TR VALIGN="MIDDLE">
+      <TD NOWRAP ALIGN="RIGHT" width="392"><IMG
+ WIDTH="127" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img40.png"
+ ALT="$\displaystyle \int{d\epsilon \, g(\epsilon)e^{- \beta \epsilon} \varphi(\epsilon)}$"></TD>
+      <TD ALIGN="CENTER" NOWRAP width="39"><IMG
+ WIDTH="16" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img36.png"
+ ALT="$\textstyle =$"></TD>
+      <TD ALIGN="LEFT" NOWRAP width="368"><IMG
+ WIDTH="25" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img41.png"
+ ALT="$\displaystyle M.$"></TD>
+      <TD WIDTH=18 ALIGN="RIGHT"> (3)</TD>
+    </TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+All terms on the right hand sides of these equations and <IMG
+ WIDTH="14" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img42.png"
+ ALT="$\beta$"> in
+Eq.&nbsp;<A HREF="#35">3</A> are positive constants. Then <!-- MATH
+ $\varphi(\epsilon)$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img31.png"
+ ALT="$\varphi(\epsilon)$"> is given
+by <BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\varphi(\epsilon) = \frac{y_0}{1 - e^{-\beta \epsilon
+- \alpha}},
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="36"></A><IMG
+ WIDTH="134" HEIGHT="36" BORDER="0"
+ SRC="../img43.png"
+ ALT="\begin{displaymath}
+\varphi(\epsilon) = \frac{y_0}{1 - e^{-\beta \epsilon
+- \alpha}}, \end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(4)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <!-- MATH
+ $e^{-\alpha}=m/M$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img44.png"
+ ALT="$e^{-\alpha}=m/M$">. For, dividing Eq.&nbsp;<A HREF="#34">2</A> by
+<IMG
+ WIDTH="19" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img45.png"
+ ALT="$y_0$">, then subtracting Eq.&nbsp;<A HREF="#33">1</A> yields <BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\int
+{d\epsilon \, g(\epsilon)\frac{\varphi(\epsilon) - y_0}{y_0} } = N,
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="24"></A><IMG
+ WIDTH="168" HEIGHT="43" BORDER="0"
+ SRC="../img46.png"
+ ALT="\begin{displaymath}
+\int
+{d\epsilon \, g(\epsilon)\frac{\varphi(\epsilon) - y_0}{y_0} } = N,
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <IMG
+ WIDTH="77" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img47.png"
+ ALT="$N = m/y_0$">. Multiplying Eq.&nbsp;<A HREF="#35">3</A> with <IMG
+ WIDTH="42" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img48.png"
+ ALT="$ N/M$"> and
+subtracting Eq.&nbsp;<A HREF="#24">5</A> from the result,
+the fundamental lemma of the calculus of variation then yields
+Eq.&nbsp;<A HREF="#36">4</A>. Hence, the so-called occupation number in Eq.&nbsp;<A HREF="#24">5</A>,
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+n(\epsilon) = \frac{\varphi(\epsilon) - y_0}{y_0} =
+\frac{1}{e^{\beta \epsilon + \alpha} - 1},
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="37"></A><IMG
+ WIDTH="213" HEIGHT="43" BORDER="0"
+ SRC="../img49.png"
+ ALT="\begin{displaymath}
+n(\epsilon) = \frac{\varphi(\epsilon) - y_0}{y_0} =
+\frac{1}{e^{\beta \epsilon + \alpha} - 1}, \end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(6)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+becomes the Bose
+distribution. From Eq.&nbsp;<A HREF="#36">4</A>, such a function <!-- MATH
+ $\varphi(\epsilon)$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img31.png"
+ ALT="$\varphi(\epsilon)$"> may
+be obtained from the sum of a geometric progression with ratio
+<!-- MATH
+ $e^{-\beta \epsilon - \alpha}<1$
+ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img50.png"
+ ALT="$e^{-\beta \epsilon - \alpha}&lt;1$">. This motivates the analysis of the
+following multiplicative process.
+
+<P>
+The competition we introduce is defined by three conditions at each time
+step.
+(i) Players compete for a fixed total amount of resources.
+(ii) The resource gained by a player is proportional to the player's innate
+ability and to its resource gained at the previous time step.
+(iii) New players join the game, each with the same initial resources. The
+only exception is the first player (pioneer), who starts the game with all
+the resources available.
+These rules are summarized in a simple multiplicative process,
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+y_i(t+1) = a_i b(t)y_i(t),
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="1"></A><IMG
+ WIDTH="153" HEIGHT="28" BORDER="0"
+ SRC="../img51.png"
+ ALT="\begin{displaymath}
+y_i(t+1) = a_i b(t)y_i(t),
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(7)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <IMG
+ WIDTH="35" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img52.png"
+ ALT="$y_i(t)$"> is the gain of the <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img26.png"
+ ALT="$i$">th player at time <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img53.png"
+ ALT="$t$"> and <IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img54.png"
+ ALT="$a_i$"> is its
+ability, a positive and time-independent random variable chosen from a
+distribution <IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img55.png"
+ ALT="$\rho(a)$">.
+The term <IMG
+ WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img56.png"
+ ALT="$b(t)$"> is a normalization factor, which models the limited resources.
+For simplicity, we first assume that <IMG
+ WIDTH="9" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img57.png"
+ ALT="$l$">, the number of
+newly introduced players at every time step, is 1. This means we consider <IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img58.png"
+ ALT="$t
++ 1 $"> simultaneous equations <!-- MATH
+ $(i=0, \cdots, t)$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img59.png"
+ ALT="$(i=0, \cdots, t)$"> at time <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img53.png"
+ ALT="$t$">.
+The normalization factor is then defined by <IMG
+ WIDTH="92" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img60.png"
+ ALT="$b(t) =
+m/M_t$">, where  <IMG
+ WIDTH="25" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img61.png"
+ ALT="$M_t$"> is given by
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+M_t = \sum\limits_{j = 0}^t {a_j y_j (t)}.
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="2"></A><IMG
+ WIDTH="119" HEIGHT="57" BORDER="0"
+ SRC="../img62.png"
+ ALT="\begin{displaymath}
+M_t = \sum\limits_{j = 0}^t {a_j y_j (t)}.
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(8)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+This assures that the amount of resources distributed among <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img53.png"
+ ALT="$t$"> players at
+time
+<IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img53.png"
+ ALT="$t$"> is <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img63.png"
+ ALT="$m $"> for <IMG
+ WIDTH="39" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img64.png"
+ ALT="$t &gt; 0$">.
+The initial value of a new player is <IMG
+ WIDTH="71" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img65.png"
+ ALT="$y_i(i) = y_0$">, except for the pioneer
+whose initial value is <!-- MATH
+ $y_0(0)=m + y_0$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img66.png"
+ ALT="$y_0(0)=m + y_0$">. Therefore, the total resources
+distributed among all players are limited to <IMG
+ WIDTH="53" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img67.png"
+ ALT="$m + y_0 $"> at every time step.
+Due to the normalization, we let <!-- MATH
+ $a \in [a_{\min},1]$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img68.png"
+ ALT="$a \in [a_{\min},1]$">, where <IMG
+ WIDTH="64" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img69.png"
+ ALT="$a_{\min}&gt; 0$">,
+without loss of generality.
+
+<P>
+We now consider the time evolution of players except for the
+pioneer. The gain of the <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img26.png"
+ ALT="$i$">th player at time <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img53.png"
+ ALT="$t$"> is given by
+<!-- MATH
+ $y_i(t)=\Omega_i(t) y_0$
+ -->
+<IMG
+ WIDTH="106" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img70.png"
+ ALT="$y_i(t)=\Omega_i(t) y_0$">, where
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\Omega _i(t) = a_i^{t-i}
+\left( \prod\limits_{t'=i}^{t - 1}{b(t')} \right).
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="3"></A><IMG
+ WIDTH="173" HEIGHT="56" BORDER="0"
+ SRC="../img71.png"
+ ALT="\begin{displaymath}
+\Omega _i(t) = a_i^{t-i}
+\left( \prod\limits_{t'=i}^{t - 1}{b(t')} \right). \end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(9)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The dynamics
+given by <IMG
+ WIDTH="39" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img72.png"
+ ALT="$\Omega_i(t)$"> shows distinct phases determined by the shape
+of the ability distribution. To see this, we parameterize <IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img55.png"
+ ALT="$\rho(a)$"> by
+the inverse temperature <IMG
+ WIDTH="71" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img73.png"
+ ALT="$\beta (=1/T) $"> through <!-- MATH
+ $a = e^{ - \beta
+\epsilon }$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img74.png"
+ ALT="$a = e^{ - \beta
+\epsilon }$">.
+The random variable <!-- MATH
+ $\epsilon \in [0,\epsilon_{\max}]$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img34.png"
+ ALT="$\epsilon \in [0,\epsilon_{\max}]$"> is chosen from <IMG
+ WIDTH="31" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img75.png"
+ ALT="$g(
+\epsilon )$">, a state density function which now defines the system.
+We now systematically change <!-- MATH
+ $\rho(a) \left( = g(\epsilon)\left|
+{{\textstyle{{d\epsilon } \over {da}}}} \right| \right)$
+ -->
+<IMG
+ WIDTH="125" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img76.png"
+ ALT="$\rho(a) \left( = g(\epsilon)\left\vert
+{{\textstyle{{d\epsilon } \over {da}}}} \right\vert \right)$"> by fixing
+<IMG
+ WIDTH="31" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img75.png"
+ ALT="$g(
+\epsilon )$"> and changing <IMG
+ WIDTH="14" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img42.png"
+ ALT="$\beta$">.  If <IMG
+ WIDTH="31" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img75.png"
+ ALT="$g(
+\epsilon )$"> is a monotonically
+increasing function, which we will assume, high
+temperatures mean that the distribution of the players' abilities is
+restricted to a small range, i.e. all players have relatively similar
+abilities, while low temperature is synonymous with occasional
+appearance of superior players relative to others.
+From Eq.&nbsp;<A HREF="#3">9</A>, we have
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\ln \Omega_i = (t-i)\left\{-
+\beta \epsilon_i - \left\langle {\ln b} \right\rangle \right\},
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="38"></A><IMG
+ WIDTH="211" HEIGHT="28" BORDER="0"
+ SRC="../img77.png"
+ ALT="\begin{displaymath}
+\ln \Omega_i = (t-i)\left\{-
+\beta \epsilon_i - \left\langle {\ln b} \right\rangle \right\}, \end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(10)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+using <!-- MATH
+ $\ln \prod\nolimits_{t'=i}^{t - 1} {b( t' )} = \sum\nolimits_{t'
+= i}^{t - 1} {\ln b( t' )} \sim (t -i) \left\langle {\ln b}
+\right\rangle$
+ -->
+<IMG
+ WIDTH="303" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img78.png"
+ ALT="$\ln \prod\nolimits_{t'=i}^{t - 1} {b( t' )} = \sum\nolimits_{t'
+= i}^{t - 1} {\ln b( t' )} \sim (t -i) \left\langle {\ln b}
+\right\rangle$">. By assuming stationarity of <IMG
+ WIDTH="25" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img61.png"
+ ALT="$M_t$">, discussed below, we
+let its time average be
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\left\langle {\ln b} \right\rangle = -\alpha,
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="5"></A><IMG
+ WIDTH="81" HEIGHT="28" BORDER="0"
+ SRC="../img79.png"
+ ALT="\begin{displaymath}
+\left\langle {\ln b} \right\rangle = -\alpha,
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(11)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img6.png"
+ ALT="$\alpha $"> is a time-independent
+constant.  From Eq.&nbsp;<A HREF="#38">10</A> and Eq.&nbsp;<A HREF="#5">11</A>, we obtain <!-- MATH
+ $y_i(t) =
+e^{(-\beta \epsilon_i - \alpha)(t-i)} y_0$
+ -->
+<IMG
+ WIDTH="165" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img80.png"
+ ALT="$y_i(t) =
+e^{(-\beta \epsilon_i - \alpha)(t-i)} y_0 $">. Given <!-- MATH
+ $e^{-\beta
+\epsilon_i - \alpha} < 1$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img81.png"
+ ALT="$e^{-\beta
+\epsilon_i - \alpha} &lt; 1$">, the cumulative gain <!-- MATH
+ $\varphi_t (\epsilon_i)
+= \sum\nolimits_{t' = i}^t {y_i ( {t'} )}$
+ -->
+<IMG
+ WIDTH="145" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img82.png"
+ ALT="$\varphi_t (\epsilon_i)
+= \sum\nolimits_{t' = i}^t {y_i ( {t'} )} $">, converges to <!-- MATH
+ $\varphi (
+\epsilon_i )$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img83.png"
+ ALT="$\varphi (
+\epsilon_i )$"> in Eq.&nbsp;<A HREF="#36">4</A>. Hence, the normalization of <!-- MATH
+ $\varphi _t
+(\epsilon_i )$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img84.png"
+ ALT="$\varphi _t
+(\epsilon_i )$"> by the initial value <IMG
+ WIDTH="19" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img45.png"
+ ALT="$y_0$">,
+<!-- MATH
+ $n_t ( \epsilon_i  ) = \{\varphi_t (\epsilon_i) - y_0\}/{y_0}$
+ -->
+<IMG
+ WIDTH="178" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img85.png"
+ ALT="$n_t ( \epsilon_i ) = \{\varphi_t (\epsilon_i) - y_0\}/{y_0}$">,
+approaches the Bose distribution in the thermodynamic limit <!-- MATH
+ $(t \to
+\infty)$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img86.png"
+ ALT="$(t \to
+\infty)$">. Indeed, in this limit,
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\mathop {\lim }\limits_{t \to \infty } M_t = \int {d\epsilon \,
+g(\epsilon)\sum\limits_{t'=0}^\infty {e^{- \beta \epsilon} y(t')} },
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="11"></A><IMG
+ WIDTH="235" HEIGHT="53" BORDER="0"
+ SRC="../img87.png"
+ ALT="\begin{displaymath}
+\mathop {\lim }\limits_{t \to \infty } M_t = \int {d\epsilon...
+...ilon)\sum\limits_{t'=0}^\infty {e^{- \beta \epsilon} y(t')} },
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(12)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <!-- MATH
+ $\sum\nolimits_{t'=0}^\infty y(t') = \varphi(\epsilon)$
+ -->
+<IMG
+ WIDTH="131" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img88.png"
+ ALT="$\sum\nolimits_{t'=0}^\infty y(t') = \varphi(\epsilon)$">.
+As the assumption of stationarity yields <!-- MATH
+ $\mathop {\lim }\limits_{t \to
+\infty } \ln b( t ) = \left\langle {\ln b} \right\rangle$
+ -->
+<IMG
+ WIDTH="134" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img89.png"
+ ALT="$\mathop {\lim }\limits_{t \to
+\infty } \ln b( t ) = \left\langle {\ln b} \right\rangle $">, we have <!-- MATH
+ $\mathop
+{\lim }\limits_{t \to \infty } {m \mathord{\left/ \right.} {M_t }} = e^{ -
+\alpha }$
+ -->
+<IMG
+ WIDTH="129" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img90.png"
+ ALT="$\mathop
+{\lim }\limits_{t \to \infty } {m \mathord{\left/ \right.} {M_t }} = e^{ -
+\alpha } $"> from Eq.&nbsp;<A HREF="#5">11</A>.
+By substituting this into Eq.&nbsp;<A HREF="#11">12</A>, we obtain a self-consistent
+equation,<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\int {d\epsilon \, g(\epsilon)\frac{1}{e^{\beta \epsilon + \alpha } - 1}} =
+N,
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="13"></A><IMG
+ WIDTH="171" HEIGHT="42" BORDER="0"
+ SRC="../img91.png"
+ ALT="\begin{displaymath}
+\int {d\epsilon \, g(\epsilon)\frac{1}{e^{\beta \epsilon + \alpha } - 1}} =
+N,
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(13)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <IMG
+ WIDTH="77" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img47.png"
+ ALT="$N = m/y_0$">.  Note that we can generalize  Eq.&nbsp;<A HREF="#1">7</A> such that we
+allow <IMG
+ WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img92.png"
+ ALT="$l (\geq 1)$"> new players to join the competition with initial
+value <IMG
+ WIDTH="19" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img45.png"
+ ALT="$y_0$"> at each step. From a similar argument, we obtain
+Eq.&nbsp;<A HREF="#13">13</A>, where <IMG
+ WIDTH="82" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img93.png"
+ ALT="$N = m / y_0 l$">.  Thus the deduced form Eq.&nbsp;<A HREF="#13">13</A>
+of the competition under stationarity assumption shows a formal analogy to
+those obtained for a quantum gas. The
+normalization factor <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img6.png"
+ ALT="$\alpha $"> plays the role of keeping
+the total resources gained by all players constant at every time step;
+in analogy to the chemical potential of a quantum gas which is introduced for the conservation of particle number. According to this reasoning, condensation of resources to a single player analogous to BEC is expected at low temperature where
+<IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img6.png"
+ ALT="$\alpha $"> vanishes.
+
+<P>
+To study this prediction, we simulate the multiplicative process
+Eq.&nbsp;<A HREF="#1">7</A>, adopting a standard density function, <BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+g(\epsilon) = C_\sigma \epsilon^{\sigma-1},
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="39"></A><IMG
+ WIDTH="103" HEIGHT="28" BORDER="0"
+ SRC="../img94.png"
+ ALT="\begin{displaymath}
+g(\epsilon) = C_\sigma \epsilon^{\sigma-1}, \end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(14)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <!-- MATH
+ $C_\sigma =
+\sigma / \epsilon_{\max}^\sigma$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img95.png"
+ ALT="$C_\sigma =
+\sigma / \epsilon_{\max}^\sigma$"> <IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img96.png"
+ ALT="$(\sigma&gt;1)$">. We find two distinct
+phases for the distribution of the normalized cumulative gain
+<!-- MATH
+ $n_t(\epsilon_i) = \{\varphi_t (\epsilon_i) - y_0\}/{y_0}$
+ -->
+<IMG
+ WIDTH="178" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img85.png"
+ ALT="$n_t ( \epsilon_i ) = \{\varphi_t (\epsilon_i) - y_0\}/{y_0}$">. At high
+<IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img97.png"
+ ALT="$T$">, <!-- MATH
+ $n_t(\epsilon_i)$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img1.png"
+ ALT="$n_t(\epsilon _i)$"> obeys the Bose distribution
+(FIG.&nbsp;<A HREF="#PT">1</A>-a). At low <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img97.png"
+ ALT="$T$">, the coordinated distribution breaks
+down: players with low energy (high ability) dominate a large fraction
+of the cumulative gain.  This condensate exists only below a
+critical point <IMG
+ WIDTH="44" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img98.png"
+ ALT="$\alpha=0$">. For, if <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img6.png"
+ ALT="$\alpha $"> is negative, <!-- MATH
+ $\varphi (
+\epsilon_i )$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img83.png"
+ ALT="$\varphi (
+\epsilon_i )$"> of the player with <!-- MATH
+ $\epsilon_i < -\alpha / \beta$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img99.png"
+ ALT="$\epsilon_i &lt; -\alpha / \beta$"> does
+not converge. Its normalized cumulative gain can not be incorporated
+in the integral in Eq.&nbsp;<A HREF="#13">13</A>; rather it has to be added as an extra
+term.  The critical temperature for this transition can be predicted
+in the usual way: Change of variables <!-- MATH
+ $y = \beta \epsilon$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img100.png"
+ ALT="$y = \beta \epsilon $"> and use of
+<IMG
+ WIDTH="44" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img98.png"
+ ALT="$\alpha=0$"> in Eq.&nbsp;<A HREF="#13">13</A> yields
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+N = \frac{\sigma
+}{(\beta \epsilon_{\max})^\sigma} \int_0^{\beta \epsilon _{\max} }
+{\frac{{y^{\sigma - 1} }}{e^y - 1} \,dy}.
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="15"></A><IMG
+ WIDTH="225" HEIGHT="47" BORDER="0"
+ SRC="../img101.png"
+ ALT="\begin{displaymath}
+N = \frac{\sigma
+}{(\beta \epsilon_{\max})^\sigma} \int_0^{\beta \epsilon _{\max} }
+{\frac{{y^{\sigma - 1} }}{e^y - 1} \,dy}. \end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(15)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+By approximating the
+upper limit of integral in Eq.&nbsp;<A HREF="#15">15</A> by infinity, the critical
+temperature <!-- MATH
+ $T_c({ = 1/\beta _c })$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img102.png"
+ ALT="$T_c({ = 1/\beta _c })$"> is given by
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+T_c^{( 1
+)} \sim \epsilon _{\max} \left\{ {N^{ - 1} \Gamma(\sigma + 1)
+\zeta(\sigma)} \right\}^{ - {\textstyle{\frac{1}{\sigma} }}},
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="17"></A><IMG
+ WIDTH="251" HEIGHT="35" BORDER="0"
+ SRC="../img103.png"
+ ALT="\begin{displaymath}
+T_c^{( 1
+)} \sim \epsilon _{\max} \left\{ {N^{ - 1} \Gamma(\...
+...
+\zeta(\sigma)} \right\}^{ - {\textstyle{\frac{1}{\sigma} }}}, \end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(16)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+for <IMG
+ WIDTH="51" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img104.png"
+ ALT="$N \ll 1$">. When <IMG
+ WIDTH="51" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img105.png"
+ ALT="$N \gg 1$">, this approximation is not valid because of
+the high critical temperature; instead, from   <!-- MATH
+ $e^y \simeq 1 +
+y$
+ -->
+<IMG
+ WIDTH="76" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img106.png"
+ ALT="$e^y \simeq 1 +
+y$"> and Eq.&nbsp;<A HREF="#15">15</A>,  one obtains
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+T_c^{(2)} \sim
+\epsilon_{\max}(1 - \sigma^{-1}) N.
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="32"></A><IMG
+ WIDTH="164" HEIGHT="28" BORDER="0"
+ SRC="../img107.png"
+ ALT="\begin{displaymath}
+T_c^{(2)} \sim
+\epsilon_{\max}(1 - \sigma^{-1}) N. \end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(17)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The transition can be seen in
+the occupation by the most capable player, defined by <!-- MATH
+ ${\varphi_t
+(\epsilon_{\min})} \mathord{\left/ {\sum\nolimits_j {\varphi_t (
+{\epsilon_j } )} } \right.}$
+ -->
+<IMG
+ WIDTH="143" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img108.png"
+ ALT="${\varphi_t
+(\epsilon_{\min})} \mathord{\left/ {\sum\nolimits_j {\varphi_t (
+{\epsilon_j } )} } \right.} $">. As <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img97.png"
+ ALT="$T$"> decreases below <IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img13.png"
+ ALT="$T_c$">, its
+occupation dramatically increases, supporting the prediction
+(FIG.&nbsp;<A HREF="#PT">1</A>-c).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="PT"></A><A NAME="220"></A>
+  <TABLE width="558">
+    <CAPTION ALIGN="BOTTOM"><STRONG>Figure 1:</STRONG>
+(a) Normalized cumulative gain <!-- MATH
+ $n_t(\epsilon_i)$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img1.png"
+ ALT="$n_t(\epsilon _i)$">
+for <IMG
+ WIDTH="47" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img2.png"
+ ALT="$m = 5$"> and <IMG
+ WIDTH="53" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img3.png"
+ ALT="$T&lt;T_c$"> (left), <IMG
+ WIDTH="53" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img4.png"
+ ALT="$T \approx T_c$"> (center) and <IMG
+ WIDTH="53" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img5.png"
+ ALT="$T&gt;T_c$">
+(right). Solid line is the Bose distribution with <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img6.png"
+ ALT="$\alpha $"> from
+Eq.&nbsp;<A HREF="#5">11</A>. Plus sign indicates a pioneer. Plots of the last ten
+entrants were excluded. (b) Numerical calculation of <IMG
+ WIDTH="23" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img7.png"
+ ALT="$\vert\alpha \vert$"> with
+<IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img6.png"
+ ALT="$\alpha $"> from Eq.&nbsp;<A HREF="#5">11</A>, averaged over 500&nbsp;trials. Symbols +, o, x
+indicate <IMG
+ WIDTH="47" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img2.png"
+ ALT="$m = 5$">, <IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img8.png"
+ ALT="$10$"> and <IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img9.png"
+ ALT="$20$">.  Change in the sign of <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img6.png"
+ ALT="$\alpha $">
+indicates the transition. Triangles on the abscissa are the transition
+temperatures from Eq.&nbsp;<A HREF="#32">17</A>; <!-- MATH
+ $T_c \approx 3.33$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img10.png"
+ ALT="$T_c \approx 3.33 $">, <IMG
+ WIDTH="32" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img11.png"
+ ALT="$6.67 $"> and <IMG
+ WIDTH="32" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img12.png"
+ ALT="$13.3 $">. Shown in inset is the dependence of <IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img13.png"
+ ALT="$T_c$"> on exponent <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img14.png"
+ ALT="$\sigma $"> for
+<IMG
+ WIDTH="55" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img15.png"
+ ALT="$m = 20$"> (dots) and the analytical solution from Eq.&nbsp;<A HREF="#32">17</A>, solid
+line. (c) Cumulative occupation by the most capable player was
+calculated from <!-- MATH
+ $\varphi_t (\epsilon _{\min}) / \sum\nolimits_j
+\varphi_t (\epsilon _j)$
+ -->
+<IMG
+ WIDTH="139" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img109.png"
+ ALT="$ \varphi_t (\epsilon _{\min}) / \sum\nolimits_j
+\varphi_t (\epsilon _j) $"> at
+<IMG
+ WIDTH="55" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img17.png"
+ ALT="$t = 200$">. Symbols as in (b). Dashed line, occupation by pioneer for <IMG
+ WIDTH="55" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img15.png"
+ ALT="$m = 20$">. In all simulations, <IMG
+ WIDTH="48" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img18.png"
+ ALT="$y_0 = 1 $">, <IMG
+ WIDTH="38" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img19.png"
+ ALT="$l = 1$">, <IMG
+ WIDTH="43" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img20.png"
+ ALT="$\sigma = 3$"> and <!-- MATH
+ $\epsilon
+_{\max } = 1$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img110.png"
+ ALT="$\epsilon
+_{\max } = 1$">.</CAPTION>
+<TR>
+      <TD height="84">
+        <div align="center"><img src="../FIG1.jpg" width="506" height="557"></div>
+      </TD>
+    </TR>
+</TABLE>
+</DIV>
+
+<P>
+We verified the existence of a BEC analogue in a discrete
+multiplicative process, as was shown in a continuous model
+[<A
+ HREF="../node1.html#Bianconi01">Bianconi and Barabasi(2001)</A>]. However, we emphasize that, as a matter of
+principle, our classical dynamical system is not equivalent to a
+quantum gas. The most important difference is based on the following
+observation. The time evolution of each player's gain
+is different above and below the predicted <IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img13.png"
+ ALT="$T_c$">. Above <IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img13.png"
+ ALT="$T_c$">, the
+gains of all players monotonically decrease.
+Below <IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img13.png"
+ ALT="$T_c$">, not all of them show monotonic behavior, and the
+competitive dynamics is disordered.  The
+observed nonequilibrium phase transition from ordered to disordered
+state occurs as a violation of the stationarity in weighted mean
+ability, <IMG
+ WIDTH="94" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img112.png"
+ ALT="$M_t/(m+y_0)$">.  It is stationary if the
+gain of all players monotonically decreases to zero, which allows the
+argument below Eq.&nbsp;<A HREF="#38">10</A>. Otherwise, if the gain of one player rises
+to dominate the resources, the weighted mean ability approaches the
+ability of this one dominant player.  Then due to the replacement of
+the dominant player upon the entrance of a player with higher ability,
+we observe an irreversible increase of the weighted mean ability,
+indicating that the system is now <I>evolving</I>. Thus dominance
+and evolution are aspects of nonstationary dynamics. We emphasize that
+the phase transition yielding evolution does not happen in
+equilibrium systems.
+
+<P>
+We now consider application of the theory to competition of clonal strains of asexual
+<I>Escherichia coli</I> serially propagated on glucose-limited medium. The population dynamics is most suitably described by a stochastic branching process with
+mutation and selection. Consider the <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img26.png"
+ ALT="$i$">th strain with
+fitness <IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img54.png"
+ ALT="$a_i$">, mutation rate <IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img113.png"
+ ALT="$\eta$">, and population size
+<IMG
+ WIDTH="35" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img52.png"
+ ALT="$y_i(t)$">.
+Let <IMG
+ WIDTH="63" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img114.png"
+ ALT="$y_i(t+1)$"> (<!-- MATH
+ $i = 1, \cdots, Q(t)$
+ -->
+<IMG
+ WIDTH="105" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img115.png"
+ ALT="$i = 1, \cdots, Q(t)$">) be given by
+a Poisson distribution with mean
+<!-- MATH
+ $\lambda_i = \tilde{m} \frac { (1-\eta) a_i y_i(t) }{\sum_{i=0}^{Q(t)}
+{ a_i y_i(t)} }.$
+ -->
+<IMG
+ WIDTH="142" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img116.png"
+ ALT="$ \lambda_i = \tilde{m} \frac { (1-\eta) a_i y_i(t) }{\sum_{i=0}^{Q(t)}
+{ a_i y_i(t)} }.$">
+Here <IMG
+ WIDTH="35" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img117.png"
+ ALT="$Q(t)$"> is the number of mutants that were
+generated and that survived the initial step since the process
+started.
+The number of mutants produced at time <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img53.png"
+ ALT="$t$">, <IMG
+ WIDTH="112" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img118.png"
+ ALT="$Q(t+1)-Q(t)$">, is drawn from a
+Poisson distribution with mean
+<!-- MATH
+ $l = \tilde{m} \frac { \sum_{j=0}^{Q(t)} {\eta a_j y_j(t)} } {
+\sum_{i=0}^{Q(t)} { a_i y_i(t)} }$
+ -->
+<IMG
+ WIDTH="137" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img119.png"
+ ALT="$ l = \tilde{m} \frac { \sum_{j=0}^{Q(t)} {\eta a_j y_j(t)} } {
+\sum_{i=0}^{Q(t)} { a_i y_i(t)} }$">.
+Note that the average total number of cells at time <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img53.png"
+ ALT="$t$"> is fixed to
+<!-- MATH
+ $\sum_{i=0}^{Q(t)} \lambda_i + l = \tilde{m}$
+ -->
+<IMG
+ WIDTH="123" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img120.png"
+ ALT="$\sum_{i=0}^{Q(t)} \lambda_i + l = \tilde{m}$"> due to the normalization
+factor in the above equations.
+
+<P>
+It is clear that our process Eq.&nbsp;<A HREF="#1">7</A> is a deterministic approximation
+of this stochastic population dynamics. A monotonically decreasing
+fitness distribution <IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img55.png"
+ ALT="$\rho(a)$"> should be used because most mutations
+are likely to be deleterious [<A
+ HREF="../node1.html#Fisher58">Fisher(1958)</A>].  We thus decided to use
+the same <IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img55.png"
+ ALT="$\rho(a)$"> used in the analysis of the deterministic model (and
+the state density Eq.&nbsp;<A HREF="#39">14</A>) because it satisfies this basic tenet.  Our
+results do not depend, however, on the precise form of the state
+density; other parameterizations of the fitness distribution of
+<IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img55.png"
+ ALT="$\rho(a)$"> such as the beta distribution defined on <IMG
+ WIDTH="64" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img121.png"
+ ALT="$ a \in [0,1]$">
+yield essentially the same results (not shown).
+
+<P>
+<I>Routes to Adaptive Evolution:</I>
+A strong prediction of the theory is the existence of a singular point
+on the emergence of evolution. We observed the transition from
+stationary to non-stationary state in the numerical simulation of the
+stochastic process by decreasing the temperature <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img97.png"
+ ALT="$T$">. The
+transition point is predictable from the critical temperature <IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img13.png"
+ ALT="$T_c$">
+obtained by the deterministic theory (Eq.&nbsp;<A HREF="#32">17</A>). Above <IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img13.png"
+ ALT="$T_c$">, dominance
+by a capable player (strain) appears. Below <IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img13.png"
+ ALT="$T_c$">, the dynamics are
+governed by the random drift of dominant strains. The random fluctuation of dominant
+strains is the most striking difference from dynamics of the deterministic model.
+
+<P>
+Another route to generate an
+evolutionary development is to increase <IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img13.png"
+ ALT="$T_c$"> by fixing <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img97.png"
+ ALT="$T$">.  The
+critical temperature given by Eq.&nbsp;<A HREF="#32">17</A> is proportional to <IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img122.png"
+ ALT="$N$">, which is related to
+mutation rate through <!-- MATH
+ $\eta = {l} /(m + l) = (N + 1)^{-1}$
+ -->
+<IMG
+ WIDTH="190" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img123.png"
+ ALT="$\eta = {l} /(m + l) = (N + 1)^{-1}$">.
+We thus obtain
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+T_c \sim \epsilon_{\max}(1-\sigma^{-1}) ( \eta^{-1} - 1).
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="23"></A><IMG
+ WIDTH="203" HEIGHT="28" BORDER="0"
+ SRC="../img124.png"
+ ALT="\begin{displaymath}
+T_c \sim \epsilon_{\max}(1-\sigma^{-1}) ( \eta^{-1} - 1). \end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(18)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Given <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img97.png"
+ ALT="$T$">, decreasing <IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img113.png"
+ ALT="$\eta$"> increases <IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img13.png"
+ ALT="$T_c$"> such that <IMG
+ WIDTH="53" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img3.png"
+ ALT="$T&lt;T_c$"> is achieved. A sufficiently low mutation rate not only prevents 
+deleterious offspring but is necessary for adaptive evolution itself. The deleterious 
+role of high mutation rate to adaptive evolution termed as `clonal interference' 
+was observed in experiments of <I>E. coli</I> competition [<A
+ HREF="../node1.html#deVisser99">de&nbsp;Visser et&nbsp;al.(1999)</A>], and theoretically 
+investigated elsewhere [<A
+ HREF="../node1.html#Gerrish98">Gerrish and Lenski(1998)</A>]. 
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="SOC"></A><A NAME="224"></A> 
+  <table width="587" height="27">
+    <caption align="BOTTOM"><strong>Figure:</strong> A stochastic branching process 
+    with mutation and selection described in the text approaches a critical state 
+    by natural selection. Average total population is <img
+ width="63" height="14" align="BOTTOM" border="0"
+ src="../img125.png"
+ alt="$\tilde{m}=100$">. Simulation started with <img
+ width="28" height="14" align="BOTTOM" border="0"
+ src="../img23.png"
+ alt="$100$"> unique strains whose fitness is drawn from a fitness distribution 
+    with <img
+ width="45" height="14" align="BOTTOM" border="0"
+ src="../img24.png"
+ alt="$T=1$">, <img
+ width="59" height="31" align="MIDDLE" border="0"
+ src="../img25.png"
+ alt="$\sigma = 3/2$"> and 
+    <!-- MATH
+ $\epsilon_{\max}=1$
+ -->
+    <img
+ width="64" height="28" align="MIDDLE" border="0"
+ src="../img110.png"
+ alt="$\epsilon
+_{\max } = 1$">. The <img
+ width="10" height="14" align="BOTTOM" border="0"
+ src="../img26.png"
+ alt="$i$">th strain produces mutants (mutation rate <img
+ width="62" height="28" align="MIDDLE" border="0"
+ src="../img27.png"
+ alt="$\eta = 0.01$">) whose fitness is drawn from a fitness distribution with 
+    <img
+ width="19" height="29" align="MIDDLE" border="0"
+ src="../img28.png"
+ alt="$T_i$"> given by Eq.&nbsp;<a href="#40">19</a> (<img
+ width="42" height="28" align="MIDDLE" border="0"
+ src="../img29.png"
+ alt="$\gamma = 2$">). (a) Average temperature of the system stays near the transition 
+    point <img
+ width="57" height="29" align="MIDDLE" border="0"
+ src="../img30.png"
+ alt="$T_c = 33$">. In early stages, the average temperature increases, indicating 
+    initial adaptive evolution. (b) Number of existing strains at each steps (Diversity) 
+    decreases during initial adaptive evolution. However, further dominance by 
+    a few species is suppressed as the system approaches near criticality. </caption>
+    <tr>
+      <td height="100"><img src="../FIG2.jpg" width="512" height="297"></td>
+    </tr>
+  </table><p>&nbsp;</p></DIV>
+
+<I>Approach to the Transition Point by Natural Selection:</I> An important question 
+is wether <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img97.png"
+ ALT="$T$"> is comparable to <IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img13.png"
+ ALT="$T_c$"> under natural conditions. Evolutionary progress observed in laboratory 
+experiments of <I>E. coli</I> competition shows alteration of long periods of 
+relative stasis with short bursts of rapid change caused by rare beneficial mutations 
+[<A
+ HREF="../node1.html#Elena96">Elena et&nbsp;al.(1996)</A>]. Therefore, empirically 
+observed dynamics is consistent with model behavior at <IMG
+ WIDTH="53" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img3.png"
+ ALT="$T&lt;T_c$"> in our construct at least during early stages of competition. 
+However, we argue that there exists a biologically plausible scenario in which 
+<IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img97.png"
+ ALT="$T$"> may eventually become comparable to <IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img13.png"
+ ALT="$T_c$"> by internally tuning the parameter [<A
+ HREF="../node1.html#Bak87">Bak et&nbsp;al.(1987)</A>,<A
+ HREF="../node1.html#Kauffman91">Kauffman and Johnsen(1991)</A>]. 
+<P>
+Instead of using a common fitness distribution for all strains, it
+is physiologically plausible to assume that each strain has its
+unique fitness distribution. We assume that fitness of mutants originating
+from the <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="../img26.png"
+ ALT="$i$">th strain of fitness <IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img54.png"
+ ALT="$a_i$"> is drawn from a fitness distribution
+characterized by the temperature <!-- MATH
+ $T_i = 1/\beta_i$
+ -->
+<IMG
+ WIDTH="70" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img127.png"
+ ALT="$T_i = 1/\beta_i$">.
+Since most mutants are deleterious, the average fitness
+produced with <IMG
+ WIDTH="18" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img128.png"
+ ALT="$\beta_i$"> should be less than <IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img54.png"
+ ALT="$a_i$"> (i.e. <!-- MATH
+ $\left\langle
+a \right\rangle = e^{ - \beta_i \left\langle \varepsilon
+\right\rangle }< a_i$
+ -->
+<IMG
+ WIDTH="128" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img129.png"
+ ALT="$\left\langle
+a \right\rangle = e^{ - \beta_i \left\langle \varepsilon
+\right\rangle }&lt; a_i$">, where <!-- MATH
+ $\left\langle \varepsilon \right\rangle
+= \varepsilon _{\max } {\sigma \mathord{\left/ {\vphantom {\sigma
+{\left( {\sigma + 1} \right)}}} \right.  \kern-\nulldelimiterspace}
+{\left( {\sigma + 1} \right)}}$
+ -->
+<IMG
+ WIDTH="144" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img130.png"
+ ALT="$\left\langle \varepsilon \right\rangle
+= \varepsilon _{\max } {\sigma \mathord{...
+...1} \right)}}} \right. \kern-\nulldelimiterspace}
+{\left( {\sigma + 1} \right)}}$"> for the state density
+Eq.&nbsp;<A HREF="#39">14</A>.). Henceforth, the inverse temperature <IMG
+ WIDTH="18" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img128.png"
+ ALT="$\beta_i$"> is given by
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\beta _i = - \gamma \left\langle \varepsilon
+\right\rangle ^{ - 1} \ln a_i,
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="40"></A><IMG
+ WIDTH="133" HEIGHT="28" BORDER="0"
+ SRC="../img131.png"
+ ALT="\begin{displaymath}
+\beta _i = - \gamma \left\langle \varepsilon
+\right\rangle ^{ - 1} \ln a_i, \end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(19)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <IMG
+ WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img132.png"
+ ALT="$\gamma &gt; 1$"> to satisfy
+<!-- MATH
+ $\left\langle a \right\rangle < a_i$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img133.png"
+ ALT="$\left\langle a \right\rangle &lt; a_i$">.
+
+<P>
+At the beginning of adaptive evolution, strains with higher fitness are
+chosen by natural selection. Dominance by strains with high fitness
+increases the average temperature of the population. Suppose that
+adaptive evolution achieves a neutral condition, <IMG
+ WIDTH="53" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="../img5.png"
+ ALT="$T&gt;T_c$">. It is then by
+chance wether or not a certain strain is picked up. Since a dominant
+strain is prone to produce mutants inferior to the dominant strain
+itself, those deleterious strains are likely to be picked up, and the
+average temperature decreases.
+There are ever going cycles of adaptive evolution, neutral state then collapse of the dominance (FIG.&nbsp;<A HREF="#SOC">2</A>).
+The advantage of the dynamics that approaches
+criticality is rather clear. It allows initial adaptive evolution,
+permanently eliminating unfavorable genotypes, but then significantly
+slowing down or preventing further evolution
+and dominance: close to the  critical state,
+strains can co-exist for a substantial period of time.
+Diversity introduced by the dynamics near criticality is clearly advantageous for the whole
+ecosystem, which is exposed to global environmental changes. We thus conjecture that this strategy might be taken by some haploid species.
+
+<P>
+We thank H.G. Schuster and S. Shinomoto for very helpful
+comments. Supported by the Murata Overseas Scholarship Foundation (HS)
+and NIH grant R01 NS43188-01A1 (EN).
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html5"
+  HREF="../node1.html">Bibliography</A>
+<LI><A NAME="tex2html6"
+  HREF="../node2.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3"
+  HREF="../node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:///C|/TEXUTILS/L2H/icons/next.png"></A> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:///C|/TEXUTILS/L2H/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:///C|/TEXUTILS/L2H/icons/prev_g.png">   
+<BR>
+<B> Next:</B> <A NAME="tex2html4"
+  HREF="../node1.html">Bibliography</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+hideaki
+2005-10-05
+</ADDRESS>
+</BODY>
+</HTML>

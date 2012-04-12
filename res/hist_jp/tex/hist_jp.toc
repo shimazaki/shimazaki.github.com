@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}序論}{1}
+\contentsline {section}{\numberline {2}方法 }{2}
+\contentsline {subsection}{\numberline {2.1}スパイク時系列からのヒストグラムの作成}{2}
+\contentsline {subsection}{\numberline {2.2}平均積分二乗誤差及びコスト関数の導入}{3}
+\contentsline {section}{\numberline {3}議論と発展}{4}
+\contentsline {subsection}{\numberline {3.1}最適区間幅の理論値のスケーリング則と発散}{4}
+\contentsline {subsection}{\numberline {3.2}データからのスケーリング指数の同定とヒストグラム作成に必要な最小試行回数の推定　}{4}

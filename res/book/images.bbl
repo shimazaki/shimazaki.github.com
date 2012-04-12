@@ -1,0 +1,62 @@
+\begin{thebibliography}{}
+
+\bibitem[Barbieri et~al., 2001]{Barbieri01}
+Barbieri, R., Quirk, M.~C., Frank, L.~M., Wilson, M.~A., and Brown, E.~N.
+  (2001).
+\newblock Construction and analysis of non-poisson stimulus-response models of
+  neural spiking activity.
+\newblock {\em J Neurosci Methods}, 105(1):25--37.
+
+\bibitem[Berman, 1981]{Berman81}
+Berman, M. (1981).
+\newblock Inhomogeneous and modulated gamma processes.
+\newblock {\em Biometrika}, 68(1):143--152.
+
+\bibitem[Brown et~al., 2001]{Brown01}
+Brown, E.~N., Barbieri, R., Ventura, V., Kass, R.~E., and Frank, L.~M. (2001).
+\newblock The time-rescaling theorem and its application to neural spike train
+  data analysis.
+\newblock {\em Neural Computation}, 14(2):325--346.
+
+\bibitem[Cox, 1962]{Cox62}
+Cox, R.~D. (1962).
+\newblock {\em Renewal Theory}.
+\newblock John Wiley \& Sons Inc, London.
+
+\bibitem[Daley and Vere-Jones, 1988]{Daley88}
+Daley, D. and Vere-Jones, D. (1988).
+\newblock {\em An Introduction to the Theory of Point Processes}.
+\newblock Springer-Verlag, New York, USA.
+
+\bibitem[Heyman and Sobel, 1990]{Heyman90}
+Heyman, D. and Sobel, M., editors (1990).
+\newblock {\em Stochastic Models}, volume~2 of {\em Handbooks in Operations
+  Research and Management Science}.
+\newblock Elsevier Science Publishers.
+
+\bibitem[Johnson, 1996]{Johnson96}
+Johnson, D.~H. (1996).
+\newblock Point process models of single-neuron discharges.
+\newblock {\em Journal of Computational Neuroscience}, 3(4):275--299.
+
+\bibitem[Ogata, 1981]{Ogata81}
+Ogata, Y. (1981).
+\newblock On lewis' simulation method for point processes.
+\newblock 27(1):23--31.
+
+\bibitem[Shimazaki and Shinomoto, 2007]{Shimazaki07a}
+Shimazaki, H. and Shinomoto, S. (2007).
+\newblock A method for selecting the bin size of a time histogram.
+\newblock {\em Neural Comput}, 19(6):1503--1527.
+
+\bibitem[Shimazaki and Shinomoto, 2010]{Shimazaki10}
+Shimazaki, H. and Shinomoto, S. (2010).
+\newblock Kernel bandwidth optimization in spike rate estimation.
+\newblock {\em J Comput Neurosci}, 29:171--182.
+
+\bibitem[Snyder, 1975]{Snyder75}
+Snyder, D. (1975).
+\newblock {\em Random Point Processes}.
+\newblock John Wiley \& Sons, Inc., New York.
+
+\end{thebibliography}

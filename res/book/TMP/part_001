@@ -1,0 +1,2711 @@
+
+\documentclass<<1>>jbook<<1>>
+\usepackage<<2>>amsfonts<<2>>
+\usepackage<<3>>amsmath<<3>>
+\usepackage<<4>>makeidx<<4>>
+\usepackage<<5>>amssymb<<5>>
+\usepackage<<6>>enumerate<<6>>
+\usepackage<<7>>fancybox<<7>>
+\usepackage[dvips]<<8>>graphicx<<8>>
+\begin<<2966>>tex2html_deferred<<2966>>\setcounter<<9>>MaxMatrixCols<<9>><<10>>30<<10>>\end<<2967>>tex2html_deferred<<2967>>
+\begin<<2968>>tex2html_deferred<<2968>>\providedcommand<<11>>U<<11>>[1]<<1621>>\protect\rule<<12>>.1in<<12>><<13>>.1in<<13>><<1621>>\end<<2969>>tex2html_deferred<<2969>>
+\begin<<2970>>tex2html_nowrap<<2970>>
+\newedtheorem<<14>>theorem<<14>><<15>>定理<<15>>\end<<2971>>tex2html_nowrap<<2971>> \begin<<2972>>tex2html_nowrap<<2972>>
+\newedtheorem<<16>>acknowledgement<<16>>[theorem]<<17>>承認<<17>>\end<<2973>>tex2html_nowrap<<2973>> \begin<<2974>>tex2html_nowrap<<2974>>
+\newedtheorem<<18>>algorithm<<18>>[theorem]<<19>>アルゴリズム<<19>>\end<<2975>>tex2html_nowrap<<2975>> \begin<<2976>>tex2html_nowrap<<2976>>
+\newedtheorem<<20>>axiom<<20>>[theorem]<<21>>公理<<21>>\end<<2977>>tex2html_nowrap<<2977>> \begin<<2978>>tex2html_nowrap<<2978>>
+\newedtheorem<<22>>case<<22>>[theorem]<<23>>場合<<23>>\end<<2979>>tex2html_nowrap<<2979>> \begin<<2980>>tex2html_nowrap<<2980>>
+\newedtheorem<<24>>claim<<24>>[theorem]<<25>>主張<<25>>\end<<2981>>tex2html_nowrap<<2981>> \begin<<2982>>tex2html_nowrap<<2982>>
+\newedtheorem<<26>>conclusion<<26>>[theorem]<<27>>結論<<27>>\end<<2983>>tex2html_nowrap<<2983>> \begin<<2984>>tex2html_nowrap<<2984>>
+\newedtheorem<<28>>condition<<28>>[theorem]<<29>>条件<<29>>\end<<2985>>tex2html_nowrap<<2985>> \begin<<2986>>tex2html_nowrap<<2986>>
+\newedtheorem<<30>>conjecture<<30>>[theorem]<<31>>推論<<31>>\end<<2987>>tex2html_nowrap<<2987>> \begin<<2988>>tex2html_nowrap<<2988>>
+\newedtheorem<<32>>corollary<<32>>[theorem]<<33>>系<<33>>\end<<2989>>tex2html_nowrap<<2989>> \begin<<2990>>tex2html_nowrap<<2990>>
+\newedtheorem<<34>>criterion<<34>>[theorem]<<35>>基準<<35>>\end<<2991>>tex2html_nowrap<<2991>> \begin<<2992>>tex2html_nowrap<<2992>>
+\newedtheorem<<36>>definition<<36>>[theorem]<<37>>定義<<37>>\end<<2993>>tex2html_nowrap<<2993>> \begin<<2994>>tex2html_nowrap<<2994>>
+\newedtheorem<<38>>example<<38>>[theorem]<<39>>例<<39>>\end<<2995>>tex2html_nowrap<<2995>> \begin<<2996>>tex2html_nowrap<<2996>>
+\newedtheorem<<40>>exercise<<40>>[theorem]<<41>>練習<<41>>\end<<2997>>tex2html_nowrap<<2997>> \begin<<2998>>tex2html_nowrap<<2998>>
+\newedtheorem<<42>>lemma<<42>>[theorem]<<43>>補題<<43>>\end<<2999>>tex2html_nowrap<<2999>> \begin<<3000>>tex2html_nowrap<<3000>>
+\newedtheorem<<44>>notation<<44>>[theorem]<<45>>記号<<45>>\end<<3001>>tex2html_nowrap<<3001>> \begin<<3002>>tex2html_nowrap<<3002>>
+\newedtheorem<<46>>problem<<46>>[theorem]<<47>>問題<<47>>\end<<3003>>tex2html_nowrap<<3003>> \begin<<3004>>tex2html_nowrap<<3004>>
+\newedtheorem<<48>>proposition<<48>>[theorem]<<49>>命題<<49>>\end<<3005>>tex2html_nowrap<<3005>> \begin<<3006>>tex2html_nowrap<<3006>>
+\newedtheorem<<50>>remark<<50>>[theorem]<<51>>記事<<51>>\end<<3007>>tex2html_nowrap<<3007>> \begin<<3008>>tex2html_nowrap<<3008>>
+\newedtheorem<<52>>solution<<52>>[theorem]<<53>>解法<<53>>\end<<3009>>tex2html_nowrap<<3009>> \begin<<3010>>tex2html_nowrap<<3010>>
+\newedtheorem<<54>>summary<<54>>[theorem]<<55>>要約<<55>>\end<<3011>>tex2html_nowrap<<3011>> \begin<<3012>>tex2html_nowrap<<3012>>
+\newedenvironment<<56>>proof<<56>>[1][証明]<<1622>>\noindent\textbf<<57>>#1.<<57>> <<1622>><<1623>>\ \rule<<58>>0.5em<<58>><<59>>0.5em<<59>><<1623>>\end<<3013>>tex2html_nowrap<<3013>> 
+\makeindex
+\begin<<60>>document<<60>>
+\begin<<3014>>tex2html_deferred<<3014>>\par\end<<3015>>tex2html_deferred<<3015>>
+\frontmatter
+\title<<1624>>\textbf<<61>>神経科学のため<tex2html_comment_mark>16
+の統計<<61>><<1624>>
+\begin<<3016>>tex2html_deferred<<3016>>\author<<62>>島崎秀昭\\  マサチューセッツ<tex2html_comment_mark>17
+工科大学\\  理化学研究所 脳科<tex2html_comment_mark>18
+学総合研究センター<<62>>\end<<3017>>tex2html_deferred<<3017>>
+\maketitle
+\begin<<3018>>tex2html_deferred<<3018>>\tableofcontents\end<<3019>>tex2html_deferred<<3019>>
+\begin<<3020>>tex2html_deferred<<3020>>\par\end<<3021>>tex2html_deferred<<3021>>
+\chapter*<<63>>はじめに<<63>>
+\begin<<3022>>tex2html_deferred<<3022>>\par\end<<3023>>tex2html_deferred<<3023>>
+\markboth<<64>>序文<<64>><<65>>序文<<65>>
+\begin<<3024>>tex2html_deferred<<3024>>\par\end<<3025>>tex2html_deferred<<3025>>
+このページは, 神経<tex2html_comment_mark>19
+スパイク時系列デ<tex2html_comment_mark>20
+ータを扱う際の基<tex2html_comment_mark>21
+本事項をまとめた<tex2html_comment_mark>22
+ものです.
+\begin<<3026>>tex2html_deferred<<3026>>\par\end<<3027>>tex2html_deferred<<3027>>
+\begin<<3028>>tex2html_deferred<<3028>>\bigskip\end<<3029>>tex2html_deferred<<3029>>内容に不備のあ<tex2html_comment_mark>23
+る場合はメールに<tex2html_comment_mark>24
+てご連絡頂ければ<tex2html_comment_mark>25
+幸いです.
+\begin<<3030>>tex2html_deferred<<3030>>\par\end<<3031>>tex2html_deferred<<3031>>
+\begin<<3032>>tex2html_deferred<<3032>>\pagebreak\end<<3033>>tex2html_deferred<<3033>>島崎秀昭 2008年8月
+\begin<<3034>>tex2html_deferred<<3034>>\par\end<<3035>>tex2html_deferred<<3035>>
+\quad\mainmatter
+\begin<<3036>>tex2html_deferred<<3036>>\par\end<<3037>>tex2html_deferred<<3037>>
+\part<<66>>スパイク時系列モ<tex2html_comment_mark>26
+デル<<66>>
+\begin<<3038>>tex2html_deferred<<3038>>\par\end<<3039>>tex2html_deferred<<3039>>
+\chapter<<67>>定常スパイク時<tex2html_comment_mark>27
+系列モデル<<67>>
+\begin<<3040>>tex2html_deferred<<3040>>\par\end<<3041>>tex2html_deferred<<3041>>
+\section<<68>>定常ポワソン過程<<68>>
+\begin<<3042>>tex2html_deferred<<3042>>\par\end<<3043>>tex2html_deferred<<3043>>
+\subsection<<69>>指数分布<<69>>
+\begin<<3044>>tex2html_deferred<<3044>>\par\end<<3045>>tex2html_deferred<<3045>>
+\begin<<2042>>tex2html_wrap_inline<<2042>>$X$\end<<2043>>tex2html_wrap_inline<<2043>>が確率分布関数\begin<<2044>>tex2html_wrap_inline<<2044>>$f\left(  x\right)
+=\lambda e^<<70>>-\lambda x<<70>>$\end<<2045>>tex2html_wrap_inline<<2045>>\marginpar<<1625>>確率密度<tex2html_comment_mark>28
+分布(probability density function, p.d.f.)
+\begin<<3046>>tex2html_deferred<<3046>>\par\end<<3047>>tex2html_deferred<<3047>>
+\begin<<1936>>displaymath<<1936>>
+f\left(  t\right)  =\lim_<<71>>\Delta x\rightarrow0+<<71>>\frac<<72>>P\left(  t;SPMlt;X\leq
+t+\Delta\right)  <<72>><<73>>\Delta<<73>><tex2html_comment_mark>30
+\end<<1989>>displaymath<<1989>>
+<<74>><<74>><<1625>>（ただし\begin<<2046>>tex2html_wrap_inline<<2046>>$x$\end<<2047>>tex2html_wrap_inline<<2047>>は非負の<tex2html_comment_mark>31
+実数）に従うときに,
+\begin<<2048>>tex2html_wrap_inline<<2048>>$X$\end<<2049>>tex2html_wrap_inline<<2049>>は指数分布<tex2html_comment_mark>32
+\index<<75>>exponential distribution<<75>><tex2html_comment_mark>33
+に従うという。指<tex2html_comment_mark>34
+数分布は記憶のな<tex2html_comment_mark>35
+い(memoryless)分布と言われる
+(無記憶性: loss of memory property, memoryless
+property\index<<76>>memoryless property<<76>><tex2html_comment_mark>37
+)。ここで記憶がな<tex2html_comment_mark>38
+いとは\begin<<2050>>tex2html_wrap_inline<<2050>>$s,t\geq0$\end<<2051>>tex2html_wrap_inline<<2051>>に対して<tex2html_comment_mark>39
+\begin<<77>>equation<<77>>
+P\left(  X;SPMgt;s+t|X;SPMgt;t\right)  =P\left(  X;SPMgt;s\right)  \label<<78>>memoryless<<78>><tex2html_comment_mark>40
+\end<<79>>equation<<79>>
+が成り立つことを<tex2html_comment_mark>41
+言う. 例として, 数年<tex2html_comment_mark>42
+前に買った冷蔵庫<tex2html_comment_mark>43
+があったとしよう.
+購入当初は新品だ<tex2html_comment_mark>44
+った冷蔵庫もやが<tex2html_comment_mark>45
+て古くなり, いつか<tex2html_comment_mark>46
+は壊れてしまう. こ<tex2html_comment_mark>47
+こで冷蔵庫が壊れ<tex2html_comment_mark>48
+るまでの耐久年数<tex2html_comment_mark>49
+の分布が記憶のな<tex2html_comment_mark>50
+しの特徴を持つと<tex2html_comment_mark>51
+しよう. 購入した冷<tex2html_comment_mark>52
+蔵庫は\begin<<2052>>tex2html_wrap_inline<<2052>>$t$\end<<2053>>tex2html_wrap_inline<<2053>>年経った現<tex2html_comment_mark>53
+在も順調に動いて<tex2html_comment_mark>54
+いる. さて, この冷蔵<tex2html_comment_mark>55
+庫はあと何年もつ<tex2html_comment_mark>56
+だろうか. 今後\begin<<2054>>tex2html_wrap_inline<<2054>>$s$\end<<2055>>tex2html_wrap_inline<<2055>>年も<tex2html_comment_mark>57
+つ確率は条件付き<tex2html_comment_mark>58
+確率\begin<<2056>>tex2html_wrap_inline<<2056>>$P\left(  X;SPMgt;s+t|X;SPMgt;t\right)  $\end<<2057>>tex2html_wrap_inline<<2057>>で表す<tex2html_comment_mark>59
+ことができる. とこ<tex2html_comment_mark>60
+ろが記憶なしの特<tex2html_comment_mark>61
+徴\ref<<80>>memoryless<<80>>を使えば, こ<tex2html_comment_mark>62
+の確率は\begin<<2058>>tex2html_wrap_inline<<2058>>$P\left(  X;SPMgt;s\right)  $\end<<2059>>tex2html_wrap_inline<<2059>>とな<tex2html_comment_mark>63
+ってしまう. つまり,
+記憶なしとは, \begin<<2060>>tex2html_wrap_inline<<2060>>$t$\end<<2061>>tex2html_wrap_inline<<2061>>年間<tex2html_comment_mark>64
+動いていたことが<tex2html_comment_mark>65
+これから先の予測<tex2html_comment_mark>66
+にとって, なんの情<tex2html_comment_mark>67
+報にもならないと<tex2html_comment_mark>68
+いうことを意味し<tex2html_comment_mark>69
+ている.
+\begin<<3048>>tex2html_deferred<<3048>>\par\end<<3049>>tex2html_deferred<<3049>>
+さて, ここで問題と<tex2html_comment_mark>70
+なるのは, どのよう<tex2html_comment_mark>71
+な分布が記憶なし<tex2html_comment_mark>72
+の特徴を持つかで<tex2html_comment_mark>73
+ある. Bayesの定理から<tex2html_comment_mark>74
+\begin<<81>>align*<<81>>
+P\left(  X;SPMgt;s+t|X;SPMgt;t\right)   ;SPMamp;  =\frac<<82>>P\left(  X;SPMgt;s+t,X;SPMgt;t\right)  <<82>><<83>>P\left(
+X;SPMgt;t\right)  <<83>>\\ 
+;SPMamp;  =\frac<<84>>P\left(  X;SPMgt;s+t\right)  <<84>><<85>>P\left(  X;SPMgt;t\right)  <<85>><tex2html_comment_mark>75
+\end<<86>>align*<<86>>
+これを\ref<<87>>memoryless<<87>>に代入<tex2html_comment_mark>76
+して<tex2html_comment_mark>77
+\begin<<1937>>displaymath<<1937>>
+P\left(  X;SPMgt;s+t\right)  =P\left(  X;SPMgt;s\right)  P\left(  X;SPMgt;t\right)
+\end<<1990>>displaymath<<1990>>
+そこで関係式\begin<<2062>>tex2html_wrap_inline<<2062>>$w\left(  s+t\right)
+=w\left(  s\right)  w\left(  t\right)  $\end<<2063>>tex2html_wrap_inline<<2063>>を満た<tex2html_comment_mark>78
+す関数はどんな関<tex2html_comment_mark>79
+数か調べてみよう<tex2html_comment_mark>80
+\marginpar<<88>>対数をとると<tex2html_comment_mark>81
+\begin<<1938>>displaymath<<1938>>
+\log w\left(  s+t\right)  =\log w\left(  s\right)  +\log w\left(  t\right)
+\end<<1991>>displaymath<<1991>>
+\begin<<3050>>tex2html_deferred<<3050>>\par\end<<3051>>tex2html_deferred<<3051>>
+この関係はextensive propertyと<tex2html_comment_mark>82
+呼ばれ、記憶なし<tex2html_comment_mark>83
+の特徴からくる重<tex2html_comment_mark>84
+要な結果である。<<88>>.
+上の式から次の式<tex2html_comment_mark>85
+が成り立つことが<tex2html_comment_mark>86
+わかる.
+\begin<<1939>>displaymath<<1939>>
+w\left(  1\right)  =w\left(  \frac<<89>>1<<89>><<90>>n<<90>>+\frac<<91>>1<<91>><<92>>n<<92>>+\cdots+\frac<<93>>1<<93>><tex2html_comment_mark>87
+<<94>>n<<94>>\right)  =\left\{  w\left(  \frac<<95>>1<<95>><<96>>n<<96>>\right)  \right\}  ^<<97>>n<<97>><tex2html_comment_mark>88
+\end<<1992>>displaymath<<1992>>
+変数変換をして\begin<<2064>>tex2html_wrap_inline<<2064>>$w\left(  1/n\right)
+=w\left(  1\right)  ^<<98>>1/n<<98>>$\end<<2065>>tex2html_wrap_inline<<2065>>とも書ける.
+そこで\begin<<2066>>tex2html_wrap_inline<<2066>>$x=1/n$\end<<2067>>tex2html_wrap_inline<<2067>>とおけば, \begin<<2068>>tex2html_wrap_inline<<2068>>$w\left(
+x\right)  =\left\{  w\left(  1\right)  \right\}  ^<<99>>x<<99>>=e^<<100>>x\ln w\left(
+1\right)  <<100>>$\end<<2069>>tex2html_wrap_inline<<2069>>. すなわち\begin<<2070>>tex2html_wrap_inline<<2070>>$w\left(  x\right)  =e^<<101>>-\lambda
+x<<101>>$\end<<2071>>tex2html_wrap_inline<<2071>>\quad （ただし\begin<<2072>>tex2html_wrap_inline<<2072>>$\lambda=-\ln w\left(  1\right)
+$\end<<2073>>tex2html_wrap_inline<<2073>>）. 従って生存関数<tex2html_comment_mark>89
+は指数関数<tex2html_comment_mark>90
+\begin<<3052>>tex2html_deferred<<3052>>\par\end<<3053>>tex2html_deferred<<3053>>
+\begin<<1940>>displaymath<<1940>>
+P\left(  X;SPMgt;x\right)  =e^<<102>>-\lambda x<<102>><tex2html_comment_mark>91
+\end<<1993>>displaymath<<1993>>
+であることがわかる.
+これにより分布関<tex2html_comment_mark>92
+数は<tex2html_comment_mark>93
+\begin<<3054>>tex2html_deferred<<3054>>\par\end<<3055>>tex2html_deferred<<3055>>
+\begin<<1941>>displaymath<<1941>>
+f\left(  x\right)  =\lambda e^<<103>>-\lambda x<<103>><tex2html_comment_mark>94
+\end<<1994>>displaymath<<1994>>
+指数分布となるこ<tex2html_comment_mark>95
+とが示せる.
+\begin<<3056>>tex2html_deferred<<3056>>\par\end<<3057>>tex2html_deferred<<3057>>
+イベント間隔が指<tex2html_comment_mark>96
+数分布に従う点過<tex2html_comment_mark>97
+程をポワソン過程<tex2html_comment_mark>98
+という. ポワソン過<tex2html_comment_mark>99
+程とは記憶のない<tex2html_comment_mark>100
+事象の生成過程で<tex2html_comment_mark>101
+ある. ポワソン過程<tex2html_comment_mark>102
+は神経科学における,
+神経細胞の発火（<tex2html_comment_mark>103
+スパイク）を表現<tex2html_comment_mark>104
+する上でも, 基本的<tex2html_comment_mark>105
+な点過程である. 以<tex2html_comment_mark>106
+下では, イベントの<tex2html_comment_mark>107
+ことをスパイクと<tex2html_comment_mark>108
+表現する.
+\begin<<3058>>tex2html_deferred<<3058>>\par\end<<3059>>tex2html_deferred<<3059>>
+\subsection<<1626>>一定時間内のス<tex2html_comment_mark>109
+パイクの個数（ポ<tex2html_comment_mark>110
+ワソン分布）\label<<104>>sec:Count_Poisson<<104>><<1626>>
+\begin<<3060>>tex2html_deferred<<3060>>\par\end<<3061>>tex2html_deferred<<3061>>
+スパイク間隔の分<tex2html_comment_mark>111
+布が指数分布に従<tex2html_comment_mark>112
+う場合に, \begin<<2074>>tex2html_wrap_inline<<2074>>$T$\end<<2075>>tex2html_wrap_inline<<2075>>秒間の間<tex2html_comment_mark>113
+に生じるスパイク<tex2html_comment_mark>114
+の個数\begin<<2076>>tex2html_wrap_inline<<2076>>$N_<<105>>T<<105>>$\end<<2077>>tex2html_wrap_inline<<2077>>の分布を求<tex2html_comment_mark>115
+めよう. まず, ひとつ<tex2html_comment_mark>116
+もスパイクが生じ<tex2html_comment_mark>117
+ない確率を求める.
+これは一つ目のス<tex2html_comment_mark>118
+パイク間隔が\begin<<2078>>tex2html_wrap_inline<<2078>>$T$\end<<2079>>tex2html_wrap_inline<<2079>>より<tex2html_comment_mark>119
+大きいことを意味<tex2html_comment_mark>120
+するから, 生存関数<tex2html_comment_mark>121
+で与えられる.
+\begin<<1942>>displaymath<<1942>>
+P\left(  N_<<106>>T<<106>>=0\right)  =\bar<<107>>F<<107>>\left(  T\right)  =e^<<108>>-\lambda T<<108>><tex2html_comment_mark>122
+\end<<1995>>displaymath<<1995>>
+次に一つのスパイ<tex2html_comment_mark>123
+ク（\begin<<2080>>tex2html_wrap_inline<<2080>>$N_<<109>>T<<109>>=1$\end<<2081>>tex2html_wrap_inline<<2081>>）が生じる<tex2html_comment_mark>124
+確率を求める. 一つ<tex2html_comment_mark>125
+目のスパイク間隔を<tex2html_comment_mark>126
+\begin<<2082>>tex2html_wrap_inline<<2082>>$s_<<110>>1<<110>>$\end<<2083>>tex2html_wrap_inline<<2083>>とすると, 二つ目<tex2html_comment_mark>127
+のスパイク間隔は\begin<<2084>>tex2html_wrap_inline<<2084>>$T-s_<<111>>1<<111>><tex2html_comment_mark>128
+$\end<<2085>>tex2html_wrap_inline<<2085>>より大きい必要が<tex2html_comment_mark>129
+ある. \begin<<2086>>tex2html_wrap_inline<<2086>>$s_<<112>>1<<112>>$\end<<2087>>tex2html_wrap_inline<<2087>>は\begin<<2088>>tex2html_wrap_inline<<2088>>$[0,T)$\end<<2089>>tex2html_wrap_inline<<2089>>の範囲<tex2html_comment_mark>130
+を取りうるからす<tex2html_comment_mark>131
+べての可能性を尽<tex2html_comment_mark>132
+くして<tex2html_comment_mark>133
+\begin<<113>>align*<<113>>
+P\left(  N_<<114>>T<<114>>=1\right)   ;SPMamp;  =\int_<<115>>0<<115>>^<<116>>T<<116>>f\left(  s_<<117>>1<<117>>\right)  F\left(
+T-s_<<118>>1<<118>>\right)  ds_<<119>>1<<119>>\\ 
+;SPMamp;  =\int_<<120>>0<<120>>^<<121>>T<<121>>\lambda e^<<1627>>-\lambda s_<<122>>1<<122>><<1627>>e^<<1628>>-\lambda\left(  T-s_<<123>>1<<123>>\right)
+<<1628>>ds_<<124>>1<<124>>\\ 
+;SPMamp;  =\lambda Te^<<125>>-\lambda T<<125>><tex2html_comment_mark>134
+\end<<126>>align*<<126>>
+同様にして, 二つの<tex2html_comment_mark>135
+スパイク（\begin<<2090>>tex2html_wrap_inline<<2090>>$N_<<127>>T<<127>>=2$\end<<2091>>tex2html_wrap_inline<<2091>>）が<tex2html_comment_mark>136
+生じる場合は<tex2html_comment_mark>137
+\begin<<128>>align*<<128>>
+P\left(  N_<<129>>T<<129>>=2\right)   ;SPMamp;  =\int_<<130>>0<<130>>^<<131>>T<<131>>ds_<<132>>1<<132>>\int_<<1629>>s_<<133>>1<<133>><<1629>>^<<134>>T<<134>>ds_<<135>>1<<135>>f\left(
+s_<<136>>1<<136>>\right)  f\left(  s_<<137>>2<<137>>\right)  \bar<<138>>F<<138>>\left(  T-s_<<139>>1<<139>>-s_<<140>>2<<140>>\right) \\ 
+;SPMamp;  =\int_<<141>>0<<141>>^<<142>>T<<142>>ds_<<143>>1<<143>>\int_<<1630>>s_<<144>>1<<144>><<1630>>^<<145>>T<<145>>ds_<<146>>2<<146>>\lambda e^<<1631>>-\lambda s_<<147>>1<<147>><<1631>>\lambda
+e^<<1632>>-\lambda\left(  s_<<148>>2<<148>>-s_<<149>>1<<149>>\right)  <<1632>>e^<<1633>>-\lambda\left(  T-s_<<150>>2<<150>>\right)  <<1633>>\\ 
+;SPMamp;  =\int_<<151>>0<<151>>^<<152>>T<<152>>ds_<<153>>1<<153>>\lambda^<<154>>2<<154>>e^<<155>>-\lambda T<<155>>\left(  T-s_<<156>>1<<156>>\right) \\ 
+;SPMamp;  =\frac<<157>>1<<157>><<158>>2<<158>>\left(  \lambda T\right)  ^<<159>>2<<159>>e^<<160>>-\lambda T<<160>><tex2html_comment_mark>138
+\end<<161>>align*<<161>>
+これを繰り返すと,
+一般にスパイク数<tex2html_comment_mark>139
+の分布は<tex2html_comment_mark>140
+\begin<<162>>equation<<162>>
+P\left(  N_<<163>>t<<163>>=n\right)  =\frac<<164>>1<<164>><<165>>n!<<165>>\left(  \lambda T\right)  ^<<166>>n<<166>><tex2html_comment_mark>141
+e^<<167>>-\lambda T<<167>> \label<<168>>Poisson distribution<<168>><tex2html_comment_mark>142
+\end<<169>>equation<<169>>
+となる. この分布は<tex2html_comment_mark>143
+ポワソン分布\marginpar<<170>>Poisson
+Distribution<<170>><tex2html_comment_mark>144
+\index<<171>>Poisson distribution<<171>><tex2html_comment_mark>145
+と呼ばれる.<tex2html_comment_mark>146
+\begin<<172>>figure<<172>>
+[tb]
+\begin<<173>>center<<173>>
+\includegraphics[
+natheight=2.664200in,
+natwidth=4.001100in,
+height=2.6642in,
+width=4.0011in
+]<tex2html_comment_mark>190
+<<174>>G:/10/proj/book/graphics/book__1.pdf<<174>><tex2html_comment_mark>191
+\begin<<3062>>tex2html_deferred<<3062>>\caption<<175>>ポワソン分布\begin<<2092>>tex2html_wrap_inline<<2092>>$\lambda=1,3,5$\end<<2093>>tex2html_wrap_inline<<2093>><<175>><tex2html_comment_mark>192
+\end<<3063>>tex2html_deferred<<3063>>\end<<176>>center<<176>>
+\end<<177>>figure<<177>>
+\begin<<3064>>tex2html_deferred<<3064>>\par\end<<3065>>tex2html_deferred<<3065>>
+\begin<<1908>>theorem_type<<1908>>[problem][theorem][][][][]
+ポワソン分布の平<tex2html_comment_mark>194
+均および分散が\begin<<2094>>tex2html_wrap_inline<<2094>>$n$\end<<2095>>tex2html_wrap_inline<<2095>>に<tex2html_comment_mark>195
+なることを確かめよ.
+\begin<<3066>>tex2html_deferred<<3066>>\par\end<<3067>>tex2html_deferred<<3067>>
+\begin<<1910>>theorem_type<<1910>>[solution][theorem][][][][]
+\begin<<1912>>theorem_type<<1912>>[problem][theorem][][][][]
+ポワソン分布の特<tex2html_comment_mark>196
+性関数が次式で表<tex2html_comment_mark>197
+されることを導け.
+\begin<<181>>equation<<181>>
+f^<<182>>\ast<<182>>\left(  u\right)  =\exp\left[  \lambda\left(  e^<<183>>iu<<183>>-1\right)
+\right]
+\end<<184>>equation<<184>>
+\begin<<3068>>tex2html_deferred<<3068>>\par\end<<3069>>tex2html_deferred<<3069>>
+\begin<<1914>>theorem_type<<1914>>[solution][theorem][][][][]
+指数関数の定義\begin<<2096>>tex2html_wrap_inline<<2096>>$\exp\left[  x\right]
+=\sum_<<186>>n=0<<186>>^<<187>>\infty<<187>>\frac<<1634>>x^<<188>>n<<188>><<1634>><<189>>n!<<189>>$\end<<2097>>tex2html_wrap_inline<<2097>>を用いる.<tex2html_comment_mark>198
+\begin<<190>>align*<<190>>
+f^<<191>>\ast<<191>>\left(  u\right)   ;SPMamp;  =E\left[  e^<<192>>-iun<<192>>\right] \\ 
+;SPMamp;  =\sum_<<193>>n=0<<193>>^<<194>>\infty<<194>>\frac<<1635>>e^<<195>>-\lambda<<195>>\lambda^<<196>>n<<196>><<1635>><<197>>n!<<197>>e^<<198>>-iun<<198>>\\ 
+;SPMamp;  =e^<<199>>-\lambda<<199>>\sum_<<200>>n=0<<200>>^<<201>>\infty<<201>>\frac<<1636>>\left[  e^<<202>>-iu+\ln\lambda<<202>>\right]
+^<<203>>n<<203>><<1636>><<204>>n!<<204>>\\ 
+;SPMamp;  =e^<<205>>-\lambda<<205>>\exp\left[  e^<<206>>-iu+\ln<<206>>\lambda\right] \\ 
+;SPMamp;  =\exp\left[  \lambda\left(  e^<<207>>iu<<207>>-1\right)  \right]
+\end<<208>>align*<<208>>
+\begin<<3070>>tex2html_deferred<<3070>>\par\end<<3071>>tex2html_deferred<<3071>>\end<<1911>>theorem_type<<1911>>
+\end<<1909>>theorem_type<<1909>>\end<<1915>>theorem_type<<1915>>
+\end<<1913>>theorem_type<<1913>>
+\begin<<3072>>tex2html_deferred<<3072>>\par\end<<3073>>tex2html_deferred<<3073>>
+\subsection<<1637>>一定スパイク数<tex2html_comment_mark>199
+が生じるのにかか<tex2html_comment_mark>200
+る時間（アーラン<tex2html_comment_mark>201
+分布）\label<<213>>sec:Erlang<<213>><<1637>>
+\begin<<3074>>tex2html_deferred<<3074>>\par\end<<3075>>tex2html_deferred<<3075>>
+記憶なしの特徴を<tex2html_comment_mark>202
+持つスパイクが\begin<<2098>>tex2html_wrap_inline<<2098>>$n$\end<<2099>>tex2html_wrap_inline<<2099>>回<tex2html_comment_mark>203
+起こるまでの時間が<tex2html_comment_mark>204
+\begin<<2100>>tex2html_wrap_inline<<2100>>$T$\end<<2101>>tex2html_wrap_inline<<2101>>秒となる確率を計<tex2html_comment_mark>205
+算しよう. \begin<<2102>>tex2html_wrap_inline<<2102>>$n=1$\end<<2103>>tex2html_wrap_inline<<2103>>の場合は<tex2html_comment_mark>206
+指数分布になるこ<tex2html_comment_mark>207
+とは見た. そこで, 次<tex2html_comment_mark>208
+に\begin<<2104>>tex2html_wrap_inline<<2104>>$n=2$\end<<2105>>tex2html_wrap_inline<<2105>>の場合を考えよう.
+２回目のスパイク<tex2html_comment_mark>209
+の時刻が\begin<<2106>>tex2html_wrap_inline<<2106>>$T$\end<<2107>>tex2html_wrap_inline<<2107>>である確<tex2html_comment_mark>210
+率である. １回目の<tex2html_comment_mark>211
+スパイクが起こる<tex2html_comment_mark>212
+時刻を\begin<<2108>>tex2html_wrap_inline<<2108>>$s_<<214>>1<<214>>$\end<<2109>>tex2html_wrap_inline<<2109>>とすると,
+その確率は\begin<<2110>>tex2html_wrap_inline<<2110>>$f\left(  s_<<215>>1<<215>>\right)  $\end<<2111>>tex2html_wrap_inline<<2111>><tex2html_comment_mark>213
+で与えられる. ２回<tex2html_comment_mark>214
+目のスパイクが\begin<<2112>>tex2html_wrap_inline<<2112>>$T$\end<<2113>>tex2html_wrap_inline<<2113>>で<tex2html_comment_mark>215
+生じる確率は\begin<<2114>>tex2html_wrap_inline<<2114>>$s_<<216>>1<<216>>$\end<<2115>>tex2html_wrap_inline<<2115>>は\begin<<2116>>tex2html_wrap_inline<<2116>>$f\left(
+T-s_<<217>>1<<217>>\right)  $\end<<2117>>tex2html_wrap_inline<<2117>>である. この２<tex2html_comment_mark>216
+つを掛け合わせた<tex2html_comment_mark>217
+確率が, ２つのスパ<tex2html_comment_mark>218
+イクが起こるまで<tex2html_comment_mark>219
+の時間が\begin<<2118>>tex2html_wrap_inline<<2118>>$T$\end<<2119>>tex2html_wrap_inline<<2119>>である確<tex2html_comment_mark>220
+率になる. \begin<<2120>>tex2html_wrap_inline<<2120>>$s_<<218>>1<<218>>$\end<<2121>>tex2html_wrap_inline<<2121>>は\begin<<2122>>tex2html_wrap_inline<<2122>>$(0,T]$\end<<2123>>tex2html_wrap_inline<<2123>>の<tex2html_comment_mark>221
+どれを取ることも<tex2html_comment_mark>222
+できるから, すべて<tex2html_comment_mark>223
+の可能性の和をと<tex2html_comment_mark>224
+って
+\begin<<219>>align*<<219>>
+f\left(  T\right)   ;SPMamp;  =\int_<<220>>0<<220>>^<<221>>T<<221>>ds_<<222>>1<<222>>f\left(  s_<<223>>1<<223>>\right)  f\left(
+T-s_<<224>>1<<224>>\right) \\ 
+;SPMamp;  =\int_<<225>>0<<225>>^<<226>>T<<226>>ds_<<227>>1<<227>>\lambda e^<<1638>>-\lambda s_<<228>>1<<228>><<1638>>\lambda e^<<1639>>-\lambda\left(
+T-s_<<229>>1<<229>>\right)  <<1639>>\\ 
+;SPMamp;  =\lambda^<<230>>2<<230>>Te^<<231>>-\lambda T<<231>><tex2html_comment_mark>225
+\end<<232>>align*<<232>>
+となる. 同様にして,
+\begin<<2124>>tex2html_wrap_inline<<2124>>$n=3$\end<<2125>>tex2html_wrap_inline<<2125>>の場合は<tex2html_comment_mark>226
+\begin<<233>>align*<<233>>
+f\left(  T\right)   ;SPMamp;  =\int_<<234>>0<<234>>^<<235>>T<<235>>ds_<<236>>1<<236>>\int_<<237>>0<<237>>^<<1640>>T-s_<<238>>1<<238>><<1640>>ds_<<239>>2<<239>>f\left(
+s_<<240>>1<<240>>\right)  f\left(  s_<<241>>2<<241>>\right)  f\left(  T-s_<<242>>1<<242>>-s_<<243>>2<<243>>\right) \\ 
+;SPMamp;  =\int_<<244>>0<<244>>^<<245>>T<<245>>ds_<<246>>1<<246>>\int_<<247>>0<<247>>^<<1641>>T-s_<<248>>1<<248>><<1641>>ds_<<249>>2<<249>>\lambda e^<<1642>>-\lambda s_<<250>>1<<250>><tex2html_comment_mark>227
+<<1642>>\lambda e^<<1643>>-\lambda s_<<251>>2<<251>><<1643>>\lambda e^<<1644>>-\lambda\left(  T-s_<<252>>1<<252>>-s_<<253>>2<<253>>\right)
+<<1644>>\\ 
+;SPMamp;  =\lambda^<<254>>3<<254>>e^<<255>>-\lambda T<<255>>\int_<<256>>0<<256>>^<<257>>T<<257>>ds_<<258>>1<<258>>\left(  T-s_<<259>>1<<259>>\right) \\ 
+;SPMamp;  =\frac<<260>>1<<260>><<261>>2<<261>>\lambda^<<262>>3<<262>>T^<<263>>2<<263>>e^<<264>>-\lambda T<<264>><tex2html_comment_mark>228
+\end<<265>>align*<<265>>
+である. 一般にはア<tex2html_comment_mark>229
+ーラン分布<tex2html_comment_mark>230
+\index<<266>>Erlang distribution<<266>><tex2html_comment_mark>231
+と呼ばれる分布<tex2html_comment_mark>232
+\begin<<267>>equation<<267>>
+f\left(  T\right)  =\frac<<268>>1<<268>><<269>>\left(  n-1\right)  !<<269>>\lambda^<<270>>n<<270>>T^<<271>>n-1<<271>><tex2html_comment_mark>233
+e^<<272>>-\lambda T<<272>> \label<<273>>Erlang_distribution<<273>><tex2html_comment_mark>234
+\end<<274>>equation<<274>>
+が導かれる. この分<tex2html_comment_mark>235
+布は部分積分を繰<tex2html_comment_mark>236
+り返すことで導出<tex2html_comment_mark>237
+することもできる<tex2html_comment_mark>238
+から, 自分でやって<tex2html_comment_mark>239
+みるとよい. アーラ<tex2html_comment_mark>240
+ン分布の平均は\begin<<2126>>tex2html_wrap_inline<<2126>>$n/\lambda$\end<<2127>>tex2html_wrap_inline<<2127>>,
+分散は\begin<<2128>>tex2html_wrap_inline<<2128>>$n/\lambda^<<275>>2<<275>>$\end<<2129>>tex2html_wrap_inline<<2129>>である.\quad
+今の場合, \begin<<2130>>tex2html_wrap_inline<<2130>>$n$\end<<2131>>tex2html_wrap_inline<<2131>>が整数な<tex2html_comment_mark>241
+のでアーラン分布（Erlang
+distribution）と呼ばれる. \begin<<2132>>tex2html_wrap_inline<<2132>>$n$\end<<2133>>tex2html_wrap_inline<<2133>><tex2html_comment_mark>242
+を実数\begin<<2134>>tex2html_wrap_inline<<2134>>$\kappa$\end<<2135>>tex2html_wrap_inline<<2135>>に置き換<tex2html_comment_mark>243
+えた分布はガンマ<tex2html_comment_mark>244
+分布(Gamma distribution)と呼ばれる.
+\begin<<3076>>tex2html_deferred<<3076>>\par\end<<3077>>tex2html_deferred<<3077>>
+\begin<<1916>>theorem_type<<1916>>[problem][theorem][][][][]
+アーラン分布を指<tex2html_comment_mark>245
+数分布のラプラス<tex2html_comment_mark>246
+変換を用いて求めよ.
+\begin<<3078>>tex2html_deferred<<3078>>\par\end<<3079>>tex2html_deferred<<3079>>
+\begin<<1918>>theorem_type<<1918>>[solution][theorem][][][][]
+まずアーラン分布<tex2html_comment_mark>247
+のラプラス変換\begin<<2136>>tex2html_wrap_inline<<2136>>$G_<<278>>n<<278>>^<<279>>\ast<<279>>\left(
+s\right)  $\end<<2137>>tex2html_wrap_inline<<2137>>を求めておくと\marginpar<<1645>><tex2html_comment_mark>248
+\begin<<280>>align*<<280>>
+\Gamma\left(  n\right)   ;SPMamp;  \equiv\int_<<281>>0<<281>>^<<282>>\infty<<282>>t^<<283>>n-1<<283>>e^<<284>>-t<<284>>dt\\ 
+;SPMamp;  =\left(  n-1\right)  !
+\end<<285>>align*<<285>>
+<<1645>><tex2html_comment_mark>249
+\begin<<286>>align*<<286>>
+G_<<287>>n<<287>>^<<288>>\ast<<288>>\left(  s\right)   ;SPMamp;  =\int_<<289>>0<<289>>^<<290>>\infty<<290>>\frac<<1646>>\lambda^<<291>>n<<291>><<1646>><tex2html_comment_mark>250
+<<292>>\Gamma\left(  n\right)  <<292>>t^<<293>>n-1<<293>>e^<<294>>-\lambda t<<294>>e^<<295>>-st<<295>>dt\\ 
+;SPMamp;  =\frac<<1647>>\lambda^<<296>>n<<296>><<1647>><<297>>\Gamma\left(  \alpha\right)  <<297>>\int_<<298>>0<<298>>^<<299>>\infty<<299>><tex2html_comment_mark>251
+t^<<300>>n-1<<300>>e^<<301>>-\left(  \lambda+s\right)  t<<301>>dt
+\end<<302>>align*<<302>>
+\begin<<2138>>tex2html_wrap_inline<<2138>>$u=\left(  \lambda+s\right)  t$\end<<2139>>tex2html_wrap_inline<<2139>>とおいて,
+\begin<<303>>align*<<303>>
+G_<<304>>\alpha<<304>>^<<305>>\ast<<305>>\left(  s\right)   ;SPMamp;  =\frac<<1648>>\lambda^<<306>>n<<306>><<1648>><<307>>\Gamma\left(
+n\right)  <<307>>\int_<<308>>0<<308>>^<<309>>\infty<<309>>\left(  \frac<<310>>u<<310>><<311>>\lambda+s<<311>>\right)  ^<<312>>n-1<<312>><tex2html_comment_mark>252
+e^<<313>>-u<<313>>\frac<<314>>du<<314>><<315>>\lambda+s<<315>>\\ 
+;SPMamp;  =\left(  \frac<<316>>\lambda<<316>><<317>>\lambda+s<<317>>\right)  ^<<318>>n<<318>>\frac<<319>>1<<319>><<320>>\Gamma\left(
+\alpha\right)  <<320>>\int_<<321>>0<<321>>^<<322>>\infty<<322>>u^<<323>>n-1<<323>>e^<<324>>-u<<324>>du\\ 
+;SPMamp;  =\left(  \frac<<325>>\lambda<<325>><<326>>\lambda+s<<326>>\right)  ^<<327>>n<<327>><tex2html_comment_mark>253
+\end<<328>>align*<<328>>
+次に, 独立な確率変<tex2html_comment_mark>254
+数の和\begin<<2140>>tex2html_wrap_inline<<2140>>$X_<<329>>1<<329>>+X_<<330>>2<<330>>+\cdots+X_<<331>>n<<331>>$\end<<2141>>tex2html_wrap_inline<<2141>>の特<tex2html_comment_mark>255
+性関数\begin<<2142>>tex2html_wrap_inline<<2142>>$f_<<332>>n<<332>>^<<333>>\ast<<333>>\left(  s\right)  $\end<<2143>>tex2html_wrap_inline<<2143>>は<tex2html_comment_mark>256
+\begin<<334>>align*<<334>>
+f_<<335>>n<<335>>^<<336>>\ast<<336>>\left(  s\right)   ;SPMamp;  =E\left[  \exp\left\{  -s\left(  X_<<337>>1<<337>><tex2html_comment_mark>257
++X_<<338>>2<<338>>+\cdots+X_<<339>>n<<339>>\right)  \right\}  \right] \\ 
+;SPMamp;  =E\left[  e^<<1649>>-sX_<<340>>1<<340>><<1649>>\right]  E\left[  e^<<1650>>-sX_<<341>>2<<341>><<1650>>\right]  \cdots E\left[
+e^<<1651>>-sX_<<342>>1<<342>><<1651>>\right] \\ 
+;SPMamp;  =f^<<343>>\ast<<343>>\left(  x_<<344>>1<<344>>\right)  f^<<345>>\ast<<345>>\left(  x_<<346>>2<<346>>\right)  \cdots
+f^<<347>>\ast<<347>>\left(  x_<<348>>n<<348>>\right)
+\end<<349>>align*<<349>>
+分布が同一の場合<tex2html_comment_mark>258
+(i.i.d.)は<tex2html_comment_mark>259
+\begin<<1943>>displaymath<<1943>>
+f_<<350>>n<<350>>^<<351>>\ast<<351>>\left(  s\right)  =\left\{  f_<<352>>1<<352>>^<<353>>\ast<<353>>\left(  s\right)
+\right\}  ^<<354>>n<<354>><tex2html_comment_mark>260
+\end<<1996>>displaymath<<1996>>
+例えば, \begin<<2144>>tex2html_wrap_inline<<2144>>$f_<<355>>1<<355>>^<<356>>\ast<<356>>\left(  s\right)  $\end<<2145>>tex2html_wrap_inline<<2145>>が<tex2html_comment_mark>261
+指数分布の場合は<tex2html_comment_mark>262
+\begin<<1944>>displaymath<<1944>>
+f_<<357>>n<<357>>^<<358>>\ast<<358>>\left(  s\right)  =\left(  \frac<<359>>\lambda<<359>><<360>>\lambda+s<<360>>\right)  ^<<361>>n<<361>><tex2html_comment_mark>263
+\end<<1997>>displaymath<<1997>>
+逆ラプラス変換す<tex2html_comment_mark>264
+るとアーラン分布<tex2html_comment_mark>265
+になる.
+\begin<<1945>>displaymath<<1945>><tex2html_comment_mark>266
+\mathcal<<362>>L<<362>><tex2html_comment_mark>269
+^<<363>>-1<<363>>\left[  f_<<364>>n<<364>>^<<365>>\ast<<365>>\left(  s\right)  \right]  =\frac<<1652>>\lambda^<<366>>n<<366>><<1652>><tex2html_comment_mark>271
+<<367>>\Gamma\left(  n\right)  <<367>>t^<<368>>n-1<<368>>e^<<369>>-\lambda t<<369>><tex2html_comment_mark>272
+\end<<1998>>displaymath<<1998>>
+\begin<<3080>>tex2html_deferred<<3080>>\par\end<<3081>>tex2html_deferred<<3081>>\end<<1919>>theorem_type<<1919>>
+\end<<1917>>theorem_type<<1917>>
+\begin<<3082>>tex2html_deferred<<3082>>\par\end<<3083>>tex2html_deferred<<3083>>
+\subsection<<1653>>アーラン分布と<tex2html_comment_mark>273
+ポワソン分布の関<tex2html_comment_mark>274
+係\label<<372>>sec:ErlangtoPoisson<<372>><<1653>><tex2html_comment_mark>275
+\begin<<3084>>tex2html_deferred<<3084>>\par\end<<3085>>tex2html_deferred<<3085>>
+\begin<<373>>figure<<373>>
+[ptb]
+\begin<<374>>center<<374>>
+\includegraphics[
+height=2.4889in,
+width=4.5626in
+]<tex2html_comment_mark>283
+<<375>>fig/count_and_isi_statistics.eps<<375>><tex2html_comment_mark>284
+\end<<376>>center<<376>>
+\end<<377>>figure<<377>>
+今度は逆に\begin<<2146>>tex2html_wrap_inline<<2146>>$T$\end<<2147>>tex2html_wrap_inline<<2147>>秒間に<tex2html_comment_mark>286
+生じるスパイクの<tex2html_comment_mark>287
+個数\begin<<2148>>tex2html_wrap_inline<<2148>>$n$\end<<2149>>tex2html_wrap_inline<<2149>>の分布を調べ<tex2html_comment_mark>288
+てみよう. このため<tex2html_comment_mark>289
+には, スパイク間隔<tex2html_comment_mark>290
+とスパイク個数と<tex2html_comment_mark>291
+の関係を定義する<tex2html_comment_mark>292
+必要がある. \begin<<2150>>tex2html_wrap_inline<<2150>>$N_<<378>>T<<378>>$\end<<2151>>tex2html_wrap_inline<<2151>>を時刻<tex2html_comment_mark>293
+\begin<<2152>>tex2html_wrap_inline<<2152>>$0$\end<<2153>>tex2html_wrap_inline<<2153>>から\begin<<2154>>tex2html_wrap_inline<<2154>>$T$\end<<2155>>tex2html_wrap_inline<<2155>>までのスパイ<tex2html_comment_mark>294
+クの個数, \begin<<2156>>tex2html_wrap_inline<<2156>>$S_<<379>>n<<379>>$\end<<2157>>tex2html_wrap_inline<<2157>>を第\begin<<2158>>tex2html_wrap_inline<<2158>>$n$\end<<2159>>tex2html_wrap_inline<<2159>>番<tex2html_comment_mark>295
+目のスパイクまで<tex2html_comment_mark>296
+の時間とする. 今、\begin<<2160>>tex2html_wrap_inline<<2160>>$T$\end<<2161>>tex2html_wrap_inline<<2161>><tex2html_comment_mark>297
+が\begin<<2162>>tex2html_wrap_inline<<2162>>$S_<<380>>n<<380>>$\end<<2163>>tex2html_wrap_inline<<2163>>より短い時間だ<tex2html_comment_mark>298
+ったとしよう（\begin<<2164>>tex2html_wrap_inline<<2164>>$S_<<381>>n<<381>>;SPMgt;T$\end<<2165>>tex2html_wrap_inline<<2165>>）.
+このとき, 時刻\begin<<2166>>tex2html_wrap_inline<<2166>>$T$\end<<2167>>tex2html_wrap_inline<<2167>>まで<tex2html_comment_mark>299
+に含まれるスパイ<tex2html_comment_mark>300
+クの数は高々\begin<<2168>>tex2html_wrap_inline<<2168>>$n-1$\end<<2169>>tex2html_wrap_inline<<2169>>個で<tex2html_comment_mark>301
+ある（図参照）. こ<tex2html_comment_mark>302
+のことから次の関<tex2html_comment_mark>303
+係が成り立つ.
+\begin<<382>>equation<<382>>
+P\left(  N_<<383>>T<<383>>;SPMlt;n\right)  =P\left(  S_<<384>>n<<384>>;SPMgt;T\right)  \label<<385>>count_interval<<385>><tex2html_comment_mark>304
+\end<<386>>equation<<386>>
+右辺は待ち時間が\begin<<2170>>tex2html_wrap_inline<<2170>>$t$\end<<2171>>tex2html_wrap_inline<<2171>><tex2html_comment_mark>305
+秒以上である確率で<tex2html_comment_mark>306
+,\quad\
+\begin<<387>>align*<<387>>
+P\left(  S_<<388>>n<<388>>;SPMgt;T\right)   ;SPMamp;  =\int_<<389>>T<<389>>^<<390>>\infty<<390>>\frac<<391>>1<<391>><<392>>\left(  n-1\right)
+!<<392>>\lambda^<<393>>n<<393>>t^<<394>>n-1<<394>>e^<<395>>-\lambda t<<395>>dt\\ 
+;SPMamp;  =\sum_<<396>>k=0<<396>>^<<397>>n-1<<397>>\frac<<1654>>\left(  \lambda T\right)  ^<<398>>k<<398>><<1654>><<399>>k!<<399>>e^<<400>>-\lambda T<<400>><tex2html_comment_mark>307
+\end<<401>>align*<<401>>
+これは部分積分を<tex2html_comment_mark>308
+用いて求めること<tex2html_comment_mark>309
+ができるから, 自分<tex2html_comment_mark>310
+で求めてみるとよい.
+従って累積分布関<tex2html_comment_mark>311
+数は, \ref<<402>>count_interval<<402>>に代入し<tex2html_comment_mark>312
+て,
+\begin<<1946>>displaymath<<1946>>
+P\left(  N_<<403>>T<<403>>;SPMlt;n\right)  =\sum_<<404>>k=0<<404>>^<<405>>n-1<<405>>\frac<<1655>>\left(  \lambda T\right)
+^<<406>>k<<406>><<1655>><<407>>k!<<407>>e^<<408>>-\lambda T<<408>><tex2html_comment_mark>313
+\end<<1999>>displaymath<<1999>>
+時刻tまでのスパイ<tex2html_comment_mark>314
+クの個数が\begin<<2172>>tex2html_wrap_inline<<2172>>$n$\end<<2173>>tex2html_wrap_inline<<2173>>である<tex2html_comment_mark>315
+確率は, \begin<<2174>>tex2html_wrap_inline<<2174>>$P\left(  N_<<409>>T<<409>>=n\right)  =P\left(  N_<<410>>T<<410>><tex2html_comment_mark>316
+;SPMlt;n+1\right)  -P\left(  N_<<411>>T<<411>>;SPMlt;n\right)  $\end<<2175>>tex2html_wrap_inline<<2175>>である.
+これを用いれば,
+\begin<<412>>equation<<412>>
+P\left(  N_<<413>>T<<413>>=n\right)  =\frac<<1656>>\left(  \lambda T\right)  ^<<414>>n<<414>><<1656>><<415>>n!<<415>>e^<<416>>-\lambda
+T<<416>> \label<<417>>Poisson_distribution<<417>><tex2html_comment_mark>317
+\end<<418>>equation<<418>>
+となり, 再びポワソ<tex2html_comment_mark>318
+ン分布が得られる.
+\begin<<3086>>tex2html_deferred<<3086>>\par\end<<3087>>tex2html_deferred<<3087>>
+\subsection<<419>>瞬間スパイク生<tex2html_comment_mark>319
+成率<<419>>
+\begin<<3088>>tex2html_deferred<<3088>>\par\end<<3089>>tex2html_deferred<<3089>>
+\subsubsection<<420>>指数分布の導出<<420>>
+\begin<<3090>>tex2html_deferred<<3090>>\par\end<<3091>>tex2html_deferred<<3091>>
+ここまで, 指数分布<tex2html_comment_mark>320
+をもとに定常ポワ<tex2html_comment_mark>321
+ソン過程の性質を<tex2html_comment_mark>322
+見てきた. \ref<<421>>sec:Count_Poisson<<421>>で<tex2html_comment_mark>323
+は指数分布からポ<tex2html_comment_mark>324
+ワソン分布を, \ref<<422>>sec:Erlang<<422>><tex2html_comment_mark>325
+及び\ref<<423>>sec:ErlangtoPoisson<<423>>では指<tex2html_comment_mark>326
+数分布からアーラ<tex2html_comment_mark>327
+ン分布を経てポワ<tex2html_comment_mark>328
+ソン分布を求めた.
+この節示すように,
+指数分布及び ポワ<tex2html_comment_mark>329
+ソン分布はスパイ<tex2html_comment_mark>330
+クの瞬間発生率\begin<<2176>>tex2html_wrap_inline<<2176>>$\lambda\left[
+\text<<424>>spike<<424>>/s\right]  $\end<<2177>>tex2html_wrap_inline<<2177>>を考えるこ<tex2html_comment_mark>331
+とでも求めること<tex2html_comment_mark>332
+ができる. 時刻\begin<<2178>>tex2html_wrap_inline<<2178>>$T$\end<<2179>>tex2html_wrap_inline<<2179>>を十<tex2html_comment_mark>333
+分に小さな幅\begin<<2180>>tex2html_wrap_inline<<2180>>$\Delta$\end<<2181>>tex2html_wrap_inline<<2181>>の<tex2html_comment_mark>334
+区間によって\begin<<2182>>tex2html_wrap_inline<<2182>>$\Delta/T$\end<<2183>>tex2html_wrap_inline<<2183>>個<tex2html_comment_mark>335
+に分ける. \begin<<2184>>tex2html_wrap_inline<<2184>>$\Delta$\end<<2185>>tex2html_wrap_inline<<2185>>内に生<tex2html_comment_mark>336
+じるスパイクの確<tex2html_comment_mark>337
+率は\begin<<2186>>tex2html_wrap_inline<<2186>>$\lambda\Delta$\end<<2187>>tex2html_wrap_inline<<2187>>で与えられ<tex2html_comment_mark>338
+る. 時刻\begin<<2188>>tex2html_wrap_inline<<2188>>$T$\end<<2189>>tex2html_wrap_inline<<2189>>までスパイ<tex2html_comment_mark>339
+クが起こらず, 時刻\begin<<2190>>tex2html_wrap_inline<<2190>>$T$\end<<2191>>tex2html_wrap_inline<<2191>><tex2html_comment_mark>340
+においてスパイク<tex2html_comment_mark>341
+が生じる確率は<tex2html_comment_mark>342
+\begin<<1947>>displaymath<<1947>>
+f\left(  T\right)  \Delta=\left(  1-\lambda\Delta\right)  ^<<425>>N-1<<425>>\lambda
+\Delta=\left(  1-\lambda\Delta\right)  ^<<426>>N<<426>>\frac<<427>>\lambda\Delta<<427>><<428>>1-\lambda
+\Delta<<428>><tex2html_comment_mark>343
+\end<<2000>>displaymath<<2000>>
+ここで\begin<<2192>>tex2html_wrap_inline<<2192>>$\left\vert x\right\vert ;SPMlt;1$\end<<2193>>tex2html_wrap_inline<<2193>>に対<tex2html_comment_mark>344
+する公式<tex2html_comment_mark>345
+\begin<<1948>>displaymath<<1948>>
+\frac<<429>>1<<429>><<430>>1-x<<430>>=1+x+x^<<431>>2<<431>>+x^<<432>>3<<432>>\cdots
+\end<<2001>>displaymath<<2001>><tex2html_comment_mark>346
+\begin<<1949>>displaymath<<1949>>
+\log\left(  1-x\right)  =-x-\frac<<433>>1<<433>><<434>>2<<434>>x^<<435>>2<<435>>-\frac<<436>>1<<436>><<437>>3<<437>>x^<<438>>3<<438>>\cdots\text<<439>> <<439>><tex2html_comment_mark>347
+\end<<2002>>displaymath<<2002>>
+を思い出せば,\quad 第一<tex2html_comment_mark>348
+成分は, 十分に小さ<tex2html_comment_mark>349
+な\begin<<2194>>tex2html_wrap_inline<<2194>>$\Delta$\end<<2195>>tex2html_wrap_inline<<2195>>でに対して<tex2html_comment_mark>350
+\begin<<440>>align*<<440>>
+\left(  1-\lambda\Delta\right)  ^<<441>>N<<441>>  ;SPMamp;  =\exp\left[  N\log\left\{
+1-\lambda\Delta\right\}  \right] \\ 
+;SPMamp;  =\exp\left[  N\left\{  -\lambda\Delta-\frac<<442>>1<<442>><<443>>2<<443>>\left(  \lambda
+\Delta\right)  ^<<444>>2<<444>>+\cdots\right\}  \right] \\ 
+;SPMamp;  \sim\exp\left[  -\lambda T\right]
+\end<<445>>align*<<445>>
+第二成分は<tex2html_comment_mark>351
+\begin<<446>>align*<<446>>
+\frac<<447>>\lambda\Delta<<447>><<448>>1-\lambda\Delta<<448>>  ;SPMamp;  =\lambda\Delta\left\{
+1+\lambda\Delta+\left(  \lambda\Delta\right)  ^<<449>>2<<449>>+\cdots\right\} \\ 
+;SPMamp;  \sim\lambda\Delta
+\end<<450>>align*<<450>>
+となる. 従って確率<tex2html_comment_mark>352
+分布は指数分布に<tex2html_comment_mark>353
+なる.
+\begin<<1950>>displaymath<<1950>>
+f\left(  T\right)  =\lambda e^<<451>>-\lambda T<<451>><tex2html_comment_mark>354
+\end<<2003>>displaymath<<2003>>
+この導出法は一般<tex2html_comment_mark>355
+の点過程の考察で<tex2html_comment_mark>356
+も重要になってくる.
+もう少し簡単な求<tex2html_comment_mark>357
+め方として, 第一成<tex2html_comment_mark>358
+分の導出は<tex2html_comment_mark>359
+\begin<<1951>>displaymath<<1951>>
+\lim_<<452>>\Delta\rightarrow0<<452>>\left(  1-\lambda\Delta\right)  ^<<453>>N<<453>>=\lim
+_<<454>>N\rightarrow\infty<<454>>\left(  1-\lambda T\frac<<455>>1<<455>><<456>>N<<456>>\right)  ^<<457>>N<<457>>=e^<<458>>-\lambda
+T<<458>><tex2html_comment_mark>360
+\end<<2004>>displaymath<<2004>>
+としてもよい. さらに,
+これは生存関数\begin<<2196>>tex2html_wrap_inline<<2196>>$\bar<<459>>F<<459>>\left(
+T\right)  $\end<<2197>>tex2html_wrap_inline<<2197>>だから, 微分して\begin<<2198>>tex2html_wrap_inline<<2198>>$f\left(
+T\right)  =\lambda e^<<460>>-\lambda T<<460>>$\end<<2199>>tex2html_wrap_inline<<2199>>を得る. 一<tex2html_comment_mark>361
+定の瞬間発火率に<tex2html_comment_mark>362
+従うスパイク時系<tex2html_comment_mark>363
+列のISIは指数分布に<tex2html_comment_mark>364
+なることがわかった.
+逆に指数分布から<tex2html_comment_mark>365
+瞬間レートが時間<tex2html_comment_mark>366
+に依らない定数で<tex2html_comment_mark>367
+あることも示され<tex2html_comment_mark>368
+る（次節）ので, 両<tex2html_comment_mark>369
+者はポワソン過程<tex2html_comment_mark>370
+の異なる定義と考<tex2html_comment_mark>371
+えて良い.
+\begin<<3092>>tex2html_deferred<<3092>>\par\end<<3093>>tex2html_deferred<<3093>>
+\subsubsection<<461>>ポワソン分布の<tex2html_comment_mark>372
+導出<<461>>
+\begin<<3094>>tex2html_deferred<<3094>>\par\end<<3095>>tex2html_deferred<<3095>>
+瞬間スパイク生成<tex2html_comment_mark>373
+率から直接, ポワソ<tex2html_comment_mark>374
+ン分布を求めるこ<tex2html_comment_mark>375
+ともできる.\begin<<2200>>tex2html_wrap_inline<<2200>>$\ N$\end<<2201>>tex2html_wrap_inline<<2201>>個の区<tex2html_comment_mark>376
+間のうち\begin<<2202>>tex2html_wrap_inline<<2202>>$n$\end<<2203>>tex2html_wrap_inline<<2203>>個にスパ<tex2html_comment_mark>377
+イクが生じる確率は,
+\begin<<462>>align*<<462>>
+p\left(  N_<<463>>T<<463>>=n\right)   ;SPMamp;  =\left(
+\begin<<464>>array<<464>>
+[c]<<465>>c<<465>><tex2html_comment_mark>378
+N\\ 
+n
+\end<<466>>array<<466>>
+\right)  \left(  \lambda\Delta\right)  ^<<467>>n<<467>>\left(  1-\lambda\Delta\right)
+^<<468>>N-n<<468>>\\ 
+;SPMamp;  =\frac<<469>>N!<<469>><<470>>n!\left(  N-n\right)  !<<470>>\left(  \frac<<471>>\lambda\Delta<<471>><tex2html_comment_mark>379
+<<472>>1-\lambda\Delta<<472>>\right)  ^<<473>>n<<473>>\left(  1-\lambda\Delta\right)  ^<<474>>N<<474>>\\ 
+;SPMamp;  \sim\frac<<475>>N!<<475>><<476>>\left(  N-n\right)  !<<476>>\frac<<477>>1<<477>><<478>>n!<<478>>\left(  \lambda
+\Delta\right)  ^<<479>>n<<479>>\exp\left(  -\lambda T\right) \\ 
+;SPMamp;  =\frac<<480>>N!<<480>><<1657>>N^<<481>>n<<481>>\left(  N-n\right)  !<<1657>>\frac<<482>>1<<482>><<483>>n!<<483>>\left(  \lambda T\right)
+^<<484>>n<<484>>\exp\left(  -\lambda T\right) \\ 
+;SPMamp;  \rightarrow\frac<<1658>>\left(  \lambda T\right)  ^<<485>>n<<485>><<1658>><<486>>n!<<486>>\exp\left(  -\lambda
+T\right)
+\end<<487>>align*<<487>>
+ただし最後のステ<tex2html_comment_mark>380
+ップでは, スターリ<tex2html_comment_mark>381
+ンの公式<tex2html_comment_mark>382
+\index<<488>>Stirling's formula!Stirling's approximation<<488>><tex2html_comment_mark>383
+\begin<<2204>>tex2html_wrap_inline<<2204>>$\ln N!\sim N\ln N-N$\end<<2205>>tex2html_wrap_inline<<2205>>を使って,
+\begin<<489>>align*<<489>>
+\ln\frac<<490>>N!<<490>><<1659>>N^<<491>>n<<491>>\left(  N-n\right)  !<<1659>>  ;SPMamp;  =\ln N!-n\ln N-\ln\left(
+N-n\right)  !\\ 
+;SPMamp;  \sim N\ln N-N-n\ln N-\left(  N-n\right)  \ln\left(  N-n\right)  +\left(
+N-n\right) \\ 
+;SPMamp;  =\left(  1-\frac<<492>>n<<492>><<493>>N<<493>>\right)  \ln\left(  1-\frac<<494>>n<<494>><<495>>N<<495>>\right)  ^<<496>>N<<496>>-n\\ 
+;SPMamp;  \rightarrow1\cdot\ln e^<<497>>-n<<497>>-n\\ 
+;SPMamp;  =0
+\end<<498>>align*<<498>>
+を用いた.
+\begin<<3096>>tex2html_deferred<<3096>>\par\end<<3097>>tex2html_deferred<<3097>>
+\section<<499>>定常リニューア<tex2html_comment_mark>384
+ル過程<<499>>
+\begin<<3098>>tex2html_deferred<<3098>>\par\end<<3099>>tex2html_deferred<<3099>>
+前章では記憶なし<tex2html_comment_mark>385
+の特徴をもつスパ<tex2html_comment_mark>386
+イク時系列, すなわ<tex2html_comment_mark>387
+ちポアソン過程に<tex2html_comment_mark>388
+ついて調べた. ポア<tex2html_comment_mark>389
+ソン過程のスパイ<tex2html_comment_mark>390
+ク間隔は指数分布<tex2html_comment_mark>391
+になり, 一定時間内<tex2html_comment_mark>392
+のスパイク数はポ<tex2html_comment_mark>393
+アソン分布に従う<tex2html_comment_mark>394
+ことをみた.\  また瞬<tex2html_comment_mark>395
+間スパイク生成率<tex2html_comment_mark>396
+を導入して, (定常)ポ<tex2html_comment_mark>397
+ワソン過程を定義<tex2html_comment_mark>398
+することもできた.
+本章では, スパイク<tex2html_comment_mark>399
+に記憶がある場合<tex2html_comment_mark>400
+のモデルを導入する.
+特に大事なのは, \  ス<tex2html_comment_mark>401
+パイク生成率が直<tex2html_comment_mark>402
+前のスパイク生成<tex2html_comment_mark>403
+時刻だけに依存す<tex2html_comment_mark>404
+る場合である. この<tex2html_comment_mark>405
+過程はリニューア<tex2html_comment_mark>406
+ル過程と呼ばれる.
+瞬間生成率が２つ<tex2html_comment_mark>407
+以上前のスパイク<tex2html_comment_mark>408
+生成時刻に依存す<tex2html_comment_mark>409
+る一般的なモデル<tex2html_comment_mark>410
+に対して, 直前のス<tex2html_comment_mark>411
+パイクのみに依存<tex2html_comment_mark>412
+することからこの<tex2html_comment_mark>413
+名称で呼ばれる. 一<tex2html_comment_mark>414
+つより前のスパイ<tex2html_comment_mark>415
+クについては忘れて,
+気分を新たに次の<tex2html_comment_mark>416
+スパイク生成に臨<tex2html_comment_mark>417
+むといったところ<tex2html_comment_mark>418
+である.
+\begin<<3100>>tex2html_deferred<<3100>>\par\end<<3101>>tex2html_deferred<<3101>>
+神経スパイクにつ<tex2html_comment_mark>419
+いては, 強いリニュ<tex2html_comment_mark>420
+ーアル性があるこ<tex2html_comment_mark>421
+とが知られている.
+これは神経細胞の<tex2html_comment_mark>422
+スパイク生成機構<tex2html_comment_mark>423
+の生理学上の制約<tex2html_comment_mark>424
+による. 特にスパイ<tex2html_comment_mark>425
+ク生成後\begin<<2206>>tex2html_wrap_inline<<2206>>$1-5$\end<<2207>>tex2html_wrap_inline<<2207>>\space [ms]の間は<tex2html_comment_mark>426
+次のスパイクを生<tex2html_comment_mark>427
+成できない状態に<tex2html_comment_mark>428
+なる. これを絶対不<tex2html_comment_mark>429
+応期（Absolute refractory period\index<<500>>Absolute refractory period<<500>><tex2html_comment_mark>431
+）と呼び, 神経細胞<tex2html_comment_mark>432
+のリニューアル性<tex2html_comment_mark>433
+の主要な要因である.
+この他にも膜上の<tex2html_comment_mark>434
+電位依存性イオン<tex2html_comment_mark>435
+チャネルの非線形<tex2html_comment_mark>436
+効果により, 一度ス<tex2html_comment_mark>437
+パイクが生じると<tex2html_comment_mark>438
+複数回のスパイク<tex2html_comment_mark>439
+生成が続くバース<tex2html_comment_mark>440
+ト発火という現象<tex2html_comment_mark>441
+などがある. こうし<tex2html_comment_mark>442
+た性質を表現する<tex2html_comment_mark>443
+ためには, リニュー<tex2html_comment_mark>444
+アル過程の活用が<tex2html_comment_mark>445
+欠かせない.
+\begin<<3102>>tex2html_deferred<<3102>>\par\end<<3103>>tex2html_deferred<<3103>>
+ここで本章で使う<tex2html_comment_mark>446
+統計量をまとめて<tex2html_comment_mark>447
+おく. 用語は基本的<tex2html_comment_mark>448
+に生存時間解析(Survival
+analysis)の理論に従うが,
+生存時間解析では<tex2html_comment_mark>449
+イベントが固体の<tex2html_comment_mark>450
+死亡を意味するため,
+関連語句がスパイ<tex2html_comment_mark>451
+クの解析にはなじ<tex2html_comment_mark>452
+まない. そこでいく<tex2html_comment_mark>453
+つかは違う名称で<tex2html_comment_mark>454
+呼ぶこともある. まず,
+スパイク発生時刻<tex2html_comment_mark>455
+の確率密度分布(probability density
+function, p.d.f.)を<tex2html_comment_mark>456
+\begin<<3104>>tex2html_deferred<<3104>>\par\end<<3105>>tex2html_deferred<<3105>>
+\begin<<1952>>displaymath<<1952>>
+f\left(  t\right)  =\lim_<<501>>\Delta\rightarrow0+<<501>>\frac<<502>>P\left(  t;SPMlt;T\leq
+t+\Delta\right)  <<502>><<503>>\Delta<<503>><tex2html_comment_mark>457
+\end<<2005>>displaymath<<2005>>
+とする. これをスパ<tex2html_comment_mark>458
+イク密度分布(spike density funtion\index<<504>>spike density function<<504>><tex2html_comment_mark>460
+), もしくはスパイク<tex2html_comment_mark>461
+間隔分布と呼ぶInter-spike Interval
+distribution)と呼ぶ. スパイク<tex2html_comment_mark>462
+の発生時刻が\begin<<2208>>tex2html_wrap_inline<<2208>>$t$\end<<2209>>tex2html_wrap_inline<<2209>>以上<tex2html_comment_mark>463
+である確率を生存<tex2html_comment_mark>464
+関数(survivor function\index<<505>>survivor function<<505>><tex2html_comment_mark>466
+)と呼び<tex2html_comment_mark>467
+\begin<<506>>equation<<506>>
+\overline<<507>>F<<507>>\left(  t\right)  =P\left(  X;SPMgt;t\right)  =\int_<<508>>t<<508>>^<<509>>\infty<<509>>f\left(
+u\right)  du
+\end<<510>>equation<<510>>
+と表す. 生存関数は<tex2html_comment_mark>468
+累積分布関数(cumulative distribution
+function, c.d.f.<tex2html_comment_mark>469
+\index<<511>>cumulative distribution functio<<511>><tex2html_comment_mark>470
+)（あるいは単に分<tex2html_comment_mark>471
+布関数）と相補的<tex2html_comment_mark>472
+な関係にある.
+\begin<<512>>equation<<512>>
+F\left(  t\right)  =P\left(  X;SPMlt;t\right)  =\int_<<513>>0<<513>>^<<514>>t<<514>>f\left(  u\right)  du
+\end<<515>>equation<<515>>
+この分布は生存時<tex2html_comment_mark>473
+間分布(lifetime distribution function)<tex2html_comment_mark>474
+\index<<516>>lifetime distribution function<<516>><tex2html_comment_mark>475
+と呼ばれる. スパイ<tex2html_comment_mark>476
+ク密度分布と分布<tex2html_comment_mark>477
+関数は<tex2html_comment_mark>478
+\begin<<517>>align<<517>>
+f\left(  t\right)   ;SPMamp;  =F^<<518>>\prime<<518>>\left(  t\right) \\ 
+;SPMamp;  =-\overline<<519>>F<<519>>^<<520>>,<<520>>\left(  t\right)
+\end<<521>>align<<521>>
+の関係にある. ただ<tex2html_comment_mark>479
+し記号プライムは<tex2html_comment_mark>480
+微分の意味.
+\begin<<3106>>tex2html_deferred<<3106>>\par\end<<3107>>tex2html_deferred<<3107>>
+\subsection<<522>>瞬間スパイク生<tex2html_comment_mark>481
+成率：ハザード関数<<522>>
+\begin<<3108>>tex2html_deferred<<3108>>\par\end<<3109>>tex2html_deferred<<3109>>
+リニューアル過程<tex2html_comment_mark>482
+では瞬間スパイク<tex2html_comment_mark>483
+生成率は, 最後のス<tex2html_comment_mark>484
+パイクの時刻を基<tex2html_comment_mark>485
+準にして時間的に<tex2html_comment_mark>486
+変動する. 少なくとも<tex2html_comment_mark>487
+\begin<<2210>>tex2html_wrap_inline<<2210>>$t$\end<<2211>>tex2html_wrap_inline<<2211>>秒間スパイクが生<tex2html_comment_mark>488
+成されず, \begin<<2212>>tex2html_wrap_inline<<2212>>$t$\end<<2213>>tex2html_wrap_inline<<2213>>において<tex2html_comment_mark>489
+スパイクを生成す<tex2html_comment_mark>490
+る確率として, 瞬間<tex2html_comment_mark>491
+スパイク生成率<tex2html_comment_mark>492
+\begin<<1953>>displaymath<<1953>>
+r\left(  t\right)  =\lim_<<523>>\Delta\rightarrow0+<<523>>\frac<<524>>prob\left(  t;SPMlt;X\leq
+t+\Delta|t;SPMlt;X\right)  <<524>><<525>>\Delta<<525>><tex2html_comment_mark>493
+\end<<2006>>displaymath<<2006>>
+を導入しよう. 生存<tex2html_comment_mark>494
+時間解析(Survival analysisｓ)の<tex2html_comment_mark>495
+理論では, この関数<tex2html_comment_mark>496
+はハザード関数(hazard function)<tex2html_comment_mark>497
+\index<<526>>hazard function<<526>><tex2html_comment_mark>498
+, 年齢別故障率(age-specific failure rate),
+回復関数(recovery function)とも<tex2html_comment_mark>499
+呼ばれる\cite<<527>>Cox62<<527>>. また, 一<tex2html_comment_mark>500
+般の点過程の類似<tex2html_comment_mark>501
+の量強度関数(intensity function)と<tex2html_comment_mark>502
+呼ばれる.
+\begin<<528>>align<<528>>
+r\left(  t\right)   ;SPMamp;  =\lim_<<529>>\Delta\rightarrow0+<<529>>\frac<<530>>prob\left(  t;SPMlt;X\leq
+t+\Delta\right)  <<530>><<531>>\Delta<<531>>\frac<<532>>1<<532>><<533>>prob\left(  t;SPMlt;X\right)  <<533>>\nonumber\\ 
+;SPMamp;  =\frac<<534>>f\left(  t\right)  <<534>><<1660>>\overline<<535>>F<<535>>\left(  t\right)  <<1660>>
+\label<<536>>hazard_def_renewal<<536>><tex2html_comment_mark>503
+\end<<537>>align<<537>>
+従ってハザード関<tex2html_comment_mark>504
+数はスパイク密度<tex2html_comment_mark>505
+分布(ISI分布)を用いて<tex2html_comment_mark>506
+次のようにかける.
+\begin<<538>>equation<<538>>
+r\left(  t\right)  =\frac<<539>>f\left(  t\right)  <<539>><<1661>>1-\int_<<540>>0<<540>>^<<541>>t<<541>>f\left(
+u\right)  du<<1661>> \label<<542>>hazard_renewal<<542>><tex2html_comment_mark>507
+\end<<543>>equation<<543>>
+生存関数で表記す<tex2html_comment_mark>508
+ると<tex2html_comment_mark>509
+\begin<<1954>>displaymath<<1954>>
+r\left(  t\right)  =-\frac<<1662>>\overline<<544>>F<<544>>^<<545>>,<<545>>\left(  t\right)  <<1662>><<1663>>\overline
+<<546>>F<<546>>\left(  t\right)  <<1663>>=-\frac<<547>>d<<547>><<548>>dt<<548>>\left\{  \log\overline<<549>>F<<549>>\left(  t\right)
+\right\}
+\end<<2007>>displaymath<<2007>>
+両辺を\begin<<2214>>tex2html_wrap_inline<<2214>>$0$\end<<2215>>tex2html_wrap_inline<<2215>>から\begin<<2216>>tex2html_wrap_inline<<2216>>$t$\end<<2217>>tex2html_wrap_inline<<2217>>まで積<tex2html_comment_mark>510
+分して<tex2html_comment_mark>511
+\begin<<1955>>displaymath<<1955>>
+\overline<<550>>F<<550>>\left(  t\right)  =\exp\left\{  -\int_<<551>>0<<551>>^<<552>>t<<552>>r\left(  u\right)
+du\right\}
+\end<<2008>>displaymath<<2008>>
+を得る. これから分<tex2html_comment_mark>512
+布関数は<tex2html_comment_mark>513
+\begin<<553>>equation<<553>>
+F\left(  t\right)  =1-\exp\left\{  -\int_<<554>>0<<554>>^<<555>>t<<555>>r\left(  u\right)  du\right\}
+\label<<556>>cdf_hazard<<556>><tex2html_comment_mark>514
+\end<<557>>equation<<557>>
+微分すると, スパイ<tex2html_comment_mark>515
+ク密度分布(ISI分布)は<tex2html_comment_mark>516
+\begin<<558>>equation<<558>>
+f\left(  t\right)  =r\left(  t\right)  \exp\left\{  -\int_<<559>>0<<559>>^<<560>>t<<560>>r\left(
+u\right)  du\right\}  \label<<561>>ISI_hazard<<561>><tex2html_comment_mark>517
+\end<<562>>equation<<562>>
+この式は, 確率密度<tex2html_comment_mark>518
+分布とハザード関<tex2html_comment_mark>519
+数の関係式\ref<<563>>hazard_renewal<<563>>の<tex2html_comment_mark>520
+逆関数になっている.
+\ref<<564>>hazard_renewal<<564>>と\ref<<565>>ISI_hazard<<565>>は併せ<tex2html_comment_mark>521
+て非常に重要な公<tex2html_comment_mark>522
+式なので覚えてお<tex2html_comment_mark>523
+こう. 指数分布のハ<tex2html_comment_mark>524
+ザード関数は\begin<<2218>>tex2html_wrap_inline<<2218>>$r\left(  t\right)  =\lambda
+$\end<<2219>>tex2html_wrap_inline<<2219>>であることはすぐ<tex2html_comment_mark>525
+にわかる. これは少<tex2html_comment_mark>526
+なくとも\begin<<2220>>tex2html_wrap_inline<<2220>>$t$\end<<2221>>tex2html_wrap_inline<<2221>>の間スパ<tex2html_comment_mark>527
+イクが生成されず, \begin<<2222>>tex2html_wrap_inline<<2222>>$t$\end<<2223>>tex2html_wrap_inline<<2223>><tex2html_comment_mark>528
+においてスパイク<tex2html_comment_mark>529
+を生成する確率が<tex2html_comment_mark>530
+時間によらないこと,
+すなわち記憶なし<tex2html_comment_mark>531
+の特徴を表している.
+\begin<<3110>>tex2html_deferred<<3110>>\par\end<<3111>>tex2html_deferred<<3111>>
+\subsection<<566>>スパイク密度分<tex2html_comment_mark>532
+布：Inter-spike Interval distribution<<566>>
+\begin<<3112>>tex2html_deferred<<3112>>\par\end<<3113>>tex2html_deferred<<3113>>
+それでは, まずいく<tex2html_comment_mark>533
+つかの特徴的なス<tex2html_comment_mark>534
+パイク密度分布(ス<tex2html_comment_mark>535
+パイク間隔分布, ISI分<tex2html_comment_mark>536
+布)を見てみよう.
+\begin<<3114>>tex2html_deferred<<3114>>\par\end<<3115>>tex2html_deferred<<3115>>
+\subsubsection<<567>>ガンマ分布<<567>>
+\begin<<3116>>tex2html_deferred<<3116>>\par\end<<3117>>tex2html_deferred<<3117>>
+ガンマ分布は, アー<tex2html_comment_mark>537
+ラン分布の拡張で<tex2html_comment_mark>538
+あることは既に述<tex2html_comment_mark>539
+べた. リニューアル<tex2html_comment_mark>540
+過程の中でも, 数学<tex2html_comment_mark>541
+的な取り扱いが比<tex2html_comment_mark>542
+較的容易で, 使い勝<tex2html_comment_mark>543
+手が良い分布である.<tex2html_comment_mark>544
+\begin<<3118>>tex2html_deferred<<3118>>\par\end<<3119>>tex2html_deferred<<3119>>
+\begin<<568>>table<<568>>[tp]<tex2html_comment_mark>547
+\begin<<569>>tabular<<569>>
+[t]<<570>>c<<570>><tex2html_comment_mark>549
+<<1803>>\begin<<3120>>tex2html_deferred<<3120>>\parbox[b]<<571>>3.0512in<<571>><<1664>>\begin<<572>>center<<572>>
+\includegraphics[
+natheight=2.035600in,
+natwidth=3.051200in,
+height=2.0356in,
+width=3.0512in
+]<tex2html_comment_mark>575
+<<573>>G:/10/proj/book/graphics/book__2.pdf<<573>><tex2html_comment_mark>576
+\\ 
+ガンマ分布。\begin<<2224>>tex2html_wrap_inline<<2224>>$\lambda=1,$\end<<2225>>tex2html_wrap_inline<<2225>>\space \begin<<2226>>tex2html_wrap_inline<<2226>>$\kappa=0.5,1,2$\end<<2227>>tex2html_wrap_inline<<2227>><tex2html_comment_mark>577
+\end<<574>>center<<574>><<1664>>\end<<3121>>tex2html_deferred<<3121>><<1803>>
+\\ <tex2html_comment_mark>579
+<<1804>>\begin<<3122>>tex2html_deferred<<3122>>\parbox[b]<<575>>3.0619in<<575>><<1665>>\begin<<576>>center<<576>>
+\includegraphics[
+natheight=2.043600in,
+natwidth=3.061900in,
+height=2.0436in,
+width=3.0619in
+]<tex2html_comment_mark>607
+<<577>>G:/10/proj/book/graphics/book__3.pdf<<577>><tex2html_comment_mark>608
+\\ 
+ガンマ分布のハザ<tex2html_comment_mark>609
+ード関数\begin<<2228>>tex2html_wrap_inline<<2228>>$\lambda=1$\end<<2229>>tex2html_wrap_inline<<2229>>。\begin<<2230>>tex2html_wrap_inline<<2230>>$\kappa=0.5,1,2$\end<<2231>>tex2html_wrap_inline<<2231>>。<tex2html_comment_mark>610
+\end<<578>>center<<578>><<1665>>\end<<3123>>tex2html_deferred<<3123>><<1804>>
+\end<<579>>tabular<<579>>
+\begin<<3124>>tex2html_deferred<<3124>>\caption<<580>>Table Caption<<580>>\end<<3125>>tex2html_deferred<<3125>>\label<<581>>TableKey copy(2)<<581>><tex2html_comment_mark>612
+\end<<582>>table<<582>><tex2html_comment_mark>615
+ガンマ分布のハザ<tex2html_comment_mark>617
+ード関数を求めて<tex2html_comment_mark>618
+みよう. \marginpar<<583>>\begin<<2232>>tex2html_wrap_inline<<2232>>$\lambda=1/2$\end<<2233>>tex2html_wrap_inline<<2233>>で\begin<<2234>>tex2html_wrap_inline<<2234>>$\kappa=n/2$\end<<2235>>tex2html_wrap_inline<<2235>><tex2html_comment_mark>619
+（ただし\begin<<2236>>tex2html_wrap_inline<<2236>>$n$\end<<2237>>tex2html_wrap_inline<<2237>>は整数）<tex2html_comment_mark>620
+のときガンマ分布<tex2html_comment_mark>621
+はχ二乗分布と呼ば<tex2html_comment_mark>622
+れる。<<583>>\marginpar<<1666>>\begin<<2238>>tex2html_wrap_inline<<2238>>$\Gamma\left(  \kappa\right)  =\int
+_<<584>>0<<584>>^<<585>>\infty<<585>>u^<<586>>\kappa-1<<586>>e^<<587>>-u<<587>>du$\end<<2239>>tex2html_wrap_inline<<2239>><<1666>><tex2html_comment_mark>623
+\index<<588>>Gamma distribution<<588>><tex2html_comment_mark>624
+\begin<<589>>equation<<589>>
+f\left(  t;\lambda,\kappa\right)  =\frac<<1667>>\left(  \kappa\lambda\right)
+^<<590>>\kappa<<590>><<1667>><<591>>\Gamma\left(  \kappa\right)  <<591>>t^<<592>>\kappa-1<<592>>e^<<593>>-\kappa\lambda t<<593>><tex2html_comment_mark>625
+\end<<594>>equation<<594>>
+ガンマ分布の平均<tex2html_comment_mark>626
+は\begin<<2240>>tex2html_wrap_inline<<2240>>$1/\lambda$\end<<2241>>tex2html_wrap_inline<<2241>>, 分散は\begin<<2242>>tex2html_wrap_inline<<2242>>$1/\kappa\lambda$\end<<2243>>tex2html_wrap_inline<<2243>>, ま<tex2html_comment_mark>627
+た\begin<<2244>>tex2html_wrap_inline<<2244>>$CV=1/\sqrt<<595>>\kappa<<595>>$\end<<2245>>tex2html_wrap_inline<<2245>>. ただし, 平<tex2html_comment_mark>628
+均が\begin<<2246>>tex2html_wrap_inline<<2246>>$1/\lambda$\end<<2247>>tex2html_wrap_inline<<2247>>になるよう<tex2html_comment_mark>629
+に\ref<<596>>Erlang_distribution<<596>>を規格化<tex2html_comment_mark>630
+してある. 図にいく<tex2html_comment_mark>631
+つかの\begin<<2248>>tex2html_wrap_inline<<2248>>$\kappa$\end<<2249>>tex2html_wrap_inline<<2249>>について<tex2html_comment_mark>632
+分布を表示した. ガ<tex2html_comment_mark>633
+ンマ分布のハザー<tex2html_comment_mark>634
+ド関数は<tex2html_comment_mark>635
+\begin<<597>>equation<<597>>
+r\left(  t;\lambda,\kappa\right)  =\frac<<598>>f\left(  t\right)  <<598>><<1668>>\overline
+<<599>>F<<599>>\left(  t\right)  <<1668>>=\frac<<1669>>\left(  \lambda t\right)  ^<<600>>\kappa-1<<600>>e^<<601>>-\lambda
+t<<601>><<1669>><<1670>>1-\int_<<602>>0<<602>>^<<603>>x<<603>>\left(  \lambda u\right)  ^<<604>>\kappa-1<<604>>e^<<605>>-\lambda u<<605>>du<<1670>><tex2html_comment_mark>636
+\end<<606>>equation<<606>>
+単調に増加する. つ<tex2html_comment_mark>637
+まり時間が経につ<tex2html_comment_mark>638
+れて, スパイク発生<tex2html_comment_mark>639
+の確率は高まって<tex2html_comment_mark>640
+いく. 十分大きな値<tex2html_comment_mark>641
+でハザード関数は\begin<<2250>>tex2html_wrap_inline<<2250>>$\kappa
+$\end<<2251>>tex2html_wrap_inline<<2251>>によらず\begin<<2252>>tex2html_wrap_inline<<2252>>$\lambda$\end<<2253>>tex2html_wrap_inline<<2253>>に収束<tex2html_comment_mark>642
+する. すなわち, 十分<tex2html_comment_mark>643
+時間が経つとポワ<tex2html_comment_mark>644
+ソン過程に近づい<tex2html_comment_mark>645
+ていく.
+\begin<<3126>>tex2html_deferred<<3126>>\par\end<<3127>>tex2html_deferred<<3127>>
+\begin<<1920>>theorem_type<<1920>>[problem][theorem][][][][]
+ガンマ分布のハザ<tex2html_comment_mark>646
+ード関数の最大値<tex2html_comment_mark>647
+が\begin<<2254>>tex2html_wrap_inline<<2254>>$\lambda$\end<<2255>>tex2html_wrap_inline<<2255>>であることを<tex2html_comment_mark>648
+示せ. ハザード関数<tex2html_comment_mark>649
+が単調増加関数で<tex2html_comment_mark>650
+あることを示し, 十<tex2html_comment_mark>651
+分大きな\begin<<2256>>tex2html_wrap_inline<<2256>>$t$\end<<2257>>tex2html_wrap_inline<<2257>>で\begin<<2258>>tex2html_wrap_inline<<2258>>$\kappa$\end<<2259>>tex2html_wrap_inline<<2259>>によ<tex2html_comment_mark>652
+らず\begin<<2260>>tex2html_wrap_inline<<2260>>$\lambda$\end<<2261>>tex2html_wrap_inline<<2261>>に収束する<tex2html_comment_mark>653
+ことを示せばよい.
+ロピタルの定理を<tex2html_comment_mark>654
+用いよ.\end<<1921>>theorem_type<<1921>>
+\begin<<3128>>tex2html_deferred<<3128>>\par\end<<3129>>tex2html_deferred<<3129>>
+\subsubsection<<609>>ワイブル分布<<609>><tex2html_comment_mark>655
+\begin<<3130>>tex2html_deferred<<3130>>\par\end<<3131>>tex2html_deferred<<3131>>
+\begin<<610>>table<<610>>[tp]<tex2html_comment_mark>658
+\begin<<611>>tabular<<611>>
+[c]<<612>>l<<612>><tex2html_comment_mark>660
+\begin<<2264>>tex2html_wrap_inline<<2264>>$<tex2html_comment_mark>661
+<<1805>>\begin<<3132>>tex2html_deferred<<3132>>\parbox[b]<<613>>3.0885in<<613>><<1671>>\begin<<614>>center<<614>>
+\includegraphics[
+natheight=2.059600in,
+natwidth=3.088500in,
+height=2.0596in,
+width=3.0885in
+]<tex2html_comment_mark>688
+<<615>>G:/10/proj/book/graphics/book__4.pdf<<615>><tex2html_comment_mark>689
+\\ 
+ワイブル分布\begin<<2262>>tex2html_wrap_inline<<2262>>$\lambda=1,\kappa=0.5,1,1,3$\end<<2263>>tex2html_wrap_inline<<2263>>
+\end<<616>>center<<616>><<1671>>\end<<3133>>tex2html_deferred<<3133>><<1805>>
+$\end<<2265>>tex2html_wrap_inline<<2265>>\\ 
+\begin<<2268>>tex2html_wrap_inline<<2268>>$<tex2html_comment_mark>691
+<<1806>>\begin<<3134>>tex2html_deferred<<3134>>\parbox[b]<<617>>3.0885in<<617>><<1672>>\begin<<618>>center<<618>>
+\includegraphics[
+natheight=2.059600in,
+natwidth=3.088500in,
+height=2.0596in,
+width=3.0885in
+]<tex2html_comment_mark>718
+<<619>>G:/10/proj/book/graphics/book__5.pdf<<619>><tex2html_comment_mark>719
+\\ 
+ワイブル分布\begin<<2266>>tex2html_wrap_inline<<2266>>$\lambda=1,\kappa=0.5,1,1,3$\end<<2267>>tex2html_wrap_inline<<2267>>
+\end<<620>>center<<620>><<1672>>\end<<3135>>tex2html_deferred<<3135>><<1806>>
+$\end<<2269>>tex2html_wrap_inline<<2269>>\\ 
+\begin<<2272>>tex2html_wrap_inline<<2272>>$<tex2html_comment_mark>721
+\raisebox<<621>>-0.1153in<<621>><<1807>>\begin<<3136>>tex2html_deferred<<3136>>\parbox[b]<<622>>3.0885in<<622>><<1673>>\begin<<623>>center<<623>>
+\includegraphics[
+natheight=2.059600in,
+natwidth=3.088500in,
+height=2.0596in,
+width=3.0885in
+]<tex2html_comment_mark>748
+<<624>>G:/10/proj/book/graphics/book__6.pdf<<624>><tex2html_comment_mark>749
+\\ 
+ワイブル分布のハ<tex2html_comment_mark>750
+ザード関数\begin<<2270>>tex2html_wrap_inline<<2270>>$\lambda=1,\kappa=0.5,1,1,3$\end<<2271>>tex2html_wrap_inline<<2271>>
+\end<<625>>center<<625>><<1673>>\end<<3137>>tex2html_deferred<<3137>><<1807>>
+$\end<<2273>>tex2html_wrap_inline<<2273>><tex2html_comment_mark>752
+\end<<626>>tabular<<626>>
+\begin<<3138>>tex2html_deferred<<3138>>\caption<<627>>Table Caption<<627>>\end<<3139>>tex2html_deferred<<3139>>\label<<628>>TableKey<<628>><tex2html_comment_mark>753
+\end<<629>>table<<629>><tex2html_comment_mark>756
+\marginpar<<1674>>通常は<tex2html_comment_mark>758
+\begin<<1956>>displaymath<<1956>>
+r\left(  x\right)  =\frac<<630>>\kappa<<630>><<631>>\mu<<631>>\left(  \frac<<632>>x<<632>><<633>>\mu<<633>>\right)
+^<<634>>\kappa-1<<634>><tex2html_comment_mark>759
+\end<<2009>>displaymath<<2009>><tex2html_comment_mark>760
+\begin<<1957>>displaymath<<1957>>
+f\left(  x\right)  =\frac<<635>>\kappa<<635>><<636>>\beta<<636>>\left(  \frac<<637>>x<<637>><<638>>\beta<<638>>\right)
+^<<639>>\kappa-1<<639>>\exp\left\{  -\left(  \frac<<640>>x<<640>><<641>>\beta<<641>>\right)  ^<<642>>\kappa<<642>>\right\}
+\end<<2010>>displaymath<<2010>><tex2html_comment_mark>761
+\begin<<1958>>displaymath<<1958>>
+F\left(  x\right)  =1-\exp\left\{  -\left(  \frac<<643>>x<<643>><<644>>\beta<<644>>\right)  ^<<645>>\kappa
+<<645>>\right\}
+\end<<2011>>displaymath<<2011>>
+が用いられる。こ<tex2html_comment_mark>762
+の表記では期待値は<tex2html_comment_mark>763
+\begin<<2274>>tex2html_wrap_inline<<2274>>$\beta\Gamma\left(  1+1/\kappa\right)  $\end<<2275>>tex2html_wrap_inline<<2275>>、分散は<tex2html_comment_mark>764
+\begin<<2276>>tex2html_wrap_inline<<2276>>$\beta^<<646>>2<<646>>\left[  \Gamma\left(  1+2/\kappa\right)  -\Gamma^<<647>>2<<647>>\left(
+1+1/\kappa\right)  \right]  $\end<<2277>>tex2html_wrap_inline<<2277>>。ここでは<tex2html_comment_mark>765
+期待値を\begin<<2278>>tex2html_wrap_inline<<2278>>$\beta\Gamma\left(  1+1/\kappa\right)
+=1/\lambda$\end<<2279>>tex2html_wrap_inline<<2279>>とするためにこ<tex2html_comment_mark>766
+のようにした。<<1674>>ガ<tex2html_comment_mark>767
+ンマ分布のハザー<tex2html_comment_mark>768
+ド関数が定数に収<tex2html_comment_mark>769
+束するのに対し, 工<tex2html_comment_mark>770
+業製品の故障率の<tex2html_comment_mark>771
+ようなイベントの<tex2html_comment_mark>772
+場合は, 経年劣化す<tex2html_comment_mark>773
+るからハザード関<tex2html_comment_mark>774
+数は時間とともに<tex2html_comment_mark>775
+増加すると考えら<tex2html_comment_mark>776
+れる. 時間とともに<tex2html_comment_mark>777
+ハザード関数がべ<tex2html_comment_mark>778
+き的に増加する場<tex2html_comment_mark>779
+合を考えよう.
+\begin<<648>>align*<<648>>
+r\left(  t;\lambda,\kappa\right)   ;SPMamp;  =\kappa\lambda\Gamma\left(
+1+1/\kappa\right)  \left\{  \Gamma\left(  1+1/\kappa\right)  \lambda
+t\right\}  ^<<649>>\kappa-1<<649>>\\ 
+;SPMamp;  =\kappa\left\{  \Gamma\left(  1+1/\kappa\right)  \lambda\right\}  ^<<650>>\kappa
+<<650>>t^<<651>>\kappa-1<<651>><tex2html_comment_mark>780
+\end<<652>>align*<<652>>
+ただし\begin<<2280>>tex2html_wrap_inline<<2280>>$\kappa;SPMlt;1$\end<<2281>>tex2html_wrap_inline<<2281>>のときは<tex2html_comment_mark>781
+ハザード関数が減<tex2html_comment_mark>782
+少関数になる. これ<tex2html_comment_mark>783
+は時間が経つにつ<tex2html_comment_mark>784
+れてスパイク発生<tex2html_comment_mark>785
+率は低くなること<tex2html_comment_mark>786
+を表す. べき乗のハ<tex2html_comment_mark>787
+ザード関数を持つ<tex2html_comment_mark>788
+分布はワイブル分<tex2html_comment_mark>789
+布(Weibull distribution)<tex2html_comment_mark>790
+\index<<653>>Weibull distribution<<653>><tex2html_comment_mark>791
+とよばれ<tex2html_comment_mark>792
+\begin<<1959>>displaymath<<1959>>
+f\left(  t;\lambda,\kappa\right)  =\kappa\lambda\Gamma\left(  1+1/\kappa
+\right)  \left\{  \Gamma\left(  1+1/\kappa\right)  \lambda t\right\}
+^<<654>>\kappa-1<<654>>\exp\left[  -\left\{  \Gamma\left(  1+1/\kappa\right)  \lambda
+t\right\}  ^<<655>>\kappa<<655>>\right]
+\end<<2012>>displaymath<<2012>>
+で与えられる. この<tex2html_comment_mark>793
+表記では, 期待値は\begin<<2282>>tex2html_wrap_inline<<2282>>$1/\lambda$\end<<2283>>tex2html_wrap_inline<<2283>>,
+分散は\begin<<2284>>tex2html_wrap_inline<<2284>>$1/\lambda^<<656>>2<<656>>\left[  \Gamma\left(  1+2/\kappa\right)
+/\Gamma\left(  1+1/\kappa\right)  ^<<657>>2<<657>>-1\right]  $\end<<2285>>tex2html_wrap_inline<<2285>>である.
+\begin<<2286>>tex2html_wrap_inline<<2286>>$\kappa=1$\end<<2287>>tex2html_wrap_inline<<2287>>のときにワイブ<tex2html_comment_mark>794
+ル分布は指数分布<tex2html_comment_mark>795
+になる. 分布関数は<tex2html_comment_mark>796
+\begin<<1960>>displaymath<<1960>>
+F\left(  t;\lambda,\kappa\right)  =1-\exp\left[  -\left\{  \Gamma\left(
+1+1/\kappa\right)  \lambda t\right\}  ^<<658>>\kappa<<658>>\right]
+\end<<2013>>displaymath<<2013>>
+\begin<<3140>>tex2html_deferred<<3140>>\par\end<<3141>>tex2html_deferred<<3141>>
+死亡率のようなイ<tex2html_comment_mark>797
+ベントの場合は, ハ<tex2html_comment_mark>798
+ザード関数が減少<tex2html_comment_mark>799
+から増加に転じる<tex2html_comment_mark>800
+と考えられる. これは,
+乳幼児の死亡率が<tex2html_comment_mark>801
+大きく, 成人に従い<tex2html_comment_mark>802
+死亡率は低下し, 老<tex2html_comment_mark>803
+化にともない再び<tex2html_comment_mark>804
+死亡率が上昇する<tex2html_comment_mark>805
+からである.
+\begin<<3142>>tex2html_deferred<<3142>>\par\end<<3143>>tex2html_deferred<<3143>>
+\subsubsection<<659>>逆ガウス分布<<659>>
+\begin<<3144>>tex2html_deferred<<3144>>\par\end<<3145>>tex2html_deferred<<3145>>
+神経細胞スパイク<tex2html_comment_mark>806
+の場合は, 死亡率と<tex2html_comment_mark>807
+全く逆のハザード<tex2html_comment_mark>808
+関数が描ける. 神経<tex2html_comment_mark>809
+細胞のスパイク活<tex2html_comment_mark>810
+動のISIを良く表すと<tex2html_comment_mark>811
+される逆ガウス分<tex2html_comment_mark>812
+布(Inverse Gaussian distribution\index<<660>>inverse Gaussian distribution<<660>><tex2html_comment_mark>814
+)\begin<<3146>>tex2html_deferred<<3146>>\footnote<<661>>逆ガウス分布は<tex2html_comment_mark>815
+がガウス過程のフ<tex2html_comment_mark>816
+ァーストパッセー<tex2html_comment_mark>817
+ジタイム。<<661>>\end<<3147>>tex2html_deferred<<3147>>\cite<<662>>GERSTEIN1964<<662>>を<tex2html_comment_mark>818
+見てみよう.
+\begin<<1961>>displaymath<<1961>>
+f\left(  t;\lambda,\kappa\right)  =\sqrt<<1808>>\frac<<663>>\kappa<<663>><<1675>>2\pi t^<<664>>3<<664>><<1675>><<1808>>\exp\left[
+-\frac<<665>>\kappa<<665>><<666>>2t<<666>>\left(  \lambda t-1\right)  ^<<667>>2<<667>>\right]  \text<<668>> \ \ for
+<<668>>x;SPMgt;0\text<<669>>, <<669>>0\text<<670>> for <<670>>x;SPMlt;0
+\end<<2014>>displaymath<<2014>>
+逆ガンマ分布の期<tex2html_comment_mark>819
+待値は\begin<<2288>>tex2html_wrap_inline<<2288>>$1/\lambda$\end<<2289>>tex2html_wrap_inline<<2289>>, 分散は\begin<<2290>>tex2html_wrap_inline<<2290>>$1/\kappa
+\lambda^<<671>>3<<671>>$\end<<2291>>tex2html_wrap_inline<<2291>>, また\begin<<2292>>tex2html_wrap_inline<<2292>>$CV=1/\kappa\lambda^<<672>>2<<672>>で あ
+る .\ $\end<<2293>>tex2html_wrap_inline<<2293>>また累積分布関<tex2html_comment_mark>820
+数は<tex2html_comment_mark>821
+\begin<<1962>>displaymath<<1962>>
+F\left(  t;\lambda,\kappa\right)  =\frac<<673>>1<<673>><<674>>2<<674>>\left\{  1+\operatorname<<675>>erf<<675>><tex2html_comment_mark>822
+\left[  \sqrt<<1676>>\frac<<676>>\kappa<<676>><<677>>2t<<677>><<1676>>\left(  \lambda t-1\right)  \right]  \right\}
++\frac<<678>>1<<678>><<679>>2<<679>>e^<<680>>2\lambda\kappa<<680>>\left\{  1-\operatorname<<681>>erf<<681>>\left[  \sqrt
+<<1677>>\frac<<682>>\kappa<<682>><<683>>2t<<683>><<1677>>\left(  \lambda t+1\right)  \right]  \right\}
+\end<<2015>>displaymath<<2015>>
+逆ガウス分布のハ<tex2html_comment_mark>823
+ザード関数を見て<tex2html_comment_mark>824
+みると増加から減<tex2html_comment_mark>825
+少に転じている. ス<tex2html_comment_mark>826
+パイク発生率はゼ<tex2html_comment_mark>827
+ロから始まり, 時間<tex2html_comment_mark>828
+とともに増加する.
+これはガンマ分布<tex2html_comment_mark>829
+のハザード関数と<tex2html_comment_mark>830
+同じ性質である. ガ<tex2html_comment_mark>831
+ンマ分布と違うのは,
+ハザード関数が減<tex2html_comment_mark>832
+少に転じる. つまり<tex2html_comment_mark>833
+時間が経つにつれ<tex2html_comment_mark>834
+てスパイク発生頻<tex2html_comment_mark>835
+度は減少していく.<tex2html_comment_mark>836
+\begin<<3148>>tex2html_deferred<<3148>>\par\end<<3149>>tex2html_deferred<<3149>>
+\begin<<684>>table<<684>>[tp]<tex2html_comment_mark>839
+\begin<<685>>tabular<<685>>
+[t]<<686>>c<<686>><tex2html_comment_mark>841
+<<1809>>\begin<<3150>>tex2html_deferred<<3150>>\parbox[b]<<687>>3.0885in<<687>><<1678>>\begin<<688>>center<<688>>
+\includegraphics[
+natheight=2.059600in,
+natwidth=3.088500in,
+height=2.0596in,
+width=3.0885in
+]<tex2html_comment_mark>872
+<<689>>G:/10/proj/book/graphics/book__7.pdf<<689>><tex2html_comment_mark>873
+\\ 
+逆ガウス分布（平均<tex2html_comment_mark>874
+\begin<<2294>>tex2html_wrap_inline<<2294>>$\mu=1$\end<<2295>>tex2html_wrap_inline<<2295>>）。\begin<<2296>>tex2html_wrap_inline<<2296>>$\kappa=0.5$\end<<2297>>tex2html_wrap_inline<<2297>>, \begin<<2298>>tex2html_wrap_inline<<2298>>$\kappa=2$\end<<2299>>tex2html_wrap_inline<<2299>>（実線<tex2html_comment_mark>875
+）、\begin<<2300>>tex2html_wrap_inline<<2300>>$\kappa=10$\end<<2301>>tex2html_wrap_inline<<2301>>（点線）。<tex2html_comment_mark>876
+\end<<690>>center<<690>><<1678>>\end<<3151>>tex2html_deferred<<3151>><<1809>>
+\\ <tex2html_comment_mark>878
+<<1810>>\begin<<3152>>tex2html_deferred<<3152>>\parbox[b]<<691>>3.0885in<<691>><<1679>>\begin<<692>>center<<692>>
+\includegraphics[
+natheight=2.059600in,
+natwidth=3.088500in,
+height=2.0596in,
+width=3.0885in
+]<tex2html_comment_mark>907
+<<693>>G:/10/proj/book/graphics/book__8.pdf<<693>><tex2html_comment_mark>908
+\\ 
+逆ガウス分布（平均<tex2html_comment_mark>909
+\begin<<2302>>tex2html_wrap_inline<<2302>>$\mu=1$\end<<2303>>tex2html_wrap_inline<<2303>>）。\begin<<2304>>tex2html_wrap_inline<<2304>>$\kappa=0.5$\end<<2305>>tex2html_wrap_inline<<2305>>, \begin<<2306>>tex2html_wrap_inline<<2306>>$\kappa=2$\end<<2307>>tex2html_wrap_inline<<2307>>（実線<tex2html_comment_mark>910
+）、\begin<<2308>>tex2html_wrap_inline<<2308>>$\kappa=10$\end<<2309>>tex2html_wrap_inline<<2309>>（点線）。<tex2html_comment_mark>911
+\end<<694>>center<<694>><<1679>>\end<<3153>>tex2html_deferred<<3153>><<1810>>
+\end<<695>>tabular<<695>>
+\begin<<3154>>tex2html_deferred<<3154>>\caption<<696>><<696>>\end<<3155>>tex2html_deferred<<3155>>\label<<697>>TableKey copy(1)<<697>><tex2html_comment_mark>913
+\end<<698>>table<<698>><tex2html_comment_mark>916
+\begin<<3156>>tex2html_deferred<<3156>>\par\end<<3157>>tex2html_deferred<<3157>>
+\chapter<<699>>時間変動のある<tex2html_comment_mark>918
+スパイク時系列モ<tex2html_comment_mark>919
+デル<<699>>
+\begin<<3158>>tex2html_deferred<<3158>>\par\end<<3159>>tex2html_deferred<<3159>>
+\section<<700>>非定常ポワソン<tex2html_comment_mark>920
+過程の数値計算<<700>>
+\begin<<3160>>tex2html_deferred<<3160>>\par\end<<3161>>tex2html_deferred<<3161>>
+\subsection<<701>>時間伸縮<<701>><tex2html_comment_mark>921
+\begin<<3162>>tex2html_deferred<<3162>>\par\end<<3163>>tex2html_deferred<<3163>>
+\begin<<702>>figure<<702>>
+[pt]
+\begin<<703>>center<<703>>
+\includegraphics[
+height=3.4069in,
+width=3.8335in
+]<tex2html_comment_mark>929
+<<704>>fig/time-rescaling.eps<<704>><tex2html_comment_mark>930
+\label<<705>>FIG_time-rescaling<<705>><tex2html_comment_mark>931
+\end<<706>>center<<706>>
+\end<<707>>figure<<707>>
+本節では, 定常ポワ<tex2html_comment_mark>933
+ソン過程の拡張と<tex2html_comment_mark>934
+して, 図\ref<<708>>FIG_time-rescaling<<708>>-aのよ<tex2html_comment_mark>935
+うに時間的に変動<tex2html_comment_mark>936
+するレートから生<tex2html_comment_mark>937
+成される非定常ポ<tex2html_comment_mark>938
+ワソン過程を考え<tex2html_comment_mark>939
+たい. レートの低い<tex2html_comment_mark>940
+ところではスパイ<tex2html_comment_mark>941
+クの発生率は低く,
+レートの高いとこ<tex2html_comment_mark>942
+ろではスパイクの<tex2html_comment_mark>943
+発生率は高くなる<tex2html_comment_mark>944
+だろう. 変動レート<tex2html_comment_mark>945
+を\begin<<2310>>tex2html_wrap_inline<<2310>>$\lambda_<<709>>t<<709>>$\end<<2311>>tex2html_wrap_inline<<2311>>で表し, 変動レ<tex2html_comment_mark>946
+ートを時刻\begin<<2312>>tex2html_wrap_inline<<2312>>$t$\end<<2313>>tex2html_wrap_inline<<2313>>までを<tex2html_comment_mark>947
+積分した<tex2html_comment_mark>948
+\begin<<710>>equation<<710>>
+\Lambda\left(  t\right)  =\int_<<711>>0<<711>>^<<712>>t<<712>>\lambda\left(  u\right)  du
+\label<<713>>time-rescaling<<713>><tex2html_comment_mark>949
+\end<<714>>equation<<714>>
+を考える. 図\ref<<715>>FIG_time-rescaling<<715>><tex2html_comment_mark>950
+-bに関数\begin<<2314>>tex2html_wrap_inline<<2314>>$\Lambda\left(  t\right)  $\end<<2315>>tex2html_wrap_inline<<2315>>を示す.
+\begin<<2316>>tex2html_wrap_inline<<2316>>$\Lambda$\end<<2317>>tex2html_wrap_inline<<2317>>は無次元量で, い<tex2html_comment_mark>951
+わば\begin<<2318>>tex2html_wrap_inline<<2318>>$\lambda_<<716>>t<<716>>$\end<<2319>>tex2html_wrap_inline<<2319>>により規格<tex2html_comment_mark>952
+化された時間である.
+変動レートの小さ<tex2html_comment_mark>953
+なところでは, 実時<tex2html_comment_mark>954
+間に対して\begin<<2320>>tex2html_wrap_inline<<2320>>$\Lambda$\end<<2321>>tex2html_wrap_inline<<2321>>はゆ<tex2html_comment_mark>955
+っくりと進み, 変動<tex2html_comment_mark>956
+レートの大きな所<tex2html_comment_mark>957
+では\begin<<2322>>tex2html_wrap_inline<<2322>>$\Lambda$\end<<2323>>tex2html_wrap_inline<<2323>>は早く進む.
+そのため, \ref<<717>>time-rescaling<<717>>の変<tex2html_comment_mark>958
+数変換を行うこと<tex2html_comment_mark>959
+を時間伸縮(Time-rescaling）を<tex2html_comment_mark>960
+すると言う. 例えば<tex2html_comment_mark>961
+図\ref<<718>>FIG_time-rescaling<<718>>-bでは, リス<tex2html_comment_mark>962
+ケールされた時間<tex2html_comment_mark>963
+軸\begin<<2324>>tex2html_wrap_inline<<2324>>$\Lambda$\end<<2325>>tex2html_wrap_inline<<2325>>上にある２点\begin<<2326>>tex2html_wrap_inline<<2326>>$\Lambda
+_<<719>>1<<719>>,\Lambda_<<720>>2<<720>>$\end<<2327>>tex2html_wrap_inline<<2327>>の間隔と２点\begin<<2328>>tex2html_wrap_inline<<2328>>$\Lambda
+_<<721>>3<<721>>,\Lambda_<<722>>4<<722>>$\end<<2329>>tex2html_wrap_inline<<2329>>の間隔はほぼ<tex2html_comment_mark>964
+同じぐらいだが, 実<tex2html_comment_mark>965
+時間上ではレートの<tex2html_comment_mark>966
+\begin<<2330>>tex2html_wrap_inline<<2330>>$t_<<723>>1<<723>>,t_<<724>>2<<724>>$\end<<2331>>tex2html_wrap_inline<<2331>>の間隔は\begin<<2332>>tex2html_wrap_inline<<2332>>$t_<<725>>3<<725>>,t_<<726>>4<<726>>$\end<<2333>>tex2html_wrap_inline<<2333>>の<tex2html_comment_mark>967
+間隔よりずっと大<tex2html_comment_mark>968
+きい.
+\begin<<3164>>tex2html_deferred<<3164>>\par\end<<3165>>tex2html_deferred<<3165>>
+リスケールされた<tex2html_comment_mark>969
+時間軸\begin<<2334>>tex2html_wrap_inline<<2334>>$\Lambda$\end<<2335>>tex2html_wrap_inline<<2335>>上で平均\begin<<2336>>tex2html_wrap_inline<<2336>>$1$\end<<2337>>tex2html_wrap_inline<<2337>><tex2html_comment_mark>970
+の標準指数分布に<tex2html_comment_mark>971
+従う定常ポワソン<tex2html_comment_mark>972
+過程を考え, 実時間<tex2html_comment_mark>973
+へ写像したスパイ<tex2html_comment_mark>974
+ク時系列が非定常<tex2html_comment_mark>975
+ポワソン過程である.
+\begin<<2338>>tex2html_wrap_inline<<2338>>$\Lambda$\end<<2339>>tex2html_wrap_inline<<2339>>軸上のイベント<tex2html_comment_mark>976
+系列を\begin<<2340>>tex2html_wrap_inline<<2340>>$\left\{  \Lambda_<<727>>1<<727>>,\Lambda_<<728>>2<<728>>,\cdots\right\}
+$\end<<2341>>tex2html_wrap_inline<<2341>>とすると, イベント<tex2html_comment_mark>977
+間隔\begin<<2342>>tex2html_wrap_inline<<2342>>$\Lambda_<<729>>i<<729>>-\Lambda_<<730>>i-1<<730>>$\end<<2343>>tex2html_wrap_inline<<2343>>が標準<tex2html_comment_mark>978
+指数分布<tex2html_comment_mark>979
+\begin<<1963>>displaymath<<1963>>
+g\left(  z\right)  =\exp\left[  -z\right]
+\end<<2016>>displaymath<<2016>>
+に従う. 実時間との<tex2html_comment_mark>980
+対応関係は\begin<<2344>>tex2html_wrap_inline<<2344>>$\Lambda_<<731>>i<<731>>=\Lambda\left(
+t_<<732>>i<<732>>\right)  $\end<<2345>>tex2html_wrap_inline<<2345>>だから<tex2html_comment_mark>981
+\begin<<1964>>displaymath<<1964>>
+z\left(  t_<<733>>i<<733>>|t_<<734>>i-1<<734>>,\lambda_<<1680>>t_<<735>>i-1<<735>>:t_<<736>>i<<736>><<1680>>\right)  \equiv\Lambda\left(
+t_<<737>>i<<737>>\right)  -\Lambda\left(  t_<<738>>i-1<<738>>\right)  =\int_<<1681>>t_<<739>>i-1<<739>><<1681>>^<<1682>>t_<<740>>i<<740>><<1682>><tex2html_comment_mark>982
+\lambda\left(  u\right)  du
+\end<<2017>>displaymath<<2017>>
+非定常ポワソン時<tex2html_comment_mark>983
+系列を数値的に実<tex2html_comment_mark>984
+現するためには, 指<tex2html_comment_mark>985
+数分布に従う乱数<tex2html_comment_mark>986
+を発生させ, これを<tex2html_comment_mark>987
+満たす\begin<<2346>>tex2html_wrap_inline<<2346>>$t_<<741>>i<<741>>$\end<<2347>>tex2html_wrap_inline<<2347>>を逐次求め<tex2html_comment_mark>988
+ていけばよい. この<tex2html_comment_mark>989
+方法は時間伸縮<tex2html_comment_mark>990
+(Time-rescaling）理論に基づく<tex2html_comment_mark>991
+方法であり, 次のよ<tex2html_comment_mark>992
+うにまとめられる<tex2html_comment_mark>993
+\cite<<742>>Brown2001<<742>>.
+\begin<<3166>>tex2html_deferred<<3166>>\par\end<<3167>>tex2html_deferred<<3167>>
+\begin<<1922>>theorem_type<<1922>>[algorithm][theorem][][][][]
+Time-rescaling theoremに基づく非定<tex2html_comment_mark>994
+常ポワソン過程の<tex2html_comment_mark>995
+実現
+\begin<<3168>>tex2html_deferred<<3168>>\par\end<<3169>>tex2html_deferred<<3169>>
+\begin<<744>>enumerate<<744>>
+\item \begin<<2348>>tex2html_wrap_inline<<2348>>$i=1,t_<<745>>1<<745>>=0.$\end<<2349>>tex2html_wrap_inline<<2349>>
+\begin<<3170>>tex2html_deferred<<3170>>\par\end<<3171>>tex2html_deferred<<3171>>
+\item レート\begin<<2350>>tex2html_wrap_inline<<2350>>$1$\end<<2351>>tex2html_wrap_inline<<2351>>の指数分<tex2html_comment_mark>996
+布に従う乱数\begin<<2352>>tex2html_wrap_inline<<2352>>$\eta$\end<<2353>>tex2html_wrap_inline<<2353>>を生<tex2html_comment_mark>997
+成する.
+\begin<<3172>>tex2html_deferred<<3172>>\par\end<<3173>>tex2html_deferred<<3173>>
+\item \begin<<2354>>tex2html_wrap_inline<<2354>>$\eta=\int_<<1683>>t_<<746>>i-1<<746>><<1683>>^<<1684>>t_<<747>>i<<747>><<1684>>\lambda\left(  u\right)  du$\end<<2355>>tex2html_wrap_inline<<2355>>を<tex2html_comment_mark>998
+満たす\begin<<2356>>tex2html_wrap_inline<<2356>>$t_<<748>>i<<748>>$\end<<2357>>tex2html_wrap_inline<<2357>>を求める.
+\begin<<3174>>tex2html_deferred<<3174>>\par\end<<3175>>tex2html_deferred<<3175>>
+\item \begin<<2358>>tex2html_wrap_inline<<2358>>$t_<<749>>i<<749>>\geq T$\end<<2359>>tex2html_wrap_inline<<2359>>ならば終了.
+\begin<<3176>>tex2html_deferred<<3176>>\par\end<<3177>>tex2html_deferred<<3177>>
+\begin<<2360>>tex2html_wrap_inline<<2360>>$t_<<750>>i<<750>>;SPMlt;T$\end<<2361>>tex2html_wrap_inline<<2361>>ならば\begin<<2362>>tex2html_wrap_inline<<2362>>$i\leftarrow i+1.\ 2$\end<<2363>>tex2html_wrap_inline<<2363>>へ.
+\end<<751>>enumerate<<751>>\end<<1923>>theorem_type<<1923>>
+\begin<<3178>>tex2html_deferred<<3178>>\par\end<<3179>>tex2html_deferred<<3179>>
+アルゴリズムの第<tex2html_comment_mark>999
+３ステップで指数<tex2html_comment_mark>1000
+分布に従う乱数を<tex2html_comment_mark>1001
+発生させるには次<tex2html_comment_mark>1002
+に説明する逆関数<tex2html_comment_mark>1003
+法を用いる.
+\begin<<3180>>tex2html_deferred<<3180>>\par\end<<3181>>tex2html_deferred<<3181>>
+\subsubsection<<753>>逆関数法<<753>>
+\begin<<3182>>tex2html_deferred<<3182>>\par\end<<3183>>tex2html_deferred<<3183>>
+逆関数法<tex2html_comment_mark>1004
+\index<<754>>Inverse transform sampling<<754>><tex2html_comment_mark>1005
+は２つの確率変数<tex2html_comment_mark>1006
+の確率密度分布の<tex2html_comment_mark>1007
+一般的な関係に基<tex2html_comment_mark>1008
+づいている. 例えば<tex2html_comment_mark>1009
+確率密度分布\begin<<2364>>tex2html_wrap_inline<<2364>>$f\left(  x\right)  $\end<<2365>>tex2html_wrap_inline<<2365>><tex2html_comment_mark>1010
+に従う確率変数（<tex2html_comment_mark>1011
+乱数）\begin<<2366>>tex2html_wrap_inline<<2366>>$x$\end<<2367>>tex2html_wrap_inline<<2367>>を考える. \begin<<2368>>tex2html_wrap_inline<<2368>>$x$\end<<2369>>tex2html_wrap_inline<<2369>><tex2html_comment_mark>1012
+と\begin<<2370>>tex2html_wrap_inline<<2370>>$y=g\left(  x\right)  $\end<<2371>>tex2html_wrap_inline<<2371>>なる関係が<tex2html_comment_mark>1013
+ある変数\begin<<2372>>tex2html_wrap_inline<<2372>>$y$\end<<2373>>tex2html_wrap_inline<<2373>>を考えると,
+\begin<<2374>>tex2html_wrap_inline<<2374>>$x$\end<<2375>>tex2html_wrap_inline<<2375>>が乱数だから\begin<<2376>>tex2html_wrap_inline<<2376>>$y$\end<<2377>>tex2html_wrap_inline<<2377>>も乱<tex2html_comment_mark>1014
+数である. このとき<tex2html_comment_mark>1015
+確率変数\begin<<2378>>tex2html_wrap_inline<<2378>>$y$\end<<2379>>tex2html_wrap_inline<<2379>>の確率密<tex2html_comment_mark>1016
+度分布\begin<<2380>>tex2html_wrap_inline<<2380>>$p\left(  y\right)  $\end<<2381>>tex2html_wrap_inline<<2381>>は\begin<<2382>>tex2html_wrap_inline<<2382>>$f\left(  x\right)
+,g\left(  x\right)  $\end<<2383>>tex2html_wrap_inline<<2383>>を用いてどの<tex2html_comment_mark>1017
+ように表現される<tex2html_comment_mark>1018
+だろうか. 結論から<tex2html_comment_mark>1019
+言うと, \begin<<2384>>tex2html_wrap_inline<<2384>>$p\left(  y\right)  $\end<<2385>>tex2html_wrap_inline<<2385>>は<tex2html_comment_mark>1020
+\begin<<1965>>displaymath<<1965>>
+p\left(  y\right)  =f\left(  x\right)  \left\vert \frac<<755>>dx<<755>><<756>>dy<<756>>\right\vert
+=f\left(  x\right)  \left\vert g^<<757>>\prime<<757>>\left(  x\right)  \right\vert ^<<758>>-1<<758>><tex2html_comment_mark>1021
+\end<<2018>>displaymath<<2018>>
+で与えられる. 最後<tex2html_comment_mark>1022
+は全部\begin<<2386>>tex2html_wrap_inline<<2386>>$y$\end<<2387>>tex2html_wrap_inline<<2387>>で表す必要<tex2html_comment_mark>1023
+があるから, \begin<<2388>>tex2html_wrap_inline<<2388>>$p\left(  y\right)  =f\left(
+g^<<759>>-1<<759>>\left(  y\right)  \right)  \left\vert g^<<760>>\prime<<760>>\left(  g^<<761>>-1<<761>>\left(
+y\right)  \right)  \right\vert $\end<<2389>>tex2html_wrap_inline<<2389>>というこ<tex2html_comment_mark>1024
+とになる. この式は<tex2html_comment_mark>1025
+確率密度の保存則<tex2html_comment_mark>1026
+を表していて, \begin<<2390>>tex2html_wrap_inline<<2390>>$p\left(  y\right)
+\left\vert dy\right\vert =f\left(  x\right)  \left\vert dx\right\vert
+$\end<<2391>>tex2html_wrap_inline<<2391>>と書くこともできる.
+ただし\begin<<2392>>tex2html_wrap_inline<<2392>>$\left\vert dy\right\vert =\left\vert g^<<762>>\prime
+<<762>>\left(  x\right)  dx\right\vert $\end<<2393>>tex2html_wrap_inline<<2393>>. つまり\begin<<2394>>tex2html_wrap_inline<<2394>>$x$\end<<2395>>tex2html_wrap_inline<<2395>>に<tex2html_comment_mark>1027
+分布するサンプルは,
+傾きが小さいとこ<tex2html_comment_mark>1028
+ろは\begin<<2396>>tex2html_wrap_inline<<2396>>$y$\end<<2397>>tex2html_wrap_inline<<2397>>上では凝縮さ<tex2html_comment_mark>1029
+れる. 逆に傾きが小<tex2html_comment_mark>1030
+さいところは\begin<<2398>>tex2html_wrap_inline<<2398>>$y$\end<<2399>>tex2html_wrap_inline<<2399>>軸上<tex2html_comment_mark>1031
+では疎になる.
+\begin<<3184>>tex2html_deferred<<3184>>\par\end<<3185>>tex2html_deferred<<3185>>
+さて, この変数変換<tex2html_comment_mark>1032
+に伴う密度分布の<tex2html_comment_mark>1033
+変換式は, 一般に成<tex2html_comment_mark>1034
+り立つ. そこで特に\begin<<2400>>tex2html_wrap_inline<<2400>>$y$\end<<2401>>tex2html_wrap_inline<<2401>><tex2html_comment_mark>1035
+と\begin<<2402>>tex2html_wrap_inline<<2402>>$x$\end<<2403>>tex2html_wrap_inline<<2403>>の関係として<tex2html_comment_mark>1036
+\begin<<1966>>displaymath<<1966>>
+y=g\left(  x\right)  =\int_<<763>>-\infty<<763>>^<<764>>x<<764>>f\left(  u\right)  du
+\end<<2019>>displaymath<<2019>>
+を考えてみよう. こ<tex2html_comment_mark>1037
+こで\begin<<2404>>tex2html_wrap_inline<<2404>>$f\left(  x\right)  $\end<<2405>>tex2html_wrap_inline<<2405>>は\begin<<2406>>tex2html_wrap_inline<<2406>>$x$\end<<2407>>tex2html_wrap_inline<<2407>>自身<tex2html_comment_mark>1038
+の密度分布である<tex2html_comment_mark>1039
+から, \begin<<2408>>tex2html_wrap_inline<<2408>>$g\left(  x\right)  $\end<<2409>>tex2html_wrap_inline<<2409>>として\begin<<2410>>tex2html_wrap_inline<<2410>>$x$\end<<2411>>tex2html_wrap_inline<<2411>><tex2html_comment_mark>1040
+の分布関数を選ん<tex2html_comment_mark>1041
+だことになる. 従っ<tex2html_comment_mark>1042
+て\begin<<2412>>tex2html_wrap_inline<<2412>>$y\in\left[  0,1\right]  $\end<<2413>>tex2html_wrap_inline<<2413>>であるこ<tex2html_comment_mark>1043
+とは明らか. このとき<tex2html_comment_mark>1044
+\begin<<2414>>tex2html_wrap_inline<<2414>>$y$\end<<2415>>tex2html_wrap_inline<<2415>>の密度分布は<tex2html_comment_mark>1045
+\begin<<1967>>displaymath<<1967>>
+p\left(  y\right)  =f\left(  x\right)  \left\vert g^<<765>>\prime<<765>>\left(  x\right)
+\right\vert ^<<766>>-1<<766>>=f\left(  x\right)  \left\vert f\left(  x\right)  \right\vert
+^<<767>>-1<<767>>=1
+\end<<2020>>displaymath<<2020>>
+つまり, \begin<<2416>>tex2html_wrap_inline<<2416>>$y$\end<<2417>>tex2html_wrap_inline<<2417>>は\begin<<2418>>tex2html_wrap_inline<<2418>>$\left[  0,1\right]  $\end<<2419>>tex2html_wrap_inline<<2419>>の<tex2html_comment_mark>1046
+区間内に一様分布<tex2html_comment_mark>1047
+する. 式のように変<tex2html_comment_mark>1048
+数変換をすると, 密<tex2html_comment_mark>1049
+度が小さくなると<tex2html_comment_mark>1050
+ころでは, 変換の傾<tex2html_comment_mark>1051
+きが小さくなり\begin<<2420>>tex2html_wrap_inline<<2420>>$y$\end<<2421>>tex2html_wrap_inline<<2421>>軸<tex2html_comment_mark>1052
+上に凝縮する効果<tex2html_comment_mark>1053
+が働く. 逆に密度が<tex2html_comment_mark>1054
+大きくなるところ<tex2html_comment_mark>1055
+で傾きが大きくな<tex2html_comment_mark>1056
+るから, \begin<<2422>>tex2html_wrap_inline<<2422>>$y$\end<<2423>>tex2html_wrap_inline<<2423>>軸上で疎に<tex2html_comment_mark>1057
+なるような効果が<tex2html_comment_mark>1058
+働く. このように密<tex2html_comment_mark>1059
+度を相殺するよう<tex2html_comment_mark>1060
+に写像される. 結果<tex2html_comment_mark>1061
+として\begin<<2424>>tex2html_wrap_inline<<2424>>$y$\end<<2425>>tex2html_wrap_inline<<2425>>は\begin<<2426>>tex2html_wrap_inline<<2426>>$\left[  0,1\right]  $\end<<2427>>tex2html_wrap_inline<<2427>>の<tex2html_comment_mark>1062
+区間に一様に分布<tex2html_comment_mark>1063
+することになる.
+\begin<<3186>>tex2html_deferred<<3186>>\par\end<<3187>>tex2html_deferred<<3187>>
+そこで逆に, \begin<<2428>>tex2html_wrap_inline<<2428>>$\xi$\end<<2429>>tex2html_wrap_inline<<2429>>を\begin<<2430>>tex2html_wrap_inline<<2430>>$\left[  0,1\right]
+$\end<<2431>>tex2html_wrap_inline<<2431>>の区間の一様乱数<tex2html_comment_mark>1064
+として,
+\begin<<1968>>displaymath<<1968>>
+\xi=\int_<<768>>-\infty<<768>>^<<769>>\eta<<769>>f\left(  x\right)  dx
+\end<<2021>>displaymath<<2021>>
+を満たす\begin<<2432>>tex2html_wrap_inline<<2432>>$\eta$\end<<2433>>tex2html_wrap_inline<<2433>>を求める<tex2html_comment_mark>1065
+と, \begin<<2434>>tex2html_wrap_inline<<2434>>$\eta$\end<<2435>>tex2html_wrap_inline<<2435>>は密度分布\begin<<2436>>tex2html_wrap_inline<<2436>>$f\left(  \eta\right)
+$\end<<2437>>tex2html_wrap_inline<<2437>>に従うというわけ<tex2html_comment_mark>1066
+である. \begin<<2438>>tex2html_wrap_inline<<2438>>$F\left(  \eta\right)  =\int_<<770>>-\infty<<770>>^<<771>>\eta
+<<771>>f\left(  x\right)  dx$\end<<2439>>tex2html_wrap_inline<<2439>>と書けば, \begin<<2440>>tex2html_wrap_inline<<2440>>$\eta=F^<<772>>-1<<772>>\left(
+\xi\right)  $\end<<2441>>tex2html_wrap_inline<<2441>>である. このよう<tex2html_comment_mark>1067
+にして, 一様乱数\begin<<2442>>tex2html_wrap_inline<<2442>>$\xi$\end<<2443>>tex2html_wrap_inline<<2443>>か<tex2html_comment_mark>1068
+ら逆関数\begin<<2444>>tex2html_wrap_inline<<2444>>$F^<<773>>-1<<773>>\left(  \xi\right)  $\end<<2445>>tex2html_wrap_inline<<2445>>を<tex2html_comment_mark>1069
+用いて, 密度分布\begin<<2446>>tex2html_wrap_inline<<2446>>$f\left(
+\eta\right)  =F^<<774>>\prime<<774>>\left(  \eta\right)  $\end<<2447>>tex2html_wrap_inline<<2447>>に従う<tex2html_comment_mark>1070
+乱数\begin<<2448>>tex2html_wrap_inline<<2448>>$\eta$\end<<2449>>tex2html_wrap_inline<<2449>>を作成する方<tex2html_comment_mark>1071
+法を逆関数法という.
+一般には数値積分<tex2html_comment_mark>1072
+により\begin<<2450>>tex2html_wrap_inline<<2450>>$\eta$\end<<2451>>tex2html_wrap_inline<<2451>>を求めるこ<tex2html_comment_mark>1073
+とができる. 逆関数<tex2html_comment_mark>1074
+が解析的に求めら<tex2html_comment_mark>1075
+れる場合には, 解析<tex2html_comment_mark>1076
+解を使うのが良い.
+例えば平均\begin<<2452>>tex2html_wrap_inline<<2452>>$1/\lambda$\end<<2453>>tex2html_wrap_inline<<2453>>の指<tex2html_comment_mark>1077
+数分布に従う乱数は<tex2html_comment_mark>1078
+\begin<<1969>>displaymath<<1969>>
+\xi=\int_<<775>>0<<775>>^<<776>>\eta<<776>>\lambda e^<<777>>-\lambda x<<777>>dx=\left[  -e^<<778>>-\lambda x<<778>>\right]
+_<<779>>0<<779>>^<<780>>\eta<<780>>=1-e^<<781>>-\lambda\eta<<781>><tex2html_comment_mark>1079
+\end<<2022>>displaymath<<2022>>
+を\begin<<2454>>tex2html_wrap_inline<<2454>>$\eta$\end<<2455>>tex2html_wrap_inline<<2455>>に関して解いて,<tex2html_comment_mark>1080
+\begin<<1970>>displaymath<<1970>>
+\eta=-\lambda^<<782>>-1<<782>>\log\xi
+\end<<2023>>displaymath<<2023>>
+により得られる. た<tex2html_comment_mark>1081
+だし\begin<<2456>>tex2html_wrap_inline<<2456>>$1-\xi$\end<<2457>>tex2html_wrap_inline<<2457>>は\begin<<2458>>tex2html_wrap_inline<<2458>>$\xi$\end<<2459>>tex2html_wrap_inline<<2459>>で置き換<tex2html_comment_mark>1082
+えた.\quad\ 
+\begin<<3188>>tex2html_deferred<<3188>>\par\end<<3189>>tex2html_deferred<<3189>>
+\begin<<1924>>theorem_type<<1924>>[problem][theorem][][][][]
+一様乱数から平均\begin<<2460>>tex2html_wrap_inline<<2460>>$n/\lambda
+$\end<<2461>>tex2html_wrap_inline<<2461>>・分散\begin<<2462>>tex2html_wrap_inline<<2462>>$n/\lambda^<<784>>2<<784>>$\end<<2463>>tex2html_wrap_inline<<2463>>のアー<tex2html_comment_mark>1083
+ラン分布に従う乱<tex2html_comment_mark>1084
+数を生成する公式<tex2html_comment_mark>1085
+を導け\end<<1925>>theorem_type<<1925>>
+\begin<<3190>>tex2html_deferred<<3190>>\par\end<<3191>>tex2html_deferred<<3191>>
+\subsection<<786>>条件付きスパイ<tex2html_comment_mark>1086
+ク密度分布<<786>>
+\begin<<3192>>tex2html_deferred<<3192>>\par\end<<3193>>tex2html_deferred<<3193>>
+変動ポワソン過程<tex2html_comment_mark>1087
+のISIの確率分布を求<tex2html_comment_mark>1088
+めてみよう.
+\begin<<787>>align<<787>>
+p\left(  t_<<788>>i<<788>>|t_<<789>>i-1<<789>>,\lambda_<<1685>>t_<<790>>i-1<<790>>:t_<<791>>i<<791>><<1685>>\right)   ;SPMamp;  =\left\vert
+\frac<<792>>dz<<792>><<1686>>dt_<<793>>i<<793>><<1686>>\right\vert g\left(  z|\lambda_<<1687>>t_<<794>>i-1<<794>>:t_<<795>>i<<795>><<1687>>\right)
+\nonumber\\ 
+;SPMamp;  =\lambda\left(  t_<<796>>i<<796>>\right)  \exp\left[  -\int_<<1688>>t_<<797>>i-1<<797>><<1688>>^<<1689>>t_<<798>>i<<798>><<1689>><tex2html_comment_mark>1089
+\lambda\left(  u\right)  du\right]  \label<<799>>ISI_inhomogeneous_Poisson<<799>><tex2html_comment_mark>1090
+\end<<800>>align<<800>>
+条件つきISI分布<tex2html_comment_mark>1091
+\ref<<801>>ISI_inhomogeneous_Poisson<<801>>は, 定常ポ<tex2html_comment_mark>1092
+ワソン過程のISI分布<tex2html_comment_mark>1093
+である指数分布\begin<<2464>>tex2html_wrap_inline<<2464>>$\lambda e^<<802>>-\lambda
+t<<802>>$\end<<2465>>tex2html_wrap_inline<<2465>>の自然な拡張にな<tex2html_comment_mark>1094
+っていることがわ<tex2html_comment_mark>1095
+かる. 逆関数法を用<tex2html_comment_mark>1096
+いれば, このISI分布に<tex2html_comment_mark>1097
+従う時系列を作れる.
+\begin<<3194>>tex2html_deferred<<3194>>\bigskip\end<<3195>>tex2html_deferred<<3195>>
+\begin<<3196>>tex2html_deferred<<3196>>\par\end<<3197>>tex2html_deferred<<3197>>
+\begin<<1926>>theorem_type<<1926>>[algorithm][theorem][][][][]
+逆関数法を用いた<tex2html_comment_mark>1098
+非定常ポワソン過<tex2html_comment_mark>1099
+程の実現
+\begin<<3198>>tex2html_deferred<<3198>>\par\end<<3199>>tex2html_deferred<<3199>>
+\begin<<804>>enumerate<<804>>
+\item \begin<<2466>>tex2html_wrap_inline<<2466>>$i=1,t_<<805>>1<<805>>=0$\end<<2467>>tex2html_wrap_inline<<2467>>.
+\begin<<3200>>tex2html_deferred<<3200>>\par\end<<3201>>tex2html_deferred<<3201>>
+\item \begin<<2468>>tex2html_wrap_inline<<2468>>$\left[  0,1\right]  $\end<<2469>>tex2html_wrap_inline<<2469>>の区間の一<tex2html_comment_mark>1100
+様乱数\begin<<2470>>tex2html_wrap_inline<<2470>>$\xi$\end<<2471>>tex2html_wrap_inline<<2471>>を生成する.
+\begin<<3202>>tex2html_deferred<<3202>>\par\end<<3203>>tex2html_deferred<<3203>>
+\item \begin<<2472>>tex2html_wrap_inline<<2472>>$\xi=\lambda\left(  t_<<806>>i<<806>>\right)  \exp\left[  -\int_<<1690>>t_<<807>>i-1<<807>><<1690>>^<<1691>>t_<<808>>i<<808>><tex2html_comment_mark>1101
+<<1691>>\lambda\left(  u\right)  du\right]  $\end<<2473>>tex2html_wrap_inline<<2473>>を満たす\begin<<2474>>tex2html_wrap_inline<<2474>>$t_<<809>>i<<809>><tex2html_comment_mark>1102
+$\end<<2475>>tex2html_wrap_inline<<2475>>を求める.
+\begin<<3204>>tex2html_deferred<<3204>>\par\end<<3205>>tex2html_deferred<<3205>>
+\item \begin<<2476>>tex2html_wrap_inline<<2476>>$t_<<810>>i<<810>>\geq T$\end<<2477>>tex2html_wrap_inline<<2477>>ならば終了.
+\begin<<3206>>tex2html_deferred<<3206>>\par\end<<3207>>tex2html_deferred<<3207>>
+\begin<<2478>>tex2html_wrap_inline<<2478>>$t_<<811>>i<<811>>;SPMlt;T$\end<<2479>>tex2html_wrap_inline<<2479>>ならば\begin<<2480>>tex2html_wrap_inline<<2480>>$i\leftarrow i+1.\ 2$\end<<2481>>tex2html_wrap_inline<<2481>>へ.
+\end<<812>>enumerate<<812>>\end<<1927>>theorem_type<<1927>>
+\begin<<3208>>tex2html_deferred<<3208>>\par\end<<3209>>tex2html_deferred<<3209>>
+\subsection<<814>>直説法<<814>>
+\begin<<3210>>tex2html_deferred<<3210>>\par\end<<3211>>tex2html_deferred<<3211>>
+条件付きISI分布<tex2html_comment_mark>1103
+\ref<<815>>ISI_inhomogeneous_Poisson<<815>>はスパイク<tex2html_comment_mark>1104
+が時刻\begin<<2482>>tex2html_wrap_inline<<2482>>$t_<<816>>i<<816>>$\end<<2483>>tex2html_wrap_inline<<2483>>まで生じず,
+時刻\begin<<2484>>tex2html_wrap_inline<<2484>>$t_<<817>>i<<817>>$\end<<2485>>tex2html_wrap_inline<<2485>>において生成<tex2html_comment_mark>1105
+されるときのISI分布<tex2html_comment_mark>1106
+である. \begin<<2486>>tex2html_wrap_inline<<2486>>$t_<<818>>i<<818>>=0,t_<<819>>i-1<<819>>=t$\end<<2487>>tex2html_wrap_inline<<2487>>と見れば,
+これは定常リニュ<tex2html_comment_mark>1107
+ーアル過程におけ<tex2html_comment_mark>1108
+るISI分布の定義である.
+定常リニューアル<tex2html_comment_mark>1109
+過程のISI分布とハザ<tex2html_comment_mark>1110
+ード関数との間には,
+\ref<<820>>ISI_hazard<<820>>のような関係<tex2html_comment_mark>1111
+があるから, \ref<<821>>ISI_inhomogeneous_Poisson<<821>><tex2html_comment_mark>1112
+と\ref<<822>>ISI_Point_Process<<822>>を見比べて<tex2html_comment_mark>1113
+\begin<<823>>equation<<823>>
+r\left(  t_<<824>>i<<824>>\right)  =\lambda\left(  t_<<825>>i<<825>>\right)
+\label<<826>>intensity_Poisson_process<<826>><tex2html_comment_mark>1114
+\end<<827>>equation<<827>>
+であることがわかる.
+つまり\begin<<2488>>tex2html_wrap_inline<<2488>>$\lambda\left(  t_<<828>>i<<828>>\right)  $\end<<2489>>tex2html_wrap_inline<<2489>>は定<tex2html_comment_mark>1115
+常リニューアル過<tex2html_comment_mark>1116
+程のハザード関数<tex2html_comment_mark>1117
+-スパイクが時刻\begin<<2490>>tex2html_wrap_inline<<2490>>$t$\end<<2491>>tex2html_wrap_inline<<2491>>ま<tex2html_comment_mark>1118
+で生じず, 時刻\begin<<2492>>tex2html_wrap_inline<<2492>>$t$\end<<2493>>tex2html_wrap_inline<<2493>>にお<tex2html_comment_mark>1119
+いて生成される確<tex2html_comment_mark>1120
+率-と同じ意味を持<tex2html_comment_mark>1121
+つことがわかる. ハ<tex2html_comment_mark>1122
+ザード関数も変動<tex2html_comment_mark>1123
+レートも, その瞬間<tex2html_comment_mark>1124
+にスパイクが発生<tex2html_comment_mark>1125
+する確率を与え, 一<tex2html_comment_mark>1126
+つのISIに注目した場<tex2html_comment_mark>1127
+合は両者は同一視<tex2html_comment_mark>1128
+できる. ただしリニ<tex2html_comment_mark>1129
+ューアル過程の場<tex2html_comment_mark>1130
+合には, スパイク発<tex2html_comment_mark>1131
+生から経過した時<tex2html_comment_mark>1132
+間を変数とする特<tex2html_comment_mark>1133
+定のハザード関数<tex2html_comment_mark>1134
+を考え, スパイクの<tex2html_comment_mark>1135
+度に時刻が原点に<tex2html_comment_mark>1136
+リセットされた. こ<tex2html_comment_mark>1137
+れに対して, 非定常<tex2html_comment_mark>1138
+ポワソン過程の場<tex2html_comment_mark>1139
+合は瞬間スパイク<tex2html_comment_mark>1140
+生成率が連綿と与<tex2html_comment_mark>1141
+えられる. このため,
+非定常ポワソン過<tex2html_comment_mark>1142
+程の時刻\begin<<2494>>tex2html_wrap_inline<<2494>>$t$\end<<2495>>tex2html_wrap_inline<<2495>>の瞬間発<tex2html_comment_mark>1143
+火率は過去の履歴<tex2html_comment_mark>1144
+によらずに, \begin<<2496>>tex2html_wrap_inline<<2496>>$\lambda\left(  t\right)  $\end<<2497>>tex2html_wrap_inline<<2497>><tex2html_comment_mark>1145
+のみできまる.
+\begin<<3212>>tex2html_deferred<<3212>>\par\end<<3213>>tex2html_deferred<<3213>>
+以上の議論から, リ<tex2html_comment_mark>1146
+スケールされた時<tex2html_comment_mark>1147
+間軸\begin<<2498>>tex2html_wrap_inline<<2498>>$\Lambda$\end<<2499>>tex2html_wrap_inline<<2499>>上で生成し<tex2html_comment_mark>1148
+たスパイク時系列<tex2html_comment_mark>1149
+のISIが記憶なしの特<tex2html_comment_mark>1150
+徴をもつ指数分布<tex2html_comment_mark>1151
+に従うとき, 実時間<tex2html_comment_mark>1152
+における瞬間発火<tex2html_comment_mark>1153
+率も過去の履歴に<tex2html_comment_mark>1154
+よらないことが分<tex2html_comment_mark>1155
+かった. これは, 章で<tex2html_comment_mark>1156
+調べた記憶なしの<tex2html_comment_mark>1157
+特徴(memoryless property\index<<829>>memoryless property<<829>><tex2html_comment_mark>1159
+)の拡張になっていて,
+定常・非定常を問<tex2html_comment_mark>1160
+わずポワソン過程<tex2html_comment_mark>1161
+の特徴である.
+\begin<<3214>>tex2html_deferred<<3214>>\par\end<<3215>>tex2html_deferred<<3215>>
+非定常ポワソン過<tex2html_comment_mark>1162
+程はハザード関数<tex2html_comment_mark>1163
+の定義に基づいて,
+履歴を考慮せず微<tex2html_comment_mark>1164
+小区間毎に独立に<tex2html_comment_mark>1165
+計算できる. これは<tex2html_comment_mark>1166
+単に, 微小区間\begin<<2500>>tex2html_wrap_inline<<2500>>$\Delta$\end<<2501>>tex2html_wrap_inline<<2501>>内<tex2html_comment_mark>1167
+にスパイクが一つ<tex2html_comment_mark>1168
+生じる確率が\begin<<2502>>tex2html_wrap_inline<<2502>>$\lambda\left(  t\right)
+\Delta$\end<<2503>>tex2html_wrap_inline<<2503>>で与えられること<tex2html_comment_mark>1169
+を示しているので<tex2html_comment_mark>1170
+あって, これを非定<tex2html_comment_mark>1171
+常ポワソン過程の<tex2html_comment_mark>1172
+定義としてもよい.
+\begin<<3216>>tex2html_deferred<<3216>>\par\end<<3217>>tex2html_deferred<<3217>>
+\begin<<1928>>theorem_type<<1928>>[algorithm][theorem][][][][]
+強度を用いた直接<tex2html_comment_mark>1173
+的な非定常ポワソ<tex2html_comment_mark>1174
+ン過程の実現
+\begin<<3218>>tex2html_deferred<<3218>>\par\end<<3219>>tex2html_deferred<<3219>>
+\begin<<831>>enumerate<<831>>
+\item 長さ\begin<<2504>>tex2html_wrap_inline<<2504>>$T$\end<<2505>>tex2html_wrap_inline<<2505>>の時系列を<tex2html_comment_mark>1175
+十分に小さな幅\begin<<2506>>tex2html_wrap_inline<<2506>>$\Delta$\end<<2507>>tex2html_wrap_inline<<2507>><tex2html_comment_mark>1176
+の\begin<<2508>>tex2html_wrap_inline<<2508>>$N=T/\Delta$\end<<2509>>tex2html_wrap_inline<<2509>>個の区間に分<tex2html_comment_mark>1177
+ける.
+\begin<<3220>>tex2html_deferred<<3220>>\par\end<<3221>>tex2html_deferred<<3221>>
+\item \begin<<2510>>tex2html_wrap_inline<<2510>>$i=1$\end<<2511>>tex2html_wrap_inline<<2511>>, \begin<<2512>>tex2html_wrap_inline<<2512>>$j=1$\end<<2513>>tex2html_wrap_inline<<2513>>.
+\begin<<3222>>tex2html_deferred<<3222>>\par\end<<3223>>tex2html_deferred<<3223>>
+\item \begin<<2514>>tex2html_wrap_inline<<2514>>$j\leftarrow j+1$\end<<2515>>tex2html_wrap_inline<<2515>>, \begin<<2516>>tex2html_wrap_inline<<2516>>$\quad j=N$\end<<2517>>tex2html_wrap_inline<<2517>>で終了.
+\begin<<3224>>tex2html_deferred<<3224>>\par\end<<3225>>tex2html_deferred<<3225>>
+\item \begin<<2518>>tex2html_wrap_inline<<2518>>$\left[  0,1\right]  $\end<<2519>>tex2html_wrap_inline<<2519>>の区間の一<tex2html_comment_mark>1178
+様乱数\begin<<2520>>tex2html_wrap_inline<<2520>>$\xi$\end<<2521>>tex2html_wrap_inline<<2521>>を生成する.
+\begin<<3226>>tex2html_deferred<<3226>>\par\end<<3227>>tex2html_deferred<<3227>>
+\begin<<2522>>tex2html_wrap_inline<<2522>>$\qquad\lambda\left(  j\Delta\right)  \Delta\geq\xi$\end<<2523>>tex2html_wrap_inline<<2523>>\quad な<tex2html_comment_mark>1179
+らば\quad\begin<<2524>>tex2html_wrap_inline<<2524>>$t_<<832>>i<<832>>=j\Delta,i\leftarrow i+1$\end<<2525>>tex2html_wrap_inline<<2525>>.
+\begin<<3228>>tex2html_deferred<<3228>>\par\end<<3229>>tex2html_deferred<<3229>>
+\begin<<2526>>tex2html_wrap_inline<<2526>>$\qquad\lambda\left(  j\Delta\right)  \Delta;SPMlt;\xi$\end<<2527>>tex2html_wrap_inline<<2527>>\quad なら<tex2html_comment_mark>1180
+ば\quad\begin<<2528>>tex2html_wrap_inline<<2528>>$3$\end<<2529>>tex2html_wrap_inline<<2529>>へ.
+\end<<833>>enumerate<<833>>\end<<1929>>theorem_type<<1929>>
+\begin<<3230>>tex2html_deferred<<3230>>\par\end<<3231>>tex2html_deferred<<3231>>
+この直接的な方法<tex2html_comment_mark>1181
+はもっとも実装が<tex2html_comment_mark>1182
+簡潔だが, 乱数を\begin<<2530>>tex2html_wrap_inline<<2530>>$N$\end<<2531>>tex2html_wrap_inline<<2531>>回<tex2html_comment_mark>1183
+発生させる必要が<tex2html_comment_mark>1184
+あり計算効率は著<tex2html_comment_mark>1185
+しく悪い. 毎回乱数<tex2html_comment_mark>1186
+を生成させるよりは,
+指数分布に従う乱<tex2html_comment_mark>1187
+数を一回発生させ,
+その値になるまで<tex2html_comment_mark>1188
+\begin<<2532>>tex2html_wrap_inline<<2532>>$\lambda\left(  j\Delta\right)  $\end<<2533>>tex2html_wrap_inline<<2533>>を数値的<tex2html_comment_mark>1189
+に足し込んでいく<tex2html_comment_mark>1190
+（積分する）アル<tex2html_comment_mark>1191
+ゴリズムの方が効<tex2html_comment_mark>1192
+率がよい. ただし, こ<tex2html_comment_mark>1193
+の方法も微小区間<tex2html_comment_mark>1194
+に区切った関数の<tex2html_comment_mark>1195
+数値積分が必要に<tex2html_comment_mark>1196
+なってくる. それで<tex2html_comment_mark>1197
+は次に, 簡潔でかつ<tex2html_comment_mark>1198
+効率のよい数値計<tex2html_comment_mark>1199
+算法としてよく用<tex2html_comment_mark>1200
+いられる希薄化に<tex2html_comment_mark>1201
+よる手法を紹介し<tex2html_comment_mark>1202
+よう.
+\begin<<3232>>tex2html_deferred<<3232>>\par\end<<3233>>tex2html_deferred<<3233>>
+\subsection<<835>>希薄化による数<tex2html_comment_mark>1203
+値計算法<<835>>
+\begin<<3234>>tex2html_deferred<<3234>>\par\end<<3235>>tex2html_deferred<<3235>>
+希薄化(Thinning\index<<836>>thinning<<836>><tex2html_comment_mark>1205
+\cite<<837>>Daley88,Heyman1990<<837>>)と呼ばれる<tex2html_comment_mark>1206
+方法は積分操作を<tex2html_comment_mark>1207
+必要としないため,
+計算時間が短くて<tex2html_comment_mark>1208
+済む場合がある.
+\begin<<3236>>tex2html_deferred<<3236>>\par\end<<3237>>tex2html_deferred<<3237>>
+まず\begin<<2534>>tex2html_wrap_inline<<2534>>$[0,T]$\end<<2535>>tex2html_wrap_inline<<2535>>の範囲にレー<tex2html_comment_mark>1209
+トが\begin<<2536>>tex2html_wrap_inline<<2536>>$M$\end<<2537>>tex2html_wrap_inline<<2537>>の定常ポアソ<tex2html_comment_mark>1210
+ン過程を生成する.
+ただし, \begin<<2538>>tex2html_wrap_inline<<2538>>$M$\end<<2539>>tex2html_wrap_inline<<2539>>はどの時刻<tex2html_comment_mark>1211
+の変動レートより<tex2html_comment_mark>1212
+も大きい値とする<tex2html_comment_mark>1213
+（つまり\begin<<2540>>tex2html_wrap_inline<<2540>>$t\in\lbrack0,T]$\end<<2541>>tex2html_wrap_inline<<2541>>に対<tex2html_comment_mark>1214
+して\begin<<2542>>tex2html_wrap_inline<<2542>>$\lambda\left(  t\right)  \leq M$\end<<2543>>tex2html_wrap_inline<<2543>>）. 生<tex2html_comment_mark>1215
+成されたスパイク<tex2html_comment_mark>1216
+時系列を\begin<<2544>>tex2html_wrap_inline<<2544>>$\left\{  t_<<838>>1,<<838>>t_<<839>>2<<839>>\right\}  $\end<<2545>>tex2html_wrap_inline<<2545>>.
+時刻\begin<<2546>>tex2html_wrap_inline<<2546>>$t_<<840>>j<<840>>$\end<<2547>>tex2html_wrap_inline<<2547>>におけるスパ<tex2html_comment_mark>1217
+イクは, 規格化した<tex2html_comment_mark>1218
+変動レート\begin<<2548>>tex2html_wrap_inline<<2548>>$p\left(  t_<<841>>j<<841>>\right)  =\lambda
+\left(  t_<<842>>j<<842>>\right)  /M$\end<<2549>>tex2html_wrap_inline<<2549>>の確率で残す.
+残ったスパイク時<tex2html_comment_mark>1219
+系列\begin<<2550>>tex2html_wrap_inline<<2550>>$\left\{  t_<<843>>1<<843>>^<<844>>\ast<<844>>,t_<<845>>2<<845>>^<<846>>\ast<<846>>,\cdots\right\}  $\end<<2551>>tex2html_wrap_inline<<2551>><tex2html_comment_mark>1220
+は変動レート\begin<<2552>>tex2html_wrap_inline<<2552>>$\lambda\left(  t\right)
+$\end<<2553>>tex2html_wrap_inline<<2553>>のポワソン過程に<tex2html_comment_mark>1221
+従う.
+\begin<<3238>>tex2html_deferred<<3238>>\par\end<<3239>>tex2html_deferred<<3239>>
+\begin<<1930>>theorem_type<<1930>>[algorithm][theorem][][][][]
+Shedler-Lewis Thinning Algorithmによる非<tex2html_comment_mark>1222
+定常ポワソン過程<tex2html_comment_mark>1223
+の実現
+\begin<<3240>>tex2html_deferred<<3240>>\par\end<<3241>>tex2html_deferred<<3241>>
+\begin<<848>>enumerate<<848>>
+\item \begin<<2554>>tex2html_wrap_inline<<2554>>$\left[  0,T\right]  $\end<<2555>>tex2html_wrap_inline<<2555>>の区間の変<tex2html_comment_mark>1224
+動レート\begin<<2556>>tex2html_wrap_inline<<2556>>$\lambda\left(  t\right)  $\end<<2557>>tex2html_wrap_inline<<2557>>を<tex2html_comment_mark>1225
+用意する
+\begin<<3242>>tex2html_deferred<<3242>>\par\end<<3243>>tex2html_deferred<<3243>>
+\item \begin<<2558>>tex2html_wrap_inline<<2558>>$M=\max\lambda\left(  t\right)  $\end<<2559>>tex2html_wrap_inline<<2559>>をもとめ<tex2html_comment_mark>1226
+る
+\begin<<3244>>tex2html_deferred<<3244>>\par\end<<3245>>tex2html_deferred<<3245>>
+\item \begin<<2560>>tex2html_wrap_inline<<2560>>$i=1$\end<<2561>>tex2html_wrap_inline<<2561>>
+\begin<<3246>>tex2html_deferred<<3246>>\par\end<<3247>>tex2html_deferred<<3247>>
+\item レート\begin<<2562>>tex2html_wrap_inline<<2562>>$M$\end<<2563>>tex2html_wrap_inline<<2563>>の指数分<tex2html_comment_mark>1227
+布に従う乱数\begin<<2564>>tex2html_wrap_inline<<2564>>$X$\end<<2565>>tex2html_wrap_inline<<2565>>を生<tex2html_comment_mark>1228
+成する\marginpar<<1692>>\begin<<2566>>tex2html_wrap_inline<<2566>>$\eta$\end<<2567>>tex2html_wrap_inline<<2567>>を\begin<<2568>>tex2html_wrap_inline<<2568>>$\left[  0,1\right]
+$\end<<2569>>tex2html_wrap_inline<<2569>>の区間の一様乱数<tex2html_comment_mark>1229
+として、\begin<<2570>>tex2html_wrap_inline<<2570>>$X=-M^<<849>>-1<<849>>\log\eta$\end<<2571>>tex2html_wrap_inline<<2571>><<1692>>
+\begin<<3248>>tex2html_deferred<<3248>>\par\end<<3249>>tex2html_deferred<<3249>>
+\item \begin<<2572>>tex2html_wrap_inline<<2572>>$s=s+X$\end<<2573>>tex2html_wrap_inline<<2573>>, \begin<<2574>>tex2html_wrap_inline<<2574>>$\quad s;SPMgt;T$\end<<2575>>tex2html_wrap_inline<<2575>>ならば終了
+\begin<<3250>>tex2html_deferred<<3250>>\par\end<<3251>>tex2html_deferred<<3251>>
+\item \begin<<2576>>tex2html_wrap_inline<<2576>>$\left[  0,1\right]  $\end<<2577>>tex2html_wrap_inline<<2577>>の区間の一<tex2html_comment_mark>1230
+様乱数\begin<<2578>>tex2html_wrap_inline<<2578>>$\xi$\end<<2579>>tex2html_wrap_inline<<2579>>を生成する
+\begin<<3252>>tex2html_deferred<<3252>>\par\end<<3253>>tex2html_deferred<<3253>>
+\begin<<2580>>tex2html_wrap_inline<<2580>>$\qquad\lambda\left(  s\right)  //M\geq\xi$\end<<2581>>tex2html_wrap_inline<<2581>>\quad ならば\begin<<2582>>tex2html_wrap_inline<<2582>>$\quad
+t_<<850>>i<<850>>=s,$\end<<2583>>tex2html_wrap_inline<<2583>>\quad\begin<<2584>>tex2html_wrap_inline<<2584>>$i\leftarrow i+1$\end<<2585>>tex2html_wrap_inline<<2585>>
+\begin<<3254>>tex2html_deferred<<3254>>\par\end<<3255>>tex2html_deferred<<3255>>
+\item \begin<<2586>>tex2html_wrap_inline<<2586>>$4$\end<<2587>>tex2html_wrap_inline<<2587>>に戻る
+\end<<851>>enumerate<<851>>\end<<1931>>theorem_type<<1931>>
+\begin<<3256>>tex2html_deferred<<3256>>\par\end<<3257>>tex2html_deferred<<3257>>
+\section<<853>>非定常リニュー<tex2html_comment_mark>1231
+アル過程の数値計算<<853>>
+\begin<<3258>>tex2html_deferred<<3258>>\par\end<<3259>>tex2html_deferred<<3259>>
+\subsection<<854>>変動レートの時<tex2html_comment_mark>1232
+間伸縮<<854>>
+\begin<<3260>>tex2html_deferred<<3260>>\par\end<<3261>>tex2html_deferred<<3261>>
+非定常リニューア<tex2html_comment_mark>1233
+ル過程は変動ポワ<tex2html_comment_mark>1234
+ソン過程の場合を<tex2html_comment_mark>1235
+拡張して考えると<tex2html_comment_mark>1236
+わかりやすい. 非定<tex2html_comment_mark>1237
+常ポワソン過程と<tex2html_comment_mark>1238
+同様に時間伸縮し<tex2html_comment_mark>1239
+た軸上で定常リニ<tex2html_comment_mark>1240
+ューアル過程を考<tex2html_comment_mark>1241
+える. 例として\begin<<2588>>tex2html_wrap_inline<<2588>>$\Lambda$\end<<2589>>tex2html_wrap_inline<<2589>>上<tex2html_comment_mark>1242
+の定常ガンマ過程<tex2html_comment_mark>1243
+を考え, そのイベン<tex2html_comment_mark>1244
+ト系列を\begin<<2590>>tex2html_wrap_inline<<2590>>$\left\{  \Lambda_<<855>>1<<855>>,\Lambda_<<856>>2<<856>><tex2html_comment_mark>1245
+,\cdots\right\}  $\end<<2591>>tex2html_wrap_inline<<2591>>とする. イベン<tex2html_comment_mark>1246
+ト間隔\begin<<2592>>tex2html_wrap_inline<<2592>>$\Lambda_<<857>>i<<857>>-\Lambda_<<858>>i-1<<858>>$\end<<2593>>tex2html_wrap_inline<<2593>>が平<tex2html_comment_mark>1247
+均が\begin<<2594>>tex2html_wrap_inline<<2594>>$1$\end<<2595>>tex2html_wrap_inline<<2595>>, 分散が\begin<<2596>>tex2html_wrap_inline<<2596>>$1/\kappa$\end<<2597>>tex2html_wrap_inline<<2597>>であ<tex2html_comment_mark>1248
+る標準ガンマ分布<tex2html_comment_mark>1249
+\marginpar<<1811>>ガンマ分布
+\begin<<3262>>tex2html_deferred<<3262>>\par\end<<3263>>tex2html_deferred<<3263>>
+\begin<<2598>>tex2html_wrap_inline<<2598>>$\frac<<1693>>\left(  \kappa\lambda\right)  ^<<859>>\kappa<<859>><<1693>><<860>>\Gamma\left(  \kappa\right)
+<<860>>t^<<861>>\kappa-1<<861>>e^<<862>>-\kappa\lambda t<<862>>$\end<<2599>>tex2html_wrap_inline<<2599>>
+\begin<<3264>>tex2html_deferred<<3264>>\par\end<<3265>>tex2html_deferred<<3265>>
+期待値\begin<<2600>>tex2html_wrap_inline<<2600>>$1/\lambda$\end<<2601>>tex2html_wrap_inline<<2601>>、分散\begin<<2602>>tex2html_wrap_inline<<2602>>$1/\kappa\lambda$\end<<2603>>tex2html_wrap_inline<<2603>><<1811>><tex2html_comment_mark>1250
+\begin<<1971>>displaymath<<1971>>
+g\left(  z;\kappa\right)  =\frac<<863>>1<<863>><<864>>\Gamma\left(  \kappa\right)  <<864>><tex2html_comment_mark>1251
+\kappa\left(  \kappa z\right)  ^<<865>>\kappa-1<<865>>e^<<866>>-\kappa z<<866>><tex2html_comment_mark>1252
+\end<<2024>>displaymath<<2024>>
+に従うとする\cite<<867>>Berman1981,Barbieri2001<<867>><tex2html_comment_mark>1253
+. \begin<<2604>>tex2html_wrap_inline<<2604>>$\kappa$\end<<2605>>tex2html_wrap_inline<<2605>>はshape parameter\index<<868>>shape parameter<<868>><tex2html_comment_mark>1255
+と呼ばれる. 実時間<tex2html_comment_mark>1256
+との対応は\begin<<2606>>tex2html_wrap_inline<<2606>>$\Lambda_<<869>>i<<869>>=\Lambda\left(
+t_<<870>>i<<870>>\right)  $\end<<2607>>tex2html_wrap_inline<<2607>>だから, ガンマ<tex2html_comment_mark>1257
+分布に従う乱数を<tex2html_comment_mark>1258
+発生させ, 変数変換<tex2html_comment_mark>1259
+の公式<tex2html_comment_mark>1260
+\begin<<1972>>displaymath<<1972>>
+z\left(  t_<<871>>i<<871>>|t_<<872>>i-1<<872>>,\lambda_<<1694>>t_<<873>>i-1<<873>>:t_<<874>>i<<874>><<1694>>\right)  =\Lambda\left(
+t_<<875>>i<<875>>\right)  -\Lambda\left(  t_<<876>>i-1<<876>>\right)  =\int_<<1695>>t_<<877>>i-1<<877>><<1695>>^<<1696>>t_<<878>>i<<878>><<1696>><tex2html_comment_mark>1261
+\lambda\left(  u\right)  du
+\end<<2025>>displaymath<<2025>>
+を満たす分布を\begin<<2608>>tex2html_wrap_inline<<2608>>$t_<<879>>i<<879>>$\end<<2609>>tex2html_wrap_inline<<2609>>を<tex2html_comment_mark>1262
+逐次的に求めれば,
+実時間でのスパイ<tex2html_comment_mark>1263
+ク時系列を求める<tex2html_comment_mark>1264
+ことができる.
+\begin<<3266>>tex2html_deferred<<3266>>\par\end<<3267>>tex2html_deferred<<3267>>
+\subsection<<880>>条件付きISI分布<<880>>
+\begin<<3268>>tex2html_deferred<<3268>>\par\end<<3269>>tex2html_deferred<<3269>>
+\subsubsection<<881>>ガンマ分布<<881>>
+\begin<<3270>>tex2html_deferred<<3270>>\par\end<<3271>>tex2html_deferred<<3271>>
+\begin<<2610>>tex2html_wrap_inline<<2610>>$p\left(  t_<<882>>i<<882>>|t_<<883>>i-1<<883>>,\left\{  \lambda_<<884>>t<<884>>\right\}  \right)  $\end<<2611>>tex2html_wrap_inline<<2611>><tex2html_comment_mark>1265
+を求めよう. 分布\begin<<2612>>tex2html_wrap_inline<<2612>>$p\left(
+t_<<885>>i<<885>>|t_<<886>>i-1<<886>>,\left\{  \lambda_<<887>>t<<887>>\right\}  \right)  $\end<<2613>>tex2html_wrap_inline<<2613>>は次<tex2html_comment_mark>1266
+のような\begin<<2614>>tex2html_wrap_inline<<2614>>$t_<<888>>i<<888>>$\end<<2615>>tex2html_wrap_inline<<2615>>から\begin<<2616>>tex2html_wrap_inline<<2616>>$z$\end<<2617>>tex2html_wrap_inline<<2617>>へ<tex2html_comment_mark>1267
+の変数変換（タイ<tex2html_comment_mark>1268
+ムリスケーリング<tex2html_comment_mark>1269
+）を施すことで, 標<tex2html_comment_mark>1270
+準ガンマ分布にな<tex2html_comment_mark>1271
+るとする. すなわち,
+変数変換の公式から<tex2html_comment_mark>1272
+\begin<<1973>>displaymath<<1973>>
+g\left(  z|t_<<889>>i-1<<889>>,\lambda_<<1697>>t_<<890>>i-1<<890>>:t_<<891>>i<<891>><<1697>>\right)  =\left\vert \frac<<892>>dz<<892>><tex2html_comment_mark>1273
+<<893>>dt<<893>>\right\vert ^<<894>>-1<<894>>p\left(  t_<<895>>i<<895>>|t_<<896>>i-1<<896>>,\lambda_<<1698>>t_<<897>>i-1<<897>>:t_<<898>>i<<898>><<1698>>\right)
+\end<<2026>>displaymath<<2026>>
+\begin<<2618>>tex2html_wrap_inline<<2618>>$dz/dt_<<899>>i<<899>>=\lambda\left(  t_<<900>>i<<900>>\right)  $\end<<2619>>tex2html_wrap_inline<<2619>>に注意<tex2html_comment_mark>1274
+して<tex2html_comment_mark>1275
+\begin<<901>>align*<<901>>
+p\left(  t_<<902>>i<<902>>|t_<<903>>i-1<<903>>,\lambda_<<1699>>t_<<904>>i-1<<904>>:t_<<905>>i<<905>><<1699>>\right)   ;SPMamp;  =\left\vert
+\frac<<906>>dz<<906>><<1700>>dt_<<907>>i<<907>><<1700>>\right\vert g\left(  z|t_<<908>>i-1<<908>>,\lambda_<<1701>>t_<<909>>i-1<<909>>:t_<<910>>i<<910>><<1701>>\right)
+\\ 
+;SPMamp;  =\lambda\left(  t_<<911>>i<<911>>\right)  \frac<<912>>1<<912>><<913>>\Gamma\left(  \kappa\right)  <<913>><tex2html_comment_mark>1276
+\kappa\left[  \kappa\int_<<1702>>t_<<914>>i-1<<914>><<1702>>^<<1703>>t_<<915>>i<<915>><<1703>>\lambda\left(  u\right)  du\right]
+^<<916>>\kappa-1<<916>>\exp\left[  -\kappa\int_<<1704>>t_<<917>>i-1<<917>><<1704>>^<<1705>>t_<<918>>i<<918>><<1705>>\lambda\left(  u\right)
+du\right]
+\end<<919>>align*<<919>><tex2html_comment_mark>1277
+\marginpar<<920>>\begin<<2620>>tex2html_wrap_inline<<2620>>$\lambda\left(  t\right)  $\end<<2621>>tex2html_wrap_inline<<2621>>が定数\begin<<2622>>tex2html_wrap_inline<<2622>>$\lambda
+$\end<<2623>>tex2html_wrap_inline<<2623>>の時は、平均\begin<<2624>>tex2html_wrap_inline<<2624>>$1/\lambda$\end<<2625>>tex2html_wrap_inline<<2625>>・<tex2html_comment_mark>1282
+分散\begin<<2626>>tex2html_wrap_inline<<2626>>$1/\kappa$\end<<2627>>tex2html_wrap_inline<<2627>><<920>><tex2html_comment_mark>1283
+\begin<<3272>>tex2html_deferred<<3272>>\par\end<<3273>>tex2html_deferred<<3273>>
+\begin<<921>>table<<921>>[tp]<tex2html_comment_mark>1288
+\begin<<2632>>tex2html_wrap_inline<<2632>>$<tex2html_comment_mark>1290
+\begin<<922>>array<<922>>
+[t]<<923>>cc<<923>><tex2html_comment_mark>1291
+\noindent\hspace*<<924>>-0.9\evensidemargin<<924>><tex2html_comment_mark>1294
+<<1812>>\begin<<3274>>tex2html_deferred<<3274>>\parbox[b]<<925>>3.0512in<<925>><<1706>>\begin<<926>>center<<926>>
+\includegraphics[
+natheight=2.035600in,
+natwidth=3.051200in,
+height=2.0356in,
+width=3.0512in
+]<tex2html_comment_mark>1328
+<<927>>G:/10/proj/book/graphics/book__9.pdf<<927>><tex2html_comment_mark>1329
+\\ 
+指数分布とハザー<tex2html_comment_mark>1330
+ド関数。ガンマ分<tex2html_comment_mark>1331
+布とハザード関数 \begin<<2628>>tex2html_wrap_inline<<2628>>$\kappa=3$\end<<2629>>tex2html_wrap_inline<<2629>>
+\end<<928>>center<<928>><<1706>>\end<<3275>>tex2html_deferred<<3275>><<1812>>
+;SPMamp;
+<<1813>>\begin<<3276>>tex2html_deferred<<3276>>\parbox[b]<<929>>3.0512in<<929>><<1707>>\begin<<930>>center<<930>>
+\includegraphics[
+natheight=2.035600in,
+natwidth=3.051200in,
+height=2.0356in,
+width=3.0512in
+]<tex2html_comment_mark>1355
+<<931>>G:/10/proj/book/graphics/book__10.pdf<<931>><tex2html_comment_mark>1356
+\\ 
+レート関数 \begin<<2630>>tex2html_wrap_inline<<2630>>$\lambda\left(  t\right)  $\end<<2631>>tex2html_wrap_inline<<2631>>
+\end<<932>>center<<932>><<1707>>\end<<3277>>tex2html_deferred<<3277>><<1813>>
+\\ <tex2html_comment_mark>1358
+\noindent\hspace*<<933>>-0.9\evensidemargin<<933>><tex2html_comment_mark>1361
+<<1814>>\begin<<3278>>tex2html_deferred<<3278>>\parbox[b]<<934>>3.0512in<<934>><<1708>>\begin<<935>>center<<935>>
+\includegraphics[
+natheight=2.035600in,
+natwidth=3.051200in,
+height=2.0356in,
+width=3.0512in
+]<tex2html_comment_mark>1384
+<<936>>G:/10/proj/book/graphics/book__11.pdf<<936>><tex2html_comment_mark>1385
+\\ 
+ISI分布<tex2html_comment_mark>1386
+\end<<937>>center<<937>><<1708>>\end<<3279>>tex2html_deferred<<3279>><<1814>>
+;SPMamp;
+\end<<938>>array<<938>>
+$\end<<2633>>tex2html_wrap_inline<<2633>>\space \begin<<3280>>tex2html_deferred<<3280>>\caption<<939>><<939>>\end<<3281>>tex2html_deferred<<3281>>\label<<940>>TableKey copy(3)<<940>><tex2html_comment_mark>1388
+\end<<941>>table<<941>><tex2html_comment_mark>1391
+\begin<<3282>>tex2html_deferred<<3282>>\par\end<<3283>>tex2html_deferred<<3283>>
+\subsubsection<<942>>ワイブル分布<<942>>
+\begin<<3284>>tex2html_deferred<<3284>>\par\end<<3285>>tex2html_deferred<<3285>>
+平均\begin<<2634>>tex2html_wrap_inline<<2634>>$1$\end<<2635>>tex2html_wrap_inline<<2635>>・分散\begin<<2636>>tex2html_wrap_inline<<2636>>$\Gamma\left(  1+2/\kappa\right)
+/\Gamma\left(  1+1/\kappa\right)  ^<<943>>2<<943>>-1$\end<<2637>>tex2html_wrap_inline<<2637>>の標準<tex2html_comment_mark>1393
+ワイブル分布は<tex2html_comment_mark>1394
+\begin<<1974>>displaymath<<1974>>
+g\left(  z;\kappa\right)  =\kappa\Gamma\left(  1+1/\kappa\right)  \left\{
+\Gamma\left(  1+1/\kappa\right)  t\right\}  ^<<944>>\kappa-1<<944>>\exp\left[  -\left\{
+\Gamma\left(  1+1/\kappa\right)  t\right\}  ^<<945>>\kappa<<945>>\right]
+\end<<2027>>displaymath<<2027>>
+\begin<<2638>>tex2html_wrap_inline<<2638>>$dz/dt_<<946>>i<<946>>=\lambda\left(  t_<<947>>i<<947>>\right)  $\end<<2639>>tex2html_wrap_inline<<2639>>に注意<tex2html_comment_mark>1395
+して<tex2html_comment_mark>1396
+\begin<<948>>align*<<948>>
+p\left(  t_<<949>>i<<949>>|t_<<950>>i-1<<950>>,\lambda_<<1709>>t_<<951>>i-1<<951>>:t_<<952>>i<<952>><<1709>>\right)   ;SPMamp;  =\left\vert
+\frac<<953>>dz<<953>><<1710>>dt_<<954>>i<<954>><<1710>>\right\vert g\left(  z|t_<<955>>i-1<<955>>,\lambda_<<1711>>t_<<956>>i-1<<956>>:t_<<957>>i<<957>><<1711>>\right)
+\\ 
+;SPMamp;  =\lambda\left(  t_<<958>>i<<958>>\right)  \kappa\Gamma\left(  1+1/\kappa\right)
+\left\{  \Gamma\left(  1+1/\kappa\right)  \int_<<1712>>t_<<959>>i-1<<959>><<1712>>^<<1713>>t_<<960>>i<<960>><<1713>>\lambda\left(
+u\right)  du\right\}  ^<<961>>\kappa-1<<961>>\exp\left[  -\left\{  \Gamma\left(
+1+1/\kappa\right)  \int_<<1714>>t_<<962>>i-1<<962>><<1714>>^<<1715>>t_<<963>>i<<963>><<1715>>\lambda\left(  u\right)  du\right\}
+^<<964>>\kappa<<964>>\right]
+\end<<965>>align*<<965>>
+\begin<<3286>>tex2html_deferred<<3286>>\par\end<<3287>>tex2html_deferred<<3287>>
+\subsubsection<<966>>逆ガウス分布<<966>>
+\begin<<3288>>tex2html_deferred<<3288>>\par\end<<3289>>tex2html_deferred<<3289>>
+同様にして, 逆ガウ<tex2html_comment_mark>1397
+ス分布に従うリニ<tex2html_comment_mark>1398
+ューアル過程は, 平均<tex2html_comment_mark>1399
+\begin<<2640>>tex2html_wrap_inline<<2640>>$1$\end<<2641>>tex2html_wrap_inline<<2641>>・分散\begin<<2642>>tex2html_wrap_inline<<2642>>$1/\kappa$\end<<2643>>tex2html_wrap_inline<<2643>>の標準逆<tex2html_comment_mark>1400
+ガウス分布<tex2html_comment_mark>1401
+\begin<<1975>>displaymath<<1975>>
+g\left(  z;\kappa\right)  =\sqrt<<1815>>\frac<<967>>\kappa<<967>><<1716>>2\pi z^<<968>>3<<968>><<1716>><<1815>>\exp\left[
+-\frac<<969>>\kappa<<969>><<970>>2z<<970>>\left(  z-1\right)  ^<<971>>2<<971>>\right]
+\end<<2028>>displaymath<<2028>>
+\marginpar<<1839>>\begin<<2644>>tex2html_wrap_inline<<2644>>$\sqrt<<1816>>\frac<<972>>\kappa<<972>><<1717>>2\pi z^<<973>>3<<973>><<1717>><<1816>>\exp\left[  -\frac<<974>>\kappa<<974>><tex2html_comment_mark>1402
+<<975>>2z<<975>>\left\{  \lambda z-1\right\}  ^<<976>>2<<976>>\right]  $\end<<2645>>tex2html_wrap_inline<<2645>>
+\begin<<3290>>tex2html_deferred<<3290>>\par\end<<3291>>tex2html_deferred<<3291>>
+期待値は\begin<<2646>>tex2html_wrap_inline<<2646>>$1/\lambda$\end<<2647>>tex2html_wrap_inline<<2647>>、分散<tex2html_comment_mark>1403
+は\begin<<2648>>tex2html_wrap_inline<<2648>>$1/\kappa\lambda^<<977>>3<<977>>$\end<<2649>>tex2html_wrap_inline<<2649>><<1839>>を用いてISI分<tex2html_comment_mark>1404
+布は<tex2html_comment_mark>1405
+\begin<<978>>align*<<978>>
+p\left(  t_<<979>>i<<979>>|t_<<980>>i-1<<980>>,\lambda_<<1718>>t_<<981>>i-1<<981>>:t_<<982>>i<<982>><<1718>>\right)   ;SPMamp;  =\left\vert
+\frac<<983>>dz<<983>><<1719>>dt_<<984>>i<<984>><<1719>>\right\vert g\left(  z|t_<<985>>i-1<<985>>,\lambda_<<1720>>t_<<986>>i-1<<986>>:t_<<987>>i<<987>><<1720>>\right)
+\\ 
+;SPMamp;  =\lambda\left(  t_<<988>>i<<988>>\right)  \sqrt<<1840>>\frac<<989>>\kappa<<989>><<1817>>2\pi\left\{
+\int_<<1721>>t_<<990>>i-1<<990>><<1721>>^<<1722>>t_<<991>>i<<991>><<1722>>\lambda\left(  u\right)  du\right\}  ^<<992>>3<<992>><<1817>><<1840>>\exp\left[
+-\frac<<993>>\kappa<<993>><<994>>2<<994>>\frac<<1818>>\left\{  \int_<<1723>>t_<<995>>i-1<<995>><<1723>>^<<1724>>t_<<996>>i<<996>><<1724>>\lambda\left(  u\right)
+du-1\right\}  ^<<997>>2<<997>><<1818>><<1819>>\int_<<1725>>t_<<998>>i-1<<998>><<1725>>^<<1726>>t_<<999>>i<<999>><<1726>>\lambda\left(  u\right)  du<<1819>>\right]
+\end<<1000>>align*<<1000>>
+\marginpar<<1841>><tex2html_comment_mark>1406
+\begin<<1976>>displaymath<<1976>>
+\sqrt<<1820>>\frac<<1001>>\kappa/\lambda<<1001>><<1727>>2\pi T^<<1002>>3<<1002>><<1727>><<1820>>\exp\left[  -\frac<<1003>>\kappa/\lambda<<1003>><tex2html_comment_mark>1407
+<<1004>>2T<<1004>>\left\{  \lambda T-1\right\}  ^<<1005>>2<<1005>>\right]
+\end<<2029>>displaymath<<2029>>
+平均\begin<<2650>>tex2html_wrap_inline<<2650>>$1/\lambda$\end<<2651>>tex2html_wrap_inline<<2651>>, 分散\begin<<2652>>tex2html_wrap_inline<<2652>>$1/\kappa\lambda^<<1006>>2<<1006>>$\end<<2653>>tex2html_wrap_inline<<2653>><<1841>>
+\begin<<3292>>tex2html_deferred<<3292>>\par\end<<3293>>tex2html_deferred<<3293>>
+\subsection<<1007>>時間伸縮理論<<1007>>
+\begin<<3294>>tex2html_deferred<<3294>>\par\end<<3295>>tex2html_deferred<<3295>>
+条件付きISI分布が求<tex2html_comment_mark>1408
+まれば, これからハ<tex2html_comment_mark>1409
+ザード関数が求ま<tex2html_comment_mark>1410
+るから<tex2html_comment_mark>1411
+\begin<<1977>>displaymath<<1977>>
+r\left(  t_<<1008>>i<<1008>>|t_<<1009>>i-1<<1009>>,\left\{  \lambda_<<1010>>t<<1010>>\right\}  \right)  =\frac<<1821>>p\left(
+t_<<1011>>i<<1011>>|t_<<1012>>i-1<<1012>>,\lambda_<<1728>>t_<<1013>>i-1<<1013>>:t_<<1014>>i<<1014>><<1728>>\right)  <<1821>><<1822>>1-\int_<<1729>>t_<<1015>>i-1<<1015>><<1729>>^<<1730>>t_<<1016>>i<<1016>><tex2html_comment_mark>1412
+<<1730>>p\left(  u|t_<<1017>>i-1<<1017>>,\lambda_<<1731>>t_<<1018>>i-1<<1018>>:t_<<1019>>i<<1019>><<1731>>\right)  du<<1822>><tex2html_comment_mark>1413
+\end<<2030>>displaymath<<2030>>
+ハザード関数は瞬<tex2html_comment_mark>1414
+間スパイク生成率<tex2html_comment_mark>1415
+を与えるから, 時間<tex2html_comment_mark>1416
+依存ポワソン過程<tex2html_comment_mark>1417
+のときと同じように,
+時間を十分小さな<tex2html_comment_mark>1418
+幅\begin<<2654>>tex2html_wrap_inline<<2654>>$\Delta$\end<<2655>>tex2html_wrap_inline<<2655>>のビンに区切<tex2html_comment_mark>1419
+って確率\begin<<2656>>tex2html_wrap_inline<<2656>>$r\left(  t_<<1020>>i<<1020>>|t_<<1021>>i-1<<1021>>,\lambda_<<1732>>t_<<1022>>i-1<<1022>><tex2html_comment_mark>1420
+:t_<<1023>>i<<1023>><<1732>>\right)  \Delta$\end<<2657>>tex2html_wrap_inline<<2657>>でスパイクを<tex2html_comment_mark>1421
+発生させればよい.
+もちろんこの方法<tex2html_comment_mark>1422
+は効率が悪い. では,
+非定常ポワソン過<tex2html_comment_mark>1423
+程の時と同様に\begin<<2658>>tex2html_wrap_inline<<2658>>$r\left(
+t_<<1024>>i<<1024>>|t_<<1025>>i-1<<1025>>,\lambda_<<1733>>t_<<1026>>i-1<<1026>>:t_<<1027>>i<<1027>><<1733>>\right)  \Delta$\end<<2659>>tex2html_wrap_inline<<2659>>を積<tex2html_comment_mark>1424
+分していってはど<tex2html_comment_mark>1425
+うだろうか. 実はハ<tex2html_comment_mark>1426
+ザード関数を時間<tex2html_comment_mark>1427
+伸縮した軸上の定<tex2html_comment_mark>1428
+常ポワソン過程の<tex2html_comment_mark>1429
+逆写像として, 非定<tex2html_comment_mark>1430
+常リニューアル過<tex2html_comment_mark>1431
+程が得られる. この<tex2html_comment_mark>1432
+方法は非常に汎用<tex2html_comment_mark>1433
+性のある方法で, よ<tex2html_comment_mark>1434
+り一般の点過程に<tex2html_comment_mark>1435
+ついて成り立つか<tex2html_comment_mark>1436
+ら証明はそこで示<tex2html_comment_mark>1437
+そう. ここでは, この<tex2html_comment_mark>1438
+時間伸縮理論に基<tex2html_comment_mark>1439
+づいた数値計算ア<tex2html_comment_mark>1440
+ルゴリズムをまと<tex2html_comment_mark>1441
+めておく.
+\begin<<3296>>tex2html_deferred<<3296>>\par\end<<3297>>tex2html_deferred<<3297>>
+\begin<<1932>>theorem_type<<1932>>[algorithm][theorem][][][][]
+\begin<<1029>>enumerate<<1029>>
+\item
+\begin<<1934>>theorem_type<<1934>>[algorithm][theorem][][][][]
+時間伸縮理論を用<tex2html_comment_mark>1442
+いた非定常リニュ<tex2html_comment_mark>1443
+ーアル過程の数値<tex2html_comment_mark>1444
+計算\end<<1933>>theorem_type<<1933>>
+\begin<<3298>>tex2html_deferred<<3298>>\par\end<<3299>>tex2html_deferred<<3299>>
+\item \begin<<2660>>tex2html_wrap_inline<<2660>>$i=1,t_<<1032>>1<<1032>>=0.$\end<<2661>>tex2html_wrap_inline<<2661>>
+\begin<<3300>>tex2html_deferred<<3300>>\par\end<<3301>>tex2html_deferred<<3301>>
+\item レート\begin<<2662>>tex2html_wrap_inline<<2662>>$1$\end<<2663>>tex2html_wrap_inline<<2663>>の指数分<tex2html_comment_mark>1445
+布に従う乱数\begin<<2664>>tex2html_wrap_inline<<2664>>$\eta$\end<<2665>>tex2html_wrap_inline<<2665>>を生<tex2html_comment_mark>1446
+成する.
+\begin<<3302>>tex2html_deferred<<3302>>\par\end<<3303>>tex2html_deferred<<3303>>
+\item 時間伸縮\begin<<2666>>tex2html_wrap_inline<<2666>>$\Lambda_<<1033>>t<<1033>>=\int_<<1034>>0<<1034>>^<<1035>>t<<1035>>\lambda\left(
+u\right)  du$\end<<2667>>tex2html_wrap_inline<<2667>>により, 伸縮した<tex2html_comment_mark>1447
+ISIを求める. \begin<<2668>>tex2html_wrap_inline<<2668>>$z_<<1036>>t<<1036>>=\Lambda_<<1037>>t<<1037>>-\Lambda_<<1734>>t_<<1038>>i-1<<1038>><<1734>>$\end<<2669>>tex2html_wrap_inline<<2669>>
+\begin<<3304>>tex2html_deferred<<3304>>\par\end<<3305>>tex2html_deferred<<3305>>
+\item ISI分布を求める\begin<<2670>>tex2html_wrap_inline<<2670>>$p\left(
+t|t_<<1039>>i-1<<1039>>,\lambda_<<1735>>t_<<1040>>i-1<<1040>>:t_<<1041>>i<<1041>><<1735>>\right)  =\lambda\left(  t\right)  g\left(
+z_<<1042>>t<<1042>>|t_<<1043>>i-1<<1043>>,\lambda_<<1736>>t_<<1044>>i-1<<1044>>:t_<<1045>>i<<1045>><<1736>>\right)  $\end<<2671>>tex2html_wrap_inline<<2671>>
+\begin<<3306>>tex2html_deferred<<3306>>\par\end<<3307>>tex2html_deferred<<3307>>
+\item ハザード関数を求<tex2html_comment_mark>1448
+める
+\begin<<3308>>tex2html_deferred<<3308>>\par\end<<3309>>tex2html_deferred<<3309>>
+\begin<<2672>>tex2html_wrap_inline<<2672>>$r\left(  t|t_<<1046>>i-1<<1046>>,\left\{  \lambda_<<1047>>t<<1047>>\right\}  \right)  =\frac<<1823>>p\left(
+t|t_<<1048>>i-1<<1048>>,\lambda_<<1737>>t_<<1049>>i-1<<1049>>:t_<<1050>>i<<1050>><<1737>>\right)  <<1823>><<1824>>1-\int_<<1738>>t_<<1051>>i-1<<1051>><<1738>>^<<1052>>t<<1052>>p\left(
+u|t_<<1053>>i-1<<1053>>,\lambda_<<1739>>t_<<1054>>i-1<<1054>>:t_<<1055>>i<<1055>><<1739>>\right)  du<<1824>>$\end<<2673>>tex2html_wrap_inline<<2673>>
+\begin<<3310>>tex2html_deferred<<3310>>\par\end<<3311>>tex2html_deferred<<3311>>
+\item \begin<<2674>>tex2html_wrap_inline<<2674>>$\eta=\int_<<1740>>t_<<1056>>i-1<<1056>><<1740>>^<<1057>>t<<1057>>r\left(  u|t_<<1058>>i-1<<1058>>\right)  du$\end<<2675>>tex2html_wrap_inline<<2675>>を<tex2html_comment_mark>1449
+満たす\begin<<2676>>tex2html_wrap_inline<<2676>>$t_<<1059>>i<<1059>>$\end<<2677>>tex2html_wrap_inline<<2677>>を求める.
+\begin<<3312>>tex2html_deferred<<3312>>\par\end<<3313>>tex2html_deferred<<3313>>
+\item \begin<<2678>>tex2html_wrap_inline<<2678>>$t_<<1060>>i<<1060>>\geq T$\end<<2679>>tex2html_wrap_inline<<2679>>ならば終了.
+\begin<<3314>>tex2html_deferred<<3314>>\par\end<<3315>>tex2html_deferred<<3315>>
+\begin<<2680>>tex2html_wrap_inline<<2680>>$t_<<1061>>i<<1061>>;SPMlt;T$\end<<2681>>tex2html_wrap_inline<<2681>>ならば\begin<<2682>>tex2html_wrap_inline<<2682>>$i\leftarrow i+1.\ 2$\end<<2683>>tex2html_wrap_inline<<2683>>へ.
+\end<<1062>>enumerate<<1062>>\end<<1935>>theorem_type<<1935>>
+\begin<<3316>>tex2html_deferred<<3316>>\par\end<<3317>>tex2html_deferred<<3317>>
+これのアルゴリズ<tex2html_comment_mark>1450
+ムによる数値シミ<tex2html_comment_mark>1451
+ュレーションの結<tex2html_comment_mark>1452
+果を示す.<tex2html_comment_mark>1453
+\begin<<1064>>figure<<1064>>
+[ptb]
+\begin<<1065>>center<<1065>>
+\includegraphics[
+height=5.9197in,
+width=5.1534in
+]<tex2html_comment_mark>1479
+<<1066>>fig/renewal_simulation.eps<<1066>><tex2html_comment_mark>1480
+\begin<<3318>>tex2html_deferred<<3318>>\caption<<1067>>時間依存する強<tex2html_comment_mark>1481
+度に従うポワソン<tex2html_comment_mark>1482
+及びリニューアル<tex2html_comment_mark>1483
+過程により生成さ<tex2html_comment_mark>1484
+れるスパイク時系列.
+青色の点線が時間<tex2html_comment_mark>1485
+依存する変動スパ<tex2html_comment_mark>1486
+イクレートである.
+赤色の実線はスパ<tex2html_comment_mark>1487
+イク発火を考慮し<tex2html_comment_mark>1488
+た強度関数. (A) 非一様<tex2html_comment_mark>1489
+ポワソン過程\ (B) 非一<tex2html_comment_mark>1490
+様逆ガウス過程\ (C) 非<tex2html_comment_mark>1491
+一様ガンマ過程 （<tex2html_comment_mark>1492
+規則発火\begin<<2684>>tex2html_wrap_inline<<2684>>$\quad\kappa=1.8)$\end<<2685>>tex2html_wrap_inline<<2685>>\quad(D) 非<tex2html_comment_mark>1493
+一様ガンマ過程 （<tex2html_comment_mark>1494
+不規則発火\begin<<2686>>tex2html_wrap_inline<<2686>>$\quad\kappa=0.8$\end<<2687>>tex2html_wrap_inline<<2687>>）<<1067>><tex2html_comment_mark>1495
+\end<<3319>>tex2html_deferred<<3319>>\label<<1068>>fig:simulated_pointprocesses<<1068>><tex2html_comment_mark>1496
+\end<<1069>>center<<1069>>
+\end<<1070>>figure<<1070>>
+\begin<<3320>>tex2html_deferred<<3320>>\par\end<<3321>>tex2html_deferred<<3321>>
+使用したMatlabのコード.
+数値積分は台形則<tex2html_comment_mark>1498
+を用いている<tex2html_comment_mark>1499
+.\baselineskip=0.5\baselineskip
+\begin<<3322>>tex2html_deferred<<3322>>\par\end<<3323>>tex2html_deferred<<3323>>
+\begin<<1071>>tex2html_preform<<1071>><tex2html_verbatim_mark>verbatim1903#\end<<1072>>tex2html_preform<<1072>>
+\begin<<3324>>tex2html_deferred<<3324>>\par\end<<3325>>tex2html_deferred<<3325>>
+\baselineskip=2\baselineskip.
+\begin<<3326>>tex2html_deferred<<3326>>\par\end<<3327>>tex2html_deferred<<3327>>
+一般化線形モデル<tex2html_comment_mark>1510
+\begin<<1978>>displaymath<<1978>>
+r\left(  t|H_<<1073>>t<<1073>>\right)  =\exp[\sum_<<1074>>i<<1074>>\gamma_<<1075>>i<<1075>>t\Delta]
+\end<<2031>>displaymath<<2031>>
+\begin<<3328>>tex2html_deferred<<3328>>\par\end<<3329>>tex2html_deferred<<3329>>
+\section<<1076>>一般点過程の数<tex2html_comment_mark>1511
+値計算<<1076>>
+\begin<<3330>>tex2html_deferred<<3330>>\par\end<<3331>>tex2html_deferred<<3331>>
+\begin<<2688>>tex2html_wrap_inline<<2688>>$N_<<1077>>t<<1077>>$\end<<2689>>tex2html_wrap_inline<<2689>>を時刻\begin<<2690>>tex2html_wrap_inline<<2690>>$[0,t)$\end<<2691>>tex2html_wrap_inline<<2691>>の間に発<tex2html_comment_mark>1512
+生したスパイクの<tex2html_comment_mark>1513
+数とする. \begin<<2692>>tex2html_wrap_inline<<2692>>$i$\end<<2693>>tex2html_wrap_inline<<2693>>番目のス<tex2html_comment_mark>1514
+パイクの発生時刻を<tex2html_comment_mark>1515
+\begin<<2694>>tex2html_wrap_inline<<2694>>$t_<<1078>>i<<1078>>$\end<<2695>>tex2html_wrap_inline<<2695>>とする. スパイク<tex2html_comment_mark>1516
+発生時刻をまとめ<tex2html_comment_mark>1517
+たベクトルを\begin<<2696>>tex2html_wrap_inline<<2696>>$H_<<1079>>t<<1079>>=\left\{  t_<<1080>>1<<1080>><tex2html_comment_mark>1518
+,t_<<1081>>2<<1081>>,\cdots,t_<<1741>>N_<<1082>>t<<1082>><<1741>>\right\}  $\end<<2697>>tex2html_wrap_inline<<2697>>とする. 各<tex2html_comment_mark>1519
+時刻の発火率が過<tex2html_comment_mark>1520
+去のスパイクに依<tex2html_comment_mark>1521
+存するとき時刻\begin<<2698>>tex2html_wrap_inline<<2698>>$[t,t+\Delta
+t)$\end<<2699>>tex2html_wrap_inline<<2699>>の間にスパイクが<tex2html_comment_mark>1522
+一つ発生する確率<tex2html_comment_mark>1523
+は\cite<<1083>>Cox62,Snyder75,Daley88,Johnson96<<1083>>\marginpar<<1742>>\begin<<2700>>tex2html_wrap_inline<<2700>>$o\left(  t,\Delta
+t\right)  $\end<<2701>>tex2html_wrap_inline<<2701>>は\begin<<2702>>tex2html_wrap_inline<<2702>>$\Delta t$\end<<2703>>tex2html_wrap_inline<<2703>>が０に近づ<tex2html_comment_mark>1524
+くにつれて、小さ<tex2html_comment_mark>1525
+くなる: \begin<<2704>>tex2html_wrap_inline<<2704>>$\lim_<<1084>>\Delta\rightarrow0<<1084>>o\left(  t,\Delta\right)
+/\Delta=0.$\end<<2705>>tex2html_wrap_inline<<2705>><<1742>><tex2html_comment_mark>1526
+\begin<<1085>>align<<1085>>
+prob\left(  \text<<1086>>one event in <<1086>>[t,t+\Delta)|N_<<1087>>t<<1087>>,H_<<1088>>t<<1088>>\right)   ;SPMamp;  =r\left(
+t|N_<<1089>>t<<1089>>,H_<<1090>>t<<1090>>\right)  \Delta\\ 
+prob\left(  \text<<1091>>more than one event in <<1091>>[t,t+\Delta)|N_<<1092>>t<<1092>>,H_<<1093>>t<<1093>>\right)   ;SPMamp;
+=o\left(  t,\Delta\right)
+\end<<1094>>align<<1094>>
+この式は十分に小<tex2html_comment_mark>1527
+さい区間\begin<<2706>>tex2html_wrap_inline<<2706>>$[t,t+\Delta)$\end<<2707>>tex2html_wrap_inline<<2707>>内のイ<tex2html_comment_mark>1528
+ベントの発生確率<tex2html_comment_mark>1529
+が強度\begin<<2708>>tex2html_wrap_inline<<2708>>$r\left(  t;N_<<1095>>t<<1095>>,H_<<1096>>t<<1096>>\right)  $\end<<2709>>tex2html_wrap_inline<<2709>>と<tex2html_comment_mark>1530
+区間幅\begin<<2710>>tex2html_wrap_inline<<2710>>$\Delta$\end<<2711>>tex2html_wrap_inline<<2711>>に比例し,
+またこの間に一つ<tex2html_comment_mark>1531
+以上のスパイクが<tex2html_comment_mark>1532
+発生しないことを<tex2html_comment_mark>1533
+意味している.
+\begin<<3332>>tex2html_deferred<<3332>>\par\end<<3333>>tex2html_deferred<<3333>>
+\begin<<2712>>tex2html_wrap_inline<<2712>>$r\left(  t;N_<<1097>>t<<1097>>,H_<<1098>>t<<1098>>\right)  $\end<<2713>>tex2html_wrap_inline<<2713>>は点過程<tex2html_comment_mark>1534
+の理論では強度(intensity)<tex2html_comment_mark>1535
+\index<<1099>>intensity<<1099>><tex2html_comment_mark>1536
+と呼ばれるが, ここ<tex2html_comment_mark>1537
+ではスパイク発火<tex2html_comment_mark>1538
+の瞬間レート(instantaneous rate of
+discharge)と解釈すればよい.
+強度は一般には過<tex2html_comment_mark>1539
+去のスパイク発火<tex2html_comment_mark>1540
+の履歴に依存して<tex2html_comment_mark>1541
+いる. 強度が時刻\begin<<2714>>tex2html_wrap_inline<<2714>>$t$\end<<2715>>tex2html_wrap_inline<<2715>>の<tex2html_comment_mark>1542
+関数でないときは,
+その点過程は定常<tex2html_comment_mark>1543
+であるという. 時刻<tex2html_comment_mark>1544
+に依存する場合は<tex2html_comment_mark>1545
+非定常と呼ばれる.
+\marginpar<<1100>>ただしこれは点<tex2html_comment_mark>1546
+過程の理論の場合<tex2html_comment_mark>1547
+の通称であって確<tex2html_comment_mark>1548
+率過程の意味での<tex2html_comment_mark>1549
+定常・非定常とは<tex2html_comment_mark>1550
+別の定義になって<tex2html_comment_mark>1551
+いる。<<1100>>強度関数が<tex2html_comment_mark>1552
+与えられればその<tex2html_comment_mark>1553
+点過程の統計的性<tex2html_comment_mark>1554
+質はすべて決まる.
+強度が時刻と履歴<tex2html_comment_mark>1555
+の何れにもに依存<tex2html_comment_mark>1556
+しない場合, \begin<<2716>>tex2html_wrap_inline<<2716>>$r\left(  t;N_<<1101>>t<<1101>>,H_<<1102>>t<<1102>>\right)
+=\lambda$\end<<2717>>tex2html_wrap_inline<<2717>>であり, その点過<tex2html_comment_mark>1557
+程は一様ポワソン<tex2html_comment_mark>1558
+過程(homogeneous Poisson point
+process)\label<<1103>>inhomogeneous Poisson process<<1103>>と呼ば<tex2html_comment_mark>1559
+れる. 強度が履歴に<tex2html_comment_mark>1560
+は依存しないが時<tex2html_comment_mark>1561
+刻に依存しない場合,
+\begin<<2718>>tex2html_wrap_inline<<2718>>$r\left(  t;N_<<1104>>t<<1104>>,H_<<1105>>t<<1105>>\right)  =\lambda\left(  t\right)  $\end<<2719>>tex2html_wrap_inline<<2719>>で<tex2html_comment_mark>1562
+あり, その点過程は<tex2html_comment_mark>1563
+非一様ポワソン過<tex2html_comment_mark>1564
+程(inhomogeneous Poisson point process)<tex2html_comment_mark>1565
+\index<<1106>>inhomogeneous Poisson process<<1106>><tex2html_comment_mark>1566
+, あるいは時間依存<tex2html_comment_mark>1567
+ポワソン過程（time-dependent Poisson
+point process）と呼ばれる.\quad
+強度関数が最後の<tex2html_comment_mark>1568
+スパイクの時刻\begin<<2720>>tex2html_wrap_inline<<2720>>$t_<<1743>>N_<<1107>>t<<1107>><<1743>>$\end<<2721>>tex2html_wrap_inline<<2721>><tex2html_comment_mark>1569
+にのみ依存すると<tex2html_comment_mark>1570
+き\begin<<2722>>tex2html_wrap_inline<<2722>>$r\left(  t;N_<<1108>>t<<1108>>,H_<<1109>>t<<1109>>\right)  =r\left(  t;N_<<1110>>t<<1110>>,t_<<1744>>N_<<1111>>t<<1111>><<1744>>\right)  $\end<<2723>>tex2html_wrap_inline<<2723>>,
+点過程はリニュー<tex2html_comment_mark>1571
+アル過程と呼ばれる.
+\begin<<3334>>tex2html_deferred<<3334>>\par\end<<3335>>tex2html_deferred<<3335>>
+強度とISI分布の間には<tex2html_comment_mark>1572
+\begin<<1112>>equation<<1112>>
+r\left(  t|H_<<1113>>t<<1113>>\right)  =\frac<<1745>>p\left(  t|H_<<1114>>t<<1114>>\right)  <<1745>><<1746>>1-\int_<<1115>>0<<1115>><tex2html_comment_mark>1573
+^<<1116>>t<<1116>>p\left(  u|H_<<1117>>u<<1117>>\right)  du<<1746>> \label<<1118>>intensity_point_process<<1118>><tex2html_comment_mark>1574
+\end<<1119>>equation<<1119>>
+の関係がある. また,
+逆に条件付きISI分布は<tex2html_comment_mark>1575
+\begin<<1120>>equation<<1120>>
+p\left(  t|H_<<1121>>t<<1121>>\right)  =r\left(  t|H_<<1122>>t<<1122>>\right)  \exp\left\{  -\int_<<1123>>0<<1123>><tex2html_comment_mark>1576
+^<<1124>>t<<1124>>r\left(  u|H_<<1125>>u<<1125>>\right)  du\right\}  \label<<1126>>ISI_point_process<<1126>><tex2html_comment_mark>1577
+\end<<1127>>equation<<1127>>
+で与えられる.
+\begin<<3336>>tex2html_deferred<<3336>>\par\end<<3337>>tex2html_deferred<<3337>>
+\subsection<<1128>>時間伸縮理論<<1128>>
+\begin<<3338>>tex2html_deferred<<3338>>\par\end<<3339>>tex2html_deferred<<3339>>
+\cite<<1129>>Brown2001<<1129>>強度が与えら<tex2html_comment_mark>1578
+れた下で, 次のスパ<tex2html_comment_mark>1579
+イクが生じるまで<tex2html_comment_mark>1580
+の時間を数値計算<tex2html_comment_mark>1581
+したい. スパイク間<tex2html_comment_mark>1582
+隔の密度分布に従<tex2html_comment_mark>1583
+う乱数を発生させ<tex2html_comment_mark>1584
+ればよい. \marginpar<<1747>>\textbf<<1130>>逆関<tex2html_comment_mark>1585
+数法<<1130>>
+\begin<<3340>>tex2html_deferred<<3340>>\par\end<<3341>>tex2html_deferred<<3341>>
+\begin<<2724>>tex2html_wrap_inline<<2724>>$\xi$\end<<2725>>tex2html_wrap_inline<<2725>>を\begin<<2726>>tex2html_wrap_inline<<2726>>$[0,1]$\end<<2727>>tex2html_wrap_inline<<2727>>の範囲の一様<tex2html_comment_mark>1586
+乱数、\begin<<2728>>tex2html_wrap_inline<<2728>>$f\left(  x\right)  $\end<<2729>>tex2html_wrap_inline<<2729>>を密度<tex2html_comment_mark>1587
+関数とすると<tex2html_comment_mark>1588
+\begin<<1979>>displaymath<<1979>>
+\xi=\int_<<1131>>0<<1131>>^<<1132>>\eta<<1132>>f\left(  u\right)  du\equiv F\left(  \eta\right)
+\end<<2032>>displaymath<<2032>>
+を満たす\begin<<2730>>tex2html_wrap_inline<<2730>>$\eta=F^<<1133>>-1<<1133>>\left(  \xi\right)  $\end<<2731>>tex2html_wrap_inline<<2731>><tex2html_comment_mark>1589
+は\begin<<2732>>tex2html_wrap_inline<<2732>>$f\left(  x\right)  $\end<<2733>>tex2html_wrap_inline<<2733>>に従う乱数<tex2html_comment_mark>1590
+になる。<<1747>><tex2html_comment_mark>1591
+\index<<1134>>time-rescaling theorem<<1134>><tex2html_comment_mark>1592
+\begin<<1135>>equation<<1135>>
+p\left(  t|H_<<1136>>t<<1136>>\right)  =r\left(  t|H_<<1137>>t<<1137>>\right)  \exp\left\{  -\int_<<1138>>0<<1138>><tex2html_comment_mark>1593
+^<<1139>>t<<1139>>r\left(  u|H_<<1140>>u<<1140>>\right)  du\right\}
+\end<<1141>>equation<<1141>>
+\begin<<3342>>tex2html_deferred<<3342>>\par\end<<3343>>tex2html_deferred<<3343>>
+\begin<<2734>>tex2html_wrap_inline<<2734>>$\xi$\end<<2735>>tex2html_wrap_inline<<2735>>を一様乱数とする.
+累積分布関数を考<tex2html_comment_mark>1594
+えると, \ref<<1142>>cdf_hazard<<1142>>からハ<tex2html_comment_mark>1595
+ザード関数を用いて<tex2html_comment_mark>1596
+\begin<<1143>>align*<<1143>>
+\xi ;SPMamp;  =\int_<<1144>>0<<1144>>^<<1145>>\eta<<1145>>p\left(  u|H_<<1146>>u<<1146>>\right)  du\\ 
+;SPMamp;  =1-\exp\left\{  -\int_<<1147>>0<<1147>>^<<1148>>\eta<<1148>>r\left(  u|H_<<1149>>u<<1149>>\right)  du\right\}
+\end<<1150>>align*<<1150>>
+とすると\begin<<2736>>tex2html_wrap_inline<<2736>>$\eta$\end<<2737>>tex2html_wrap_inline<<2737>>は分布\begin<<2738>>tex2html_wrap_inline<<2738>>$p\left(
+\tau|\tau^<<1151>>\ast<<1151>>\right)  $\end<<2739>>tex2html_wrap_inline<<2739>>に従う乱数<tex2html_comment_mark>1597
+である. これより<tex2html_comment_mark>1598
+\begin<<1152>>equation<<1152>>
+-\log\left(  \xi\right)  =\int_<<1153>>0<<1153>>^<<1154>>\eta<<1154>>r\left(  u|H_<<1155>>u<<1155>>\right)  du
+\end<<1156>>equation<<1156>>
+\begin<<2740>>tex2html_wrap_inline<<2740>>$~\zeta=-\log\left(  \xi\right)  $\end<<2741>>tex2html_wrap_inline<<2741>>は\begin<<2742>>tex2html_wrap_inline<<2742>>$-\log\left(  \xi\right)  $\end<<2743>>tex2html_wrap_inline<<2743>><tex2html_comment_mark>1599
+は平均１の指数分<tex2html_comment_mark>1600
+布に従う乱数である.
+\begin<<2744>>tex2html_wrap_inline<<2744>>$\Phi\left(  \eta\right)  =\int_<<1157>>0<<1157>>^<<1158>>\eta<<1158>>r\left(  u|H_<<1159>>u<<1159>>\right)  du$\end<<2745>>tex2html_wrap_inline<<2745>><tex2html_comment_mark>1601
+とすると, 次のスパ<tex2html_comment_mark>1602
+イクまでの時間は\begin<<2746>>tex2html_wrap_inline<<2746>>$\eta
+=\Phi^<<1160>>-1<<1160>>\left(  \zeta\right)  $\end<<2747>>tex2html_wrap_inline<<2747>>で与えら<tex2html_comment_mark>1603
+れる.
+\begin<<3344>>tex2html_deferred<<3344>>\par\end<<3345>>tex2html_deferred<<3345>>
+\section<<1161>>ポイントプロセ<tex2html_comment_mark>1604
+スの尤度関数<<1161>>
+\begin<<3346>>tex2html_deferred<<3346>>\par\end<<3347>>tex2html_deferred<<3347>>
+\subsection<<1162>>ポワソン過程 (Poisson
+Process)の尤度関数<<1162>>
+\begin<<3348>>tex2html_deferred<<3348>>\par\end<<3349>>tex2html_deferred<<3349>>
+時間依存ポワソン<tex2html_comment_mark>1605
+過程に従うスパイ<tex2html_comment_mark>1606
+ク時系列\begin<<2748>>tex2html_wrap_inline<<2748>>$\left\{  t_<<1163>>i<<1163>>\right\}  _<<1164>>i=1<<1164>>^<<1165>>n<<1165>>$\end<<2749>>tex2html_wrap_inline<<2749>><tex2html_comment_mark>1607
+の確率密度分布(尤<tex2html_comment_mark>1608
+度関数<tex2html_comment_mark>1609
+\index<<1166>>likelihood function<<1166>><tex2html_comment_mark>1610
+)を求めよう. .
+\ref<<1167>>inhomogeneous Poisson process<<1167>>で見たよ<tex2html_comment_mark>1611
+うに, 時刻\begin<<2750>>tex2html_wrap_inline<<2750>>$t_<<1168>>i-1<<1168>>$\end<<2751>>tex2html_wrap_inline<<2751>>から\begin<<2752>>tex2html_wrap_inline<<2752>>$t_<<1169>>i<<1169>>$\end<<2753>>tex2html_wrap_inline<<2753>><tex2html_comment_mark>1612
+までスパイクが生<tex2html_comment_mark>1613
+じず, 時刻\begin<<2754>>tex2html_wrap_inline<<2754>>$t_<<1170>>i<<1170>>$\end<<2755>>tex2html_wrap_inline<<2755>>におい<tex2html_comment_mark>1614
+てスパイクが生じ<tex2html_comment_mark>1615
+る確率は<tex2html_comment_mark>1616
+\begin<<1980>>displaymath<<1980>>
+p\left(  t_<<1171>>i<<1171>>|t_<<1172>>i-1<<1172>>;\left\{  \lambda\left(  t\right)  \right\}  \right)
+=\lambda\left(  t_<<1173>>i<<1173>>\right)  \exp\left[  -\int_<<1748>>t_<<1174>>i-1<<1174>><<1748>>^<<1749>>t_<<1175>>i<<1175>><<1749>><tex2html_comment_mark>1617
+\lambda\left(  u\right)  du\right]
+\end<<2033>>displaymath<<2033>>
+従って, スパイク時<tex2html_comment_mark>1618
+系列\begin<<2756>>tex2html_wrap_inline<<2756>>$\left\{  t_<<1176>>i<<1176>>\right\}  _<<1177>>i=1<<1177>>^<<1178>>n<<1178>>$\end<<2757>>tex2html_wrap_inline<<2757>>は独<tex2html_comment_mark>1619
+立に生じるから,
+\begin<<1179>>align*<<1179>>
+p\left(  \left\{  t_<<1180>>i<<1180>>\right\}  _<<1181>>i=1<<1181>>^<<1182>>n<<1182>>\right)   ;SPMamp;  =<tex2html_comment_mark>1620
+<<1750>>\displaystyle\prod\limits_<<1183>>i=1<<1183>>^<<1184>>n<<1184>><<1750>>
+p\left(  t_<<1185>>i<<1185>>|t_<<1186>>i-1<<1186>>\right)  P\left(  t_<<1187>>n<<1187>>;SPMlt;T|t_<<1188>>n-1<<1188>>\right) \\ 
+;SPMamp;  =<tex2html_comment_mark>1624
+<<1751>>\displaystyle\prod\limits_<<1189>>i=1<<1189>>^<<1190>>n<<1190>><<1751>>
+\lambda\left(  t_<<1191>>i<<1191>>\right)  \exp\left[  -\int_<<1752>>t_<<1192>>i-1<<1192>><<1752>>^<<1753>>t_<<1193>>i<<1193>><<1753>>\lambda\left(
+u\right)  du\right]  \exp\left[  -\int_<<1754>>t_<<1194>>n<<1194>><<1754>>^<<1195>>T<<1195>>\lambda\left(  u\right)
+du\right] \\ 
+;SPMamp;  =<tex2html_comment_mark>1628
+<<1755>>\displaystyle\prod\limits_<<1196>>i=1<<1196>>^<<1197>>n<<1197>><<1755>>
+\lambda\left(  t_<<1198>>i<<1198>>\right)  \exp\left[  -\int_<<1756>>t_<<1199>>0<<1199>><<1756>>^<<1200>>T<<1200>>\lambda\left(
+u\right)  du\right]
+\end<<1201>>align*<<1201>>
+\begin<<3350>>tex2html_deferred<<3350>>\par\end<<3351>>tex2html_deferred<<3351>>
+指数分布の導出で<tex2html_comment_mark>1632
+見たように, 尤度も<tex2html_comment_mark>1633
+いくつかの異なっ<tex2html_comment_mark>1634
+た方法で導出する<tex2html_comment_mark>1635
+ことができる. 区間\begin<<2758>>tex2html_wrap_inline<<2758>>$\left[
+0,T\right]  $\end<<2759>>tex2html_wrap_inline<<2759>>を幅\begin<<2760>>tex2html_wrap_inline<<2760>>$\Delta$\end<<2761>>tex2html_wrap_inline<<2761>>の\begin<<2762>>tex2html_wrap_inline<<2762>>$N$\end<<2763>>tex2html_wrap_inline<<2763>>個の<tex2html_comment_mark>1636
+区間に区切る. \begin<<2764>>tex2html_wrap_inline<<2764>>$\Delta$\end<<2765>>tex2html_wrap_inline<<2765>>の<tex2html_comment_mark>1637
+大きさは１つの区<tex2html_comment_mark>1638
+間に高々１つのス<tex2html_comment_mark>1639
+パイクしか入らな<tex2html_comment_mark>1640
+い程度に小さくと<tex2html_comment_mark>1641
+るとする. \begin<<2766>>tex2html_wrap_inline<<2766>>$i$\end<<2767>>tex2html_wrap_inline<<2767>>番目の区<tex2html_comment_mark>1642
+間にスパイクの入<tex2html_comment_mark>1643
+る確率は\begin<<2768>>tex2html_wrap_inline<<2768>>$\lambda_<<1202>>i\Delta<<1202>>\Delta$\end<<2769>>tex2html_wrap_inline<<2769>>, ま<tex2html_comment_mark>1644
+た入らない確率は<tex2html_comment_mark>1645
+\begin<<2770>>tex2html_wrap_inline<<2770>>$1-\lambda_<<1203>>i\Delta<<1203>>\Delta$\end<<2771>>tex2html_wrap_inline<<2771>>である. 区間<tex2html_comment_mark>1646
+毎に独立に考える<tex2html_comment_mark>1647
+ことが出来るから,
+確率密度は<tex2html_comment_mark>1648
+\begin<<1204>>align*<<1204>>
+p\left(  \left\{  t_<<1205>>i<<1205>>\right\}  _<<1206>>i=1<<1206>>^<<1207>>n<<1207>>\right)  \Delta^<<1208>>n<<1208>>  ;SPMamp;  =<tex2html_comment_mark>1649
+<<1825>>\displaystyle\prod\limits_<<1757>>j:\text<<1209>>スパイク<tex2html_comment_mark>1653
+あり<<1209>><<1757>><<1825>>
+\lambda\left(  j\Delta\right)  \Delta <<1826>>\displaystyle\prod\limits_<<1758>>j:\text<<1210>>スパイク<tex2html_comment_mark>1659
+なし<<1210>><<1758>><<1826>>
+\left[  1-\lambda\left(  j\Delta\right)  \Delta\right] \\ 
+;SPMamp;  =<tex2html_comment_mark>1661
+<<1827>>\displaystyle\prod\limits_<<1759>>j:\text<<1211>>スパイク<tex2html_comment_mark>1665
+あり<<1211>><<1759>><<1827>>
+\frac<<1212>>\lambda\left(  j\Delta\right)  \Delta<<1212>><<1213>>1-\lambda\left(  j\Delta\right)
+\Delta<<1213>><tex2html_comment_mark>1667
+<<1760>>\displaystyle\prod\limits_<<1214>>j=1<<1214>>^<<1215>>K<<1215>><<1760>>
+\left[  1-\lambda\left(  j\Delta\right)  \Delta\right]
+\end<<1216>>align*<<1216>>
+\marginpar<<1761>>for \begin<<2772>>tex2html_wrap_inline<<2772>>$-1;SPMlt;x;SPMlt;1$\end<<2773>>tex2html_wrap_inline<<2773>><tex2html_comment_mark>1671
+\begin<<1981>>displaymath<<1981>>
+\frac<<1217>>1<<1217>><<1218>>1-x<<1218>>=1+x+x^<<1219>>2<<1219>>+x^<<1220>>3<<1220>>\cdots
+\end<<2034>>displaymath<<2034>><tex2html_comment_mark>1672
+\begin<<1982>>displaymath<<1982>>
+\log\left(  1-x\right)  =-x-\frac<<1221>>1<<1221>><<1222>>2<<1222>>x^<<1223>>2<<1223>>-\frac<<1224>>1<<1224>><<1225>>3<<1225>>x^<<1226>>3<<1226>>\cdots\text<<1227>> <<1227>><tex2html_comment_mark>1673
+\end<<2035>>displaymath<<2035>>
+<<1761>>ここで第一成分は<tex2html_comment_mark>1674
+\begin<<1228>>align*<<1228>><tex2html_comment_mark>1675
+<<1828>>\displaystyle\prod\limits_<<1762>>j:\text<<1229>>スパイク<tex2html_comment_mark>1679
+あり<<1229>><<1762>><<1828>>
+\frac<<1230>>\lambda\left(  j\Delta\right)  \Delta<<1230>><<1231>>1-\lambda\left(  j\Delta\right)
+\Delta<<1231>>  ;SPMamp;  =<tex2html_comment_mark>1681
+<<1829>>\displaystyle\prod\limits_<<1763>>j:\text<<1232>>スパイク<tex2html_comment_mark>1685
+あり<<1232>><<1763>><<1829>>
+\lambda\left(  j\Delta\right)  \Delta\left[  1+\lambda\left(  j\Delta\right)
+\Delta+\left\{  \lambda\left(  j\Delta\right)  \Delta\right\}  ^<<1233>>2<<1233>><tex2html_comment_mark>1687
++\cdots\right] \\ 
+;SPMamp;  \rightarrow <<1764>>\displaystyle\prod\limits_<<1234>>i=1<<1234>>^<<1235>>n<<1235>><<1764>>
+\lambda\left(  t_<<1236>>i<<1236>>\right)  \text<<1237>> <<1237>>\Delta\text<<1238>>\ \ \ \ \ \ \ \ \ \ (as\ <<1238>><tex2html_comment_mark>1692
+\Delta\rightarrow0\text<<1239>>)<<1239>><tex2html_comment_mark>1693
+\end<<1240>>align*<<1240>>
+また第二成分は<tex2html_comment_mark>1694
+\begin<<1241>>align*<<1241>><tex2html_comment_mark>1695
+<<1765>>\displaystyle\prod\limits_<<1242>>i=1<<1242>>^<<1243>>K<<1243>><<1765>>
+\left(  1-\lambda_<<1244>>i\Delta<<1244>>\Delta\right)   ;SPMamp;  =\exp\left[  \sum_<<1245>>i=1<<1245>>^<<1246>>K<<1246>><tex2html_comment_mark>1699
+\log\left(  1-\lambda\left(  j\Delta\right)  \Delta\right)  \right] \\ 
+;SPMamp;  =\exp\left[  \sum_<<1247>>i=1<<1247>>^<<1248>>K<<1248>>\left[  -\lambda\left(  j\Delta\right)
+\Delta-\frac<<1249>>1<<1249>><<1250>>2<<1250>>\left\{  \lambda\left(  j\Delta\right)  \Delta\right\}
+^<<1251>>2<<1251>>+\cdots\right]  \right] \\ 
+;SPMamp;  \rightarrow\exp\left[  -\int_<<1252>>0<<1252>>^<<1253>>T<<1253>>\lambda\left(  t\right)  dt\right]
+\text<<1254>>\ \ \ \ \ \ \ \ \ \ (as\ <<1254>>\Delta\rightarrow0\text<<1255>>)<<1255>><tex2html_comment_mark>1700
+\end<<1256>>align*<<1256>>
+従って, 確率密度は<tex2html_comment_mark>1701
+\begin<<1983>>displaymath<<1983>>
+p\left(  \left\{  t_<<1257>>i<<1257>>\right\}  _<<1258>>i=1<<1258>>^<<1259>>n<<1259>>\right)  =<tex2html_comment_mark>1702
+<<1766>>\displaystyle\prod\limits_<<1260>>i=1<<1260>>^<<1261>>n<<1261>><<1766>>
+\lambda\left(  t_<<1262>>i<<1262>>\right)  \exp\left[  -\int_<<1263>>0<<1263>>^<<1264>>T<<1264>>\lambda\left(  u\right)
+du\right]
+\end<<2036>>displaymath<<2036>>
+\begin<<3352>>tex2html_deferred<<3352>>\bigskip\end<<3353>>tex2html_deferred<<3353>>
+\begin<<3354>>tex2html_deferred<<3354>>\par\end<<3355>>tex2html_deferred<<3355>>
+\subsection<<1265>>一般点過程の尤<tex2html_comment_mark>1706
+度関数<<1265>>
+\begin<<3356>>tex2html_deferred<<3356>>\par\end<<3357>>tex2html_deferred<<3357>>
+一般の点過程の尤<tex2html_comment_mark>1707
+度も, 非定常ポアソ<tex2html_comment_mark>1708
+ン過程と同様の方<tex2html_comment_mark>1709
+法で導出すること<tex2html_comment_mark>1710
+ができる. 強度（瞬<tex2html_comment_mark>1711
+間スパイク生成率<tex2html_comment_mark>1712
+）が条件付き独立(conditionally
+independent)であるから, 非定<tex2html_comment_mark>1713
+常ポアソン過程と<tex2html_comment_mark>1714
+同じように<tex2html_comment_mark>1715
+\begin<<3358>>tex2html_deferred<<3358>>\par\end<<3359>>tex2html_deferred<<3359>>
+\begin<<1984>>displaymath<<1984>>
+p\left(  \left\{  t_<<1266>>i<<1266>>\right\}  _<<1267>>i=1<<1267>>^<<1268>>n<<1268>>\right)  =<tex2html_comment_mark>1716
+<<1830>>\displaystyle\prod\limits_<<1767>>j:\text<<1269>>スパイク<tex2html_comment_mark>1720
+あり<<1269>><<1767>><<1830>>
+r\left(  t_<<1270>>j<<1270>>|H_<<1768>>t_<<1271>>i<<1271>><<1768>>\right)  \Delta <<1831>>\displaystyle\prod\limits_<<1769>>j:\text<<1272>>スパイク<tex2html_comment_mark>1726
+なし<<1272>><<1769>><<1831>>
+\left[  1-r\left(  t_<<1273>>j<<1273>>|H_<<1770>>t_<<1274>>i<<1274>><<1770>>\right)  \Delta\right]
+\end<<2037>>displaymath<<2037>>
+と書ける. 従って尤<tex2html_comment_mark>1728
+度は<tex2html_comment_mark>1729
+\begin<<1985>>displaymath<<1985>>
+p\left(  \left\{  t_<<1275>>i<<1275>>\right\}  _<<1276>>i=1<<1276>>^<<1277>>n<<1277>>\right)  =<tex2html_comment_mark>1730
+<<1771>>\displaystyle\prod\limits_<<1278>>i=1<<1278>>^<<1279>>n<<1279>><<1771>>
+r\left(  t_<<1280>>i<<1280>>|H_<<1772>>t_<<1281>>i<<1281>><<1772>>\right)  \exp\left[  -\int_<<1282>>0<<1282>>^<<1283>>T<<1283>>r\left(
+u|H_<<1284>>u<<1284>>\right)  du\right]
+\end<<2038>>displaymath<<2038>>
+となる. この式はまた<tex2html_comment_mark>1734
+\begin<<1986>>displaymath<<1986>>
+p\left(  \left\{  t_<<1285>>i<<1285>>\right\}  _<<1286>>i=1<<1286>>^<<1287>>n<<1287>>\right)  =\exp\left[  \int\log
+r\left(  u|H_<<1773>>u_<<1288>>i<<1288>><<1773>>\right)  dN_<<1289>>u<<1289>>-\int_<<1290>>0<<1290>>^<<1291>>T<<1291>>r\left(  u|H_<<1292>>u<<1292>>\right)
+du\right]
+\end<<2039>>displaymath<<2039>>
+と書かれることも<tex2html_comment_mark>1735
+ある. ここで\begin<<2774>>tex2html_wrap_inline<<2774>>$N_<<1293>>t<<1293>>$\end<<2775>>tex2html_wrap_inline<<2775>>は計<tex2html_comment_mark>1736
+数過程と呼ばれ時刻<tex2html_comment_mark>1737
+\begin<<2776>>tex2html_wrap_inline<<2776>>$t$\end<<2777>>tex2html_wrap_inline<<2777>>までのに生じたス<tex2html_comment_mark>1738
+パイク数を示す. \begin<<2778>>tex2html_wrap_inline<<2778>>$dN_<<1294>>u<<1294>>$\end<<2779>>tex2html_wrap_inline<<2779>>
+はその微分で積分<tex2html_comment_mark>1739
+のうちスパイクが<tex2html_comment_mark>1740
+生じた事項のみの<tex2html_comment_mark>1741
+和をとることを表<tex2html_comment_mark>1742
+している. そうする<tex2html_comment_mark>1743
+と前の式と一致す<tex2html_comment_mark>1744
+ることがわかるだ<tex2html_comment_mark>1745
+ろう. この式の導出<tex2html_comment_mark>1746
+を確認のために以<tex2html_comment_mark>1747
+下に示す.
+\begin<<1295>>align*<<1295>>
+p\left(  \left\{  t_<<1296>>i<<1296>>\right\}  _<<1297>>i=1<<1297>>^<<1298>>n<<1298>>\right)   ;SPMamp;  =<tex2html_comment_mark>1748
+<<1774>>\displaystyle\prod\limits_<<1299>>k=1<<1299>>^<<1300>>K<<1300>><<1774>>
+\left[  r\left(  k\Delta|H_<<1301>>k\Delta<<1301>>\right)  \Delta\right]  ^<<1775>>dN_<<1302>>k\Delta<<1302>><<1775>><tex2html_comment_mark>1752
+<<1776>>\displaystyle\prod\limits_<<1303>>k=1<<1303>>^<<1304>>K<<1304>><<1776>>
+\left[  1-r\left(  k\Delta|H_<<1305>>k\Delta<<1305>>\right)  \Delta\right] \\ 
+;SPMamp;  =\exp\log\left[
+<<1777>>\displaystyle\prod\limits_<<1306>>k=1<<1306>>^<<1307>>K<<1307>><<1777>>
+\left[  r\left(  k\Delta|H_<<1308>>k\Delta<<1308>>\right)  \Delta\right]  ^<<1778>>dN_<<1309>>k\Delta<<1309>><tex2html_comment_mark>1759
+<<1778>>\right]  \exp\left[  \sum_<<1310>>i=1<<1310>>^<<1311>>K<<1311>>-r\left(  k\Delta|H_<<1312>>k\Delta<<1312>>\right)
+\Delta\right] \\ 
+;SPMamp;  =\exp\left[  \sum_<<1313>>k=1<<1313>>^<<1314>>K<<1314>>dN_<<1315>>k\Delta<<1315>>\log\left\{  r\left(  k\Delta
+|H_<<1316>>k\Delta<<1316>>\right)  \Delta\right\}  -\sum_<<1317>>i=1<<1317>>^<<1318>>K<<1318>>r\left(  k\Delta
+|H_<<1319>>k\Delta<<1319>>\right)  \Delta\right] \\ 
+;SPMamp;  \rightarrow\exp\left[  \int_<<1320>>0<<1320>>^<<1321>>T<<1321>>\log r\left(  u|H_<<1322>>u<<1322>>\right)  dN\left(
+u\right)  -\int_<<1323>>0<<1323>>^<<1324>>T<<1324>>r\left(  k\Delta|H_<<1325>>u<<1325>>\right)  du\right]
+\end<<1326>>align*<<1326>>
+\begin<<3360>>tex2html_deferred<<3360>>\par\end<<3361>>tex2html_deferred<<3361>>
+\chapter<<1327>>スパイクレート<tex2html_comment_mark>1760
+推定<<1327>>
+\begin<<3362>>tex2html_deferred<<3362>>\par\end<<3363>>tex2html_deferred<<3363>>
+\section<<1328>>ヒストグラム/カ<tex2html_comment_mark>1761
+ーネル法<<1328>>
+\begin<<3364>>tex2html_deferred<<3364>>\par\end<<3365>>tex2html_deferred<<3365>>
+電気神経生理学の<tex2html_comment_mark>1762
+動物実験では感覚<tex2html_comment_mark>1763
+刺激・行動・注意<tex2html_comment_mark>1764
+等と神経細胞の発<tex2html_comment_mark>1765
+火頻度（レート）<tex2html_comment_mark>1766
+の相関関係がよく<tex2html_comment_mark>1767
+調べられる. 広く使<tex2html_comment_mark>1768
+われているレート<tex2html_comment_mark>1769
+推定の手法に, 同一<tex2html_comment_mark>1770
+刺激下で行われた<tex2html_comment_mark>1771
+複数回の試行のス<tex2html_comment_mark>1772
+パイク時系列を適<tex2html_comment_mark>1773
+当な時間幅をもつ<tex2html_comment_mark>1774
+区間に分割し, その<tex2html_comment_mark>1775
+中でのイベント生<tex2html_comment_mark>1776
+成率（発火率）を<tex2html_comment_mark>1777
+棒グラフとして表す
+Peristimulus Time Histogram (PSTH)がある. PSTHの<tex2html_comment_mark>1778
+形状は分割する区<tex2html_comment_mark>1779
+間の時間幅に依存<tex2html_comment_mark>1780
+するにもかかわらず,
+区間幅は多くの場<tex2html_comment_mark>1781
+合研究者により恣<tex2html_comment_mark>1782
+意的に与えられて<tex2html_comment_mark>1783
+いる. 実験データか<tex2html_comment_mark>1784
+ら最適区間幅を導<tex2html_comment_mark>1785
+出する手順や有限<tex2html_comment_mark>1786
+区間幅を得るのに<tex2html_comment_mark>1787
+必要な最小試行数<tex2html_comment_mark>1788
+の推定方法などが<tex2html_comment_mark>1789
+求められる.
+\begin<<3366>>tex2html_deferred<<3366>>\par\end<<3367>>tex2html_deferred<<3367>>
+ヒストグラムとカ<tex2html_comment_mark>1790
+ーネル法による推<tex2html_comment_mark>1791
+定値を\begin<<2780>>tex2html_wrap_inline<<2780>>$\hat<<1329>>\lambda<<1329>>_<<1330>>t<<1330>>$\end<<2781>>tex2html_wrap_inline<<2781>>をとする.
+\begin<<2782>>tex2html_wrap_inline<<2782>>$\lambda_<<1331>>t<<1331>>$\end<<2783>>tex2html_wrap_inline<<2783>>をポワソン過程<tex2html_comment_mark>1792
+のレートとする。<tex2html_comment_mark>1793
+本節では背後のレ<tex2html_comment_mark>1794
+ートをもっともよ<tex2html_comment_mark>1795
+く表現するヒスト<tex2html_comment_mark>1796
+グラムの作成方法<tex2html_comment_mark>1797
+を考える. このため<tex2html_comment_mark>1798
+には、二つの関数<tex2html_comment_mark>1799
+がどれぐらい似て<tex2html_comment_mark>1800
+いるかを表す基準<tex2html_comment_mark>1801
+が必要となる。こ<tex2html_comment_mark>1802
+こでは積分二乗誤差(mean
+integrated squared error, MISE),
+\begin<<1332>>equation<<1332>>
+\mbox<<1333>>MISE<<1333>>\equiv\frac<<1334>>1<<1334>><<1335>>T<<1335>>\int_<<1336>>0<<1336>>^<<1337>>T<<1337>>E\,(\hat<<1338>>\lambda<<1338>>_<<1339>>t<<1339>>-\lambda_<<1340>>t<<1340>><tex2html_comment_mark>1803
+)^<<1341>>2<<1341>>\,dt,
+\end<<1342>>equation<<1342>>
+と呼ばれる基準を<tex2html_comment_mark>1804
+用いる. ここで\begin<<2784>>tex2html_wrap_inline<<2784>>$E$\end<<2785>>tex2html_wrap_inline<<2785>>はポ<tex2html_comment_mark>1805
+イントプロセスに<tex2html_comment_mark>1806
+関する期待値. MISEを最<tex2html_comment_mark>1807
+小にするヒストグ<tex2html_comment_mark>1808
+ラムが最適である<tex2html_comment_mark>1809
+。ここで問題とな<tex2html_comment_mark>1810
+るのは、当然なが<tex2html_comment_mark>1811
+ら背後のスパイク<tex2html_comment_mark>1812
+レート\begin<<2786>>tex2html_wrap_inline<<2786>>$\lambda_<<1343>>t<<1343>>$\end<<2787>>tex2html_wrap_inline<<2787>>は未知で<tex2html_comment_mark>1813
+あることである。
+\begin<<3368>>tex2html_deferred<<3368>>\par\end<<3369>>tex2html_deferred<<3369>>
+\subsection<<1344>>スパイク時系列<tex2html_comment_mark>1814
+からのヒストグラ<tex2html_comment_mark>1815
+ムの作成<<1344>>
+\begin<<3370>>tex2html_deferred<<3370>>\par\end<<3371>>tex2html_deferred<<3371>>
+長さ\begin<<2788>>tex2html_wrap_inline<<2788>>$T$\end<<2789>>tex2html_wrap_inline<<2789>>の時間依存Poisson過<tex2html_comment_mark>1816
+程のレート（強度<tex2html_comment_mark>1817
+過程）を\begin<<2790>>tex2html_wrap_inline<<2790>>$\lambda_<<1345>>t<<1345>>$\end<<2791>>tex2html_wrap_inline<<2791>>\space (\begin<<2792>>tex2html_wrap_inline<<2792>>$t\in\lbrack0,\,T]$\end<<2793>>tex2html_wrap_inline<<2793>><tex2html_comment_mark>1818
+)とする. 区間\begin<<2794>>tex2html_wrap_inline<<2794>>$[0,\,\Delta]$\end<<2795>>tex2html_wrap_inline<<2795>>の<tex2html_comment_mark>1819
+棒ヒストグラムの<tex2html_comment_mark>1820
+真の高さは
+\begin<<1346>>equation<<1346>>
+\theta=\frac<<1347>>1<<1347>><<1348>>\Delta<<1348>>\int_<<1349>>0<<1349>>^<<1350>>\Delta<<1350>><<1779>>\lambda_<<1351>>t<<1351>>dt<<1779>>.
+\end<<1352>>equation<<1352>>
+で与えられる. この<tex2html_comment_mark>1821
+区間内の\begin<<2796>>tex2html_wrap_inline<<2796>>$n$\end<<2797>>tex2html_wrap_inline<<2797>>回の試行<tex2html_comment_mark>1822
+数の総スパイク数\begin<<2798>>tex2html_wrap_inline<<2798>>$k$\end<<2799>>tex2html_wrap_inline<<2799>><tex2html_comment_mark>1823
+は次のPoisson分布で与え<tex2html_comment_mark>1824
+られる.
+\begin<<1353>>equation<<1353>>
+p(k|n\Lambda\Delta)=\frac<<1780>>\left(  n\Lambda\Delta\right)  ^<<1354>>k<<1354>><<1780>><<1355>>k!<<1355>><tex2html_comment_mark>1825
+e^<<1356>>-n\Lambda\Delta<<1356>> \label<<1357>>eq:def_poisson<<1357>><tex2html_comment_mark>1826
+\end<<1358>>equation<<1358>>
+従って \begin<<2800>>tex2html_wrap_inline<<2800>>$\Lambda$\end<<2801>>tex2html_wrap_inline<<2801>>の不偏推<tex2html_comment_mark>1827
+定量である\begin<<2802>>tex2html_wrap_inline<<2802>>$\hat<<1359>>\Lambda<<1359>>=k/(n\Delta)$\end<<2803>>tex2html_wrap_inline<<2803>><tex2html_comment_mark>1828
+がデータから求め<tex2html_comment_mark>1829
+られるヒストグラ<tex2html_comment_mark>1830
+ムの高さである.
+\begin<<3372>>tex2html_deferred<<3372>>\par\end<<3373>>tex2html_deferred<<3373>>
+\subsection<<1360>>平均積分二乗誤<tex2html_comment_mark>1831
+差及びコスト関数<tex2html_comment_mark>1832
+の導入<<1360>><tex2html_comment_mark>1833
+\begin<<3374>>tex2html_deferred<<3374>>\par\end<<3375>>tex2html_deferred<<3375>>
+\begin<<1361>>equation<<1361>>
+\mathcal<<1362>>MISE<<1362>>=\left\langle <<1844>>E_<<1363>>\Lambda<<1363>>\left[  <<1842>>\frac<<1364>>1<<1364>><<1365>>\Delta<<1365>>\int
+_<<1366>>0<<1366>>^<<1367>>\Delta<<1367>><<1832>>(\,<<1781>>\lambda_<<1368>>t<<1368>>-\hat<<1369>>\Lambda<<1369>><<1781>>\,)^<<1370>>2<<1370>>dt<<1832>><<1842>>\right]  <<1844>>\right\rangle
+\label<<1371>>MSE<<1371>><tex2html_comment_mark>1834
+\end<<1372>>equation<<1372>>
+ここで \begin<<2804>>tex2html_wrap_inline<<2804>>$\left\langle \,\cdot\,\right\rangle $\end<<2805>>tex2html_wrap_inline<<2805>>は<tex2html_comment_mark>1835
+レート過程\begin<<2806>>tex2html_wrap_inline<<2806>>$\lambda_<<1373>>t<<1373>>$\end<<2807>>tex2html_wrap_inline<<2807>>の経<tex2html_comment_mark>1836
+路によるアンサン<tex2html_comment_mark>1837
+ブル平均を意味し, \begin<<2808>>tex2html_wrap_inline<<2808>>$E_<<1374>>\Lambda
+<<1374>>\left[  \,\cdot\,\right]  $\end<<2809>>tex2html_wrap_inline<<2809>>はレート\begin<<2810>>tex2html_wrap_inline<<2810>>$\lambda_<<1375>>t<<1375>><tex2html_comment_mark>1838
+$\end<<2811>>tex2html_wrap_inline<<2811>>の区間幅\begin<<2812>>tex2html_wrap_inline<<2812>>$\Delta$\end<<2813>>tex2html_wrap_inline<<2813>>内での<tex2html_comment_mark>1839
+時間平均が\begin<<2814>>tex2html_wrap_inline<<2814>>$\Lambda$\end<<2815>>tex2html_wrap_inline<<2815>>であ<tex2html_comment_mark>1840
+る場合のスパイク<tex2html_comment_mark>1841
+数の条件付き確率<tex2html_comment_mark>1842
+分布(式\ref<<1376>>eq:def_poisson<<1376>>)による<tex2html_comment_mark>1843
+平均操作を表す.
+\begin<<3376>>tex2html_deferred<<3376>>\par\end<<3377>>tex2html_deferred<<3377>>
+MISEを区間幅\begin<<2816>>tex2html_wrap_inline<<2816>>$\Delta$\end<<2817>>tex2html_wrap_inline<<2817>>内での<tex2html_comment_mark>1844
+レートのゆらぎと<tex2html_comment_mark>1845
+スパイク生成のゆ<tex2html_comment_mark>1846
+らぎに分割し, さら<tex2html_comment_mark>1847
+に区間幅\begin<<2818>>tex2html_wrap_inline<<2818>>$\Delta$\end<<2819>>tex2html_wrap_inline<<2819>>の選択<tex2html_comment_mark>1848
+に依らない項を除<tex2html_comment_mark>1849
+いたコスト関数を<tex2html_comment_mark>1850
+導入することがで<tex2html_comment_mark>1851
+きる.
+\begin<<1377>>align<<1377>>
+C(\Delta)  ;SPMamp;  \equiv\mathcal<<1378>>E<<1378>>-\left\langle <<1833>>\left(  <<1782>>\lambda_<<1379>>t<<1379>><tex2html_comment_mark>1852
+-\langle\Lambda\rangle<<1782>>\right)  ^<<1380>>2<<1380>><<1833>>\right\rangle \nonumber\\ 
+;SPMamp;  =\left\langle E_<<1381>>\Lambda<<1381>>\left[  (\hat<<1382>>\Lambda<<1382>>-\Lambda)^<<1383>>2<<1383>>\right]
+\right\rangle -\left\langle <<1783>>\left(  <<1384>>\Lambda-\langle\Lambda\rangle<<1384>>\right)
+^<<1385>>2<<1385>><<1783>>\right\rangle \label<<1386>>cost<<1386>><tex2html_comment_mark>1853
+\end<<1387>>align<<1387>>
+式\ref<<1388>>cost<<1388>>は\begin<<2820>>tex2html_wrap_inline<<2820>>$\Lambda$\end<<2821>>tex2html_wrap_inline<<2821>>の分散を<tex2html_comment_mark>1854
+第２項に含んでい<tex2html_comment_mark>1855
+るので, 観測量のみ<tex2html_comment_mark>1856
+からなる式に書き<tex2html_comment_mark>1857
+直し次式を得る.
+\begin<<1389>>equation<<1389>>
+C\left(  \Delta\right)  =2\left\langle E_<<1390>>\Lambda<<1390>>\left[  (\hat<<1391>>\Lambda
+<<1391>>-\Lambda)^<<1392>>2<<1392>>\right]  \right\rangle -\left\langle E_<<1393>>\Lambda<<1393>>\left[
+(<<1784>>\hat<<1394>>\Lambda<<1394>>-\langle\Lambda\rangle<<1784>>)^<<1395>>2<<1395>>\right]  \right\rangle \label<<1396>>Cn<<1396>><tex2html_comment_mark>1858
+\end<<1397>>equation<<1397>>
+ヒストグラムの最<tex2html_comment_mark>1859
+適区間幅決定の手<tex2html_comment_mark>1860
+順を以下にまとめ,
+図\ref<<1398>>CostFunction<<1398>>-aに(i)-(iv)の手順<tex2html_comment_mark>1861
+から得られたコス<tex2html_comment_mark>1862
+ト関数を示す.
+\begin<<3378>>tex2html_deferred<<3378>>\par\end<<3379>>tex2html_deferred<<3379>>
+\begin<<3380>>tex2html_deferred<<3380>>\bigskip\end<<3381>>tex2html_deferred<<3381>>
+\begin<<3382>>tex2html_deferred<<3382>>\par\end<<3383>>tex2html_deferred<<3383>>
+We consider sequences of spikes repeatedly recorded from a single neuron under
+identical experimental conditions. A recent analysis revealed that \textit<<1399>>in
+vivo<<1399>> spike trains are not simply random, but possess inter-spike-interval
+distributions intrinsic and specific to individual neurons. However, spikes
+accumulated from a large number of spike trains are in the majority mutually
+independent, and can be regarded as being derived from a time-dependent
+Poisson point process~\cite<<1400>>Snyder75,Daley88,Kass05<<1400>>.
+\begin<<3384>>tex2html_deferred<<3384>>\par\end<<3385>>tex2html_deferred<<3385>>
+\begin<<3386>>tex2html_deferred<<3386>>\bigskip\end<<3387>>tex2html_deferred<<3387>>推定量 \begin<<2822>>tex2html_wrap_inline<<2822>>$\hat<<1401>>\lambda<<1401>>_<<1402>>t<<1402>>$\end<<2823>>tex2html_wrap_inline<<2823>>と背<tex2html_comment_mark>1863
+後のレート\begin<<2824>>tex2html_wrap_inline<<2824>>$\lambda_<<1403>>t<<1403>>$\end<<2825>>tex2html_wrap_inline<<2825>>
+\begin<<3388>>tex2html_deferred<<3388>>\par\end<<3389>>tex2html_deferred<<3389>>
+スパイク時系列の<tex2html_comment_mark>1864
+レート\begin<<2826>>tex2html_wrap_inline<<2826>>$\lambda_<<1404>>t<<1404>>$\end<<2827>>tex2html_wrap_inline<<2827>>とヒスト<tex2html_comment_mark>1865
+グラム \begin<<2828>>tex2html_wrap_inline<<2828>>$\hat<<1405>>\lambda<<1405>>_<<1406>>t<<1406>>$\end<<2829>>tex2html_wrap_inline<<2829>>\space の当て<tex2html_comment_mark>1866
+はまりの良さは平<tex2html_comment_mark>1867
+均積分二乗誤差(Mean Integrated
+Squared Error, MISE)で評価する.
+\begin<<1407>>equation<<1407>>
+\mbox<<1408>>MISE<<1408>>\equiv\frac<<1409>>1<<1409>><<1410>>T<<1410>>\int_<<1411>>0<<1411>>^<<1412>>T<<1412>>E\,(\hat<<1413>>\lambda<<1413>>_<<1414>>t<<1414>>-\lambda_<<1415>>t<<1415>><tex2html_comment_mark>1868
+)^<<1416>>2<<1416>>\,dt, \label<<1417>>eq:def_esterr<<1417>><tex2html_comment_mark>1869
+\end<<1418>>equation<<1418>>
+ここで\begin<<2830>>tex2html_wrap_inline<<2830>>$E$\end<<2831>>tex2html_wrap_inline<<2831>>はレート\begin<<2832>>tex2html_wrap_inline<<2832>>$\lambda_<<1419>>t<<1419>><tex2html_comment_mark>1870
+$\end<<2833>>tex2html_wrap_inline<<2833>>の点過程から生成<tex2html_comment_mark>1871
+されるサンプルに<tex2html_comment_mark>1872
+ついて平均をとる<tex2html_comment_mark>1873
+操作（期待値）を<tex2html_comment_mark>1874
+意味する. ここで. We begin with a
+bar-graph time histogram as \begin<<2834>>tex2html_wrap_inline<<2834>>$\hat<<1420>>\lambda<<1420>>_<<1421>>t<<1421>>$\end<<2835>>tex2html_wrap_inline<<2835>>, and explore a method to
+select the bin size that minimizes the MISE. The difficulty of the present
+problem comes from the fact that the underlying spike rate \begin<<2836>>tex2html_wrap_inline<<2836>>$\lambda_<<1422>>t<<1422>>$\end<<2837>>tex2html_wrap_inline<<2837>>\space is
+not known.
+\begin<<3390>>tex2html_deferred<<3390>>\par\end<<3391>>tex2html_deferred<<3391>>
+\begin<<1423>>figure<<1423>>[h]
+\begin<<1424>>center<<1424>>
+\end<<1425>>center<<1425>>
+\begin<<3392>>tex2html_deferred<<3392>>\caption<<1785>>The Bar-PSTH. A: an underlying spike rate, \begin<<2838>>tex2html_wrap_inline<<2838>>$\lambda_<<1426>>t<<1426>>$\end<<2839>>tex2html_wrap_inline<<2839>>. The
+horizontal bars indicate the time averaged rates \begin<<2840>>tex2html_wrap_inline<<2840>>$\theta$\end<<2841>>tex2html_wrap_inline<<2841>>\space for individual bins
+of width \begin<<2842>>tex2html_wrap_inline<<2842>>$\Delta$\end<<2843>>tex2html_wrap_inline<<2843>>. B: sequences of spikes derived from the underlying rate. C:
+a time histogram for the sample sequences of spikes. The estimated rate
+\begin<<2844>>tex2html_wrap_inline<<2844>>$\hat<<1427>>\theta<<1427>>$\end<<2845>>tex2html_wrap_inline<<2845>>\space is the total number of spikes \begin<<2846>>tex2html_wrap_inline<<2846>>$k$\end<<2847>>tex2html_wrap_inline<<2847>>\space that entered each bin,
+divided by the number of sequences \begin<<2848>>tex2html_wrap_inline<<2848>>$n$\end<<2849>>tex2html_wrap_inline<<2849>>\space and the bin size \begin<<2850>>tex2html_wrap_inline<<2850>>$\Delta$\end<<2851>>tex2html_wrap_inline<<2851>>. <<1785>><tex2html_comment_mark>1878
+\end<<3393>>tex2html_deferred<<3393>>\label<<1428>>BarSchematic<<1428>><tex2html_comment_mark>1879
+\end<<1429>>figure<<1429>>
+\begin<<3394>>tex2html_deferred<<3394>>\par\end<<3395>>tex2html_deferred<<3395>>
+ヒストグラムは幅\begin<<2852>>tex2html_wrap_inline<<2852>>$\Delta
+$\end<<2853>>tex2html_wrap_inline<<2853>>（ビン幅という）<tex2html_comment_mark>1881
+の区間に含まれる<tex2html_comment_mark>1882
+スパイクの数を数<tex2html_comment_mark>1883
+えることで簡単に<tex2html_comment_mark>1884
+作れる. is constructed simply by counting the number of
+spikes that belong to each bin of width \begin<<2854>>tex2html_wrap_inline<<2854>>$\Delta$\end<<2855>>tex2html_wrap_inline<<2855>>. For an observation period
+\begin<<2856>>tex2html_wrap_inline<<2856>>$T$\end<<2857>>tex2html_wrap_inline<<2857>>, we obtain \begin<<2858>>tex2html_wrap_inline<<2858>>$N=\lfloor T/\Delta\rfloor$\end<<2859>>tex2html_wrap_inline<<2859>>\space intervals. The number of spikes
+accumulated from all \begin<<2860>>tex2html_wrap_inline<<2860>>$n$\end<<2861>>tex2html_wrap_inline<<2861>>\space sequences in the \begin<<2862>>tex2html_wrap_inline<<2862>>$i$\end<<2863>>tex2html_wrap_inline<<2863>>th interval is counted as \begin<<2864>>tex2html_wrap_inline<<2864>>$k_<<1430>>i<<1430>><tex2html_comment_mark>1885
+$\end<<2865>>tex2html_wrap_inline<<2865>>. The bar height at the \begin<<2866>>tex2html_wrap_inline<<2866>>$i$\end<<2867>>tex2html_wrap_inline<<2867>>th bin is given as \begin<<2868>>tex2html_wrap_inline<<2868>>$k_<<1431>>i<<1431>>/n\Delta$\end<<2869>>tex2html_wrap_inline<<2869>>.
+Figure~\ref<<1432>>BarSchematic<<1432>> shows the schematic diagram for the construction of
+a bar-graph time histogram.
+\begin<<3396>>tex2html_deferred<<3396>>\par\end<<3397>>tex2html_deferred<<3397>>
+Given a bin of width \begin<<2870>>tex2html_wrap_inline<<2870>>$\Delta$\end<<2871>>tex2html_wrap_inline<<2871>>, the expected height of a bar graph for \begin<<2872>>tex2html_wrap_inline<<2872>>$t
+\in[0, \Delta]$\end<<2873>>tex2html_wrap_inline<<2873>>\space is the time-averaged rate,
+\begin<<1433>>equation<<1433>>
+\theta= \frac<<1434>>1<<1434>><<1435>>\Delta<<1435>>\int_<<1436>>0<<1436>>^<<1437>>\Delta<<1437>><<1786>>\lambda_<<1438>>t<<1438>> \,dt<<1786>>.
+\end<<1439>>equation<<1439>>
+The total number of spikes \begin<<2874>>tex2html_wrap_inline<<2874>>$k$\end<<2875>>tex2html_wrap_inline<<2875>>\space from \begin<<2876>>tex2html_wrap_inline<<2876>>$n$\end<<2877>>tex2html_wrap_inline<<2877>>\space spike sequences that enter this bin of
+width \begin<<2878>>tex2html_wrap_inline<<2878>>$\Delta$\end<<2879>>tex2html_wrap_inline<<2879>>\space obeys the Poisson distribution
+\begin<<1440>>equation<<1440>>
+p(k \,|\, n \Delta\theta) =\frac<<1787>>\left(  n \Delta\theta\right)  ^<<1441>>k<<1441>><<1787>><<1442>>k!<<1442>>
+e^<<1443>>-n \Delta\theta<<1443>> \, , \label<<1444>>eq:def_poisson<<1444>><tex2html_comment_mark>1886
+\end<<1445>>equation<<1445>>
+whose expectation is \begin<<2880>>tex2html_wrap_inline<<2880>>$n\Delta\theta$\end<<2881>>tex2html_wrap_inline<<2881>>. The unbiased estimator for \begin<<2882>>tex2html_wrap_inline<<2882>>$\theta$\end<<2883>>tex2html_wrap_inline<<2883>>\space is
+denoted as \begin<<2884>>tex2html_wrap_inline<<2884>>$\hat<<1446>>\theta<<1446>>=k/(n\Delta)$\end<<2885>>tex2html_wrap_inline<<2885>>, which is the empirical height of the
+bar graph for \begin<<2886>>tex2html_wrap_inline<<2886>>$t \in[0, \Delta]$\end<<2887>>tex2html_wrap_inline<<2887>>.
+\begin<<3398>>tex2html_deferred<<3398>>\par\end<<3399>>tex2html_deferred<<3399>>
+\subsection<<1447>>Selection of the bin size<<1447>>
+\begin<<3400>>tex2html_deferred<<3400>>\par\end<<3401>>tex2html_deferred<<3401>>
+By segmenting the total observation period \begin<<2888>>tex2html_wrap_inline<<2888>>$T$\end<<2889>>tex2html_wrap_inline<<2889>>\space into \begin<<2890>>tex2html_wrap_inline<<2890>>$N$\end<<2891>>tex2html_wrap_inline<<2891>>\space intervals of size
+\begin<<2892>>tex2html_wrap_inline<<2892>>$\Delta$\end<<2893>>tex2html_wrap_inline<<2893>>, the MISE defined in Eq.~\ref<<1448>>eq:def_esterr<<1448>> can be rewritten as
+\begin<<1449>>equation<<1449>>
+\label<<1450>>MISE1<<1450>>\mbox<<1451>>MISE<<1451>> = \frac<<1452>>1<<1452>><<1453>>\Delta<<1453>>\int_<<1454>>0<<1454>>^<<1455>>\Delta<<1455>>\frac<<1456>>1<<1456>><<1457>>N<<1457>>
+\sum_<<1458>>i=1<<1458>>^<<1459>>N<<1459>> \, \left\{  E \, (\, <<1788>>\hat\theta_<<1460>>i<<1460>> - \lambda_<<1461>>t+(i-1)\Delta<<1461>>
+<<1788>> \,)^<<1462>>2<<1462>> \right\}  \,dt,
+\end<<1463>>equation<<1463>>
+where \begin<<2894>>tex2html_wrap_inline<<2894>>$\hat<<1464>>\theta<<1464>>_<<1465>>i<<1465>> \equiv k_<<1466>>i<<1466>>/(n\Delta)$\end<<2895>>tex2html_wrap_inline<<2895>>. Hereafter we denote the
+average over the segmented rate \begin<<2896>>tex2html_wrap_inline<<2896>>$\lambda_<<1467>>t+(i-1)\Delta<<1467>>$\end<<2897>>tex2html_wrap_inline<<2897>>\space as an average over
+an ensemble of (segmented) rate functions \begin<<2898>>tex2html_wrap_inline<<2898>>$\{ \lambda_<<1468>>t<<1468>> \}$\end<<2899>>tex2html_wrap_inline<<2899>>\space defined on an
+interval of \begin<<2900>>tex2html_wrap_inline<<2900>>$t \in[0, \Delta]$\end<<2901>>tex2html_wrap_inline<<2901>>, as
+\begin<<1469>>equation<<1469>>
+\mbox<<1470>>MISE<<1470>> =\frac<<1471>>1<<1471>><<1472>>\Delta<<1472>>\int_<<1473>>0<<1473>>^<<1474>>\Delta<<1474>>\left\langle <<1834>>E \, (\,
+<<1789>>\hat\theta- \lambda_<<1475>>t<<1475>> <<1789>> \,)^<<1476>>2<<1476>> <<1834>> \right\rangle \,dt.
+\end<<1477>>equation<<1477>>
+The expectation \begin<<2902>>tex2html_wrap_inline<<2902>>$E$\end<<2903>>tex2html_wrap_inline<<2903>>\space refers to the average over the spike count, or
+\begin<<2904>>tex2html_wrap_inline<<2904>>$\hat<<1478>>\theta<<1478>>=k/(n\Delta)$\end<<2905>>tex2html_wrap_inline<<2905>>, given a rate function \begin<<2906>>tex2html_wrap_inline<<2906>>$\lambda_<<1479>>t<<1479>>$\end<<2907>>tex2html_wrap_inline<<2907>>, or its mean
+value \begin<<2908>>tex2html_wrap_inline<<2908>>$\theta$\end<<2909>>tex2html_wrap_inline<<2909>>.
+\begin<<3402>>tex2html_deferred<<3402>>\par\end<<3403>>tex2html_deferred<<3403>>
+The MISE can be decomposed into two parts,
+\begin<<1480>>align<<1480>>
+\mbox<<1481>>MISE<<1481>> = \left\langle <<1835>>E <<1790>>( <<1482>>\hat\theta- \theta<<1482>> )^<<1483>>2<<1483>> <<1790>> <<1835>> \right\rangle
++ \frac<<1484>>1<<1484>><<1485>>\Delta<<1485>>\int_<<1486>>0<<1486>>^<<1487>>\Delta<<1487>><<1843>>\left\langle <<1836>>\left(  <<1791>>\lambda_<<1488>>t<<1488>> -
+\theta<<1791>> \right)  ^<<1489>>2<<1489>> <<1836>> \right\rangle dt<<1843>> . \label<<1490>>MISE2<<1490>><tex2html_comment_mark>1889
+\end<<1491>>align<<1491>>
+The first and second terms are, respectively, the stochastic fluctuation of
+the estimator \begin<<2910>>tex2html_wrap_inline<<2910>>$\hat<<1492>>\theta<<1492>>$\end<<2911>>tex2html_wrap_inline<<2911>>\space around the expected mean rate \begin<<2912>>tex2html_wrap_inline<<2912>>$\theta$\end<<2913>>tex2html_wrap_inline<<2913>>, and the
+averaged temporal fluctuation of \begin<<2914>>tex2html_wrap_inline<<2914>>$\lambda_<<1493>>t<<1493>> $\end<<2915>>tex2html_wrap_inline<<2915>>\space around its mean \begin<<2916>>tex2html_wrap_inline<<2916>>$\theta$\end<<2917>>tex2html_wrap_inline<<2917>>\space over
+an interval of length \begin<<2918>>tex2html_wrap_inline<<2918>>$\Delta$\end<<2919>>tex2html_wrap_inline<<2919>>.
+\begin<<3404>>tex2html_deferred<<3404>>\par\end<<3405>>tex2html_deferred<<3405>>
+The second term of Eq.~\ref<<1494>>MISE2<<1494>> can further be decomposed into two parts,
+\begin<<1495>>equation<<1495>>
+\frac<<1496>>1<<1496>><<1497>>\Delta<<1497>>\int_<<1498>>0<<1498>>^<<1499>>\Delta<<1499>><<1792>>\left\langle ( \lambda_<<1500>>t<<1500>> - \langle
+\theta\rangle+ \langle\theta\rangle- \theta)^<<1501>>2<<1501>> \right\rangle dt<<1792>> = \frac
+<<1502>>1<<1502>><<1503>>\Delta<<1503>>\int_<<1504>>0<<1504>>^<<1505>>\Delta<<1505>>\left\langle <<1837>>\left(  <<1793>>\lambda_<<1506>>t<<1506>> - \langle
+\theta\rangle<<1793>> \right)  ^<<1507>>2<<1507>> <<1837>> \right\rangle \, dt - \left\langle <<1794>>\left(
+<<1508>>\theta- \langle\theta\rangle<<1508>> \right)  ^<<1509>>2<<1509>> <<1794>> \right\rangle . \label<<1510>>MISE3<<1510>><tex2html_comment_mark>1890
+\end<<1511>>equation<<1511>>
+The first term in Eq.~\ref<<1512>>MISE3<<1512>> represents a mean squared fluctuation of the
+underlying rate \begin<<2920>>tex2html_wrap_inline<<2920>>$\lambda_<<1513>>t<<1513>> $\end<<2921>>tex2html_wrap_inline<<2921>>\space from the mean rate \begin<<2922>>tex2html_wrap_inline<<2922>>$\left\langle \theta
+\right\rangle $\end<<2923>>tex2html_wrap_inline<<2923>>, and is independent of the bin size \begin<<2924>>tex2html_wrap_inline<<2924>>$\Delta$\end<<2925>>tex2html_wrap_inline<<2925>>, because
+\begin<<1514>>equation<<1514>>
+\frac<<1515>>1<<1515>><<1516>>\Delta<<1516>>\int_<<1517>>0<<1517>>^<<1518>>\Delta<<1518>>\left\langle <<1838>>\left(  <<1795>>\lambda_<<1519>>t<<1519>> -
+\langle\theta\rangle<<1795>> \right)  ^<<1520>>2<<1520>> <<1838>> \right\rangle \, dt = \frac<<1521>>1<<1521>><<1522>>T<<1522>>
+\int_<<1523>>0<<1523>>^<<1524>>T<<1524>> \left(  <<1796>>\lambda_<<1525>>t<<1525>> - \langle\theta\rangle<<1796>> \right)  ^<<1526>>2<<1526>> \, dt.
+\label<<1527>>variance_rate<<1527>><tex2html_comment_mark>1891
+\end<<1528>>equation<<1528>>
+We define a cost function by subtracting this term from the original MISE,
+\begin<<1529>>align<<1529>>
+C_<<1530>>n<<1530>>(\Delta)  ;SPMamp;  \equiv\mbox<<1531>>MISE<<1531>> - \frac<<1532>>1<<1532>><<1533>>T<<1533>> \int_<<1534>>0<<1534>>^<<1535>>T<<1535>> \left(
+<<1797>>\lambda_<<1536>>t<<1536>> - \langle\theta\rangle<<1797>> \right)  ^<<1537>>2<<1537>> \, dt\nonumber\\ 
+;SPMamp;  = \left\langle E(\hat\theta- \theta)^<<1538>>2<<1538>> \right\rangle - \left\langle
+<<1798>>\left(  <<1539>>\theta- \langle\theta\rangle<<1539>> \right)  ^<<1540>>2<<1540>> <<1798>> \right\rangle .
+\label<<1541>>cost<<1541>><tex2html_comment_mark>1892
+\end<<1542>>align<<1542>>
+This cost function corresponds to the `risk function' in the report by Rudemo,
+(Eq.~2.3), obtained by direct decomposition of the MISE~\cite<<1543>>Rudemo82<<1543>>. The
+second term in Eq.~\ref<<1544>>cost<<1544>> represents the temporal fluctuation of the
+expected mean rate \begin<<2926>>tex2html_wrap_inline<<2926>>$\theta$\end<<2927>>tex2html_wrap_inline<<2927>>\space for individual intervals of period \begin<<2928>>tex2html_wrap_inline<<2928>>$\Delta$\end<<2929>>tex2html_wrap_inline<<2929>>. As
+the expected mean rate \begin<<2930>>tex2html_wrap_inline<<2930>>$\theta$\end<<2931>>tex2html_wrap_inline<<2931>>\space is not an observable quantity, we have to
+replace the fluctuation of the expected mean rate with that of the observable
+estimator \begin<<2932>>tex2html_wrap_inline<<2932>>$\hat<<1545>>\theta<<1545>>$\end<<2933>>tex2html_wrap_inline<<2933>>. Using the decomposition rule for an unbiased
+estimator (\begin<<2934>>tex2html_wrap_inline<<2934>>$E\hat<<1546>>\theta<<1546>>=\theta)$\end<<2935>>tex2html_wrap_inline<<2935>>,
+\begin<<1547>>equation<<1547>>
+\label<<1548>>varLambdah<<1548>>\left\langle E ( <<1549>>\hat\theta- \langle E\hat\theta\rangle<<1549>>
+)^<<1550>>2<<1550>> \right\rangle = \left\langle E ( \hat\theta- \theta)^<<1551>>2<<1551>> \right\rangle +
+\left\langle <<1799>>\left(  <<1552>>\theta- \langle\theta\rangle<<1552>> \right)  ^<<1553>>2<<1553>> <<1799>>
+\right\rangle ,
+\end<<1554>>equation<<1554>>
+the cost function is transformed into
+\begin<<1555>>equation<<1555>>
+C_<<1556>>n<<1556>>\left(  \Delta\right)  = 2 \left\langle E (\hat\theta- \theta)^<<1557>>2<<1557>>
+\right\rangle - \left\langle E ( <<1558>>\hat\theta- \langle E\hat\theta\rangle<<1558>>
+)^<<1559>>2<<1559>> \right\rangle . \label<<1560>>Cn<<1560>><tex2html_comment_mark>1893
+\end<<1561>>equation<<1561>>
+\begin<<3406>>tex2html_deferred<<3406>>\par\end<<3407>>tex2html_deferred<<3407>>
+Due to the assumed Poisson nature of the point process, the number of spikes
+\begin<<2936>>tex2html_wrap_inline<<2936>>$k$\end<<2937>>tex2html_wrap_inline<<2937>>\space counted in each bin obeys a Poisson distribution; the variance of \begin<<2938>>tex2html_wrap_inline<<2938>>$k$\end<<2939>>tex2html_wrap_inline<<2939>>\space is
+equal to the mean. For the estimated rate defined as \begin<<2940>>tex2html_wrap_inline<<2940>>$\hat<<1562>>\theta<<1562>><tex2html_comment_mark>1894
+=k/(n\Delta)$\end<<2941>>tex2html_wrap_inline<<2941>>, this variance-mean relation corresponds to
+\begin<<1563>>equation<<1563>>
+E (\hat\theta- \theta)^<<1564>>2<<1564>> = \frac<<1565>>1<<1565>><<1566>>n\Delta<<1566>>E <<1567>>\hat\theta<<1567>> .
+\label<<1568>>eq:variancemean<<1568>><tex2html_comment_mark>1895
+\end<<1569>>equation<<1569>>
+By incorporating Eq.~\ref<<1570>>eq:variancemean<<1570>> into Eq.~\ref<<1571>>Cn<<1571>>, the cost
+function is given as a function of the estimator \begin<<2942>>tex2html_wrap_inline<<2942>>$\hat<<1572>>\theta<<1572>>$\end<<2943>>tex2html_wrap_inline<<2943>>,
+\begin<<1573>>equation<<1573>>
+C_<<1574>>n<<1574>>\left(  \Delta\right)  = \frac<<1575>>2<<1575>><<1800>><<1576>>n\Delta<<1576>><<1800>> \left\langle E \hat
+\theta\right\rangle - \left\langle E ( <<1577>>\hat\theta- \langle E\hat\theta
+\rangle<<1577>> )^<<1578>>2<<1578>> \right\rangle . \label<<1579>>eq:CostEstimated<<1579>><tex2html_comment_mark>1896
+\end<<1580>>equation<<1580>>
+The optimal bin size is obtained by minimizing the cost function \begin<<2944>>tex2html_wrap_inline<<2944>>$C_<<1581>>n<<1581>>
+(\Delta)$\end<<2945>>tex2html_wrap_inline<<2945>>, as
+\begin<<1582>>equation<<1582>>
+\Delta^<<1583>>*<<1583>> \equiv\arg\min_<<1584>>\Delta<<1584>>C_<<1585>>n<<1585>>(\Delta). \label<<1586>>eq: optbinsize<<1586>><tex2html_comment_mark>1897
+\end<<1587>>equation<<1587>>
+By replacing the expectation with the sample spike count, the cost function
+(Eq.~\ref<<1588>>eq:CostEstimated<<1588>>) is converted into a useful recipe, summarized as
+`Algorithm 1.'
+\begin<<3408>>tex2html_deferred<<3408>>\par\end<<3409>>tex2html_deferred<<3409>>
+\begin<<1589>>quote<<1589>>
+\textbf<<1590>>Algorithm 1: A method for bin size selection for a Bar-PSTH<<1590>> \vskip1mm
+\begin<<3410>>tex2html_deferred<<3410>>\hrule\end<<3411>>tex2html_deferred<<3411>>width \textwidth
+\begin<<3412>>tex2html_deferred<<3412>>\par\end<<3413>>tex2html_deferred<<3413>>
+\end<<1591>>quote<<1591>>
+\begin<<3414>>tex2html_deferred<<3414>>\par\end<<3415>>tex2html_deferred<<3415>>
+\begin<<1592>>enumerate<<1592>>
+\item <<1593>><<1593>>[(i)]
+\begin<<3416>>tex2html_deferred<<3416>>\par\end<<3417>>tex2html_deferred<<3417>>
+\item Divide the observation period \begin<<2946>>tex2html_wrap_inline<<2946>>$T$\end<<2947>>tex2html_wrap_inline<<2947>>\space into \begin<<2948>>tex2html_wrap_inline<<2948>>$N$\end<<2949>>tex2html_wrap_inline<<2949>>\space bins of width \begin<<2950>>tex2html_wrap_inline<<2950>>$\Delta$\end<<2951>>tex2html_wrap_inline<<2951>>, and
+count the number of spikes \begin<<2952>>tex2html_wrap_inline<<2952>>$k_<<1594>>i<<1594>>$\end<<2953>>tex2html_wrap_inline<<2953>>\space from all \begin<<2954>>tex2html_wrap_inline<<2954>>$n$\end<<2955>>tex2html_wrap_inline<<2955>>\space sequences that enter the \begin<<2956>>tex2html_wrap_inline<<2956>>$i$\end<<2957>>tex2html_wrap_inline<<2957>>th bin.
+\begin<<3418>>tex2html_deferred<<3418>>\par\end<<3419>>tex2html_deferred<<3419>>
+\item Construct the mean and variance of the number of spikes \begin<<2958>>tex2html_wrap_inline<<2958>>$\{k_<<1595>>i<<1595>>\}$\end<<2959>>tex2html_wrap_inline<<2959>>\space as,
+\begin<<1987>>displaymath<<1987>>
+\bar<<1596>>k<<1596>>\equiv\frac<<1597>>1<<1597>><<1598>>N<<1598>>\sum_<<1599>>i=1<<1599>>^<<1600>>N<<1600>>k_<<1601>>i<<1601>>\mbox<<1602>>, and <<1602>>\displaystyle
+v\equiv\frac<<1603>>1<<1603>><<1604>>N<<1604>>\sum_<<1605>>i=1<<1605>>^<<1606>>N<<1606>>(k_<<1607>>i<<1607>>-\bar<<1608>>k<<1608>>)^<<1609>>2<<1609>>.
+\end<<2040>>displaymath<<2040>>
+\begin<<3420>>tex2html_deferred<<3420>>\par\end<<3421>>tex2html_deferred<<3421>>
+\end<<1610>>enumerate<<1610>>
+\begin<<3422>>tex2html_deferred<<3422>>\par\end<<3423>>tex2html_deferred<<3423>>
+Compute the cost function,
+\begin<<1988>>displaymath<<1988>>
+C_<<1611>>n<<1611>>(\Delta)=\frac<<1801>>2\bar<<1612>>k<<1612>>-v<<1801>><<1802>>(n\Delta)^<<1613>>2<<1613>><<1802>>.
+\end<<2041>>displaymath<<2041>>
+\begin<<3424>>tex2html_deferred<<3424>>\par\end<<3425>>tex2html_deferred<<3425>>
+\begin<<1614>>enumerate<<1614>>
+\item Repeat i through iii while changing the bin size \begin<<2960>>tex2html_wrap_inline<<2960>>$\Delta$\end<<2961>>tex2html_wrap_inline<<2961>>\space to search for
+\begin<<2962>>tex2html_wrap_inline<<2962>>$\Delta^<<1615>>\ast<<1615>>$\end<<2963>>tex2html_wrap_inline<<2963>>\space that minimizes \begin<<2964>>tex2html_wrap_inline<<2964>>$C_<<1616>>n<<1616>>(\Delta)$\end<<2965>>tex2html_wrap_inline<<2965>>.
+\end<<1617>>enumerate<<1617>>
+\begin<<3426>>tex2html_deferred<<3426>>\par\end<<3427>>tex2html_deferred<<3427>>
+\bibliographystyle<<1618>>apalike<<1618>>
+\bibliography<<1619>>../bib/references<<1619>>
+\begin<<3428>>tex2html_deferred<<3428>>\par\end<<3429>>tex2html_deferred<<3429>>
+\begin<<3430>>tex2html_deferred<<3430>>\bigskip\end<<3431>>tex2html_deferred<<3431>>\printindex
+\begin<<3432>>tex2html_deferred<<3432>>\par\end<<3433>>tex2html_deferred<<3433>>
+\end<<1620>>document<<1620>>

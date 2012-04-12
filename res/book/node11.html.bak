@@ -1,0 +1,764 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<!--Converted with jLaTeX2HTML 2002-2-1 (1.70) JA patch-1.9
+patched version by:  Kenshi Muto, Debian Project.
+* modified by:  Shige TAKENO
+LaTeX2HTML 2002-2-1 (1.70),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>一般点過程の時間伸縮理論と尤度関数</TITLE>
+<META NAME="description" CONTENT="一般点過程の時間伸縮理論と尤度関数">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002-2-1 JA patch-1.9">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="../css/latex2html.css">
+
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="node8.html">
+<LINK REL="next" HREF="node12.html">
+<META http-equiv=Content-Type content="text/html; charset=shift_jis">
+<script src=http://www.google-analytics.com/urchin.js type=text/javascript></script>
+<script type=text/javascript>_uacct="UA-745872-1";urchinTracker();</script>
+</HEAD>
+
+<BODY>
+    <a name=top id=top> </a>
+    <div id=NaviLayer>  
+    <table width=180 border=0 cellpadding=0 cellspacing=0>
+    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
+    <tr><td height=28 valign=top><b>Spike Density Estimation</b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../histogram.html>Histogram Method</a></b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../kernel.html>Kernel Method</a></b></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Share it with your friend</b></td></tr>
+    <tr><td valign=top><a class=addthis_button href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcbd554189b9a7"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width=125 height=16 alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcbd554189b9a7"></script></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Tweet</b></td></tr>
+    <tr><td valign=top><iframe src=../../tweet.html width=180 height=600 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
+    <tr><td height=28 valign=top></td></tr>
+    </table></div>
+<!--Navigation Panel-->
+<A NAME="tex2html371"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html365"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html361"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html367"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html369"
+  HREF="node16.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html372"
+  HREF="node12.html">スパイク時系列モデルの推定（暫定版）</A>
+<B> Up:</B> <A NAME="tex2html366"
+  HREF="node8.html">非定常スパイク時系列モデル</A>
+<B> Previous:</B> <A NAME="tex2html362"
+  HREF="node10.html">非定常リニューアル過程</A>
+ &nbsp; <B>  <A NAME="tex2html368"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html370"
+  HREF="node16.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html373"
+  HREF="node11.html#SECTION02231000000000000000">ポアソン過程の尤度関数</A>
+<LI><A NAME="tex2html374"
+  HREF="node11.html#SECTION02232000000000000000">一般点過程の尤度関数</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION02230000000000000000">
+一般点過程の時間伸縮理論と尤度関数</A>
+</H1>
+
+<P>
+<IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img326.gif"
+ ALT="$ N_{t}$">を時刻<IMG
+ WIDTH="35" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img327.gif"
+ ALT="$ [0,t)$">の間に発生したスパイクの数とする. <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img227.gif"
+ ALT="$ i$">番目のスパイクの発生時刻を<IMG
+ WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.gif"
+ ALT="$ t_{i}$">とする. スパイク発生時刻をまとめたベクトルを<!-- MATH
+ $H_{t}=\left\{  t_{1}%
+,t_{2},\cdots,t_{N_{t}}\right\}$
+ -->
+<IMG
+ WIDTH="153" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img328.gif"
+ ALT="$ H_{t}=\left\{ t_{1}%
+,t_{2},\cdots,t_{N_{t}}\right\} $">とする. 各時刻の発火率が過去のスパイクに依存するとき時刻<!-- MATH
+ $[t,t+\Delta
+t)$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img329.gif"
+ ALT="$ [t,t+\Delta
+t)$">の間にスパイクが一つ発生する確率は[<A
+ HREF="node15.html#Cox62">Cox, 1962</A>,<A
+ HREF="node15.html#Snyder75">Snyder, 1975</A>,<A
+ HREF="node15.html#Daley88">Daley and Vere-Jones, 1988</A>,<A
+ HREF="node15.html#Johnson96">Johnson, 1996</A>]<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="224" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img333.gif"
+ ALT="$\displaystyle prob\left( \text{one event in }[t,t+\Delta)\vert H_{t}\right)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="182" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img334.gif"
+ ALT="$\displaystyle =r\left( t\vert N_{t},H_{t}\right) \Delta+o\left( t,\Delta\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.4)</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="301" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img335.gif"
+ ALT="$\displaystyle prob\left( \text{more than one event in }[t,t+\Delta)\vert H_{t}\right)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="70" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img336.gif"
+ ALT="$\displaystyle =o\left( t,\Delta\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.5)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+この式は十分に小さい区間<!-- MATH
+ $[t,t+\Delta)$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img337.gif"
+ ALT="$ [t,t+\Delta)$">内のイベントの発生確率が条件付強度関数<!-- MATH
+ $r\left(
+t|H_{t}\right)$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img338.gif"
+ ALT="$ r\left(
+t\vert H_{t}\right) $">と区間幅<IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img104.gif"
+ ALT="$ \Delta$">に比例し, またこの間に一つ以上のスパイクが発生しないことを意味している.
+
+<P>
+<!-- MATH
+ $r\left(  t|H_{t}\right)$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img338.gif"
+ ALT="$ r\left(
+t\vert H_{t}\right) $">は条件付強度関数(conditional intensity function)<A NAME="1101"></A>と呼ばれる. 強度関数は一般には過去のスパイク発火の履歴に依存する. 強度関数が時刻<IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.gif"
+ ALT="$ t$">の関数でないときは, その点過程は定常であるという. 時刻に依存する場合は非一様過程である. 強度関数が与えられればその点過程の統計的性質はすべて決まる. 強度関数が時刻と履歴の何れにもに依存しない場合, <!-- MATH
+ $r\left(  t|H_{t}\right)  =\lambda$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img339.gif"
+ ALT="$ r\left( t\vert H_{t}\right) =\lambda$">であり, 一様ポアソン過程(homogeneous Poisson point
+process)<A NAME="inhomogeneous_Poisson_process"></A>と呼ばれる. 強度関数が時刻に依存し，スパイク履歴には依存しない場合, <!-- MATH
+ $r\left(  t|H_{t}\right)
+=\lambda\left(  t\right)$
+ -->
+<IMG
+ WIDTH="107" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img340.gif"
+ ALT="$ r\left( t\vert H_{t}\right)
+=\lambda\left( t\right) $">であり, 非一様ポアソン過程(inhomogeneous Poisson
+point process)<A NAME="1106"></A>, あるいは時間依存ポアソン過程（time-dependent Poisson
+point process）と呼ばれる.&nbsp;&nbsp;&nbsp;&nbsp;
+
+<P>
+強度関数が最後のスパイクの時刻<IMG
+ WIDTH="26" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img341.gif"
+ ALT="$ t_{N_{t}}$">にのみ依存する場合，<!-- MATH
+ $r\left(  t|H_{t}\right)  =r\left(  t|t_{N_{t}}\right)$
+ -->
+<IMG
+ WIDTH="132" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img342.gif"
+ ALT="$ r\left( t\vert H_{t}\right) =r\left( t\vert t_{N_{t}}\right)
+$">となる．リニューアル過程はこのタイプのひとつで，条件付強度関数とISI分布の間に<P></P>
+<DIV ALIGN="CENTER"><A NAME="intensity_point_process"></A><!-- MATH
+ \begin{equation}
+r\left(  t|H_{t}\right)  =\frac{p\left(  t|H_{t}\right)  }{1-\int_{0}%
+^{t}p\left(  u|H_{u}\right)  du}%
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="205" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img343.gif"
+ ALT="$\displaystyle r\left( t\vert H_{t}\right) =\frac{p\left( t\vert H_{t}\right) }{1-\int_{0}%
+^{t}p\left( u\vert H_{u}\right) du}%
+$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.6)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+の関係がある. また,
+逆に条件付きISI分布は<P></P>
+<DIV ALIGN="CENTER"><A NAME="ISI_point_process"></A><!-- MATH
+ \begin{equation}
+p\left(  t|H_{t}\right)  =r\left(  t|H_{t}\right)  \exp\left\{  -\int_{0}%
+^{t}r\left(  u|H_{u}\right)  du\right\}%
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="299" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img344.gif"
+ ALT="$\displaystyle p\left( t\vert H_{t}\right) =r\left( t\vert H_{t}\right) \exp\left\{ -\int_{0}%
+^{t}r\left( u\vert H_{u}\right) du\right\}%
+$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.7)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+で与えられる.
+
+<P>
+条件付強度関数が与えられた下で, 次のスパイクが生じるまでの時間を数値計算したい. このためにはスパイク間隔の密度分布に従う乱数を発生させればよい[,,<A
+ HREF="node15.html#Johnson96">Johnson, 1996</A>,<A
+ HREF="node15.html#Brown01">Brown et&nbsp;al., 2001</A>]. 
+
+<P>
+<IMG
+ WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.gif"
+ ALT="$ \xi$">を一様乱数とする.
+累積分布関数を考えると, <A HREF="node6.html#cdf_hazard">1.15</A>からハザード関数を用いて<!-- MATH
+ \begin{displaymath}
+\xi=\int_{0}^{\eta}p\left(  u|H_{u}\right)  du=1-\exp\left\{  -\int_{0}^{\eta
+}r\left(  u|H_{u}\right)  du\right\}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="356" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img348.gif"
+ ALT="$\displaystyle \xi=\int_{0}^{\eta}p\left( u\vert H_{u}\right) du=1-\exp\left\{ -\int_{0}^{\eta
+}r\left( u\vert H_{u}\right) du\right\}
+$">
+</DIV><P></P>
+とすると<IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.gif"
+ ALT="$ \eta$">は分布<!-- MATH
+ $p\left(
+\tau|\tau^{\ast}\right)$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img349.gif"
+ ALT="$ p\left(
+\tau\vert\tau^{\ast}\right) $">に従う乱数である. これより<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+-\log\left(  \xi\right)  =\int_{0}^{\eta}r\left(  u|H_{u}\right)  du.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="192" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img350.gif"
+ ALT="$\displaystyle -\log\left( \xi\right) =\int_{0}^{\eta}r\left( u\vert H_{u}\right) du.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.8)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<!-- MATH
+ $~\zeta=-\log\left(  \xi\right)$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img351.gif"
+ ALT="$ ~\zeta=-\log\left( \xi\right) $">は<!-- MATH
+ $-\log\left(  \xi\right)$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.gif"
+ ALT="$ -\log\left( \xi\right) $">は平均１の指数分布に従う乱数である.
+<!-- MATH
+ $\Phi\left(  \eta\right)  =\int_{0}^{\eta}r\left(  u|H_{u}\right)  du$
+ -->
+<IMG
+ WIDTH="159" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img353.gif"
+ ALT="$ \Phi\left( \eta\right) =\int_{0}^{\eta}r\left( u\vert H_{u}\right) du$">とすると, 次のスパイクまでの時間は<!-- MATH
+ $\eta
+=\Phi^{-1}\left(  \zeta\right)$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img354.gif"
+ ALT="$ \eta
+=\Phi^{-1}\left( \zeta\right) $">で与えられる.
+<A NAME="1148"></A>
+
+<P>
+
+<H2><A NAME="SECTION02231000000000000000">
+ポアソン過程の尤度関数</A>
+</H2>
+
+<P>
+時間依存ポアソン過程に従うスパイク時系列<!-- MATH
+ $\left\{  t_{i}\right\}  _{i=1}^{n}$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img357.gif"
+ ALT="$ \left\{ t_{i}\right\} _{i=1}^{n}$">の確率密度分布(尤度関数<A NAME="1159"></A>)を求めよう. <A HREF="#inhomogeneous_Poisson_process">2.3</A>で見たように, 時刻<IMG
+ WIDTH="31" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img358.gif"
+ ALT="$ t_{i-1}%
+$">から<IMG
+ WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.gif"
+ ALT="$ t_{i}$">までスパイクが生じず, 時刻<IMG
+ WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.gif"
+ ALT="$ t_{i}$">においてスパイクが生じる確率は<!-- MATH
+ \begin{displaymath}
+p\left(  t_{i}|t_{i-1};\lambda_{t_{i-1}:t_{i}}\right)  =\lambda\left(
+t_{i}\right)  \exp\left[  -\int_{t_{i-1}}^{t_{i}}\lambda\left(  u\right)
+du\right]
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="336" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img359.gif"
+ ALT="$\displaystyle p\left( t_{i}\vert t_{i-1};\lambda_{t_{i-1}:t_{i}}\right) =\lambd...
+..._{i}\right) \exp\left[ -\int_{t_{i-1}}^{t_{i}}\lambda\left( u\right)
+du\right]
+$">
+</DIV><P></P>
+従って, スパイク時系列<!-- MATH
+ $\left\{  t_{i}\right\}  _{i=1}^{n}$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img357.gif"
+ ALT="$ \left\{ t_{i}\right\} _{i=1}^{n}$">は独立に生じるから,
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="76" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img360.gif"
+ ALT="$\displaystyle p\left( \left\{ t_{i}\right\} _{i=1}^{n}\right)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="220" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img361.gif"
+ ALT="$\displaystyle =%
+{\displaystyle\prod\limits_{i=1}^{n}} p\left( t_{i}\vert t_{i-1}\right) P\left( t_{n}&lt;T\vert t_{n-1}\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="375" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img362.gif"
+ ALT="$\displaystyle =%
+{\displaystyle\prod\limits_{i=1}^{n}} \lambda\left( t_{i}\righ...
+...u\right) du\right] \exp\left[ -\int_{t_{n}}^{T}\lambda\left( u\right) du\right]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="222" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img363.gif"
+ ALT="$\displaystyle =%
+{\displaystyle\prod\limits_{i=1}^{n}} \lambda\left( t_{i}\right) \exp\left[ -\int_{t_{0}}^{T}\lambda\left( u\right) du\right]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+指数分布の導出で見たように, 尤度もいくつかの異なった方法で導出することができる. 区間<!-- MATH
+ $\left[
+0,T\right]$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.gif"
+ ALT="$ \left[ 0,T\right] $">を幅<IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img104.gif"
+ ALT="$ \Delta$">の<IMG
+ WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img123.gif"
+ ALT="$ \ N$">個の区間に区切る. <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img104.gif"
+ ALT="$ \Delta$">の大きさは１つの区間に高々１つのスパイクしか入らない程度に小さくとるとする. <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img227.gif"
+ ALT="$ i$">番目の区間にスパイクの入る確率は<!-- MATH
+ $\lambda_{i\Delta}\Delta$
+ -->
+<IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img364.gif"
+ ALT="$ \lambda_{i\Delta}\Delta$">, また入らない確率は<!-- MATH
+ $1-\lambda_{i\Delta}\Delta$
+ -->
+<IMG
+ WIDTH="70" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img365.gif"
+ ALT="$ 1-\lambda_{i\Delta}\Delta$">である. 区間毎に独立に考えることが出来るから,
+確率密度は<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="100" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img366.gif"
+ ALT="$\displaystyle p\left( \left\{ t_{i}\right\} _{i=1}^{n}\right) \Delta^{n}$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="329" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img367.gif"
+ ALT="$\displaystyle =%
+{\displaystyle\prod\limits_{j:\text{スパイク%
+あり}}} \lambda\...
+..._{j:\text{スパイク%
+なし}}} \left[ 1-\lambda\left( j\Delta\right) \Delta\right]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="309" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img368.gif"
+ ALT="$\displaystyle =%
+{\displaystyle\prod\limits_{j:\text{スパイク%
+あり}}} \frac{\l...
+...tyle\prod\limits_{j=1}^{K}} \left[ 1-\lambda\left( j\Delta\right) \Delta\right]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+ここで第一成分は<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="170" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img370.gif"
+ ALT="$\displaystyle %
+{\displaystyle\prod\limits_{j:\text{スパイク%
+あり}}} \frac{\lambda\left( j\Delta\right) \Delta}{1-\lambda\left( j\Delta\right) \Delta}$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="406" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img371.gif"
+ ALT="$\displaystyle =%
+{\displaystyle\prod\limits_{j:\text{スパイク%
+あり}}} \lambda\...
+...\Delta+\left\{ \lambda\left( j\Delta\right) \Delta\right\} ^{2}%
++\cdots\right]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="80" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img372.gif"
+ ALT="$\displaystyle \rightarrow {\displaystyle\prod\limits_{i=1}^{n}} \lambda\left( t_{i}\right)$">&nbsp; &nbsp;&nbsp;<IMG
+ WIDTH="17" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img373.gif"
+ ALT="$\displaystyle \Delta$"> (as&nbsp;<IMG
+ WIDTH="50" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img374.gif"
+ ALT="$\displaystyle %
+\Delta\rightarrow0$">)<IMG
+ WIDTH="4" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img110.gif"
+ ALT="$\displaystyle %
+$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+また第二成分は<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="105" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img375.gif"
+ ALT="$\displaystyle %
+{\displaystyle\prod\limits_{i=1}^{K}} \left( 1-\lambda_{i\Delta}\Delta\right)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="216" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img376.gif"
+ ALT="$\displaystyle =\exp\left[ \sum_{i=1}^{K}%
+\log\left( 1-\lambda\left( j\Delta\right) \Delta\right) \right]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="341" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img377.gif"
+ ALT="$\displaystyle =\exp\left[ \sum_{i=1}^{K}\left[ -\lambda\left( j\Delta\right) \D...
+...}\left\{ \lambda\left( j\Delta\right) \Delta\right\} ^{2}+\cdots\right] \right]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="160" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img378.gif"
+ ALT="$\displaystyle \rightarrow\exp\left[ -\int_{0}^{T}\lambda\left( t\right) dt\right]$">&nbsp; &nbsp; (as&nbsp;<IMG
+ WIDTH="50" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img379.gif"
+ ALT="$\displaystyle \Delta\rightarrow0$">)<IMG
+ WIDTH="4" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img110.gif"
+ ALT="$\displaystyle %
+$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+従って, 確率密度は<!-- MATH
+ \begin{displaymath}
+p\left(  \left\{  t_{i}\right\}  _{i=1}^{n}\right)  =%
+{\displaystyle\prod\limits_{i=1}^{n}}
+\lambda\left(  t_{i}\right)  \exp\left[  -\int_{0}^{T}\lambda\left(  u\right)
+du\right]
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="298" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img380.gif"
+ ALT="$\displaystyle p\left( \left\{ t_{i}\right\} _{i=1}^{n}\right) =%
+{\displaystyle...
+...da\left( t_{i}\right) \exp\left[ -\int_{0}^{T}\lambda\left( u\right)
+du\right]
+$">
+</DIV><P></P>
+
+<P><P>
+<BR>
+
+<P>
+
+<H2><A NAME="SECTION02232000000000000000">
+一般点過程の尤度関数</A>
+</H2>
+
+<P>
+一般の点過程の尤度も, 非定常ポアソン過程と同様の方法で導出することができる. 強度（瞬間スパイク生成率）が条件付き独立(conditionally
+independent)であるから, 非定常ポアソン過程と同じように
+<P>
+<!-- MATH
+ \begin{displaymath}
+p\left(  \left\{  t_{i}\right\}  _{i=1}^{n}\right)  \Delta^{n}=%
+{\displaystyle\prod\limits_{j:\text{スパイク%
+あり}}}
+r\left(  t_{j}|H_{t_{j}}\right)  \Delta {\displaystyle\prod\limits_{j:\text{スパイク%
+なし}}}
+\left[  1-r\left(  t_{j}|H_{t_{j}}\right)  \Delta\right]
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="477" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img381.gif"
+ ALT="$\displaystyle p\left( \left\{ t_{i}\right\} _{i=1}^{n}\right) \Delta^{n}=%
+{\di...
+...t{スパイク%
+なし}}}
+\left[ 1-r\left( t_{j}\vert H_{t_{j}}\right) \Delta\right]
+$">
+</DIV><P></P>
+と書ける. 従って尤度は<!-- MATH
+ \begin{displaymath}
+p\left(  \left\{  t_{i}\right\}  _{i=1}^{n}\right)  =%
+{\displaystyle\prod\limits_{i=1}^{n}}
+r\left(  t_{i}|H_{t_{i}}\right)  \exp\left[  -\int_{0}^{T}r\left(
+u|H_{u}\right)  du\right]
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="349" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img382.gif"
+ ALT="$\displaystyle p\left( \left\{ t_{i}\right\} _{i=1}^{n}\right) =%
+{\displaystyle...
+...H_{t_{i}}\right) \exp\left[ -\int_{0}^{T}r\left(
+u\vert H_{u}\right) du\right]
+$">
+</DIV><P></P>
+となる. この式はまた
+  <!-- MATH
+ \begin{displaymath}
+p\left(  \left\{  t_{i}\right\}  _{i=1}^{n}\right)  =\exp\left[  \int\log
+r\left(  u|H_{u}\right)  dN_{u}-\int_{0}^{T}r\left(  u|H_{u}\right)
+du\right]
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="400" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img383.gif"
+ ALT="$\displaystyle p\left( \left\{ t_{i}\right\} _{i=1}^{n}\right) =\exp\left[ \int\...
+...( u\vert H_{u}\right) dN_{u}-\int_{0}^{T}r\left( u\vert H_{u}\right)
+du\right]
+$">
+</DIV><P></P>
+と書かれることもある. ここで<IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img326.gif"
+ ALT="$ N_{t}$">は計数過程と呼ばれ時刻<IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.gif"
+ ALT="$ t$">までに生じたスパイク数. <IMG
+ WIDTH="34" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img384.gif"
+ ALT="$ dN_{u}$"> はその微分で, 積分<!-- MATH
+ $\int dN_{u}$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img385.gif"
+ ALT="$ \int dN_{u}$">はのスパイクが生じた事項のみの和をとることを表している.
+導出は次の通り．
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="76" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img360.gif"
+ ALT="$\displaystyle p\left( \left\{ t_{i}\right\} _{i=1}^{n}\right)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="347" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img386.gif"
+ ALT="$\displaystyle =%
+{\displaystyle\prod\limits_{k=1}^{K}} \left[ r\left( k\Delta\v...
+...imits_{k=1}^{K}} \left[ 1-r\left( k\Delta\vert H_{k\Delta}\right) \Delta\right]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="437" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.gif"
+ ALT="$\displaystyle =\exp\log\left[ {\displaystyle\prod\limits_{k=1}^{K}} \left[ r\le...
+...\exp\left[ \sum_{i=1}^{K}-r\left( k\Delta\vert H_{k\Delta}\right) \Delta\right]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="389" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img388.gif"
+ ALT="$\displaystyle =\exp\left[ \sum_{k=1}^{K}dN_{k\Delta}\log\left[ r\left( k\Delta ...
+...) \right] -\sum_{i=1}^{K}r\left( k\Delta\vert H_{k\Delta }\right) \Delta\right]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="337" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img389.gif"
+ ALT="$\displaystyle \rightarrow\exp\left[ \int_{0}^{T}\log r\left( u\vert H_{u}\right) dN_{u}-\int_{0}^{T}r\left( u\vert H_{u}\right) du\right]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+スパイク発生が共変量の履歴に依存する場合など，強度関数が各種信号の過去の履歴にのみ依存するとき尤度関数は上記と同様の形で定式化することができる．多くの時系列点過程モデルはこの仮定に従うが，Neyman-Scottのクラスター点過程(Neyman-Scott
+cluster point process)モデルなど，このような仮定が成り立たない点過程も存在する．
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html371"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html365"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html361"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html367"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html369"
+  HREF="node16.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html372"
+  HREF="node12.html">スパイク時系列モデルの推定（暫定版）</A>
+<B> Up:</B> <A NAME="tex2html366"
+  HREF="node8.html">非定常スパイク時系列モデル</A>
+<B> Previous:</B> <A NAME="tex2html362"
+  HREF="node10.html">非定常リニューアル過程</A>
+ &nbsp; <B>  <A NAME="tex2html368"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html370"
+  HREF="node16.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+AddressShimazaki
+</ADDRESS>
+</BODY>
+</HTML>

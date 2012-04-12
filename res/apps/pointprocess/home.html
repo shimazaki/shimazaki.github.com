@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+  	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script src="tweet.js" type="text/javascript"></script>
+	<script type="text/javascript">
+    
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1', {'packages':['corechart']});
+      
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+      
+      // Callback that creates and populates a data table, 
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+      // Create our data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Task');
+        data.addColumn('number', 'Followers');
+		data.addColumn('number', 'Friends');
+		
+    	<!-- //Data -->		
+		{% if result %}
+			{% for st in result %}
+				data.addRows([
+          			//['{{ st.user.screen_name }}', 1 ]
+					[ '{{ st.user.screen_name }}' , {{ st.user.followers_count }},{{ st.user.friends_count }} ]
+					//[ {{ st.display_time }} , 1 ]
+        		]);		
+			{% endfor %}
+    	{% endif %}
+		
+		
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, {width: 800, height: 240, is3D: false, title: 'Followers/friends count of last 20 people.'});
+      }
+    </script>
+	
+	
+
+<script language="JavaScript" type="text/javascript"> 
+			function ExampleSVG(petals) {
+				kSVGNS = 'http://www.w3.org/2000/svg';
+				block = document.getElementById('svgBlock');
+				
+				// SVG
+				svg = document.createElementNS(kSVGNS, 'svg');
+				svg.setAttribute('width', '800');
+				svg.setAttribute('height', '50');
+				svg.setAttribute('viewBox', '0 0 800 50');
+				svg.setAttribute('xmlns', kSVGNS);
+				svg.setAttribute('version', '1.1');
+				
+				// Begin definitions
+				//defs = document.createElementNS(kSVGNS, 'defs');
+				
+				
+				{% for st in result %}
+				// Draw
+				rect = document.createElementNS(kSVGNS, 'rect');
+				//rect.setAttribute("x", "parseFloat({{ st.display_time }})+''");
+				rect.setAttribute("x", 800-parseFloat({{ st.display_time }})+'');
+				rect.setAttribute("y", "0");
+				rect.setAttribute("width", "1");
+				rect.setAttribute("height", "20");
+				rect.setAttribute("fill", "url(#fade)");
+				svg.appendChild(rect);
+				
+				{% endfor %}
+				
+				// End definitions
+				//svg.appendChild(defs);
+				
+				
+				block.appendChild(svg);
+				return '<?xml version="1.0"?>' + '\n' + block.innerHTML;
+			}
+			function UnescapeUTF16(s) {
+				return unescape(s);
+			}
+			function UnescapeUTF16Only(s) {
+				return s.replace(/%u\w\w\w\w/g, UnescapeUTF16);
+			}
+			function setSVG(petals) {
+				svgBlock = document.getElementById('svgBlock');
+				svgBlock.innerHTML = '';
+				
+				svgText = ExampleSVG(petals);
+				svgData = 'data:image/svg+xml,' + UnescapeUTF16Only(escape(svgText));
+				svgSource = document.getElementById('svgSource');
+				svgLink = document.getElementById('svgLink');
+				svgSource.value = svgText;
+				svgLink.href = svgData;
+			}
+		</script> 
+	
+	
+    <title>Twitter-Google App Engine実験 ({{ OwnerName }}のタイムライン)</title>
+    <style type="text/css">
+        body{
+            background-color : #ffffff;
+        }
+    </style>
+  </head>
+  <body>
+    <div style="margin-bottom:10px;">
+      <div align="right"><a href="/logout">ログアウト</a></div>
+    </div>
+    <blockquote>
+      <h2>{{ OwnerName }}様  このページはTwitterAPIとGoogle App Engineのテストページです． </h2>
+      <p>&nbsp;</p>
+    </blockquote>
+
+
+
+    <div align="center">
+      <p>`<strong>Spikes of Tweets' in the last 800 min</strong></p>
+    </div>
+    <div id="svgBlock" align="center"></div> 
+		<script language="JavaScript" type="text/javascript"> setSVG(5); </script> 
+		
+		
+
+
+	<!--Div that will hold the pie chart-->
+    <div id="chart_div" align="center"></div>
+	
+	<br />
+	
+	<!-- Tweet time -->
+    {% if result %}
+	<!-- //  -->
+		
+    
+	<table width="800" border="0" align="center" cellpadding="1" cellspacing="2" bgcolor="#99CC00" > 
+		<td >
+	<!-- 自分のタイムラインの時のみ表示 -->
+    {% if IsMyHome %}
+    <!-- input form -->
+    <form action="/tweet" method="post">
+      <input type="text" name="status" maxlength="140" style="width : 600px;"/>
+      <input type="submit" value="つぶやく" />
+    </form>
+    <!-- //input form -->
+    {% endif %}
+		</td>
+  </table>
+  
+  <br />
+  	<!-- timeline -->
+      {% for st in result %}
+	  	<table width="800" border="0" align="center" cellpadding="1" cellspacing="2" bgcolor="#FFCC66" >
+	  	<tr>
+        <div style="margin-bottom:10px;">
+            <td width=20> {{ st.display_time }} </td>
+			<td width=50> <img src={{ st.user.profile_image_url }} width=50 height=50 /> </td>
+			<td > <a href={{st.user.url}} target=_top> {{ st.user.screen_name }} </a>: {{ st.display_text }} </td>
+			<td width=80> {{ st.user.location }} </td>
+			<td width=30> {{ st.user.followers_count }} </td>
+			<td width=30> {{ st.user.friends_count }} </td>
+			<!-- <td width=30> {{ st.user.following }} </td> -->
+            <td> <!-- 自分の発言に対してのみ削除リンクを表示 -->
+            {% ifequal st.user.screen_name MyScreenName %}
+            &nbsp;&nbsp;<a href="/delete?id={{ st.id }}">削除</a>
+            {% endifequal %}
+			</
+			 
+        </div>
+		</tr>
+		</table>
+      {% endfor %}
+  
+    <!-- //timeline -->
+    {% endif %}
+  </body>
+</html>

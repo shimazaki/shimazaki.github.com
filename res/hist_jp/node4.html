@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002-2-1 (1.70) JA patch-1.9
+patched version by:  Kenshi Muto, Debian Project.
+* modified by:  Shige TAKENO
+LaTeX2HTML 2002-2-1 (1.70),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>スパイク時系列からのヒストグラムの作成</TITLE>
+<META NAME="description" CONTENT="スパイク時系列からのヒストグラムの作成">
+<META NAME="keywords" CONTENT="hist_jp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002-2-1 JA patch-1.9">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="../css/latex2html.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html84"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html72"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html78"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html80"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html82"
+  HREF="node10.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+ &nbsp; <A HREF=../index.html><B> <IMG SRC=../icons/home.gif BORDER=0></B></A>
+<BR>
+<B> Next:</B> <A NAME="tex2html85"
+  HREF="node5.html">平均積分二乗誤差及びコスト関数の導入</A>
+<B> Up:</B> <A NAME="tex2html79"
+  HREF="node3.html">方法</A>
+<B> Previous:</B> <A NAME="tex2html73"
+  HREF="node3.html">方法</A>
+ &nbsp; <B>  <A NAME="tex2html81"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html83"
+  HREF="node10.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00031000000000000000">
+スパイク時系列からのヒストグラムの作成</A>
+</H2>
+長さ<IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.gif"
+ ALT="$T$">の時間依存Poisson過程のレート（強度過程）を<IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\lambda_t$"> (<IMG
+ WIDTH="66" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$t\in[0, \, T]$">)とする. 
+区間<IMG
+ WIDTH="43" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$[0,\, \Delta]$">の棒ヒストグラムの真の高さは
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\Lambda  = \frac{1}{\Delta }\int_0^\Delta  {\lambda _t dt}.
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="113" HEIGHT="46" BORDER="0"
+ SRC="img9.gif"
+ ALT="\begin{displaymath}
+\Lambda = \frac{1}{\Delta }\int_0^\Delta {\lambda _t dt}.
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+で与えられる. この区間内の<IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.gif"
+ ALT="$n$">回の試行数の総スパイク数<IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.gif"
+ ALT="$k$">は次のPoisson分布で与えられる. 
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+p(k|n \Lambda \Delta) =\frac{\left( n \Lambda \Delta \right)^{k}}{k!} e^{-n \Lambda\Delta}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:def_poisson"></A><IMG
+ WIDTH="192" HEIGHT="44" BORDER="0"
+ SRC="img12.gif"
+ ALT="\begin{displaymath}
+p(k\vert n \Lambda \Delta) =\frac{\left( n \Lambda \Delta \right)^{k}}{k!} e^{-n \Lambda\Delta}
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+従って <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\Lambda$">の不偏推定量である<!-- MATH
+ $\hat{\Lambda}=k/(n \Delta)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$\hat{\Lambda}=k/(n \Delta)$">がデータから求められるヒストグラムの高さである. 
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html84"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html72"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html78"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html80"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html82"
+  HREF="node10.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html85"
+  HREF="node5.html">平均積分二乗誤差及びコスト関数の導入</A>
+<B> Up:</B> <A NAME="tex2html79"
+  HREF="node3.html">方法</A>
+<B> Previous:</B> <A NAME="tex2html73"
+  HREF="node3.html">方法</A>
+ &nbsp; <B>  <A NAME="tex2html81"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html83"
+  HREF="node10.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+hideaki
+2006-07-11
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0071)http://www.ton.scphys.kyoto-u.ac.jp/~shino/toolbox/sskernel/kernel.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">#gview-cmenu {  position: absolute;  border: 1px solid #ccc;  background: #fff;  margin: 0;  padding: 0;  top: 0;  left: 0;  z-index: 10000;  list-style-type: none;  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .5);}#gview-cmenu:focus {  outline: none;}.gview-cmenu-item {  margin: 0;  padding: 5px 7px;  cursor: default;  font-size: 13px;  font-family: arial, san-serif;  color: #000;  -webkit-user-select: none;}.gview-cmenu-item:hover {  background-color: #F0F7F9;}.gview-cmenu-item:first-child {  border-bottom: 1px solid #ddd;}.gview-hidden {  display: none;}</style>
+
+<meta name="GENERATOR" content="IBM WebSphere Studio Homepage Builder Version 13.0.0.0 for Windows">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<title>Kernel Bandwidth Optimization for Spike Rate Estimation</title>
+
+<script src="kernel.js" type="text/javascript"></script>
+
+<!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+
+<!-- Local Javascript -->
+<!-- saved from url=(0013)about:internet -->
+
+<style type="text/css">
+<!--
+body {
+	margin-left: 30px;
+}
+-->
+</style>
+</head>
+<body id="aeaoofnhgocdbnbeljkmbjdmhbcokfdb-mousedown">
+<h1>SULAB: Kernel Bandwidth Optimization for Spike Rate Estimation</h1>
+<p>This page was created by <a href="http://2000.jukuin.keio.ac.jp/shimazaki">Hideaki Shimazaki</a> in collaboration with <a href="http://www.ton.scphys.kyoto-u.ac.jp/~shino/english.html">Shigeru Shinomoto</a> based on the theory published in Journal of Computational Neuroscience
+2010.</p>
+<h2><a name="WebApp" id="WebApp"></a>Web Application for  Kernel Bandwidth Optimization (Ver. 0.4)</h2>
+ <table width="700" height="138" border="1" cellpadding="10">
+   <tbody><tr>
+   
+
+
+     <td>
+	 <div align="center"> This web application calculates the optimal kernel bandwidth for the data you post.
+<br> <br>  </div>
+	 <form name="DATAFORM" id="DATAFORM">
+       <strong>1.  Copy&amp;Paste your data (
+         <input name="reset" type="reset" value="Reset to Sample Data">
+         )</strong>
+       <div align="center">
+         <textarea name="TEXT" rows="9" cols="65" wrap="off" onKeyUp="PostData();">4.37 3.87 4.00 4.03 3.50 4.08 2.25 4.70 1.73 4.93 1.73 4.62
+3.43 4.25 1.68 3.92 3.68 3.10 4.03 1.77 4.08 1.75 3.20 1.85
+4.62 1.97 4.50 3.92 4.35 2.33 3.83 1.88 4.60 1.80 4.73 1.77
+4.57 1.85 3.52 4.00 3.70 3.72 4.25 3.58 3.80 3.77 3.75 2.50
+4.50 4.10 3.70 3.80 3.43 4.00 2.27 4.40 4.05 4.25 3.33 2.00
+4.33 2.93 4.58 1.90 3.58 3.73 3.73 1.82 4.63 3.50 4.00 3.67
+1.67 4.60 1.67 4.00 1.80 4.42 1.90 4.63 2.93 3.50 1.97 4.28
+1.83 4.13 1.83 4.65 4.20 3.93 4.33 1.83 4.53 2.03 4.18 4.43
+4.07 4.13 3.95 4.10 2.27 4.58 1.90 4.50 1.95 4.83 4.12</textarea>
+       </div>
+     </form>
+	 <br>
+       <p><strong>2.</strong> 
+		 <input name="Button" value="Calculate the Optimal Bandwidth" type="button" onClick="PostData(); raster(DATA); density(); t=xaxis(); alert('The optimal kernel width is '  + optw.toPrecision(3));" language="JavaScript" />
+       </p>
+       <div align="center">
+		   <canvas id="Canvas" width="500" height="300"></canvas>
+           <canvas id="Raster" width="500" height="20"></canvas>
+       </div>
+       <br>
+        
+       <p><strong>3.</strong>
+         <input name="button" type="button" onClick="Results_In_Window();" value="Data Sheet of the Optimized Density Function">
+       </p>
+       <hr>       <p>This web application uses the Canvas technology.</p>
+       <div align="center">Web Application for Kernel Bandwidth Optimization © 2009 Hideaki Shimazaki</div></td>
+   </tr>
+</tbody></table>
+ <p>&nbsp;</p>
+ <h2><a name="Method" id="Method"></a><strong><span lang="EN-US" xml:lang="EN-US">The underlying <a name="Method" id="Method"></a>formula:</span></strong></h2>
+ <table width="700" height="138" border="1" cellpadding="10">
+   <tbody><tr>
+     <td><p class="style4"><strong>I.</strong> Let <img src="kernel_files/data.gif" width="49" height="21"> be your data. Let the kernel with bandwidth <img src="kernel_files/w.gif" width="11" height="9"> be <img src="kernel_files/kernel.gif" width="35" height="16" align="bottom">.</p>
+         <span class="style4"><strong>II.</strong></span> <span class="style4">Compute a formula, </span>
+         <div align="center" class="style4">
+           <!-- MATH
+ \begin{displaymath}
+\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and }  \displaystyle s^2 \equiv \frac{1}{N-1} \sum_{i=1}^{N} (k_i-\bar{k})^2.
+\end{displaymath}
+ -->
+           <img src="kernel_files/sskernel_costfunction.gif" width="384" height="51"></div>
+       <p><span class="style4"><strong>III.</strong></span> <span class="style4">Find <img src="kernel_files/w_star.gif" width="17" height="13"> that minimizes <img src="kernel_files/C.gif" align="baseline"></span> .</p>
+       <p> The present algorithm speeds up the computation by neglecting the 
+         unnecessary parts outside the range of ± 5 w of the Gaussian kernel in 
+         the double summation II (see Shinomoto S., Estimating the firing rate. 
+         in Analysis of Parallel Spike Train Data. eds. S. Gruen and S. Rotter, 
+        (Springer, New York, 2010)). </p>
+       <div align="center" class="style4"></div></td>
+   </tr>
+ </tbody></table>
+<p>&nbsp;</p>
+ <h3><a name="Ref" id="Ref"></a>Original paper </h3>
+ <p><strong>Shimazaki H. and Shinomoto S., Kernel Bandwidth Optimization in Spike Rate Estimation. <em> Journal of Computational Neuroscience</em> (2010) 29:171-182. [<a href="https://docs.google.com/viewer?url=http%3A%2F%2Fwww.springerlink.com%2Fcontent%2Fg22785288648l239%2Ffulltext.pdf">PDF</a>, <a href="http://dx.doi.org/10.1007/s10827-009-0180-4">LINK</a>] </strong></p>
+ <p>&nbsp;</p>
+ <h2><a name="Matlab" id="Matlab"></a>Code </h2>
+ <p class="style4">Matlab code: <a href="http://www.ton.scphys.kyoto-u.ac.jp/~shino/toolbox/sskernel/sskernel.m">sskernel.m</a></p>
+ <p class="style4">Function `sskernel' returns optimal bandwidth (standard deviation) of the Gauss kernel function used in kernel density estimation.</p>
+ <p class="style4">optW = sskernel(x); ksdensity(x,'width',optW);</p>
+ <p class="style4"> Statitics Toolbox is required to execute ksdensity.</p>
+ <hr>
+ <p>If you have any questions, or have suggestions for improving the programs, please contact&nbsp;<a href="http://www.ton.scphys.kyoto-u.ac.jp/~shino/english.html">Shigeru Shinomoto</a>, who is conducting these studies. </p>
+ 
+
+
+<ul id="gview-cmenu" class="gview-hidden" tabindex="9999"><li class="gview-cmenu-item">Open Link in New Tab</li><li class="gview-cmenu-item">Download</li></ul></body></html>

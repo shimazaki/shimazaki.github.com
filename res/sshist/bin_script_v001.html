@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>Bin Size Selection</title>
+
+<META name="verify-v1" content="pKNPE2IFqzcZvCXHtB4juyDOaPIABNL56XFNyCPt5VY=" />
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-745872-1";
+urchinTracker();
+</script>
+
+<script src="../java/bin/bin.js" language="JavaScript">
+<!--type="text/javascript"
+//-->
+</script>
+
+<style type="text/css">
+<!--
+.style1 {font-size: small}
+body {
+	margin-left: 10px;
+}
+-->
+</style>
+</head>
+
+<body>
+<blockquote>
+<table width="700" height="68" border="1">
+  <tr>
+    <td height="62"><h2>Online Bin Size Selection (ver. 0.0 beta) </h2>
+      <p>This web application calculates an optimal bin size for the histogram of the data you post.<br />
+        For the details of the method, please refer to<br />
+        Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram <em>Neural Computation</em> [<a href="../pdf/shimazaki_neco07.pdf" onclick="javascript:urchinTracker ('/downloads/sshistogram.pdf');">pdf</a>]  </p>
+      <p><strong>Post Data</strong> Please `Copy&Paste' your data in a text area below. <br />
+	  Sample data is shown in the text area. For a larger data sample, please open <a href="../java/bin/oldfaithful.txt" target="_blank">here</a> and copy&amp;paste it below. </p>
+      <p><span class="style1">Each data value must be separated by a colon(,), a semicolon(;), a blank space( ), a tab(\t), or a return(\n). </span> </p>
+<form name="DATAFORM" onreset="return t"><pre><textarea name="TEXT" rows="10" cols="90" wrap="off" onkeyup="Initialize_Parameters()">
+4.37 3.87 4.00 4.03 3.50 4.08 2.25 4.70 1.73 4.93 1.73 4.62
+3.43 4.25 1.68 3.92 3.68 3.10 4.03 1.77 4.08 1.75 3.20 1.85
+4.62 1.97 4.50 3.92 4.35 2.33 3.83 1.88 4.60 1.80 4.73 1.77
+4.57 1.85 3.52 4.00 3.70 3.72 4.25 3.58 3.80 3.77 3.75 2.50
+4.50 4.10 3.70 3.80 3.43 4.00 2.27 4.40 4.05 4.25 3.33 2.00
+4.33 2.93 4.58 1.90 3.58 3.73 3.73 1.82 4.63 3.50 4.00 3.67
+1.67 4.60 1.67 4.00 1.80 4.42 1.90 4.63 2.93 3.50 1.97 4.28
+1.83 4.13 1.83 4.65 4.20 3.93 4.33 1.83 4.53 2.03 4.18 4.43
+4.07 4.13 3.95 4.10 2.27 4.58 1.90 4.50 1.95 4.83 4.12</textarea><br />
+Data: the duration for eruptions of the Old Faithful geyser in minutes <input name="reset" type="reset" value="Reset to Sample Data" /></form>
+<div align="center"><form name="BinSelectionForm" id="BinSelectionForm">
+    <input type="button" name="Button" value="Obtain an Optimal Bin Size"
+onclick="BinSelectionApplet(); StartApplet(); alert('An optimal bin size of your data is '+OptimalBinSize().toPrecision(3)); javascript:urchinTracker ('/script/optimalbin');" language="JavaScript" />
+</form></div>
+<applet name="BinSelection" codebase="../java/bin" code="BinSelection" width=0 height=0>
+  </applet><applet code="DrawCostFunction" codebase="../java/bin" name="DrawCostFunction" width=218 height=202 hspace="10" vspace="10">
+    </applet><applet name="DrawHistogram" codebase="../java/bin" code="DrawHistogram" width=348 height=348 hspace="10" vspace="10">
+  </applet>
+
+<form name="FormApplet" id="FormApplet">
+  <p align="center">
+    <input type="button" name="Button2" value="Reraw a Histogram" onclick="BinSelectionApplet(); StartApplet();" language="JavaScript" />
+    <input name="button2" type="button" onclick="BinSelectionApplet();Results_In_Window()" value="Write results in a different window" />
+  </p>
+</form>
+
+<form name="PARAMETERS"><p><span class="style1">
+  <input name="button" type="button" onclick="Initialize_Parameters()" value="Set paramters from the data" /></span></p>
+  <p>The range from <input name="DATA_MIN" type="text" value="1.5" size="10" /> to <input name="DATA_MAX" type="text" value="5" size="10" /> of the data is used to construct a histogram.<br />
+Search the bin sizes from <input name="BIN_MIN" type="text" value="0.01" size="10" /> to <input name="BIN_MAX" type="text" value="0.8" size="10" />. <br />
+The number of bin sizes to check is <input name="BIN_DIV" type="text" value="20" size="10" />. </p>
+  <p>The total number of sequences of the data is <input name="DATA_N" type="text" value="1" size="10" />. (optional) </p>
+</form>
+
+
+</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>*Please enable Java and Javascript in your browser.</p>
+
+<p>*Java and Javascript programs are tested for IE6 and Firefox 1.5 on Windows. The programs do not work in Opera. </p>
+<p>*The data is   processed on your own computer (it is NOT transferred to our server).</p>
+<p> Last Updated
+  <!-- #BeginDate format:IS1m -->2006-10-28  22:01<!-- #EndDate -->
+</p>
+<pre>
+Online Bin Size Selection  &copy; 2006 Hideaki Shimazaki
+</pre></blockquote>
+<p></p>
+</body>
+</html>
+

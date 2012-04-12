@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002-2-1 (1.70) JA patch-1.9
+patched version by:  Kenshi Muto, Debian Project.
+* modified by:  Shige TAKENO
+LaTeX2HTML 2002-2-1 (1.70),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>平均積分二乗誤差及びコスト関数の導入</TITLE>
+<META NAME="description" CONTENT="平均積分二乗誤差及びコスト関数の導入">
+<META NAME="keywords" CONTENT="hist_jp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002-2-1 JA patch-1.9">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="../css/latex2html.css">
+
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html96"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html86"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html90"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html92"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html94"
+  HREF="node10.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+ &nbsp; <A HREF=../index.html><B> <IMG SRC=../icons/home.gif BORDER=0></B></A>
+<BR>
+<B> Next:</B> <A NAME="tex2html97"
+  HREF="node6.html">議論と発展</A>
+<B> Up:</B> <A NAME="tex2html91"
+  HREF="node3.html">方法</A>
+<B> Previous:</B> <A NAME="tex2html87"
+  HREF="node4.html">スパイク時系列からのヒストグラムの作成</A>
+ &nbsp; <B>  <A NAME="tex2html93"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html95"
+  HREF="node10.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00032000000000000000">
+平均積分二乗誤差及びコスト関数の導入</A>
+</H2>
+スパイク時系列のレート<IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\lambda_t$">とヒストグラムの当てはまりの良さは平均積分二乗誤差(Mean Integrated Squared Error, MISE)で評価する. 十分長い定常なスパイク時系列が与えられた場合MISEは次式で与えられる. 
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\mathcal{E} = \left\langle {E_{\Lambda} \left[ {\frac{1}{\Delta }\int_0^\Delta  {(\, {\lambda _t  - \hat \Lambda } \,)^2 dt} } \right]} \right\rangle
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="MSE"></A><IMG
+ WIDTH="230" HEIGHT="54" BORDER="0"
+ SRC="img15.gif"
+ ALT="\begin{displaymath}
+\mathcal{E} = \left\langle {E_{\Lambda} \left[ {\frac{1}{\De...
+...\lambda _t - \hat \Lambda } \,)^2 dt} } \right]} \right\rangle
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(3)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+ここで <!-- MATH
+ $\left\langle \, \cdot \, \right\rangle$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$\left\langle \, \cdot \, \right\rangle$">はレート過程<IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\lambda_t$">の経路によるアンサンブル平均を意味し,  <!-- MATH
+ $E_{\Lambda}\left[ \,\cdot \, \right]$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.gif"
+ ALT="$E_{\Lambda}\left[ \,\cdot \, \right]$">はレート<IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\lambda_t$">の区間幅<IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\Delta $">内での時間平均が<IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\Lambda$">である場合のスパイク数の条件付き確率分布(式<A HREF="node4.html#eq:def_poisson">2</A>)による平均操作を表す. 
+
+<P>
+MISEを区間幅<IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\Delta $">内でのレートのゆらぎとスパイク生成のゆらぎに分割し, さらに区間幅<IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\Delta $">の選択に依らない項を除いたコスト関数を導入することができる. 
+<BR>
+<DIV ALIGN="CENTER"><A NAME="cost"></A>
+<!-- MATH
+ \begin{eqnarray}
+C(\Delta) &\equiv& \mathcal{E} - \left\langle {\left( {\lambda _t  - \langle\Lambda\rangle } \right)^2 } \right\rangle  \nonumber \\
+&=& \left\langle E_{\Lambda} \left[ (\hat \Lambda  - \Lambda)^2 \right] \right\rangle - \left\langle {\left( {\Lambda  - \langle\Lambda\rangle} \right)^2 } \right\rangle
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.gif"
+ ALT="$\displaystyle C(\Delta)$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="15" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$\textstyle \equiv$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="129" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.gif"
+ ALT="$\displaystyle \mathcal{E} - \left\langle {\left( {\lambda _t - \langle\Lambda\rangle } \right)^2 } \right\rangle$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="15" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="235" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$\displaystyle \left\langle E_{\Lambda} \left[ (\hat \Lambda - \Lambda)^2 \right...
+...left\langle {\left( {\Lambda - \langle\Lambda\rangle} \right)^2 } \right\rangle$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(4)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+式<A HREF="#cost">4</A>は<IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\Lambda$">の分散を第２項に含んでいるので, 観測量のみからなる式に書き直し次式を得る. 
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+C\left( \Delta  \right) =
+2 \left\langle E_{\Lambda} \left[ (\hat \Lambda  - \Lambda)^2 \right] \right\rangle
+- \left\langle E_{\Lambda} \left[ ( {\hat \Lambda  - \langle \Lambda \rangle } )^2  \right] \right\rangle
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="Cn"></A><IMG
+ WIDTH="341" HEIGHT="39" BORDER="0"
+ SRC="img23.gif"
+ ALT="\begin{displaymath}
+C\left( \Delta \right) =
+2 \left\langle E_{\Lambda} \left[ (...
+... \Lambda - \langle \Lambda \rangle } )^2 \right] \right\rangle
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+ヒストグラムの最適区間幅決定の手順を以下にまとめ, 図<A HREF="node2.html#CostFunction">1</A>-aに(i)-(iv)の手順から得られたコスト関数を示す. 
+<TABLE BORDER="1"><TR><TD>[</TD></TR><TR><TD>c]最適区間幅決定のレシピ
+(i) 観測時間<IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.gif"
+ ALT="$T$">, 試行回数<IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.gif"
+ ALT="$n$">のスパイク時系列を区間幅<IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\Delta $">で<!-- MATH
+ $N=\left\lfloor {T/\Delta} \right\rfloor$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.gif"
+ ALT="$N=\left\lfloor {T/\Delta} \right\rfloor$">個に分割する. <IMG
+ WIDTH="9" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$i$">番目の区間に入るスパイクの数を数え<IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.gif"
+ ALT="$k_i$">とする. 
+<BR>(ii) スパイク数の標本平均<!-- MATH
+ $\bar k = {\textstyle{1 \over N}}\sum\nolimits_{i = 1}^N {k_i }$
+ -->
+<IMG
+ WIDTH="105" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.gif"
+ ALT="$\bar k = {\textstyle{1 \over N}}\sum\nolimits_{i = 1}^N {k_i } $">, 及び不偏分散<!-- MATH
+ $s^2  = {\textstyle{1 \over {N - 1}}}\sum\nolimits_{i = 1}^N {\left( {k_i  - \bar k} \right)} ^2$
+ -->
+<IMG
+ WIDTH="177" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$s^2 = {\textstyle{1 \over {N - 1}}}\sum\nolimits_{i = 1}^N {\left( {k_i - \bar k} \right)} ^2$">を計算する. 
+<BR>(iii)スパイク統計量<IMG
+ WIDTH="12" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\bar k$">, <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.gif"
+ ALT="$s^2$">からコスト関数(式<A HREF="#Cn">5</A>), 
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+C\left( \Delta  \right) = \frac{2 \bar{k} - s^2}{(n \Delta)^2 }
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="EstimatedCost"></A><IMG
+ WIDTH="114" HEIGHT="45" BORDER="0"
+ SRC="img31.gif"
+ ALT="\begin{displaymath}
+C\left( \Delta \right) = \frac{2 \bar{k} - s^2}{(n \Delta)^2 }
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(6)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+を計算する.  
+<BR>(iv) 異なる<IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\Delta $">に対して(i)から(iii)を繰り返しコスト関数の最小値を与える<IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\Delta $">を探す. 
+
+</TD></TR></TABLE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html96"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html86"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html90"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html92"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html94"
+  HREF="node10.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html97"
+  HREF="node6.html">議論と発展</A>
+<B> Up:</B> <A NAME="tex2html91"
+  HREF="node3.html">方法</A>
+<B> Previous:</B> <A NAME="tex2html87"
+  HREF="node4.html">スパイク時系列からのヒストグラムの作成</A>
+ &nbsp; <B>  <A NAME="tex2html93"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html95"
+  HREF="node10.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+hideaki
+2006-07-11
+</ADDRESS>
+</BODY>
+</HTML>

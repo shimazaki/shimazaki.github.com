@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis" />
+
+<title>Bin Size Selection</title>
+
+
+<script src="bin.js" language="JavaScript">
+<!--type="text/javascript"
+//-->
+</script>
+
+<style type="text/css">
+<!--
+.style1 {font-size: small}
+-->
+</style>
+</head>
+
+<body>
+<p>Online Bin Size Selection  &copy; 2006 Hideaki Shimazaki</p>
+<p>*Java and Javascript programs are tested for IE6 and Firefox 1.5 on Windows, Firefox 1.5 on Linux. The programs do not work in Opera. </p>
+<p>*The data is not transferred to our server, but  processed on your own computer.</p>
+<h2>Optimal Bin Size Selection
+</h2>
+<pre><strong>1. Post Data</strong>
+Please `Copy&Paste' your data in a text area below. 
+Sample data is shown in the text area. 
+For a larger data sample, please open <a href="data.txt" target="_blank">here</a> and copy&amp;paste it below. 
+<br />
+<span class="style1">Each data value must be separated by 
+a colon(,), a semicolon(;), a blank space( ), a tab(\t), or a return(\n). </span> 
+
+<form name="DATAFORM" onReset="return t"><textarea name="TEXT" rows="5" cols="70" wrap="off" onkeyup="Initialize_Parameters()">
+0.1 0.2 0.21 0.22 1 2 2.3 2.4 3.1 3.2 3.3 3.7 3.8 4.9 5</textarea>
+<input type="reset" value="Reset to Sample Data">
+</form>
+<form name="PARAMETERS"><p><strong>2. Set Parameters</strong>
+<span class="style1">Suggested parameter values are provided in text boxes below. Please adjust these values. 
+To return to suggested values, please push <input name="button" type="button" onclick="Initialize_Parameters()" value="Set paramters from the data" />.</span><p>The range from <input name="DATA_MIN" type="text" value="0" size="10" /> to <input name="DATA_MAX" type="text" value="1" size="10" /> of the data is used to construct a histogram.
+Search the bin sizes from <input name="BIN_MIN" type="text" value="0.1" size="10"> to <input name="BIN_MAX" type="text" value="1" size="10">. 
+The number of sample bin sizes to check within the range is <input name="BIN_DIV" type="text" value="10" size="10">. 
+
+The total number of sequences of the data is <input name="DATA_N" type="text" value="1" size="10">. (optional)</form>
+
+<form name="BinSelectionForm"><!--
+<object id="BinSelection" width=10 height=10
+classid="CLSID:8AD9C840-044E-11d1-B3E9-00805F499D93" >
+<PARAM name="code" value="BinSelction.class">
+<PARAM NAME="codebase" value="1.0.2">
+<PARAM NAME="level" value="5">
+...
+</object>
+-->
+<strong>3. Bin Size Selection</strong>
+To obtain an optimal bin size of your data, please push <input type="button" name="Button" value="Obtain an Optimal Bin Size"
+onClick="BinSelectionApplet(); StartApplet(); alert('An optimal bin size of your data is '+OptimalBinSize().toPrecision(3));" language="JavaScript">.
+To obtain details of the data analysis, please push <input type="button" onClick="BinSelectionApplet();Results_In_Window()" value="Write results in a different window">.
+<applet name="BinSelection" code="BinSelection" width=0 height=0></applet>
+</form>
+<form name="FormApplet"><strong>
+4. Draw a Histogram and a cost function</strong>
+To draw a histogram with an optimal bin size, please push <input type="button" name="Button" value="Draw a Histogram" onClick="BinSelectionApplet(); StartApplet();" language="JavaScript">.
+Scroll the bar to change the bin size of the histogram. 
+The cost function is drawn in the right hand side. 
+<applet name="DrawHistogram" code="DrawHistogram" width=300 height=250 hspace="10" vspace="10"></applet> <applet code="DrawCostFunction" name="DrawCostFunction" width=200 height=200 hspace="10" vspace="10"></applet>
+</form>
+</pre>
+
+<h2>Why Do We Need an Optimal Bin Size?</h2>
+<p>
+When you make a histogram, you need to choose an optimal bin size. How large (or small) the bin size should be? </p>
+<ul>
+  <li>If you choose too small bin size, the bar height at each bin suffers from significantly large statistical fluctuation because there isn't enough samples in each bin. </li>
+  <li>If you choose too large bin size, the histogram can not represent the shape of the underlying distribution because the resolution isn't good enough. </li>
+</ul>
+<p>There is an optimal bin size that remedies these two opposite problems. In the next Java Applet, please examine by yourself the problem of the bin size selection. </p>
+<p>In the applet, data is shown in the upper box and its histogram is shown in the bottom box. The data is an example from the Neuroscience: the data is a timing of neuronal firing (spikes), and they are obtained by repeating trials. Twenty sequences are drawn in the data box. However, the data can be anything (weight, height, or test score etc.), and can be one sequence. </p>
+<p>The histogram is shown in the bottom box by red color. The blue line is the distribution (or rate) that produced data samples in the box above. Our aim is to choose a histogram that best represents this blue line. </p>
+<p>
+<applet code="BarHisto" name="BarHisto" width=320 height=280 hspace="20" vspace="20" align="left">
+</applet>
+As a first step, change the bin size of a histogram in the applet  by using the scroll bar at the bottom, and see what happens. With too small a bin size, you get a jagged histogram. With too large a bin size, a histogram gets flatten.  </p>
+<p>Now bring the scroll bar left to make the bin size thin, and push `redraw' button several times. The `redraw' button regenerates sample points based on the blue density distribution. Please confirm that the shape of the histogram drastically changes, suffering from statistical fluctuation. Imagine that you are told to tell which of the two hills of the distribution is taller. Can you tell? Although the right hill   is taller that the left for the true distribution (blue line), the maximum height of a histogram appears at left side quite often. </p>
+<p>Next bring your scroll bar right to make the bin size broad, and push `redraw' several times. Please confirm that the shape of the histogram does not change very much. From this, you could see the right hand side of the hills is higher than the left hand side most of the time. However, can you tell where is the highest point of the hill? The resolution of the histogram is not good enough. </p>
+<p>When you make a histogram, you need to choose an optimal bin size that compromise the conflict between the sample error and the resolution. Now please check the `error check box' on. Yellow area appears, which indicates an error between the histogram and the underlying distribution. You could turn the histogram check box off. Please examine where the total error becomes the smallest by your eyes. You would find that the error becomes the smallest when you bring the scroll bar handle about one fourth of the total length from the left. Please push the `redraw' button several times to check the statistical fluctuation of errors. The optimal bin size of a histogram is the bin size that produces the smallest total errors (yellow area) on average of many realizations of sampled data (i.e. average over many pushes of `redraw' button). </p>
+<p>At this moment, you might say, &quot;Okay, I now understand what an optimal bin size is. But, how can we know it? After all, we do not know the blue underlying distribution. So we can not know the errors. We can never know the optimal bin size from  data.&quot;</p>
+<p>This statement is not true. Indeed, the errors can be estimated from the data. The method used in the above programs computes the estimated errors for several candidate bin sizes, and choose the bin size that produces the smallest `estimated' error. For the details of the method, please refer to Shimazaki and Shinomoto 2007. </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

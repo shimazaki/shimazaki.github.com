@@ -1,0 +1,151 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short LaTeX Template ( jnns.sty ) for JNNS2005
+%
+% Usage:
+%
+% LaTeX 2.09 users:
+% \documentstyle[jnns]{jarticle}
+%
+% LaTeX2e users:
+% \documentclass[a4paper,10pt]{jarticle}
+% \usepackage{jnns}
+%
+% \jtitle{Japanese Title}
+% \title{English Title}
+% \jauthor{Japanese Names}
+% \author{English Names}
+% \jaffiliation{Japanese Affiliation, E-mail}
+%
+% \begin{document}
+%
+% \maketitle
+%
+% \begin{abstract}
+% Your abstract here
+% \end{abstract}
+%
+% \begin{keywords}
+% Keyword1, Keyword1, ..., Keyword5
+% \end{keywords}
+%
+% \section{...}
+%  \subsection{...}
+%   \subsubsection{...}
+%
+% \section{...}
+% .
+% .
+% .
+% \begin{thebibliography}{99}
+% \bibitem{1}
+% \bibitem{2}
+%    .
+%    .
+%    .
+% \end{thebibliography}
+%
+% \end{document}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Margins
+
+\oddsidemargin -5.4mm
+\evensidemargin -5.4mm
+\topmargin -15.4mm
+\headheight 0mm
+\headsep 10mm
+\textheight 257mm 
+\textwidth 170mm 
+\columnsep 5mm 
+\twocolumn \sloppy \flushbottom
+\parindent 0.14in 
+\pagestyle{empty}
+
+
+%Header
+
+\def\jnnshead{\vbox to \headheight{
+\hbox{\underline%
+{\hbox to \textwidth{日本神経回路学会 2005年9月\hfill}}}\vspace*{3pt}}}
+\def\ps@firstpage{%
+\let\@mkboth\markboth%
+\def\@oddhead{\jnnshead}%
+\def\@evenhead{}% Heading.
+\def\@oddfoot{}%
+\def\@evenfoot{}%
+}
+
+
+%Title, Author and Affiliation
+
+\def\jtitle#1{\gdef\@jtit{#1}}
+\def\title#1{\gdef\@tit{#1}}
+\def\jauthor#1{\gdef\@jauth{#1}}
+\def\author#1{\gdef\@auth{#1}}
+\def\jaffiliation#1{\gdef\@jaff{#1}}
+
+
+\def\maketitle{\par
+ \begingroup
+ \thispagestyle{firstpage}
+ \def\thefootnote{\fnsymbol{footnote}}
+ \def\@makefnmark{\hbox
+ to 0pt{$^{\@thefnmark}$\hss}}
+ \twocolumn[\@maketitle]
+ \@thanks
+ \endgroup
+ \setcounter{footnote}{0}
+ \let\maketitle\relax
+ \let\@maketitle\relax
+ \gdef\@thanks{}\gdef\@author{}\gdef\@title{}\let\thanks\relax}
+\def\@maketitle{%
+  \vskip 5mm
+ {\hsize\textwidth
+ \linewidth\hsize \vfil \centering
+ {\Large \bf \@jtit \par} 
+ \vskip 0mm
+ {\Large \bf \@tit \par} 
+ \vskip 3mm
+ {\large\begin{tabular}[t]{c}\@jauth\end{tabular}\par}
+ \vskip 0mm
+ {\begin{tabular}[t]{c}\@auth\end{tabular}\par}
+ \vskip 0mm
+ {\begin{tabular}[t]{c}\@jaff\end{tabular}\par}
+ }
+\vspace*{5mm}
+}
+
+
+%Abstract
+
+\def\abstract{%
+    \if@twocolumn
+      {\bf Abstract}\/---$\!$%
+    \else
+      \begin{center}\vspace{-0.8em}\small \it Abstract\end{center}\quotation\small
+    \fi}
+\def\endabstract{\vspace{0.0mm}\par\if@twocolumn\else\endquotation\fi
+    \normalsize\rm}
+
+%Keywords
+
+\def\keywords{\vspace{3mm}
+    \if@twocolumn
+      \small\it Keywords\/\bf---$\!$%
+    \else
+      \begin{center}\small\bf Keywords\end{center}\quotation\small
+    \fi}
+\def\endkeywords{\vspace{0.6em}\par\if@twocolumn\else\endquotation\fi
+    \normalsize\rm}
+
+%Section
+
+\def\section{\@startsection{section}{1}{\z@}
+{2.0ex plus -0.5ex minus -0.2ex}{0.1ex plus 0.3ex minus .2ex}{\normalsize\bf}}
+\def\subsection{\@startsection{subsection}{2}{\z@}
+{-1.5ex plus-0.2ex minus -.2ex}{0.1ex plus .3ex}{\normalsize\bf}}
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@}
+{-1.0ex plus -0.5ex minus -.2ex}{0.1ex plus .3ex}{\normalsize\bf}}
+

@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<META name="keywords" 
+content="Histogram,Bin,Size,PSTH,density,recipe,optimize,optimizing,time-histogram,method,instantaneous,rate, spike,occurrence,neurophysiology,bin,size,goodness,fit,underlying,rate,selected,individual,researchers,unsystematic,manner,objective,method ,selecting,the bin size of,time-histogram,spike,data,approximate,unknown,underlying,rate,resolution,histogram,increases,optimal, bin size,spike sequences, sampled,optimal,diverges,experimental,trials,moderately,fluctuating,rate,process,spurious,results,paucity,data">
+
+<link rel="stylesheet" href="../../stylesheet.css" type="text/css" />
+
+<META name="verify-v1" content="pKNPE2IFqzcZvCXHtB4juyDOaPIABNL56XFNyCPt5VY=" />
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+_uacct = "UA-745872-1";
+urchinTracker();
+</script>
+
+<script src="../java/bin/bin.js" type="text/javascript" language="JavaScript">
+<!--type="text/javascript"
+//-->
+</script>
+
+<title>Histogram Bin Size Selection</title>
+<style type="text/css">
+<!--
+.style4 {font-size: x-large}
+.style1 {font-size: small}
+.style2 {	color: #FF0000;
+	font-weight: bold;
+}
+.style6 {font-size: x-small}
+-->
+</style>
+</head>
+
+<body>
+<blockquote>
+  <p><a href="../../index.html">Home</a> Last Update
+      <!-- #BeginDate format:IS1m -->2006-11-11  15:36<!-- #EndDate -->
+  </p>
+  <h1>Histogram Bin Size Selection </h1>
+  <table width="700" height="36" border="1">
+    <tr>
+      <td height="30"><p>Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram <em>Neural Computation</em> in Press [<a href="../pdf/shimazaki_neco07.pdf" onClick="javascript:urchinTracker ('/downloads/sshistogram.pdf');">pdf</a>] </p>        </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <h2>A Method for Selecting the Bin Size of a Histogram <a name="Method" id="Method"></a></h2>
+  <table width="700" height="138" border="1">
+    <tr>
+      <td><p>(i) Divide the observed data range into <img
+ width="19" height="14" align="bottom" border="0"
+ src="../hist_gif/img55.gif"
+ alt="$N$" /> bins of width <img
+ width="17" height="14" align="bottom" border="0"
+ src="../hist_gif/img3.gif"
+ alt="$\Delta $" />, and count the number of events <img
+ width="18" height="30" align="top" border="0"
+ src="../hist_gif/img48.gif"
+ alt="$k_i$" />  that enter the <img
+ width="10" height="14" align="bottom" border="0"
+ src="../hist_gif/img47.gif"
+ alt="$i$" />th bin.  (If you have  multiple sample sequences, combine all of them, then count <img
+ width="18" height="30" align="top" border="0"
+ src="../hist_gif/img48.gif"
+ alt="$k_i$" />.) </p>
+          <p>(ii) Construct the mean and variance of the number of events <img
+ width="34" height="32" align="middle" border="0"
+ src="../hist_gif/img73.gif"
+ alt="$\{k_i\}$" /> as,</p>
+        <div align="center">
+            <!-- MATH
+ \begin{displaymath}
+\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and }  \displaystyle s^2 \equiv \frac{1}{N-1} \sum_{i=1}^{N} (k_i-\bar{k})^2.
+\end{displaymath}
+ --><img src="../hist_gif/img23.gif" width="110" height="78" align="middle" /> and <img src="../hist_gif/img24.gif" width="167" height="78" align="middle" /></div>
+        
+          (iii) Compute the cost function,
+        <div align="center">
+            <!-- MATH
+ \begin{displaymath}
+\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and }  \displaystyle s^2 \equiv \frac{1}{N-1} \sum_{i=1}^{N} (k_i-\bar{k})^2.
+\end{displaymath}
+ -->
+        <img src="../hist_gif/img9.gif" width="136" height="61" /></div>
+        <p>(iv) Repeat i through iii while changing the bin size <img
+ width="17" height="14" align="bottom" border="0"
+ src="../hist_gif/img3.gif"
+ alt="$\Delta $" /> to search for <img
+ width="25" height="14" align="bottom" border="0"
+ src="../hist_gif/img76.gif"
+ alt="$\Delta^{*}$" /> that minimizes <img
+ width="50" height="32" align="middle" border="0"
+ src="../hist_gif/img7.gif"
+ alt="$C_n (\Delta )$" />. </p></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <h2>An Optimized  Histogram <a name="Example" id="Example"></a></h2>
+  <table width="700" height="36" border="1">
+    <tr>
+      <td height="30"><div align="center">
+        <p><img src="../hist_gif/Oldfaithful.gif" alt="Oldfaithful" width="323" height="288" /></p>
+        <p>A histogram with bin width optimized by the proposed method. <br />
+Data: the duration for eruptions of  
+          the Old Faithful geyser in Yellowstone National Park (in minutes)</p>
+      </div></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <h2>Web Application for  Bin Size Selection (Ver. 0.10 beta) <a name="WebApp" id="WebApp"></a></h2>
+  <table width="700" height="36" border="1">
+    <tr>
+      <td height="30">This web application calculates the optimal bin size of the data you post.
+(Compatible with IE6, Firefox. Do not use Opera. Please enable Java and Javascript in your browser.) 
+<pre><strong>1. Post Data</strong>
+Please `Copy&amp;Paste' your data in a text area below. 
+Sample data is shown in the text area. 
+For a larger data sample, please open <a href="../java/bin/oldfaithful.txt" target="_blank">here</a> and copy&amp;paste it below. 
+<br />
+<span class="style1">Each data value must be separated by 
+a colon(,), a semicolon(;), a blank space( ), a tab(\t), or a return(\n). </span> 
+
+<form name="DATAFORM" id="DATAFORM" onreset="return t"><textarea name="TEXT" rows="10" cols="70" wrap="off" onkeyup="Initialize_Parameters()">
+4.37 3.87 4.00 4.03 3.50 4.08 2.25 4.70 1.73 4.93 1.73 4.62
+3.43 4.25 1.68 3.92 3.68 3.10 4.03 1.77 4.08 1.75 3.20 1.85
+4.62 1.97 4.50 3.92 4.35 2.33 3.83 1.88 4.60 1.80 4.73 1.77
+4.57 1.85 3.52 4.00 3.70 3.72 4.25 3.58 3.80 3.77 3.75 2.50
+4.50 4.10 3.70 3.80 3.43 4.00 2.27 4.40 4.05 4.25 3.33 2.00
+4.33 2.93 4.58 1.90 3.58 3.73 3.73 1.82 4.63 3.50 4.00 3.67
+1.67 4.60 1.67 4.00 1.80 4.42 1.90 4.63 2.93 3.50 1.97 4.28
+1.83 4.13 1.83 4.65 4.20 3.93 4.33 1.83 4.53 2.03 4.18 4.43
+4.07 4.13 3.95 4.10 2.27 4.58 1.90 4.50 1.95 4.83 4.12</textarea>
+<span class="style6">Data: the duration for eruptions of the Old Faithful geyser in minutes</span><input name="reset" type="reset" value="Reset to Sample Data" />
+</form>
+<form name="PARAMETERS" id="PARAMETERS"><p><strong>2. Set Parameters</strong>
+<span class="style1"><input name="button" type="button" onclick="Initialize_Parameters()" value="Set paramters from the data" /></span></p><p>The range from <input name="DATA_MIN" type="text" value="1.6" size="10" /> to <input name="DATA_MAX" type="text" value="5" size="10" /> of the data is used to make a histogram.
+Search the bin sizes from <input name="BIN_MIN" type="text" value="0.02" size="10" /> to<input name="BIN_MAX" type="text" value="1" size="10" /> . 
+The number of sample bin sizes to check within the range is <input name="BIN_DIV" type="text" value="30" size="10" />. 
+
+The number of repeated trials to obtain the data was <input name="DATA_N" type="text" value="1" size="10" />. (optional)</p></form><form name="BinSelectionForm" id="BinSelectionForm"><!--
+<object id="BinSelection" width=10 height=10
+classid="CLSID:8AD9C840-044E-11d1-B3E9-00805F499D93" >
+<PARAM name="code" value="BinSelction.class">
+<PARAM NAME="codebase" value="1.0.2">
+<PARAM NAME="level" value="5">
+...
+</object>
+-->
+<strong>3. Select a Bin Size</strong>
+<span class="style2">To obtain an optimal bin size of your data, push <input type="button" name="Button" value="Obtain an Optimal Bin Size" onclick="BinSelectionApplet(); StartApplet(); alert('An optimal bin size of your data is '+OptimalBinSize().toPrecision(3)); javascript:urchinTracker ('/bin_script/calculation');" language="JavaScript" />.</span>
+To obtain details, push <input name="button" type="button" onclick="BinSelectionApplet();Results_In_Window(); javascript:urchinTracker ('/bin_script/datasheet');" value="Output Data Sheet of Your Optimized Histogram" />.
+<applet code="BinSelection" codebase="../java/bin" name="BinSelection" width="0" height="0" id="BinSelection"></applet>
+</form><form name="FormApplet" id="FormApplet"><strong>
+4. Draw a Histogram and a cost function</strong>
+To draw a histogram with an optimal bin size, push <input type="button" name="Button" value="Draw a Histogram" onclick="BinSelectionApplet(); StartApplet();" language="JavaScript" />.
+Scroll the bar to change the bin size of the histogram. 
+The cost function is drawn in the right hand side. 
+<table width="700" border="0" align="center"><tr>
+<td width="270" align="center"><applet code="DrawCostFunction" codebase="../java/bin" name="DrawCostFunction" width="250" height="250" hspace="10" vspace="10" id="DrawCostFunction"></applet></td><td align="left"><applet code="DrawHistogram" codebase="../java/bin" name="DrawHistogram" width="270" height="320" hspace="10" vspace="10" id="DrawHistogram"></applet></td></tr>
+</table>
+</form></pre>
+<p></p>
+        <p>*The data is   processed on your own computer (it is not transferred to our server).</p>
+        <p>*Java and Javascript programs are tested for IE6 and Firefox 1.5 on Windows. Firefox 1.5 on Linux. Firefox 1.5 and Safari on MacOS.
+        The program does not work in Opera. </p>
+        <p class="style1">06/11/08 Ver. 0.10 Improved datasheet output. </p>
+        <p>Online Bin Size Selection  &copy; 2006 Hideaki Shimazaki</p></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <h2>FAQ</h2>
+  <table width="700" height="68" border="1">
+    <tr>
+      <td height="62"><span class="style4">Q.</span> It seems like that your 
+        theory 
+        assumes a time histogram. 
+        Can I use the proposed method to a histogram for a probability distribution?
+        <p><span class="style4">A.</span> Yes.</p>
+        <hr />
+        <p><span class="style4">Q.</span> I have used the Scott's method        </p>
+        <div align="center"> Optimal Bin Size= 3.49*s*n^(-1/3) , </div>
+        and obtained bin size that differs from the result obtained by the present method.
+        </p>
+          <p><span class="style4">A.</span> Three assumptions were made to obtain the Scott's result. First, the Scott's result is asymptotically true (i.e. it is true for large sample size n). Second, the scaling exponent -1/3 is true if the density is a smooth function. Third, the coefficient 3.49 was obtained, assuming the gaussian density function as a reference. The present method does not require these assumptions. </p>
+          <p>&nbsp;</p>
+        <hr />
+          <p>The FAQ  includes my (HS) opinion. They are not opinions neither by the Dept. of Physics, Kyoto University nor my collaborators. </p>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <h2>What is an Optimal Bin Size? </h2>
+  <table width="700" height="1055" border="1">
+    <tr>
+      <td height="1049">When you make a histogram, you need to choose a bin size. How large (or small) the bin size should be? 
+        <ul>
+          <li>If you choose too small bin size, the bar height at each bin suffers from significantly large statistical fluctuation due to the paucity of data samples in each bin. </li>
+          <li>If you choose too large bin size, the histogram can not represent the shape of the underlying distribution because the resolution isn't good enough. </li>
+        </ul>
+        <p>There is an optimal bin size that remedies these two opposite problems. The Java Applet below demonstrates the problem of the bin size selection. </p>
+        <p>In the applet, data is shown in the upper box and its histogram  in the bottom box. The data is an example from  Neuroscience: the data is a timing of neuronal firing (spikes), and they are obtained by repeating trials. Twenty sequences (trials) are drawn in the data box. However, the data can be anything (weight, height, or test score etc.), and can be one sequence. </p>
+        <p>The histogram is shown in the bottom box by red color. The blue line is the distribution (or rate) that produced data samples in the box above. Our aim is to choose a histogram that best represents this blue line. </p>
+        <p>
+          <applet code="BarHisto" codebase="../java/bin" name="BarHisto" width="330" height="280" hspace="20" vspace="20" align="left" id="BarHisto">
+          </applet>
+          As a first step, change the bin size of a histogram in the applet  by using the scroll bar at the bottom. With too small a bin size, you get a jagged histogram. With too large a bin size, you obtain a flat histogram. </p>
+        <p>Now bring the scroll bar left to make the bin size thin, and push `redraw' button several times. The `redraw' button regenerates sample points based on the blue density distribution. Please confirm that the shape of the histogram drastically changes. If you are told to tell which of the two hills of the distribution is taller, can you tell? Although the right hill   is taller than the left  (blue line), the maximum height of a histogram appears at left side quite often. </p>
+        <p>As a second step,  bring your scroll bar right to make the bin size broad, and push `redraw' several times. Please confirm that the shape of the histogram does not change very much. In addition, you  may notice the right hand side of the hills is higher than the left hand side most of the time. However, can you tell where is the highest point of the hill? The resolution of the histogram is not good enough. </p>
+        <p>When you make a histogram, you need to choose a bin size that compromises the conflict between the sample error and the resolution. Now please check the `error check box' on. Yellow area appears, which indicates an error between the histogram and the underlying distribution. You could turn off the histogram check box. Please examine where the total error becomes the smallest by your eyes. You would find that the error becomes the smallest when you bring the scroll bar handle about one fourth of the total length from the left. Please push the `redraw' button several times to check the statistical fluctuation of errors. The optimal bin size of a histogram is the bin size that produces the smallest total errors (yellow area) on average of many realizations of sampled data (i.e. average over many pushes of `redraw' button). </p>
+        <p>At this moment, you might say, &quot;Okay, I now understand what an optimal bin size is. But, how can we know it? After all, we do not know the blue underlying distribution. So we can not know the errors. We can never know the optimal bin size from  data.&quot;</p>
+        <p>This statement is not true. Indeed, the errors can be estimated from the data. The above method  computes the estimated errors for several candidate bin sizes, and choose the bin size that produces the smallest `estimated' error. For the details of the method, please refer to Shimazaki and Shinomoto in <em>Neural Computation</em>. </p>        
+      </td></tr>
+  </table>
+  <p>&nbsp;</p>
+  <h2>Sample Matlab Program <a name="Matlab" id="Matlab"></a></h2>
+  <table width="700" height="138" border="1">
+    <tr>
+      <td><pre>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 2006 Author Hideaki Shimazaki
+% Department of Physics, Kyoto University
+% shimazaki at ton.scphys.kyoto-u.ac.jp
+%
+% Data: the duration for eruptions of  
+% the Old Faithful geyser in Yellowstone National Park (in minutes)
+clear all;
+x = [4.37 3.87 4.00 4.03 3.50 4.08 2.25 4.70 1.73 4.93 1.73 4.62 ...
+     3.43 4.25 1.68 3.92 3.68 3.10 4.03 1.77 4.08 1.75 3.20 1.85 ...
+     4.62 1.97 4.50 3.92 4.35 2.33 3.83 1.88 4.60 1.80 4.73 1.77 ...
+     4.57 1.85 3.52 4.00 3.70 3.72 4.25 3.58 3.80 3.77 3.75 2.50 ...
+     4.50 4.10 3.70 3.80 3.43 4.00 2.27 4.40 4.05 4.25 3.33 2.00 ...
+     4.33 2.93 4.58 1.90 3.58 3.73 3.73 1.82 4.63 3.50 4.00 3.67 ...
+     1.67 4.60 1.67 4.00 1.80 4.42 1.90 4.63 2.93 3.50 1.97 4.28 ...
+     1.83 4.13 1.83 4.65 4.20 3.93 4.33 1.83 4.53 2.03 4.18 4.43 ...
+     4.07 4.13 3.95 4.10 2.27 4.58 1.90 4.50 1.95 4.83 4.12];
+
+x_min = min(x);
+x_max = max(x);
+
+N_MIN = 4;              % Minimum number of bins (integer)
+                        % N_MIN must be more than 1 (N_MIN > 1).
+N_MAX = 50;             % Maximum number of bins (integer)
+
+N = N_MIN:N_MAX;                      % # of Bins
+D = (x_max - x_min) ./ N;             % Bin Size Vector
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Computation of the Cost Function
+for i = 1: length(N)
+	edges = linspace(x_min,x_max,N(i));	% Bin edges
+
+	ki = histc(x,edges);            % Count # of events in bins
+	ki = ki(1:end-1);
+	
+	k = mean(ki);                   % Mean of event count
+	v = sum( (ki-k).^2 )/N(i);      % Variance of event count
+	
+	C(i) = ( 2*k - v ) / D(i)^2;    % The Cost Function
+
+end
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Optimal Bin Size Selectioin
+[Cmin idx] = min(C);                    
+optD = D(idx);                         % *Optimal bin size
+edges = linspace(x_min,x_max,N(idx));  % Optimal segmentation
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Display an Optimal Histogram and the Cost Function
+subplot(1,2,1); hist(x,edges); axis square;
+subplot(1,2,2); plot(D,C,'k.',optD,Cmin,'r*'); axis square;
+
+</pre></td>
+    </tr>
+  </table>
+  <h2>&nbsp;</h2>
+  <h2>Sample R Program<a name="R" id="R"></a></h2>
+  <table width="700" height="138" border="1">
+    <tr>
+      <td><pre>Copy and Paste the program, then run
+
+sshist(faithful[,1])
+
+
+#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# 2006 Author Hideaki Shimazaki
+# Department of Physics, Kyoto University
+# shimazaki at ton.scphys.kyoto-u.ac.jp
+#
+# Data: the duration for eruptions of  
+# the Old Faithful geyser in Yellowstone National Park (in minutes)
+sshist <- function(x){
+
+	N <- 2: 100
+	C <- numeric(length(N))
+	D <- C
+
+	for (i in 1:length(N)) {
+		D[i] <- diff(range(x))/N[i]
+
+		edges = seq(min(x),max(x),length=N[i])
+		hp <- hist(x, breaks = edges, plot=FALSE )
+		ki <- hp$counts
+
+		k <- mean(ki)
+		v <- sum((ki-k)^2)/N[i]
+
+		C[i] <- (2*k-v)/D[i]^2	#Cost Function
+	}
+
+	idx <- which.min(C)
+	optD <- D[idx]
+
+	edges <- seq(min(x),max(x),length=N[idx])
+	h = hist(x, breaks = edges )
+	rug(x)
+
+	return(h)
+}
+</pre></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p> &copy; 2006 Hideaki Shimazaki</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</blockquote>
+<p>&nbsp;</p>
+<h2>&nbsp;</h2>
+<p>&nbsp;</p>
+</body>
+</html>

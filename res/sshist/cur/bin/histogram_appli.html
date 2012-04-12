@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="verify-v1" content="pKNPE2IFqzcZvCXHtB4juyDOaPIABNL56XFNyCPt5VY=" />
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-745872-1";
+urchinTracker();
+</script>
+<script src="bin.js" type="text/javascript">
+<!--type="text/javascript"
+//-->
+</script>
+
+<title>Web Resource on the Histogram Bin Size Selection</title>
+<style type="text/css">
+<!--
+.style4 {font-size: x-large}
+.style1 {font-size: small;
+	background-color: #669966;
+	border-bottom-color: #663366;
+	color: #333333;
+	text-decoration: none;}
+.style9 {color: #333333;
+	text-decoration: none;}
+span.style41 {font-family:"Times New Roman";
+	font-weight:bold;}
+span.style51 {font-family:"Times New Roman";}
+span.style411 {font-family:"Times New Roman";
+	font-weight:bold;}
+span.style511 {font-family:"Times New Roman";}
+.style13 {font-size: large}
+.style14 {
+	color: #FF0000;
+	font: blink;
+}
+.style15 {color: #006600}
+.style16 {color: #0000FF}
+h2 {color: #990000;}
+h1 {color: #333300;}
+.style22 {color: #FFFFFF;
+	font-weight: bold;
+	background-color: #CC0000;
+	text-decoration: none;}
+.style23 {font-size: small}
+.style24 {color: #990000}
+#Layer1 {position:fixed;
+	width:119px;
+	height:100px;
+	z-index:1;
+	left: 780px;
+	top: 100px;
+	visibility: visible;}
+#Layer2 {position:fixed;
+	width:162px;
+	height:243px;
+	z-index:1;
+	left: 761px;
+	top: 61px;}
+body {
+	background-image: url();
+	background-color: #FFFFFF;
+	margin-left: 45px;
+	margin-top: 15px;
+}
+-->
+</style>
+</head>
+<body>      
+<span class="style1"><a name="Top" id="Top"></a><a href="http://2000.jukuin.keio.ac.jp/shimazaki/" target="_parent" class="style22">Shimazaki, PhD </a> Other languages: <a href="http://www.google.com/translate?langpair=en|fr&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html" class="style1">histograma[fr]</a> <a href="http://www.google.com/translate?langpair=en|pt&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html" class="style1">histograma[pt]</a> <a href="http://www.google.com/translate?langpair=en|es&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html" class="style1">histogramme</a> <a href="http://www.google.com/translate?langpair=en|de&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html" class="style1">histogramm</a> <a href="http://www.google.com/translate?langpair=en|it&amp;u=http://www.ton.scphys.kyoto-u.ac.jp/~hideaki/res/histogram.html" class="style1">istogramma</a> | </span> <span class="style1">Last Update
+<!-- #BeginDate format:IS1m -->2008-09-17  22:14<!-- #EndDate -->
+</span>
+<h1>Web Resource on the Histogram Bin Size Selection</h1>
+<div id="Layer1">
+  <table width="130" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td height="28" valign="top"><a href="#Top" class="style22"> Top </a></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="#WebApp" class="style9">Web Application</a></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="../../../histogram.html#Method" class="style9">Method</a><a href="../../../histogram.html../reroute.html" target="_parent" class="style22 style23"></a></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="../../../histogram.html#Ref" class="style9">Reference</a></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="../../../histogram.html#Scheme" class="style9">Scheme</a></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="../../../histogram.html#OptBin" class="style9">Illustration</a></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="../../../histogram.html#FAQ" class="style9">FAQ</a></td>
+    </tr>
+    <tr>
+      <td height="29" valign="top"><a href="../../../histogram.html#Theory" class="style9">Derivation</a> </td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="../../../histogram.html#Excel" class="style9">Excel / </a><a href="../../../histogram.html#Matlab" class="style9">Matlab</a></td>
+    </tr>
+    <tr>
+      <td height="38" valign="top"><a href="../../../histogram.html#R" class="style9">R</a> / <a href="../../../histogram.html#Mathematica" class="style9">Mathematica</a></td>
+    </tr>
+    <tr>
+      <td valign="top">&nbsp;</td>
+    </tr>
+  </table>
+</div>
+<h2>Web Application for Bin Size Selection (Ver. 2.00)</h2>
+<table width="700" border="0" cellpadding="10" bgcolor="#ECE9D8">
+  <tr>
+    <td width="700" height="30" align="left"><div align="center">
+		
+      This web application calculates the optimal bin size of the data you
+      post.<br />
+    </div>
+        <form name="DATAFORM" id="DATAFORM">
+          <strong>1.  Copy&amp;Paste your data (
+            <input name="reset" type="reset" value="Reset to Sample Data" />
+            )</strong>
+          <div align="center">
+            <textarea name="TEXT" rows="9" cols="65" wrap="off" onkeyup="PostData();Initialize_Parameters()">
+4.37 3.87 4.00 4.03 3.50 4.08 2.25 4.70 1.73 4.93 1.73 4.62
+3.43 4.25 1.68 3.92 3.68 3.10 4.03 1.77 4.08 1.75 3.20 1.85
+4.62 1.97 4.50 3.92 4.35 2.33 3.83 1.88 4.60 1.80 4.73 1.77
+4.57 1.85 3.52 4.00 3.70 3.72 4.25 3.58 3.80 3.77 3.75 2.50
+4.50 4.10 3.70 3.80 3.43 4.00 2.27 4.40 4.05 4.25 3.33 2.00
+4.33 2.93 4.58 1.90 3.58 3.73 3.73 1.82 4.63 3.50 4.00 3.67
+1.67 4.60 1.67 4.00 1.80 4.42 1.90 4.63 2.93 3.50 1.97 4.28
+1.83 4.13 1.83 4.65 4.20 3.93 4.33 1.83 4.53 2.03 4.18 4.43
+4.07 4.13 3.95 4.10 2.27 4.58 1.90 4.50 1.95 4.83 4.12</textarea>
+          </div>
+        </form>
+      <br />
+        <form name="FormApplet" id="FormApplet">
+          <strong>2.</strong>
+		  
+          <input name="Button2" value="Calculate the Optimal Bin Size" type="button" onclick="PostData(); Initialize_Parameters(); BinSelectionApplet(); StartApplet(); alert('The optimal bin size is '+BIN_OPT.toPrecision(3)); javascript:urchinTracker ('/bin_script/calculation');"
+    language="JavaScript" />
+          <div align="center">
+		  <applet code="BinSelection" " name="BinSelection" width="0" height="0" id="BinSelection"> 
+		</applet>
+            <applet code="DrawHistogram" name="DrawHistogram" alt="java" width="464" height="326" hspace="10" vspace="10" id="DrawHistogram">
+            </applet>
+          </div>
+		  
+          <strong>3.</strong>
+          <input name="button" type="button" onclick="Results_In_Window(); javascript:urchinTracker ('/bin_script/datasheet');" value="Data Sheet of the Optimized Histogram" />
+        </form>
+      <hr />
+        <p>*Solutions may be found at <a href="#FAQ"><strong>FAQ</strong></a>.</p>
+      <p>*The data is processed on your own computer (the data is NOT transferred
+        to our  server). </p>
+      <p>*This program does
+        not work in Opera. Mac users may experience an extremely slow response. </p>
+      <p class="style23">07/06/16 Ver. 1.0 <br />
+        06/11/08 Ver. 0.10 Improved datasheet output. </p>
+      <div align="center">Web Application for Bin Size Selection &copy; 2006 2007 Hideaki Shimazaki</div></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+<p>&copy; 2006	2007 	2008 Hideaki Shimazaki All rights reserved. </p>
+</body>
+</html>
+</table>

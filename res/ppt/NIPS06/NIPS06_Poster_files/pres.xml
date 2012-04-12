@@ -1,0 +1,75 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <p:presentation sizeof="A4paper" slidesizex="6240" notessizex="6261"
+  notessizey="9051" gridspacingx="46448" gridspacingy="46448">
+  <p:master id="35" slidesn="1C714A3,1B4526D0" type="main" href="master35.htm"
+   xmlhref="master35.xml" template="Default Design" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+    <p:colorscheme
+     colors="#FFFFFF,#000000,#808080,#000000,#BBE0E3,#333399,#009999,#99CC00"/>
+    <p:colorscheme
+     colors="#FFFFFF,#000000,#969696,#000000,#FBDF53,#FF9966,#CC3300,#996600"/>
+    <p:colorscheme
+     colors="#FFFFFF,#000000,#808080,#000000,#99CCFF,#CCCCFF,#3333CC,#AF67FF"/>
+    <p:colorscheme
+     colors="#DEF6F1,#000000,#969696,#000000,#FFFFFF,#8DC6FF,#0066CC,#00A800"/>
+    <p:colorscheme
+     colors="#FFFFD9,#000000,#777777,#000000,#FFFFF7,#33CCCC,#FF5050,#FF9900"/>
+    <p:colorscheme
+     colors="#008080,#FFFFFF,#005A58,#FFFF99,#006462,#6D6FC7,#00FFFF,#00FF00"/>
+    <p:colorscheme
+     colors="#800000,#FFFFFF,#5C1F00,#DFD293,#CC3300,#BE7960,#FFFF99,#D3A219"/>
+    <p:colorscheme
+     colors="#000099,#FFFFFF,#003366,#CCFFFF,#3366CC,#00B000,#66CCFF,#FFE701"/>
+    <p:colorscheme
+     colors="#000000,#FFFFFF,#336699,#E3EBF1,#003399,#468A4B,#66CCFF,#F0E500"/>
+    <p:colorscheme
+     colors="#686B5D,#FFFFFF,#777777,#D1D1CB,#909082,#809EA8,#FFCC66,#E9DCB9"/>
+    <p:colorscheme
+     colors="#666699,#FFFFFF,#3E3E5C,#FFFFFF,#60597B,#6666FF,#99CCFF,#FFFF99"/>
+    <p:colorscheme
+     colors="#523E26,#FFFFFF,#2D2015,#DFC08D,#8C7B70,#8F5F2F,#CCB400,#8C9EA0"/>
+   </p:schemes>
+  </p:master>
+  <p:master id="1" slidesn="1C711FE,E9BD6F60" type="notes" href="master01.htm"
+   layout="notes" slots="header,dateTime,slideImage,body,footer,slideNumber"/>
+  <p:slide id="5" slidesn="1C711FE,D0876CD0" href="slide0005.htm"/>
+  <p:slide id="23" slidesn="1C7144F,CC37CF50" href="slide0023.htm"/>
+  <p:slide id="13" slidesn="1C63820,72FD7540" href="slide0013.htm"/>
+  <p:slide id="22" slidesn="1C6DE08,D3E60690" href="slide0022.htm"/>
+  <p:slide id="3" slidesn="1C711FE,D0876CD0" href="slide0003.htm"
+   layout="title_only" slots="title"/>
+  <p:slide id="8" slidesn="1C5B85D,9CDBD890" href="slide0008.htm"/>
+  <p:slide id="4" slidesn="1C5BDF7,4B8F850" href="slide0004.htm"/>
+  <p:slide id="2" slidesn="1C711FE,D0876CD0" href="slide0002.htm"
+   layout="title_body" slots="title,object"/>
+  <p:slide id="6" slidesn="1C71201,3EB2F010" href="slide0006.htm"/>
+  <p:slide id="7" slidesn="1C711FE,D0876CD0" href="slide0007.htm"/>
+  <p:slide id="21" slidesn="1C5BDF7,4B8F850" href="slide0021.htm"
+   layout="title_body" slots="title,body"/>
+  <p:viewstate type="slideView" slidehref="slide0023.htm" restoredleft="154"
+   restoredtop="946" manualadjustleft="t" manualadjusttop="t"
+   hideoutlineicons="t"/>
+  <p:font name="Arial" charset="0" type="4"/>
+  <p:font name="ＭＳ Ｐゴシック" charset="128" type="4"/>
+  <p:font name="ＭＳ Ｐ明朝" charset="128" type="6" family="18"/>
+  <p:font name="Impact" charset="0" type="6" family="34"/>
+  <p:font name="Arial Black" charset="0" type="6" family="34"/>
+  <p:font name="Times New Roman" charset="0" type="6" family="18"/>
+  <p:font name="Century" charset="0" type="6" family="18"/>
+  <p:font name="Symbol" charset="2" type="6" family="18"/>
+  <p:font name="SimHei" charset="134" type="6" family="2"/>
+  <p:font name="Franklin Gothic Medium" charset="0" type="6" family="34"/>
+  <p:font name="Gungsuh" charset="129" type="6" family="18"/>
+  <p:headersfooters noheader="t"/>
+  <p:pptdocumentsettings framecolors="WhiteTextOnBlack" hideslideanimation="t"
+   browsersupport="v4"/>
+  <p:htmlpublishsettings browsersupport="v4"
+   href="Y:\06\www\res\ppt\NIPS06\NIPS06_Poster.htm" noloadinbrowser="t"/>
+ </p:presentation>
+ <o:shapedefaults v:ext="edit" spidmax="185348">
+  <o:colormru v:ext="edit" colors="#5f5f5f,#060,#eef0da,#333,#4d4d4d,#963,#930,#c39"/>
+ </o:shapedefaults></xml>

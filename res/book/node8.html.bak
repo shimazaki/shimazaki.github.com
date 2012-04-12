@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<!--Converted with jLaTeX2HTML 2002-2-1 (1.70) JA patch-1.9
+patched version by:  Kenshi Muto, Debian Project.
+* modified by:  Shige TAKENO
+LaTeX2HTML 2002-2-1 (1.70),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>非定常スパイク時系列モデル</TITLE>
+<META NAME="description" CONTENT="非定常スパイク時系列モデル">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002-2-1 JA patch-1.9">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="../css/latex2html.css">
+
+<LINK REL="next" HREF="node12.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node9.html">
+<META http-equiv=Content-Type content="text/html; charset=shift_jis">
+<script src=http://www.google-analytics.com/urchin.js type=text/javascript></script>
+<script type=text/javascript>_uacct="UA-745872-1";urchinTracker();</script>
+</HEAD>
+
+<BODY>
+    <a name=top id=top> </a>
+    <div id=NaviLayer>  
+    <table width=180 border=0 cellpadding=0 cellspacing=0>
+    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
+    <tr><td height=28 valign=top><b>Spike Density Estimation</b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../histogram.html>Histogram Method</a></b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../kernel.html>Kernel Method</a></b></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Share it with your friend</b></td></tr>
+    <tr><td valign=top><a class=addthis_button href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcbd554189b9a7"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width=125 height=16 alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcbd554189b9a7"></script></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Tweet</b></td></tr>
+    <tr><td valign=top><iframe src=../../tweet.html width=180 height=600 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
+    <tr><td height=28 valign=top></td></tr>
+    </table></div>
+<!--Navigation Panel-->
+<A NAME="tex2html304"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html298"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html292"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html300"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html302"
+  HREF="node16.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html305"
+  HREF="node9.html">非定常ポアソン過程</A>
+<B> Up:</B> <A NAME="tex2html299"
+  HREF="node3.html">スパイク統計モデル入門</A>
+<B> Previous:</B> <A NAME="tex2html293"
+  HREF="node7.html">定常スパイク時系列の実現</A>
+ &nbsp; <B>  <A NAME="tex2html301"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html303"
+  HREF="node16.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION02200000000000000000">
+非定常スパイク時系列モデル</A>
+</H1>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html306"
+  HREF="node9.html">非定常ポアソン過程</A>
+<UL>
+<LI><A NAME="tex2html307"
+  HREF="node9.html#SECTION02211000000000000000">時間伸縮</A>
+<LI><A NAME="tex2html308"
+  HREF="node9.html#SECTION02212000000000000000">条件付きスパイク密度分布</A>
+<LI><A NAME="tex2html309"
+  HREF="node9.html#SECTION02213000000000000000">直説法</A>
+<LI><A NAME="tex2html310"
+  HREF="node9.html#SECTION02214000000000000000">希薄化による数値計算法</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html311"
+  HREF="node10.html">非定常リニューアル過程</A>
+<UL>
+<LI><A NAME="tex2html312"
+  HREF="node10.html#SECTION02221000000000000000">変動レートの時間伸縮</A>
+<LI><A NAME="tex2html313"
+  HREF="node10.html#SECTION02222000000000000000">条件付きスパイク密度分布</A>
+<UL>
+<LI><A NAME="tex2html314"
+  HREF="node10.html#SECTION02222100000000000000">ガンマ分布</A>
+<LI><A NAME="tex2html315"
+  HREF="node10.html#SECTION02222200000000000000">ワイブル分布</A>
+<LI><A NAME="tex2html316"
+  HREF="node10.html#SECTION02222300000000000000">逆ガウス分布</A>
+</UL>
+<LI><A NAME="tex2html317"
+  HREF="node10.html#SECTION02223000000000000000">時間伸縮理論</A>
+<LI><A NAME="tex2html318"
+  HREF="node10.html#SECTION02224000000000000000">初期スパイクの生成について</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html319"
+  HREF="node11.html">一般点過程の時間伸縮理論と尤度関数</A>
+<UL>
+<LI><A NAME="tex2html320"
+  HREF="node11.html#SECTION02231000000000000000">ポアソン過程の尤度関数</A>
+<LI><A NAME="tex2html321"
+  HREF="node11.html#SECTION02232000000000000000">一般点過程の尤度関数</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+AddressShimazaki
+</ADDRESS>
+</BODY>
+</HTML>

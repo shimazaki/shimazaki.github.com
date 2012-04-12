@@ -1,0 +1,872 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<!--Converted with jLaTeX2HTML 2002-2-1 (1.70) JA patch-1.9
+patched version by:  Kenshi Muto, Debian Project.
+* modified by:  Shige TAKENO
+LaTeX2HTML 2002-2-1 (1.70),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>非定常ポアソン過程</TITLE>
+<META NAME="description" CONTENT="非定常ポアソン過程">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002-2-1 JA patch-1.9">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="../css/latex2html.css">
+
+<LINK REL="next" HREF="node10.html">
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="node8.html">
+<LINK REL="next" HREF="node10.html">
+<META http-equiv=Content-Type content="text/html; charset=shift_jis">
+<script src=http://www.google-analytics.com/urchin.js type=text/javascript></script>
+<script type=text/javascript>_uacct="UA-745872-1";urchinTracker();</script>
+</HEAD>
+
+<BODY>
+    <a name=top id=top> </a>
+    <div id=NaviLayer>  
+    <table width=180 border=0 cellpadding=0 cellspacing=0>
+    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
+    <tr><td height=28 valign=top><b>Spike Density Estimation</b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../histogram.html>Histogram Method</a></b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../kernel.html>Kernel Method</a></b></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Share it with your friend</b></td></tr>
+    <tr><td valign=top><a class=addthis_button href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcbd554189b9a7"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width=125 height=16 alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcbd554189b9a7"></script></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Tweet</b></td></tr>
+    <tr><td valign=top><iframe src=../../tweet.html width=180 height=600 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
+    <tr><td height=28 valign=top></td></tr>
+    </table></div>
+<!--Navigation Panel-->
+<A NAME="tex2html334"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html328"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html322"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html330"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html332"
+  HREF="node16.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html335"
+  HREF="node10.html">非定常リニューアル過程</A>
+<B> Up:</B> <A NAME="tex2html329"
+  HREF="node8.html">非定常スパイク時系列モデル</A>
+<B> Previous:</B> <A NAME="tex2html323"
+  HREF="node8.html">非定常スパイク時系列モデル</A>
+ &nbsp; <B>  <A NAME="tex2html331"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html333"
+  HREF="node16.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html336"
+  HREF="node9.html#SECTION02211000000000000000">時間伸縮</A>
+<LI><A NAME="tex2html337"
+  HREF="node9.html#SECTION02212000000000000000">条件付きスパイク密度分布</A>
+<LI><A NAME="tex2html338"
+  HREF="node9.html#SECTION02213000000000000000">直説法</A>
+<LI><A NAME="tex2html339"
+  HREF="node9.html#SECTION02214000000000000000">希薄化による数値計算法</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION02210000000000000000">
+非定常ポアソン過程</A>
+</H1>
+
+<P>
+
+<H2><A NAME="SECTION02211000000000000000">
+時間伸縮</A>
+</H2>
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="759"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.1:</STRONG>
+変動スパイクレートと時間伸縮</CAPTION>
+<TR><TD><IMG
+ WIDTH="444" HEIGHT="623" ALIGN="BOTTOM" BORDER="0"
+ SRC="img232.gif"
+ ALT="\includegraphics[width=0.8\columnwidth]{fig/time-rescaling.eps}"></TD></TR>
+</TABLE>
+</DIV>
+
+本節では, 定常ポアソン過程の拡張として, 図<A HREF="#FIG_time-rescaling"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="../icons/crossref.gif"></A>-aのように時間的に変動するレートから生成される非定常ポアソン過程を考えたい. レートの低いところではスパイクの発生率は低く,
+レートの高いところではスパイクの発生率は高くなるだろう. 変動レートを<!-- MATH
+ $\lambda_{t}$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img233.gif"
+ ALT="$ \lambda_{t}$">で表し, 変動レートを時刻<IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.gif"
+ ALT="$ t$">までを積分した<P></P>
+<DIV ALIGN="CENTER"><A NAME="time-rescaling"></A><!-- MATH
+ \begin{equation}
+\Lambda\left(  t\right)  =\int_{0}^{t}\lambda\left(  u\right)  du
+%
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="135" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img234.gif"
+ ALT="$\displaystyle \Lambda\left( t\right) =\int_{0}^{t}\lambda\left( u\right) du %
+$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.1)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+を考える. 図<A HREF="#FIG_time-rescaling"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="../icons/crossref.gif"></A>-bに関数<!-- MATH
+ $\Lambda\left(  t\right)$
+ -->
+<IMG
+ WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ \Lambda\left( t\right) $">を示す.
+<IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img236.gif"
+ ALT="$ \Lambda$">は無次元量で, いわば<!-- MATH
+ $\lambda_{t}$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img233.gif"
+ ALT="$ \lambda_{t}$">により規格化された時間である.
+変動レートの小さなところでは, 実時間に対して<IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img236.gif"
+ ALT="$ \Lambda$">はゆっくりと進み, 変動レートの大きな所では<IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img236.gif"
+ ALT="$ \Lambda$">は早く進む.
+そのため, <A HREF="#time-rescaling">2.1</A>の変数変換を行うことを時間伸縮(Time-rescaling）をすると言う. 例えば図<A HREF="#FIG_time-rescaling"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="../icons/crossref.gif"></A>-bでは, リスケールされた時間軸<IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img236.gif"
+ ALT="$ \Lambda$">上にある２点<!-- MATH
+ $\Lambda
+_{1},\Lambda_{2}$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img237.gif"
+ ALT="$ \Lambda
+_{1},\Lambda_{2}$">の間隔と２点<!-- MATH
+ $\Lambda
+_{3},\Lambda_{4}$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img238.gif"
+ ALT="$ \Lambda
+_{3},\Lambda_{4}$">の間隔はほぼ同じぐらいだが, 実時間上ではレートの<!-- MATH
+ $t_{1},t_{2}$
+ -->
+<IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img239.gif"
+ ALT="$ t_{1},t_{2}$">の間隔は<!-- MATH
+ $t_{3},t_{4}$
+ -->
+<IMG
+ WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img240.gif"
+ ALT="$ t_{3},t_{4}$">の間隔よりずっと大きい.
+
+<P>
+リスケールされた時間軸<IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img236.gif"
+ ALT="$ \Lambda$">上で平均<IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img216.gif"
+ ALT="$ 1$">の標準指数分布に従う定常ポアソン過程を考え, 実時間へ写像したスパイク時系列が非定常ポアソン過程である.
+<IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img236.gif"
+ ALT="$ \Lambda$">軸上のイベント系列を<!-- MATH
+ $\left\{  \Lambda_{1},\Lambda_{2},\cdots\right\}$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img241.gif"
+ ALT="$ \left\{ \Lambda_{1},\Lambda_{2},\cdots\right\}
+$">とすると, イベント間隔<!-- MATH
+ $\Lambda_{i}-\Lambda_{i-1}$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img242.gif"
+ ALT="$ \Lambda_{i}-\Lambda_{i-1}$">が標準指数分布<!-- MATH
+ \begin{displaymath}
+g\left(  z\right)  =\exp\left[  -z\right]
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="113" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img243.gif"
+ ALT="$\displaystyle g\left( z\right) =\exp\left[ -z\right]
+$">
+</DIV><P></P>
+に従う. 実時間との対応関係は<!-- MATH
+ $\Lambda_{i}=\Lambda\left(
+t_{i}\right)$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img244.gif"
+ ALT="$ \Lambda_{i}=\Lambda\left(
+t_{i}\right) $">だから<!-- MATH
+ \begin{displaymath}
+z\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  \equiv\Lambda\left(
+t_{i}\right)  -\Lambda\left(  t_{i-1}\right)  =\int_{t_{i-1}}^{t_{i}}%
+\lambda\left(  u\right)  du
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="369" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.gif"
+ ALT="$\displaystyle z\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) \equiv\...
+...Lambda\left( t_{i-1}\right) =\int_{t_{i-1}}^{t_{i}}%
+\lambda\left( u\right) du
+$">
+</DIV><P></P>
+非定常ポアソン時系列を数値的に実現するためには, 指数分布に従う乱数を発生させ, これを満たす<IMG
+ WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.gif"
+ ALT="$ t_{i}$">を逐次求めていけばよい. この方法は時間伸縮(Time-rescaling）理論に基づく方法であり, 次のようにまとめられる[<A
+ HREF="node15.html#Brown01">Brown et&nbsp;al., 2001</A>].
+
+<P>
+<P>
+<DIV><B>アルゴリズム  8</B> &nbsp; 
+<I>時間伸縮理論を用いた非定常ポアソン過程の実現
+</I>
+<P>
+<OL>
+<LI><!-- MATH
+ $i=1,t_{1}=0.$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img247.gif"
+ ALT="$ i=1,t_{1}=0.$">
+
+<P>
+</LI>
+<LI>レート<IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img216.gif"
+ ALT="$ 1$">の指数分布に従う乱数<IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.gif"
+ ALT="$ \eta$">を生成する.
+
+<P>
+</LI>
+<LI><!-- MATH
+ $\eta=\int_{t_{i-1}}^{t_{i}}\lambda\left(  u\right)  du$
+ -->
+<IMG
+ WIDTH="122" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img248.gif"
+ ALT="$ \eta=\int_{t_{i-1}}^{t_{i}}\lambda\left( u\right) du$">を満たす<IMG
+ WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.gif"
+ ALT="$ t_{i}$">を求める.
+
+<P>
+</LI>
+<LI><!-- MATH
+ $t_{i}\geq T$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img249.gif"
+ ALT="$ t_{i}\geq T$">ならば終了.
+
+<P>
+<IMG
+ WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.gif"
+ ALT="$ t_{i}&lt;T$">ならば<!-- MATH
+ $i\leftarrow i+1.\ 2$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img251.gif"
+ ALT="$ i\leftarrow i+1.\ 2$">へ.
+</LI>
+</OL></DIV><P></P>
+
+<P>
+アルゴリズムの第３ステップで指数分布に従う乱数を発生させるには次に説明する逆関数法を用いる.
+
+<P>
+
+<H2><A NAME="SECTION02212000000000000000">
+条件付きスパイク密度分布</A>
+</H2>
+
+<P>
+変動ポアソン過程において時刻<IMG
+ WIDTH="31" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img252.gif"
+ ALT="$ t_{i-1}$">でスパイクが生じた下で, 次のスパイク時刻<IMG
+ WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.gif"
+ ALT="$ t_{i}$">の条件付スパイク密度分布（ISI分布）を求めてみよう：
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="127" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.gif"
+ ALT="$\displaystyle p\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="143" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img254.gif"
+ ALT="$\displaystyle =\left\vert \frac{dz}{dt_{i}}\right\vert g\left( z\vert\lambda_{t_{i-1}:t_{i}}\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="209" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img255.gif"
+ ALT="$\displaystyle =\lambda\left( t_{i}\right) \exp\left[ -\int_{t_{i-1}}^{t_{i}}%
+\lambda\left( u\right) du\right]%
+$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="ISI_inhomogeneous_Poisson">(2.2)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+条件つきスパイク密度分布<A HREF="#ISI_inhomogeneous_Poisson">2.2</A>は,
+定常ポアソン過程のスパイク密度分布である指数分布<!-- MATH
+ $\lambda
+e^{-\lambda t}$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img256.gif"
+ ALT="$ \lambda
+e^{-\lambda t}$">の自然な拡張になっていることがわかる. 逆関数法を用いれば, この条件付スパイク密度分布に従う時系列を作れる. 
+<P><P>
+<BR>
+
+<P>
+<P>
+<DIV><B>アルゴリズム  9</B> &nbsp; 
+<I>逆関数法を用いた非定常ポアソン過程の実現
+</I>
+<P>
+<OL>
+<LI><!-- MATH
+ $i=1,t_{1}=0$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img257.gif"
+ ALT="$ i=1,t_{1}=0$">.
+
+<P>
+</LI>
+<LI><!-- MATH
+ $\left[  0,1\right]$
+ -->
+<IMG
+ WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img201.gif"
+ ALT="$ \left[
+0,1\right] $">の区間の一様乱数<IMG
+ WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.gif"
+ ALT="$ \xi$">を生成する.
+
+<P>
+</LI>
+<LI><!-- MATH
+ $\xi=\lambda\left(  t_{i}\right)  \exp\left[  -\int_{t_{i-1}}^{t_{i}%
+}\lambda\left(  u\right)  du\right]$
+ -->
+<IMG
+ WIDTH="216" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img258.gif"
+ ALT="$ \xi=\lambda\left( t_{i}\right) \exp\left[ -\int_{t_{i-1}}^{t_{i}%
+}\lambda\left( u\right) du\right] $">を満たす<IMG
+ WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img259.gif"
+ ALT="$ t_{i}%
+$">を求める.
+
+<P>
+</LI>
+<LI><!-- MATH
+ $t_{i}\geq T$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img249.gif"
+ ALT="$ t_{i}\geq T$">ならば終了.
+
+<P>
+<IMG
+ WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.gif"
+ ALT="$ t_{i}&lt;T$">ならば<!-- MATH
+ $i\leftarrow i+1.\ 2$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img251.gif"
+ ALT="$ i\leftarrow i+1.\ 2$">へ.
+<P><P>
+<BR>
+</LI>
+</OL></DIV><P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+<P>
+条件付きスパイク密度分布<A HREF="#ISI_inhomogeneous_Poisson">2.2</A>は.
+<!-- MATH
+ $t_{i}=0,t_{i-1}=t$
+ -->
+<IMG
+ WIDTH="106" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img260.gif"
+ ALT="$ t_{i}=0,t_{i-1}=t$">と見れば定常リニューアル過程におけるスパイク密度分布の定義と同義である. 定常リニューアル過程のスパイク密度分布とハザード関数との間には, <A HREF="node6.html#ISI_hazard">1.16</A>のような関係があるから,
+<A HREF="#ISI_inhomogeneous_Poisson">2.2</A>と<A HREF="#ISI_Point_Process"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="../icons/crossref.gif"></A>を見比べて<P></P>
+<DIV ALIGN="CENTER"><A NAME="intensity_Poisson_process"></A><!-- MATH
+ \begin{equation}
+r\left(  t\right)  =\lambda\left(  t\right)%
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="84" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$\displaystyle r\left( t\right) =\lambda\left( t\right)%
+$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.3)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+であることがわかる.
+ハザード関数も変動レートも, 時刻<IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.gif"
+ ALT="$ t$">における瞬間スパイク生成率を与え, 両者は同一視できる.
+ただしリニューアル過程の場合には,
+スパイク発生から経過した時間を変数とする特定のハザード関数を考え,
+スパイクの度に時刻が原点にリセットされた. これに対して, 非定常ポアソン過程の場合, 時刻<IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.gif"
+ ALT="$ t$">の瞬間発火率は過去のスパイク発火履歴に拠らない<!-- MATH
+ $\lambda\left(
+t\right)$
+ -->
+<IMG
+ WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img262.gif"
+ ALT="$ \lambda\left(
+t\right) $">のみできまる. 瞬間スパイク生成率がスパイク履歴に拠らないのは, 定常・非定常を問わずポアソン過程の特徴である.
+
+<P>
+
+<H2><A NAME="SECTION02213000000000000000">
+直説法</A>
+</H2>
+
+<P>
+次に瞬間スパイク生成率（ハザード関数）<!-- MATH
+ $\lambda\left(  t\right)$
+ -->
+<IMG
+ WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img262.gif"
+ ALT="$ \lambda\left(
+t\right) $">を用いる方法が考えれる.
+時間を十分小さな幅<IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img104.gif"
+ ALT="$ \Delta$">の区間に区切って, スパイクの発生をベルヌーイ過程で近似する. 各区間で一様乱数を生成し, スパイクの<!-- MATH
+ $\lambda\left(
+t\right)  \Delta$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img263.gif"
+ ALT="$ \lambda\left(
+t\right) \Delta$">確率で発生させる. スパイクが生じない確率は<!-- MATH
+ $1-\lambda\left(  t\right)
+\Delta$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img264.gif"
+ ALT="$ 1-\lambda\left( t\right)
+\Delta$">である. 非定常ポアソン過程は履歴を考慮せず微小区間毎に独立に計算できる. 十分小さな<IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img104.gif"
+ ALT="$ \Delta$">を用いればポアソン過程・リニューアル過程を近似することができるはずである.
+
+<P>
+<P>
+<DIV><B>アルゴリズム  10</B> &nbsp; 
+<I>強度関数を用いた直接的な非定常ポアソン過程の実現
+</I>
+<P>
+<OL>
+<LI>長さ<IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ T$">の時系列を十分に小さな幅<IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img104.gif"
+ ALT="$ \Delta$">の<!-- MATH
+ $N=T/\Delta$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img265.gif"
+ ALT="$ N=T/\Delta$">個の区間に分ける.
+
+<P>
+</LI>
+<LI><IMG
+ WIDTH="39" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img266.gif"
+ ALT="$ i=1$">, <IMG
+ WIDTH="41" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img267.gif"
+ ALT="$ j=1$">.
+
+<P>
+</LI>
+<LI><!-- MATH
+ $j\leftarrow j+1$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.gif"
+ ALT="$ j\leftarrow j+1$">, <IMG
+ WIDTH="63" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.gif"
+ ALT="$ \quad j=N$">で終了.
+
+<P>
+</LI>
+<LI><!-- MATH
+ $\left[  0,1\right]$
+ -->
+<IMG
+ WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img201.gif"
+ ALT="$ \left[
+0,1\right] $">の区間の一様乱数<IMG
+ WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.gif"
+ ALT="$ \xi$">を生成する.
+
+<P>
+<!-- MATH
+ $\qquad\lambda\left(  j\Delta\right)  \Delta\geq\xi$
+ -->
+<IMG
+ WIDTH="126" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img270.gif"
+ ALT="$ \qquad\lambda\left( j\Delta\right) \Delta\geq\xi$">&nbsp;&nbsp;&nbsp;&nbsp;ならば&nbsp;&nbsp;&nbsp;&nbsp;<!-- MATH
+ $t_{i}=j\Delta,i\leftarrow i+1$
+ -->
+<IMG
+ WIDTH="127" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img271.gif"
+ ALT="$ t_{i}=j\Delta,i\leftarrow i+1$">.
+
+<P>
+<!-- MATH
+ $\qquad\lambda\left(  j\Delta\right)  \Delta<\xi$
+ -->
+<IMG
+ WIDTH="126" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img272.gif"
+ ALT="$ \qquad\lambda\left( j\Delta\right) \Delta&lt;\xi$">&nbsp;&nbsp;&nbsp;&nbsp;ならば&nbsp;&nbsp;&nbsp;&nbsp;<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img273.gif"
+ ALT="$ 3$">へ.
+</LI>
+</OL></DIV><P></P>
+
+<P>
+この直接的な方法はもっとも実装が簡潔だが, 乱数を<IMG
+ WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img123.gif"
+ ALT="$ \ N$">回発生させる必要があり計算効率は著しく悪い. 毎回乱数を生成させるよりは,
+指数分布に従う乱数を一回発生させ,
+その値になるまで<!-- MATH
+ $\lambda\left(  j\Delta\right)$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img274.gif"
+ ALT="$ \lambda\left( j\Delta\right) $">を数値的に足し込んでいく（積分する）アルゴリズムの方が効率がよい. ただし, この方法も微小区間に区切った関数の数値積分が必要になってくる. それでは次に, 簡潔でかつ効率のよい数値計算法としてよく用いられる希薄化による手法を紹介しよう.
+
+<P>
+
+<H2><A NAME="SECTION02214000000000000000">
+希薄化による数値計算法</A>
+</H2>
+
+<P>
+希薄化(Thinning<A NAME="852"></A>[<A
+ HREF="node15.html#Ogata81">Ogata, 1981</A>,<A
+ HREF="node15.html#Daley88">Daley and Vere-Jones, 1988</A>,<A
+ HREF="node15.html#Heyman90">Heyman and Sobel, 1990</A>])と呼ばれる方法は積分操作を必要としないため,
+計算時間が短くて済む場合がある.
+
+<P>
+まず<IMG
+ WIDTH="39" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img275.gif"
+ ALT="$ [0,T]$">の範囲にレートが<IMG
+ WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img276.gif"
+ ALT="$ M$">の定常ポアソン過程を生成する.
+ただし, <IMG
+ WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img276.gif"
+ ALT="$ M$">はどの時刻の変動レートよりも大きい値とする（つまり<!-- MATH
+ $t\in\lbrack0,T]$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.gif"
+ ALT="$ t\in\lbrack0,T]$">に対して<!-- MATH
+ $\lambda\left(  t\right)  \leq M$
+ -->
+<IMG
+ WIDTH="73" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img278.gif"
+ ALT="$ \lambda\left( t\right) \leq M$">）. 生成されたスパイク時系列を<!-- MATH
+ $\left\{  t_{1,}t_{2}\right\}$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img279.gif"
+ ALT="$ \left\{ t_{1,}t_{2}\right\} $">.
+時刻<IMG
+ WIDTH="16" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img280.gif"
+ ALT="$ t_{j}$">におけるスパイクは, 規格化した変動レート<!-- MATH
+ $p\left(  t_{j}\right)  =\lambda
+\left(  t_{j}\right)  /M$
+ -->
+<IMG
+ WIDTH="124" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img281.gif"
+ ALT="$ p\left( t_{j}\right) =\lambda
+\left( t_{j}\right) /M$">の確率で残す.
+残ったスパイク時系列<!-- MATH
+ $\left\{  t_{1}^{\ast},t_{2}^{\ast},\cdots\right\}$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img282.gif"
+ ALT="$ \left\{ t_{1}^{\ast},t_{2}^{\ast},\cdots\right\} $">は変動レート<!-- MATH
+ $\lambda\left(  t\right)$
+ -->
+<IMG
+ WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img262.gif"
+ ALT="$ \lambda\left(
+t\right) $">のポアソン過程に従う.
+
+<P>
+<P>
+<DIV><B>アルゴリズム  11</B> &nbsp; 
+<I>Shedler-Lewis Thinning Algorithmによる非定常ポアソン過程の実現
+</I>
+<P>
+<OL>
+<LI><!-- MATH
+ $\left[  0,T\right]$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.gif"
+ ALT="$ \left[ 0,T\right] $">の区間の変動レート<!-- MATH
+ $\lambda\left(  t\right)$
+ -->
+<IMG
+ WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img262.gif"
+ ALT="$ \lambda\left(
+t\right) $">を用意する
+
+<P>
+</LI>
+<LI><!-- MATH
+ $M=\max\lambda\left(  t\right)$
+ -->
+<IMG
+ WIDTH="105" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img284.gif"
+ ALT="$ M=\max\lambda\left( t\right) $">をもとめる
+
+<P>
+</LI>
+<LI><IMG
+ WIDTH="39" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img266.gif"
+ ALT="$ i=1$">
+
+<P>
+</LI>
+<LI>レート<IMG
+ WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img276.gif"
+ ALT="$ M$">の指数分布に従う乱数<IMG
+ WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.gif"
+ ALT="$ \xi$">を生成する
+
+<P>
+</LI>
+<LI><IMG
+ WIDTH="74" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img286.gif"
+ ALT="$ s=s+X$">, <IMG
+ WIDTH="60" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img287.gif"
+ ALT="$ \quad s&gt;T$">ならば終了
+
+<P>
+</LI>
+<LI><!-- MATH
+ $\left[  0,1\right]$
+ -->
+<IMG
+ WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img201.gif"
+ ALT="$ \left[
+0,1\right] $">の区間の一様乱数<IMG
+ WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.gif"
+ ALT="$ \xi$">を生成する
+
+<P>
+<!-- MATH
+ $\qquad\lambda\left(  s\right)  /M\geq\xi$
+ -->
+<IMG
+ WIDTH="123" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img288.gif"
+ ALT="$ \qquad\lambda\left( s\right) /M\geq\xi$">&nbsp;&nbsp;&nbsp;&nbsp;ならば<!-- MATH
+ $\quad
+t_{i}=s,$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img289.gif"
+ ALT="$ \quad
+t_{i}=s,$">&nbsp;&nbsp;&nbsp;&nbsp;<!-- MATH
+ $i\leftarrow i+1$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img290.gif"
+ ALT="$ i\leftarrow i+1$">
+
+<P>
+</LI>
+<LI><IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img291.gif"
+ ALT="$ 4$">に戻る
+</LI>
+</OL></DIV><P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html334"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="../icons/next.gif"></A> 
+<A NAME="tex2html328"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="../icons/up.gif"></A> 
+<A NAME="tex2html322"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="../icons/prev.gif"></A> 
+<A NAME="tex2html330"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="../icons/contents.gif"></A> 
+<A NAME="tex2html332"
+  HREF="node16.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="../icons/index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html335"
+  HREF="node10.html">非定常リニューアル過程</A>
+<B> Up:</B> <A NAME="tex2html329"
+  HREF="node8.html">非定常スパイク時系列モデル</A>
+<B> Previous:</B> <A NAME="tex2html323"
+  HREF="node8.html">非定常スパイク時系列モデル</A>
+ &nbsp; <B>  <A NAME="tex2html331"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html333"
+  HREF="node16.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+&copy; 2007 2008 2009 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki, Ph.D.</a>
+</ADDRESS>
+</BODY>
+</HTML>
