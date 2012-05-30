@@ -1,84 +1,1 @@
-/* CSS Document */
-
-<style type="text/css">
-
-.style4 {font-size: x-large}
-.style1 {font-size: small;
-	background-color: #669966;
-	border-bottom-color: #663366;
-	color: #333333;
-	text-decoration: none;}
-.style9 {
-	color: #666666;
-	text-decoration: none;
-}
-span.style41 {font-family:"Times New Roman";
-	font-weight:bold;}
-span.style51 {font-family:"Times New Roman";}
-span.style411 {font-family:"Times New Roman";
-	font-weight:bold;}
-span.style511 {font-family:"Times New Roman";}
-.style13 {font-size: large}
-.style14 {
-	color: #FF0000;
-	font: blink;
-}
-.style15 {color: #006600}
-.style16 {color: #0000FF}
-h2 {color: #990000;}
-h1 {color: #333300;}
-.style22 {color: #FFFFFF;
-	font-weight: bold;
-	background-color: #CC0000;
-	text-decoration: none;}
-.style23 {font-size: small}
-.style24 {color: #990000}
-
-.style37 {background-color: #330033; border-bottom-color: #663366; text-decoration: none; font-size: small; color: #FFFFFF; font-weight: bold; }
-
-.style38 {color: #FFFFFF}
-
-.style39 {
-	color: #FF0000;
-	font-weight: bold;
-}
-
-#Contents {
-	position:absolute;
-	width:180px;
-	height:2px;
-	z-index:1;
-	left: 770px;
-	top: 16px;
-	background-color: ;
-	visibility: visible;
-	background-color: #DDDDDD;
-	margin-left: 0px;
-	padding-left: 2px;
-}
-#Layer2 {position:fixed;
-	width:180px;
-	height:243px;
-	z-index:1;
-	left: 761px;
-	top: 61px;	}
-body {
-	background-image: url();
-	margin-left: 45px;
-	margin-top: 17px;
-	background-repeat: no-repeat;
-}
-canvas {
-	border: 1px solid black;
-	background-color: #FFFFFF;
-}
-
-#sectionLinks{
-	position: relative;
-	margin: 0px;
-	padding: 0px;
-	border-bottom: 1px solid #cccccc;
-	font-size: 90%;
-}
-
-</style>
+<html>  <head>    <meta http-equiv="content-type" content="text/html; charset=UTF-8">  </head>  <body>    <pre>/* CSS Document */&lt;style type="text/css"&gt;.style4 {font-size: x-large}.style1 {font-size: small;	background-color: #669966;	border-bottom-color: #663366;	color: #333333;	text-decoration: none;}.style9 {	color: #666666;	text-decoration: none;}span.style41 {font-family:"Times New Roman";	font-weight:bold;}span.style51 {font-family:"Times New Roman";}span.style411 {font-family:"Times New Roman";	font-weight:bold;}span.style511 {font-family:"Times New Roman";}.style13 {font-size: large}.style14 {	color: #FF0000;	font: blink;}.style15 {color: #006600}.style16 {color: #0000FF}h2 {color: #990000;}h1 {color: #333300;}.style22 {color: #FFFFFF;	font-weight: bold;	background-color: #CC0000;	text-decoration: none;}.style23 {font-size: small}.style24 {color: #990000}.style37 {background-color: #330033; border-bottom-color: #663366; text-decoration: none; font-size: small; color: #FFFFFF; font-weight: bold; }.style38 {color: #FFFFFF}.style39 {	color: #FF0000;	font-weight: bold;}#Contents {	position:absolute;	width:180px;	height:2px;	z-index:1;	left: 770px;	top: 16px;	background-color: ;	visibility: visible;	background-color: #DDDDDD;	margin-left: 0px;	padding-left: 2px;}#Layer2 {position:fixed;	width:180px;	height:243px;	z-index:1;	left: 761px;	top: 61px;	}body {	background-image: url();	margin-left: 45px;	margin-top: 17px;	background-repeat: no-repeat;}canvas {	border: 1px solid black;	background-color: #FFFFFF;}#sectionLinks{	position: relative;	margin: 0px;	padding: 0px;	border-bottom: 1px solid #cccccc;	font-size: 90%;}<br><br><br>/* inline code and code blocks */code {  font: 80% Monaco, 'Courier New', Courier, monospace;}pre {  border: 1px solid #ddd;  margin: 1em 2em 1em 1.5em;  padding: .75em 1.25em;  line-height: 1em;<br>  width:300px;}.sidebar {  border: 1px solid #ddd;  padding: .75em 1.25em;  line-height: 1.45em;  margin: 1em 0.5em 1em 0em;  font-size: 90%;}&lt;/style&gt;</pre><br>  </body></html>

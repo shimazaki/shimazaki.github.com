@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="app.yaml" local="129678869647053479" remote="129787934400000000" testing="0" />
-<file name="index.yaml" local="129678869643713288" remote="129787934400000000" testing="0" />
-<file name="login.html" local="129678869641183143" remote="129787934400000000" testing="0" />
-<file name="main.py" local="129678869641603167" remote="129787934400000000" testing="0" />
-<file name="main_original.py" local="129678869644583338" remote="129787934400000000" testing="0" />
-<file name="oauth.py" local="129678869644133312" remote="129787934400000000" testing="0" />
-<file name="oauth.pyc" local="129678869642893241" remote="129787934400000000" testing="0" />
-<file name="simple_cookie.py" local="129678869642043192" remote="129787934400000000" testing="0" />
-<file name="simple_cookie.pyc" local="129678869642443215" remote="129787934400000000" testing="0" />
-<file name="tweet.js" local="129678869643303265" remote="129787934400000000" testing="0" />
-<file name="home.html" local="129678869646643456" remote="129787934400000000" testing="0" />
+<file name="app.yaml" local="129678869640000000" remote="129810851400000000" testing="0" />
+<file name="index.yaml" local="129678869640000000" remote="129810851400000000" testing="0" />
+<file name="login.html" local="129678869640000000" remote="129810851400000000" testing="0" />
+<file name="main.py" local="129678869640000000" remote="129810851400000000" testing="0" />
+<file name="main_original.py" local="129678869640000000" remote="129810851400000000" testing="0" />
+<file name="oauth.py" local="129678869640000000" remote="129810851400000000" testing="0" />
+<file name="oauth.pyc" local="129678869640000000" remote="129810851400000000" testing="0" />
+<file name="simple_cookie.py" local="129678869640000000" remote="129810851400000000" testing="0" />
+<file name="simple_cookie.pyc" local="129678869640000000" remote="129810851400000000" testing="0" />
+<file name="tweet.js" local="129678869640000000" remote="129810851400000000" testing="0" />
+<file name="home.html" local="129678869640000000" remote="129810851400000000" testing="0" />
 </dwsync>

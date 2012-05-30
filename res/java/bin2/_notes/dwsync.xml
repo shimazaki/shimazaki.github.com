@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="BinSelection.java" local="129678869258391249" remote="129787938600000000" testing="0" />
-<file name="bin.js" local="129678869219189007" remote="129787938600000000" testing="0" />
-<file name="js.html" local="129678869253740983" remote="129787938600000000" testing="0" />
-<file name="java.policy.applet" local="129678869216868874" remote="129787938600000000" testing="0" />
-<file name="data.txt" local="129678869257921222" remote="129787938600000000" testing="0" />
-<file name="BarHisto.java" local="129678869251570859" remote="129787938600000000" testing="0" />
-<file name="BinSelection070407.java" local="129678869251130834" remote="129787938600000000" testing="0" />
-<file name="bin_javascript.js" local="129678869217788926" remote="129787938600000000" testing="0" />
-<file name="DrawHistogram.java" local="129678869257481197" remote="129787938600000000" testing="0" />
-<file name="DemoHistogram.java" local="129678869258851275" remote="129787938600000000" testing="0" />
-<file name="DrawCostFunction.java" local="129678869219689035" remote="129787938600000000" testing="0" />
-<file name="oldfaithful.txt" local="129678869218748981" remote="129787938600000000" testing="0" />
-<file name="bin_ver000.js" local="129678869252460910" remote="129787938600000000" testing="0" />
-<file name="DrawHistogram$Graphs.class" local="129678869217338901" remote="129787938600000000" testing="0" />
-<file name="DrawHistogram.class" local="129678869253300958" remote="129787938600000000" testing="0" />
-<file name="DrawCostFunction.class" local="129678869256961167" remote="129787938600000000" testing="0" />
-<file name="Histogram.class" local="129678869256481140" remote="129787938600000000" testing="0" />
-<file name="Histogram$Graphs.class" local="129678869223989281" remote="129787938600000000" testing="0" />
-<file name="BinSelection.class" local="129678869223579258" remote="129787938600000000" testing="0" />
-<file name="BarHisto$Graphs.class" local="129678869218278955" remote="129787938600000000" testing="0" />
-<file name="BarHisto.class" local="129678869254221010" remote="129787938600000000" testing="0" />
+<file name="BinSelection.java" local="129678869250000000" remote="129810858600000000" testing="0" />
+<file name="bin.js" local="129678869210000000" remote="129810858600000000" testing="0" />
+<file name="js.html" local="129678869250000000" remote="129810858600000000" testing="0" />
+<file name="java.policy.applet" local="129678869210000000" remote="129810858600000000" testing="0" />
+<file name="data.txt" local="129678869250000000" remote="129810858600000000" testing="0" />
+<file name="BarHisto.java" local="129678869250000000" remote="129810858600000000" testing="0" />
+<file name="BinSelection070407.java" local="129678869250000000" remote="129810858600000000" testing="0" />
+<file name="bin_javascript.js" local="129678869210000000" remote="129810858600000000" testing="0" />
+<file name="DrawHistogram.java" local="129678869250000000" remote="129810858600000000" testing="0" />
+<file name="DemoHistogram.java" local="129678869250000000" remote="129810858600000000" testing="0" />
+<file name="DrawCostFunction.java" local="129678869210000000" remote="129810858600000000" testing="0" />
+<file name="oldfaithful.txt" local="129678869210000000" remote="129810858600000000" testing="0" />
+<file name="bin_ver000.js" local="129678869250000000" remote="129810858600000000" testing="0" />
+<file name="DrawHistogram$Graphs.class" local="129678869210000000" remote="129810858600000000" testing="0" />
+<file name="DrawHistogram.class" local="129678869250000000" remote="129810858600000000" testing="0" />
+<file name="DrawCostFunction.class" local="129678869250000000" remote="129810858600000000" testing="0" />
+<file name="Histogram.class" local="129678869250000000" remote="129810858600000000" testing="0" />
+<file name="Histogram$Graphs.class" local="129678869220000000" remote="129810858600000000" testing="0" />
+<file name="BinSelection.class" local="129678869220000000" remote="129810858600000000" testing="0" />
+<file name="BarHisto$Graphs.class" local="129678869210000000" remote="129810858600000000" testing="0" />
+<file name="BarHisto.class" local="129678869250000000" remote="129810858600000000" testing="0" />
 <file name=".project" local="127972064120000000" remote="129465601210000000" testing="0" />
 <file name=".classpath" local="127972064120000000" remote="129533856840000000" testing="0" />
 </dwsync>

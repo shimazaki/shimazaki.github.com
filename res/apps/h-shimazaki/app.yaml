@@ -1,0 +1,24 @@
+application: h-shimazaki
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: false
+
+libraries:
+- name: numpy
+  version: latest
+
+handlers:  
+ 
+- url: /stylesheets
+  static_dir: stylesheets
+  
+- url: /images
+  static_dir: images
+  
+- url: /(.*\.(gif|png|jpg|svg))
+  static_files: \1
+  upload: (.*\.(gif|png|jpg|svg))
+  
+- url: /.*
+  script: test.py
