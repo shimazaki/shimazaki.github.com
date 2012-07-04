@@ -1,35 +1,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-    <meta content="kernel density estimation,カーネル密度推定,直方图,直方图区间优化,核带宽优化" name="keywords" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="keywords" content="kernel density estimation,カーネル密度推定,直方图,直方图区间优化,核带宽优化" />
     <title>Kernel Bandwidth Optimization</title>
-    <link href="css/tool.css" rel="stylesheet" />
-    <script type="text/javascript" src="kernel.js"></script>
-    <script type="text/javascript" src="http://www.google-analytics.com/urchin.js">
-</script>
-    <script type="text/javascript">_uacct = "UA-745872-1"; urchinTracker();</script>
+    <link rel="stylesheet" href="css/tool.css" />
+    <script src="kernel.js" type="text/javascript"></script>
+    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script> <script type="text/javascript">_uacct = "UA-745872-1"; urchinTracker();</script>
     <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
     <!-- Local Javascript -->
     <!-- saved from url=(0013)about:internet -->
     <!-- Facebook Metadata -->
-    <meta content="Kernel Bandwidth Optimization" property="og:title" />
-    <meta content="H. Shimazaki" property="og:site_name" />
-    <meta content="http://web.mit.edu/hshimaza/www/res/sskernel/shimazaki_shinomoto_optmized_2d_kde.png"
-      property="og:image" />
+    <meta property="og:title" content="Kernel Bandwidth Optimization" />
+    <meta property="og:site_name" content="H. Shimazaki" />
+    <meta property="og:image" content="http://web.mit.edu/hshimaza/www/res/sskernel/shimazaki_shinomoto_optmized_2d_kde.png" />
     <style type="text/css">
 <!--
-.style26 {	background-color: #669966;
-	border-bottom-color: #663366;
-	text-decoration: none;
-	font-size: small;
-	color: #FFFFFF;
-}
 .style27 {
 	color: #FF0000;
 	font-weight: bold;
 }
-.style28 {background-color: #669966; border-bottom-color: #663366; text-decoration: none; font-size: small; color: #FFFFFF; font-weight: bold; }
 body,td,th {
 	font-family: Times New Roman, Times, serif;
 }
@@ -40,13 +31,10 @@ body,td,th {
 }
 .style36 {font-size: xx-large}
 .style37 {color: #DDDDDD}
-.style44 {font-family: "Times New Roman", Times, serif}
 .style43 {color: #CCCCCC}
 -->
-</style>
-  </head>
-  <body>
-    <a id="Top" name="Top"></a>
+    </style> </head>
+  <body> <a name="Top" id="Top"></a>
     <!-- BEGIN CONTENTS -->
     <div id="Contents">
       <table width="180" cellspacing="2" cellpadding="0" border="0">
@@ -55,56 +43,56 @@ body,td,th {
             <td valign="top" height="22"> </td>
           </tr>
           <tr>
-            <td valign="top" height="22"><a class="style9" href="#Top">KERNEL
+            <td valign="top" height="22"><a href="#Top" class="style9">KERNEL
                 METHOD </a></td>
           </tr>
           <tr>
-            <td valign="top"><a class="style9" href="#WebApp">- Web Application</a></td>
+            <td valign="top"><a href="#WebApp" class="style9">- Web Application</a></td>
           </tr>
           <tr>
-            <td valign="top"><a class="style9" href="#WebApp">- </a><a class="style9"
-                href="#Method">Optimization
-                Method</a><a class="style22 style23" target="_parent" href="../index.html"></a></td>
+            <td valign="top"><a href="#WebApp" class="style9">- </a><a href="#Method"
+                class="style9">Optimization
+                Method</a><a href="../index.html" target="_parent" class="style22 style23"></a></td>
           </tr>
           <tr>
-            <td valign="top"><a class="style9" href="#WebApp">- </a><a class="style9"
-                href="#Ref">Original
+            <td valign="top"><a href="#WebApp" class="style9">- </a><a href="#Ref"
+                class="style9">Original
                 paper </a></td>
           </tr>
           <tr>
-            <td valign="top"><a class="style9" href="#WebApp">- </a><a class="style9"
-                href="#FAQ">FAQ</a><a
-                class="style9"
-                href="#Scheme"></a></td>
+            <td valign="top"><a href="#WebApp" class="style9">- </a><a href="#FAQ"
+                class="style9">FAQ</a><a
+                href="#Scheme"
+                class="style9"></a></td>
           </tr>
           <tr>
-            <td valign="top"><a class="style9" href="#WebApp">- </a><a class="style9"
-                href="#Code">Matlab
-                Code </a><a class="style9" href="#Code"></a></td>
+            <td valign="top"><a href="#WebApp" class="style9">- </a><a href="#Code"
+                class="style9">Matlab
+                Code </a><a href="#Code" class="style9"></a></td>
           </tr>
           <tr>
-            <td valign="top"><a class="style9" href="#WebApp">- </a><a class="style9"
-                href="#Presentation">Presentation</a><a
-                class="style9"
-                href="#Code"></a></td>
+            <td valign="top"><a href="#WebApp" class="style9">- </a><a href="#Presentation"
+                class="style9">Presentation</a><a
+                href="#Code"
+                class="style9"></a></td>
           </tr>
           <tr>
             <td valign="top"> </td>
           </tr>
           <tr>
-            <td valign="top"><a class="style9" href="#WebApp"></a><a class="style9"
-                href="#Links">Links</a></td>
+            <td valign="top"><a href="#WebApp" class="style9"></a><a href="#Links"
+                class="style9">Links</a></td>
           </tr>
           <tr>
-            <td valign="top"><a class="style9" href="histogram.html">- Histogram
+            <td valign="top"><a href="histogram.html" class="style9">- Histogram
                 Optimization</a></td>
           </tr>
           <tr>
-            <td valign="top"><a class="style9" href="ssloglin/index.html">-
+            <td valign="top"><a href="ssloglin/index.html" class="style9">-
                 Dynamic Interactions </a></td>
           </tr>
           <tr>
-            <td valign="top"><a class="style9" href="../index.html">- HOME Page</a></td>
+            <td valign="top"><a href="../index.html" class="style9">- HOME Page</a></td>
           </tr>
           <tr>
             <td valign="top"> </td>
@@ -116,21 +104,23 @@ body,td,th {
                 height="260"
                 frameborder="0"
                 align="left"
-                marginwidth="0"
+                src="../tweet.html"
                 marginheight="0"
-                src="../tweet.html"></iframe>
+                marginwidth="0"></iframe>
             </td>
           </tr>
           <tr>
             <td valign="top" height="19"> </td>
           </tr>
           <tr>
-            <td valign="top" height="19"><img alt="H Shimazaki" src="http://www.gravatar.com/avatar/0c0e1f9cb353f991e194574730d4599d?s=100" /><span
+            <td valign="top" height="19"><img src="http://www.gravatar.com/avatar/0c0e1f9cb353f991e194574730d4599d?s=100"
+                alt="H Shimazaki" /><span
                 class="style4"><span
                   class="style1"><br />
                 </span></span>This page is managed by<br />
-              <span class="style4"><span class="style1"><a class="style22" target="_parent"
-                    href="../reroute.html">H.
+              <span class="style4"><span class="style1"><a href="../reroute.html"
+                    target="_parent"
+                    class="style22">H.
                     Shimazaki, PhD</a></span></span></td>
           </tr>
           <tr>
@@ -140,20 +130,15 @@ body,td,th {
             <td valign="top" height="50">
               <!-- AddThis Button BEGIN -->
               <div align="right" class="addthis_toolbox addthis_default_style">
-                <a addthis:description="This page INSTANTLY generates an optimized Kernel Density Estimate of YOUR DATA."
+                <a href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcb0477f5f1b02"
                   class="addthis_button_compact"
-                  href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcb0477f5f1b02">Share</a>
-                <span class="addthis_separator">|</span>
-                <a addthis:description="This page INSTANTLY generates an optimized Kernel Density Estimate of YOUR DATA."
-                  class="addthis_button_delicious"></a>
-                <a addthis:description="This page INSTANTLY generates an optimized Kernel Density Estimate of YOUR DATA."
-                  class="addthis_button_myspace"></a>
-                <a addthis:description="This page INSTANTLY generates an optimized Kernel Density Estimate of YOUR DATA."
-                  class="addthis_button_google"></a>
-                <a addthis:description="This page INSTANTLY generates an optimized Kernel Density Estimate of YOUR DATA."
-                  class="addthis_button_facebook"></a></div>
-              <script src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcb0477f5f1b02"
-type="text/javascript"></script>
+                  addthis:description="This page INSTANTLY generates an optimized Kernel Density Estimate of YOUR DATA.">Share</a>
+                <span class="addthis_separator">|</span> <a class="addthis_button_delicious"
+                  addthis:description="This page INSTANTLY generates an optimized Kernel Density Estimate of YOUR DATA."></a>
+                <a class="addthis_button_myspace" addthis:description="This page INSTANTLY generates an optimized Kernel Density Estimate of YOUR DATA."></a>
+                <a class="addthis_button_google" addthis:description="This page INSTANTLY generates an optimized Kernel Density Estimate of YOUR DATA."></a>
+                <a class="addthis_button_facebook" addthis:description="This page INSTANTLY generates an optimized Kernel Density Estimate of YOUR DATA."></a></div>
+              <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcb0477f5f1b02"></script>
               <!-- AddThis Button END --> </td>
           </tr>
           <tr>
@@ -172,9 +157,11 @@ type="text/javascript"></script>
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-              <div data-font="arial" data-show-faces="true" data-width="175" data-send="false"
-                data-href="http%3A%2F%2F2000.jukuin.keio.ac.jp%2Fshimazaki%2Fres%2Fkernel.html"
-                class="fb-like"></div>
+              <div class="fb-like" data-href="http%3A%2F%2F2000.jukuin.keio.ac.jp%2Fshimazaki%2Fres%2Fkernel.html"
+                data-send="false"
+                data-width="175"
+                data-show-faces="true"
+                data-font="arial"></div>
             </td>
           </tr>
           <tr>
@@ -209,15 +196,15 @@ type="text/javascript"></script>
       <tbody>
         <tr>
           <td nowrap="nowrap" height="" bgcolor="#330033" bordercolor="#FFFFFF">
-            <div align="right"><a class="style37" href="histogram.html"><strong>Histogram
+            <div align="right"><a href="histogram.html" class="style37"><strong>Histogram
                   Optimization</strong></a> <span class="style29">|</span> <a
-                class="style37"
-                href="kernel.html">Kernel
+                href="kernel.html"
+                class="style37">Kernel
                 Optimization</a> <span class="style29">|</span><span class="style23 style38">
-                <a class="style37" href="ssloglin/index.html">Dynamic
+                <a href="ssloglin/index.html" class="style37">Dynamic
                   Interactions</a></span> <span class="style29">|</span><span class="style43 style23">
                 Last Update
-                <!-- #BeginDate format:IS1m -->2012-05-15  12:48<!-- #EndDate -->
+                <!-- #BeginDate format:IS1m -->2012-06-13  16:50<!-- #EndDate -->
               </span> <span class="style29">|</span> </div>
           </td>
         </tr>
@@ -231,13 +218,13 @@ type="text/javascript"></script>
           </td>
           <td width="120" nowrap="nowrap"><!-- FACEBOOK --> <iframe scrolling="no"
               frameborder="0"
-              style="border:none; overflow:hidden; width:110px; height:20px"
+              src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2F2000.jukuin.keio.ac.jp%2Fshimazaki%2Fres%2Fkernel.html&amp;layout=button_count&amp;show_faces=false&amp;width=180&amp;action=like&amp;colorscheme=dark"
               allowtransparency="true"
-              src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2F2000.jukuin.keio.ac.jp%2Fshimazaki%2Fres%2Fkernel.html&amp;layout=button_count&amp;show_faces=false&amp;width=180&amp;action=like&amp;colorscheme=dark"></iframe>
+              style="border:none; overflow:hidden; width:110px; height:20px"></iframe>
           </td>
           <td width="80" nowrap="nowrap"><!-- Google -->
-            <!-- Place this tag where you want the +1 button to render -->
-            <g:plusone size="medium"></g:plusone>
+            <!-- Place this tag where you want the +1 button to render --> <g:plusone
+              size="medium"></g:plusone>
             <!-- Place this render call where appropriate -->
             <script type="text/javascript">
   (function() {
@@ -246,13 +233,13 @@ type="text/javascript"></script>
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 </script></td>
-          <td width="80" nowrap="nowrap"><!-- TWITTER -->
-            <a data-related="H_Shimazaki:Japanese tweets from author." data-via="statneuro"
-              data-count="horizontal"
+          <td width="80" nowrap="nowrap"><!-- TWITTER --> <a href="http://twitter.com/share"
               class="twitter-share-button"
-              href="http://twitter.com/share">
+              data-count="horizontal"
+              data-via="statneuro"
+              data-related="H_Shimazaki:Japanese tweets from author.">
               Tweet</a>
-            <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script></td>
+            <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></td>
         </tr>
       </tbody>
     </table>
@@ -274,18 +261,17 @@ type="text/javascript"></script>
         </tr>
       </tbody>
     </table>
-    <h2><a id="WebApp" name="WebApp"></a>Optimize Density Profile of Your Data</h2>
+    <h2><a name="WebApp" id="WebApp"></a>Optimize Density Profile of Your Data</h2>
     <table width="700" height="138" cellpadding="10" border="0" bgcolor="#ECE9D8">
       <tbody>
         <tr>
           <td>
             <div align="center">Web Application for Kernel Bandwidth
               Optimization (Ver. 0.4) </div>
-            <form id="DATAFORM" name="DATAFORM"> <strong>1. Copy&amp;Paste your
+            <form name="DATAFORM" id="DATAFORM"> <strong>1. Copy&amp;Paste your
                 data</strong>
-              <div align="center"> <textarea onkeyup="PostData();" wrap="off" cols="65"
-                  rows="9"
-                  name="TEXT">
+              <div align="center"> <textarea name="TEXT" rows="9" cols="65" wrap="off"
+                  onkeyup="PostData();">
 4.37 3.87 4.00 4.03 3.50 4.08 2.25 4.70 1.73 4.93 1.73 4.62
 3.43 4.25 1.68 3.92 3.68 3.10 4.03 1.77 4.08 1.75 3.20 1.85
 4.62 1.97 4.50 3.92 4.35 2.33 3.83 1.88 4.60 1.80 4.73 1.77
@@ -297,21 +283,20 @@ type="text/javascript"></script>
 4.07 4.13 3.95 4.10 2.72 4.58 1.90 4.50 1.95 4.83 4.12</textarea><br />
                 <strong>
                   <div>
-                    <div align="right"> <input type="reset" value="Reset" name="reset" />
+                    <div align="right"> <input type="reset" name="reset" value="Reset" />
                     </div>
                   </div>
                 </strong></div>
             </form>
-            <p><strong>2.</strong> <input type="button" language="JavaScript" onclick="PostData(); raster(DATA); density(); t=xaxis(); alert('The optimal kernel width is '  + optw.toPrecision(3)); javascript:urchinTracker ('/kernel/optimization');"
-                value="PRESS HERE to Calculate the Optimal Bandwidth"
-                name="Button" />
+            <p><strong>2.</strong> <input type="button" name="Button" value="PRESS HERE to Calculate the Optimal Bandwidth"
+                onclick="PostData(); raster(DATA); density(); t=xaxis(); alert('The optimal kernel width is '  + optw.toPrecision(3)); javascript:urchinTracker ('/kernel/optimization');"
+                language="JavaScript" />
             </p>
-            <div align="center"> <canvas height="300" width="500" id="Canvas"></canvas>
-              <canvas height="20" width="500" id="Raster"></canvas> </div>
+            <div align="center"> <canvas id="Canvas" width="500" height="300"></canvas>
+              <canvas id="Raster" width="500" height="20"></canvas> </div>
             <p></p>
-            <p><strong>3.</strong> <input type="button" value="Data Sheet of the Optimized Density Estimation"
-                onclick="Results_In_Window(); javascript:urchinTracker ('/kernel/datasheet');"
-                name="button" />
+            <p><strong>3.</strong> <input type="button" name="button" onclick="Results_In_Window(); javascript:urchinTracker ('/kernel/datasheet');"
+                value="Data Sheet of the Optimized Density Estimation" />
             </p>
             <hr />
             <p>* The Gauss kernel density was used. Its standard deviation is
@@ -329,7 +314,7 @@ type="text/javascript"></script>
     </table>
     <p><br />
     </p>
-    <h2><a id="Method" name="Method"></a>Kernel Bandwidth Optimization Method </h2>
+    <h2><a name="Method" id="Method"></a>Kernel Bandwidth Optimization Method </h2>
     <table width="700" height="138" cellpadding="0" border="0" bgcolor="#ECE9D8">
       <tbody>
         <tr>
@@ -344,8 +329,8 @@ type="text/javascript"></script>
                 a formula, </span>
               <div align="center" class="style4">
                 <!-- MATH
- \begin{displaymath}\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and }  \displaystyle s^2 \equiv \frac{1}{N-1} \sum_{i=1}^{N} (k_i-\bar{k})^2.
-\end{displaymath} --> <img width="384" height="51" src="sskernel/sskernel_costfunction.gif" /></div>
+ \begin{displaymath}\bar{k} \equiv \frac{1}{N} \sum_{i=1}^{N} k_i \mbox{, and }  \displaystyle s^2 \equiv \frac{1}{N-1} \sum_{i=1}^{N} (k_i-\bar{k})^2.\end{displaymath} -->
+                <img width="384" height="51" src="sskernel/sskernel_costfunction.gif" /></div>
               <p><span class="style4"><strong>III.</strong></span> <span class="style4">Find
                   <img width="17" height="13" src="sskernel/w_star.gif" /> that
                   minimizes <img align="bottom" src="sskernel/C.gif" /></span>
@@ -362,38 +347,96 @@ type="text/javascript"></script>
       </tbody>
     </table>
     <p> </p>
-    <h3><a id="Ref" name="Ref"></a>Original paper </h3>
+    <h2>Locally Adaptive Kernel Bandwidth Optimization Method </h2>
+    <table width="700" height="138" cellpadding="0" border="0" bgcolor="#ECE9D8">
+      <tbody>
+        <tr>
+          <td><blockquote>
+            <p>In the referenced paper, we developed a locally adaptive bandwidth optimization method. </p>
+            <p>The locally adaptive bandwidth is obtained by iteratively computing  optimal bandwidths wihtihn local intervals using the algorithm above. In this approach, the local interval length is a critical  parameter that determines the smoothness of bandwidth, and therefore goodness-of-fit of the density estimate. We suggested,  at every points of estimation, to select the interval length such that the locally optimal bandwidth covers \gamma *100 % of the interval length (0&lt;\gamma&lt;=1).  In other words, the selected bandwidth, w, is optimal as evaluated within the local interval  of the length w /  \gamma . The parameter, \gamma, serves as a smoothness (or stiffness) parameter of the variable bandwidth just like the bandwidth is the smoothness parameter of the estimated density. The stiffness constant, \gamma, is optimized by minimizing the L2 risk estimate.</p>
+            <p>Example: An underlying densityi is a mixture of two normal densities and an exponential density. </p>
+            <p><img src="sskernel/ssvkernel.png" width="542" height="413" />'</p>
+            <p>A Matlab code for locally adaptive kernel method is available below. </p>
+          </blockquote></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <h3><a name="Ref" id="Ref"></a>Original paper </h3>
     <table width="700" height="36" cellpadding="10" border="0" bgcolor="#ECE9D8">
       <tbody>
         <tr>
-          <td height="30">
-            <p>From the observed data only, the method estimates a binwidth that
-              minimizes expected L2 loss between the kernel density estimate and
-              an unknown underlying density function. An assumption made here is
-              merely that samples are drawn from the density independently each
-              other.</p>
-            <p>The method was developed in collaboration with Prof. Shinomoto in
-              Kyoto University. </p>
-            <p><strong><img width="40" height="15" border="0" align="bottom" src="icons/pdf.gif" />
-                Shimazaki H. and Shinomoto S., Kernel Bandwidth Optimization in
-                Spike Rate Estimation. <em> Journal of Computational
+          <td height="30"><p><strong><img width="40" height="15" border="0" align="bottom" src="icons/pdf.gif" />
+              Shimazaki H. and Shinomoto S., Kernel Bandwidth Optimization in
+              Spike Rate Estimation. <em> Journal of Computational
                   Neuroscience</em> (2010) Vol. 29 (1-2) 171-182</strong>
-              doi:10.1007/s10827-009-0180-4 [<span class="style27">Open Access</span>:
-              <a onclick="javascript:urchinTracker ('/downloads/sskernel.pdf');"
-                href="http://www.springerlink.com/content/g22785288648l239/fulltext.pdf">PDF</a>,
-              <a onclick="javascript:urchinTracker ('/downloads/sskernel.pdf');"
-                href="http://dx.doi.org/10.1007/s10827-009-0180-4">LINK</a>]</p>
+            doi:10.1007/s10827-009-0180-4 [<span class="style27">Open Access</span>:
+              <a href="http://www.springerlink.com/content/g22785288648l239/fulltext.pdf"
+                onclick="javascript:urchinTracker ('/downloads/sskernel.pdf');">PDF</a>,
+              <a href="http://dx.doi.org/10.1007/s10827-009-0180-4" onclick="javascript:urchinTracker ('/downloads/sskernel.pdf');">LINK</a>]</p>
             <p><strong><img width="40" height="15" border="0" align="bottom" src="icons/pdf.gif" /></strong>
-              <a onclick="javascript:urchinTracker ('/downloads/sskernel.ppt');"
-                target="_blank"
-                href="ppt/histogram-kernel_optimization.pdf"><strong>Presentation
+              <a href="ppt/histogram-kernel_optimization.pdf" target="_blank" onclick="javascript:urchinTracker ('/downloads/sskernel.ppt');"><strong>Presentation
                   Slides</strong></a> </p>
           </td>
         </tr>
       </tbody>
-    </table>
+  </table>
     <p> </p>
-    <h2><a id="FAQ" name="FAQ"></a>FAQ</h2>
+    <h2><a name="Code" id="Code"></a>Code </h2>
+    <table width="700" height="62" cellpadding="10" border="0" bgcolor="#ECE9D8">
+      <tbody>
+        <tr>
+          <td height="58"><p class="style4"><strong>Kernel density estimation by a fixed bandwidth </strong></p>
+            <p class="style4">Matlab code: <a href="code/sskernel.m">sskernel.m</a></p>
+            <p class="style4">Function `sskernel' returns optimal bandwidth
+                (standard deviation) of the Gauss kernel function used in kernel
+                density estimation.</p>
+            <p class="style4"><strong>Locally adaptive kernel density estimation</strong></p>
+            <p class="style4">Matlab code: <a href="code/sskernel.m">ssvkernel.m</a></p>
+            <p class="style4">Function `ssvkernel' returns an optimized kernel density estimate using a Gauss kernel function with bandwidths locally adapted to the data.</p>
+            <p class="style4"><a href="code/tutorial.m">tutorial.m</a></p>
+            <p class="style4"> <img
+                  src="icons/Octocats/Octocat.png" alt="GitHub" width="122" height="122" align="middle" />The codes are  available at GitHub. <a href="http://github.com/shimazaki/density_estimation">http://github.com/shimazaki/density_estimation</a><br />
+            </p>
+            <p class="style4">Experimental Julia code:  <a href="julia/index.html">here</a>. <br />
+            </p></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <h2><a name="Presentation" id="Presentation"></a>Presentation</h2>
+    <table width="700" height="62" cellpadding="10" border="0" bgcolor="#ECE9D8">
+      <tbody>
+        <tr>
+          <td height="58"><p align="center" class="style4">
+              <object width="670" height="600"
+                id="doc_62829"
+                name="doc_62829"
+                type="application/x-shockwave-flash"
+                data="http://d1.scribdassets.com/ScribdViewer.swf"
+                style="outline:none;">
+                <param name="movie" value="http://d1.scribdassets.com/ScribdViewer.swf" />
+                <param name="wmode" value="opaque" />
+                <param name="bgcolor" value="#ffffff" />
+                <param name="allowFullScreen" value="true" />
+                <param name="allowScriptAccess"
+                  value="always" />
+                <param name="FlashVars" value="document_id=46152083&amp;access_key=key-nlr8jr7whc25spzh8h0&amp;page=1&amp;viewMode=slideshow" />
+                <embed width="670" height="600" id="doc_62829" name="doc_62829"
+                  src="http://d1.scribdassets.com/ScribdViewer.swf?document_id=46152083&amp;access_key=key-nlr8jr7whc25spzh8h0&amp;page=1&amp;viewMode=slideshow"
+                  type="application/x-shockwave-flash"
+                  allowscriptaccess="always"
+                  allowfullscreen="true"
+                  wmode="opaque"
+                  bgcolor="#ffffff" /></embed>
+                </embed>
+              </object>
+          </p></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <h2><a name="FAQ" id="FAQ"></a>FAQ</h2>
     <table width="700" height="62" cellpadding="10" border="0" bgcolor="#ECE9D8">
       <tbody>
         <tr>
@@ -418,10 +461,10 @@ type="text/javascript"></script>
             <p>Q. Can I use the method for the 2-dimensional density estimation?</p>
             <p>A. Yes. The same optimization formula can be used in 2-d density
               estimation. Specifically, the formula for two dimensional vector
-              data <img width="65" height="16" alt="x" src="sskernel/2d_x.gif" />
+              data <img width="65" height="16" src="sskernel/2d_x.gif" alt="x" />
               is given by </p>
-            <p align="center"><img width="435" height="53" alt="2d kernel cost"
-                src="sskernel/2d_cost.gif" /></p>
+            <p align="center"><img width="435" height="53" src="sskernel/2d_cost.gif"
+                alt="2d kernel cost" /></p>
             <p align="left">Here the kernel function is defined in 2-dimension.
               For example, the 2-d (symmetric) Gauss kernel is defined as</p>
             <p align="center"> <img width="201" height="39" src="sskernel/2d_gauss.gif" /></p>
@@ -430,8 +473,8 @@ type="text/javascript"></script>
             <p align="left"> An example of the optimized 2d kernel density
               estimate is displayed below. </p>
             <p align="center"><img width="287" height="125" src="sskernel/shimazaki_shinomoto_optmized_2d_kde.png" /></p>
-            <p align="left">Here are the example matlab code <a onclick="javascript:urchinTracker ('/downloads/Demo_sskernel2d.m');"
-                href="code/sskernel2d_demo.m">sskernel2d_demo.m</a>
+            <p align="left">Here are the example matlab code <a href="code/sskernel2d_demo.m"
+                onclick="javascript:urchinTracker ('/downloads/Demo_sskernel2d.m');">sskernel2d_demo.m</a>
               and <a href="code/oldfaithful.txt">data</a>. </p>
             <p align="left">Note: if you have two dimensional variables with
               different dynamic ranges, it should be careful to use the
@@ -439,12 +482,6 @@ type="text/javascript"></script>
               optimize two-parameters kernel, or ii) optimize the one-parameter
               kernel using the standardized data, for example, by dividing the
               data by standard deviations of each component. </p>
-            <hr />
-            <p align="left"><span class="style4">Q. Is the variable bandwidth
-                kernel available?</span></p>
-            <p align="left"><span class="style4">A. A matlab code for the
-                Variable Kernel Bandwidth Optimization in the original paper is
-                under preparation. </span></p>
             <hr />
             <p>Q. Can I compare the goodness-of-fit of kernel density estimate
               with that of a histogram?</p>
@@ -454,77 +491,23 @@ type="text/javascript"></script>
               histogram cost function as T*C(D)+K^2/T, where K is the total
               number of samples, and T is the observation length. </p>
             <p align="left"> </p>
-            <hr />
-            The FAQ includes my (HS) opinion. They are not opinions neither by
-            my collaborators nor institutions I belong to. <span class="style22"><a
-                class="style22"
-                href="#Top"></a></span>
+            <hr /> The FAQ includes my (HS) opinion. They are not opinions
+            neither by my collaborators nor institutions I belong to. <span class="style22"><a
+                href="#Top"
+                class="style22"></a></span>
           </td>
         </tr>
       </tbody>
     </table>
+    <p>&nbsp;</p>
     <p> </p>
-    <h2><a id="Code" name="Code"></a>Code </h2>
-    <table width="700" height="62" cellpadding="10" border="0" bgcolor="#ECE9D8">
-      <tbody>
-        <tr>
-          <td height="58">
-            <p class="style4">Matlab code: <a href="code/sskernel.m">sskernel.m</a></p>
-            <p class="style4">Function `sskernel' returns optimal bandwidth
-              (standard deviation) of the Gauss kernel function used in kernel
-              density estimation.</p>
-            <p class="style4">optW = sskernel(x); ksdensity(x,'width',optW);</p>
-            <p class="style4"> Statitics Toolbox is required to execute
-              ksdensity. If it is not available, define the Gauss function as<br />
-              `Gauss = @(s,w) 1/sqrt(2*pi)/w*exp(-s.^2/2/w^2);'. Computing
-              `mean( Gauss(x-s,optW) )' provides kernel estimate at s. <br />
-            </p>
-            <p class="style4"><br />
-            </p>
-            <p class="style4">Julia code: Please visit <a href="file:///Users/hideaki/Dropbox/www/res/janes/index.html">here</a>.
-              <br />
-            </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <h2> </h2>
-    <h2><a id="Presentation" name="Presentation"></a>Presentation</h2>
-    <table width="700" height="62" cellpadding="10" border="0" bgcolor="#ECE9D8">
-      <tbody>
-        <tr>
-          <td height="58">
-            <p align="center" class="style4"> <object width="670" height="600"
-                style="outline:none;"
-                data="http://d1.scribdassets.com/ScribdViewer.swf"
-                type="application/x-shockwave-flash"
-                name="doc_62829"
-                id="doc_62829">
-                <param value="http://d1.scribdassets.com/ScribdViewer.swf" name="movie" />
-                <param value="opaque" name="wmode" /> <param value="#ffffff" name="bgcolor" />
-                <param value="true" name="allowFullScreen" /> <param value="always"
-                  name="allowScriptAccess" />
-                <param value="document_id=46152083&amp;access_key=key-nlr8jr7whc25spzh8h0&amp;page=1&amp;viewMode=slideshow"
-                  name="FlashVars" />
-                <embed width="670" height="600" bgcolor="#ffffff" wmode="opaque"
-                  allowfullscreen="true"
-                  allowscriptaccess="always"
-                  type="application/x-shockwave-flash"
-                  src="http://d1.scribdassets.com/ScribdViewer.swf?document_id=46152083&amp;access_key=key-nlr8jr7whc25spzh8h0&amp;page=1&amp;viewMode=slideshow"
-                  name="doc_62829"
-                  id="doc_62829" />
-              </object> </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <p> </p>
-    <h2><a id="Links" name="Links"></a>Links</h2>
+    <h2><a name="Links" id="Links"></a>Links</h2>
     <table width="700" height="36" cellpadding="10" border="0" bgcolor="#ECE9D8">
       <tbody>
         <tr>
           <td height="30">
-            <p>External Links </p>
+            <p>The method was developed in collaboration with Prof. Shinomoto in
+            Kyoto University. </p>
             <p><a href="http://www.ton.scphys.kyoto-u.ac.jp/%7Eshino/toolbox/english.htm">Other
                 applications for analyzing spike data: <strong>SULAB</strong></a>
               ( <a href="http://www.ton.scphys.kyoto-u.ac.jp/%7Eshino/">Prof.
