@@ -34,17 +34,21 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
     <a name=top id=top> </a>
     <div id=NaviLayer>  
     <table width=180 border=0 cellpadding=0 cellspacing=0>
-    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
-    <tr><td height=28 valign=top><b>Spike Density Estimation</b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../histogram.html>Histogram Method</a></b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../kernel.html>Kernel Method</a></b></td></tr>
+    <tr><td height=8 valign=top><b>Tweet this page</b></td></tr>
+    <tr><td height=8 valign=top><a href=http://twitter.com/share class=twitter-share-button data-count=horizontal data-via=computneuro data-related="statneuro:Japanese tweets from author.">Tweet</a><script type=text/javascript src=http://platform.twitter.com/widgets.js></script></td></tr>
     <tr><td height=8 valign=top></td></tr>
     <tr><td height=8 valign=top><b>Share it with your friend</b></td></tr>
     <tr><td valign=top><a class=addthis_button href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcbd554189b9a7"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width=125 height=16 alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcbd554189b9a7"></script></td></tr>
     <tr><td height=8 valign=top></td></tr>
-    <tr><td height=8 valign=top><b>Tweet</b></td></tr>
-    <tr><td valign=top><iframe src=../../tweet.html width=180 height=600 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
-    <tr><td height=28 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Tweet by author</b></td></tr>
+    <tr><td valign=top><iframe src=../../tweetjp.html width=180 height=260 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=28 valign=top><b><a href=index.html>スパイク統計モデル入門 トップ</a></b></td><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=28 valign=top><b>スパイク密度推定</b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../histogram.html>ヒストグラム法</a></b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../kernel.html>カーネル法</a></b></td></tr>
+    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
     </table></div>
 <!--Navigation Panel-->
 <A NAME="tex2html352"
@@ -119,28 +123,28 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <P>
 非定常リニューアル過程は変動ポアソン過程の場合を拡張して考えるとわかりやすい. 非定常ポアソン過程と同様に時間伸縮した軸上で定常リニューアル過程を考える. 例として<IMG
  WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img236.gif"
+ SRC="img245.gif"
  ALT="$ \Lambda$">上の定常ガンマ過程を考え, そのイベント系列を<!-- MATH
- $\left\{  \Lambda_{1},\Lambda_{2}%
-,\cdots\right\}$
+ $\left\{  \Lambda_{1},\Lambda_{2},\cdots\right\}$
  -->
 <IMG
  WIDTH="92" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img292.gif"
- ALT="$ \left\{ \Lambda_{1},\Lambda_{2}%
-,\cdots\right\} $">とする. イベント間隔<!-- MATH
+ SRC="img250.gif"
+ ALT="$ \left\{ \Lambda_{1},\Lambda_{2},\cdots\right\}
+$">とする. イベント間隔<!-- MATH
  $\Lambda_{i}-\Lambda_{i-1}$
  -->
 <IMG
  WIDTH="72" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img242.gif"
+ SRC="img251.gif"
  ALT="$ \Lambda_{i}-\Lambda_{i-1}$">が平均が<IMG
  WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img216.gif"
+ SRC="img225.gif"
  ALT="$ 1$">, 分散が<IMG
  WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img293.gif"
- ALT="$ 1/\kappa$">である標準ガンマ分布<!-- MATH
+ SRC="img300.gif"
+ ALT="$ 1/\kappa$">である標準ガンマ分布
+<!-- MATH
  \begin{displaymath}
 g\left(  z;\kappa\right)  =\frac{1}{\Gamma\left(  \kappa\right)  }%
 \kappa\left(  \kappa z\right)  ^{\kappa-1}e^{-\kappa z}%
@@ -150,7 +154,7 @@ g\left(  z;\kappa\right)  =\frac{1}{\Gamma\left(  \kappa\right)  }%
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="212" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img295.gif"
+ SRC="img302.gif"
  ALT="$\displaystyle g\left( z;\kappa\right) =\frac{1}{\Gamma\left( \kappa\right) }%
 \kappa\left( \kappa z\right) ^{\kappa-1}e^{-\kappa z}%
 $">
@@ -160,35 +164,34 @@ $">
  HREF="node15.html#Barbieri01">Barbieri et&nbsp;al., 2001</A>].
 <IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img68.gif"
- ALT="$ \kappa$">はshape parameter<A NAME="884"></A>と呼ばれる. 実時間との対応は<!-- MATH
+ SRC="img72.gif"
+ ALT="$ \kappa$">はshape parameter<A NAME="917"></A>と呼ばれる. 実時間との対応は<!-- MATH
  $\Lambda_{i}=\Lambda\left(
 t_{i}\right)$
  -->
 <IMG
  WIDTH="79" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img244.gif"
+ SRC="img253.gif"
  ALT="$ \Lambda_{i}=\Lambda\left(
-t_{i}\right) $">だから, ガンマ分布に従う乱数を発生させ, 変数変換の公式<!-- MATH
+t_{i}\right) $">だから, ガンマ分布に従う乱数を発生させ, 変数変換の公式
+<!-- MATH
  \begin{displaymath}
 z\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  =\Lambda\left(
-t_{i}\right)  -\Lambda\left(  t_{i-1}\right)  =\int_{t_{i-1}}^{t_{i}}%
-\lambda\left(  u\right)  du
+t_{i}\right)  -\Lambda\left(  t_{i-1}\right)  =\int_{t_{i-1}}^{t_{i}} \lambda\left(  u\right)  du
 \end{displaymath}
  -->
 <P></P>
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="369" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
- SRC="img296.gif"
+ SRC="img303.gif"
  ALT="$\displaystyle z\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) =\Lambd...
-...Lambda\left( t_{i-1}\right) =\int_{t_{i-1}}^{t_{i}}%
-\lambda\left( u\right) du
+...\Lambda\left( t_{i-1}\right) =\int_{t_{i-1}}^{t_{i}} \lambda\left( u\right) du
 $">
 </DIV><P></P>
 を満たす<IMG
  WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img246.gif"
+ SRC="img255.gif"
  ALT="$ t_{i}$">を逐次的に求めれば, 実時間でのスパイク時系列を求めることができる.
 
 <P>
@@ -199,7 +202,7 @@ $">
 
 <P>
 
-<H3><A NAME="SECTION02222100000000000000"></A><A NAME="897"></A>
+<H3><A NAME="SECTION02222100000000000000"></A><A NAME="930"></A>
 <BR>
 ガンマ分布
 </H3>
@@ -211,7 +214,7 @@ _{t}\right\}  \right)$
  -->
 <IMG
  WIDTH="108" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img297.gif"
+ SRC="img304.gif"
  ALT="$ p\left( t_{i}\vert t_{i-1},\left\{ \lambda
 _{t}\right\} \right) $">を求めよう.
 分布<!-- MATH
@@ -219,27 +222,25 @@ _{t}\right\} \right) $">を求めよう.
  -->
 <IMG
  WIDTH="108" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img297.gif"
+ SRC="img304.gif"
  ALT="$ p\left( t_{i}\vert t_{i-1},\left\{ \lambda
 _{t}\right\} \right) $">は次のような<IMG
  WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img246.gif"
+ SRC="img255.gif"
  ALT="$ t_{i}$">から<IMG
  WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img298.gif"
- ALT="$ z$">への変数変換（タイムリスケーリング）を施すことで,
-標準ガンマ分布になるとする. すなわち,
-変数変換の公式から<!-- MATH
+ SRC="img305.gif"
+ ALT="$ z$">への変数変換（タイムリスケーリング）を施すことで, 標準ガンマ分布になるとする. すなわち, 変数変換の公式から
+<!-- MATH
  \begin{displaymath}
-g\left(  z|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  =\left\vert \frac{dz}%
-{dt}\right\vert ^{-1}p\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
+g\left(  z|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  =\left\vert \frac{dz}{dt}\right\vert ^{-1}p\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
 \end{displaymath}
  -->
 <P></P>
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="318" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img299.gif"
+ SRC="img306.gif"
  ALT="$\displaystyle g\left( z\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) =\left\vert...
 ...{dt}\right\vert ^{-1}p\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
 $">
@@ -249,17 +250,17 @@ $">
  -->
 <IMG
  WIDTH="104" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img300.gif"
+ SRC="img307.gif"
  ALT="$ dz/dt_{i}=\lambda\left( t_{i}\right) $">に注意して<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="127" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img253.gif"
+ SRC="img262.gif"
  ALT="$\displaystyle p\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="177" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img301.gif"
+ SRC="img308.gif"
  ALT="$\displaystyle =\left\vert \frac{dz}{dt_{i}}\right\vert g\left( z\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -267,7 +268,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="415" HEIGHT="70" ALIGN="MIDDLE" BORDER="0"
- SRC="img302.gif"
+ SRC="img309.gif"
  ALT="$\displaystyle =\lambda\left( t_{i}\right) \frac{1}{\Gamma\left( \kappa\right) }...
 ...appa-1}\exp\left[ -\kappa\int_{t_{i-1}}^{t_{i}}\lambda\left( u\right) du\right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -278,7 +279,7 @@ $">
 
 <P>
 
-<H3><A NAME="SECTION02222200000000000000"></A><A NAME="937"></A>
+<H3><A NAME="SECTION02222200000000000000"></A><A NAME="970"></A>
 <BR>
 ワイブル分布
 </H3>
@@ -286,16 +287,17 @@ $">
 <P>
 平均<IMG
  WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img216.gif"
+ SRC="img225.gif"
  ALT="$ 1$">・分散<!-- MATH
  $\Gamma\left(  1+2/\kappa\right)
 /\Gamma\left(  1+1/\kappa\right)  ^{2}-1$
  -->
 <IMG
  WIDTH="204" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img303.gif"
+ SRC="img310.gif"
  ALT="$ \Gamma\left( 1+2/\kappa\right)
-/\Gamma\left( 1+1/\kappa\right) ^{2}-1$">の標準ワイブル分布は<!-- MATH
+/\Gamma\left( 1+1/\kappa\right) ^{2}-1$">の標準ワイブル分布は
+<!-- MATH
  \begin{displaymath}
 g\left(  z;\kappa\right)  =\kappa\Gamma\left(  1+1/\kappa\right)  \left\{
 \Gamma\left(  1+1/\kappa\right)  t\right\}  ^{\kappa-1}\exp\left[  -\left\{
@@ -306,7 +308,7 @@ g\left(  z;\kappa\right)  =\kappa\Gamma\left(  1+1/\kappa\right)  \left\{
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="452" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img304.gif"
+ SRC="img311.gif"
  ALT="$\displaystyle g\left( z;\kappa\right) =\kappa\Gamma\left( 1+1/\kappa\right) \le...
 ...}\exp\left[ -\left\{
 \Gamma\left( 1+1/\kappa\right) t\right\} ^{\kappa}\right]
@@ -317,17 +319,18 @@ $">
  -->
 <IMG
  WIDTH="104" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img300.gif"
- ALT="$ dz/dt_{i}=\lambda\left( t_{i}\right) $">に注意して<P></P>
+ SRC="img307.gif"
+ ALT="$ dz/dt_{i}=\lambda\left( t_{i}\right) $">に注意して
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="127" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img253.gif"
+ SRC="img262.gif"
  ALT="$\displaystyle p\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="177" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img301.gif"
+ SRC="img308.gif"
  ALT="$\displaystyle =\left\vert \frac{dz}{dt_{i}}\right\vert g\left( z\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -335,7 +338,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="368" HEIGHT="70" ALIGN="MIDDLE" BORDER="0"
- SRC="img305.gif"
+ SRC="img312.gif"
  ALT="$\displaystyle =\lambda\left( t_{i}\right) \kappa\Gamma\left( 1+1/\kappa\right) ...
 ...appa\right) \int_{t_{i-1}}^{t_{i}}\lambda\left( u\right) du\right\} ^{\kappa-1}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -344,7 +347,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="275" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
- SRC="img306.gif"
+ SRC="img313.gif"
  ALT="$\displaystyle \cdot\exp\left[ -\left\{ \Gamma\left( 1+1/\kappa\right) \int_{t_{i-1}%
 }^{t_{i}}\lambda\left( u\right) du\right\} ^{\kappa}\right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -355,7 +358,7 @@ $">
 
 <P>
 
-<H3><A NAME="SECTION02222300000000000000"></A><A NAME="961"></A>
+<H3><A NAME="SECTION02222300000000000000"></A><A NAME="994"></A>
 <BR>
 逆ガウス分布
 </H3>
@@ -363,11 +366,12 @@ $">
 <P>
 同様にして, 逆ガウス分布に従うリニューアル過程は, 平均<IMG
  WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img216.gif"
+ SRC="img225.gif"
  ALT="$ 1$">・分散<IMG
  WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img293.gif"
- ALT="$ 1/\kappa$">の標準逆ガウス分布<!-- MATH
+ SRC="img300.gif"
+ ALT="$ 1/\kappa$">の標準逆ガウス分布
+<!-- MATH
  \begin{displaymath}
 g\left(  z;\kappa\right)  =\sqrt{\frac{\kappa}{2\pi z^{3}}}\exp\left[
 -\frac{\kappa}{2z}\left(  z-1\right)  ^{2}\right]
@@ -377,21 +381,22 @@ g\left(  z;\kappa\right)  =\sqrt{\frac{\kappa}{2\pi z^{3}}}\exp\left[
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="260" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
- SRC="img307.gif"
+ SRC="img314.gif"
  ALT="$\displaystyle g\left( z;\kappa\right) =\sqrt{\frac{\kappa}{2\pi z^{3}}}\exp\left[
 -\frac{\kappa}{2z}\left( z-1\right) ^{2}\right]
 $">
 </DIV><P></P>
-を用いてISI分布は<P></P>
+を用いてISI分布は
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="127" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img253.gif"
+ SRC="img262.gif"
  ALT="$\displaystyle p\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="177" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img301.gif"
+ SRC="img308.gif"
  ALT="$\displaystyle =\left\vert \frac{dz}{dt_{i}}\right\vert g\left( z\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -399,7 +404,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="440" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
- SRC="img309.gif"
+ SRC="img316.gif"
  ALT="$\displaystyle =\lambda\left( t_{i}\right) \sqrt{\frac{\kappa}{2\pi\left\{ \int_...
 ...ght) du-1\right\} ^{2}}{\int_{t_{i-1}}^{t_{i}}\lambda\left( u\right) du}\right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -415,35 +420,31 @@ $">
 </H2>
 
 <P>
-条件付きスパイク密度分布が求まれば,
-これから瞬間スパイク生成率(ハザード関数)が求まる.
+条件付きスパイク密度分布が求まれば, これから瞬間スパイク生成率(ハザード関数)が求まる.
 <!-- MATH
  \begin{displaymath}
 r\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  =\frac{p\left(
-t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  }{1-\int_{t_{i-1}}^{t_{i}%
-}p\left(  u|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  du}%
+t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  }{1-\int_{t_{i-1}}^{t_{i}}p\left(  u|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  du}%
 \end{displaymath}
  -->
 <P></P>
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="354" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
- SRC="img312.gif"
+ SRC="img319.gif"
  ALT="$\displaystyle r\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) =\frac{...
-..._{t_{i-1}}^{t_{i}%
-}p\left( u\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) du}%
+...nt_{t_{i-1}}^{t_{i}}p\left( u\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) du}%
 $">
 </DIV><P></P>
 瞬間スパイク生成率が求まれば, 時間を十分小さな幅<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img104.gif"
+ SRC="img113.gif"
  ALT="$ \Delta$">のビンに区切って確率<!-- MATH
- $r\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
-\Delta$
+ $r\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) \Delta$
  -->
 <IMG
  WIDTH="142" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img313.gif"
+ SRC="img320.gif"
  ALT="$ r\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
 \Delta$">でスパイクを発生させればよい. もちろんこの方法は効率が悪い.
 
@@ -453,7 +454,7 @@ $">
  -->
 <IMG
  WIDTH="126" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img314.gif"
+ SRC="img321.gif"
  ALT="$ r\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
 $">が求まれば, 非定常リニューアル過程であっても非定常ポアソン過程としてあつかえる. 非定常ポアソン過程の時と同様に<!-- MATH
  $r\left(  t_{i}|t_{i-1},\lambda
@@ -461,7 +462,7 @@ _{t_{i-1}:t_{i}}\right)  \Delta$
  -->
 <IMG
  WIDTH="142" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img313.gif"
+ SRC="img320.gif"
  ALT="$ r\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
 \Delta$">を積分すると
 <!-- MATH
@@ -474,37 +475,37 @@ du
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="210" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
- SRC="img315.gif"
+ SRC="img322.gif"
  ALT="$\displaystyle \zeta=\int_{t_{i-1}}^{t_{i}}r\left( u\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
 du
 $">
 </DIV><P></P>
 <IMG
  WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img246.gif"
+ SRC="img255.gif"
  ALT="$ t_{i}$">が<!-- MATH
  $p\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$
  -->
 <IMG
  WIDTH="127" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img316.gif"
+ SRC="img323.gif"
  ALT="$ p\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
 $">に従うとき, <IMG
  WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img317.gif"
+ SRC="img324.gif"
  ALT="$ \zeta$">は指数分布に従う. したがって指数分布に従う乱数 <IMG
  WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img317.gif"
+ SRC="img324.gif"
  ALT="$ \zeta$">を生成し,
 数値計算で上式を満たす<IMG
  WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img246.gif"
+ SRC="img255.gif"
  ALT="$ t_{i}$">を求めればよい. 時間伸縮理論を用いたこの方法は非常に汎用性のある方法で, より一般の点過程について成り立つから証明はそこで示そう.
 ここでは, この時間伸縮理論に基づいた数値計算アルゴリズムをまとめておく.
 
 <P>
 <P>
-<DIV><B>アルゴリズム  12</B> &nbsp; 
+<DIV><B>アルゴリズム  13</B> &nbsp; 
 <I>時間伸縮理論を用いた非定常リニューアル過程の実現
 </I>
 <P>
@@ -514,17 +515,17 @@ $">に従うとき, <IMG
  -->
 <IMG
  WIDTH="92" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img247.gif"
+ SRC="img256.gif"
  ALT="$ i=1,t_{1}=0.$">
 
 <P>
 </LI>
 <LI>レート<IMG
  WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img216.gif"
+ SRC="img225.gif"
  ALT="$ 1$">の指数分布に従う乱数<IMG
  WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img204.gif"
+ SRC="img213.gif"
  ALT="$ \eta$">を生成する.
 
 <P>
@@ -535,14 +536,14 @@ u\right)  du$
  -->
 <IMG
  WIDTH="114" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
- SRC="img318.gif"
+ SRC="img325.gif"
  ALT="$ \Lambda_{t}=\int_{0}^{t}\lambda\left(
 u\right) du$">により, 伸縮したISIを求める. <!-- MATH
  $z_{t}=\Lambda_{t}-\Lambda_{t_{i-1}}$
  -->
 <IMG
  WIDTH="110" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img319.gif"
+ SRC="img326.gif"
  ALT="$ z_{t}=\Lambda_{t}-\Lambda_{t_{i-1}}$">
 
 <P>
@@ -554,7 +555,7 @@ z_{t}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$
  -->
 <IMG
  WIDTH="300" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img320.gif"
+ SRC="img327.gif"
  ALT="$ p\left(
 t\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) =\lambda\left( t\right) g\left(
 z_{t}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) $">
@@ -572,7 +573,7 @@ u|t_{i-1},\lambda_{t_{i-1}:u}\right)  du}$
  -->
 <IMG
  WIDTH="304" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
- SRC="img321.gif"
+ SRC="img328.gif"
  ALT="$ r\left( t\vert t_{i-1},\lambda_{t_{i-1}:t}\right) =\frac{p\left(
 t\vert t_{i-1...
 ...ht) }{1-\int_{t_{i-1}}^{t}p\left(
@@ -585,10 +586,10 @@ u\vert t_{i-1},\lambda_{t_{i-1}:u}\right) du}$">
  -->
 <IMG
  WIDTH="152" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
- SRC="img322.gif"
+ SRC="img329.gif"
  ALT="$ \eta=\int_{t_{i-1}}^{t}r\left( u\vert t_{i-1}\right) du$">を満たす<IMG
  WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img246.gif"
+ SRC="img255.gif"
  ALT="$ t_{i}$">を求める.
 
 <P>
@@ -598,40 +599,41 @@ u\vert t_{i-1},\lambda_{t_{i-1}:u}\right) du}$">
  -->
 <IMG
  WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img249.gif"
+ SRC="img258.gif"
  ALT="$ t_{i}\geq T$">ならば終了.
 
 <P>
 </LI>
 <LI><IMG
  WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img250.gif"
+ SRC="img259.gif"
  ALT="$ t_{i}&lt;T$">ならば<!-- MATH
  $i\leftarrow i+1.\ 2$
  -->
 <IMG
  WIDTH="85" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img251.gif"
- ALT="$ i\leftarrow i+1.\ 2$">へ.
+ SRC="img260.gif"
+ ALT="$ i\leftarrow i+1. 2$">へ.
 </LI>
 </OL></DIV><P></P>
 
 <P>
 このアルゴリズムによる数値シミュレーションの結果を示す.
-<DIV ALIGN="CENTER"><A NAME="fig:simulated_pointprocesses"></A><A NAME="1073"></A>
+
+<DIV ALIGN="CENTER"><A NAME="fig:simulated_pointprocesses"></A><A NAME="1106"></A>
 <TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.2:</STRONG>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
 時間依存する強度に従うポワソン及びリニューアル過程. 青色の点線が時間依存する変動スパイクレート. 赤色の実線はスパイク発火を考慮した強度関数. (A) 非一様ポワソン過程 (B) 非一様逆ガウス過程 (C) 非一様ガンマ過程 （規則発火  κ=1.8)  (D) 非一様ガンマ過程 （不規則発火  κ=0.8）</CAPTION>
 <TR><TD><IMG
  WIDTH="552" HEIGHT="773" ALIGN="BOTTOM" BORDER="0"
- SRC="img323.gif"
+ SRC="img330.gif"
  ALT="\includegraphics[width=\columnwidth]{fig/renewal_simulation.eps}"></TD></TR>
 </TABLE>
 </DIV>
 
 <P>
-使用したMatlabのコード.
-数値積分は台形則を用いている.<P>
+使用したMatlabのコード. 数値積分は台形則を用いている.
+<P>
 <PRE>
 function [x,rs] = PointProcess_Renewal(y,dt,ISI,k)
 % [x,rs] = PointProcess_Renewal(y,dt,ISI,k)
@@ -773,7 +775,7 @@ end
 </H2>
 
 <P>
-リスケールした時間軸上で平衡リニューアル過程<A NAME="1079"></A>を考えればよいだろう. リスケールした軸上で初期スパイクのスパイク密度分布は
+リスケールした時間軸上で平衡リニューアル過程<A NAME="1112"></A>を考えればよいだろう. リスケールした軸上で初期スパイクのスパイク密度分布は
 <!-- MATH
  \begin{displaymath}
 g_{1}\left(  z\right)  =1-G\left(  z\right)
@@ -783,7 +785,7 @@ g_{1}\left(  z\right)  =1-G\left(  z\right)
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="126" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img324.gif"
+ SRC="img331.gif"
  ALT="$\displaystyle g_{1}\left( z\right) =1-G\left( z\right)
 $">
 </DIV><P></P>
@@ -792,7 +794,7 @@ $">
  -->
 <IMG
  WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img325.gif"
+ SRC="img332.gif"
  ALT="$ p_{1}\left( t\right) $">は, 実時間上への逆写像を用いる.
 
 <P>
@@ -831,7 +833,7 @@ $">
   HREF="node16.html">Index</A></B> 
 <!--End of Navigation Panel-->
 <ADDRESS>
-&copy; 2007 2008 2009 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki, Ph.D.</a>
+<div align=right>&copy; 2007 - 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki</a></align>
 </ADDRESS>
-</BODY>
+<p></p><div id=disqus_thread></div><script type=text/javascript>(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://statneuro.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })();</script><script type=text/javascript>var disqus_shortname = 'statneuro';(function () { var s = document.createElement('script'); s.async = true;  s.src = 'http://disqus.com/forums/statneuro/count.js';  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);}());</script><p><script type=text/javascript src=http://disqus.com/forums/statneuro/combination_widget.js?num_items=5&hide_mods=0&color=blue&default_tab=people&excerpt_length=200></script><a href=http://disqus.com>Powered by Disqus</a></p></body>
 </HTML>

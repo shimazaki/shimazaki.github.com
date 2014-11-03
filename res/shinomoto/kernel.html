@@ -70,7 +70,7 @@ body {
    </tr>
 </tbody></table>
  <p>&nbsp;</p>
- <h2><a name="Method" id="Method"></a><strong><span lang="EN-US" xml:lang="EN-US">The underlying <a name="Method" id="Method"></a>formula:</span></strong></h2>
+ <h2><a name="Method" id="Method"></a><strong><span lang="EN-US" xml:lang="EN-US">The underlying formula:</span></strong></h2>
  <table width="700" height="138" border="1" cellpadding="10">
    <tbody><tr>
      <td><p class="style4"><strong>I.</strong> Let <img src="kernel_files/data.gif" width="49" height="21"> be your data. Let the kernel with bandwidth <img src="kernel_files/w.gif" width="11" height="9"> be <img src="kernel_files/kernel.gif" width="35" height="16" align="bottom">.</p>
@@ -95,11 +95,32 @@ body {
  <h3><a name="Ref" id="Ref"></a>Original paper </h3>
  <p><strong>Shimazaki H. and Shinomoto S., Kernel Bandwidth Optimization in Spike Rate Estimation. <em> Journal of Computational Neuroscience</em> (2010) 29:171-182. [<a href="https://docs.google.com/viewer?url=http%3A%2F%2Fwww.springerlink.com%2Fcontent%2Fg22785288648l239%2Ffulltext.pdf">PDF</a>, <a href="http://dx.doi.org/10.1007/s10827-009-0180-4">LINK</a>] </strong></p>
  <p>&nbsp;</p>
- <h2><a name="Matlab" id="Matlab"></a>Code </h2>
- <p class="style4">Matlab code: <a href="http://www.ton.scphys.kyoto-u.ac.jp/~shino/toolbox/sskernel/sskernel.m">sskernel.m</a></p>
- <p class="style4">Function `sskernel' returns optimal bandwidth (standard deviation) of the Gauss kernel function used in kernel density estimation.</p>
- <p class="style4">optW = sskernel(x); ksdensity(x,'width',optW);</p>
- <p class="style4"> Statitics Toolbox is required to execute ksdensity.</p>
+ <h2><a name="Matlab" id="Matlab"></a>Matlab code </h2>
+ <table width="700" height="138" border="1" cellpadding="10">
+   <tbody>
+     <tr>
+       <td valign="top"><p><img src="ssvkernel.png" width="491" height="376" /></p>
+         <hr />
+         <p><strong>Fixed kernel density estimation method: <a href="sskernel.m">sskernel.m</a></strong></p>
+       <p>Function `sskernel' returns an optimized kernel density estimate using a Gauss kernel function. </p>
+       <p>Examples:</p>
+       <p>&gt;&gt; x = 0.5-0.5*log(rand(1,1e3)); t = linspace(0,3,1000);</p>
+       <p>&gt;&gt; [y,t,optw] = sskernel(x,t);</p>
+       <p> This example produces a vector of kernel density estimates, y, at points specified in a vector t, using an optimized bandwidth, optw (a standard deviation of a normal density function).</p>
+       <hr />
+       <p class="style4">We have also developed a<strong> locally adaptive kernel density estimation method</strong>. </p>
+       <p class="style4"><strong>Matlab code: <a href="ssvkernel.m">ssvkernel.m</a></strong><a href="ssvkernel.m"></a></p>
+       <p> Function `ssvkernel' returns an optimized kernel density estimate using a Gauss kernel function with bandwidths locally adapted to data. </p>
+       <p>Examples:</p>
+       <p>&gt;&gt; x = 0.5-0.5*log(rand(1,1e3)); t = linspace(0,3,500);</p>
+       <p>&gt;&gt; [y,t,optw] = ssvkernel(x,t);</p>
+       <p>This example produces a vector of kernel density estimates, y, at points specified in a vector t, using locally adaptive bandwidths, optw. </p></td>
+     </tr>
+   </tbody>
+ </table>
+ <p>&nbsp;</p>
+ <p>&nbsp;</p>
+ <p class="style4">&nbsp;</p>
  <hr>
  <p>If you have any questions, or have suggestions for improving the programs, please contact&nbsp;<a href="http://www.ton.scphys.kyoto-u.ac.jp/~shino/english.html">Shigeru Shinomoto</a>, who is conducting these studies. </p>
  

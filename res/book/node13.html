@@ -33,17 +33,21 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
     <a name=top id=top> </a>
     <div id=NaviLayer>  
     <table width=180 border=0 cellpadding=0 cellspacing=0>
-    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
-    <tr><td height=28 valign=top><b>Spike Density Estimation</b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../histogram.html>Histogram Method</a></b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../kernel.html>Kernel Method</a></b></td></tr>
+    <tr><td height=8 valign=top><b>Tweet this page</b></td></tr>
+    <tr><td height=8 valign=top><a href=http://twitter.com/share class=twitter-share-button data-count=horizontal data-via=computneuro data-related="statneuro:Japanese tweets from author.">Tweet</a><script type=text/javascript src=http://platform.twitter.com/widgets.js></script></td></tr>
     <tr><td height=8 valign=top></td></tr>
     <tr><td height=8 valign=top><b>Share it with your friend</b></td></tr>
     <tr><td valign=top><a class=addthis_button href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcbd554189b9a7"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width=125 height=16 alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcbd554189b9a7"></script></td></tr>
     <tr><td height=8 valign=top></td></tr>
-    <tr><td height=8 valign=top><b>Tweet</b></td></tr>
-    <tr><td valign=top><iframe src=../../tweet.html width=180 height=600 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
-    <tr><td height=28 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Tweet by author</b></td></tr>
+    <tr><td valign=top><iframe src=../../tweetjp.html width=180 height=260 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=28 valign=top><b><a href=index.html>スパイク統計モデル入門 トップ</a></b></td><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=28 valign=top><b>スパイク密度推定</b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../histogram.html>ヒストグラム法</a></b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../kernel.html>カーネル法</a></b></td></tr>
+    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
     </table></div>
 <!--Navigation Panel-->
 <A NAME="tex2html408"
@@ -141,20 +145,20 @@ Peristimulus Time Histogram (PSTH)がある. PSTHの形状は分割する区間の時間幅に依存
  -->
 <IMG
  WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img233.gif"
+ SRC="img242.gif"
  ALT="$ \lambda_{t}$"> (<!-- MATH
  $t\in\lbrack0,\,T]$
  -->
 <IMG
  WIDTH="67" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img390.gif"
- ALT="$ t\in\lbrack0,\,T]$">)とする. 区間<!-- MATH
+ SRC="img396.gif"
+ ALT="$ t\in\lbrack0, T]$">)とする. 区間<!-- MATH
  $[0,\,\Delta]$
  -->
 <IMG
  WIDTH="44" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img391.gif"
- ALT="$ [0,\,\Delta]$">の棒ヒストグラムの真の高さは
+ SRC="img397.gif"
+ ALT="$ [0, \Delta]$">の棒ヒストグラムの真の高さは
 <P></P>
 <DIV ALIGN="CENTER"><!-- MATH
  \begin{equation}
@@ -165,7 +169,7 @@ Peristimulus Time Histogram (PSTH)がある. PSTHの形状は分割する区間の時間幅に依存
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="116" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
- SRC="img392.gif"
+ SRC="img398.gif"
  ALT="$\displaystyle \theta=\frac{1}{\Delta}\int_{0}^{\Delta}{\lambda_{t}dt}.$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.1)</TD></TR>
@@ -173,10 +177,10 @@ Peristimulus Time Histogram (PSTH)がある. PSTHの形状は分割する区間の時間幅に依存
 <BR CLEAR="ALL"><P></P>
 で与えられる. この区間内の<IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
+ SRC="img53.gif"
  ALT="$ n$">回の試行数の総スパイク数<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img393.gif"
+ SRC="img399.gif"
  ALT="$ k$">は次のPoisson分布で与えられる.
 <P></P>
 <DIV ALIGN="CENTER"><A NAME="eq:def_poisson"></A><!-- MATH
@@ -189,7 +193,7 @@ e^{-n\theta\Delta}%
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="187" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img394.gif"
+ SRC="img400.gif"
  ALT="$\displaystyle p(k\vert n\theta\Delta)=\frac{\left( n\theta\Delta\right) ^{k}}{k!}%
 e^{-n\theta\Delta}%
 $"></TD>
@@ -199,13 +203,13 @@ $"></TD>
 <BR CLEAR="ALL"><P></P>
 従って <IMG
  WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img395.gif"
+ SRC="img401.gif"
  ALT="$ {\theta}$">の不偏推定量である<!-- MATH
  ${{\hat{\theta}}}=k/(n\Delta)$
  -->
 <IMG
  WIDTH="85" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img396.gif"
+ SRC="img402.gif"
  ALT="$ {{\hat{\theta}}}=k/(n\Delta)$">がデータから求められるヒストグラムの高さである.
 
 <P>
@@ -220,13 +224,13 @@ $"></TD>
  -->
 <IMG
  WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img233.gif"
+ SRC="img242.gif"
  ALT="$ \lambda_{t}$">とヒストグラム<!-- MATH
  $\hat{\lambda}_{t}$
  -->
 <IMG
  WIDTH="19" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img397.gif"
+ SRC="img403.gif"
  ALT="$ \hat{\lambda}_{t}$">の当てはまりの良さは平均積分二乗誤差(Mean Integrated
 Squared Error, MISE)で評価する. 十分長い定常なスパイク時系列が与えられた場合MISEは次式で与えられる[<A
  HREF="node15.html#Shimazaki07a">Shimazaki and Shinomoto, 2007</A>].
@@ -236,16 +240,16 @@ Squared Error, MISE)で評価する. 十分長い定常なスパイク時系列が与えられた場合MISE
 <TD NOWRAP ALIGN="RIGHT">MISE</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="168" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
- SRC="img398.gif"
- ALT="$\displaystyle \equiv\frac{1}{T}\int_{0}^{T}E\,(\hat{\lambda}_{t}-\lambda _{t})^{2}\,dt$"></TD>
+ SRC="img404.gif"
+ ALT="$\displaystyle \equiv\frac{1}{T}\int_{0}^{T}E (\hat{\lambda}_{t}-\lambda _{t})^{2} dt$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 <A NAME="eq:def_esterr">(3.3)</A></TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="204" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
- SRC="img399.gif"
- ALT="$\displaystyle =\left\langle {E\left[ {\frac{1}{\Delta}\int_{0}^{\Delta}{(\,{\lambda _{t}-}\hat{\theta}\,)^{2}dt}}\right] }\right\rangle$"></TD>
+ SRC="img405.gif"
+ ALT="$\displaystyle =\left\langle {E\left[ {\frac{1}{\Delta}\int_{0}^{\Delta}{( {\lambda _{t}-}\hat{\theta} )^{2}dt}}\right] }\right\rangle$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.4)</TD></TR>
 </TABLE></DIV>
@@ -255,54 +259,53 @@ Squared Error, MISE)で評価する. 十分長い定常なスパイク時系列が与えられた場合MISE
  -->
 <IMG
  WIDTH="26" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img400.gif"
- ALT="$ \left\langle \,\cdot\,\right\rangle $">はレート過程<!-- MATH
+ SRC="img406.gif"
+ ALT="$ \left\langle  \cdot \right\rangle $">はレート過程<!-- MATH
  $\lambda_{t}$
  -->
 <IMG
  WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img233.gif"
+ SRC="img242.gif"
  ALT="$ \lambda_{t}$">の経路によるアンサンブル平均を意味し, <!-- MATH
  $E_{\Lambda
 }\left[  \,\cdot\,\right]$
  -->
 <IMG
  WIDTH="47" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img401.gif"
+ SRC="img407.gif"
  ALT="$ E_{\Lambda
-}\left[ \,\cdot\,\right] $">はレート<!-- MATH
- $\lambda_{t}%$
+}\left[  \cdot \right] $">はレート<!-- MATH
+ $\lambda_{t}$
  -->
 <IMG
  WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img402.gif"
- ALT="$ \lambda_{t}%
-$">の区間幅<IMG
+ SRC="img242.gif"
+ ALT="$ \lambda_{t}$">の区間幅<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img104.gif"
+ SRC="img113.gif"
  ALT="$ \Delta$">内での時間平均<IMG
  WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img395.gif"
+ SRC="img401.gif"
  ALT="$ {\theta}$">がである場合のスパイク数の条件付き確率分布(式<A HREF="#eq:def_poisson">3.2</A>)による平均操作を表す.
 
 <P>
 MISEを区間幅<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img104.gif"
+ SRC="img113.gif"
  ALT="$ \Delta$">内でのレートのゆらぎとスパイク生成のゆらぎに分割し, さらに区間幅<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img104.gif"
+ SRC="img113.gif"
  ALT="$ \Delta$">の選択に依らない項を除いたコスト関数を導入することができる.
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="42" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img403.gif"
+ SRC="img408.gif"
  ALT="$\displaystyle C(\Delta)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="180" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
- SRC="img404.gif"
+ SRC="img409.gif"
  ALT="$\displaystyle \equiv\mathbf{MISE}-\left\langle {\left( {\lambda_{t}%
 -\langle\theta\rangle}\right) ^{2}}\right\rangle$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -311,7 +314,7 @@ MISEを区間幅<IMG
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="224" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
- SRC="img405.gif"
+ SRC="img410.gif"
  ALT="$\displaystyle =\left\langle E\left[ (\hat{\theta}-\theta)^{2}\right] \right\ran...
 ...left\langle {\left( \theta{-\langle\theta\rangle}\right) ^{2}%
 }\right\rangle%
@@ -322,7 +325,7 @@ $"></TD>
 <BR CLEAR="ALL"><P></P>
 式<A HREF="#cost">3.5</A>は<IMG
  WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img406.gif"
+ SRC="img411.gif"
  ALT="$ \theta$">の分散を第２項に含んでいるので, 観測量のみからなる式に書き直し次式を得る.
 <P></P>
 <DIV ALIGN="CENTER"><A NAME="Cn"></A><!-- MATH
@@ -336,7 +339,7 @@ C\left(  \Delta\right)  =2\left\langle E\left[  (\hat{\theta}-\theta
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="311" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
- SRC="img407.gif"
+ SRC="img412.gif"
  ALT="$\displaystyle C\left( \Delta\right) =2\left\langle E\left[ (\hat{\theta}-\theta...
 ...ngle E\left[ (\hat{\theta}%
 {-\langle\theta\rangle})^{2}\right] \right\rangle%
@@ -349,30 +352,27 @@ $"></TD>
  HREF="node15.html#Shimazaki07a">Shimazaki and Shinomoto, 2007</A>].
 
 <P>
-<P>
-
-<P>
 <DL COMPACT>
 <DT>(i)</DT>
 <DD><IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
+ SRC="img53.gif"
  ALT="$ n$">回の試行により得られたスパイク時系列について，
 その観測期間 <IMG
  WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
  SRC="img22.gif"
  ALT="$ T$"> を幅<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img104.gif"
+ SRC="img113.gif"
  ALT="$ \Delta$">の <IMG
  WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img123.gif"
- ALT="$ \ N$"> 個のビンに区切る．<IMG
+ SRC="img132.gif"
+ ALT="$  N$"> 個のビンに区切る．<IMG
  WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img227.gif"
+ SRC="img236.gif"
  ALT="$ i$">番目のビンに入るスパイクの数を数え， <IMG
  WIDTH="18" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img408.gif"
+ SRC="img413.gif"
  ALT="$ k_{i}$"> とする．
 
 <P>
@@ -380,7 +380,7 @@ $"></TD>
 <DT>(ii)</DT>
 <DD>スパイク数<IMG
  WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img409.gif"
+ SRC="img414.gif"
  ALT="$ \{k_{i}\}$"> の平均と分散を計算する
 <!-- MATH
  \begin{displaymath}
@@ -392,12 +392,12 @@ v\equiv\frac{1}{N}\sum_{i=1}^{N}(k_{i}-\bar{k})^{2}.
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="94" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
- SRC="img410.gif"
- ALT="$\displaystyle \bar{k}\equiv\frac{1}{N}\sum_{i=1}^{N}k_{i}$">, and <IMG
+ SRC="img415.gif"
+ ALT="$\displaystyle \bar{k} \equiv\frac{1}{N} \sum_{i=1}^{N} k_{i}$">, and <IMG
  WIDTH="143" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
- SRC="img411.gif"
- ALT="$\displaystyle \displaystyle
-v\equiv\frac{1}{N}\sum_{i=1}^{N}(k_{i}-\bar{k})^{2}.
+ SRC="img416.gif"
+ ALT="$\displaystyle \displaystyle v
+\equiv\frac{1}{N} \sum_{i=1}^{N} (k_{i}-\bar{k})^{2}.
 $">
 </DIV><P></P>
 
@@ -414,8 +414,8 @@ C_{n}(\Delta)=\frac{2\bar{k}-v}{(n\Delta)^{2}}.
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="124" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img412.gif"
- ALT="$\displaystyle C_{n}(\Delta)=\frac{2\bar{k}-v}{(n\Delta)^{2}}.
+ SRC="img417.gif"
+ ALT="$\displaystyle C_{n}(\Delta) = \frac{2 \bar{k} - v}{(n \Delta)^{2}}.
 $">
 </DIV><P></P>
 
@@ -424,21 +424,19 @@ $">
 <DT>(iv)</DT>
 <DD>異なるビン幅<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img104.gif"
+ SRC="img113.gif"
  ALT="$ \Delta$">に対してi から iii を繰り返し，コスト関数 <!-- MATH
- $C_{n}%
-(\Delta)$
+ $C_{n}(\Delta)$
  -->
 <IMG
  WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img413.gif"
- ALT="$ C_{n}%
-(\Delta)$">の最小値を与える<!-- MATH
+ SRC="img418.gif"
+ ALT="$ C_{n}(\Delta)$">の最小値を与える<!-- MATH
  $\Delta^{\ast}$
  -->
 <IMG
  WIDTH="25" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img414.gif"
+ SRC="img419.gif"
  ALT="$ \Delta^{\ast}$">を探す．
 </DD>
 </DL>
@@ -455,24 +453,22 @@ $">
 <P>
 式<A HREF="#cost">3.5</A>の第一項にCram&#233;r-Raoの不等式を適用することで, コスト関数の下限が<IMG
  WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img236.gif"
+ SRC="img245.gif"
  ALT="$ \Lambda$">の統計量で与えられる.
 <P></P>
 <DIV ALIGN="CENTER"><A NAME="CLB"></A><!-- MATH
  \begin{equation}
 C\left(  \Delta\right)  \geq\frac{\left\langle \theta\right\rangle }{n\Delta
-}-\left\langle {\left(  \theta{-\langle\theta\rangle}\right)  ^{2}%
-}\right\rangle%
+}-\left\langle {\left(  \theta{-\langle\theta\rangle}\right)  ^{2}}\right\rangle%
 \end{equation}
  -->
 <TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="192" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img415.gif"
+ SRC="img420.gif"
  ALT="$\displaystyle C\left( \Delta\right) \geq\frac{\left\langle \theta\right\rangle ...
-...left\langle {\left( \theta{-\langle\theta\rangle}\right) ^{2}%
-}\right\rangle%
+...-\left\langle {\left( \theta{-\langle\theta\rangle}\right) ^{2}}\right\rangle%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.7)</TD></TR>
@@ -480,31 +476,31 @@ $"></TD>
 <BR CLEAR="ALL"><P></P>
 右辺の極値を考えることで, レートが平均<IMG
  WIDTH="14" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img416.gif"
+ SRC="img421.gif"
  ALT="$ \mu$">, 相関関数<IMG
  WIDTH="32" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img417.gif"
+ SRC="img422.gif"
  ALT="$ \phi(t)$">なる定常確率過程について最適幅の解析解が求まる.
 
 <P>
 <IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
+ SRC="img53.gif"
  ALT="$ n$">が十分大きい場合, <IMG
  WIDTH="32" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img417.gif"
+ SRC="img422.gif"
  ALT="$ \phi(t)$">の原点付近での展開式を用いて式<A HREF="#CLB">3.7</A>右辺の極値を与える<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img104.gif"
+ SRC="img113.gif"
  ALT="$ \Delta$">を求める. <IMG
  WIDTH="32" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img417.gif"
+ SRC="img422.gif"
  ALT="$ \phi(t)$">が原点でCusp型となるときは漸近値<!-- MATH
  $\phi^{\prime}(0+)$
  -->
 <IMG
  WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img418.gif"
+ SRC="img423.gif"
  ALT="$ \phi^{\prime}(0+)$">を用いて最適幅は<!-- MATH
  $\Delta^{*} \sim
 \sqrt{{{ - 3\mu} \mathord{\left/
@@ -513,23 +509,21 @@ $"></TD>
  -->
 <IMG
  WIDTH="161" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
- SRC="img419.gif"
+ SRC="img424.gif"
  ALT="$ \Delta^{*} \sim
 \sqrt{{{ - 3\mu} \mathord{\left/
 {\vphantom {{ - 3\mu } {\phi ...
 ...right)n}}} \right.
 \kern-\nulldelimiterspace} {\phi '\left( {0 + } \right)n}}} $">で与えられる. <IMG
  WIDTH="32" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img417.gif"
+ SRC="img422.gif"
  ALT="$ \phi(t)$">が原点でなめらかなときは対称性から<!-- MATH
- $\phi^{\prime}%
-(0)=0$
+ $\phi^{\prime}(0)=0$
  -->
 <IMG
  WIDTH="67" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img420.gif"
- ALT="$ \phi^{\prime}%
-(0)=0$">であり, 最適幅は <!-- MATH
+ SRC="img425.gif"
+ ALT="$ \phi^{\prime}(0)=0$">であり, 最適幅は <!-- MATH
  $\Delta^{*}
 \sim\left(  {{{ - 6\mu} \mathord{\left/
 {\vphantom {{ - 6\mu } {\phi ''\left( {0 + } \right)n}}} \right.
@@ -540,7 +534,7 @@ $"></TD>
  -->
 <IMG
  WIDTH="181" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
- SRC="img421.gif"
+ SRC="img426.gif"
  ALT="$ \Delta^{*}
 \sim\left( {{{ - 6\mu} \mathord{\left/
 {\vphantom {{ - 6\mu } {\phi...
@@ -552,36 +546,34 @@ $"></TD>
 <P>
 <IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
+ SRC="img53.gif"
  ALT="$ n$">が小さい転移点付近では <!-- MATH
- $\langle(\theta-\langle\theta\rangle)^{2}%
-\rangle\simeq\mu/n_{c}(1/\Delta)-u(1/\Delta)^{2}+O\left(  (1/\Delta
+ $\langle(\theta-\langle\theta\rangle)^{2}\rangle\simeq\mu/n_{c}(1/\Delta)-u(1/\Delta)^{2}+O\left(  (1/\Delta
 )^{3}\right)$
  -->
 <IMG
  WIDTH="355" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img422.gif"
- ALT="$ \langle(\theta-\langle\theta\rangle)^{2}%
-\rangle\simeq\mu/n_{c}(1/\Delta)-u(1/\Delta)^{2}+O\left( (1/\Delta
+ SRC="img427.gif"
+ ALT="$ \langle(\theta-\langle\theta\rangle)^{2}\rangle\simeq\mu/n_{c}(1/\Delta)-u(1/\Delta)^{2}+O\left( (1/\Delta
 )^{3}\right) $">と展開する(<IMG
  WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img423.gif"
+ SRC="img428.gif"
  ALT="$ n_{c}$">, <IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img424.gif"
+ SRC="img429.gif"
  ALT="$ u$">は定数). このとき臨界点は<IMG
  WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img423.gif"
+ SRC="img428.gif"
  ALT="$ n_{c}$">でありランダウの２次相転移の理論が適用できる.
 <IMG
  WIDTH="51" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img425.gif"
+ SRC="img430.gif"
  ALT="$ n&gt;n_{c}$">では最適幅の振る舞いは<!-- MATH
  $\Delta^{\ast}\sim nn_{c}/(n-n_{c})$
  -->
 <IMG
  WIDTH="137" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img426.gif"
+ SRC="img431.gif"
  ALT="$ \Delta^{\ast}\sim nn_{c}/(n-n_{c})$">で表される.
 
 <P>
@@ -593,31 +585,30 @@ $"></TD>
 <P>
 <IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
+ SRC="img53.gif"
  ALT="$ n$">回の試行数のスパイク統計<IMG
  WIDTH="13" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
- SRC="img427.gif"
+ SRC="img432.gif"
  ALT="$ \bar{k}$">, <IMG
  WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img428.gif"
+ SRC="img433.gif"
  ALT="$ v$">を用いて, 試行数が<IMG
  WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img429.gif"
+ SRC="img434.gif"
  ALT="$ m$">回の場合の最適幅を, 外挿したコスト関数
 <P></P>
 <DIV ALIGN="CENTER"><A NAME="EstimatedCostnm"></A><!-- MATH
  \begin{equation}
 C_{m}\left(  \Delta\right)  =\left(  \frac{1}{m}+\frac{1}{n}\right)
-\frac{\bar{k}}{n\Delta^{2}}-\frac{v}{(n\Delta)^{2}}%
+\frac{\bar{k}}{n\Delta^{2}}-\frac{v}{(n\Delta)^{2}}
 \end{equation}
  -->
 <TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="253" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img430.gif"
- ALT="$\displaystyle C_{m}\left( \Delta\right) =\left( \frac{1}{m}+\frac{1}{n}\right) \frac{\bar{k}}{n\Delta^{2}}-\frac{v}{(n\Delta)^{2}}%
-$"></TD>
+ SRC="img435.gif"
+ ALT="$\displaystyle C_{m}\left( \Delta\right) =\left( \frac{1}{m}+\frac{1}{n}\right) \frac{\bar{k}}{n\Delta^{2}}-\frac{v}{(n\Delta)^{2}}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.8)</TD></TR>
 </TABLE></DIV>
@@ -625,13 +616,13 @@ $"></TD>
 から推定することができる. これによりデータから次の２つの数値を推定できる. (i) スケーリング指数: 最適幅の試行数に関するスケーリング指数を調べることができる.
 指数が<IMG
  WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img431.gif"
+ SRC="img436.gif"
  ALT="$ -1/2$">のときは背後のレートは微分不可能であり, <IMG
  WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img432.gif"
+ SRC="img437.gif"
  ALT="$ -1/3$">のときには微分の存在するなめらかな確率過程であると推定される. (ii) ヒストグラム作成に必要な最小試行回数: 転移点で発散やとびを示す指標を用いることで, 転移点を与える<IMG
  WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img423.gif"
+ SRC="img428.gif"
  ALT="$ n_{c}$">を推定することができる. これにより実験者は少ない試行数からヒストグラム作成に最低限必要な試行数を予測することができる.
 
 <P>
@@ -643,41 +634,39 @@ $"></TD>
 <P>
 神経科学の古典的な実験では，記録されたスパイク時系列は刺激・行動などの開始時刻でそろえてならべる．これをラスタープロットという．これらスパイク時系列を重ね合わせたスパイク時系列データ <IMG
  WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img433.gif"
+ SRC="img438.gif"
  ALT="$ {t}_{i}$"> (<!-- MATH
  $i=1,2,\cdots,N$
  -->
 <IMG
  WIDTH="106" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img434.gif"
+ SRC="img439.gif"
  ALT="$ i=1,2,\cdots,N$">) を次のようにデルタ関数を用いて表す．
 <P></P>
 <DIV ALIGN="CENTER"><A NAME="rawdensity"></A><!-- MATH
  \begin{equation}
 x_{t}=\frac{1}{n}\sum_{i=1}^{n}{{\delta\left(  {t-t}_{i}\right)  }},
-%
 \end{equation}
  -->
 <TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="145" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img435.gif"
- ALT="$\displaystyle x_{t}=\frac{1}{n}\sum_{i=1}^{n}{{\delta\left( {t-t}_{i}\right) }}, %
-$"></TD>
+ SRC="img440.gif"
+ ALT="$\displaystyle x_{t}=\frac{1}{n}\sum_{i=1}^{n}{{\delta\left( {t-t}_{i}\right) }},$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.9)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
 ここで <IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
+ SRC="img53.gif"
  ALT="$ n$"> は繰り返し試行の数である．カーネル密度推定はこのデータ時系列<IMG
  WIDTH="19" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img436.gif"
+ SRC="img441.gif"
  ALT="$ x_{t}$">とカーネル関数<IMG
  WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img437.gif"
+ SRC="img442.gif"
  ALT="$ k(s)$">
 の畳み込み積分で与えられる．
 <P></P>
@@ -691,8 +680,8 @@ $"></TD>
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="141" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img438.gif"
- ALT="$\displaystyle \hat{\lambda}_{t}=\int x_{t-s}k{\left( {s}\right) }\,ds. %
+ SRC="img443.gif"
+ ALT="$\displaystyle \hat{\lambda}_{t}=\int x_{t-s}k{\left( {s}\right) } ds. %
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.10)</TD></TR>
@@ -700,37 +689,37 @@ $"></TD>
 <BR CLEAR="ALL"><P></P>
 以下積分 <IMG
  WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img439.gif"
+ SRC="img444.gif"
  ALT="$ \int$"> は<!-- MATH
- $\int_{-\infty}^{\infty}%$
+ $\int_{-\infty}^{\infty}$
  -->
 <IMG
  WIDTH="35" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img440.gif"
- ALT="$ \int_{-\infty}^{\infty}%
-$">を表す. カーネル関数は密度の条件, <!-- MATH
+ SRC="img445.gif"
+ ALT="$ \int_{-\infty}^{\infty}$">を表す. カーネル関数は密度の条件, <!-- MATH
  $\int k(s)\,ds=1$
  -->
 <IMG
  WIDTH="94" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img441.gif"
- ALT="$ \int k(s)\,ds=1$">,
+ SRC="img446.gif"
+ ALT="$ \int k(s) ds=1$">,
 を満たし，中心がゼロで, <!-- MATH
  $\int sk(s)\,ds=0$
  -->
 <IMG
  WIDTH="101" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img442.gif"
- ALT="$ \int sk(s)\,ds=0$">, かつ有限のバンド幅を有する, <!-- MATH
+ SRC="img447.gif"
+ ALT="$ \int sk(s) ds=0$">, かつ有限のバンド幅を有する, <!-- MATH
  $w^{2}=\int s^{2}k(s)\,ds<\infty$
  -->
 <IMG
  WIDTH="156" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img443.gif"
- ALT="$ w^{2}=\int s^{2}k(s)\,ds&lt;\infty$">.
+ SRC="img448.gif"
+ ALT="$ w^{2}=\int s^{2}k(s) ds&lt;\infty$">.
 
 <P>
-一般に良く用いられるのはガウスカーネルであり，これは正規密度分布のこと．<P></P>
+一般に良く用いられるのはガウスカーネルであり，これは正規密度分布のこと．
+<P></P>
 <DIV ALIGN="CENTER"><A NAME="gaussdensity"></A><!-- MATH
  \begin{equation}
 k_{w}(s)=\frac{1}{\sqrt{2\pi}w}\exp{\left(  -\frac{s^{2}}{2w^{2}}\right)  },
@@ -741,8 +730,8 @@ k_{w}(s)=\frac{1}{\sqrt{2\pi}w}\exp{\left(  -\frac{s^{2}}{2w^{2}}\right)  },
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="211" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img444.gif"
- ALT="$\displaystyle k_{w}(s)=\frac{1}{\sqrt{2\pi}w}\exp{\left( -\frac{s^{2}}{2w^{2}}\right) }, %
+ SRC="img449.gif"
+ ALT="$\displaystyle k_{w}(s)=\frac{1}{\sqrt{2\pi}w}\exp{\left( -\frac{s^{2}}{2w^{2}}\right) },%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.11)</TD></TR>
@@ -750,7 +739,7 @@ $"></TD>
 <BR CLEAR="ALL"><P></P>
 ここで <IMG
  WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img445.gif"
+ SRC="img450.gif"
  ALT="$ w$"> がバンド幅である．以下このバンド幅を最適化する公式を導く．
 
 <P>
@@ -763,7 +752,6 @@ $"></TD>
 最適カーネルバンド幅は以下のコスト関数を最小化するバンド幅により得ることができる(Shimazaki &amp;
 Shinomoto 2010[<A
  HREF="node15.html#Shimazaki10">Shimazaki and Shinomoto, 2010</A>] )．
-<P>
 <!-- MATH
  \begin{displaymath}
 \hat{C}_{n}\left(  w\right)  =\frac{1}{n^{2}}\sum_{i,j}\int{k}_{w}{\left(
@@ -775,14 +763,13 @@ t{-}t_{i}\right)  k}_{w}{\left(  t{-}t_{j}\right)  }\,dt-\frac{2}{n^{2}}%
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="433" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img446.gif"
+ SRC="img451.gif"
  ALT="$\displaystyle \hat{C}_{n}\left( w\right) =\frac{1}{n^{2}}\sum_{i,j}\int{k}_{w}{...
-...}\right) }\,dt-\frac{2}{n^{2}}%
+...}\right) } dt-\frac{2}{n^{2}}%
 \sum_{i\neq j}k_{w}\left( t_{i}-t_{j}\right) ,
 $">
 </DIV><P></P>
 多次元のカーネルの場合も同様に
-<P>
 <!-- MATH
  \begin{displaymath}
 C\left(  \mathbf{w}\right)  =\sum_{i,j}\int k_{\mathbf{w}}\left(
@@ -795,7 +782,7 @@ C\left(  \mathbf{w}\right)  =\sum_{i,j}\int k_{\mathbf{w}}\left(
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="435" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img447.gif"
+ SRC="img452.gif"
  ALT="$\displaystyle C\left( \mathbf{w}\right) =\sum_{i,j}\int k_{\mathbf{w}}\left(
 \m...
 ...bf{x-2}\sum_{i\neq j}k_{\mathbf{w}}\left(
@@ -803,42 +790,36 @@ C\left(  \mathbf{w}\right)  =\sum_{i,j}\int k_{\mathbf{w}}\left(
 $">
 </DIV><P></P>
 ここでは<!-- MATH
- $\mathbf{x=}\left(  x_{1},x_{2},\ldots
-,x_{p}\right)  .$
+ $\mathbf{x=}\left(  x_{1},x_{2},\ldots,x_{p}\right)  .$
  -->
 <IMG
  WIDTH="144" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img448.gif"
+ SRC="img453.gif"
  ALT="$ \mathbf{x=}\left( x_{1},x_{2},\ldots
 ,x_{p}\right) .$"> <!-- MATH
- $\mathbf{x=}\left(  x,y\right)  \mathbf{x}_{i}%
-\mathbf{=}\left(  x_{i},y_{i}\right)$
+ $\mathbf{x=}\left(  x,y\right)  \mathbf{x}_{i}\mathbf{=}\left(  x_{i},y_{i}\right)$
  -->
 <IMG
  WIDTH="150" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img449.gif"
- ALT="$ \mathbf{x=}\left( x,y\right) \mathbf{x}_{i}%
-\mathbf{=}\left( x_{i},y_{i}\right) $"> <!-- MATH
+ SRC="img454.gif"
+ ALT="$ \mathbf{x=}\left( x,y\right) \mathbf{x}_{i}\mathbf{=}\left( x_{i},y_{i}\right) $"> <!-- MATH
  $i=1,\ldots,N$
  -->
 <IMG
  WIDTH="89" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img450.gif"
+ SRC="img455.gif"
  ALT="$ i=1,\ldots,N$">&nbsp;&nbsp;&nbsp;&nbsp;. ただし, <!-- MATH
- $\left\Vert \mathbf{x}\right\Vert \mathbf{=}\sum_{i}%
-^{p}x_{i}^{2}$
+ $\left\Vert \mathbf{x}\right\Vert \mathbf{=}\sum_{i}^{p}x_{i}^{2}$
  -->
 <IMG
  WIDTH="90" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img451.gif"
- ALT="$ \left\Vert \mathbf{x}\right\Vert \mathbf{=}\sum_{i}%
-^{p}x_{i}^{2}$">とする. 二次元の場合は<!-- MATH
- $\left\Vert \mathbf{x}\right\Vert
-\mathbf{=}x^{2}+y^{2}$
+ SRC="img456.gif"
+ ALT="$ \left\Vert \mathbf{x}\right\Vert \mathbf{=}\sum_{i}^{p}x_{i}^{2}$">とする. 二次元の場合は<!-- MATH
+ $\left\Vert \mathbf{x}\right\Vert \mathbf{=}x^{2}+y^{2}$
  -->
 <IMG
  WIDTH="96" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img452.gif"
+ SRC="img457.gif"
  ALT="$ \left\Vert \mathbf{x}\right\Vert
 \mathbf{=}x^{2}+y^{2}$">．
 
@@ -849,7 +830,8 @@ $">
 </H3>
 
 <P>
-デルタ関数を用いて，データを次のように表すことができる．<P></P>
+デルタ関数を用いて，データを次のように表すことができる．
+<P></P>
 <DIV ALIGN="CENTER"><!-- MATH
  \begin{equation}
 s\left(  \mathbf{x}\right)  =\sum_{i=1}^{n}{{\delta\left(  ||{x-x}%
@@ -860,7 +842,7 @@ _{i}||+||{y-y}_{i}||\right)  }}%
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="245" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img453.gif"
+ SRC="img458.gif"
  ALT="$\displaystyle s\left( \mathbf{x}\right) =\sum_{i=1}^{n}{{\delta\left( \vert\vert{x-x}%
 _{i}\vert\vert+\vert\vert{y-y}_{i}\vert\vert\right) }}%
 $"></TD>
@@ -868,16 +850,17 @@ $"></TD>
 (3.12)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-カーネル密度推定は<P></P>
+カーネル密度推定は
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="53" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img454.gif"
+ SRC="img459.gif"
  ALT="$\displaystyle \hat{\lambda}\left( x,y\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="160" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img455.gif"
+ SRC="img460.gif"
  ALT="$\displaystyle =\int s\left( \mathbf{x}\right) k{\left( \mathbf{x}-\mathbf{u}\right) d}\mathbf{u}.$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.13)</TD></TR>
@@ -885,7 +868,7 @@ $"></TD>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="114" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img456.gif"
+ SRC="img461.gif"
  ALT="$\displaystyle =\sum_{i=1}^{n}k\left( \mathbf{x}-\mathbf{x}_{i}\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.14)</TD></TR>
@@ -901,33 +884,34 @@ MISE<!-- MATH
 <DIV ALIGN="CENTER">
 &nbsp; &nbsp;MISE<IMG
  WIDTH="190" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img457.gif"
+ SRC="img462.gif"
  ALT="$\displaystyle =\int E[(\lambda\left( \mathbf{x}\right) -\hat{\lambda}\left(
 \mathbf{x}\right) )^{2}]d\mathbf{x},
 $">
 </DIV><P></P>
-からコスト関数を導入する<P></P>
+からコスト関数を導入する
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img458.gif"
+ SRC="img463.gif"
  ALT="$\displaystyle C_{n}\left( w\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="16" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img459.gif"
+ SRC="img464.gif"
  ALT="$\displaystyle =$">MISE<IMG
  WIDTH="102" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img460.gif"
- ALT="$\displaystyle -\int\lambda\left( \mathbf{x}\right) ^{2}\,d\mathbf{x}$"></TD>
+ SRC="img465.gif"
+ ALT="$\displaystyle -\int\lambda\left( \mathbf{x}\right) ^{2} d\mathbf{x}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="273" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img461.gif"
- ALT="$\displaystyle =\int E\hat{\lambda}\left( \mathbf{x}\right) ^{2}\,d\mathbf{x}%
+ SRC="img466.gif"
+ ALT="$\displaystyle =\int E\hat{\lambda}\left( \mathbf{x}\right) ^{2} d\mathbf{x}%
 -...
 ...a\left( \mathbf{x}\right) E\hat{\lambda}\left( \mathbf{x}%
 \right) d\mathbf{x}.$"></TD>
@@ -948,20 +932,21 @@ Es\left(  \mathbf{x}\right)  E\hat{\lambda}\left(  \mathbf{x}\right)
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="476" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img462.gif"
+ SRC="img467.gif"
  ALT="$\displaystyle Es\left( \mathbf{x}\right) E\hat{\lambda}\left( \mathbf{x}\right)...
 ...t{\lambda }\left( \mathbf{x}\right) -E\hat{\lambda}\left( \mathbf{x}\right) )],$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.16)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-さらに，上式の第二項は<P></P>
+さらに，上式の第二項は
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="247" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img463.gif"
+ SRC="img468.gif"
  ALT="$\displaystyle E[(s\left( \mathbf{x}\right) -Es\left( \mathbf{x}\right) )(\hat {\lambda}\left( \mathbf{x}\right) -E\hat{\lambda}\left( \mathbf{x}\right) )]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -969,25 +954,25 @@ Es\left(  \mathbf{x}\right)  E\hat{\lambda}\left(  \mathbf{x}\right)
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="434" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img464.gif"
+ SRC="img469.gif"
  ALT="$\displaystyle \hskip2em=\int\int k{\left( \mathbf{x}-\mathbf{u}\right) }E\left[...
-...t( s\left( \mathbf{x}\right) -Es\left( \mathbf{x}\right) \right) \right] \,dudv$"></TD>
+...t( s\left( \mathbf{x}\right) -Es\left( \mathbf{x}\right) \right) \right]  dudv$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="332" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img465.gif"
+ SRC="img470.gif"
  ALT="$\displaystyle \hskip2em=\int\int k{\left( \mathbf{x}-\mathbf{u}\right) }\left[ ...
-...hbf{x}-\mathbf{u}\right) \frac{{1}}{n}Es\left( \mathbf{x}\right) \right] \,dudv$"></TD>
+...hbf{x}-\mathbf{u}\right) \frac{{1}}{n}Es\left( \mathbf{x}\right) \right]  dudv$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="158" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img466.gif"
+ SRC="img471.gif"
  ALT="$\displaystyle \hskip2em=\frac{{1}}{n}{k}_{w}(\mathbf{0})Es\left( \mathbf{x}\right) .$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.17)</TD></TR>
@@ -998,12 +983,12 @@ Es\left(  \mathbf{x}\right)  E\hat{\lambda}\left(  \mathbf{x}\right)
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img458.gif"
+ SRC="img463.gif"
  ALT="$\displaystyle C_{n}\left( w\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="273" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img467.gif"
- ALT="$\displaystyle =\int E\hat{\lambda}\left( \mathbf{x}\right) ^{2}\,d\mathbf{x}-2\...
+ SRC="img472.gif"
+ ALT="$\displaystyle =\int E\hat{\lambda}\left( \mathbf{x}\right) ^{2} d\mathbf{x}-2\...
 ...bda\left( \mathbf{x}\right) E\hat{\lambda}\left( \mathbf{x}\right) d\mathbf{x}.$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1011,8 +996,8 @@ Es\left(  \mathbf{x}\right)  E\hat{\lambda}\left(  \mathbf{x}\right)
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="411" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img468.gif"
- ALT="$\displaystyle =\int E\hat{\lambda}\left( \mathbf{x}\right) ^{2}\,d\mathbf{x}%
+ SRC="img473.gif"
+ ALT="$\displaystyle =\int E\hat{\lambda}\left( \mathbf{x}\right) ^{2} d\mathbf{x}%
 -...
 ...ac{{1}}{n}{k}_{w}(\mathbf{0})Es\left( \mathbf{x}%
 \right) \right] d\mathbf{x}%
@@ -1026,12 +1011,12 @@ $"></TD>
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="51" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img469.gif"
+ SRC="img474.gif"
  ALT="$\displaystyle \hat{C}_{n}\left( w\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="364" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img470.gif"
- ALT="$\displaystyle =\int\hat{\lambda}\left( \mathbf{x}\right) ^{2}\,d\mathbf{x}-2\in...
+ SRC="img475.gif"
+ ALT="$\displaystyle =\int\hat{\lambda}\left( \mathbf{x}\right) ^{2} d\mathbf{x}-2\in...
 ... -\frac{{1}}{n}{k}_{w}(\mathbf{0})s\left( \mathbf{x}\right) \right] d\mathbf{x}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1039,8 +1024,8 @@ $"></TD>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="306" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
- SRC="img471.gif"
- ALT="$\displaystyle =\int\hat{\lambda}\left( \mathbf{x}\right) ^{2}\,d\mathbf{x-2}\le...
+ SRC="img476.gif"
+ ALT="$\displaystyle =\int\hat{\lambda}\left( \mathbf{x}\right) ^{2} d\mathbf{x-2}\le...
 ...lambda}\left( \mathbf{x}_{i}\right) -\frac{{1}}{n}{k}%
 _{w}(\mathbf{0})N\right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -1049,23 +1034,24 @@ _{w}(\mathbf{0})N\right]$"></TD>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="357" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img472.gif"
+ SRC="img477.gif"
  ALT="$\displaystyle =\sum_{i,j}\int k\left( \mathbf{x}-\mathbf{x}_{i}\right) k\left( ...
 ...\right) d\mathbf{x-2}\sum_{i\neq j}k\left( \mathbf{x}_{i}-\mathbf{x}_{j}\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-対称なカーネルのコスト関数はさらに簡略化できる．<P></P>
+対称なカーネルのコスト関数はさらに簡略化できる．
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="51" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img469.gif"
+ SRC="img474.gif"
  ALT="$\displaystyle \hat{C}_{n}\left( w\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="238" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img473.gif"
+ SRC="img478.gif"
  ALT="$\displaystyle =\sum_{i,j}\psi\left( \mathbf{x}%
 _{i},\mathbf{x}_{j}\right) \mathbf{-2}\sum_{i\neq j}k\left( \mathbf{x}%
 _{i}-\mathbf{x}_{j}\right)$"></TD>
@@ -1075,7 +1061,7 @@ _{i}-\mathbf{x}_{j}\right)$"></TD>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="360" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
- SRC="img474.gif"
+ SRC="img479.gif"
  ALT="$\displaystyle =\sum_{i}\psi\left( \mathbf{x}_{i},\mathbf{x}_{i}\right) +2\sum_{...
 ...,\mathbf{x}_{j}\right) -4\sum_{i&lt;j}k\left( \mathbf{x}_{i}-\mathbf{x}_{j}\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -1084,7 +1070,7 @@ _{i}-\mathbf{x}_{j}\right)$"></TD>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="340" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
- SRC="img475.gif"
+ SRC="img480.gif"
  ALT="$\displaystyle =\sum_{i}\psi\left( \mathbf{x}_{i},\mathbf{x}_{i}\right) +2\sum _...
 ...i},\mathbf{x}_{j}\right) -2k\left( \mathbf{x}_{i}-\mathbf{x}_{j}\right) \right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -1094,7 +1080,8 @@ _{i}-\mathbf{x}_{j}\right)$"></TD>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <P>
-ガウスカーネルの場合，これを用いて以下の公式を得ることができる．２次元のガウスカーネルは<P></P>
+ガウスカーネルの場合，これを用いて以下の公式を得ることができる．２次元のガウスカーネルは
+<P></P>
 <DIV ALIGN="CENTER"><!-- MATH
  \begin{equation}
 k_{w}(\mathbf{x})=\frac{1}{2\pi w^{2}}\exp{\left(  -\frac{||\mathbf{x||}%
@@ -1105,14 +1092,15 @@ k_{w}(\mathbf{x})=\frac{1}{2\pi w^{2}}\exp{\left(  -\frac{||\mathbf{x||}%
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="207" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img476.gif"
+ SRC="img481.gif"
  ALT="$\displaystyle k_{w}(\mathbf{x})=\frac{1}{2\pi w^{2}}\exp{\left( -\frac{\vert\vert\mathbf{x\vert\vert}%
 }{2w^{2}}\right) },$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.18)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-ゆえに，<!-- MATH
+ゆえに，
+<!-- MATH
  \begin{displaymath}
 k_{w}\left(  \mathbf{x}_{i}-\mathbf{x}_{j}\right)  =\frac{1}{2\pi w^{2}}%
 \exp\left[  -\frac{\left\Vert \mathbf{x}_{i}-\mathbf{x}_{j}\right\Vert
@@ -1123,13 +1111,14 @@ k_{w}\left(  \mathbf{x}_{i}-\mathbf{x}_{j}\right)  =\frac{1}{2\pi w^{2}}%
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="279" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img477.gif"
+ SRC="img482.gif"
  ALT="$\displaystyle k_{w}\left( \mathbf{x}_{i}-\mathbf{x}_{j}\right) =\frac{1}{2\pi w...
 ...t[ -\frac{\left\Vert \mathbf{x}_{i}-\mathbf{x}_{j}\right\Vert
 }{2w^{2}}\right]
 $">
 </DIV><P></P>
-及び<!-- MATH
+及び
+<!-- MATH
  \begin{displaymath}
 \int k_{w}\left(  \mathbf{x}-\mathbf{x}_{i}\right)  k_{w}\left(
 \mathbf{x}-\mathbf{x}_{j}\right)  d\mathbf{x}=\frac{1}{4\pi w^{2}}\exp\left[
@@ -1140,7 +1129,7 @@ $">
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="394" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img478.gif"
+ SRC="img483.gif"
  ALT="$\displaystyle \int k_{w}\left( \mathbf{x}-\mathbf{x}_{i}\right) k_{w}\left(
 \ma...
 ...t[
@@ -1159,7 +1148,7 @@ _{j}\right\Vert }{4w^{2}}\right]  -4\exp\left[  -\frac{\left\Vert
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="501" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img479.gif"
+ SRC="img484.gif"
  ALT="$\displaystyle \hat{C}_{n}\left( w\right) =\frac{N}{4\pi w^{2}}+\frac{1}{2\pi w^...
 ...c{\left\Vert
 \mathbf{x}_{i}-\mathbf{x}_{j}\right\Vert }{2w^{2}}\right] \right]
@@ -1202,7 +1191,7 @@ $">
   HREF="node16.html">Index</A></B> 
 <!--End of Navigation Panel-->
 <ADDRESS>
-&copy; 2007 2008 2009 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki, Ph.D.</a>
+<div align=right>&copy; 2007 - 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki</a></align>
 </ADDRESS>
-</BODY>
+<p></p><div id=disqus_thread></div><script type=text/javascript>(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://statneuro.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })();</script><script type=text/javascript>var disqus_shortname = 'statneuro';(function () { var s = document.createElement('script'); s.async = true;  s.src = 'http://disqus.com/forums/statneuro/count.js';  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);}());</script><p><script type=text/javascript src=http://disqus.com/forums/statneuro/combination_widget.js?num_items=5&hide_mods=0&color=blue&default_tab=people&excerpt_length=200></script><a href=http://disqus.com>Powered by Disqus</a></p></body>
 </HTML>

@@ -34,17 +34,21 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
     <a name=top id=top> </a>
     <div id=NaviLayer>  
     <table width=180 border=0 cellpadding=0 cellspacing=0>
-    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
-    <tr><td height=28 valign=top><b>Spike Density Estimation</b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../histogram.html>Histogram Method</a></b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../kernel.html>Kernel Method</a></b></td></tr>
+    <tr><td height=8 valign=top><b>Tweet this page</b></td></tr>
+    <tr><td height=8 valign=top><a href=http://twitter.com/share class=twitter-share-button data-count=horizontal data-via=computneuro data-related="statneuro:Japanese tweets from author.">Tweet</a><script type=text/javascript src=http://platform.twitter.com/widgets.js></script></td></tr>
     <tr><td height=8 valign=top></td></tr>
     <tr><td height=8 valign=top><b>Share it with your friend</b></td></tr>
     <tr><td valign=top><a class=addthis_button href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcbd554189b9a7"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width=125 height=16 alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcbd554189b9a7"></script></td></tr>
     <tr><td height=8 valign=top></td></tr>
-    <tr><td height=8 valign=top><b>Tweet</b></td></tr>
-    <tr><td valign=top><iframe src=../../tweet.html width=180 height=600 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
-    <tr><td height=28 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Tweet by author</b></td></tr>
+    <tr><td valign=top><iframe src=../../tweetjp.html width=180 height=260 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=28 valign=top><b><a href=index.html>ƒXƒpƒCƒN“Œvƒ‚ƒfƒ‹“ü–å ƒgƒbƒv</a></b></td><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=28 valign=top><b>ƒXƒpƒCƒN–§“x„’è</b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../histogram.html>ƒqƒXƒgƒOƒ‰ƒ€–@</a></b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../kernel.html>ƒJ[ƒlƒ‹–@</a></b></td></tr>
+    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
     </table></div>
 <!--Navigation Panel-->
 <A NAME="tex2html334"
@@ -106,15 +110,14 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <H2><A NAME="SECTION02211000000000000000">
 ŽžŠÔLk</A>
 </H2>
-<P>
 
-<DIV ALIGN="CENTER"><A NAME="759"></A>
+<DIV ALIGN="CENTER"><A NAME="792"></A>
 <TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.1:</STRONG>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
 •Ï“®ƒXƒpƒCƒNƒŒ[ƒg‚ÆŽžŠÔLk</CAPTION>
 <TR><TD><IMG
  WIDTH="444" HEIGHT="623" ALIGN="BOTTOM" BORDER="0"
- SRC="img232.gif"
+ SRC="img241.gif"
  ALT="\includegraphics[width=0.8\columnwidth]{fig/time-rescaling.eps}"></TD></TR>
 </TABLE>
 </DIV>
@@ -126,11 +129,12 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
  -->
 <IMG
  WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img233.gif"
+ SRC="img242.gif"
  ALT="$ \lambda_{t}$">‚Å•\‚µ, •Ï“®ƒŒ[ƒg‚ðŽž<IMG
  WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img12.gif"
- ALT="$ t$">‚Ü‚Å‚ðÏ•ª‚µ‚½<P></P>
+ ALT="$ t$">‚Ü‚Å‚ðÏ•ª‚µ‚½
+<P></P>
 <DIV ALIGN="CENTER"><A NAME="time-rescaling"></A><!-- MATH
  \begin{equation}
 \Lambda\left(  t\right)  =\int_{0}^{t}\lambda\left(  u\right)  du
@@ -141,7 +145,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="135" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
- SRC="img234.gif"
+ SRC="img243.gif"
  ALT="$\displaystyle \Lambda\left( t\right) =\int_{0}^{t}\lambda\left( u\right) du %
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -154,84 +158,83 @@ $"></TD>
  -->
 <IMG
  WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img235.gif"
+ SRC="img244.gif"
  ALT="$ \Lambda\left( t\right) $">‚ðŽ¦‚·.
 <IMG
  WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img236.gif"
+ SRC="img245.gif"
  ALT="$ \Lambda$">‚Í–³ŽŸŒ³—Ê‚Å, ‚¢‚í‚Î<!-- MATH
  $\lambda_{t}$
  -->
 <IMG
  WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img233.gif"
+ SRC="img242.gif"
  ALT="$ \lambda_{t}$">‚É‚æ‚è‹KŠi‰»‚³‚ê‚½ŽžŠÔ‚Å‚ ‚é.
 •Ï“®ƒŒ[ƒg‚Ì¬‚³‚È‚Æ‚±‚ë‚Å‚Í, ŽÀŽžŠÔ‚É‘Î‚µ‚Ä<IMG
  WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img236.gif"
+ SRC="img245.gif"
  ALT="$ \Lambda$">‚Í‚ä‚Á‚­‚è‚Æi‚Ý, •Ï“®ƒŒ[ƒg‚Ì‘å‚«‚ÈŠ‚Å‚Í<IMG
  WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img236.gif"
+ SRC="img245.gif"
  ALT="$ \Lambda$">‚Í‘‚­i‚Þ.
 ‚»‚Ì‚½‚ß, <A HREF="#time-rescaling">2.1</A>‚Ì•Ï”•ÏŠ·‚ðs‚¤‚±‚Æ‚ðŽžŠÔLk(Time-rescalingj‚ð‚·‚é‚ÆŒ¾‚¤. —á‚¦‚Î}<A HREF="#FIG_time-rescaling"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
  SRC="../icons/crossref.gif"></A>-b‚Å‚Í, ƒŠƒXƒP[ƒ‹‚³‚ê‚½ŽžŠÔŽ²<IMG
  WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img236.gif"
+ SRC="img245.gif"
  ALT="$ \Lambda$">ã‚É‚ ‚é‚Q“_<!-- MATH
- $\Lambda
-_{1},\Lambda_{2}$
+ $\Lambda_{1},\Lambda_{2}$
  -->
 <IMG
  WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img237.gif"
+ SRC="img246.gif"
  ALT="$ \Lambda
 _{1},\Lambda_{2}$">‚ÌŠÔŠu‚Æ‚Q“_<!-- MATH
- $\Lambda
-_{3},\Lambda_{4}$
+ $\Lambda_{3},\Lambda_{4}$
  -->
 <IMG
  WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img238.gif"
+ SRC="img247.gif"
  ALT="$ \Lambda
 _{3},\Lambda_{4}$">‚ÌŠÔŠu‚Í‚Ù‚Ú“¯‚¶‚®‚ç‚¢‚¾‚ª, ŽÀŽžŠÔã‚Å‚ÍƒŒ[ƒg‚Ì<!-- MATH
  $t_{1},t_{2}$
  -->
 <IMG
  WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img239.gif"
+ SRC="img248.gif"
  ALT="$ t_{1},t_{2}$">‚ÌŠÔŠu‚Í<!-- MATH
  $t_{3},t_{4}$
  -->
 <IMG
  WIDTH="37" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img240.gif"
+ SRC="img249.gif"
  ALT="$ t_{3},t_{4}$">‚ÌŠÔŠu‚æ‚è‚¸‚Á‚Æ‘å‚«‚¢.
 
 <P>
 ƒŠƒXƒP[ƒ‹‚³‚ê‚½ŽžŠÔŽ²<IMG
  WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img236.gif"
+ SRC="img245.gif"
  ALT="$ \Lambda$">ã‚Å•½‹Ï<IMG
  WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img216.gif"
+ SRC="img225.gif"
  ALT="$ 1$">‚Ì•W€Žw”•ª•z‚É]‚¤’èíƒ|ƒAƒ\ƒ“‰ß’ö‚ðl‚¦, ŽÀŽžŠÔ‚ÖŽÊ‘œ‚µ‚½ƒXƒpƒCƒNŽžŒn—ñ‚ª”ñ’èíƒ|ƒAƒ\ƒ“‰ß’ö‚Å‚ ‚é.
 <IMG
  WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img236.gif"
+ SRC="img245.gif"
  ALT="$ \Lambda$">Ž²ã‚ÌƒCƒxƒ“ƒgŒn—ñ‚ð<!-- MATH
  $\left\{  \Lambda_{1},\Lambda_{2},\cdots\right\}$
  -->
 <IMG
  WIDTH="92" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img241.gif"
+ SRC="img250.gif"
  ALT="$ \left\{ \Lambda_{1},\Lambda_{2},\cdots\right\}
 $">‚Æ‚·‚é‚Æ, ƒCƒxƒ“ƒgŠÔŠu<!-- MATH
  $\Lambda_{i}-\Lambda_{i-1}$
  -->
 <IMG
  WIDTH="72" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img242.gif"
- ALT="$ \Lambda_{i}-\Lambda_{i-1}$">‚ª•W€Žw”•ª•z<!-- MATH
+ SRC="img251.gif"
+ ALT="$ \Lambda_{i}-\Lambda_{i-1}$">‚ª•W€Žw”•ª•z
+<!-- MATH
  \begin{displaymath}
 g\left(  z\right)  =\exp\left[  -z\right]
 \end{displaymath}
@@ -240,7 +243,7 @@ g\left(  z\right)  =\exp\left[  -z\right]
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="113" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img243.gif"
+ SRC="img252.gif"
  ALT="$\displaystyle g\left( z\right) =\exp\left[ -z\right]
 $">
 </DIV><P></P>
@@ -250,9 +253,10 @@ t_{i}\right)$
  -->
 <IMG
  WIDTH="79" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img244.gif"
+ SRC="img253.gif"
  ALT="$ \Lambda_{i}=\Lambda\left(
-t_{i}\right) $">‚¾‚©‚ç<!-- MATH
+t_{i}\right) $">‚¾‚©‚ç
+<!-- MATH
  \begin{displaymath}
 z\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  \equiv\Lambda\left(
 t_{i}\right)  -\Lambda\left(  t_{i-1}\right)  =\int_{t_{i-1}}^{t_{i}}%
@@ -263,7 +267,7 @@ t_{i}\right)  -\Lambda\left(  t_{i-1}\right)  =\int_{t_{i-1}}^{t_{i}}%
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="369" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
- SRC="img245.gif"
+ SRC="img254.gif"
  ALT="$\displaystyle z\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) \equiv\...
 ...Lambda\left( t_{i-1}\right) =\int_{t_{i-1}}^{t_{i}}%
 \lambda\left( u\right) du
@@ -271,13 +275,13 @@ $">
 </DIV><P></P>
 ”ñ’èíƒ|ƒAƒ\ƒ“ŽžŒn—ñ‚ð”’l“I‚ÉŽÀŒ»‚·‚é‚½‚ß‚É‚Í, Žw”•ª•z‚É]‚¤—”‚ð”­¶‚³‚¹, ‚±‚ê‚ð–ž‚½‚·<IMG
  WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img246.gif"
+ SRC="img255.gif"
  ALT="$ t_{i}$">‚ð’€ŽŸ‹‚ß‚Ä‚¢‚¯‚Î‚æ‚¢. ‚±‚Ì•û–@‚ÍŽžŠÔLk(Time-rescalingj—˜_‚ÉŠî‚Ã‚­•û–@‚Å‚ ‚è, ŽŸ‚Ì‚æ‚¤‚É‚Ü‚Æ‚ß‚ç‚ê‚é[<A
  HREF="node15.html#Brown01">Brown et&nbsp;al., 2001</A>].
 
 <P>
 <P>
-<DIV><B>ƒAƒ‹ƒSƒŠƒYƒ€  8</B> &nbsp; 
+<DIV><B>ƒAƒ‹ƒSƒŠƒYƒ€  9</B> &nbsp; 
 <I>ŽžŠÔLk—˜_‚ð—p‚¢‚½”ñ’èíƒ|ƒAƒ\ƒ“‰ß’ö‚ÌŽÀŒ»
 </I>
 <P>
@@ -287,17 +291,17 @@ $">
  -->
 <IMG
  WIDTH="92" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img247.gif"
+ SRC="img256.gif"
  ALT="$ i=1,t_{1}=0.$">
 
 <P>
 </LI>
 <LI>ƒŒ[ƒg<IMG
  WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img216.gif"
+ SRC="img225.gif"
  ALT="$ 1$">‚ÌŽw”•ª•z‚É]‚¤—”<IMG
  WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img204.gif"
+ SRC="img213.gif"
  ALT="$ \eta$">‚ð¶¬‚·‚é.
 
 <P>
@@ -307,10 +311,10 @@ $">
  -->
 <IMG
  WIDTH="122" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
- SRC="img248.gif"
+ SRC="img257.gif"
  ALT="$ \eta=\int_{t_{i-1}}^{t_{i}}\lambda\left( u\right) du$">‚ð–ž‚½‚·<IMG
  WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img246.gif"
+ SRC="img255.gif"
  ALT="$ t_{i}$">‚ð‹‚ß‚é.
 
 <P>
@@ -320,20 +324,20 @@ $">
  -->
 <IMG
  WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img249.gif"
+ SRC="img258.gif"
  ALT="$ t_{i}\geq T$">‚È‚ç‚ÎI—¹.
 
 <P>
 <IMG
  WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img250.gif"
+ SRC="img259.gif"
  ALT="$ t_{i}&lt;T$">‚È‚ç‚Î<!-- MATH
  $i\leftarrow i+1.\ 2$
  -->
 <IMG
  WIDTH="85" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img251.gif"
- ALT="$ i\leftarrow i+1.\ 2$">‚Ö.
+ SRC="img260.gif"
+ ALT="$ i\leftarrow i+1. 2$">‚Ö.
 </LI>
 </OL></DIV><P></P>
 
@@ -349,21 +353,21 @@ $">
 <P>
 •Ï“®ƒ|ƒAƒ\ƒ“‰ß’ö‚É‚¨‚¢‚ÄŽž<IMG
  WIDTH="31" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img252.gif"
+ SRC="img261.gif"
  ALT="$ t_{i-1}$">‚ÅƒXƒpƒCƒN‚ª¶‚¶‚½‰º‚Å, ŽŸ‚ÌƒXƒpƒCƒNŽž<IMG
  WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img246.gif"
+ SRC="img255.gif"
  ALT="$ t_{i}$">‚ÌðŒ•tƒXƒpƒCƒN–§“x•ª•ziISI•ª•zj‚ð‹‚ß‚Ä‚Ý‚æ‚¤F
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="127" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img253.gif"
+ SRC="img262.gif"
  ALT="$\displaystyle p\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="143" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img254.gif"
+ SRC="img263.gif"
  ALT="$\displaystyle =\left\vert \frac{dz}{dt_{i}}\right\vert g\left( z\vert\lambda_{t_{i-1}:t_{i}}\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -371,22 +375,19 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="209" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
- SRC="img255.gif"
- ALT="$\displaystyle =\lambda\left( t_{i}\right) \exp\left[ -\int_{t_{i-1}}^{t_{i}}%
-\lambda\left( u\right) du\right]%
+ SRC="img264.gif"
+ ALT="$\displaystyle =\lambda\left( t_{i}\right) \exp\left[ -\int_{t_{i-1}}^{t_{i}} \lambda\left( u\right) du\right]%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 <A NAME="ISI_inhomogeneous_Poisson">(2.2)</A></TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-ðŒ‚Â‚«ƒXƒpƒCƒN–§“x•ª•z<A HREF="#ISI_inhomogeneous_Poisson">2.2</A>‚Í,
-’èíƒ|ƒAƒ\ƒ“‰ß’ö‚ÌƒXƒpƒCƒN–§“x•ª•z‚Å‚ ‚éŽw”•ª•z<!-- MATH
- $\lambda
-e^{-\lambda t}$
+ðŒ‚Â‚«ƒXƒpƒCƒN–§“x•ª•z<A HREF="#ISI_inhomogeneous_Poisson">2.2</A>‚Í, ’èíƒ|ƒAƒ\ƒ“‰ß’ö‚ÌƒXƒpƒCƒN–§“x•ª•z‚Å‚ ‚éŽw”•ª•z<!-- MATH
+ $\lambda e^{-\lambda t}$
  -->
 <IMG
  WIDTH="44" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
- SRC="img256.gif"
+ SRC="img265.gif"
  ALT="$ \lambda
 e^{-\lambda t}$">‚ÌŽ©‘R‚ÈŠg’£‚É‚È‚Á‚Ä‚¢‚é‚±‚Æ‚ª‚í‚©‚é. ‹tŠÖ”–@‚ð—p‚¢‚ê‚Î, ‚±‚ÌðŒ•tƒXƒpƒCƒN–§“x•ª•z‚É]‚¤ŽžŒn—ñ‚ðì‚ê‚é. 
 <P><P>
@@ -394,7 +395,7 @@ e^{-\lambda t}$">‚ÌŽ©‘R‚ÈŠg’£‚É‚È‚Á‚Ä‚¢‚é‚±‚Æ‚ª‚í‚©‚é. ‹tŠÖ”–@‚ð—p‚¢‚ê‚Î, ‚±‚Ì
 
 <P>
 <P>
-<DIV><B>ƒAƒ‹ƒSƒŠƒYƒ€  9</B> &nbsp; 
+<DIV><B>ƒAƒ‹ƒSƒŠƒYƒ€  10</B> &nbsp; 
 <I>‹tŠÖ”–@‚ð—p‚¢‚½”ñ’èíƒ|ƒAƒ\ƒ“‰ß’ö‚ÌŽÀŒ»
 </I>
 <P>
@@ -404,7 +405,7 @@ e^{-\lambda t}$">‚ÌŽ©‘R‚ÈŠg’£‚É‚È‚Á‚Ä‚¢‚é‚±‚Æ‚ª‚í‚©‚é. ‹tŠÖ”–@‚ð—p‚¢‚ê‚Î, ‚±‚Ì
  -->
 <IMG
  WIDTH="88" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img257.gif"
+ SRC="img266.gif"
  ALT="$ i=1,t_{1}=0$">.
 
 <P>
@@ -414,28 +415,25 @@ e^{-\lambda t}$">‚ÌŽ©‘R‚ÈŠg’£‚É‚È‚Á‚Ä‚¢‚é‚±‚Æ‚ª‚í‚©‚é. ‹tŠÖ”–@‚ð—p‚¢‚ê‚Î, ‚±‚Ì
  -->
 <IMG
  WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img201.gif"
+ SRC="img210.gif"
  ALT="$ \left[
 0,1\right] $">‚Ì‹æŠÔ‚Ìˆê—l—”<IMG
  WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img202.gif"
+ SRC="img211.gif"
  ALT="$ \xi$">‚ð¶¬‚·‚é.
 
 <P>
 </LI>
 <LI><!-- MATH
- $\xi=\lambda\left(  t_{i}\right)  \exp\left[  -\int_{t_{i-1}}^{t_{i}%
-}\lambda\left(  u\right)  du\right]$
+ $\xi=\lambda\left(  t_{i}\right)  \exp\left[  -\int_{t_{i-1}}^{t_{i}}\lambda\left(  u\right)  du\right]$
  -->
 <IMG
  WIDTH="216" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
- SRC="img258.gif"
- ALT="$ \xi=\lambda\left( t_{i}\right) \exp\left[ -\int_{t_{i-1}}^{t_{i}%
-}\lambda\left( u\right) du\right] $">‚ð–ž‚½‚·<IMG
+ SRC="img267.gif"
+ ALT="$ \xi=\lambda\left( t_{i}\right) \exp\left[ -\int_{t_{i-1}}^{t_{i}}\lambda\left( u\right) du\right] $">‚ð–ž‚½‚·<IMG
  WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img259.gif"
- ALT="$ t_{i}%
-$">‚ð‹‚ß‚é.
+ SRC="img255.gif"
+ ALT="$ t_{i}$">‚ð‹‚ß‚é.
 
 <P>
 </LI>
@@ -444,20 +442,20 @@ $">‚ð‹‚ß‚é.
  -->
 <IMG
  WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img249.gif"
+ SRC="img258.gif"
  ALT="$ t_{i}\geq T$">‚È‚ç‚ÎI—¹.
 
 <P>
 <IMG
  WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img250.gif"
+ SRC="img259.gif"
  ALT="$ t_{i}&lt;T$">‚È‚ç‚Î<!-- MATH
  $i\leftarrow i+1.\ 2$
  -->
 <IMG
  WIDTH="85" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img251.gif"
- ALT="$ i\leftarrow i+1.\ 2$">‚Ö.
+ SRC="img260.gif"
+ ALT="$ i\leftarrow i+1. 2$">‚Ö.
 <P><P>
 <BR>
 </LI>
@@ -475,10 +473,11 @@ $">‚ð‹‚ß‚é.
  -->
 <IMG
  WIDTH="106" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img260.gif"
+ SRC="img268.gif"
  ALT="$ t_{i}=0,t_{i-1}=t$">‚ÆŒ©‚ê‚Î’èíƒŠƒjƒ…[ƒAƒ‹‰ß’ö‚É‚¨‚¯‚éƒXƒpƒCƒN–§“x•ª•z‚Ì’è‹`‚Æ“¯‹`‚Å‚ ‚é. ’èíƒŠƒjƒ…[ƒAƒ‹‰ß’ö‚ÌƒXƒpƒCƒN–§“x•ª•z‚ÆƒnƒU[ƒhŠÖ”‚Æ‚ÌŠÔ‚É‚Í, <A HREF="node6.html#ISI_hazard">1.16</A>‚Ì‚æ‚¤‚ÈŠÖŒW‚ª‚ ‚é‚©‚ç,
 <A HREF="#ISI_inhomogeneous_Poisson">2.2</A>‚Æ<A HREF="#ISI_Point_Process"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
- SRC="../icons/crossref.gif"></A>‚ðŒ©”ä‚×‚Ä<P></P>
+ SRC="../icons/crossref.gif"></A>‚ðŒ©”ä‚×‚Ä
+<P></P>
 <DIV ALIGN="CENTER"><A NAME="intensity_Poisson_process"></A><!-- MATH
  \begin{equation}
 r\left(  t\right)  =\lambda\left(  t\right)%
@@ -488,30 +487,26 @@ r\left(  t\right)  =\lambda\left(  t\right)%
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="84" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img261.gif"
+ SRC="img269.gif"
  ALT="$\displaystyle r\left( t\right) =\lambda\left( t\right)%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (2.3)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-‚Å‚ ‚é‚±‚Æ‚ª‚í‚©‚é.
-ƒnƒU[ƒhŠÖ”‚à•Ï“®ƒŒ[ƒg‚à, Žž<IMG
+‚Å‚ ‚é‚±‚Æ‚ª‚í‚©‚é. ƒnƒU[ƒhŠÖ”‚à•Ï“®ƒŒ[ƒg‚à, Žž<IMG
  WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img12.gif"
  ALT="$ t$">‚É‚¨‚¯‚éuŠÔƒXƒpƒCƒN¶¬—¦‚ð—^‚¦, —¼ŽÒ‚Í“¯ˆêŽ‹‚Å‚«‚é.
-‚½‚¾‚µƒŠƒjƒ…[ƒAƒ‹‰ß’ö‚Ìê‡‚É‚Í,
-ƒXƒpƒCƒN”­¶‚©‚çŒo‰ß‚µ‚½ŽžŠÔ‚ð•Ï”‚Æ‚·‚é“Á’è‚ÌƒnƒU[ƒhŠÖ”‚ðl‚¦,
-ƒXƒpƒCƒN‚Ì“x‚ÉŽž‚ªŒ´“_‚ÉƒŠƒZƒbƒg‚³‚ê‚½. ‚±‚ê‚É‘Î‚µ‚Ä, ”ñ’èíƒ|ƒAƒ\ƒ“‰ß’ö‚Ìê‡, Žž<IMG
+‚½‚¾‚µƒŠƒjƒ…[ƒAƒ‹‰ß’ö‚Ìê‡‚É‚Í, ƒXƒpƒCƒN”­¶‚©‚çŒo‰ß‚µ‚½ŽžŠÔ‚ð•Ï”‚Æ‚·‚é“Á’è‚ÌƒnƒU[ƒhŠÖ”‚ðl‚¦, ƒXƒpƒCƒN‚Ì“x‚ÉŽž‚ªŒ´“_‚ÉƒŠƒZƒbƒg‚³‚ê‚½. ‚±‚ê‚É‘Î‚µ‚Ä, ”ñ’èíƒ|ƒAƒ\ƒ“‰ß’ö‚Ìê‡, Žž<IMG
  WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img12.gif"
  ALT="$ t$">‚ÌuŠÔ”­‰Î—¦‚Í‰ß‹Ž‚ÌƒXƒpƒCƒN”­‰Î—š—ð‚É‹’‚ç‚È‚¢<!-- MATH
- $\lambda\left(
-t\right)$
+ $\lambda\left(t\right)$
  -->
 <IMG
  WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img262.gif"
+ SRC="img270.gif"
  ALT="$ \lambda\left(
 t\right) $">‚Ì‚Ý‚Å‚«‚Ü‚é. uŠÔƒXƒpƒCƒN¶¬—¦‚ªƒXƒpƒCƒN—š—ð‚É‹’‚ç‚È‚¢‚Ì‚Í, ’èíE”ñ’èí‚ð–â‚í‚¸ƒ|ƒAƒ\ƒ“‰ß’ö‚Ì“Á’¥‚Å‚ ‚é.
 
@@ -527,36 +522,34 @@ t\right) $">‚Ì‚Ý‚Å‚«‚Ü‚é. uŠÔƒXƒpƒCƒN¶¬—¦‚ªƒXƒpƒCƒN—š—ð‚É‹’‚ç‚È‚¢‚Ì‚Í, ’èíE
  -->
 <IMG
  WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img262.gif"
+ SRC="img270.gif"
  ALT="$ \lambda\left(
 t\right) $">‚ð—p‚¢‚é•û–@‚ªl‚¦‚ê‚é.
 ŽžŠÔ‚ð\•ª¬‚³‚È•<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img104.gif"
+ SRC="img113.gif"
  ALT="$ \Delta$">‚Ì‹æŠÔ‚É‹æØ‚Á‚Ä, ƒXƒpƒCƒN‚Ì”­¶‚ðƒxƒ‹ƒk[ƒC‰ß’ö‚Å‹ßŽ—‚·‚é. Še‹æŠÔ‚Åˆê—l—”‚ð¶¬‚µ, ƒXƒpƒCƒN‚Ì<!-- MATH
- $\lambda\left(
-t\right)  \Delta$
+ $\lambda\left(t\right)  \Delta$
  -->
 <IMG
  WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img263.gif"
+ SRC="img271.gif"
  ALT="$ \lambda\left(
 t\right) \Delta$">Šm—¦‚Å”­¶‚³‚¹‚é. ƒXƒpƒCƒN‚ª¶‚¶‚È‚¢Šm—¦‚Í<!-- MATH
- $1-\lambda\left(  t\right)
-\Delta$
+ $1-\lambda\left(  t\right) \Delta$
  -->
 <IMG
  WIDTH="77" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img264.gif"
+ SRC="img272.gif"
  ALT="$ 1-\lambda\left( t\right)
 \Delta$">‚Å‚ ‚é. ”ñ’èíƒ|ƒAƒ\ƒ“‰ß’ö‚Í—š—ð‚ðl—¶‚¹‚¸”÷¬‹æŠÔ–ˆ‚É“Æ—§‚ÉŒvŽZ‚Å‚«‚é. \•ª¬‚³‚È<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img104.gif"
+ SRC="img113.gif"
  ALT="$ \Delta$">‚ð—p‚¢‚ê‚Îƒ|ƒAƒ\ƒ“‰ß’öEƒŠƒjƒ…[ƒAƒ‹‰ß’ö‚ð‹ßŽ—‚·‚é‚±‚Æ‚ª‚Å‚«‚é‚Í‚¸‚Å‚ ‚é.
 
 <P>
 <P>
-<DIV><B>ƒAƒ‹ƒSƒŠƒYƒ€  10</B> &nbsp; 
+<DIV><B>ƒAƒ‹ƒSƒŠƒYƒ€  11</B> &nbsp; 
 <I>‹­“xŠÖ”‚ð—p‚¢‚½’¼Ú“I‚È”ñ’èíƒ|ƒAƒ\ƒ“‰ß’ö‚ÌŽÀŒ»
 </I>
 <P>
@@ -566,23 +559,23 @@ t\right) \Delta$">Šm—¦‚Å”­¶‚³‚¹‚é. ƒXƒpƒCƒN‚ª¶‚¶‚È‚¢Šm—¦‚Í<!-- MATH
  SRC="img22.gif"
  ALT="$ T$">‚ÌŽžŒn—ñ‚ð\•ª‚É¬‚³‚È•<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img104.gif"
+ SRC="img113.gif"
  ALT="$ \Delta$">‚Ì<!-- MATH
  $N=T/\Delta$
  -->
 <IMG
  WIDTH="72" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img265.gif"
+ SRC="img273.gif"
  ALT="$ N=T/\Delta$">ŒÂ‚Ì‹æŠÔ‚É•ª‚¯‚é.
 
 <P>
 </LI>
 <LI><IMG
  WIDTH="39" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img266.gif"
+ SRC="img274.gif"
  ALT="$ i=1$">, <IMG
  WIDTH="41" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img267.gif"
+ SRC="img275.gif"
  ALT="$ j=1$">.
 
 <P>
@@ -592,10 +585,10 @@ t\right) \Delta$">Šm—¦‚Å”­¶‚³‚¹‚é. ƒXƒpƒCƒN‚ª¶‚¶‚È‚¢Šm—¦‚Í<!-- MATH
  -->
 <IMG
  WIDTH="71" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img268.gif"
+ SRC="img276.gif"
  ALT="$ j\leftarrow j+1$">, <IMG
  WIDTH="63" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img269.gif"
+ SRC="img277.gif"
  ALT="$ \quad j=N$">‚ÅI—¹.
 
 <P>
@@ -605,11 +598,11 @@ t\right) \Delta$">Šm—¦‚Å”­¶‚³‚¹‚é. ƒXƒpƒCƒN‚ª¶‚¶‚È‚¢Šm—¦‚Í<!-- MATH
  -->
 <IMG
  WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img201.gif"
+ SRC="img210.gif"
  ALT="$ \left[
 0,1\right] $">‚Ì‹æŠÔ‚Ìˆê—l—”<IMG
  WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img202.gif"
+ SRC="img211.gif"
  ALT="$ \xi$">‚ð¶¬‚·‚é.
 
 <P>
@@ -618,13 +611,13 @@ t\right) \Delta$">Šm—¦‚Å”­¶‚³‚¹‚é. ƒXƒpƒCƒN‚ª¶‚¶‚È‚¢Šm—¦‚Í<!-- MATH
  -->
 <IMG
  WIDTH="126" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img270.gif"
+ SRC="img278.gif"
  ALT="$ \qquad\lambda\left( j\Delta\right) \Delta\geq\xi$">&nbsp;&nbsp;&nbsp;&nbsp;‚È‚ç‚Î&nbsp;&nbsp;&nbsp;&nbsp;<!-- MATH
  $t_{i}=j\Delta,i\leftarrow i+1$
  -->
 <IMG
  WIDTH="127" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img271.gif"
+ SRC="img279.gif"
  ALT="$ t_{i}=j\Delta,i\leftarrow i+1$">.
 
 <P>
@@ -633,10 +626,10 @@ t\right) \Delta$">Šm—¦‚Å”­¶‚³‚¹‚é. ƒXƒpƒCƒN‚ª¶‚¶‚È‚¢Šm—¦‚Í<!-- MATH
  -->
 <IMG
  WIDTH="126" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img272.gif"
+ SRC="img280.gif"
  ALT="$ \qquad\lambda\left( j\Delta\right) \Delta&lt;\xi$">&nbsp;&nbsp;&nbsp;&nbsp;‚È‚ç‚Î&nbsp;&nbsp;&nbsp;&nbsp;<IMG
  WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img273.gif"
+ SRC="img281.gif"
  ALT="$ 3$">‚Ö.
 </LI>
 </OL></DIV><P></P>
@@ -644,15 +637,13 @@ t\right) \Delta$">Šm—¦‚Å”­¶‚³‚¹‚é. ƒXƒpƒCƒN‚ª¶‚¶‚È‚¢Šm—¦‚Í<!-- MATH
 <P>
 ‚±‚Ì’¼Ú“I‚È•û–@‚Í‚à‚Á‚Æ‚àŽÀ‘•‚ªŠÈŒ‰‚¾‚ª, —”‚ð<IMG
  WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img123.gif"
- ALT="$ \ N$">‰ñ”­¶‚³‚¹‚é•K—v‚ª‚ ‚èŒvŽZŒø—¦‚Í’˜‚µ‚­ˆ«‚¢. –ˆ‰ñ—”‚ð¶¬‚³‚¹‚é‚æ‚è‚Í,
-Žw”•ª•z‚É]‚¤—”‚ðˆê‰ñ”­¶‚³‚¹,
-‚»‚Ì’l‚É‚È‚é‚Ü‚Å<!-- MATH
+ SRC="img132.gif"
+ ALT="$  N$">‰ñ”­¶‚³‚¹‚é•K—v‚ª‚ ‚èŒvŽZŒø—¦‚Í’˜‚µ‚­ˆ«‚¢. –ˆ‰ñ—”‚ð¶¬‚³‚¹‚é‚æ‚è‚Í, Žw”•ª•z‚É]‚¤—”‚ðˆê‰ñ”­¶‚³‚¹, ‚»‚Ì’l‚É‚È‚é‚Ü‚Å<!-- MATH
  $\lambda\left(  j\Delta\right)$
  -->
 <IMG
  WIDTH="49" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img274.gif"
+ SRC="img282.gif"
  ALT="$ \lambda\left( j\Delta\right) $">‚ð”’l“I‚É‘«‚µž‚ñ‚Å‚¢‚­iÏ•ª‚·‚éjƒAƒ‹ƒSƒŠƒYƒ€‚Ì•û‚ªŒø—¦‚ª‚æ‚¢. ‚½‚¾‚µ, ‚±‚Ì•û–@‚à”÷¬‹æŠÔ‚É‹æØ‚Á‚½ŠÖ”‚Ì”’lÏ•ª‚ª•K—v‚É‚È‚Á‚Ä‚­‚é. ‚»‚ê‚Å‚ÍŽŸ‚É, ŠÈŒ‰‚Å‚©‚ÂŒø—¦‚Ì‚æ‚¢”’lŒvŽZ–@‚Æ‚µ‚Ä‚æ‚­—p‚¢‚ç‚ê‚éŠó”–‰»‚É‚æ‚éŽè–@‚ðÐ‰î‚µ‚æ‚¤.
 
 <P>
@@ -662,52 +653,48 @@ t\right) \Delta$">Šm—¦‚Å”­¶‚³‚¹‚é. ƒXƒpƒCƒN‚ª¶‚¶‚È‚¢Šm—¦‚Í<!-- MATH
 </H2>
 
 <P>
-Šó”–‰»(Thinning<A NAME="852"></A>[<A
+Šó”–‰»(Thinning<A NAME="885"></A>[<A
  HREF="node15.html#Ogata81">Ogata, 1981</A>,<A
  HREF="node15.html#Daley88">Daley and Vere-Jones, 1988</A>,<A
- HREF="node15.html#Heyman90">Heyman and Sobel, 1990</A>])‚ÆŒÄ‚Î‚ê‚é•û–@‚ÍÏ•ª‘€ì‚ð•K—v‚Æ‚µ‚È‚¢‚½‚ß,
-ŒvŽZŽžŠÔ‚ª’Z‚­‚ÄÏ‚Þê‡‚ª‚ ‚é.
+ HREF="node15.html#Heyman90">Heyman and Sobel, 1990</A>])‚ÆŒÄ‚Î‚ê‚é•û–@‚ÍÏ•ª‘€ì‚ð•K—v‚Æ‚µ‚È‚¢‚½‚ß, ŒvŽZŽžŠÔ‚ª’Z‚­‚ÄÏ‚Þê‡‚ª‚ ‚é.
 
 <P>
 ‚Ü‚¸<IMG
  WIDTH="39" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img275.gif"
+ SRC="img283.gif"
  ALT="$ [0,T]$">‚Ì”ÍˆÍ‚ÉƒŒ[ƒg‚ª<IMG
  WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img276.gif"
- ALT="$ M$">‚Ì’èíƒ|ƒAƒ\ƒ“‰ß’ö‚ð¶¬‚·‚é.
-‚½‚¾‚µ, <IMG
+ SRC="img284.gif"
+ ALT="$ M$">‚Ì’èíƒ|ƒAƒ\ƒ“‰ß’ö‚ð¶¬‚·‚é. ‚½‚¾‚µ, <IMG
  WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img276.gif"
+ SRC="img284.gif"
  ALT="$ M$">‚Í‚Ç‚ÌŽž‚Ì•Ï“®ƒŒ[ƒg‚æ‚è‚à‘å‚«‚¢’l‚Æ‚·‚éi‚Â‚Ü‚è<!-- MATH
  $t\in\lbrack0,T]$
  -->
 <IMG
  WIDTH="65" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img277.gif"
+ SRC="img285.gif"
  ALT="$ t\in\lbrack0,T]$">‚É‘Î‚µ‚Ä<!-- MATH
  $\lambda\left(  t\right)  \leq M$
  -->
 <IMG
  WIDTH="73" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img278.gif"
+ SRC="img286.gif"
  ALT="$ \lambda\left( t\right) \leq M$">j. ¶¬‚³‚ê‚½ƒXƒpƒCƒNŽžŒn—ñ‚ð<!-- MATH
  $\left\{  t_{1,}t_{2}\right\}$
  -->
 <IMG
  WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img279.gif"
- ALT="$ \left\{ t_{1,}t_{2}\right\} $">.
-Žž<IMG
+ SRC="img287.gif"
+ ALT="$ \left\{ t_{1,}t_{2}\right\} $">. Žž<IMG
  WIDTH="16" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img280.gif"
+ SRC="img288.gif"
  ALT="$ t_{j}$">‚É‚¨‚¯‚éƒXƒpƒCƒN‚Í, ‹KŠi‰»‚µ‚½•Ï“®ƒŒ[ƒg<!-- MATH
- $p\left(  t_{j}\right)  =\lambda
-\left(  t_{j}\right)  /M$
+ $p\left(  t_{j}\right)  =\lambda \left(  t_{j}\right)  /M$
  -->
 <IMG
  WIDTH="124" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img281.gif"
+ SRC="img289.gif"
  ALT="$ p\left( t_{j}\right) =\lambda
 \left( t_{j}\right) /M$">‚ÌŠm—¦‚ÅŽc‚·.
 Žc‚Á‚½ƒXƒpƒCƒNŽžŒn—ñ<!-- MATH
@@ -715,19 +702,19 @@ t\right) \Delta$">Šm—¦‚Å”­¶‚³‚¹‚é. ƒXƒpƒCƒN‚ª¶‚¶‚È‚¢Šm—¦‚Í<!-- MATH
  -->
 <IMG
  WIDTH="81" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img282.gif"
+ SRC="img290.gif"
  ALT="$ \left\{ t_{1}^{\ast},t_{2}^{\ast},\cdots\right\} $">‚Í•Ï“®ƒŒ[ƒg<!-- MATH
  $\lambda\left(  t\right)$
  -->
 <IMG
  WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img262.gif"
+ SRC="img270.gif"
  ALT="$ \lambda\left(
 t\right) $">‚Ìƒ|ƒAƒ\ƒ“‰ß’ö‚É]‚¤.
 
 <P>
 <P>
-<DIV><B>ƒAƒ‹ƒSƒŠƒYƒ€  11</B> &nbsp; 
+<DIV><B>ƒAƒ‹ƒSƒŠƒYƒ€  12</B> &nbsp; 
 <I>Shedler-Lewis Thinning Algorithm‚É‚æ‚é”ñ’èíƒ|ƒAƒ\ƒ“‰ß’ö‚ÌŽÀŒ»
 </I>
 <P>
@@ -737,13 +724,13 @@ t\right) $">‚Ìƒ|ƒAƒ\ƒ“‰ß’ö‚É]‚¤.
  -->
 <IMG
  WIDTH="39" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img283.gif"
+ SRC="img291.gif"
  ALT="$ \left[ 0,T\right] $">‚Ì‹æŠÔ‚Ì•Ï“®ƒŒ[ƒg<!-- MATH
  $\lambda\left(  t\right)$
  -->
 <IMG
  WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img262.gif"
+ SRC="img270.gif"
  ALT="$ \lambda\left(
 t\right) $">‚ð—pˆÓ‚·‚é
 
@@ -754,34 +741,34 @@ t\right) $">‚ð—pˆÓ‚·‚é
  -->
 <IMG
  WIDTH="105" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img284.gif"
+ SRC="img292.gif"
  ALT="$ M=\max\lambda\left( t\right) $">‚ð‚à‚Æ‚ß‚é
 
 <P>
 </LI>
 <LI><IMG
  WIDTH="39" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img266.gif"
+ SRC="img274.gif"
  ALT="$ i=1$">
 
 <P>
 </LI>
 <LI>ƒŒ[ƒg<IMG
  WIDTH="21" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img276.gif"
+ SRC="img284.gif"
  ALT="$ M$">‚ÌŽw”•ª•z‚É]‚¤—”<IMG
  WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img202.gif"
+ SRC="img211.gif"
  ALT="$ \xi$">‚ð¶¬‚·‚é
 
 <P>
 </LI>
 <LI><IMG
  WIDTH="74" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img286.gif"
+ SRC="img294.gif"
  ALT="$ s=s+X$">, <IMG
  WIDTH="60" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img287.gif"
+ SRC="img295.gif"
  ALT="$ \quad s&gt;T$">‚È‚ç‚ÎI—¹
 
 <P>
@@ -791,11 +778,11 @@ t\right) $">‚ð—pˆÓ‚·‚é
  -->
 <IMG
  WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img201.gif"
+ SRC="img210.gif"
  ALT="$ \left[
 0,1\right] $">‚Ì‹æŠÔ‚Ìˆê—l—”<IMG
  WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img202.gif"
+ SRC="img211.gif"
  ALT="$ \xi$">‚ð¶¬‚·‚é
 
 <P>
@@ -804,28 +791,28 @@ t\right) $">‚ð—pˆÓ‚·‚é
  -->
 <IMG
  WIDTH="123" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img288.gif"
+ SRC="img296.gif"
  ALT="$ \qquad\lambda\left( s\right) /M\geq\xi$">&nbsp;&nbsp;&nbsp;&nbsp;‚È‚ç‚Î<!-- MATH
  $\quad
 t_{i}=s,$
  -->
 <IMG
  WIDTH="64" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img289.gif"
+ SRC="img297.gif"
  ALT="$ \quad
 t_{i}=s,$">&nbsp;&nbsp;&nbsp;&nbsp;<!-- MATH
  $i\leftarrow i+1$
  -->
 <IMG
  WIDTH="67" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img290.gif"
+ SRC="img298.gif"
  ALT="$ i\leftarrow i+1$">
 
 <P>
 </LI>
 <LI><IMG
  WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img291.gif"
+ SRC="img299.gif"
  ALT="$ 4$">‚É–ß‚é
 </LI>
 </OL></DIV><P></P>
@@ -866,7 +853,7 @@ t_{i}=s,$">&nbsp;&nbsp;&nbsp;&nbsp;<!-- MATH
   HREF="node16.html">Index</A></B> 
 <!--End of Navigation Panel-->
 <ADDRESS>
-&copy; 2007 2008 2009 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki, Ph.D.</a>
+<div align=right>&copy; 2007 - 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki</a></align>
 </ADDRESS>
-</BODY>
+<p></p><div id=disqus_thread></div><script type=text/javascript>(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://statneuro.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })();</script><script type=text/javascript>var disqus_shortname = 'statneuro';(function () { var s = document.createElement('script'); s.async = true;  s.src = 'http://disqus.com/forums/statneuro/count.js';  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);}());</script><p><script type=text/javascript src=http://disqus.com/forums/statneuro/combination_widget.js?num_items=5&hide_mods=0&color=blue&default_tab=people&excerpt_length=200></script><a href=http://disqus.com>Powered by Disqus</a></p></body>
 </HTML>

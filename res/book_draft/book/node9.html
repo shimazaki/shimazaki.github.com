@@ -1,0 +1,1020 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<!--Converted with jLaTeX2HTML 2008 (1.71) JA patch-1.10beta2.13
+patched version by:  Kenshi Muto, Debian Project.
+* modified by:  Shige TAKENO
+LaTeX2HTML 2008 (1.71),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-2022-jp">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2008 JA patch-1.10beta2.13">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="description" CONTENT="$BHsDj>o%j%K%e!<%"%k2aDx(B">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<LINK REL="STYLESHEET" HREF="../css/latex2html.css">
+
+<LINK REL="next" HREF="node10.html">
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node10.html">
+<TITLE>$BHsDj>o%j%K%e!<%"%k2aDx(B</TITLE>
+
+<META http-equiv=Content-Type content="text/html; charset=shift_jis">
+<script src=http://www.google-analytics.com/urchin.js type=text/javascript></script>
+<script type=text/javascript>_uacct="UA-745872-1";urchinTracker();</script>
+</HEAD>
+
+<BODY>
+    <a name=top id=top> </a>
+    <div id=NaviLayer>  
+    <table width=180 border=0 cellpadding=0 cellspacing=0>
+    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
+    <tr><td height=28 valign=top><b>Spike Density Estimation</b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../histogram.html>Histogram Method</a></b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../kernel.html>Kernel Method</a></b></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Share it with your friend</b></td></tr>
+    <tr><td valign=top><a class=addthis_button href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcbd554189b9a7"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width=125 height=16 alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcbd554189b9a7"></script></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Tweet</b></td></tr>
+    <tr><td valign=top><iframe src=../../tweet.html width=180 height=600 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
+    <tr><td height=28 valign=top></td></tr>
+    </table></div>
+<!--Navigation Panel-->
+<A NAME="tex2html299"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html293"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html287"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html295"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html297"
+  HREF="node15.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html300"
+  HREF="node10.html">$B0lHLE@2aDx$N;~4V?-=LM}O@$HL`EY4X?t(B</A>
+<B> Up:</B> <A NAME="tex2html294"
+  HREF="node7.html">$BHsDj>o%9%Q%$%/;~7ONs%b%G%k(B</A>
+<B> Previous:</B> <A NAME="tex2html288"
+  HREF="node8.html">$BHsDj>o%]%"%=%s2aDx(B</A>
+ &nbsp; <B>  <A NAME="tex2html296"
+  HREF="node1.html">$BL\<!(B</A></B> 
+ &nbsp; <B>  <A NAME="tex2html298"
+  HREF="node15.html">$B:w0z(B</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html301"
+  HREF="node9.html#SECTION00421000000000000000">$Be$%l!<%H$N;~4V?-=L(B</A>
+<LI><A NAME="tex2html302"
+  HREF="node9.html#SECTION00422000000000000000">$B>r7oIU$-%9%Q%$%/L)EYJ,I[(B</A>
+<UL>
+<LI><A NAME="tex2html303"
+  HREF="node9.html#SECTION00422100000000000000">$B%,%s%^J,I[(B</A>
+<LI><A NAME="tex2html304"
+  HREF="node9.html#SECTION00422200000000000000">$B%o%$%V%kJ,I[(B</A>
+<LI><A NAME="tex2html305"
+  HREF="node9.html#SECTION00422300000000000000">$B5U%,%&%9J,I[(B</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html306"
+  HREF="node9.html#SECTION00423000000000000000">$B;~4V?-=LM}O@(B</A>
+<LI><A NAME="tex2html307"
+  HREF="node9.html#SECTION00424000000000000000">$B=i4|%9%Q%$%/$N@8@.$K$D$$$F(B</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00420000000000000000">
+$BHsDj>o%j%K%e!<%"%k2aDx(B</A>
+</H1>
+
+<P>
+
+<H2><A NAME="SECTION00421000000000000000">
+$BJQF0%l!<%H$N;~4V?-=L(B</A>
+</H2>
+
+<P>
+$BHsDj>o%j%K%e!<%"%k2aDx$OJQF0%]%"%=%s2aDx$N>l9g$r3HD%$7$F9M$($k$H$o$+$j$d$9$$!%HsDj>o%]%"%=%s2aDx$HF1MM$K;~4V?-=L$7$?<4>e$GDj>o%j%K%e!<%"%k2aDx$r9M$($k!%Nc$H$7$F(B<IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img264.png"
+ ALT="$ \Lambda$">
+<!-- MATHEND
+ 
+ -->
+$B>e$NDj>o%,%s%^2aDx$r9M$(!$$=$N%$%Y%s%H7ONs$r(B<!-- MATH
+ $\left\{  \Lambda_{1},\Lambda_{2},\cdots\right\}$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$ \left\{ \Lambda_{1},\Lambda_{2},\cdots\right\}$">
+<!-- MATHEND
+ 
+ -->
+$B$H$9$k!%%$%Y%s%H4V3V(B<!-- MATH
+ $\Lambda_{i}-\Lambda_{i-1}$
+ -->
+<IMG
+ WIDTH="73" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img270.png"
+ ALT="$ \Lambda_{i}-\Lambda_{i-1}$">
+<!-- MATHEND
+ 
+ -->
+$B$,J?6Q$,(B<IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$ 1$">
+<!-- MATHEND
+ 
+ -->
+$B!$J,;6$,(B<IMG
+ WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img320.png"
+ ALT="$ 1/\kappa$">
+<!-- MATHEND
+ 
+ -->
+$B$G$"$kI8=`%,%s%^J,I[(B
+<P><!-- MATH
+ \begin{displaymath}
+g\left(  z;\kappa\right)  =\frac{1}{\Gamma\left(  \kappa\right)  }%
+\kappa\left(  \kappa z\right)  ^{\kappa-1}e^{-\kappa z}%
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="212" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img322.png"
+ ALT="$\displaystyle g\left( z;\kappa\right) =\frac{1}{\Gamma\left( \kappa\right) }%
+\kappa\left( \kappa z\right) ^{\kappa-1}e^{-\kappa z}%
+$">
+</DIV><P>
+<!-- MATHEND
+ 
+ -->
+</P>
+$B$K=>$&$H$9$k(B[<A
+ HREF="node14.html#Berman81">Berman, 1981</A>,<A
+ HREF="node14.html#Barbieri01">Barbieri et&nbsp;al., 2001</A>]$B!%(B
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img71.png"
+ ALT="$ \kappa$">
+<!-- MATHEND
+ 
+ -->
+$B$O(Bshape parameter<A NAME="976"></A>$B$H8F$P$l$k!%<B;~4V$H$NBP1~$O(B<!-- MATH
+ $\Lambda_{i}=\Lambda\left(
+t_{i}\right)$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img272.png"
+ ALT="$ \Lambda_{i}=\Lambda\left(
+t_{i}\right) $">
+<!-- MATHEND
+ 
+ -->
+$B$@$+$i!$%,%s%^J,I[$K=>$&Mp?t$rH/@8$5$;!$JQ?tJQ49$N8x<0(B
+<P><!-- MATH
+ \begin{displaymath}
+z\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  =\Lambda\left(
+t_{i}\right)  -\Lambda\left(  t_{i-1}\right)  =\int_{t_{i-1}}^{t_{i}} \lambda\left(  u\right)  du
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="369" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img323.png"
+ ALT="$\displaystyle z\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) =\Lambd...
+...Lambda\left( t_{i-1}\right) =\int_{t_{i-1}}^{t_{i}} \lambda\left( u\right) du
+$">
+</DIV><P>
+<!-- MATHEND
+ 
+ -->
+</P>
+$B$rK~$?$9(B<IMG
+ WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img274.png"
+ ALT="$ t_{i}$">
+<!-- MATHEND
+ 
+ -->
+$B$rC`<!E*$K5a$a$l$P!$<B;~4V$G$N%9%Q%$%/;~7ONs$r5a$a$k$3$H$,$G$-$k!%(B
+
+<P>
+
+<H2><A NAME="SECTION00422000000000000000">
+$B>r7oIU$-%9%Q%$%/L)EYJ,I[(B</A>
+</H2>
+
+<P>
+
+<H3><A NAME="SECTION00422100000000000000"></A><A NAME="989"></A>
+<BR>
+$B%,%s%^J,I[(B
+</H3>
+
+<P>
+$B>r7oIU$-%9%Q%$%/L)EYJ,I[(B<!-- MATH
+ $p\left(  t_{i}|t_{i-1},\left\{  \lambda
+_{t}\right\}  \right)$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img324.png"
+ ALT="$ p\left( t_{i}\vert t_{i-1},\left\{ \lambda
+_{t}\right\} \right) $">
+<!-- MATHEND
+ 
+ -->
+$B$r5a$a$h$&!%(B
+$BJ,I[(B<!-- MATH
+ $p\left(  t_{i}|t_{i-1},\left\{  \lambda_{t}\right\}  \right)$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img324.png"
+ ALT="$ p\left( t_{i}\vert t_{i-1},\left\{ \lambda
+_{t}\right\} \right) $">
+<!-- MATHEND
+ 
+ -->
+$B$O<!$N$h$&$J(B<IMG
+ WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img274.png"
+ ALT="$ t_{i}$">
+<!-- MATHEND
+ 
+ -->
+$B$+$i(B<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img325.png"
+ ALT="$ z$">
+<!-- MATHEND
+ 
+ -->
+$B$X$NJQ?tJQ49!J%?%$%`%j%9%1!<%j%s%0!K$r;\$9$3$H$G!$I8=`%,%s%^J,I[$K$J$k$H$9$k!%$9$J$o$A!$JQ?tJQ49$N8x<0$+$i(B
+<P><!-- MATH
+ \begin{displaymath}
+g\left(  z|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  =\left\vert \frac{dz}{dt}\right\vert ^{-1}p\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="318" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img326.png"
+ ALT="$\displaystyle g\left( z\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) =\left\vert...
+...dt}\right\vert ^{-1}p\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
+$">
+</DIV><P>
+<!-- MATHEND
+ 
+ -->
+</P>
+<!-- MATH
+ $dz/dt_{i}=\lambda\left(  t_{i}\right)$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img327.png"
+ ALT="$ dz/dt_{i}=\lambda\left( t_{i}\right) $">
+<!-- MATHEND
+ 
+ -->
+$B$KCm0U$7$F(B<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="127" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img281.png"
+ ALT="$\displaystyle p\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="177" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img328.png"
+ ALT="$\displaystyle =\left\vert \frac{dz}{dt_{i}}\right\vert g\left( z\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="415" HEIGHT="70" ALIGN="MIDDLE" BORDER="0"
+ SRC="img329.png"
+ ALT="$\displaystyle =\lambda\left( t_{i}\right) \frac{1}{\Gamma\left( \kappa\right) }...
+...ppa-1}\exp\left[ -\kappa\int_{t_{i-1}}^{t_{i}}\lambda\left( u\right) du\right]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+$B$H$J$k!%(B
+
+<P>
+
+<H3><A NAME="SECTION00422200000000000000"></A><A NAME="1029"></A>
+<BR>
+$B%o%$%V%kJ,I[(B
+</H3>
+
+<P>
+$BJ?6Q(B<IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$ 1$">
+<!-- MATHEND
+ 
+ -->
+$B!&J,;6(B<!-- MATH
+ $\Gamma\left(  1+2/\kappa\right)
+/\Gamma\left(  1+1/\kappa\right)  ^{2}-1$
+ -->
+<IMG
+ WIDTH="204" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img330.png"
+ ALT="$ \Gamma\left( 1+2/\kappa\right)
+/\Gamma\left( 1+1/\kappa\right) ^{2}-1$">
+<!-- MATHEND
+ 
+ -->
+$B$NI8=`%o%$%V%kJ,I[$O(B
+<P><!-- MATH
+ \begin{displaymath}
+g\left(  z;\kappa\right)  =\kappa\Gamma\left(  1+1/\kappa\right)  \left\{
+\Gamma\left(  1+1/\kappa\right)  t\right\}  ^{\kappa-1}\exp\left[  -\left\{
+\Gamma\left(  1+1/\kappa\right)  t\right\}  ^{\kappa}\right]
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="452" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img331.png"
+ ALT="$\displaystyle g\left( z;\kappa\right) =\kappa\Gamma\left( 1+1/\kappa\right) \le...
+...exp\left[ -\left\{
+\Gamma\left( 1+1/\kappa\right) t\right\} ^{\kappa}\right]
+$">
+</DIV><P>
+<!-- MATHEND
+ 
+ -->
+</P>
+<!-- MATH
+ $dz/dt_{i}=\lambda\left(  t_{i}\right)$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img327.png"
+ ALT="$ dz/dt_{i}=\lambda\left( t_{i}\right) $">
+<!-- MATHEND
+ 
+ -->
+$B$KCm0U$7$F(B
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="127" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img281.png"
+ ALT="$\displaystyle p\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="177" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img328.png"
+ ALT="$\displaystyle =\left\vert \frac{dz}{dt_{i}}\right\vert g\left( z\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="368" HEIGHT="70" ALIGN="MIDDLE" BORDER="0"
+ SRC="img332.png"
+ ALT="$\displaystyle =\lambda\left( t_{i}\right) \kappa\Gamma\left( 1+1/\kappa\right)...
+...ppa\right) \int_{t_{i-1}}^{t_{i}}\lambda\left( u\right) du\right\} ^{\kappa-1}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="275" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img333.png"
+ ALT="$\displaystyle \cdot\exp\left[ -\left\{ \Gamma\left( 1+1/\kappa\right) \int_{t_{i-1}%
+}^{t_{i}}\lambda\left( u\right) du\right\} ^{\kappa}\right]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+$B$H$J$k!%(B
+
+<P>
+
+<H3><A NAME="SECTION00422300000000000000"></A><A NAME="1053"></A>
+<BR>
+$B5U%,%&%9J,I[(B
+</H3>
+
+<P>
+$BF1MM$K$7$F!$5U%,%&%9J,I[$K=>$&%j%K%e!<%"%k2aDx$O!$J?6Q(B<IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$ 1$">
+<!-- MATHEND
+ 
+ -->
+$B!&J,;6(B<IMG
+ WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img320.png"
+ ALT="$ 1/\kappa$">
+<!-- MATHEND
+ 
+ -->
+$B$NI8=`5U%,%&%9J,I[(B
+<P><!-- MATH
+ \begin{displaymath}
+g\left(  z;\kappa\right)  =\sqrt{\frac{\kappa}{2\pi z^{3}}}\exp\left[
+-\frac{\kappa}{2z}\left(  z-1\right)  ^{2}\right]
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="260" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img334.png"
+ ALT="$\displaystyle g\left( z;\kappa\right) =\sqrt{\frac{\kappa}{2\pi z^{3}}}\exp\left[
+-\frac{\kappa}{2z}\left( z-1\right) ^{2}\right]
+$">
+</DIV><P>
+<!-- MATHEND
+ 
+ -->
+</P>
+$B$rMQ$$$F(BISI$BJ,I[$O(B
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="127" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img281.png"
+ ALT="$\displaystyle p\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="177" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img328.png"
+ ALT="$\displaystyle =\left\vert \frac{dz}{dt_{i}}\right\vert g\left( z\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="441" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img336.png"
+ ALT="$\displaystyle =\lambda\left( t_{i}\right) \sqrt{\frac{\kappa}{2\pi\left\{ \int...
+...ht) du-1\right\} ^{2}}{\int_{t_{i-1}}^{t_{i}}\lambda\left( u\right) du}\right]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+$B$H$J$k!%(B
+
+<P>
+
+<H2><A NAME="SECTION00423000000000000000">
+$B;~4V?-=LM}O@(B</A>
+</H2>
+
+<P>
+$B>r7oIU$-%9%Q%$%/L)EYJ,I[$,5a$^$l$P!$$3$l$+$i=V4V%9%Q%$%/@8@.N((B($B%O%6!<%I4X?t(B)$B$,5a$^$k!%(B
+<P><!-- MATH
+ \begin{displaymath}
+r\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  =\frac{p\left(
+t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  }{1-\int_{t_{i-1}}^{t_{i}}p\left(  u|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  du}%
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="354" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img339.png"
+ ALT="$\displaystyle r\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) =\frac{...
+...t_{t_{i-1}}^{t_{i}}p\left( u\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) du}%
+$">
+</DIV><P>
+<!-- MATHEND
+ 
+ -->
+</P>
+$B=V4V%9%Q%$%/@8@.N($,5a$^$l$P!$;~4V$r==J,>.$5$JI}(B<IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img118.png"
+ ALT="$ \Delta$">
+<!-- MATHEND
+ 
+ -->
+$B$N%S%s$K6h@Z$C$F3NN((B<!-- MATH
+ $r\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) \Delta$
+ -->
+<IMG
+ WIDTH="142" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img340.png"
+ ALT="$ r\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) \Delta$">
+<!-- MATHEND
+ 
+ -->
+$B$G%9%Q%$%/$rH/@8$5$;$l$P$h$$!%$b$A$m$s$3$NJ}K!$O8zN($,0-$$!%(B
+
+<P>
+$B=V4V@-%9%Q%$%/@8@.N((B<!-- MATH
+ $r\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$
+ -->
+<IMG
+ WIDTH="126" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img341.png"
+ ALT="$ r\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
+$">
+<!-- MATHEND
+ 
+ -->
+$B$,5a$^$l$P!$HsDj>o%j%K%e!<%"%k2aDx$G$"$C$F$bHsDj>o%]%"%=%s2aDx$H$7$F$"$D$+$($k!%HsDj>o%]%"%=%s2aDx$N;~$HF1MM$K(B<!-- MATH
+ $r\left(  t_{i}|t_{i-1},\lambda
+_{t_{i-1}:t_{i}}\right)  \Delta$
+ -->
+<IMG
+ WIDTH="142" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img340.png"
+ ALT="$ r\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) \Delta$">
+<!-- MATHEND
+ 
+ -->
+$B$r@QJ,$9$k$H(B
+<P><!-- MATH
+ \begin{displaymath}
+\zeta=\int_{t_{i-1}}^{t_{i}}r\left(  u|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
+du
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="210" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img342.png"
+ ALT="$\displaystyle \zeta=\int_{t_{i-1}}^{t_{i}}r\left( u\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)
+du
+$">
+</DIV><P>
+<!-- MATHEND
+ 
+ -->
+</P>
+<IMG
+ WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img274.png"
+ ALT="$ t_{i}$">
+<!-- MATHEND
+ 
+ -->
+$B$,(B<!-- MATH
+ $p\left(  t_{i}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$
+ -->
+<IMG
+ WIDTH="127" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img343.png"
+ ALT="$ p\left( t_{i}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$">
+<!-- MATHEND
+ 
+ -->
+$B$K=>$&$H$-!$(B<IMG
+ WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img344.png"
+ ALT="$ \zeta$">
+<!-- MATHEND
+ 
+ -->
+$B$O;X?tJ,I[$K=>$&!%$7$?$,$C$F;X?tJ,I[$K=>$&Mp?t(B <IMG
+ WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img344.png"
+ ALT="$ \zeta$">
+<!-- MATHEND
+ 
+ -->
+$B$r@8@.$7!$?tCM7W;;$G>e<0$rK~$?$9(B<IMG
+ WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img274.png"
+ ALT="$ t_{i}$">
+<!-- MATHEND
+ 
+ -->
+$B$r5a$a$l$P$h$$!%;~4V?-=LM}O@$rMQ$$$?$3$NJ}K!$OHs>o$KHFMQ@-$N$"$kJ}K!$G!$$h$j0lHL$NE@2aDx$K$D$$$F@.$jN)$D$+$i>ZL@$O$=$3$G<($9!%$3$3$G$O;~4V?-=LM}O@$K4p$E$$$??tCM7W;;%"%k%4%j%:%`$r$^$H$a$F$*$/!%(B
+
+<P>
+<P>
+<DIV><B>$B%"%k%4%j%:%`(B  16</B> &nbsp; 
+<I>$B;~4V?-=LM}O@$rMQ$$$?HsDj>o%j%K%e!<%"%k2aDx$N<B8=(B
+</I>
+<P>
+
+<OL>
+<LI><!-- MATH
+ $i=1,t_{1}=0.$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img275.png"
+ ALT="$ i=1,t_{1}=0.$">
+<!-- MATHEND
+ 
+ -->
+
+<P>
+</LI>
+<LI>$B%l!<%H(B<IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$ 1$">
+<!-- MATHEND
+ 
+ -->
+$B$N;X?tJ,I[$K=>$&Mp?t(B<IMG
+ WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img232.png"
+ ALT="$ \eta$">
+<!-- MATHEND
+ 
+ -->
+$B$r@8@.$9$k!%(B
+
+<P>
+</LI>
+<LI>$B;~4V?-=L(B<!-- MATH
+ $\Lambda_{t}=\int_{0}^{t}\lambda\left(
+u\right)  du$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img345.png"
+ ALT="$ \Lambda_{t}=\int_{0}^{t}\lambda\left(
+u\right) du$">
+<!-- MATHEND
+ 
+ -->
+$B$K$h$j!$?-=L$7$?(BISI$B$r5a$a$k!%(B<!-- MATH
+ $z_{t}=\Lambda_{t}-\Lambda_{t_{i-1}}$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img346.png"
+ ALT="$ z_{t}=\Lambda_{t}-\Lambda_{t_{i-1}}$">
+<!-- MATHEND
+ 
+ -->
+
+<P>
+</LI>
+<LI>ISI$BJ,I[$r5a$a$k(B<!-- MATH
+ $p\left(
+t|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)  =\lambda\left(  t\right)  g\left(
+z_{t}|t_{i-1},\lambda_{t_{i-1}:t_{i}}\right)$
+ -->
+<IMG
+ WIDTH="300" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img347.png"
+ ALT="$ p\left(
+t\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) =\lambda\left( t\right) g\left(
+z_{t}\vert t_{i-1},\lambda_{t_{i-1}:t_{i}}\right) $">
+<!-- MATHEND
+ 
+ -->
+
+<P>
+</LI>
+<LI>$B%O%6!<%I4X?t$r5a$a$k(B
+
+<P>
+</LI>
+<LI><!-- MATH
+ $r\left(  t|t_{i-1},\lambda_{t_{i-1}:t}\right)  =\frac{p\left(
+t|t_{i-1},\lambda_{t_{i-1}:t}\right)  }{1-\int_{t_{i-1}}^{t}p\left(
+u|t_{i-1},\lambda_{t_{i-1}:u}\right)  du}$
+ -->
+<IMG
+ WIDTH="304" HEIGHT="50" ALIGN="MIDDLE" BORDER="0"
+ SRC="img348.png"
+ ALT="$ r\left( t\vert t_{i-1},\lambda_{t_{i-1}:t}\right) =\frac{p\left(
+t\vert t_{i-...
+...t) }{1-\int_{t_{i-1}}^{t}p\left(
+u\vert t_{i-1},\lambda_{t_{i-1}:u}\right) du}$">
+<!-- MATHEND
+ 
+ -->
+
+<P>
+</LI>
+<LI><!-- MATH
+ $\eta=\int_{t_{i-1}}^{t}r\left(  u|t_{i-1}\right)  du$
+ -->
+<IMG
+ WIDTH="152" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img349.png"
+ ALT="$ \eta=\int_{t_{i-1}}^{t}r\left( u\vert t_{i-1}\right) du$">
+<!-- MATHEND
+ 
+ -->
+$B$rK~$?$9(B<IMG
+ WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img274.png"
+ ALT="$ t_{i}$">
+<!-- MATHEND
+ 
+ -->
+$B$r5a$a$k!%(B
+
+<P>
+</LI>
+<LI><!-- MATH
+ $t_{i}\geq T$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.png"
+ ALT="$ t_{i}\geq T$">
+<!-- MATHEND
+ 
+ -->
+$B$J$i$P=*N;!%(B
+
+<P>
+</LI>
+<LI><IMG
+ WIDTH="48" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img278.png"
+ ALT="$ t_{i}&lt;T$">
+<!-- MATHEND
+ 
+ -->
+$B$J$i$P(B<!-- MATH
+ $i\leftarrow i+1.\ 2$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img279.png"
+ ALT="$ i\leftarrow i+1.\ 2$">
+<!-- MATHEND
+ 
+ -->
+$B$X!%(B
+</LI>
+</OL></DIV><P></P>
+
+<P>
+$B$3$N%"%k%4%j%:%`$K$h$k?tCM%7%_%e%l!<%7%g%s$N7k2L$r<($9!%(B
+
+<DIV ALIGN="CENTER"><A NAME="fig:simulated_pointprocesses"></A><A NAME="1165"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>$B%>(B 2.2:</STRONG>
+$Bky$kKsh@Zg%ePe!yeb6g%7%-j<%rea%)j@Fe!fecZe&1eb%9ec%&io4e"5ec%'ec6e&'ec%7eb!Vec%)qa<i%#6q%7<kYroi%$ea%gmb%1n9Te!lky$kKsh@Zg%ePe!yeb6g!"2g5ueb%1ecBe$&eb%Cec%cec%7ec0q%7<j%*!"oi%$ea%gj0^i%-Te"1eb%1ecBe$&eb%Cmy%3ma%)ebDjN8$7$?6/EY4X?t!%(B(A) $BHs0lMM%]%o%=%s2aDx(B (B) $BHs0lMM5U%,%&%92aDx(B (C) $BHs0lMM%,%s%^2aDx(B $B!J5,B'H/2P(B  $B&J(B=1.8)  (D) $BHs0lMM%,%s%^2aDx(B $B!JIT5,B'H/2P(B  $B&J(B=0.8$B!K(B</CAPTION>
+<TR><TD><IMG
+ WIDTH="553" HEIGHT="773" ALIGN="BOTTOM" BORDER="0"
+ SRC="img350.png"
+ ALT="\includegraphics[width=\columnwidth]{fig/renewal_simulation.eps}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+$B;HMQ$7$?(BMatlab$B$N%3!<%I!%?tCM@QJ,$OBf7AB'$rMQ$$$F$$$k!%(B
+<P>
+<PRE>
+function [x,rs] = PointProcess_Renewal(y,dt,ISI,k)
+% [x,rs] = PointProcess_Renewal(y,dt,ISI,k)
+% Function `PointProcess_Renewal' returns sample spike events
+% from a time-dependent Renewal point process.
+% 
+% Example usage:
+% dt = 0.001; t = [0: dt: 1];   % Time resoluation and time-axis.
+% y = 10*(1+cos(2*pi*1*t));     % Time-dependent spike-rate.
+% k = 2.3;                      % Shape parameter$B!%(B
+% x = PointProcess_Renewal(y,dt,'Gamma',k)
+% 
+% Input argument
+% y:    A vector that specifies a time-dependent spike-rate.
+% dt:   Sampling time of the time-dependent rate.
+% ISI:  Type of Inter-spike Interval (ISI) distribution.
+%       'Gamma'$B!$(BGamma distribution.
+%       'InvGauss'$B!$(BInverse Gamma distribution.
+%       'Weibull'$B!$(BWeibull distribution.
+% k:    The shape parameter of the ISI distribution.
+%       * To use small k &lt;&lt; 1$B!$(Buse small sampling time dt$B!%(B
+%       * Maximum k allowed is ~10$B!%(B
+%
+% Output argument
+% x:    Spike time.
+% rs:   Intensity function.
+%
+% See also RASTER STOCHPROCES_GAUSS
+%
+% Copyright (c) 2007$B!$(BHideaki Shimazaki All rights reserved.
+% http://2000.jukuin.keio.ac.jp/shimazaki
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Initialize parameters
+global invGammak;
+invGammak = 1/gamma(k);
+
+L = length(y);
+x = zeros(1,round(mean(y)*L*dt + sqrt(mean(y)*L*dt)*3) );
+rs = zeros(1,L); 
+
+z = 0; P = 0; R = 0; j = 1; c = 1;
+
+yb = y(1);
+pb = y(1) * feval(ISI,0,k);
+pb2 = pb;
+rb = 0;
+
+rs(1) = pb;
+
+eta = - log(rand);
+for i = 2: L
+    %if eta &gt; R 
+        z = z + (yb+y(i))/2*dt;         %Time-rescale
+        yb = y(i);
+
+        p = y(i) * feval(ISI,z,k);      %ISI
+
+        %P = P + (pb+p)/2*dt;
+        if c == 1 
+            P = p*dt;
+        elseif c == 2
+            P = (3/2*pb-1/2*p)*dt;                      %Semi-open
+            P = P + (1/2*pb+1/2*p)*dt;                  %Trapezoidal
+        elseif c == 3
+            P = (23/12*pb2-16/12*pb+5/12*p)*dt;
+            P = P + (1/3*pb2+4/3*pb+1/3*p)*dt;          %Simpson
+        elseif c == 4
+            P = (55/24*pb3-59/24*pb2+37/24*pb-9/24*p)*dt;
+            P = P + (3/8*pb3+9/8*pb2+9/8*pb+3/8*p)*dt;  %Simpson 3/8
+        else 
+            P = P + (1/2*pb+1/2*p)*dt;
+        end
+        pb3 = pb2; pb2 = pb; pb = p;
+
+        r = p / (1 - P);                %Intensity
+        R = R + (rb+r)/2*dt;
+        rb = r;
+        
+    if eta &gt; R 
+        c = c + 1;
+        
+    else
+        x(j) = i*dt; j = j + 1;         %Spike time
+        
+        z = 0; P = 0; R = 0; c = 1;           
+
+        yb = y(i);
+        %pb = y(i) * feval(ISI,0,k);
+        rb = 0;
+        
+        eta = - log(rand);
+    end
+    rs(i) = r;
+end
+
+x = x(x~=0);
+
+if length(x) &lt; sum(y*dt) - 3*sqrt(sum(y*dt))
+    disp('Warning$B!%(BBetter to increase sampling resolution'); 
+end
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inter-spike Interval distributions
+
+function y = Gamma(z,k)
+global invGammak
+
+if k == 1
+    y = exp(-z);
+elseif z == 0 &amp;&amp; k &lt; 1
+    y = 0;
+else
+    %y = 1/gamma(k) * k * (k * z).^(k-1) .* exp(-k*z);
+    y = invGammak * k * (k * z).^(k-1) .* exp(-k*z);
+end 
+
+function y = InvGauss(z,k)
+if z == 0
+    y = 0;
+else 
+    y = sqrt( k/ (2*pi*z.^3) ) * exp( -k/2/z * (z-1)^2 ); 
+end
+
+function y = Weibull(z,k)
+if z == 0 &amp;&amp; k &lt; 1
+    y = 0;
+else
+    y = k*gamma(1+1/k)*(gamma(1+1/k)*z)^(k-1) * exp(-(gamma(1+1/k)*z)^k);
+end
+</PRE>
+
+<P>
+<P>
+
+<H2><A NAME="SECTION00424000000000000000">
+$B=i4|%9%Q%$%/$N@8@.$K$D$$$F(B</A>
+</H2>
+
+<P>
+$B%j%9%1!<%k$7$?;~4V<4>e$GJ?9U%j%K%e!<%"%k2aDx(B<A NAME="1171"></A>$B$r9M$($l$P$h$$$@$m$&!%%j%9%1!<%k$7$?<4>e$G=i4|%9%Q%$%/$N%9%Q%$%/L)EYJ,I[$O(B
+<P><!-- MATH
+ \begin{displaymath}
+g_{1}\left(  z\right)  =1-G\left(  z\right)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="126" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img351.png"
+ ALT="$\displaystyle g_{1}\left( z\right) =1-G\left( z\right)
+$">
+</DIV><P>
+<!-- MATHEND
+ 
+ -->
+</P>
+$B$GM?$($i$l$k!%<B;~4V$N=i4|%9%Q%$%/$N%9%Q%$%/L)EYJ,I[(B<!-- MATH
+ $p_{1}\left(  t\right)$
+ -->
+<IMG
+ WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.png"
+ ALT="$ p_{1}\left( t\right) $">
+<!-- MATHEND
+ 
+ -->
+$B$O!$<B;~4V>e$X$N5U<LA|$rMQ$$$k!%(B
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html299"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html293"
+  HREF="node7.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html287"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html295"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html297"
+  HREF="node15.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html300"
+  HREF="node10.html">$B0lHLE@2aDx$N;~4V?-=LM}O@$HL`EY4X?t(B</A>
+<B> Up:</B> <A NAME="tex2html294"
+  HREF="node7.html">$BHsDj>o%9%Q%$%/;~7ONs%b%G%k(B</A>
+<B> Previous:</B> <A NAME="tex2html288"
+  HREF="node8.html">$BHsDj>o%]%"%=%s2aDx(B</A>
+ &nbsp; <B>  <A NAME="tex2html296"
+  HREF="node1.html">$BL\<!(B</A></B> 
+ &nbsp; <B>  <A NAME="tex2html298"
+  HREF="node15.html">$B:w0z(B</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+&copy; 2007 2008 2009 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki, Ph.D.</a>
+</ADDRESS>
+</BODY>
+</HTML>

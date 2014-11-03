@@ -34,17 +34,21 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
     <a name=top id=top> </a>
     <div id=NaviLayer>  
     <table width=180 border=0 cellpadding=0 cellspacing=0>
-    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
-    <tr><td height=28 valign=top><b>Spike Density Estimation</b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../histogram.html>Histogram Method</a></b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../kernel.html>Kernel Method</a></b></td></tr>
+    <tr><td height=8 valign=top><b>Tweet this page</b></td></tr>
+    <tr><td height=8 valign=top><a href=http://twitter.com/share class=twitter-share-button data-count=horizontal data-via=computneuro data-related="statneuro:Japanese tweets from author.">Tweet</a><script type=text/javascript src=http://platform.twitter.com/widgets.js></script></td></tr>
     <tr><td height=8 valign=top></td></tr>
     <tr><td height=8 valign=top><b>Share it with your friend</b></td></tr>
     <tr><td valign=top><a class=addthis_button href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcbd554189b9a7"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width=125 height=16 alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcbd554189b9a7"></script></td></tr>
     <tr><td height=8 valign=top></td></tr>
-    <tr><td height=8 valign=top><b>Tweet</b></td></tr>
-    <tr><td valign=top><iframe src=../../tweet.html width=180 height=600 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
-    <tr><td height=28 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Tweet by author</b></td></tr>
+    <tr><td valign=top><iframe src=../../tweetjp.html width=180 height=260 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=28 valign=top><b><a href=index.html>スパイク統計モデル入門 トップ</a></b></td><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=28 valign=top><b>スパイク密度推定</b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../histogram.html>ヒストグラム法</a></b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../kernel.html>カーネル法</a></b></td></tr>
+    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
     </table></div>
 <!--Navigation Panel-->
 <A NAME="tex2html267"
@@ -105,7 +109,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 </H1>
 
 <P>
-前章では記憶なしの特徴をもつスパイク時系列, すなわちポアソン過程について調べた. ポアソン過程のスパイク間隔は指数分布になり, 一定時間内のスパイク数はポアソン分布に従うことをみた.  また瞬間スパイク生成率を導入して, (定常)ポアソン過程を定義することもできた.
+前章では記憶なしの特徴をもつスパイク時系列, すなわちポアソン過程について調べた. ポアソン過程のスパイク間隔は指数分布になり, 一定時間内のスパイク数はポアソン分布に従うことをみた. また瞬間スパイク生成率を導入して, (定常)ポアソン過程を定義することもできた.
 本章では, スパイクに記憶がある場合のモデルを導入する.
 特に大事なのは,   スパイク生成率が直前のスパイク生成時刻だけに依存する場合である. この過程はリニューアル過程と呼ばれる.
 瞬間生成率が２つ以上前のスパイク生成時刻に依存する一般的なモデルに対して, 直前のスパイクのみに依存することからこの名称で呼ばれる. 一つより前のスパイクについては忘れて,
@@ -115,8 +119,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 神経スパイクについては, 強いリニューアル性があることが知られている.
 これは神経細胞のスパイク生成機構の生理学上の制約による. 特にスパイク生成後<IMG
  WIDTH="39" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img137.gif"
- ALT="$ 1-5$"> [ms]の間は次のスパイクを生成できない状態になる. これを絶対不応期（Absolute refractory period<A NAME="490"></A>）と呼び, 神経細胞のリニューアル性の主要な要因である.
+ SRC="img146.gif"
+ ALT="$ 1-5$"> [ms]の間は次のスパイクを生成できない状態になる. これを絶対不応期（Absolute refractory period<A NAME="522"></A>）と呼び, 神経細胞のリニューアル性の主要な要因である.
 この他にも膜上の電位依存性イオンチャネルの非線形効果により, 一度スパイクが生じると複数回のスパイク生成が続くバースト発火という現象などがある. こうした性質を表現するためには, リニューアル過程の活用が欠かせない.
 
 <P>
@@ -124,27 +128,27 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 analysis)に従うが, 生存時間解析ではイベントが固体の死亡を意味するため, 関連語句がスパイクの解析にはなじまない.
 そこでいくつかは違う名称で呼ぶこともある. まず, スパイク発生時刻の確率密度分布(probability density function,
 p.d.f.)を
-<P>
 <!-- MATH
  \begin{displaymath}
-f\left(  t\right)  =\lim_{\Delta\rightarrow0+}\frac{P\left(  t<T\leq
-t+\Delta\right)  }{\Delta}%
+f\left(  x\right)  =\lim_{\Delta\rightarrow0+}\frac{P\left(  t<X\leq
+t+\Delta\right)  }{\Delta}
 \end{displaymath}
  -->
 <P></P>
 <DIV ALIGN="CENTER">
 <IMG
- WIDTH="227" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img138.gif"
- ALT="$\displaystyle f\left( t\right) =\lim_{\Delta\rightarrow0+}\frac{P\left( t&lt;T\leq
-t+\Delta\right) }{\Delta}%
+ WIDTH="233" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.gif"
+ ALT="$\displaystyle f\left( x\right) =\lim_{\Delta\rightarrow0+}\frac{P\left( t&lt;X\leq
+t+\Delta\right) }{\Delta}
 $">
 </DIV><P></P>
-とする. これをスパイク密度分布(spike density funtion<A NAME="494"></A>), もしくはスパイク間隔分布と呼ぶ Inter-spike Interval
-(ISI) distribution<A NAME="495"></A>)と呼ぶ. スパイクの発生時刻が<IMG
+とする. これをスパイク密度分布(spike density funtion<A NAME="526"></A>), もしくはスパイク間隔分布と呼ぶ Inter-spike Interval
+(ISI) distribution<A NAME="527"></A>)と呼ぶ. スパイクの発生時刻が<IMG
  WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img12.gif"
- ALT="$ t$">以上である確率を生存関数(survival function<A NAME="496"></A>)と呼び<P></P>
+ ALT="$ t$">以上である確率を生存関数(survival function<A NAME="528"></A>)と呼び
+<P></P>
 <DIV ALIGN="CENTER"><A NAME="eq:Survival_function"></A><!-- MATH
  \begin{equation}
 \overline{F}\left(  t\right)  =P\left(  X>t\right)  =\int_{t}^{\infty}f\left(
@@ -155,7 +159,7 @@ u\right)  du%
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="234" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
- SRC="img139.gif"
+ SRC="img148.gif"
  ALT="$\displaystyle \overline{F}\left( t\right) =P\left( X&gt;t\right) =\int_{t}^{\infty}f\left( u\right) du%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -163,35 +167,34 @@ $"></TD>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
 と表す. 生存関数と相補関係にある累積分布関数(cumulative distribution function,
-c.d.f.<A NAME="503"></A>)
+c.d.f.<A NAME="535"></A>)
 <P></P>
 <DIV ALIGN="CENTER"><!-- MATH
  \begin{equation}
-F\left(  t\right)  =P\left(  X\leq t\right)  =\int_{0}^{t}f\left(  u\right)
-du
+F\left(  t\right)  =P\left(  X\leq t\right)  =\int_{0}^{t}f\left(  u\right) du
 \end{equation}
  -->
 <TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="227" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
- SRC="img140.gif"
+ SRC="img149.gif"
  ALT="$\displaystyle F\left( t\right) =P\left( X\leq t\right) =\int_{0}^{t}f\left( u\right) du$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (1.9)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-は生存時間分布(lifetime distribution
-function)<A NAME="508"></A>と呼ばれる. スパイク密度分布と分布関数は<P></P>
+は生存時間分布(lifetime distribution function)<A NAME="540"></A>と呼ばれる. スパイク密度分布と分布関数は
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img141.gif"
+ SRC="img150.gif"
  ALT="$\displaystyle f\left( t\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="59" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img142.gif"
+ SRC="img151.gif"
  ALT="$\displaystyle =F^{\prime}\left( t\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (1.10)</TD></TR>
@@ -199,7 +202,7 @@ function)<A NAME="508"></A>と呼ばれる. スパイク密度分布と分布関数は<P></P>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="71" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img143.gif"
+ SRC="img152.gif"
  ALT="$\displaystyle =-\overline{F}^{,}\left( t\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (1.11)</TD></TR>
@@ -220,7 +223,8 @@ function)<A NAME="508"></A>と呼ばれる. スパイク密度分布と分布関数は<P></P>
  ALT="$ t$">秒間スパイクが生成されず, <IMG
  WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img12.gif"
- ALT="$ t$">においてスパイクを生成する確率として, 瞬間スパイク生成率<!-- MATH
+ ALT="$ t$">においてスパイクを生成する確率として, 瞬間スパイク生成率
+<!-- MATH
  \begin{displaymath}
 r\left(  t\right)  =\lim_{\Delta\rightarrow0+}\frac{prob\left(  t<X\leq
 t+\Delta|t<X\right)  }{\Delta}%
@@ -230,26 +234,26 @@ t+\Delta|t<X\right)  }{\Delta}%
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="292" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img144.gif"
+ SRC="img153.gif"
  ALT="$\displaystyle r\left( t\right) =\lim_{\Delta\rightarrow0+}\frac{prob\left( t&lt;X\leq
 t+\Delta\vert t&lt;X\right) }{\Delta}%
 $">
 </DIV><P></P>
 を導入しよう. 生存時間解析(Survival analysisｓ)では,
-ハザード関数(hazard function)<A NAME="518"></A>, 年齢別故障率(age-specific failure rate),
+ハザード関数(hazard function)<A NAME="550"></A>, 年齢別故障率(age-specific failure rate),
 回復関数(recovery function)などの名称で呼ばれる[<A
  HREF="node15.html#Cox62">Cox, 1962</A>].
-また, 一般点過程理論では条件付強度関数(conditional intensity function<A NAME="520"></A>)という.
+また, 一般点過程理論では条件付強度関数(conditional intensity function<A NAME="552"></A>)という.
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img145.gif"
+ SRC="img154.gif"
  ALT="$\displaystyle r\left( t\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="303" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img146.gif"
+ SRC="img155.gif"
  ALT="$\displaystyle =\lim_{\Delta\rightarrow0+}\frac{prob\left( t&lt;X\leq t+\Delta\right) }{\Delta}\frac{1}{prob\left( t&lt;X\right) }$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -257,7 +261,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="62" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img147.gif"
+ SRC="img156.gif"
  ALT="$\displaystyle =\frac{f\left( t\right) }{\overline{F}\left( t\right) }. %
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -269,16 +273,15 @@ $"></TD>
 <DIV ALIGN="CENTER"><A NAME="hazard_renewal"></A><!-- MATH
  \begin{equation}
 r\left(  t\right)  =\frac{f\left(  t\right)  }{1-\int_{0}^{t}f\left(
-u\right)  du}.%
+u\right)  du}.
 \end{equation}
  -->
 <TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="162" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img148.gif"
- ALT="$\displaystyle r\left( t\right) =\frac{f\left( t\right) }{1-\int_{0}^{t}f\left( u\right) du}.%
-$"></TD>
+ SRC="img157.gif"
+ ALT="$\displaystyle r\left( t\right) =\frac{f\left( t\right) }{1-\int_{0}^{t}f\left( u\right) du}.$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (1.13)</TD></TR>
 </TABLE></DIV>
@@ -295,7 +298,7 @@ r\left(  t\right)  =-\frac{\overline{F}^{,}\left(  t\right)  }{\overline
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="244" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
- SRC="img149.gif"
+ SRC="img158.gif"
  ALT="$\displaystyle r\left( t\right) =-\frac{\overline{F}^{,}\left( t\right) }{\overl...
 ...t\right) }=-\frac{d}{dt}\left\{ \log\overline{F}\left( t\right)
 \right\} \cdot
@@ -304,7 +307,8 @@ $">
 両辺を0から<IMG
  WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img12.gif"
- ALT="$ t$">まで積分して, 生存関数とハザード関数の関係式<P></P>
+ ALT="$ t$">まで積分して, 生存関数とハザード関数の関係式
+<P></P>
 <DIV ALIGN="CENTER"><A NAME="eq:ltd_hazard"></A><!-- MATH
  \begin{equation}
 \overline{F}\left(  t\right)  =\exp\left\{  -\int_{0}^{t}r\left(  u\right)
@@ -315,14 +319,15 @@ du\right\}%
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="200" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
- SRC="img150.gif"
+ SRC="img159.gif"
  ALT="$\displaystyle \overline{F}\left( t\right) =\exp\left\{ -\int_{0}^{t}r\left( u\right) du\right\}%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (1.14)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-を得る. これから分布関数は<P></P>
+を得る. これから分布関数は
+<P></P>
 <DIV ALIGN="CENTER"><A NAME="cdf_hazard"></A><!-- MATH
  \begin{equation}
 F\left(  t\right)  =1-\exp\left\{  -\int_{0}^{t}r\left(  u\right)  du\right\}
@@ -333,14 +338,15 @@ F\left(  t\right)  =1-\exp\left\{  -\int_{0}^{t}r\left(  u\right)  du\right\}
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="235" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
- SRC="img151.gif"
+ SRC="img160.gif"
  ALT="$\displaystyle F\left( t\right) =1-\exp\left\{ -\int_{0}^{t}r\left( u\right) du\right\} .%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (1.15)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-微分すると, スパイク密度分布(ISI分布)は<P></P>
+微分すると, スパイク密度分布(ISI分布)は
+<P></P>
 <DIV ALIGN="CENTER"><A NAME="ISI_hazard"></A><!-- MATH
  \begin{equation}
 f\left(  t\right)  =r\left(  t\right)  \exp\left\{  -\int_{0}^{t}r\left(
@@ -351,7 +357,7 @@ u\right)  du\right\}  .%
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="236" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
- SRC="img152.gif"
+ SRC="img161.gif"
  ALT="$\displaystyle f\left( t\right) =r\left( t\right) \exp\left\{ -\int_{0}^{t}r\left( u\right) du\right\} .%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -364,7 +370,7 @@ $"></TD>
  -->
 <IMG
  WIDTH="63" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img153.gif"
+ SRC="img162.gif"
  ALT="$ r\left( t\right) =\lambda
 $">であることがわかる.
 
@@ -375,18 +381,18 @@ $">であることがわかる.
 </H2>
 
 <P>
-それでは, 代表的なスパイク密度分布(スパイク間隔分布,
-ISI分布)を見てみよう.
+それでは, 代表的なスパイク密度分布(スパイク間隔分布, ISI分布)を見てみよう.
 
 <P>
 
-<H3><A NAME="SECTION02122100000000000000"></A><A NAME="563"></A>
+<H3><A NAME="SECTION02122100000000000000"></A><A NAME="595"></A>
 <BR>
 ガンマ分布
 </H3>
 
 <P>
-ガンマ分布は, アーラン分布の拡張であることは既に述べた. リニューアル過程の中でも, 数学的な取り扱いが比較的容易で, 使い勝手が良い分布である．ガンマ分布のハザード関数を求めてみよう. <A NAME="569"></A><P></P>
+ガンマ分布は, アーラン分布の拡張であることは既に述べた. リニューアル過程の中でも, 数学的な取り扱いが比較的容易で, 使い勝手が良い分布である．ガンマ分布のハザード関数を求めてみよう. <A NAME="601"></A>
+<P></P>
 <DIV ALIGN="CENTER"><!-- MATH
  \begin{equation}
 f\left(  t;\lambda,\kappa\right)  =\frac{\left(  \kappa\lambda\right)
@@ -397,7 +403,7 @@ f\left(  t;\lambda,\kappa\right)  =\frac{\left(  \kappa\lambda\right)
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="199" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img157.gif"
+ SRC="img166.gif"
  ALT="$\displaystyle f\left( t;\lambda,\kappa\right) =\frac{\left( \kappa\lambda\right) ^{\kappa}}{\Gamma\left( \kappa\right) }t^{\kappa-1}e^{-\kappa\lambda t}%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -406,26 +412,27 @@ $"></TD>
 <BR CLEAR="ALL"><P></P>
 ガンマ分布の平均は<IMG
  WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img122.gif"
+ SRC="img131.gif"
  ALT="$ 1/\lambda$">, 分散は<!-- MATH
  $1/\kappa\lambda$
  -->
 <IMG
  WIDTH="39" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img158.gif"
+ SRC="img167.gif"
  ALT="$ 1/\kappa\lambda$">, また<!-- MATH
  $CV=1/\sqrt{\kappa}$
  -->
 <IMG
  WIDTH="89" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img159.gif"
+ SRC="img168.gif"
  ALT="$ CV=1/\sqrt{\kappa}$">. ただし, 平均が<IMG
  WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img122.gif"
+ SRC="img131.gif"
  ALT="$ 1/\lambda$">になるように<A HREF="node5.html#Erlang_distribution">1.5</A>を規格化してある. 図にいくつかの<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img68.gif"
- ALT="$ \kappa$">について分布を表示した. ガンマ分布のハザード関数は<P></P>
+ SRC="img72.gif"
+ ALT="$ \kappa$">について分布を表示した. ガンマ分布のハザード関数は
+<P></P>
 <DIV ALIGN="CENTER"><!-- MATH
  \begin{equation}
 r\left(  t;\lambda,\kappa\right)  =\frac{f\left(  t\right)  }{\overline
@@ -437,7 +444,7 @@ t}}{1-\int_{0}^{x}\left(  \lambda u\right)  ^{\kappa-1}e^{-\lambda u}du}%
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="306" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
- SRC="img160.gif"
+ SRC="img169.gif"
  ALT="$\displaystyle r\left( t;\lambda,\kappa\right) =\frac{f\left( t\right) }{\overli...
 ...lambda t}}{1-\int_{0}^{x}\left( \lambda u\right) ^{\kappa-1}e^{-\lambda u}du}%
 $"></TD>
@@ -447,35 +454,35 @@ $"></TD>
 <BR CLEAR="ALL"><P></P>
 単調に増加する. つまり時間が経につれて, スパイク発生の確率は高まっていく. 十分大きな値でハザード関数は<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img68.gif"
+ SRC="img72.gif"
  ALT="$ \kappa$">によらず<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img121.gif"
+ SRC="img130.gif"
  ALT="$ \lambda$">に収束する. すなわち, 十分時間が経つとポアソン過程に近づいていく.
 
 <P>
 <P>
-<DIV><B>問題  7</B> &nbsp; 
+<DIV><B>問題  8</B> &nbsp; 
 <I>ガンマ分布のハザード関数の最大値が<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img121.gif"
+ SRC="img130.gif"
  ALT="$ \lambda$">であることを示せ. ハザード関数が単調増加関数であることを示し, 十分大きな<IMG
  WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img12.gif"
  ALT="$ t$">で<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img68.gif"
+ SRC="img72.gif"
  ALT="$ \kappa$">によらず<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img121.gif"
+ SRC="img130.gif"
  ALT="$ \lambda$">に収束することを示せばよい.
 ロピタルの定理を用いよ.</I></DIV><P></P>
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="594"></A>
+<DIV ALIGN="CENTER"><A NAME="626"></A>
 <TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.3:</STRONG>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
 ガンマ密度分布　<!-- MATH
  $\lambda=1, \kappa=0.5, 1, 2$
  -->
@@ -484,7 +491,7 @@ $"></TD>
  SRC="img2.gif"
  ALT="$ \lambda =1, \kappa =0.5, 1, 2$">
 <BR>
-<STRONG>Figure 1.4:</STRONG>
+<STRONG>Figure:</STRONG>
 ガンマ分布のハザード関数　<!-- MATH
  $\lambda=1, \kappa=0.5, 1, 2$
  -->
@@ -494,36 +501,35 @@ $"></TD>
  ALT="$ \lambda =1, \kappa =0.5, 1, 2$"></CAPTION>
 <TR><TD><IMG
  WIDTH="525" HEIGHT="325" ALIGN="BOTTOM" BORDER="0"
- SRC="img161.gif"
+ SRC="img170.gif"
  ALT="\includegraphics[width=1\columnwidth]{graphics/book__2.eps}">
 
 <IMG
  WIDTH="524" HEIGHT="324" ALIGN="BOTTOM" BORDER="0"
- SRC="img162.gif"
+ SRC="img171.gif"
  ALT="\includegraphics[width=1\columnwidth]{graphics/book__3.eps}"></TD></TR>
 </TABLE>
 </DIV>
 
 <P>
 
-<H3><A NAME="SECTION02122200000000000000"></A><A NAME="596"></A>
+<H3><A NAME="SECTION02122200000000000000"></A><A NAME="628"></A>
 <BR>
 ワイブル分布
 </H3>
 
 <P>
-ガンマ分布のハザード関数が定数に収束するのに対し,
-工業製品の故障率のようなイベントの場合は, 経年劣化するからハザード関数は時間とともに増加すると考えられる. 時間とともにハザード関数がべき的に増加する場合を考えよう.
+ガンマ分布のハザード関数が定数に収束するのに対し, 工業製品の故障率のようなイベントの場合は, 経年劣化するからハザード関数は時間とともに増加すると考えられる. 時間とともにハザード関数がべき的に増加する場合を考えよう.
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="65" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img169.gif"
+ SRC="img178.gif"
  ALT="$\displaystyle r\left( t;\lambda,\kappa\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="255" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img170.gif"
+ SRC="img179.gif"
  ALT="$\displaystyle =\kappa\lambda\Gamma\left( 1+1/\kappa\right) \left\{ \Gamma\left( 1+1/\kappa\right) \lambda t\right\} ^{\kappa-1}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -531,7 +537,7 @@ $"></TD>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="184" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img171.gif"
+ SRC="img180.gif"
  ALT="$\displaystyle =\kappa\left\{ \Gamma\left( 1+1/\kappa\right) \lambda\right\} ^{\kappa }t^{\kappa-1}.$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -539,8 +545,9 @@ $"></TD>
 <BR CLEAR="ALL"><P></P>
 ただし<IMG
  WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img172.gif"
- ALT="$ \kappa&lt;1$">のときはハザード関数が減少関数になる. これは時間が経つにつれてスパイク発生率は低くなることを表す. べき乗のハザード関数を持つ分布はワイブル分布(Weibull distribution)<A NAME="622"></A>とよばれ<!-- MATH
+ SRC="img181.gif"
+ ALT="$ \kappa&lt;1$">のときはハザード関数が減少関数になる. これは時間が経つにつれてスパイク発生率は低くなることを表す. べき乗のハザード関数を持つ分布はワイブル分布(Weibull distribution)<A NAME="654"></A>とよばれ
+<!-- MATH
  \begin{displaymath}
 f\left(  t;\lambda,\kappa\right)  =\kappa\lambda\Gamma\left(  1+1/\kappa
 \right)  \left\{  \Gamma\left(  1+1/\kappa\right)  \lambda t\right\}
@@ -552,7 +559,7 @@ t\right\}  ^{\kappa}\right]
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="495" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img173.gif"
+ SRC="img182.gif"
  ALT="$\displaystyle f\left( t;\lambda,\kappa\right) =\kappa\lambda\Gamma\left( 1+1/\k...
 ...ft[ -\left\{ \Gamma\left( 1+1/\kappa\right) \lambda
 t\right\} ^{\kappa}\right]
@@ -560,7 +567,7 @@ $">
 </DIV><P></P>
 で与えられる. この表記では, 期待値は<IMG
  WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img122.gif"
+ SRC="img131.gif"
  ALT="$ 1/\lambda$">,
 分散は<!-- MATH
  $1/\lambda^{2}\left[  \Gamma\left(  1+2/\kappa\right)
@@ -568,13 +575,14 @@ $">
  -->
 <IMG
  WIDTH="254" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
- SRC="img174.gif"
+ SRC="img183.gif"
  ALT="$ 1/\lambda^{2}\left[ \Gamma\left( 1+2/\kappa\right)
 /\Gamma\left( 1+1/\kappa\right) ^{2}-1\right] $">である.
 <IMG
  WIDTH="42" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img175.gif"
- ALT="$ \kappa=1$">のときにワイブル分布は指数分布になる. 分布関数は<!-- MATH
+ SRC="img184.gif"
+ ALT="$ \kappa=1$">のときにワイブル分布は指数分布になる. 分布関数は
+<!-- MATH
  \begin{displaymath}
 F\left(  t;\lambda,\kappa\right)  =1-\exp\left[  -\left\{  \Gamma\left(
 1+1/\kappa\right)  \lambda t\right\}  ^{\kappa}\right]  .
@@ -584,7 +592,7 @@ F\left(  t;\lambda,\kappa\right)  =1-\exp\left[  -\left\{  \Gamma\left(
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="296" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img176.gif"
+ SRC="img185.gif"
  ALT="$\displaystyle F\left( t;\lambda,\kappa\right) =1-\exp\left[ -\left\{ \Gamma\left(
 1+1/\kappa\right) \lambda t\right\} ^{\kappa}\right] .
 $">
@@ -592,33 +600,33 @@ $">
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="634"></A>
+<DIV ALIGN="CENTER"><A NAME="666"></A>
 <TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.5:</STRONG>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
 ワイブル密度分布　<IMG
  WIDTH="43" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img3.gif"
- ALT="$ \lambda =1$">, <!-- MATH
+ ALT="$ \lambda=1$">, <!-- MATH
  $\kappa=0.5,1,1,3$
  -->
 <IMG
  WIDTH="100" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
  SRC="img4.gif"
- ALT="$ \kappa =0.5,1,1,3$">
+ ALT="$ \kappa=0.5,1,1,3$">
 <BR>
-<STRONG>Figure 1.6:</STRONG>
+<STRONG>Figure:</STRONG>
 ワイブル分布関数　<IMG
  WIDTH="43" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img3.gif"
- ALT="$ \lambda =1$">, <!-- MATH
+ ALT="$ \lambda=1$">, <!-- MATH
  $\kappa=0.5,1,1,3$
  -->
 <IMG
  WIDTH="100" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
  SRC="img4.gif"
- ALT="$ \kappa =0.5,1,1,3$">
+ ALT="$ \kappa=0.5,1,1,3$">
 <BR>
-<STRONG>Figure 1.7:</STRONG>
+<STRONG>Figure:</STRONG>
 ワイブル分布のハザード関数　<!-- MATH
  $\lambda
 =1$
@@ -626,39 +634,39 @@ $">
 <IMG
  WIDTH="43" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img3.gif"
- ALT="$ \lambda =1$">, <!-- MATH
+ ALT="$ \lambda=1$">, <!-- MATH
  $\kappa=0.5,1,1,3$
  -->
 <IMG
  WIDTH="100" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
  SRC="img4.gif"
- ALT="$ \kappa =0.5,1,1,3$"></CAPTION>
+ ALT="$ \kappa=0.5,1,1,3$"></CAPTION>
 <TR><TD><IMG
  WIDTH="523" HEIGHT="336" ALIGN="BOTTOM" BORDER="0"
- SRC="img177.gif"
+ SRC="img186.gif"
  ALT="\includegraphics[width=1\columnwidth]{graphics/book__4.eps}">
 
 <IMG
- WIDTH="522" HEIGHT="324" ALIGN="BOTTOM" BORDER="0"
- SRC="img178.gif"
+ WIDTH="523" HEIGHT="324" ALIGN="BOTTOM" BORDER="0"
+ SRC="img187.gif"
  ALT="\includegraphics[width=1\columnwidth]{graphics/book__5.eps}">
 
 <IMG
  WIDTH="521" HEIGHT="324" ALIGN="BOTTOM" BORDER="0"
- SRC="img179.gif"
+ SRC="img188.gif"
  ALT="\includegraphics[width=1\columnwidth]{graphics/book__6.eps}"></TD></TR>
 </TABLE>
 </DIV>
 
 <P>
 
-<H3><A NAME="SECTION02122300000000000000"></A><A NAME="636"></A>
+<H3><A NAME="SECTION02122300000000000000"></A><A NAME="668"></A>
 <BR>
 逆ガウス分布
 </H3>
 
 <P>
-神経細胞スパイクの場合は, 死亡率と全く逆のハザード関数が描ける. 神経細胞のスパイク活動のISIを良く表すとされる逆ガウス分布(Inverse Gaussian distribution<A NAME="637"></A>)[]を見てみよう.
+神経細胞スパイクの場合は, 死亡率と全く逆のハザード関数が描ける. 神経細胞のスパイク活動のISIを良く表すとされる逆ガウス分布(Inverse Gaussian distribution<A NAME="669"></A>)[]を見てみよう.
 <!-- MATH
  \begin{displaymath}
 f\left(  t;\lambda,\kappa\right)  =\sqrt{\frac{\kappa}{2\pi t^{3}}}\exp\left[
@@ -670,28 +678,27 @@ f\left(  t;\lambda,\kappa\right)  =\sqrt{\frac{\kappa}{2\pi t^{3}}}\exp\left[
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="278" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
- SRC="img180.gif"
+ SRC="img189.gif"
  ALT="$\displaystyle f\left( t;\lambda,\kappa\right) =\sqrt{\frac{\kappa}{2\pi t^{3}}}\exp\left[
 -\frac{\kappa}{2t}\left( \lambda t-1\right) ^{2}\right]$">&nbsp; &nbsp; for
 <IMG
  WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img181.gif"
+ SRC="img190.gif"
  ALT="$\displaystyle x&gt;0$">,&nbsp;0 for&nbsp;<IMG
  WIDTH="42" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img182.gif"
+ SRC="img191.gif"
  ALT="$\displaystyle x&lt;0
 $">
 </DIV><P></P>
 逆ガウス分布の期待値は<IMG
  WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img122.gif"
+ SRC="img131.gif"
  ALT="$ 1/\lambda$">, 分散は<!-- MATH
- $1/\kappa
-\lambda^{3}$
+ $1/\kappa \lambda^{3}$
  -->
 <IMG
  WIDTH="46" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img183.gif"
+ SRC="img192.gif"
  ALT="$ 1/\kappa
 \lambda^{3}$">, また<!-- MATH
  $CV=1/\kappa\lambda^{2}で あ
@@ -699,9 +706,10 @@ $">
  -->
 <IMG
  WIDTH="148" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img184.gif"
+ SRC="img193.gif"
  ALT="$ CV=1/\kappa\lambda^{2}で あ
-る .\ $">また累積分布関数は<!-- MATH
+る . $">また累積分布関数は
+<!-- MATH
  \begin{displaymath}
 F\left(  t;\lambda,\kappa\right)  =\frac{1}{2}\left\{  1+\operatorname{erf}%
 \left[  \sqrt{\frac{\kappa}{2t}}\left(  \lambda t-1\right)  \right]  \right\}
@@ -713,7 +721,7 @@ F\left(  t;\lambda,\kappa\right)  =\frac{1}{2}\left\{  1+\operatorname{erf}%
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="538" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
- SRC="img185.gif"
+ SRC="img194.gif"
  ALT="$\displaystyle F\left( t;\lambda,\kappa\right) =\frac{1}{2}\left\{ 1+\operatorna...
 ...f}\left[ \sqrt
 {\frac{\kappa}{2t}}\left( \lambda t+1\right) \right] \right\} .
@@ -723,41 +731,42 @@ $">
 これはガンマ分布のハザード関数と同じ性質である. ガンマ分布と違うのは,
 ハザード関数が減少に転じる点にある.
 つまり時間が経つにつれてスパイク発生頻度は減少していく.
+
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="665"></A>
+<DIV ALIGN="CENTER"><A NAME="697"></A>
 <TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.8:</STRONG>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
 逆ガウス密度分布　平均<IMG
  WIDTH="43" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img3.gif"
- ALT="$ \lambda =1$">. <!-- MATH
+ ALT="$ \lambda=1$">. <!-- MATH
  $\kappa=0.5, 2, 10$
  -->
 <IMG
  WIDTH="93" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
  SRC="img5.gif"
- ALT="$ \kappa =0.5, 2, 10$">
+ ALT="$ \kappa=0.5, 2, 10$">
 <BR>
-<STRONG>Figure 1.9:</STRONG>
+<STRONG>Figure:</STRONG>
 逆ガウス分布のハザード関数　平均<IMG
  WIDTH="43" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img3.gif"
- ALT="$ \lambda =1$">. <!-- MATH
+ ALT="$ \lambda=1$">. <!-- MATH
  $\kappa=0.5, 2, 10$
  -->
 <IMG
  WIDTH="93" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
  SRC="img5.gif"
- ALT="$ \kappa =0.5, 2, 10$"></CAPTION>
+ ALT="$ \kappa=0.5, 2, 10$"></CAPTION>
 <TR><TD><IMG
  WIDTH="522" HEIGHT="323" ALIGN="BOTTOM" BORDER="0"
- SRC="img186.gif"
+ SRC="img195.gif"
  ALT="\includegraphics[width=1\columnwidth]{graphics/book__7.eps}">
 
 <IMG
- WIDTH="523" HEIGHT="332" ALIGN="BOTTOM" BORDER="0"
- SRC="img187.gif"
+ WIDTH="524" HEIGHT="332" ALIGN="BOTTOM" BORDER="0"
+ SRC="img196.gif"
  ALT="\includegraphics[width=1\columnwidth]{graphics/book__8.eps}"></TD></TR>
 </TABLE>
 </DIV>
@@ -798,7 +807,7 @@ $">
   HREF="node16.html">Index</A></B> 
 <!--End of Navigation Panel-->
 <ADDRESS>
-&copy; 2007 2008 2009 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki, Ph.D.</a>
+<div align=right>&copy; 2007 - 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki</a></align>
 </ADDRESS>
-</BODY>
+<p></p><div id=disqus_thread></div><script type=text/javascript>(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://statneuro.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })();</script><script type=text/javascript>var disqus_shortname = 'statneuro';(function () { var s = document.createElement('script'); s.async = true;  s.src = 'http://disqus.com/forums/statneuro/count.js';  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);}());</script><p><script type=text/javascript src=http://disqus.com/forums/statneuro/combination_widget.js?num_items=5&hide_mods=0&color=blue&default_tab=people&excerpt_length=200></script><a href=http://disqus.com>Powered by Disqus</a></p></body>
 </HTML>

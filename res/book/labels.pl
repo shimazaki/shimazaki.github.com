@@ -14,23 +14,39 @@ $key = q/cite_Ogata81/;
 $external_labels{$key} = "$URL/" . q|node15.html|; 
 $noresave{$key} = "$nosave";
 
+$key = q/variance_rate/;
+$external_labels{$key} = "$URL/" . q|node15.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/Cn/;
 $external_labels{$key} = "$URL/" . q|node13.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/MISE3/;
+$external_labels{$key} = "$URL/" . q|node15.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/eq:MSE/;
 $external_labels{$key} = "$URL/" . q|node14.html|; 
 $noresave{$key} = "$nosave";
 
+$key = q/MISE2/;
+$external_labels{$key} = "$URL/" . q|node15.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/TableKey/;
+$external_labels{$key} = "$URL/" . q|node6.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/kerneldensity/;
 $external_labels{$key} = "$URL/" . q|node13.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/cite_Berman81/;
+$key = q/cite_Barbieri01/;
 $external_labels{$key} = "$URL/" . q|node15.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/cite_Barbieri01/;
+$key = q/cite_Berman81/;
 $external_labels{$key} = "$URL/" . q|node15.html|; 
 $noresave{$key} = "$nosave";
 
@@ -78,8 +94,24 @@ $key = q/CLB/;
 $external_labels{$key} = "$URL/" . q|node13.html|; 
 $noresave{$key} = "$nosave";
 
+$key = q/TableKey_copy_1_/;
+$external_labels{$key} = "$URL/" . q|node6.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/eq:variancemean/;
+$external_labels{$key} = "$URL/" . q|node15.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/varLambdah/;
+$external_labels{$key} = "$URL/" . q|node15.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/eq:Exponential_pdf/;
 $external_labels{$key} = "$URL/" . q|node5.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/eq:_optbinsize/;
+$external_labels{$key} = "$URL/" . q|node15.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/hazard_renewal/;
@@ -94,8 +126,16 @@ $key = q/ISI_hazard/;
 $external_labels{$key} = "$URL/" . q|node6.html|; 
 $noresave{$key} = "$nosave";
 
+$key = q/fig:time-rescaling/;
+$external_labels{$key} = "$URL/" . q|node9.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/memoryless/;
 $external_labels{$key} = "$URL/" . q|node5.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/eq:CostEstimated/;
+$external_labels{$key} = "$URL/" . q|node15.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/Erlang_distribution/;
@@ -110,7 +150,19 @@ $key = q/cite_Heyman90/;
 $external_labels{$key} = "$URL/" . q|node15.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/eq:Survival_function/;
+$key = q/cite_Rudemo82/;
+$external_labels{$key} = "$URL/" . q|node16.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/intensity_Poisson_process/;
+$external_labels{$key} = "$URL/" . q|node9.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/time-rescaling/;
+$external_labels{$key} = "$URL/" . q|node9.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/eq:ltd_hazard/;
 $external_labels{$key} = "$URL/" . q|node6.html|; 
 $noresave{$key} = "$nosave";
 
@@ -118,16 +170,8 @@ $key = q/hazard_def_renewal/;
 $external_labels{$key} = "$URL/" . q|node6.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/eq:ltd_hazard/;
+$key = q/eq:Survival_function/;
 $external_labels{$key} = "$URL/" . q|node6.html|; 
-$noresave{$key} = "$nosave";
-
-$key = q/time-rescaling/;
-$external_labels{$key} = "$URL/" . q|node9.html|; 
-$noresave{$key} = "$nosave";
-
-$key = q/intensity_Poisson_process/;
-$external_labels{$key} = "$URL/" . q|node9.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/eq:Score/;
@@ -142,19 +186,27 @@ $key = q/rawdensity/;
 $external_labels{$key} = "$URL/" . q|node13.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/sec:ErlangtoPoisson/;
-$external_labels{$key} = "$URL/" . q|node5.html|; 
-$noresave{$key} = "$nosave";
-
 $key = q/cite_Brown01/;
 $external_labels{$key} = "$URL/" . q|node15.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/sec:ErlangtoPoisson/;
+$external_labels{$key} = "$URL/" . q|node5.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/intensity_point_process/;
 $external_labels{$key} = "$URL/" . q|node11.html|; 
 $noresave{$key} = "$nosave";
 
+$key = q/TableKey_copy_2_/;
+$external_labels{$key} = "$URL/" . q|node6.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/cite_Shimazaki07a/;
+$external_labels{$key} = "$URL/" . q|node15.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/cite_Cox62/;
 $external_labels{$key} = "$URL/" . q|node15.html|; 
 $noresave{$key} = "$nosave";
 
@@ -162,7 +214,7 @@ $key = q/sec:Erlang/;
 $external_labels{$key} = "$URL/" . q|node5.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/cite_Cox62/;
+$key = q/MISE1/;
 $external_labels{$key} = "$URL/" . q|node15.html|; 
 $noresave{$key} = "$nosave";
 

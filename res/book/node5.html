@@ -34,17 +34,21 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
     <a name=top id=top> </a>
     <div id=NaviLayer>  
     <table width=180 border=0 cellpadding=0 cellspacing=0>
-    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
-    <tr><td height=28 valign=top><b>Spike Density Estimation</b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../histogram.html>Histogram Method</a></b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../kernel.html>Kernel Method</a></b></td></tr>
+    <tr><td height=8 valign=top><b>Tweet this page</b></td></tr>
+    <tr><td height=8 valign=top><a href=http://twitter.com/share class=twitter-share-button data-count=horizontal data-via=computneuro data-related="statneuro:Japanese tweets from author.">Tweet</a><script type=text/javascript src=http://platform.twitter.com/widgets.js></script></td></tr>
     <tr><td height=8 valign=top></td></tr>
     <tr><td height=8 valign=top><b>Share it with your friend</b></td></tr>
     <tr><td valign=top><a class=addthis_button href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcbd554189b9a7"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width=125 height=16 alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcbd554189b9a7"></script></td></tr>
     <tr><td height=8 valign=top></td></tr>
-    <tr><td height=8 valign=top><b>Tweet</b></td></tr>
-    <tr><td valign=top><iframe src=../../tweet.html width=180 height=600 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
-    <tr><td height=28 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Tweet by author</b></td></tr>
+    <tr><td valign=top><iframe src=../../tweetjp.html width=180 height=260 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=28 valign=top><b><a href=index.html>スパイク統計モデル入門 トップ</a></b></td><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=28 valign=top><b>スパイク密度推定</b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../histogram.html>ヒストグラム法</a></b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../kernel.html>カーネル法</a></b></td></tr>
+    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
     </table></div>
 <!--Navigation Panel-->
 <A NAME="tex2html246"
@@ -118,7 +122,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 確率変数<IMG
  WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
  SRC="img6.gif"
- ALT="$ X$">が確率密度関数 (probability density function<A NAME="74"></A>) <!-- MATH
+ ALT="$ X$">が確率密度関数 (probability density function
+<A NAME="72"></A>) <!-- MATH
  $f\left(  x\right)  =\lambda e^{-\lambda x}$
  -->
 <IMG
@@ -127,14 +132,14 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
  ALT="$ f\left( x\right) =\lambda e^{-\lambda x}$">（ただし<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img9.gif"
- ALT="$ x$">は非負の実数）に従うときに,
-<IMG
+ ALT="$ x$">は非負の実数）に従うときに,<IMG
  WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
  SRC="img6.gif"
- ALT="$ X$">は指数分布<A NAME="80"></A>に従うという. 指数分布は記憶のない分布と言われる (無記憶性: loss of memory property, memoryless property<A NAME="81"></A>). ここで記憶がないとは<IMG
+ ALT="$ X$">は指数分布<A NAME="78"></A>に従うという. 指数分布は記憶のない分布と言われる (無記憶性: loss of memory property, memoryless property<A NAME="79"></A>). ここで記憶がないとは<IMG
  WIDTH="53" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
  SRC="img10.gif"
- ALT="$ s,t\geq0$">に対して<P></P>
+ ALT="$ s,t\geq0$">に対して
+<P></P>
 <DIV ALIGN="CENTER"><A NAME="memoryless"></A><!-- MATH
  \begin{equation}
 P\left(  X>s+t|X>t\right)  =P\left(  X>s\right)%
@@ -151,8 +156,7 @@ $"></TD>
 (1.1)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-が成り立つことを言う. 例として, 数年前に買った冷蔵庫を考えてみよう. 購入当初は順調に稼動していた冷蔵庫もやがて古くなり,
-いつかは壊れてしまう. ここで冷蔵庫が壊れるまでの耐久年数の分布が記憶のなしの特徴を持つとしよう. 購入した冷蔵庫は<IMG
+が成り立つことを言う. 例として, 数年前に買った冷蔵庫を考えてみよう. 購入当初は順調に稼動していた冷蔵庫もやがて古くなり,いつかは壊れてしまう. ここで冷蔵庫が壊れるまでの耐久年数の分布が記憶のなしの特徴を持つとしよう. 購入した冷蔵庫は<IMG
  WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img12.gif"
  ALT="$ t$">年経った現在も順調に動いている. さて, この冷蔵庫はあと何年もつだろうか. 今後<IMG
@@ -164,9 +168,7 @@ $"></TD>
 <IMG
  WIDTH="146" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
  SRC="img14.gif"
- ALT="$ P\left( X&gt;s+t\vert X&gt;t\right) $">で表すことができる.
-ところが記憶なしの特徴<A HREF="#memoryless">1.1</A>を使えば,
-この条件付き確率は<!-- MATH
+ ALT="$ P\left( X&gt;s+t\vert X&gt;t\right) $">で表すことができる.ところが記憶なしの特徴<A HREF="#memoryless">1.1</A>を使えば,この条件付き確率は<!-- MATH
  $P\left(  X>s\right)$
  -->
 <IMG
@@ -175,12 +177,10 @@ $"></TD>
  ALT="$ P\left( X&gt;s\right) $">で与えられる. つまり, 記憶なしとは, <IMG
  WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img12.gif"
- ALT="$ t$">年間冷蔵庫が稼動していたことが,
-これから先に起こる故障の予測にとってなんの情報にもならないことを意味する.
+ ALT="$ t$">年間冷蔵庫が稼動していたことが,これから先に起こる故障の予測にとってなんの情報にもならないことを意味する.
 
 <P>
-それではどのような分布が記憶なしの特徴を持つのか.
-条件付分布は次のように表すことができる.
+それではどのような分布が記憶なしの特徴を持つのか. 条件付分布は次のように表すことができる.
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
@@ -199,13 +199,13 @@ $"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="121" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
  SRC="img18.gif"
- ALT="$\displaystyle =\frac{P\left( X&gt;s+t\right) }{P\left( X&gt;t\right) }%
-$"></TD>
+ ALT="$\displaystyle =\frac{P\left( X&gt;s+t\right) }{P\left( X&gt;t\right) }$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-これを<A HREF="#memoryless">1.1</A>に代入して<!-- MATH
+これを<A HREF="#memoryless">1.1</A>に代入して
+<!-- MATH
  \begin{displaymath}
 P\left(  X>s+t\right)  =P\left(  X>s\right)  P\left(  X>t\right)
 \end{displaymath}
@@ -219,9 +219,10 @@ P\left(  X>s+t\right)  =P\left(  X>s\right)  P\left(  X>t\right)
 $">
 </DIV><P></P>
 なる関係式を得る.
-指数分布関数<!-- MATH
+指数分布関数
+<!-- MATH
  \begin{displaymath}
-P\left(  X>x\right)  =e^{-\lambda x}%
+P\left(  X>x\right)  =e^{-\lambda x}
 \end{displaymath}
  -->
 <P></P>
@@ -229,13 +230,13 @@ P\left(  X>x\right)  =e^{-\lambda x}%
 <IMG
  WIDTH="131" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
  SRC="img20.gif"
- ALT="$\displaystyle P\left( X&gt;x\right) =e^{-\lambda x}%
-$">
+ ALT="$\displaystyle P\left( X&gt;x\right) =e^{-\lambda x}$">
 </DIV><P></P>
-がこの性質を満たすことはすぐにわかる. したがって指数密度分布<P></P>
+がこの性質を満たすことはすぐにわかる. したがって指数密度分布
+<P></P>
 <DIV ALIGN="CENTER"><A NAME="eq:Exponential_pdf"></A><!-- MATH
  \begin{equation}
-f\left(  x\right)  =\lambda e^{-\lambda x}%
+f\left(  x\right)  =\lambda e^{-\lambda x}
 \end{equation}
  -->
 <TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
@@ -243,8 +244,7 @@ f\left(  x\right)  =\lambda e^{-\lambda x}%
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="101" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
  SRC="img21.gif"
- ALT="$\displaystyle f\left( x\right) =\lambda e^{-\lambda x}%
-$"></TD>
+ ALT="$\displaystyle f\left( x\right) =\lambda e^{-\lambda x}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (1.2)</TD></TR>
 </TABLE></DIV>
@@ -271,7 +271,8 @@ $"></TD>
  ALT="$ N_{T}$">の分布を求めよう. まず, ひとつもスパイクが生じない確率を求める. これは一つ目のスパイク間隔が<IMG
  WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
  SRC="img22.gif"
- ALT="$ T$">より大きいことを意味するから, 生存関数で与えられる.&nbsp;&nbsp;&nbsp;&nbsp;<!-- MATH
+ ALT="$ T$">より大きいことを意味するから, 生存関数で与えられる.&nbsp;&nbsp;&nbsp;&nbsp;
+<!-- MATH
  \begin{displaymath}
 P\left(  N_{T}=0\right)  =\bar{F}\left(  T\right)  =e^{-\lambda T}%
 \end{displaymath}
@@ -293,31 +294,55 @@ $">
  ALT="$ s_{1}$">とすると, 二つ目のスパイク間隔は<IMG
  WIDTH="50" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
  SRC="img27.gif"
- ALT="$ T-s_{1}%
-$">より大きい必要がある. <IMG
+ ALT="$ T-s_{1}$">より大きい必要がある. この確率は
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="251" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$\displaystyle P\left( s_1 &lt; X_1 &lt; s_1 + ds_1, X_2 &gt; T \right) ds_1$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="289" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\displaystyle = P\left( s_1 &lt; X_1 &lt; s_1 + ds_1 \right) ds_1P\left( X_2 &gt; T \right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="153" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.gif"
+ ALT="$\displaystyle = f(s_1) ds_1 \bar{F}\left(T-s_{1}\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<IMG
  WIDTH="19" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
  SRC="img26.gif"
  ALT="$ s_{1}$">は<IMG
  WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img28.gif"
- ALT="$ [0,T)$">の範囲を取りうるからすべての可能性を尽くして<P></P>
+ SRC="img31.gif"
+ ALT="$ [0,T)$">の範囲を取りうるからすべての可能性を尽くして
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="84" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img29.gif"
+ SRC="img32.gif"
  ALT="$\displaystyle P\left( N_{T}=1\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="190" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
- SRC="img30.gif"
- ALT="$\displaystyle =\int_{0}^{T}f\left( s_{1}\right) F\left( T-s_{1}\right) ds_{1}$"></TD>
+ SRC="img33.gif"
+ ALT="$\displaystyle =\int_{0}^{T}f\left( s_{1}\right) \bar{F}\left( T-s_{1}\right) ds_{1}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="187" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
- SRC="img31.gif"
+ SRC="img34.gif"
  ALT="$\displaystyle =\int_{0}^{T}\lambda e^{-\lambda s_{1}}e^{-\lambda\left( T-s_{1}\right) }ds_{1}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -325,7 +350,7 @@ $">より大きい必要がある. <IMG
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="77" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
- SRC="img32.gif"
+ SRC="img35.gif"
  ALT="$\displaystyle =\lambda Te^{-\lambda T}%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -334,25 +359,26 @@ $"></TD>
 <BR CLEAR="ALL"><P></P>
 同様にして, 二つのスパイク（<IMG
  WIDTH="56" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img33.gif"
- ALT="$ N_{T}=2$">）が生じる場合は<P></P>
+ SRC="img36.gif"
+ ALT="$ N_{T}=2$">）が生じる場合は
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="84" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img34.gif"
+ SRC="img37.gif"
  ALT="$\displaystyle P\left( N_{T}=2\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="317" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
- SRC="img35.gif"
- ALT="$\displaystyle =\int_{0}^{T}ds_{1}\int_{s_{1}}^{T}ds_{1}f\left( s_{1}\right) f\left( s_{2}\right) \bar{F}\left( T-s_{1}-s_{2}\right)$"></TD>
+ SRC="img38.gif"
+ ALT="$\displaystyle =\int_{0}^{T}ds_{1}\int_{s_{1}}^{T}ds_{2}f\left( s_{1}\right) f\left( s_{2}-s_{1}\right) \bar{F}\left( T-s_{2}\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="320" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
- SRC="img36.gif"
+ SRC="img39.gif"
  ALT="$\displaystyle =\int_{0}^{T}ds_{1}\int_{s_{1}}^{T}ds_{2}\lambda e^{-\lambda s_{1}}\lambda e^{-\lambda\left( s_{2}-s_{1}\right) }e^{-\lambda\left( T-s_{2}\right) }$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -360,7 +386,7 @@ $"></TD>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="184" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
- SRC="img37.gif"
+ SRC="img40.gif"
  ALT="$\displaystyle =\int_{0}^{T}ds_{1}\lambda^{2}e^{-\lambda T}\left( T-s_{1}\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -368,7 +394,7 @@ $"></TD>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="113" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img38.gif"
+ SRC="img41.gif"
  ALT="$\displaystyle =\frac{1}{2}\left( \lambda T\right) ^{2}e^{-\lambda T}%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -376,29 +402,31 @@ $"></TD>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
 これを繰り返すと,
-一般にスパイク数の分布は<P></P>
+一般にスパイク数の分布は
+<P></P>
 <DIV ALIGN="CENTER"><A NAME="Poisson_distribution"></A><!-- MATH
  \begin{equation}
-P\left(  N_{t}=n\right)  =\frac{1}{n!}\left(  \lambda T\right)  ^{n}%
+P\left(  N_{T}=n\right)  =\frac{1}{n!}\left(  \lambda T\right)  ^{n}%
 e^{-\lambda T}%
 \end{equation}
  -->
 <TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="202" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img39.gif"
- ALT="$\displaystyle P\left( N_{t}=n\right) =\frac{1}{n!}\left( \lambda T\right) ^{n}%
+ WIDTH="206" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.gif"
+ ALT="$\displaystyle P\left( N_{T}=n\right) =\frac{1}{n!}\left( \lambda T\right) ^{n}%
 e^{-\lambda T}%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (1.3)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-となる. この分布はポアソン分布<A NAME="166"></A>と呼ばれる.
-<DIV ALIGN="CENTER"><A NAME="169"></A>
+となる. この分布はポアソン分布<A NAME="169"></A>と呼ばれる. より正確な導出は後で述べる．
+
+<DIV ALIGN="CENTER"><A NAME="172"></A>
 <TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.1:</STRONG>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
 ポワソン分布 <!-- MATH
  $\lambda=1,3,5$
  -->
@@ -408,7 +436,7 @@ $"></TD>
  ALT="$ \lambda =1,3,5$"></CAPTION>
 <TR><TD><IMG
  WIDTH="531" HEIGHT="341" ALIGN="BOTTOM" BORDER="0"
- SRC="img40.gif"
+ SRC="img43.gif"
  ALT="\includegraphics[width=1\columnwidth]{graphics/book__1.eps}"></TD></TR>
 </TABLE>
 </DIV>
@@ -418,7 +446,7 @@ $"></TD>
 <DIV><B>問題  1</B> &nbsp; 
 <I>ポアソン分布の平均および分散が<IMG
  WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img41.gif"
+ SRC="img44.gif"
  ALT="$ \lambda T$">になることを確かめよ.</I></DIV><P></P>
 
 <P>
@@ -436,33 +464,35 @@ f^{\ast}\left(  u\right)  =\exp\left[  \lambda\left(  e^{iu}-1\right)
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="181" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img42.gif"
+ SRC="img45.gif"
  ALT="$\displaystyle f^{\ast}\left( u\right) =\exp\left[ \lambda\left( e^{iu}-1\right) \right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (1.4)</TD></TR>
 </TABLE></DIV>
-<BR CLEAR="ALL"><P></P>
-<P><P>
-<DIV><B>解法  3</B> &nbsp; <P>
-<DIV><B>解法  4</B> &nbsp; 
+<BR CLEAR="ALL"><P></P></DIV><P></P>
+
+<P>
+<P>
+<DIV><B>解法  3</B> &nbsp; 
 <I>指数関数の定義<!-- MATH
  $\exp\left[  x\right]
 =\sum_{n=0}^{\infty}\frac{x^{n}}{n!}$
  -->
 <IMG
  WIDTH="133" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
- SRC="img43.gif"
+ SRC="img46.gif"
  ALT="$ \exp\left[ x\right]
-=\sum_{n=0}^{\infty}\frac{x^{n}}{n!}$">を用いる.</I><P></P>
+=\sum_{n=0}^{\infty}\frac{x^{n}}{n!}$">を用いる.
+</I><P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="45" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img44.gif"
+ SRC="img47.gif"
  ALT="$\displaystyle f^{\ast}\left( u\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="88" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img45.gif"
+ SRC="img48.gif"
  ALT="$\displaystyle =E\left[ e^{-iun}\right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -470,7 +500,7 @@ f^{\ast}\left(  u\right)  =\exp\left[  \lambda\left(  e^{iu}-1\right)
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="133" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img46.gif"
+ SRC="img49.gif"
  ALT="$\displaystyle =\sum_{n=0}^{\infty}\frac{e^{-\lambda}\lambda^{n}}{n!}e^{-iun}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -478,29 +508,28 @@ f^{\ast}\left(  u\right)  =\exp\left[  \lambda\left(  e^{iu}-1\right)
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="162" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img47.gif"
+ SRC="img50.gif"
  ALT="$\displaystyle =e^{-\lambda}\sum_{n=0}^{\infty}\frac{\left[ e^{-iu+\ln\lambda}\right] ^{n}}{n!}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="149" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
- SRC="img48.gif"
- ALT="$\displaystyle =e^{-\lambda}\exp\left[ e^{-iu+\ln}\lambda\right]$"></TD>
+ WIDTH="150" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.gif"
+ ALT="$\displaystyle =e^{-\lambda}\exp\left[ e^{-iu+\ln \lambda}\right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="135" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img49.gif"
+ SRC="img52.gif"
  ALT="$\displaystyle =\exp\left[ \lambda\left( e^{iu}-1\right) \right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 </TABLE></DIV>
-<BR CLEAR="ALL"><P></P>
-<P></DIV><P></P></DIV><P></P></DIV><P></P>
+<BR CLEAR="ALL"><P></P></DIV><P></P>
 
 <P>
 
@@ -512,16 +541,16 @@ f^{\ast}\left(  u\right)  =\exp\left[  \lambda\left(  e^{iu}-1\right)
 <P>
 記憶なしの特徴を持つスパイクが<IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
+ SRC="img53.gif"
  ALT="$ n$">回起こるまでの時間が<IMG
  WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
  SRC="img22.gif"
  ALT="$ T$">秒となる確率を計算しよう. <IMG
  WIDTH="43" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img51.gif"
+ SRC="img54.gif"
  ALT="$ n=1$">の場合は指数分布になることは見た. そこで, 次に<IMG
  WIDTH="43" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img52.gif"
+ SRC="img55.gif"
  ALT="$ n=2$">の場合を考えよう.
 ２回目のスパイクの時刻が<IMG
  WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
@@ -529,13 +558,12 @@ f^{\ast}\left(  u\right)  =\exp\left[  \lambda\left(  e^{iu}-1\right)
  ALT="$ T$">である確率である. １回目のスパイクが起こる時刻を<IMG
  WIDTH="19" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
  SRC="img26.gif"
- ALT="$ s_{1}$">とすると,
-その確率は<!-- MATH
+ ALT="$ s_{1}$">とすると,その確率は<!-- MATH
  $f\left(  s_{1}\right)$
  -->
 <IMG
  WIDTH="43" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img53.gif"
+ SRC="img56.gif"
  ALT="$ f\left( s_{1}\right) $">で与えられる. ２回目のスパイクが<IMG
  WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
  SRC="img22.gif"
@@ -543,12 +571,11 @@ f^{\ast}\left(  u\right)  =\exp\left[  \lambda\left(  e^{iu}-1\right)
  WIDTH="19" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
  SRC="img26.gif"
  ALT="$ s_{1}$">は<!-- MATH
- $f\left(
-T-s_{1}\right)$
+ $f\left(T-s_{1}\right)$
  -->
 <IMG
  WIDTH="74" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img54.gif"
+ SRC="img57.gif"
  ALT="$ f\left(
 T-s_{1}\right) $">である. この２つを掛け合わせた確率が, ２つのスパイクが起こるまでの時間が<IMG
  WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
@@ -558,18 +585,18 @@ T-s_{1}\right) $">である. この２つを掛け合わせた確率が, ２つのスパイクが起こるま
  SRC="img26.gif"
  ALT="$ s_{1}$">は<IMG
  WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img55.gif"
+ SRC="img58.gif"
  ALT="$ (0,T]$">のどれを取ることもできるから, すべての可能性の和をとって
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
- WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img56.gif"
- ALT="$\displaystyle f\left( T\right)$"></TD>
+ WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.gif"
+ ALT="$\displaystyle f_2\left( T\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="184" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
- SRC="img57.gif"
+ SRC="img60.gif"
  ALT="$\displaystyle =\int_{0}^{T}ds_{1}f\left( s_{1}\right) f\left( T-s_{1}\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -577,7 +604,7 @@ T-s_{1}\right) $">である. この２つを掛け合わせた確率が, ２つのスパイクが起こるま
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="196" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
- SRC="img58.gif"
+ SRC="img61.gif"
  ALT="$\displaystyle =\int_{0}^{T}ds_{1}\lambda e^{-\lambda s_{1}}\lambda e^{-\lambda\left( T-s_{1}\right) }$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -585,44 +612,42 @@ T-s_{1}\right) $">である. この２つを掛け合わせた確率が, ２つのスパイクが起こるま
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="84" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
- SRC="img59.gif"
- ALT="$\displaystyle =\lambda^{2}Te^{-\lambda T}%
-$"></TD>
+ SRC="img62.gif"
+ ALT="$\displaystyle =\lambda^{2}Te^{-\lambda T}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-となる. 同様にして,
-<IMG
+となる. 同様にして, <IMG
  WIDTH="43" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img60.gif"
- ALT="$ n=3$">の場合は<P></P>
+ SRC="img63.gif"
+ ALT="$ n=3$">の場合は
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
- WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img56.gif"
- ALT="$\displaystyle f\left( T\right)$"></TD>
+ WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.gif"
+ ALT="$\displaystyle f_3\left( T\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="336" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
- SRC="img61.gif"
- ALT="$\displaystyle =\int_{0}^{T}ds_{1}\int_{0}^{T-s_{1}}ds_{2}f\left( s_{1}\right) f\left( s_{2}\right) f\left( T-s_{1}-s_{2}\right)$"></TD>
+ WIDTH="370" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.gif"
+ ALT="$\displaystyle =\int_{0}^{T}ds_{1}\int_{0}^{T-s_{1}}ds_{2}f\left( s_{1}\right) f\left( s_{2} - s_{1} \right) f\left( T-s_{1}-s_{2}\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="342" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
- SRC="img62.gif"
- ALT="$\displaystyle =\int_{0}^{T}ds_{1}\int_{0}^{T-s_{1}}ds_{2}\lambda e^{-\lambda s_{1}%
-}\lambda e^{-\lambda s_{2}}\lambda e^{-\lambda\left( T-s_{1}-s_{2}\right) }$"></TD>
+ SRC="img66.gif"
+ ALT="$\displaystyle =\int_{0}^{T}ds_{1}\int_{0}^{T-s_{1}}ds_{2}\lambda e^{-\lambda s_{1}}\lambda e^{-\lambda s_{2}}\lambda e^{-\lambda\left( T-s_{1}-s_{2}\right) }$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="187" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
- SRC="img63.gif"
+ SRC="img67.gif"
  ALT="$\displaystyle =\lambda^{3}e^{-\lambda T}\int_{0}^{T}ds_{1}\left( T-s_{1}\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -630,83 +655,132 @@ $"></TD>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="103" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img64.gif"
- ALT="$\displaystyle =\frac{1}{2}\lambda^{3}T^{2}e^{-\lambda T}%
-$"></TD>
+ SRC="img68.gif"
+ ALT="$\displaystyle =\frac{1}{2}\lambda^{3}T^{2}e^{-\lambda T}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
 である. これを繰り返せば, 一般に<IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
- ALT="$ n$">回のスパイクが生じるまでの確率であるアーラン分布<A NAME="259"></A><P></P>
+ SRC="img53.gif"
+ ALT="$ n$">回のスパイクが生じるまでの時間の確率密度であるアーラン分布<A NAME="261"></A>
+<P></P>
 <DIV ALIGN="CENTER"><A NAME="Erlang_distribution"></A><!-- MATH
  \begin{equation}
-f\left(  T\right)  =\frac{1}{\left(  n-1\right)  !}\lambda^{n}T^{n-1}%
-e^{-\lambda T}%
+f_n\left(  T\right)  =\frac{1}{\left(  n-1\right)  !}\lambda^{n}T^{n-1}e^{-\lambda T}
 \end{equation}
  -->
 <TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="208" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img65.gif"
- ALT="$\displaystyle f\left( T\right) =\frac{1}{\left( n-1\right) !}\lambda^{n}T^{n-1}%
-e^{-\lambda T}%
-$"></TD>
+ WIDTH="215" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$\displaystyle f_n\left( T\right) =\frac{1}{\left( n-1\right) !}\lambda^{n}T^{n-1}e^{-\lambda T}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (1.5)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-が導かれる. この分布は部分積分を繰り返すことで帰納法を用いて証明することができるから,
+が導かれる. この分布は帰納法を用いて証明することができるから,
 自分でやってみるとよい. アーラン分布の平均は<IMG
  WIDTH="31" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img66.gif"
+ SRC="img70.gif"
  ALT="$ n/\lambda$">, 分散は<!-- MATH
  $n/\lambda^{2}$
  -->
 <IMG
  WIDTH="38" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img67.gif"
+ SRC="img71.gif"
  ALT="$ n/\lambda^{2}$">である.&nbsp;&nbsp;&nbsp;&nbsp;今の場合, <IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
- ALT="$ n$">が整数なのでアーラン分布（Erlang
-distribution）と呼ばれる. <IMG
+ SRC="img53.gif"
+ ALT="$ n$">が整数なのでアーラン分布（Erlang distribution）と呼ばれる. <IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
+ SRC="img53.gif"
  ALT="$ n$">を実数<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img68.gif"
- ALT="$ \kappa$">に拡張した分布はガンマ分布(Gamma
-distribution)という.
+ SRC="img72.gif"
+ ALT="$ \kappa$">に拡張した分布はガンマ分布(Gamma distribution)という.
 
 <P>
 <P>
-<DIV><B>問題  5</B> &nbsp; 
+<DIV><B>問題  4</B> &nbsp; 
+<I>帰納法を用いてn回のスパイクが生じるまでの時間の確率密度がアーラン分布に従うことを証明せよ．
+</I><P>
+<DIV><B>解法  5</B> &nbsp; <P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="63" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img73.gif"
+ ALT="$\displaystyle f_{n+1} \left( T \right)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="178" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img74.gif"
+ ALT="$\displaystyle = \int_0^T f_n \left(s \right) f_1 \left(T-s \right) ds$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="275" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img75.gif"
+ ALT="$\displaystyle = \int_0^T \frac{1}{\left( n-1\right) !}\lambda^{n}s^{n-1}e^{-\lambda s} \lambda e^{-\lambda \left(T -s \right)} ds$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="220" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img76.gif"
+ ALT="$\displaystyle = \frac{1}{\left( n-1\right) !}\lambda^{n} \lambda e^{-\lambda T } \int_0^T s^{n-1} ds$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="174" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.gif"
+ ALT="$\displaystyle = \frac{1}{\left( n-1\right) !}\lambda^{n} \lambda e^{-\lambda T } \frac{1}{n} T^{n}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="133" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img78.gif"
+ ALT="$\displaystyle = \frac{1}{\left( n\right) !}\lambda^{n} \lambda e^{-\lambda T } T^{n}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P></DIV><P></P></DIV><P></P>
+
+<P>
+<P>
+<DIV><B>問題  6</B> &nbsp; 
 <I>アーラン分布を指数分布のラプラス変換を用いて求めよ.
 </I>
 <P><P>
-<DIV><B>解法  6</B> &nbsp; 
+<DIV><B>解法  7</B> &nbsp; 
 <I>まずアーラン分布のラプラス変換<!-- MATH
  $G_{n}^{\ast}\left(
 s\right)$
  -->
 <IMG
  WIDTH="48" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img69.gif"
+ SRC="img79.gif"
  ALT="$ G_{n}^{\ast}\left(
-s\right) $">を求めておくと</I><P></P>
+s\right) $">を求めておくと
+</I><P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="48" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img73.gif"
+ SRC="img83.gif"
  ALT="$\displaystyle G_{n}^{\ast}\left( s\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="196" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
- SRC="img74.gif"
+ SRC="img84.gif"
  ALT="$\displaystyle =\int_{0}^{\infty}\frac{\lambda^{n}}%
 {\Gamma\left( n\right) }t^{n-1}e^{-\lambda t}e^{-st}dt$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -715,7 +789,7 @@ s\right) $">を求めておくと</I><P></P>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="196" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
- SRC="img75.gif"
+ SRC="img85.gif"
  ALT="$\displaystyle =\frac{\lambda^{n}}{\Gamma\left( \alpha\right) }\int_{0}^{\infty}%
 t^{n-1}e^{-\left( \lambda+s\right) t}dt$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -727,27 +801,26 @@ t^{n-1}e^{-\left( \lambda+s\right) t}dt$"></TD>
  -->
 <IMG
  WIDTH="91" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img76.gif"
+ SRC="img86.gif"
  ALT="$ u=\left( \lambda+s\right) t$">とおいて,
 </I><P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="48" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img77.gif"
+ SRC="img87.gif"
  ALT="$\displaystyle G_{\alpha}^{\ast}\left( s\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="251" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img78.gif"
- ALT="$\displaystyle =\frac{\lambda^{n}}{\Gamma\left( n\right) }\int_{0}^{\infty}\left( \frac{u}{\lambda+s}\right) ^{n-1}%
-e^{-u}\frac{du}{\lambda+s}$"></TD>
+ SRC="img88.gif"
+ ALT="$\displaystyle =\frac{\lambda^{n}}{\Gamma\left( n\right) }\int_{0}^{\infty}\left( \frac{u}{\lambda+s}\right) ^{n-1}e^{-u}\frac{du}{\lambda+s}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="246" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img79.gif"
+ SRC="img89.gif"
  ALT="$\displaystyle =\left( \frac{\lambda}{\lambda+s}\right) ^{n}\frac{1}{\Gamma\left( \alpha\right) }\int_{0}^{\infty}u^{n-1}e^{-u}du$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -755,9 +828,8 @@ e^{-u}\frac{du}{\lambda+s}$"></TD>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="93" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img80.gif"
- ALT="$\displaystyle =\left( \frac{\lambda}{\lambda+s}\right) ^{n}%
-$"></TD>
+ SRC="img90.gif"
+ ALT="$\displaystyle =\left( \frac{\lambda}{\lambda+s}\right) ^{n}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 </TABLE></DIV>
@@ -767,32 +839,32 @@ $"></TD>
  -->
 <IMG
  WIDTH="144" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img81.gif"
+ SRC="img91.gif"
  ALT="$ X_{1}+X_{2}+\cdots+X_{n}$">の特性関数<!-- MATH
  $f_{n}^{\ast}\left(  s\right)$
  -->
 <IMG
  WIDTH="43" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img82.gif"
- ALT="$ f_{n}^{\ast}\left( s\right) $">は</I><P></P>
+ SRC="img92.gif"
+ ALT="$ f_{n}^{\ast}\left( s\right) $">は
+</I><P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="43" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img83.gif"
+ SRC="img93.gif"
  ALT="$\displaystyle f_{n}^{\ast}\left( s\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="262" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img84.gif"
- ALT="$\displaystyle =E\left[ \exp\left\{ -s\left( X_{1}%
-+X_{2}+\cdots+X_{n}\right) \right\} \right]$"></TD>
+ SRC="img94.gif"
+ ALT="$\displaystyle =E\left[ \exp\left\{ -s\left( X_{1}+X_{2}+\cdots+X_{n}\right) \right\} \right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="256" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
- SRC="img85.gif"
+ SRC="img95.gif"
  ALT="$\displaystyle =E\left[ e^{-sX_{1}}\right] E\left[ e^{-sX_{2}}\right] \cdots E\left[ e^{-sX_{1}}\right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -800,25 +872,26 @@ $"></TD>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="193" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img86.gif"
+ SRC="img96.gif"
  ALT="$\displaystyle =f^{\ast}\left( x_{1}\right) f^{\ast}\left( x_{2}\right) \cdots f^{\ast}\left( x_{n}\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P><I>
-分布が同一の場合(i.i.d.)は</I><!-- MATH
+分布が同一の場合(i.i.d.)は
+</I><!-- MATH
  \begin{displaymath}
 f_{n}^{\ast}\left(  s\right)  =\left\{  f_{1}^{\ast}\left(  s\right)
-\right\}  ^{n}%
+\right\}  ^{n}
 \end{displaymath}
  -->
 <P></P>
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="128" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img87.gif"
+ SRC="img97.gif"
  ALT="$\displaystyle f_{n}^{\ast}\left( s\right) =\left\{ f_{1}^{\ast}\left( s\right)
-\right\} ^{n}%
+\right\} ^{n}
 $">
 </DIV><P></P><I>
 例えば, <!-- MATH
@@ -826,8 +899,9 @@ $">
  -->
 <IMG
  WIDTH="43" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img88.gif"
- ALT="$ f_{1}^{\ast}\left( s\right) $">が指数分布の場合は</I><!-- MATH
+ SRC="img98.gif"
+ ALT="$ f_{1}^{\ast}\left( s\right) $">が指数分布の場合は
+</I><!-- MATH
  \begin{displaymath}
 f_{n}^{\ast}\left(  s\right)  =\left(  \frac{\lambda}{\lambda+s}\right)  ^{n}%
 \end{displaymath}
@@ -836,7 +910,7 @@ f_{n}^{\ast}\left(  s\right)  =\left(  \frac{\lambda}{\lambda+s}\right)  ^{n}%
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="137" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img89.gif"
+ SRC="img99.gif"
  ALT="$\displaystyle f_{n}^{\ast}\left( s\right) =\left( \frac{\lambda}{\lambda+s}\right) ^{n}%
 $">
 </DIV><P></P><I>
@@ -853,7 +927,7 @@ $">
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="204" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img90.gif"
+ SRC="img100.gif"
  ALT="$\displaystyle %
 \mathcal{L}%
 ^{-1}\left[ f_{n}^{\ast}\left( s\right) \right] =\frac{\lambda^{n}}%
@@ -868,15 +942,16 @@ $">
 <BR>
 アーラン分布とポアソン分布の関係
 </H2>
+
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="368"></A>
+<DIV ALIGN="CENTER"><A NAME="400"></A>
 <TABLE>
-<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1.2:</STRONG>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
 スパイク数とスパイク間隔の関係</CAPTION>
 <TR><TD><IMG
- WIDTH="554" HEIGHT="198" ALIGN="BOTTOM" BORDER="0"
- SRC="img91.gif"
+ WIDTH="555" HEIGHT="198" ALIGN="BOTTOM" BORDER="0"
+ SRC="img101.gif"
  ALT="\includegraphics[width=1\columnwidth]{fig/count_and_isi_statistics.eps}"></TD></TR>
 </TABLE>
 </DIV>
@@ -886,7 +961,7 @@ $">
  SRC="img22.gif"
  ALT="$ T$">秒間に生じるスパイクの個数<IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
+ SRC="img53.gif"
  ALT="$ n$">の分布を調べてみよう. このためには, スパイク間隔とスパイク個数との関係を定義する必要がある. <IMG
  WIDTH="27" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
  SRC="img23.gif"
@@ -895,27 +970,26 @@ $">
  SRC="img22.gif"
  ALT="$ T$">までのスパイクの個数, <IMG
  WIDTH="23" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img92.gif"
+ SRC="img102.gif"
  ALT="$ S_{n}$">を第<IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
+ SRC="img53.gif"
  ALT="$ n$">番目のスパイクまでの時間とする. 今, <IMG
  WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
  SRC="img22.gif"
  ALT="$ T$">が<IMG
  WIDTH="23" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img93.gif"
- ALT="$ S_{n}%
-$">より短い時間だったとしよう（<IMG
+ SRC="img102.gif"
+ ALT="$ S_{n}$">より長い時間だったとしよう（<IMG
  WIDTH="55" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img94.gif"
+ SRC="img103.gif"
  ALT="$ S_{n}&gt;T$">）.
 このとき, 時刻<IMG
  WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
  SRC="img22.gif"
  ALT="$ T$">までに含まれるスパイクの数は高々<IMG
  WIDTH="41" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img95.gif"
+ SRC="img104.gif"
  ALT="$ n-1$">個である（図参照）. このことから次の関係が成り立つ.
 <P></P>
 <DIV ALIGN="CENTER"><A NAME="count_interval"></A><!-- MATH
@@ -927,7 +1001,7 @@ P\left(  N_{T}<n\right)  =P\left(  S_{n}>T\right)%
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="185" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img96.gif"
+ SRC="img105.gif"
  ALT="$\displaystyle P\left( N_{T}&lt;n\right) =P\left( S_{n}&gt;T\right)%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -936,20 +1010,21 @@ $"></TD>
 <BR CLEAR="ALL"><P></P>
 右辺は<IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
+ SRC="img53.gif"
  ALT="$ n$">回のスパイクが生じるまでの待ち時間が<IMG
  WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
  SRC="img22.gif"
- ALT="$ T$">秒以上である確率, すなわちアーラン分布の生存関数で&nbsp;&nbsp;&nbsp;&nbsp; <P></P>
+ ALT="$ T$">秒以上である確率, すなわちアーラン分布の生存関数で
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="83" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img97.gif"
+ SRC="img106.gif"
  ALT="$\displaystyle P\left( S_{n}&gt;T\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="204" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
- SRC="img98.gif"
+ SRC="img107.gif"
  ALT="$\displaystyle =\int_{T}^{\infty}\frac{1}{\left( n-1\right) !}\lambda^{n}t^{n-1}e^{-\lambda t}dt$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -957,7 +1032,7 @@ $"></TD>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="127" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
- SRC="img99.gif"
+ SRC="img108.gif"
  ALT="$\displaystyle =\sum_{k=0}^{n-1}\frac{\left( \lambda T\right) ^{k}}{k!}e^{-\lambda T}%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -970,45 +1045,42 @@ $"></TD>
 <!-- MATH
  \begin{displaymath}
 P\left(  N_{T}<n\right)  =\sum_{k=0}^{n-1}\frac{\left(  \lambda T\right)
-^{k}}{k!}e^{-\lambda T}%
+^{k}}{k!}e^{-\lambda T}
 \end{displaymath}
  -->
 <P></P>
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="213" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
- SRC="img100.gif"
+ SRC="img109.gif"
  ALT="$\displaystyle P\left( N_{T}&lt;n\right) =\sum_{k=0}^{n-1}\frac{\left( \lambda T\right)
-^{k}}{k!}e^{-\lambda T}%
+^{k}}{k!}e^{-\lambda T}
 $">
 </DIV><P></P>
 時刻tまでのスパイクの個数が<IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
+ SRC="img53.gif"
  ALT="$ n$">である確率は, <!-- MATH
- $P\left(  N_{T}=n\right)  =P\left(  N_{T}%
-<n+1\right)  -P\left(  N_{T}<n\right)$
+ $P\left(  N_{T}=n\right)  =P\left(  N_{T}<n+1\right)  -P\left(  N_{T}<n\right)$
  -->
 <IMG
  WIDTH="315" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img101.gif"
- ALT="$ P\left( N_{T}=n\right) =P\left( N_{T}%
-&lt;n+1\right) -P\left( N_{T}&lt;n\right) $">である.
+ SRC="img110.gif"
+ ALT="$ P\left( N_{T}=n\right) =P\left( N_{T}&lt;n+1\right) -P\left( N_{T}&lt;n\right) $">である.
 これを用いれば,
 <P></P>
 <DIV ALIGN="CENTER"><A NAME="Poisson_distribution"></A><!-- MATH
  \begin{equation}
 P\left(  N_{T}=n\right)  =\frac{\left(  \lambda T\right)  ^{n}}{n!}e^{-\lambda
-T}%
+T}
 \end{equation}
  -->
 <TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="187" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img102.gif"
- ALT="$\displaystyle P\left( N_{T}=n\right) =\frac{\left( \lambda T\right) ^{n}}{n!}e^{-\lambda T}%
-$"></TD>
+ SRC="img111.gif"
+ ALT="$\displaystyle P\left( N_{T}=n\right) =\frac{\left( \lambda T\right) ^{n}}{n!}e^{-\lambda T}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (1.7)</TD></TR>
 </TABLE></DIV>
@@ -1023,14 +1095,13 @@ $"></TD>
 
 <P>
 ここまで, 指数分布をもとに定常ポアソン過程の性質を見てきた. <A HREF="#sec:Count_Poisson">1.1.2</A>では指数分布からポアソン分布を, <A HREF="#sec:Erlang">1.1.3</A>及び<A HREF="#sec:ErlangtoPoisson">1.1.4</A>では指数分布からアーラン分布を経てポアソン分布を求めた.
-この節示すように,
-指数分布及び ポアソン分布はスパイクの瞬間発生率<!-- MATH
+この節示すように, 指数分布及び ポアソン分布はスパイクの瞬間発生率<!-- MATH
  $\lambda\left[
 \text{spike}/s\right]$
  -->
 <IMG
  WIDTH="75" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img103.gif"
+ SRC="img112.gif"
  ALT="$ \lambda\left[
 \text{spike}/s\right] $">を考えることでも求めることができる.
 
@@ -1046,19 +1117,19 @@ $"></TD>
  SRC="img22.gif"
  ALT="$ T$">を十分に小さな幅<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img104.gif"
+ SRC="img113.gif"
  ALT="$ \Delta$">の区間によって<IMG
  WIDTH="37" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img105.gif"
+ SRC="img114.gif"
  ALT="$ \Delta/T$">個に分ける. <IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img104.gif"
+ SRC="img113.gif"
  ALT="$ \Delta$">内に生じるスパイクの確率は<!-- MATH
  $\lambda\Delta$
  -->
 <IMG
  WIDTH="27" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img106.gif"
+ SRC="img115.gif"
  ALT="$ \lambda\Delta$">で与えられる. 時刻<IMG
  WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
  SRC="img22.gif"
@@ -1066,7 +1137,8 @@ $"></TD>
 時刻<IMG
  WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
  SRC="img22.gif"
- ALT="$ T$">においてスパイクが生じる確率は<!-- MATH
+ ALT="$ T$">においてスパイクが生じる確率は
+<!-- MATH
  \begin{displaymath}
 f\left(  T\right)  \Delta=\left(  1-\lambda\Delta\right)  ^{N-1}\lambda
 \Delta=\left(  1-\lambda\Delta\right)  ^{N}\frac{\lambda\Delta}{1-\lambda
@@ -1077,7 +1149,7 @@ f\left(  T\right)  \Delta=\left(  1-\lambda\Delta\right)  ^{N-1}\lambda
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="350" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img107.gif"
+ SRC="img116.gif"
  ALT="$\displaystyle f\left( T\right) \Delta=\left( 1-\lambda\Delta\right) ^{N-1}\lamb...
 ...elta=\left( 1-\lambda\Delta\right) ^{N}\frac{\lambda\Delta}{1-\lambda
 \Delta}.
@@ -1088,8 +1160,9 @@ $">
  -->
 <IMG
  WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img108.gif"
- ALT="$ \left\vert x\right\vert &lt;1$">に対する公式<!-- MATH
+ SRC="img117.gif"
+ ALT="$ \left\vert x\right\vert &lt;1$">に対する公式
+<!-- MATH
  \begin{displaymath}
 \log\left(  1-x\right)  =-x-\frac{1}{2}x^{2}-\frac{1}{3}x^{3}\cdots\text{ }%
 \end{displaymath}
@@ -1098,10 +1171,10 @@ $">
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="238" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img109.gif"
+ SRC="img118.gif"
  ALT="$\displaystyle \log\left( 1-x\right) =-x-\frac{1}{2}x^{2}-\frac{1}{3}x^{3}\cdots$">&nbsp;<IMG
  WIDTH="4" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img110.gif"
+ SRC="img119.gif"
  ALT="$\displaystyle %
 $">
 </DIV><P></P><!-- MATH
@@ -1113,23 +1186,24 @@ $">
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="197" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img111.gif"
+ SRC="img120.gif"
  ALT="$\displaystyle \frac{1}{1-x}=1+x+x^{2}+x^{3}\cdots
 $">
 </DIV><P></P>
-を思い出せば,&nbsp;&nbsp;&nbsp;&nbsp;第一成分は, 十分に小さな<IMG
+を思い出せば, 第一成分は, 十分に小さな<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img104.gif"
- ALT="$ \Delta$">でに対して<P></P>
+ SRC="img113.gif"
+ ALT="$ \Delta$">でに対して
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="79" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
- SRC="img112.gif"
+ SRC="img121.gif"
  ALT="$\displaystyle \left( 1-\lambda\Delta\right) ^{N}$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="163" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img113.gif"
+ SRC="img122.gif"
  ALT="$\displaystyle =\exp\left[ N\log\left\{ 1-\lambda\Delta\right\} \right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1137,7 +1211,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="257" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img114.gif"
+ SRC="img123.gif"
  ALT="$\displaystyle =\exp\left[ N\left\{ -\lambda\Delta-\frac{1}{2}\left( \lambda \Delta\right) ^{2}+\cdots\right\} \right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1145,7 +1219,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="90" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img115.gif"
+ SRC="img124.gif"
  ALT="$\displaystyle \sim\exp\left[ -\lambda T\right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1163,7 +1237,7 @@ T}%
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="329" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
- SRC="img116.gif"
+ SRC="img125.gif"
  ALT="$\displaystyle \lim_{\Delta\rightarrow0}\left( 1-\lambda\Delta\right) ^{N}=\lim
 _{N\rightarrow\infty}\left( 1-\lambda T\frac{1}{N}\right) ^{N}=e^{-\lambda
 T}%
@@ -1172,16 +1246,17 @@ $">
 としてもよい.
 
 <P>
-第二成分は<P></P>
+第二成分は
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="58" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img117.gif"
+ SRC="img126.gif"
  ALT="$\displaystyle \frac{\lambda\Delta}{1-\lambda\Delta}$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="219" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
- SRC="img118.gif"
+ SRC="img127.gif"
  ALT="$\displaystyle =\lambda\Delta\left\{ 1+\lambda\Delta+\left( \lambda\Delta\right) ^{2}+\cdots\right\}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1189,7 +1264,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="44" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img119.gif"
+ SRC="img128.gif"
  ALT="$\displaystyle \sim\lambda\Delta$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1205,23 +1280,22 @@ f\left(  T\right)  =\lambda e^{-\lambda T}%
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="106" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
- SRC="img120.gif"
+ SRC="img129.gif"
  ALT="$\displaystyle f\left( T\right) =\lambda e^{-\lambda T}%
 $">
 </DIV><P></P>
-この導出法は一般点過程の考察でも重要になってくる.
-ここでは瞬間スパイク生成率を<IMG
+この導出法は一般点過程の考察でも重要になってくる. ここでは瞬間スパイク生成率を<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img121.gif"
+ SRC="img130.gif"
  ALT="$ \lambda$">として出発し, 瞬間スパイク発火率<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img121.gif"
+ SRC="img130.gif"
  ALT="$ \lambda$">に従うスパイク時系列のスパイク密度分布は平均<IMG
  WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img122.gif"
+ SRC="img131.gif"
  ALT="$ 1/\lambda$">の指数分布になることがわかった. すなわち指数分布の<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img121.gif"
+ SRC="img130.gif"
  ALT="$ \lambda$">は瞬間スパイク発火率を表す.
 
 <P>
@@ -1233,30 +1307,29 @@ $">
 <P>
 瞬間スパイク生成率から直接, ポアソン分布を求めることもできる.<IMG
  WIDTH="24" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img123.gif"
- ALT="$ \ N$">個の区間のうち<IMG
+ SRC="img132.gif"
+ ALT="$  N$">個の区間のうち<IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
+ SRC="img53.gif"
  ALT="$ n$">個にスパイクが生じる確率は,
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="81" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img124.gif"
+ SRC="img133.gif"
  ALT="$\displaystyle p\left( N_{T}=n\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="218" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
- SRC="img125.gif"
- ALT="$\displaystyle =\left( \begin{array}[c]{c}%
-N\\ n \end{array} \right) \left( \lambda\Delta\right) ^{n}\left( 1-\lambda\Delta\right) ^{N-n}$"></TD>
+ SRC="img134.gif"
+ ALT="$\displaystyle =\left( \begin{array}[c]{c} N\ n \end{array} \right) \left( \lambda\Delta\right) ^{n}\left( 1-\lambda\Delta\right) ^{N-n}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="267" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img126.gif"
+ SRC="img135.gif"
  ALT="$\displaystyle =\frac{N!}{n!\left( N-n\right) !}\left( \frac{\lambda\Delta}%
 {1-\lambda\Delta}\right) ^{n}\left( 1-\lambda\Delta\right) ^{N}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -1265,7 +1338,7 @@ N\\ n \end{array} \right) \left( \lambda\Delta\right) ^{n}\left( 1-\lambda\Delta
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="224" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img127.gif"
+ SRC="img136.gif"
  ALT="$\displaystyle \sim\frac{N!}{\left( N-n\right) !}\frac{1}{n!}\left( \lambda \Delta\right) ^{n}\exp\left( -\lambda T\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1273,7 +1346,7 @@ N\\ n \end{array} \right) \left( \lambda\Delta\right) ^{n}\left( 1-\lambda\Delta
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="248" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img128.gif"
+ SRC="img137.gif"
  ALT="$\displaystyle =\frac{N!}{N^{n}\left( N-n\right) !}\frac{1}{n!}\left( \lambda T\right) ^{n}\exp\left( -\lambda T\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1281,29 +1354,29 @@ N\\ n \end{array} \right) \left( \lambda\Delta\right) ^{n}\left( 1-\lambda\Delta
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="145" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img129.gif"
+ SRC="img138.gif"
  ALT="$\displaystyle \rightarrow\frac{\left( \lambda T\right) ^{n}}{n!}\exp\left( -\lambda T\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-ただし最後のステップでは, スターリンの公式<A NAME="478"></A><!-- MATH
+ただし最後のステップでは, スターリンの公式<A NAME="510"></A><!-- MATH
  $\ln N!\sim N\ln N-N$
  -->
 <IMG
  WIDTH="142" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img130.gif"
+ SRC="img139.gif"
  ALT="$ \ln N!\sim N\ln N-N$">を使って,
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="110" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img131.gif"
+ SRC="img140.gif"
  ALT="$\displaystyle \ln\frac{N!}{N^{n}\left( N-n\right) !}$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="214" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img132.gif"
+ SRC="img141.gif"
  ALT="$\displaystyle =\ln N!-n\ln N-\ln\left( N-n\right) !$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1311,7 +1384,7 @@ N\\ n \end{array} \right) \left( \lambda\Delta\right) ^{n}\left( 1-\lambda\Delta
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="390" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img133.gif"
+ SRC="img142.gif"
  ALT="$\displaystyle \sim N\ln N-N-n\ln N-\left( N-n\right) \ln\left( N-n\right) +\left( N-n\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1319,7 +1392,7 @@ N\\ n \end{array} \right) \left( \lambda\Delta\right) ^{n}\left( 1-\lambda\Delta
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="210" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img134.gif"
+ SRC="img143.gif"
  ALT="$\displaystyle =\left( 1-\frac{n}{N}\right) \ln\left( 1-\frac{n}{N}\right) ^{N}-n$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1327,7 +1400,7 @@ N\\ n \end{array} \right) \left( \lambda\Delta\right) ^{n}\left( 1-\lambda\Delta
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="115" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img135.gif"
+ SRC="img144.gif"
  ALT="$\displaystyle \rightarrow1\cdot\ln e^{-n}-n$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1335,7 +1408,7 @@ N\\ n \end{array} \right) \left( \lambda\Delta\right) ^{n}\left( 1-\lambda\Delta
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img136.gif"
+ SRC="img145.gif"
  ALT="$\displaystyle =0$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1379,7 +1452,7 @@ N\\ n \end{array} \right) \left( \lambda\Delta\right) ^{n}\left( 1-\lambda\Delta
   HREF="node16.html">Index</A></B> 
 <!--End of Navigation Panel-->
 <ADDRESS>
-&copy; 2007 2008 2009 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki, Ph.D.</a>
+<div align=right>&copy; 2007 - 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki</a></align>
 </ADDRESS>
-</BODY>
+<p></p><div id=disqus_thread></div><script type=text/javascript>(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://statneuro.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })();</script><script type=text/javascript>var disqus_shortname = 'statneuro';(function () { var s = document.createElement('script'); s.async = true;  s.src = 'http://disqus.com/forums/statneuro/count.js';  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);}());</script><p><script type=text/javascript src=http://disqus.com/forums/statneuro/combination_widget.js?num_items=5&hide_mods=0&color=blue&default_tab=people&excerpt_length=200></script><a href=http://disqus.com>Powered by Disqus</a></p></body>
 </HTML>

@@ -18,7 +18,8 @@ function [y,t,optw,W,C,confb95,yb] = sskernel(x,tin,W)
 % Input arguments:
 % x:    Sample data vector. 
 % tin (optinal):
-%       Points at which estimation are computed. 
+%       Points at which estimation are computed. Please use fine resolution
+%       to obtain a correct optimal bandwidth.
 % W (optinal): 
 %       A vector of kernel bandwidths. 
 %       If W is provided, the optimal bandwidth is selected from the 
@@ -80,10 +81,10 @@ function [y,t,optw,W,C,confb95,yb] = sskernel(x,tin,W)
 % http://2000.jukuin.keio.ac.jp/shimazaki/res/kernel.html
 %
 % See also SSVKERNEL, SSHIST
+% 
+% Bug fix
+% 131004 fixed a problem for large values
 %
-%
-% This program is distributed under the terms of 
-% the Creative Commons Attribution License (CC-BY)
 % Hideaki Shimazaki 
 % http://2000.jukuin.keio.ac.jp/shimazaki
 
@@ -93,14 +94,14 @@ x = reshape(x,1,numel(x));
 
 if nargin == 1
     T = max(x) - min(x);
-    [~,~,dt_samp] = find( sort(diff(sort(x))),1,'first');
+    [mbuf,nbuf,dt_samp] = find( sort(diff(sort(x))),1,'first');
     tin = linspace(min(x),max(x), min(ceil(T/dt_samp),1e3));
     t = tin;
     x_ab = x( logical((x >= min(tin)) .*(x <= max(tin))) ) ;
 else
-    T = max(tin) - min(tin);
+    T = max(tin) - min(tin);    
     x_ab = x( logical((x >= min(tin)) .*(x <= max(tin))) ) ;
-    [~,~,dt_samp] = find( sort(diff(sort(x_ab))),1,'first');
+    [mbuf,nbuf,dt_samp] = find( sort(diff(sort(x_ab))),1,'first');
 
     if dt_samp > min(diff(tin))
         t = linspace(min(tin),max(tin), min(ceil(T/dt_samp),1e3));
@@ -139,14 +140,14 @@ end
 
 else
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Golden section search on a log-exp scale
+% Golden section search on a log-exp scale
 % Initialize
 Wmin = 2*dt; Wmax = 1*(max(x) - min(x));
 
 tol = 10^-5; 
 phi = (sqrt(5) + 1)/2;        %golden ratio
-logexp = @(x) log(1+exp(x));
-ilogexp = @(x) log(exp(x)-1);
+%logexp = @(x) log(1+exp(x));
+%ilogexp = @(x) log(exp(x)-1);
 
 %a = Wmin; b = Wmax;
 a = ilogexp(Wmin); b = ilogexp(Wmax);
@@ -154,8 +155,8 @@ a = ilogexp(Wmin); b = ilogexp(Wmax);
 c1 = (phi-1)*a + (2-phi)*b;
 c2 = (2-phi)*a + (phi-1)*b;
 
-f1 = CostFunction(y_hist,N,exp(c1),dt);
-f2 = CostFunction(y_hist,N,exp(c2),dt);
+f1 = CostFunction(y_hist,N,logexp(c1),dt);
+f2 = CostFunction(y_hist,N,logexp(c2),dt);
 
 k = 1;
 while abs(b-a) > tol*(abs(c1)+abs(c2)) && k <= 20
@@ -196,7 +197,7 @@ end
 % Bootstrap Confidence Intervals
 if nargout == 0 || nargout >= 6
     nbs = 1e3;        %number of bootstrap samples
-    yb = zeros(nbs,L);
+    yb = zeros(nbs,length(tin));
 
     for i = 1: nbs,
         %y_histb = poissrnd(y_hist*dt*N)/dt/N;
@@ -205,20 +206,15 @@ if nargout == 0 || nargout >= 6
         xb = x_ab(idx);
         y_histb = histc(xb,t-dt/2)/dt/N;
     
-        yb(i,:) = fftkernel(y_histb,optw/dt);
-        yb(i,:) = yb(i,:) / sum(yb(i,:)*dt);
+        yb_buf = fftkernel(y_histb,optw/dt);
+        yb_buf = yb_buf / sum(yb_buf*dt);
+        
+        yb(i,:) = interp1(t,yb_buf,tin);
     end
 
     ybsort = sort(yb);
     y95b = ybsort(floor(0.05*nbs),:);
-    y95u = ybsort(floor(0.95*nbs),:); 
-
-    for i = 1: nbs
-        yb(i,:) = interp1(t,yb(i,:),tin);
-    end
-    
-    y95b = interp1(t,y95b,tin);
-    y95u = interp1(t,y95u,tin);
+    y95u = ybsort(floor(0.95*nbs),:);
     
     confb95 = [y95b; y95u];
 end
@@ -227,7 +223,6 @@ end
 % Return results
 y = interp1(t,y,tin);
 t = tin;
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Display results
@@ -311,3 +306,22 @@ K = exp(-0.5*(w*2*pi*f).^2);
 y = ifft(X.*K,n);
 
 y = y(1:L);
+
+
+function y = logexp(x) 
+if x<1e2 
+    y = log(1+exp(x));
+else
+    y = x;
+end
+
+function y = ilogexp(x)
+%ilogexp = @(x) log(exp(x)-1);
+if x<1e2
+    y = log(exp(x)-1);
+else
+    y = x;
+end
+    
+
+

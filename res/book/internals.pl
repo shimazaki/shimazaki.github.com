@@ -14,8 +14,16 @@ $key = q/cite_Ogata81/;
 $ref_files{$key} = "$dir".q|node15.html|; 
 $noresave{$key} = "$nosave";
 
+$key = q/variance_rate/;
+$ref_files{$key} = "$dir".q|node15.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/Cn/;
 $ref_files{$key} = "$dir".q|node13.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/MISE3/;
+$ref_files{$key} = "$dir".q|node15.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/eq:MSE/;
@@ -26,11 +34,19 @@ $key = q/kerneldensity/;
 $ref_files{$key} = "$dir".q|node13.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/cite_Berman81/;
+$key = q/MISE2/;
 $ref_files{$key} = "$dir".q|node15.html|; 
 $noresave{$key} = "$nosave";
 
+$key = q/TableKey/;
+$ref_files{$key} = "$dir".q|node6.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/cite_Barbieri01/;
+$ref_files{$key} = "$dir".q|node15.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/cite_Berman81/;
 $ref_files{$key} = "$dir".q|node15.html|; 
 $noresave{$key} = "$nosave";
 
@@ -78,8 +94,24 @@ $key = q/CLB/;
 $ref_files{$key} = "$dir".q|node13.html|; 
 $noresave{$key} = "$nosave";
 
+$key = q/TableKey_copy_1_/;
+$ref_files{$key} = "$dir".q|node6.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/eq:variancemean/;
+$ref_files{$key} = "$dir".q|node15.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/varLambdah/;
+$ref_files{$key} = "$dir".q|node15.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/eq:Exponential_pdf/;
 $ref_files{$key} = "$dir".q|node5.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/eq:_optbinsize/;
+$ref_files{$key} = "$dir".q|node15.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/hazard_renewal/;
@@ -94,8 +126,16 @@ $key = q/ISI_hazard/;
 $ref_files{$key} = "$dir".q|node6.html|; 
 $noresave{$key} = "$nosave";
 
+$key = q/fig:time-rescaling/;
+$ref_files{$key} = "$dir".q|node9.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/memoryless/;
 $ref_files{$key} = "$dir".q|node5.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/eq:CostEstimated/;
+$ref_files{$key} = "$dir".q|node15.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/Erlang_distribution/;
@@ -110,7 +150,19 @@ $key = q/cite_Heyman90/;
 $ref_files{$key} = "$dir".q|node15.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/eq:Survival_function/;
+$key = q/cite_Rudemo82/;
+$ref_files{$key} = "$dir".q|node16.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/intensity_Poisson_process/;
+$ref_files{$key} = "$dir".q|node9.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/time-rescaling/;
+$ref_files{$key} = "$dir".q|node9.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/eq:ltd_hazard/;
 $ref_files{$key} = "$dir".q|node6.html|; 
 $noresave{$key} = "$nosave";
 
@@ -118,16 +170,8 @@ $key = q/hazard_def_renewal/;
 $ref_files{$key} = "$dir".q|node6.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/eq:ltd_hazard/;
+$key = q/eq:Survival_function/;
 $ref_files{$key} = "$dir".q|node6.html|; 
-$noresave{$key} = "$nosave";
-
-$key = q/time-rescaling/;
-$ref_files{$key} = "$dir".q|node9.html|; 
-$noresave{$key} = "$nosave";
-
-$key = q/intensity_Poisson_process/;
-$ref_files{$key} = "$dir".q|node9.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/eq:Score/;
@@ -142,19 +186,27 @@ $key = q/rawdensity/;
 $ref_files{$key} = "$dir".q|node13.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/sec:ErlangtoPoisson/;
-$ref_files{$key} = "$dir".q|node5.html|; 
-$noresave{$key} = "$nosave";
-
 $key = q/cite_Brown01/;
 $ref_files{$key} = "$dir".q|node15.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/sec:ErlangtoPoisson/;
+$ref_files{$key} = "$dir".q|node5.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/intensity_point_process/;
 $ref_files{$key} = "$dir".q|node11.html|; 
 $noresave{$key} = "$nosave";
 
+$key = q/TableKey_copy_2_/;
+$ref_files{$key} = "$dir".q|node6.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/cite_Shimazaki07a/;
+$ref_files{$key} = "$dir".q|node15.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/cite_Cox62/;
 $ref_files{$key} = "$dir".q|node15.html|; 
 $noresave{$key} = "$nosave";
 
@@ -162,7 +214,7 @@ $key = q/sec:Erlang/;
 $ref_files{$key} = "$dir".q|node5.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/cite_Cox62/;
+$key = q/MISE1/;
 $ref_files{$key} = "$dir".q|node15.html|; 
 $noresave{$key} = "$nosave";
 

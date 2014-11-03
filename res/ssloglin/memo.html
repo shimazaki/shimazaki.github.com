@@ -6,6 +6,292 @@
 </head>
 
 <body>
+<h2>Tutorials on Matlab code </h2>
+<p>&nbsp;</p>
+<table width="180" cellspacing="2" cellpadding="0" border="0">
+  <tbody>
+    <tr>
+      <td width="180" height="41" valign="top"><img alt="H Shimazaki" src="http://www.gravatar.com/avatar/0c0e1f9cb353f991e194574730d4599d?s=100" /><br />
+        This page is managed by<br />
+        <a class="style22 style23" target="_parent" href="../reroute.html">H.
+          Shimazaki </a></td>
+    </tr>
+    <tr>
+      <td width="180" height="20" valign="top">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="180" height="240" valign="top"><a class="twitter-timeline" data-dnt="true" href="https://twitter.com/H_Shimazaki" data-widget-id="440383533748469761"></a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></td>
+    </tr>
+  </tbody>
+</table>
+<p>&nbsp;</p>
+<h2><a id="Links" name="Links"></a>Links</h2>
+<table width="700" height="36" cellpadding="10" border="0" bgcolor="#ECE9D8">
+  <tbody>
+    <tr>
+      <td height="30"><p>Links to co-authors' pages </p>
+        <p>Prof. Sonja Gruen @ Juelich Research Center <a href="http://www.fz-juelich.de/inm/inm-6/EN/Forschung/Gruen/artikel.html">link</a> </p>
+        <p>Prof. Shun-ichi Amari @ RIKEN Brain Science Institute <a href="http://www.brain.riken.jp/labs/mns/amari/home-E.html">link</a> </p>
+        <p>Prof. Emery N. Brown @ MIT, Massachusettes General Hospital <a href="http://www.neurostat.mit.edu/">link</a> </p></td>
+    </tr>
+  </tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="700" height="180" cellpadding="10" border="0" bgcolor="#ECE9D8">
+  <tbody>
+    <tr>
+      <td height="176"><p class="style4"> <img width="80" height="80" align="absmiddle" alt="matlab"
+                src="../icons/matlab.png" />How
+        to use the matlab codes.</p>
+        <ol>
+          <li> Download the codes at GitHub (<a href="https://github.com/shimazaki/code/zipball/master">https://github.com/shimazaki/code/zipball/master</a>).
+            Expand the zip file. </li>
+          <li>Launch Matlab. Go to `example' directory in `ssloglin'
+            directory. </li>
+          <li>type: load example.mat</li>
+          <li>type: example </li>
+        </ol>
+        <p>Input data structure </p>
+        <table width="674" cellspacing="0" cellpadding="0" border="1">
+          <tbody>
+            <tr>
+              <td width="344" valign="top"><p>data.</p>
+                <p>raw.</p>
+                <ul>
+                  <li>N: Number of neurons. <br />
+                    n: Number of trials. <br />
+                    D: Sampling resolution [s] <br />
+                    T: Observation length [s] <br />
+                    xs: Cell array of N neurons with n trials. <br />
+                    miss: time point of data aquisition failure. <br />
+                    ext: time stamp of external triger. </li>
+                </ul></td>
+              <td width="324" valign="top"><p>data. </p>
+                <p>raw. </p>
+                <ul>
+                  <li>N: 3<br />
+                    n: 300<br />
+                    D: 1.0000e-003<br />
+                    T: 0.5000<br />
+                    xs: {{1x300 cell} {1x300 cell} {1x300 cell}}<br />
+                    miss: []<br />
+                    ext: []</li>
+                </ul></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Output d ata structure </p>
+        <table width="674" cellspacing="0" cellpadding="0" border="1">
+          <tbody>
+            <tr>
+              <td width="344" valign="top"><p>data.</p>
+                <p>model.</p>
+                <ul>
+                  <li>struct.
+                    <ul>
+                      <li> N: Number of neurons.</li>
+                      <li>R: Order of interactions in the model. </li>
+                      <li>D: Bin-width [s].</li>
+                      <li>n: Number of trials. </li>
+                    </ul>
+                  </li>
+                  <li>binary.
+                    <ul>
+                      <li> n: Number of trials. <br />
+                        d: Dimension of the log-linear model. <br />
+                        K: Number of bins. <br />
+                        y: [dxK] Observed joint synchrony rate. <br />
+                        y_mean: [dx1] Average of y. <br />
+                        * id: [2^NxN] spike patterns. <br />
+                        *order: [2^Nx1] <br />
+                        ext: [1xK]<br />
+                        miss: [1xK]<br />
+                        TH: [dxd]</li>
+                    </ul>
+                  </li>
+                  <li>init.
+                    <ul>
+                      <li>em_max_iteration: 200</li>
+                      <li>state.
+                        <ul>
+                          <li> Q: <br />
+                            F: <br />
+                            G: </li>
+                        </ul>
+                      </li>
+                      <li>hyper. : Initial values of hyper-parameters.
+                        <ul>
+                          <li> mu: [dx1] <br />
+                            sig: [dxd]<br />
+                            F: [dxd]<br />
+                            Q: [dxd]<br />
+                            G: [1x70]<br />
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>param.
+                    <ul>
+                      <li>onestep. : One-step predicition density
+                        <ul>
+                          <li> theta: [dxK] mean vector <br />
+                            W: [dxdxK] covariance matrix <br />
+                            diagW: [dxK]<br />
+                            iW: [dxdxK]</li>
+                        </ul>
+                      </li>
+                      <li>filter. : Fileter density
+                        <ul>
+                          <li> theta: [dxK] mean vector <br />
+                            W: [dxdxK] covariance matrix <br />
+                            diagW: [dxK]</li>
+                        </ul>
+                      </li>
+                      <li>smoother. : Smoother density
+                        <ul>
+                          <li> theta: [dxK] mean vector <br />
+                            W: [dxdxK] covariance matrix <br />
+                            diagW: [dxK]<br />
+                            sv2: [dxdx(K-1)]<br />
+                            diagsv2: [dx(K-1)]<br />
+                            A: [dxdx(K-1)]<br />
+                            phi: [1xK]<br />
+                            eta: [dxK]<br />
+                            *p: [dxK]</li>
+                        </ul>
+                      </li>
+                      <li>hyper
+                        <ul>
+                          <li> Q: [dxd]<br />
+                            F: [dxd]<br />
+                            G: [1x70]<br />
+                            mu: [dx1]<br />
+                            sig: [dxd]</li>
+                        </ul>
+                      </li>
+                      <li>stat
+                        <ul>
+                          <li> dim: <br />
+                            logL: log marginal likelihood.<br />
+                            AIC: Akaike Information Criterion. <br />
+                            AICc: Corrected AIC <br />
+                            BIC: Bayesian IC. </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p class="style4">&nbsp;</p></td>
+              <td width="324" valign="top"><p>data. </p>
+                <p>model.</p>
+                <ul>
+                  <li>struct.
+                    <ul>
+                      <li> N: 3</li>
+                      <li>R: [1 2 3]</li>
+                      <li>D: 0.0030</li>
+                      <li>n: 36</li>
+                    </ul>
+                  </li>
+                  <li>binary.
+                    <ul>
+                      <li> n: 200<br />
+                        d: 7<br />
+                        K: 500<br />
+                        y: [7x500 double]<br />
+                        y_mean: [7x1 double] <br />
+                        id: [7x3 double]<br />
+                        order: [7x1 double]<br />
+                        ext: [1x500 double]<br />
+                        miss: [1x500 double]<br />
+                        TH: [8x8 double]</li>
+                    </ul>
+                  </li>
+                  <li>init.
+                    <ul>
+                      <li>em_max_iteration: 200</li>
+                      <li>state.
+                        <ul>
+                          <li> Q: 1<br />
+                            F: 0<br />
+                            G: 0</li>
+                        </ul>
+                      </li>
+                      <li>hyper.
+                        <ul>
+                          <li> mu: [7x1 double]<br />
+                            sig: [7x7 double]<br />
+                            F: [7x7 double]<br />
+                            Q: [7x7 double]<br />
+                            G: [1x70 double]<br />
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>param.
+                    <ul>
+                      <li>onestep.
+                        <ul>
+                          <li> theta: [7x500 double]<br />
+                            W: [7x7x500 double]<br />
+                            diagW: [7x500 double]<br />
+                            iW: [7x7x500 double]</li>
+                        </ul>
+                      </li>
+                      <li>filter.
+                        <ul>
+                          <li> theta: [7x500 double]<br />
+                            W: [7x7x500 double]<br />
+                            diagW: [7x500 double]</li>
+                        </ul>
+                      </li>
+                      <li>smoother.
+                        <ul>
+                          <li> theta: [7x500 double]<br />
+                            W: [7x7x500 double]<br />
+                            diagW: [7x500 double]<br />
+                            sv2: [7x7x499 double]<br />
+                            diagsv2: [7x499 double]<br />
+                            A: [7x7x499 double]<br />
+                            phi: [1x500 double]<br />
+                            eta: [7x500 double]<br />
+                            p: [8x500 double]</li>
+                        </ul>
+                      </li>
+                      <li>hyper
+                        <ul>
+                          <li> Q: [7x7 double]<br />
+                            F: [7x7 double]<br />
+                            G: [1x70 double]<br />
+                            mu: [7x1 double]<br />
+                            sig: [7x7 double]</li>
+                        </ul>
+                      </li>
+                      <li>stat
+                        <ul>
+                          <li> dim: 35<br />
+                            logL: -3.6078e+004<br />
+                            AIC: 7.2227e+004<br />
+                            AICc: 7.2242e+004<br />
+                            BIC: 7.2342e+004</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul></td>
+            </tr>
+          </tbody>
+        </table>
+        <blockquote>
+          <p class="style4">&nbsp;</p>
+        </blockquote></td>
+    </tr>
+  </tbody>
+</table>
 <p class="style4">&nbsp;</p>
 <p class="style4">&nbsp;</p>
 <p class="style4"> <img src="../icons/amazon.jpg" alt="amazon" width="86" height="86" align="absmiddle" /> I am currently developing a WEB APP using Amazon EC2.</p>

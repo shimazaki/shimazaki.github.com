@@ -33,17 +33,21 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
     <a name=top id=top> </a>
     <div id=NaviLayer>  
     <table width=180 border=0 cellpadding=0 cellspacing=0>
-    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
-    <tr><td height=28 valign=top><b>Spike Density Estimation</b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../histogram.html>Histogram Method</a></b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../kernel.html>Kernel Method</a></b></td></tr>
+    <tr><td height=8 valign=top><b>Tweet this page</b></td></tr>
+    <tr><td height=8 valign=top><a href=http://twitter.com/share class=twitter-share-button data-count=horizontal data-via=computneuro data-related="statneuro:Japanese tweets from author.">Tweet</a><script type=text/javascript src=http://platform.twitter.com/widgets.js></script></td></tr>
     <tr><td height=8 valign=top></td></tr>
     <tr><td height=8 valign=top><b>Share it with your friend</b></td></tr>
     <tr><td valign=top><a class=addthis_button href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcbd554189b9a7"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width=125 height=16 alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcbd554189b9a7"></script></td></tr>
     <tr><td height=8 valign=top></td></tr>
-    <tr><td height=8 valign=top><b>Tweet</b></td></tr>
-    <tr><td valign=top><iframe src=../../tweet.html width=180 height=600 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
-    <tr><td height=28 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Tweet by author</b></td></tr>
+    <tr><td valign=top><iframe src=../../tweetjp.html width=180 height=260 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=28 valign=top><b><a href=index.html>スパイク統計モデル入門 トップ</a></b></td><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=28 valign=top><b>スパイク密度推定</b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../histogram.html>ヒストグラム法</a></b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../kernel.html>カーネル法</a></b></td></tr>
+    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
     </table></div>
 <!--Navigation Panel-->
 <A NAME="tex2html428"
@@ -92,7 +96,7 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 
 <P>
 
-<H2><A NAME="SECTION02401000000000000000"></A><A NAME="1811"></A>
+<H2><A NAME="SECTION02401000000000000000"></A><A NAME="1842"></A>
 <BR>
 平均二乗誤差
 
@@ -104,46 +108,46 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
  -->
 <IMG
  WIDTH="12" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
- SRC="img480.gif"
+ SRC="img485.gif"
  ALT="$ \hat{\theta}$">をパラメータ<IMG
  WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img406.gif"
+ SRC="img411.gif"
  ALT="$ \theta$">の推定量とする. 例をあげてみよう. <IMG
  WIDTH="23" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img481.gif"
+ SRC="img486.gif"
  ALT="$ X_{i}$">が平均<IMG
  WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img406.gif"
+ SRC="img411.gif"
  ALT="$ \theta$">の指数分布に従う乱数とすると, <IMG
  WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img406.gif"
+ SRC="img411.gif"
  ALT="$ \theta$">の推定量<!-- MATH
- $\hat{\theta}%$
+ $\hat{\theta}$
  -->
 <IMG
  WIDTH="12" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
- SRC="img482.gif"
- ALT="$ \hat{\theta}%
-$">の例としてまず考えられるのが, 平均<!-- MATH
+ SRC="img485.gif"
+ ALT="$ \hat{\theta}$">の例としてまず考えられるのが, 平均<!-- MATH
  $\hat
 {\theta}_{n}=\frac{1}{n}\sum X_{i}$
  -->
 <IMG
  WIDTH="94" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img483.gif"
+ SRC="img487.gif"
  ALT="$ \hat
 {\theta}_{n}=\frac{1}{n}\sum X_{i}$">, がある. 推定量は他にも考えられる. 例えば初めのサンプルだけを使う<!-- MATH
  $\hat{\theta}_{1}=X_{i}$
  -->
 <IMG
  WIDTH="58" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img484.gif"
+ SRC="img488.gif"
  ALT="$ \hat{\theta}_{1}=X_{i}$">も<IMG
  WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img406.gif"
+ SRC="img411.gif"
  ALT="$ \theta$">の推定量である. では,
 望ましい推定量とはどのような性質を持つべきだろうか.
-平均二乗誤差はその一つの基準を与えると考えられる．<P></P>
+平均二乗誤差はその一つの基準を与えると考えられる．
+<P></P>
 <DIV ALIGN="CENTER"><A NAME="eq:MSE"></A><!-- MATH
  \begin{equation}
 \text{MSE}=E[(\hat{\theta}-\theta)^{2}]%
@@ -153,7 +157,7 @@ $">の例としてまず考えられるのが, 平均<!-- MATH
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER">MSE<IMG
  WIDTH="97" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img485.gif"
+ SRC="img489.gif"
  ALT="$\displaystyle =E[(\hat{\theta}-\theta)^{2}]%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -165,7 +169,7 @@ $"></TD>
  -->
 <IMG
  WIDTH="54" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
- SRC="img486.gif"
+ SRC="img490.gif"
  ALT="$ E\hat{\theta}=\bar{\theta}$">とすると,
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
@@ -173,7 +177,7 @@ $"></TD>
 <TD NOWRAP ALIGN="RIGHT">MSE</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="152" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img487.gif"
+ SRC="img491.gif"
  ALT="$\displaystyle =E[(\hat{\theta}-\bar{\theta}+\bar{\theta}-\theta )^{2}]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -181,7 +185,7 @@ $"></TD>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="294" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img488.gif"
+ SRC="img492.gif"
  ALT="$\displaystyle =E[(\hat{\theta}-\bar{\theta})^{2}+2(\hat{\theta}-\bar{\theta})(\bar {\theta}-\theta)+(\bar{\theta}-\theta)^{2}]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -189,7 +193,7 @@ $"></TD>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="171" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img489.gif"
+ SRC="img493.gif"
  ALT="$\displaystyle =E[(\hat{\theta}-\bar{\theta})^{2}]+(\bar{\theta}-\theta)^{2} %
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -201,26 +205,23 @@ $"></TD>
  -->
 <IMG
  WIDTH="80" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img490.gif"
+ SRC="img494.gif"
  ALT="$ E[(\hat{\theta}-\bar{\theta})^{2}]$">は推定分散. 第二項はバイアスの二乗である. 従ってバイアスがなく, 分散が小さい推定量が望ましい推定量である.
 隔たりのある推定量が小さい分散を持ち, そのMSEが可能な不偏推定量のMSEよりも小さくなることはありうる. これが望ましい推定量であるのは間違いないが, 歴史的には不偏性, 有効性は別々に吟味されてきた.
-まず普遍性のある推定量を見つけて,
-次に不偏推定量の中で分散最小のものを選ぶという手順を踏む. 古典的な推定量についてその性質を見てみよう.
+まず普遍性のある推定量を見つけて, 次に不偏推定量の中で分散最小のものを選ぶという手順を踏む. 古典的な推定量についてその性質を見てみよう.
 <P><P>
 <BR>
 
 <P>
 <P>
-<DIV><B>問題  13</B> &nbsp; 
+<DIV><B>問題  14</B> &nbsp; 
 <I>Gauss分布に従う確率変数に対する統計量<!-- MATH
- $S_{n-1}%
-,S_{n},S_{n+1}$
+ $S_{n-1},S_{n},S_{n+1}$
  -->
 <IMG
  WIDTH="106" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img491.gif"
- ALT="$ S_{n-1}%
-,S_{n},S_{n+1}$">のMSEを求めよ．
+ SRC="img495.gif"
+ ALT="$ S_{n-1},S_{n},S_{n+1}$">のMSEを求めよ．
 </I>
 <P>
 <I>ただし<!-- MATH
@@ -229,75 +230,75 @@ $"></TD>
  -->
 <IMG
  WIDTH="201" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img492.gif"
+ SRC="img496.gif"
  ALT="$ S_{n-1}^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar
 {X})^{2}$">, <!-- MATH
  $S_{n}^{2}=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\bar{X})^{2}$
  -->
 <IMG
  WIDTH="168" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img493.gif"
+ SRC="img497.gif"
  ALT="$ S_{n}^{2}=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\bar{X})^{2}$">,
 <!-- MATH
  $S_{n+1}^{2}=\frac{1}{n+1}\sum_{i=1}^{n}(X_{i}-\bar{X})^{2}$
  -->
 <IMG
  WIDTH="200" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img494.gif"
+ SRC="img498.gif"
  ALT="$ S_{n+1}^{2}=\frac{1}{n+1}\sum_{i=1}^{n}(X_{i}-\bar{X})^{2}$"> .
 </I>
 <P>
 <I>どれが一番小さいか．
 </I>
 <P><P>
-<DIV><B>解法  14</B> &nbsp; 
+<DIV><B>解法  15</B> &nbsp; 
 <I>MSE<!-- MATH
  $(S_{n+1})<$
  -->
 <IMG
  WIDTH="68" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img495.gif"
+ SRC="img499.gif"
  ALT="$ (S_{n+1})&lt;$">MSE<!-- MATH
  $(S_{n})\leq$
  -->
 <IMG
  WIDTH="52" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img496.gif"
+ SRC="img500.gif"
  ALT="$ (S_{n})\leq$">MSE<IMG
  WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img497.gif"
+ SRC="img501.gif"
  ALT="$ (S_{n-1})$"></I><P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT">MSE<IMG
  WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img498.gif"
+ SRC="img502.gif"
  ALT="$\displaystyle (S_{n-1})$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="203" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img499.gif"
+ SRC="img503.gif"
  ALT="$\displaystyle =E(S_{n-1}-\sigma^{2})^{2}=\frac{2}{n-1}\sigma^{4}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT">MSE<IMG
  WIDTH="35" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img500.gif"
+ SRC="img504.gif"
  ALT="$\displaystyle (S_{n})$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="195" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img501.gif"
+ SRC="img505.gif"
  ALT="$\displaystyle =E(S_{n}-\sigma^{2})^{2}=\frac{2n-1}{n^{2}}\sigma^{4}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT">MSE<IMG
  WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img502.gif"
+ SRC="img506.gif"
  ALT="$\displaystyle (S_{n+1})$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="203" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img503.gif"
+ SRC="img507.gif"
  ALT="$\displaystyle =E(S_{n+1}-\sigma^{2})^{2}=\frac{2}{n+1}\sigma^{2}%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -308,14 +309,14 @@ $"></TD>
 
 <P>
 
-<H2><A NAME="SECTION02402000000000000000"></A><A NAME="1918"></A>
+<H2><A NAME="SECTION02402000000000000000"></A><A NAME="1949"></A>
 <BR>
 最尤推定
 
 </H2>
 
 <P>
-尤度(likelihood<A NAME="1919"></A>)を最大にするパラメータを最尤推定量という．<!-- MATH
+尤度(likelihood<A NAME="1950"></A>)を最大にするパラメータを最尤推定量という．<!-- MATH
  \begin{displaymath}
 l(\theta)=\log p\left(  X|\theta\right)  =\sum\log p\left(  X_{i}%
 |\theta\right)
@@ -325,7 +326,7 @@ l(\theta)=\log p\left(  X|\theta\right)  =\sum\log p\left(  X_{i}%
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="248" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
- SRC="img504.gif"
+ SRC="img508.gif"
  ALT="$\displaystyle l(\theta)=\log p\left( X\vert\theta\right) =\sum\log p\left( X_{i}%
 \vert\theta\right)
 $">
@@ -335,11 +336,11 @@ $">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="30" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img505.gif"
+ SRC="img509.gif"
  ALT="$\displaystyle l(\theta)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="144" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img506.gif"
+ SRC="img510.gif"
  ALT="$\displaystyle =\sum_{i=1}^{n}\log p\left( X_{i}\vert\theta,\Delta\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -347,7 +348,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="158" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img507.gif"
+ SRC="img511.gif"
  ALT="$\displaystyle =\sum_{i=1}^{n}\log\frac{\left( \theta\Delta\right) ^{X_{i}}}{X_{i}%
 !}e^{-\theta\Delta}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -356,7 +357,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="237" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img508.gif"
+ SRC="img512.gif"
  ALT="$\displaystyle =\sum_{i=1}^{n}[X_{i}\log\left( \theta\Delta\right) -\theta\Delta-\log X_{i}!]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -367,11 +368,11 @@ $">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="43" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img509.gif"
+ SRC="img513.gif"
  ALT="$\displaystyle \frac{\partial l(\theta)}{\partial\theta}$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="108" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img510.gif"
+ SRC="img514.gif"
  ALT="$\displaystyle =\sum_{i=1}^{n}[\frac{X_{i}%
 }{\theta}-\Delta]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -380,7 +381,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="126" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img511.gif"
+ SRC="img515.gif"
  ALT="$\displaystyle =\frac{\sum_{i=1}^{n}X_{i}}{\theta}-n\Delta$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -391,7 +392,7 @@ $">
  -->
 <IMG
  WIDTH="65" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
- SRC="img512.gif"
+ SRC="img516.gif"
  ALT="$ \frac{\partial l(\theta)}{\partial\theta}=0$">より<!-- MATH
  \begin{displaymath}
 \hat{\theta}_{n}=\frac{\sum_{i=1}^{n}X_{i}}{n\Delta}=\frac{\bar{X}}{\Delta}%
@@ -401,7 +402,7 @@ $">
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="144" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img513.gif"
+ SRC="img517.gif"
  ALT="$\displaystyle \hat{\theta}_{n}=\frac{\sum_{i=1}^{n}X_{i}}{n\Delta}=\frac{\bar{X}}{\Delta}%
 $">
 </DIV><P></P>
@@ -411,12 +412,13 @@ X_{i}$
  -->
 <IMG
  WIDTH="92" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img514.gif"
+ SRC="img518.gif"
  ALT="$ \bar{X}=\frac{1}{n}\sum
 X_{i}$">
 
 <P>
-最尤推定値の期待値は<!-- MATH
+最尤推定値の期待値は
+<!-- MATH
  \begin{displaymath}
 E\hat{\theta}_{n}=\frac{\sum_{i=1}^{n}EX_{i}}{n\Delta}=\theta
 \end{displaymath}
@@ -425,7 +427,7 @@ E\hat{\theta}_{n}=\frac{\sum_{i=1}^{n}EX_{i}}{n\Delta}=\theta
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="159" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img515.gif"
+ SRC="img519.gif"
  ALT="$\displaystyle E\hat{\theta}_{n}=\frac{\sum_{i=1}^{n}EX_{i}}{n\Delta}=\theta
 $">
 </DIV><P></P>
@@ -434,11 +436,11 @@ $">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="101" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img516.gif"
+ SRC="img520.gif"
  ALT="$\displaystyle E(\hat{\theta}_{n}-E\hat{\theta}_{n})^{2}$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="151" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
- SRC="img517.gif"
+ SRC="img521.gif"
  ALT="$\displaystyle =E\left[ \frac{\sum_{i=1}%
 ^{n}X_{i}}{n\Delta}-\theta\right] ^{2}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -447,7 +449,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="187" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img518.gif"
+ SRC="img522.gif"
  ALT="$\displaystyle =\frac{1}{(n\Delta)^{2}}\sum_{i=1}^{n}E(X_{i}-\Delta\theta)^{2}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -455,7 +457,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="48" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img519.gif"
+ SRC="img523.gif"
  ALT="$\displaystyle =\frac{\theta}{n\Delta}%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -467,7 +469,7 @@ $"></TD>
  -->
 <IMG
  WIDTH="190" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img520.gif"
+ SRC="img524.gif"
  ALT="$ E(X_{i}-\Delta\theta)^{2}=EX_{i}=\Delta\theta$">を用いた.
 
 <P>
@@ -479,52 +481,51 @@ $"></TD>
 <P>
 発火率<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img121.gif"
+ SRC="img130.gif"
  ALT="$ \lambda$">の定常ポアソン過程に従うスパイク時系列を得たとしよう. スパイク時系列をごく短い<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img104.gif"
+ SRC="img113.gif"
  ALT="$ \Delta$">秒の<IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
+ SRC="img53.gif"
  ALT="$ n$">個のビンに区切り, <IMG
  WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img12.gif"
  ALT="$ t$">番目のビンにスパイクが存在すれば<IMG
  WIDTH="52" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img521.gif"
+ SRC="img525.gif"
  ALT="$ X_{t}=0$">, しなければ<IMG
  WIDTH="52" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img522.gif"
+ SRC="img526.gif"
  ALT="$ X_{t}=1$">として, <!-- MATH
  $X=\left(
 X_{1},X_{2},\ldots,X_{n}\right)$
  -->
 <IMG
  WIDTH="157" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img523.gif"
+ SRC="img527.gif"
  ALT="$ X=\left(
 X_{1},X_{2},\ldots,X_{n}\right) $">をベルヌーイ過程と見なす.
 このとき統計量<!-- MATH
- $T=\sum_{t=1}^{n}%
-X_{i}$
+ $T=\sum_{t=1}^{n}X_{i}$
  -->
 <IMG
  WIDTH="96" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img524.gif"
- ALT="$ T=\sum_{t=1}^{n}%
-X_{i}$">はベルヌーイ過程の<IMG
+ SRC="img528.gif"
+ ALT="$ T=\sum_{t=1}^{n}X_{i}$">はベルヌーイ過程の<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img121.gif"
- ALT="$ \lambda$">に関する十分統計量である.<P></P>
+ SRC="img130.gif"
+ ALT="$ \lambda$">に関する十分統計量である.
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="80" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img525.gif"
+ SRC="img529.gif"
  ALT="$\displaystyle P\left( X\vert\lambda,\Delta\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="122" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img526.gif"
+ SRC="img530.gif"
  ALT="$\displaystyle =%
 {\displaystyle\prod\limits_{t=1}^{n}} P\left( X_{i}\vert\lambda,\Delta\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -533,7 +534,7 @@ X_{i}$">はベルヌーイ過程の<IMG
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="191" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img527.gif"
+ SRC="img531.gif"
  ALT="$\displaystyle =%
 {\displaystyle\prod\limits_{t=1}^{n}} (\lambda\Delta)^{X_{i}}\left( 1-\lambda\Delta\right) ^{1-X_{i}}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -542,7 +543,7 @@ X_{i}$">はベルヌーイ過程の<IMG
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="332" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
- SRC="img528.gif"
+ SRC="img532.gif"
  ALT="$\displaystyle =(\lambda\Delta)^{X_{1}+X_{2}+\cdots+X_{n}}(1-\lambda\Delta)^{n-(X_{1}%
 +X_{2}+\cdots+X_{n})}%
 $"></TD>
@@ -552,68 +553,66 @@ $"></TD>
 <BR CLEAR="ALL"><P></P>
 <IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img104.gif"
+ SRC="img113.gif"
  ALT="$ \Delta$">は決まっているとすれば, <IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img121.gif"
+ SRC="img130.gif"
  ALT="$ \lambda$">の値を推定するのに, ここのデータ<!-- MATH
  $\left(  X_{1},X_{2},\ldots,X_{n}\right)$
  -->
 <IMG
  WIDTH="121" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img529.gif"
+ SRC="img533.gif"
  ALT="$ \left( X_{1},X_{2},\ldots,X_{n}\right)
 $">は必要でなく, 統計量<!-- MATH
  $T=\sum_{t=1}^{n}X_{i}$
  -->
 <IMG
  WIDTH="96" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img530.gif"
+ SRC="img528.gif"
  ALT="$ T=\sum_{t=1}^{n}X_{i}$">を用いれば十分であることがわかる.
 
 <P>
 今度は定常ポアソン過程をやや大きめの<IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
+ SRC="img53.gif"
  ALT="$ n$">個の観測区間<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img104.gif"
+ SRC="img113.gif"
  ALT="$ \Delta$">で区切ったとしよう.
 このとき各区間内のスパイクの個数<!-- MATH
- $X=\left(
-X_{1},X_{2},\ldots,X_{n}\right)$
+ $X=\left(X_{1},X_{2},\ldots,X_{n}\right)$
  -->
 <IMG
  WIDTH="157" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img523.gif"
+ SRC="img527.gif"
  ALT="$ X=\left(
 X_{1},X_{2},\ldots,X_{n}\right) $">は平均<!-- MATH
  $\lambda\Delta$
  -->
 <IMG
  WIDTH="27" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img106.gif"
+ SRC="img115.gif"
  ALT="$ \lambda\Delta$">のポアソン分布に従う. このとき<!-- MATH
- $T=\sum_{t=1}^{n}X_{i}%$
+ $T=\sum_{t=1}^{n}X_{i}$
  -->
 <IMG
  WIDTH="96" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img531.gif"
- ALT="$ T=\sum_{t=1}^{n}X_{i}%
-$">は<IMG
+ SRC="img528.gif"
+ ALT="$ T=\sum_{t=1}^{n}X_{i}$">は<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img121.gif"
+ SRC="img130.gif"
  ALT="$ \lambda$">に関する十分統計量である.
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="80" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img525.gif"
+ SRC="img529.gif"
  ALT="$\displaystyle P\left( X\vert\lambda,\Delta\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="122" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img532.gif"
+ SRC="img534.gif"
  ALT="$\displaystyle =%
 {\displaystyle\prod\limits_{i=1}^{n}} P\left( X_{i}\vert\lambda,\Delta\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -622,7 +621,7 @@ $">は<IMG
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="133" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img533.gif"
+ SRC="img535.gif"
  ALT="$\displaystyle =%
 {\displaystyle\prod\limits_{t=1}^{n}} \frac{\left( \lambda\Delta\right) ^{X_{i}}}{X_{i}!}e^{-\lambda\Delta}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -631,7 +630,7 @@ $">は<IMG
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="310" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img534.gif"
+ SRC="img536.gif"
  ALT="$\displaystyle =\frac{1}{X_{1}!X_{1}!\cdots X_{n}!}\cdot\left( \lambda\Delta\right) ^{X_{1}+X_{2}+\cdots+X_{n}}e^{-n\lambda\Delta}%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -639,27 +638,25 @@ $"></TD>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
 最尤推定を考えてみよう. 因子<!-- MATH
- $\frac{1}{X_{1}!X_{1}!\cdots X_{n}%
-!}$
+ $\frac{1}{X_{1}!X_{1}!\cdots X_{n}!}$
  -->
 <IMG
  WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img535.gif"
- ALT="$ \frac{1}{X_{1}!X_{1}!\cdots X_{n}%
-!}$">は<IMG
+ SRC="img537.gif"
+ ALT="$ \frac{1}{X_{1}!X_{1}!\cdots X_{n}!}$">は<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img121.gif"
+ SRC="img130.gif"
  ALT="$ \lambda$">に関係がない.
 <IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img121.gif"
+ SRC="img130.gif"
  ALT="$ \lambda$">に関係する第二因子は<!-- MATH
  $\left(  \lambda\Delta\right)  ^{T}e^{-n\lambda\Delta
 }$
  -->
 <IMG
  WIDTH="96" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
- SRC="img536.gif"
+ SRC="img538.gif"
  ALT="$ \left( \lambda\Delta\right) ^{T}e^{-n\lambda\Delta
 }$">と<IMG
  WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
@@ -672,8 +669,9 @@ $"></TD>
  -->
 <IMG
  WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img537.gif"
- ALT="$ f\left( x\vert\theta\right) $">が<P></P>
+ SRC="img539.gif"
+ ALT="$ f\left( x\vert\theta\right) $">が
+<P></P>
 <DIV ALIGN="CENTER"><!-- MATH
  \begin{equation}
 f\left(  x|\theta\right)  =h\left(  x\right)  g\left(  T\left(  x\right)
@@ -684,7 +682,7 @@ f\left(  x|\theta\right)  =h\left(  x\right)  g\left(  T\left(  x\right)
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="181" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img538.gif"
+ SRC="img540.gif"
  ALT="$\displaystyle f\left( x\vert\theta\right) =h\left( x\right) g\left( T\left( x\right) \vert\theta\right)$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (4.3)</TD></TR>
@@ -695,112 +693,111 @@ f\left(  x|\theta\right)  =h\left(  x\right)  g\left(  T\left(  x\right)
  SRC="img22.gif"
  ALT="$ T$">はモデルパラメータ<IMG
  WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img406.gif"
- ALT="$ \theta$">の十分統計量である.&nbsp;&nbsp;&nbsp;&nbsp;これをフィッシャー・ネイマンの因子分解定理という<A NAME="2052"></A>. 密度分布のモデル<!-- MATH
+ SRC="img411.gif"
+ ALT="$ \theta$">の十分統計量である.&nbsp;&nbsp;&nbsp;&nbsp;これをフィッシャー・ネイマンの因子分解定理という
+<A NAME="2083"></A>. 密度分布のモデル<!-- MATH
  $f\left(
 x|\theta\right)$
  -->
 <IMG
  WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img537.gif"
+ SRC="img539.gif"
  ALT="$ f\left( x\vert\theta\right) $">を<IMG
  WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img406.gif"
+ SRC="img411.gif"
  ALT="$ \theta$">に依存する因子と依存しない因子に分解できて,
 依存する因子が統計量<!-- MATH
  $T\left(  x\right)$
  -->
 <IMG
  WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img539.gif"
+ SRC="img541.gif"
  ALT="$ T\left( x\right) $">の関数で表すことができるとすれば, <IMG
  WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img406.gif"
+ SRC="img411.gif"
  ALT="$ \theta$">の推定には<!-- MATH
  $T\left(  x\right)$
  -->
 <IMG
  WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img539.gif"
+ SRC="img541.gif"
  ALT="$ T\left( x\right) $">を用いれば十分である. ベルヌーイ過程の例では<!-- MATH
  $h\left(  x\right)  =1$
  -->
 <IMG
  WIDTH="67" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img540.gif"
+ SRC="img542.gif"
  ALT="$ h\left( x\right) =1$">, <!-- MATH
  $g\left(  T\left(  x\right)  |\theta\right)
 =\theta^{T}(1-\theta)^{n-T}$
  -->
 <IMG
  WIDTH="193" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img541.gif"
+ SRC="img543.gif"
  ALT="$ g\left( T\left( x\right) \vert\theta\right)
 =\theta^{T}(1-\theta)^{n-T}$">と見て, <!-- MATH
- $T=\sum_{t=1}^{n}X_{i}%$
+ $T=\sum_{t=1}^{n}X_{i}$
  -->
 <IMG
  WIDTH="96" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img531.gif"
- ALT="$ T=\sum_{t=1}^{n}X_{i}%
-$">が十分統計量であることがわかる. またポアソン分布は<!-- MATH
+ SRC="img528.gif"
+ ALT="$ T=\sum_{t=1}^{n}X_{i}$">が十分統計量であることがわかる. またポアソン分布は<!-- MATH
  $h\left(
 x\right)  =\frac{1}{X_{1}!X_{1}!\cdots X_{n}!}$
  -->
 <IMG
  WIDTH="136" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img542.gif"
+ SRC="img544.gif"
  ALT="$ h\left(
 x\right) =\frac{1}{X_{1}!X_{1}!\cdots X_{n}!}$">, <!-- MATH
  $g\left(  T\left(  x\right)
-|\theta\right)  =\left(  \lambda\Delta\right)  ^{T}e^{-n\lambda\Delta}%$
+|\theta\right)  =\left(  \lambda\Delta\right)  ^{T}e^{-n\lambda\Delta}$
  -->
 <IMG
  WIDTH="191" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
- SRC="img543.gif"
+ SRC="img545.gif"
  ALT="$ g\left( T\left( x\right)
-\vert\theta\right) =\left( \lambda\Delta\right) ^{T}e^{-n\lambda\Delta}%
-$">となり, <!-- MATH
+\vert\theta\right) =\left( \lambda\Delta\right) ^{T}e^{-n\lambda\Delta}$">となり, <!-- MATH
  $T=\sum_{t=1}^{n}X_{i}$
  -->
 <IMG
  WIDTH="96" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img530.gif"
+ SRC="img528.gif"
  ALT="$ T=\sum_{t=1}^{n}X_{i}$">が十分統計量であることがわかる.
 
 <P>
 <P>
-<DIV><B>定義  15</B> &nbsp; 
+<DIV><B>定義  16</B> &nbsp; 
 <I>データ<!-- MATH
  $X=\left(  X_{1},X_{2},\ldots,X_{n}\right)$
  -->
 <IMG
  WIDTH="157" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img523.gif"
+ SRC="img527.gif"
  ALT="$ X=\left(
 X_{1},X_{2},\ldots,X_{n}\right) $">が<!-- MATH
  $T\left(  X\right)$
  -->
 <IMG
  WIDTH="45" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img544.gif"
+ SRC="img546.gif"
  ALT="$ T\left( X\right) $">が与えられた下で<IMG
  WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img406.gif"
+ SRC="img411.gif"
  ALT="$ \theta$">と独立な時,
 関数<!-- MATH
  $T\left(  X\right)$
  -->
 <IMG
  WIDTH="45" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img544.gif"
+ SRC="img546.gif"
  ALT="$ T\left( X\right) $">をモデル<!-- MATH
  $f\left(
 x|\theta\right)$
  -->
 <IMG
  WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img537.gif"
+ SRC="img539.gif"
  ALT="$ f\left( x\vert\theta\right) $">の十分統計量という.
 </I><!-- MATH
  \begin{displaymath}
@@ -812,7 +809,7 @@ X\right)  =t\right)
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="329" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img545.gif"
+ SRC="img547.gif"
  ALT="$\displaystyle P\left( X=x\vert T\left( X\right) =t,\theta\right) =P\left( X=x\vert T\left(
 X\right) =t\right)
 $">
@@ -821,29 +818,29 @@ $">
 
 <P>
 
-<H2><A NAME="SECTION02404000000000000000"></A><A NAME="2072"></A>
+<H2><A NAME="SECTION02404000000000000000"></A><A NAME="2103"></A>
 <BR>
 フィッシャー情報量
 
 </H2>
 
 <P>
-スコア<A NAME="2073"></A>と呼ばれる統計量を導入する<P></P>
+スコア<A NAME="2104"></A>と呼ばれる統計量を導入する
+<P></P>
 <DIV ALIGN="CENTER"><A NAME="eq:Score"></A><!-- MATH
  \begin{equation}
 V\left(  X;\theta\right)  =\frac{\partial}{\partial\theta}\log f\left(
 X|\theta\right)  =\frac{1}{f\left(  X|\theta\right)  }\frac{\partial f\left(
-X|\theta\right)  }{\partial\theta}%
+X|\theta\right)  }{\partial\theta}
 \end{equation}
  -->
 <TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="322" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img546.gif"
+ SRC="img548.gif"
  ALT="$\displaystyle V\left( X;\theta\right) =\frac{\partial}{\partial\theta}\log f\le...
-...rt\theta\right) }\frac{\partial f\left( X\vert\theta\right) }{\partial\theta}%
-$"></TD>
+...vert\theta\right) }\frac{\partial f\left( X\vert\theta\right) }{\partial\theta}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (4.4)</TD></TR>
 </TABLE></DIV>
@@ -853,11 +850,11 @@ $"></TD>
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="38" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img547.gif"
+ SRC="img549.gif"
  ALT="$\displaystyle E[V]$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="165" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img548.gif"
+ SRC="img550.gif"
  ALT="$\displaystyle =\int V\left( x;\theta\right) f\left( X\vert\theta\right) dx$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -865,7 +862,7 @@ $"></TD>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="116" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img549.gif"
+ SRC="img551.gif"
  ALT="$\displaystyle =\int\frac{\partial f\left( x\vert\theta\right) }{\partial\theta}dx$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -873,7 +870,7 @@ $"></TD>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="129" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img550.gif"
+ SRC="img552.gif"
  ALT="$\displaystyle =\frac{\partial}{\partial\theta}\int f\left( x\vert\theta\right) dx$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -881,7 +878,7 @@ $"></TD>
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img136.gif"
+ SRC="img145.gif"
  ALT="$\displaystyle =0$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -898,21 +895,23 @@ E[V^{2}]=E\left[  \frac{\partial}{\partial\theta}\log f\left(  X|\theta
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="204" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img551.gif"
+ SRC="img553.gif"
  ALT="$\displaystyle E[V^{2}]=E\left[ \frac{\partial}{\partial\theta}\log f\left( X\vert\theta
 \right) \right] ^{2}%
 $">
 </DIV><P></P>
-スコアの分散をフィッシャー情報量<A NAME="2093"></A>とよび, <!-- MATH
+スコアの分散をフィッシャー情報量<A NAME="2124"></A>とよび, <!-- MATH
  $J\left(  \theta\right)  =E[V^{2}]$
  -->
 <IMG
  WIDTH="100" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img552.gif"
+ SRC="img554.gif"
  ALT="$ J\left( \theta\right) =E[V^{2}]$">で表す.
 
 <P>
-コーシー・シュワルツの不等式(Cauchy-Schwarz inequality<A NAME="2095"></A>)<P></P>
+コーシー・シュワルツの不等式(Cauchy-Schwarz inequality<A NAME="2126"></A>
+)
+<P></P>
 <DIV ALIGN="CENTER"><!-- MATH
  \begin{equation}
 \int\left\vert f\left(  x\right)  \right\vert \,^{2}dx\cdot\int\left\vert
@@ -924,9 +923,9 @@ g\left(  x\right)  dx\right\vert \,^{2}%
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="347" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img553.gif"
- ALT="$\displaystyle \int\left\vert f\left( x\right) \right\vert \,^{2}dx\cdot\int\lef...
-...}dx\geq\left\vert \int f\left( x\right) g\left( x\right) dx\right\vert \,^{2}%
+ SRC="img555.gif"
+ ALT="$\displaystyle \int\left\vert f\left( x\right) \right\vert  ^{2}dx\cdot\int\lef...
+...}dx\geq\left\vert \int f\left( x\right) g\left( x\right) dx\right\vert  ^{2}%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (4.5)</TD></TR>
@@ -936,16 +935,16 @@ $"></TD>
 <!-- MATH
  \begin{displaymath}
 E[V^{2}]\cdot E[(\hat{\theta}-\bar{\theta})^{2}]\geq\left\vert E\left[
-V(\hat{\theta}-\bar{\theta})\right]  \right\vert ^{2}%
+V(\hat{\theta}-\bar{\theta})\right]  \right\vert ^{2}
 \end{displaymath}
  -->
 <P></P>
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="263" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img554.gif"
+ SRC="img556.gif"
  ALT="$\displaystyle E[V^{2}]\cdot E[(\hat{\theta}-\bar{\theta})^{2}]\geq\left\vert E\left[
-V(\hat{\theta}-\bar{\theta})\right] \right\vert ^{2}%
+V(\hat{\theta}-\bar{\theta})\right] \right\vert ^{2}
 $">
 </DIV><P></P>
 ここで左辺の第一因子はフィッシャー情報量<!-- MATH
@@ -953,26 +952,25 @@ $">
  -->
 <IMG
  WIDTH="100" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img555.gif"
+ SRC="img557.gif"
  ALT="$ E[V^{2}]=J\left( \theta\right) $">.
 第二因子は推定量の分散, <!-- MATH
- $var\hat{\theta}=E[(\hat{\theta}-\bar{\theta})^{2}%
-]$
+ $var\hat{\theta}=E[(\hat{\theta}-\bar{\theta})^{2}]$
  -->
 <IMG
  WIDTH="134" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img556.gif"
- ALT="$ var\hat{\theta}=E[(\hat{\theta}-\bar{\theta})^{2}%
-]$">である. 右辺についてはは二乗の中身が<P></P>
+ SRC="img558.gif"
+ ALT="$ var\hat{\theta}=E[(\hat{\theta}-\bar{\theta})^{2}]$">である. 右辺についてはは二乗の中身が
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="38" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img557.gif"
+ SRC="img559.gif"
  ALT="$\displaystyle EV\hat{\theta}$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="151" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img558.gif"
+ SRC="img560.gif"
  ALT="$\displaystyle =%
 {\displaystyle\int} V(\hat{\theta}-\bar{\theta})f\left( x\right) dx$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -981,7 +979,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="262" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img559.gif"
+ SRC="img561.gif"
  ALT="$\displaystyle =\int\frac{1}{f\left( x\vert\theta\right) }\frac{\partial f\left(...
 ...ght) }{\partial\theta}(\hat{\theta}-\bar{\theta})f\left( x\vert\theta\right) dx$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -990,7 +988,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="161" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img560.gif"
+ SRC="img562.gif"
  ALT="$\displaystyle =\int(\hat{\theta}-\bar{\theta})\frac{\partial f\left( x\vert\theta\right) }{\partial\theta}dx$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -998,7 +996,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="260" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img561.gif"
+ SRC="img563.gif"
  ALT="$\displaystyle =\int\hat{\theta}\frac{\partial f\left( x\vert\theta\right) }{\pa...
 ...-\bar{\theta}\frac{\partial}{\partial\theta}\int f\left( x\vert\theta\right) dx$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -1007,7 +1005,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="137" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img562.gif"
+ SRC="img564.gif"
  ALT="$\displaystyle =\frac{\partial}{\partial\theta}\int\hat{\theta}f\left( x\vert\theta\right) dx$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1015,14 +1013,15 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="62" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img563.gif"
+ SRC="img565.gif"
  ALT="$\displaystyle =\frac{\partial}{\partial\theta}E\hat{\theta}%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-となる. ゆえに統計量の分散の下限はフィッシャー情報量の逆数で与えられる.<P></P>
+となる. ゆえに統計量の分散の下限はフィッシャー情報量の逆数で与えられる.
+<P></P>
 <DIV ALIGN="CENTER"><!-- MATH
  \begin{equation}
 var\hat{\theta}\geq\frac{\left(  \frac{\partial E\hat{\theta}}{\partial\theta
@@ -1033,29 +1032,30 @@ var\hat{\theta}\geq\frac{\left(  \frac{\partial E\hat{\theta}}{\partial\theta
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="115" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
- SRC="img564.gif"
+ SRC="img566.gif"
  ALT="$\displaystyle var\hat{\theta}\geq\frac{\left( \frac{\partial E\hat{\theta}}{\partial\theta }\right) ^{2}}{J\left( \theta\right) }%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (4.6)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-この不等式をクラマー・ラオ不等式<A NAME="2148"></A>という. フィッシャー情報量は統計量をある特定のモデル<!-- MATH
+この不等式をクラマー・ラオ不等式<A NAME="2179"></A>という. フィッシャー情報量は統計量をある特定のモデル<!-- MATH
  $f\left(  x|\theta\right)$
  -->
 <IMG
  WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img537.gif"
+ SRC="img539.gif"
  ALT="$ f\left( x\vert\theta\right) $">のパラメータ<IMG
  WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img406.gif"
+ SRC="img411.gif"
  ALT="$ \theta$">の推定値に用いる場合の分散の下限を与える.&nbsp;&nbsp;&nbsp;&nbsp;不偏推定量<!-- MATH
  $E\hat{\theta}=\theta$
  -->
 <IMG
  WIDTH="54" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
- SRC="img565.gif"
- ALT="$ E\hat{\theta}=\theta$">の場合<P></P>
+ SRC="img567.gif"
+ ALT="$ E\hat{\theta}=\theta$">の場合
+<P></P>
 <DIV ALIGN="CENTER"><!-- MATH
  \begin{equation}
 var\hat{\theta}\geq\frac{1}{J\left(  \theta\right)  }%
@@ -1065,7 +1065,7 @@ var\hat{\theta}\geq\frac{1}{J\left(  \theta\right)  }%
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="95" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img566.gif"
+ SRC="img568.gif"
  ALT="$\displaystyle var\hat{\theta}\geq\frac{1}{J\left( \theta\right) }%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -1077,7 +1077,7 @@ $"></TD>
  -->
 <IMG
  WIDTH="103" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img567.gif"
+ SRC="img569.gif"
  ALT="$ E\hat{\theta}=\theta+b\left( \theta\right) $"><P></P>
 <DIV ALIGN="CENTER"><!-- MATH
  \begin{equation}
@@ -1089,7 +1089,7 @@ var\hat{\theta}\geq\frac{1+b^{\prime}\left(  \theta\right)  }{J\left(
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="123" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img568.gif"
+ SRC="img570.gif"
  ALT="$\displaystyle var\hat{\theta}\geq\frac{1+b^{\prime}\left( \theta\right) }{J\left( \theta\right) }%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -1111,7 +1111,7 @@ f\left(  x|\theta\right)  \right)  ^{2}\right]  =-E\left[  \frac{\partial^{2}%
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="382" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
- SRC="img569.gif"
+ SRC="img571.gif"
  ALT="$\displaystyle J\left( \theta\right) =E\left[ \left( \frac{\partial}{\partial\th...
 ...rac{\partial^{2}%
 }{\partial\theta^{2}}\log f\left( x\vert\theta\right) \right]$"></TD>
@@ -1122,32 +1122,30 @@ f\left(  x|\theta\right)  \right)  ^{2}\right]  =-E\left[  \frac{\partial^{2}%
 
 <P>
 <P>
-<DIV><B>問題  16</B> &nbsp; 
+<DIV><B>問題  17</B> &nbsp; 
 <I>フィッシャー情報量の等式を証明しなさい.
 </I>
 <P><P>
-<DIV><B>解法  17</B> &nbsp; 
+<DIV><B>解法  18</B> &nbsp; 
 <I>右辺の中身について,
 </I><!-- MATH
  \begin{displaymath}
 -\frac{\partial^{2}}{\partial\theta^{2}}\log f\left(  x;\theta\right)
 =-\frac{\partial}{\partial\theta}\frac{f^{^{\prime}}}{f}=-\frac{f^{^{\prime
-\prime}}f-f^{^{\prime}}f^{^{\prime}}}{f^{2}}=-\frac{f^{^{\prime\prime}}}%
-{f}+\frac{(f^{^{\prime}})^{2}}{f^{2}}%
+\prime}}f-f^{^{\prime}}f^{^{\prime}}}{f^{2}}=-\frac{f^{^{\prime\prime}}}{f}+\frac{(f^{^{\prime}})^{2}}{f^{2}}
 \end{displaymath}
  -->
 <P></P>
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="419" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
- SRC="img570.gif"
+ SRC="img572.gif"
  ALT="$\displaystyle -\frac{\partial^{2}}{\partial\theta^{2}}\log f\left( x;\theta\rig...
-...}}}{f^{2}}=-\frac{f^{^{\prime\prime}}}%
-{f}+\frac{(f^{^{\prime}})^{2}}{f^{2}}%
+...ime}}}{f^{2}}=-\frac{f^{^{\prime\prime}}}{f}+\frac{(f^{^{\prime}})^{2}}{f^{2}}
 $">
 </DIV><P></P><I>
-の関係があるから,
-期待値をとって</I><!-- MATH
+の関係があるから, 期待値をとって
+</I><!-- MATH
  \begin{displaymath}
 E\left[  -\frac{f^{^{\prime\prime}}}{f}+\left(  \frac{f^{^{\prime}}}%
 {f}\right)  ^{2}\right]  =E\left[  \frac{f^{^{\prime}}}{f}\right]
@@ -1158,7 +1156,7 @@ E\left[  -\frac{f^{^{\prime\prime}}}{f}+\left(  \frac{f^{^{\prime}}}%
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="343" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
- SRC="img571.gif"
+ SRC="img573.gif"
  ALT="$\displaystyle E\left[ -\frac{f^{^{\prime\prime}}}{f}+\left( \frac{f^{^{\prime}}...
 ...e}}}{f}\right]
 ^{2}=E\left[ \frac{\partial}{\partial\theta}\log f\right] ^{2}%
@@ -1170,29 +1168,28 @@ $">
 ポアソン分布のフィッシャー情報量.
 定常ポアソンスパイク時系列を<IMG
  WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img50.gif"
+ SRC="img53.gif"
  ALT="$ n$">個の観測区間<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img104.gif"
+ SRC="img113.gif"
  ALT="$ \Delta$">で区切ったとしよう. このとき各区間内のスパイクの個数<!-- MATH
- $X=\left(  X_{1},X_{2}%
-,\ldots,X_{n}\right)$
+ $X=\left(  X_{1},X_{2},\ldots,X_{n}\right)$
  -->
 <IMG
  WIDTH="157" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img572.gif"
- ALT="$ X=\left( X_{1},X_{2}%
-,\ldots,X_{n}\right) $">は平均<!-- MATH
+ SRC="img527.gif"
+ ALT="$ X=\left(
+X_{1},X_{2},\ldots,X_{n}\right) $">は平均<!-- MATH
  $\lambda\Delta$
  -->
 <IMG
  WIDTH="27" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img106.gif"
+ SRC="img115.gif"
  ALT="$ \lambda\Delta$">のポアソン分布
 <!-- MATH
  \begin{displaymath}
 \Pr\left(  X=\left(  X_{1},X_{2},\ldots,X_{n}\right)  |\lambda,\Delta\right)
-=%
+=
 {\displaystyle\prod\limits_{t=1}^{n}}
 \frac{\left(  \lambda\Delta\right)  ^{X_{i}}}{X_{i}!}e^{-\lambda\Delta}%
 \end{displaymath}
@@ -1201,22 +1198,23 @@ $">
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="359" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img573.gif"
+ SRC="img574.gif"
  ALT="$\displaystyle \Pr\left( X=\left( X_{1},X_{2},\ldots,X_{n}\right) \vert\lambda,\...
 ...1}^{n}}
 \frac{\left( \lambda\Delta\right) ^{X_{i}}}{X_{i}!}e^{-\lambda\Delta}%
 $">
 </DIV><P></P>
-に従う. フィッシャー情報量は<P></P>
+に従う. フィッシャー情報量は
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT"><IMG
  WIDTH="39" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img574.gif"
+ SRC="img575.gif"
  ALT="$\displaystyle J\left( \lambda\right)$"></TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="196" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img575.gif"
+ SRC="img576.gif"
  ALT="$\displaystyle =-E\left[ \frac{\partial^{2}}{\partial \lambda^{2}}\log f\left( X;\lambda,\Delta\right) \right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1224,7 +1222,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="312" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
- SRC="img576.gif"
+ SRC="img577.gif"
  ALT="$\displaystyle =-E\left[ \frac{\partial^{2}}{\partial\lambda^{2}}\sum_{i=1}^{n}\left( X_{i}\log\lambda\Delta-\lambda\Delta-\log X_{i}!\right) \right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1232,7 +1230,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="206" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
- SRC="img577.gif"
+ SRC="img578.gif"
  ALT="$\displaystyle =-E\left[ \sum_{i=1}^{n}\frac{\partial}{\partial\lambda}\left( X_{i}%
 \frac{1}{\lambda}-\Delta\right) \right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -1241,7 +1239,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="97" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img578.gif"
+ SRC="img579.gif"
  ALT="$\displaystyle =\frac{\sum_{i=1}^{n}EX_{i}}{\lambda^{2}}$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 &nbsp;&nbsp;&nbsp;</TD></TR>
@@ -1249,7 +1247,7 @@ $">
 <TD>&nbsp;</TD>
 <TD NOWRAP ALIGN="LEFT"><IMG
  WIDTH="105" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img579.gif"
+ SRC="img580.gif"
  ALT="$\displaystyle =\frac{n\lambda\Delta}{\lambda^{2}}=\frac{n\Delta}{\lambda}%
 $"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
@@ -1261,67 +1259,66 @@ $"></TD>
  -->
 <IMG
  WIDTH="44" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img580.gif"
+ SRC="img581.gif"
  ALT="$ \lambda/n\Delta$">.
 
 <P>
 <P>
-<DIV><B>問題  18</B> &nbsp; 
+<DIV><B>問題  19</B> &nbsp; 
 <I>ポアソン分布<!-- MATH
- $p\left(  X|\lambda
-,\Delta\right)  =%
+ $p\left(  X|\lambda,\Delta\right)  =
 {\displaystyle\prod\limits_{t=1}^{n}}
 \frac{\left(  \lambda\Delta\right)  ^{X_{i}}}{X_{i}!}e^{-\lambda\Delta}%$
  -->
 <IMG
  WIDTH="200" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img581.gif"
- ALT="$ p\left( X\vert\lambda
-,\Delta\right) =%
+ SRC="img582.gif"
+ ALT="$ p\left( X\vert\lambda,\Delta\right) =
 {\displaystyle\prod\limits_{t=1}^{n}}
 \frac{\left( \lambda\Delta\right) ^{X_{i}}}{X_{i}!}e^{-\lambda\Delta}%
 $">の<IMG
  WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img406.gif"
+ SRC="img411.gif"
  ALT="$ \theta$">に関するフィッシャー情報量を公式<!-- MATH
  $J\left(  \theta\right)  =E\left[  \left(  \frac{\partial
 }{\partial\theta}\log f\left(  x|\theta\right)  \right)  ^{2}\right]$
  -->
 <IMG
  WIDTH="200" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
- SRC="img582.gif"
+ SRC="img583.gif"
  ALT="$ J\left( \theta\right) =E\left[ \left( \frac{\partial
 }{\partial\theta}\log f\left( x\vert\theta\right) \right) ^{2}\right]
 $">を用いて導出せよ.</I></DIV><P></P>
 
 <P>
 <P>
-<DIV><B>問題  19</B> &nbsp; 
+<DIV><B>問題  20</B> &nbsp; 
 <P><P>
 <BR>
 <I>指数分布のフィッシャー情報量を求めよ<IMG
  WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img583.gif"
+ SRC="img584.gif"
  ALT="$ \quad$"></I></DIV><P></P>
 
 <P>
 <P>
-<DIV><B>解法  20</B> &nbsp; 
+<DIV><B>解法  21</B> &nbsp; 
 <I>平均<IMG
  WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img122.gif"
+ SRC="img131.gif"
  ALT="$ 1/\lambda$">の指数分布<!-- MATH
  $f\left(
 x;\lambda\right)  =\lambda e^{-\lambda x}$
  -->
 <IMG
  WIDTH="118" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img584.gif"
+ SRC="img585.gif"
  ALT="$ f\left(
 x;\lambda\right) =\lambda e^{-\lambda x}$">の<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img121.gif"
- ALT="$ \lambda$">に関するフィッシャー情報量は</I><!-- MATH
+ SRC="img130.gif"
+ ALT="$ \lambda$">に関するフィッシャー情報量は
+</I><!-- MATH
  \begin{displaymath}
 J\left(  \lambda\right)  =-E\left[  \frac{\partial^{2}}{\partial\lambda^{2}%
 }\left(  \log\lambda-\lambda x\right)  \right]  =-E\left[  \frac{\partial
@@ -1333,7 +1330,7 @@ J\left(  \lambda\right)  =-E\left[  \frac{\partial^{2}}{\partial\lambda^{2}%
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="417" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img585.gif"
+ SRC="img586.gif"
  ALT="$\displaystyle J\left( \lambda\right) =-E\left[ \frac{\partial^{2}}{\partial\lam...
 ...tial\lambda}\left( \frac{1}{\lambda}-x\right) \right] =\frac
 {1}{\lambda^{2}}%
@@ -1344,7 +1341,7 @@ $">
  -->
 <IMG
  WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
- SRC="img586.gif"
+ SRC="img587.gif"
  ALT="$ \lambda^{2}$">．</I></DIV><P></P>
 
 <P>
@@ -1354,7 +1351,8 @@ $">
 </H2>
 
 <P>
-Bayesの定理<A NAME="2259"></A><!-- MATH
+Bayesの定理<A NAME="2290"></A>
+<!-- MATH
  \begin{displaymath}
 p\left(  \theta|x,w\right)  =\frac{p(x|\theta)\pi(\theta|w)}{p(x|w)}%
 \end{displaymath}
@@ -1363,7 +1361,7 @@ p\left(  \theta|x,w\right)  =\frac{p(x|\theta)\pi(\theta|w)}{p(x|w)}%
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="181" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img587.gif"
+ SRC="img588.gif"
  ALT="$\displaystyle p\left( \theta\vert x,w\right) =\frac{p(x\vert\theta)\pi(\theta\vert w)}{p(x\vert w)}%
 $">
 </DIV><P></P>
@@ -1372,23 +1370,24 @@ $">
  -->
 <IMG
  WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img588.gif"
+ SRC="img589.gif"
  ALT="$ p(x\vert\theta)$">を尤度(likelihood), <!-- MATH
  $\pi(\theta)$
  -->
 <IMG
  WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img589.gif"
- ALT="$ \pi(\theta)$">を事前分布<A NAME="2262"></A>(prior distribution<A NAME="2263"></A>)，<!-- MATH
+ SRC="img590.gif"
+ ALT="$ \pi(\theta)$">を事前分布<A NAME="2293"></A>(prior distribution<A NAME="2294"></A>)，<!-- MATH
  $p\left(  \theta|x\right)$
  -->
 <IMG
  WIDTH="49" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img590.gif"
- ALT="$ p\left( \theta\vert x\right) $"> を事後分布<A NAME="2264"></A>(posterior distribution<A NAME="2265"></A>)という．
+ SRC="img591.gif"
+ ALT="$ p\left( \theta\vert x\right) $"> を事後分布<A NAME="2295"></A>(posterior distribution<A NAME="2296"></A>)という．
 
 <P>
-分母は正規化項で分子の総和をとって<!-- MATH
+分母は正規化項で分子の総和をとって
+<!-- MATH
  \begin{displaymath}
 p(x|w)=\int p\left(  x,\theta|w\right)  d\theta
 \end{displaymath}
@@ -1397,7 +1396,7 @@ p(x|w)=\int p\left(  x,\theta|w\right)  d\theta
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="172" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img591.gif"
+ SRC="img592.gif"
  ALT="$\displaystyle p(x\vert w)=\int p\left( x,\theta\vert w\right) d\theta
 $">
 </DIV><P></P>
@@ -1411,7 +1410,8 @@ $">
 
 <P>
 事後損失関数(posterior loss function,
-posterior expected loss) を定義し，事後分布による期待値: 事後リスク関数(posterior risk function)&nbsp;&nbsp;&nbsp;&nbsp;<!-- MATH
+posterior expected loss) を定義し，事後分布による期待値: 事後リスク関数(posterior risk function)&nbsp;&nbsp;&nbsp;&nbsp;
+<!-- MATH
  \begin{displaymath}
 L^{\text{Bayes}}(\delta,\theta;X,w)\equiv E^{\theta|X,w}[L(\delta
 ,\theta)]=\int L\left(  \delta,\theta\right)  p\left(  \theta|X,w\right)
@@ -1422,13 +1422,14 @@ d\theta
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="421" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img592.gif"
+ SRC="img593.gif"
  ALT="$\displaystyle L^{\text{Bayes}}(\delta,\theta;X,w)\equiv E^{\theta\vert X,w}[L(\...
 ...eta)]=\int L\left( \delta,\theta\right) p\left( \theta\vert X,w\right)
 d\theta
 $">
 </DIV><P></P>
-を最小化するパラメータを推定量とする<!-- MATH
+を最小化するパラメータを推定量とする
+<!-- MATH
  \begin{displaymath}
 \hat{\theta}_{\text{Bayes}}(X,w)=\arg\underset{\theta}{\min}L^{\text{Bayes}%
 }(\delta,\theta;X,w)
@@ -1438,7 +1439,7 @@ $">
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="279" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img593.gif"
+ SRC="img594.gif"
  ALT="$\displaystyle \hat{\theta}_{\text{Bayes}}(X,w)=\arg\underset{\theta}{\min}L^{\text{Bayes}%
 }(\delta,\theta;X,w)
 $">
@@ -1447,23 +1448,23 @@ $">
 <P>
 損失関数として支持関数(indicator function)<IMG
  WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img594.gif"
+ SRC="img595.gif"
  ALT="$ L_{0}$">
-<P>
 <!-- MATH
  \begin{displaymath}
-L_{0}(\delta,\theta)=1_{\delta,\theta}%
+L_{0}(\delta,\theta)=1_{\delta,\theta}
 \end{displaymath}
  -->
 <P></P>
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="102" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img595.gif"
- ALT="$\displaystyle L_{0}(\delta,\theta)=1_{\delta,\theta}%
+ SRC="img596.gif"
+ ALT="$\displaystyle L_{0}(\delta,\theta)=1_{\delta,\theta}
 $">
 </DIV><P></P>
-を選ぶとMAP推定値<A NAME="2277"></A>(maximum a posteriori estimate<A NAME="2278"></A>)が得られる．<!-- MATH
+を選ぶとMAP推定値<A NAME="2308"></A>(maximum a posteriori estimate<A NAME="2309"></A>)が得られる．
+<!-- MATH
  \begin{displaymath}
 \hat{\theta}_{\text{MAP}}(X,w)=\arg\underset{\theta}{\max}p\left(
 \theta|X,w\right)
@@ -1473,7 +1474,7 @@ $">
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="230" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img596.gif"
+ SRC="img597.gif"
  ALT="$\displaystyle \hat{\theta}_{\text{MAP}}(X,w)=\arg\underset{\theta}{\max}p\left(
 \theta\vert X,w\right)
 $">
@@ -1482,8 +1483,9 @@ $">
 <P>
 損失関数として絶対誤差<IMG
  WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img597.gif"
- ALT="$ L_{1}$"><!-- MATH
+ SRC="img598.gif"
+ ALT="$ L_{1}$">
+<!-- MATH
  \begin{displaymath}
 L_{1}(\delta,\theta)=|\delta-\theta|
 \end{displaymath}
@@ -1492,7 +1494,7 @@ L_{1}(\delta,\theta)=|\delta-\theta|
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="121" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img598.gif"
+ SRC="img599.gif"
  ALT="$\displaystyle L_{1}(\delta,\theta)=\vert\delta-\theta\vert
 $">
 </DIV><P></P>
@@ -1501,8 +1503,9 @@ $">
 <P>
 損失関数として二乗誤差<IMG
  WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img599.gif"
- ALT="$ L_{2}$"><!-- MATH
+ SRC="img600.gif"
+ ALT="$ L_{2}$">
+<!-- MATH
  \begin{displaymath}
 L_{2}(\delta,\theta)=(\delta-\theta)^{2}%
 \end{displaymath}
@@ -1511,11 +1514,12 @@ L_{2}(\delta,\theta)=(\delta-\theta)^{2}%
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="132" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img600.gif"
+ SRC="img601.gif"
  ALT="$\displaystyle L_{2}(\delta,\theta)=(\delta-\theta)^{2}%
 $">
 </DIV><P></P>
-を用いると事後平均(posterior mean)<!-- MATH
+を用いると事後平均(posterior mean)
+<!-- MATH
  \begin{displaymath}
 \hat{\theta}_{\text{PM}}(X,w)=\int\theta p\left(  \theta|X,w\right)  d\theta
 \end{displaymath}
@@ -1524,21 +1528,21 @@ $">
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="212" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img601.gif"
+ SRC="img602.gif"
  ALT="$\displaystyle \hat{\theta}_{\text{PM}}(X,w)=\int\theta p\left( \theta\vert X,w\right) d\theta
 $">
 </DIV><P></P>
-が得られる．事後平均を特にベイズ推定値<A NAME="2290"></A>(Bayes estimate<A NAME="2291"></A>)と呼ぶことがある．
+が得られる．事後平均を特にベイズ推定値<A NAME="2321"></A>(Bayes estimate<A NAME="2322"></A>)と呼ぶことがある．
 
 <P>
 <P>
-<DIV><B>問題  21</B> &nbsp; 
+<DIV><B>問題  22</B> &nbsp; 
 <I>事後損失<!-- MATH
  $L^{Post}(\delta,\theta)$
  -->
 <IMG
  WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img602.gif"
+ SRC="img603.gif"
  ALT="$ L^{Post}(\delta,\theta)$">最小化の原理からMAP推定値, 事後平均値を求めよ.</I></DIV><P></P>
 
 <P>
@@ -1548,11 +1552,10 @@ $">
 </H3>
 
 <P>
-ベイズ推定量は超パラメータに依存する．超パラメータを最尤推定で求めベイズ推定量に用いることを経験ベイズ法と呼ぶ<A NAME="2296"></A>(empirical Bayes estimator<A NAME="2297"></A>)．
+ベイズ推定量は超パラメータに依存する．超パラメータを最尤推定で求めベイズ推定量に用いることを経験ベイズ法と呼ぶ<A NAME="2327"></A>(empirical Bayes estimator<A NAME="2328"></A>)．
 
 <P>
-周辺尤度<A NAME="2298"></A><A NAME="2299"></A>
-<P>
+周辺尤度<A NAME="2329"></A><A NAME="2330"></A>
 <!-- MATH
  \begin{displaymath}
 p(x|w)=\int p\left(  x,\theta|w\right)  d\theta=\int p(x|\theta)\pi
@@ -1563,12 +1566,13 @@ p(x|w)=\int p\left(  x,\theta|w\right)  d\theta=\int p(x|\theta)\pi
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="316" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img603.gif"
+ SRC="img604.gif"
  ALT="$\displaystyle p(x\vert w)=\int p\left( x,\theta\vert w\right) d\theta=\int p(x\vert\theta)\pi
 (\theta\vert w)d\theta
 $">
 </DIV><P></P>
-周辺尤度の最尤推定値(周辺尤度最大化)<!-- MATH
+周辺尤度の最尤推定値(周辺尤度最大化)
+<!-- MATH
  \begin{displaymath}
 \hat{w}=\arg\underset{w}{\max}p(x|w)
 \end{displaymath}
@@ -1577,13 +1581,13 @@ $">
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="137" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img604.gif"
+ SRC="img605.gif"
  ALT="$\displaystyle \hat{w}=\arg\underset{w}{\max}p(x\vert w)
 $">
 </DIV><P></P>
 経験ベイズ推定量は最適化した超パラメータ<IMG
  WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img605.gif"
+ SRC="img606.gif"
  ALT="$ \hat{w}$">を用いて<!-- MATH
  \begin{displaymath}
 \hat{\theta}_{\text{EB}}(X)=\hat{\theta}_{\text{Bayes}}(X,\hat{w})
@@ -1593,7 +1597,7 @@ $">
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="163" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img606.gif"
+ SRC="img607.gif"
  ALT="$\displaystyle \hat{\theta}_{\text{EB}}(X)=\hat{\theta}_{\text{Bayes}}(X,\hat{w})
 $">
 </DIV><P></P>
@@ -1662,7 +1666,7 @@ $">
   HREF="node16.html">Index</A></B> 
 <!--End of Navigation Panel-->
 <ADDRESS>
-AddressShimazaki
+<div align=right>&copy; 2007 - 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki</a></align>
 </ADDRESS>
-</BODY>
+<p></p><div id=disqus_thread></div><script type=text/javascript>(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://statneuro.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })();</script><script type=text/javascript>var disqus_shortname = 'statneuro';(function () { var s = document.createElement('script'); s.async = true;  s.src = 'http://disqus.com/forums/statneuro/count.js';  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);}());</script></body>
 </HTML>

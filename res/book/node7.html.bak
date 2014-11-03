@@ -33,17 +33,21 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
     <a name=top id=top> </a>
     <div id=NaviLayer>  
     <table width=180 border=0 cellpadding=0 cellspacing=0>
-    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
-    <tr><td height=28 valign=top><b>Spike Density Estimation</b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../histogram.html>Histogram Method</a></b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../kernel.html>Kernel Method</a></b></td></tr>
+    <tr><td height=8 valign=top><b>Tweet this page</b></td></tr>
+    <tr><td height=8 valign=top><a href=http://twitter.com/share class=twitter-share-button data-count=horizontal data-via=computneuro data-related="statneuro:Japanese tweets from author.">Tweet</a><script type=text/javascript src=http://platform.twitter.com/widgets.js></script></td></tr>
     <tr><td height=8 valign=top></td></tr>
     <tr><td height=8 valign=top><b>Share it with your friend</b></td></tr>
     <tr><td valign=top><a class=addthis_button href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcbd554189b9a7"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width=125 height=16 alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcbd554189b9a7"></script></td></tr>
     <tr><td height=8 valign=top></td></tr>
-    <tr><td height=8 valign=top><b>Tweet</b></td></tr>
-    <tr><td valign=top><iframe src=../../tweet.html width=180 height=600 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
-    <tr><td height=28 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Tweet by author</b></td></tr>
+    <tr><td valign=top><iframe src=../../tweetjp.html width=180 height=260 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=28 valign=top><b><a href=index.html>ƒXƒpƒCƒN“Œvƒ‚ƒfƒ‹“ü–å ƒgƒbƒv</a></b></td><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=28 valign=top><b>ƒXƒpƒCƒN–§“x„’è</b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../histogram.html>ƒqƒXƒgƒOƒ‰ƒ€–@</a></b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../kernel.html>ƒJ[ƒlƒ‹–@</a></b></td></tr>
+    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
     </table></div>
 <!--Navigation Panel-->
 <A NAME="tex2html284"
@@ -118,13 +122,13 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 </H2>
 
 <P>
-Žw”•ª•zEƒKƒ“ƒ}•ª•zEƒƒCƒuƒ‹•ª•zE‹tƒKƒEƒX•ª•z“™‚ÌƒXƒpƒCƒN–§“x•ª•z‚É]‚¤Šm—¦•Ï”‚ð¶¬‚µ‚½‚¢. “Á’è‚Ì•ª•z‚É]‚¤Šm—¦•Ï”‚ð¶¬‚·‚é•û–@‚É‹tŠÖ”–@‚ª‚ ‚é. ‹tŠÖ”–@<A NAME="670"></A>‚ð—‰ð‚·‚é‚½‚ß‚É,
+Žw”•ª•zEƒKƒ“ƒ}•ª•zEƒƒCƒuƒ‹•ª•zE‹tƒKƒEƒX•ª•z“™‚ÌƒXƒpƒCƒN–§“x•ª•z‚É]‚¤Šm—¦•Ï”‚ð¶¬‚µ‚½‚¢. “Á’è‚Ì•ª•z‚É]‚¤Šm—¦•Ï”‚ð¶¬‚·‚é•û–@‚É‹tŠÖ”–@‚ª‚ ‚é. ‹tŠÖ”–@<A NAME="702"></A>‚ð—‰ð‚·‚é‚½‚ß‚É,
 ŽŸ‚Ì‚æ‚¤‚È‚Q‚Â‚ÌŠm—¦•Ï”‚ÌŠm—¦–§“x•ª•z‚ÌŠÖŒW‚ðl‚¦‚æ‚¤. Šm—¦–§“x•ª•z<!-- MATH
  $f_{X}\left(  x\right)$
  -->
 <IMG
  WIDTH="48" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img188.gif"
+ SRC="img197.gif"
  ALT="$ f_{X}\left( x\right) $">‚É]‚¤Šm—¦•Ï”i—”j<IMG
  WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
  SRC="img6.gif"
@@ -137,81 +141,79 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
  -->
 <IMG
  WIDTH="76" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img189.gif"
+ SRC="img198.gif"
  ALT="$ Y=g\left( X\right) $">‚È‚éŠÖŒW‚ª‚ ‚é•Ï”<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img190.gif"
+ SRC="img199.gif"
  ALT="$ Y$">‚ðl‚¦‚é.
 <IMG
  WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
  SRC="img6.gif"
  ALT="$ X$">‚ªŠm—¦•Ï”‚¾‚©‚ç<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img190.gif"
+ SRC="img199.gif"
  ALT="$ Y$">‚àŠm—¦•Ï”‚Å‚ ‚é.
 ‚±‚Ì‚Æ‚«Šm—¦•Ï”<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img190.gif"
+ SRC="img199.gif"
  ALT="$ Y$">‚ÌŠm—¦–§“x•ª•z<!-- MATH
  $f_{Y}\left(
 y\right)$
  -->
 <IMG
  WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img191.gif"
+ SRC="img200.gif"
  ALT="$ f_{Y}\left(
 y\right) $">‚Í<!-- MATH
  $f_{X}\left(  x\right)  ,g\left(  x\right)$
  -->
 <IMG
  WIDTH="90" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img192.gif"
+ SRC="img201.gif"
  ALT="$ f_{X}\left( x\right) ,g\left( x\right) $">‚ð—p‚¢‚Ä‚Ç‚Ì‚æ‚¤‚É•\Œ»‚³‚ê‚é‚¾‚ë‚¤‚©. Šm—¦–§“x‚Ì•Û‘¶‘¥<!-- MATH
  $f_{Y}\left(  y\right)  \left\vert dy\right\vert =f_{X}\left(
 x\right)  \left\vert dx\right\vert$
  -->
 <IMG
  WIDTH="168" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img193.gif"
+ SRC="img202.gif"
  ALT="$ f_{Y}\left( y\right) \left\vert dy\right\vert =f_{X}\left(
 x\right) \left\vert dx\right\vert $">‚©‚ç<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img190.gif"
+ SRC="img199.gif"
  ALT="$ Y$">‚ÌŠm—¦–§“x•ª•z<!-- MATH
  $f_{Y}\left(  y\right)$
  -->
 <IMG
  WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img191.gif"
+ SRC="img200.gif"
  ALT="$ f_{Y}\left(
 y\right) $">‚Í
 <!-- MATH
  \begin{displaymath}
-f_{Y}\left(  y\right)  =f_{X}\left(  x\right)  \left\vert \frac{dx}%
-{dy}\right\vert =f_{X}\left(  x\right)  \left\vert g^{\prime}\left(  x\right)
-\right\vert ^{-1}%
+f_{Y}\left(  y\right)  =f_{X}\left(  x\right)  \left\vert \frac{dx}{dy}\right\vert =f_{X}\left(  x\right)  \left\vert g^{\prime}\left(  x\right)
+\right\vert ^{-1}
 \end{displaymath}
  -->
 <P></P>
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="277" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img194.gif"
- ALT="$\displaystyle f_{Y}\left( y\right) =f_{X}\left( x\right) \left\vert \frac{dx}%
-...
-... =f_{X}\left( x\right) \left\vert g^{\prime}\left( x\right)
-\right\vert ^{-1}%
+ SRC="img203.gif"
+ ALT="$\displaystyle f_{Y}\left( y\right) =f_{X}\left( x\right) \left\vert \frac{dx}{d...
+...t =f_{X}\left( x\right) \left\vert g^{\prime}\left( x\right)
+\right\vert ^{-1}
 $">
 </DIV><P></P>
-‚Å—^‚¦‚ç‚ê‚é. ‚³‚Ä,
-‚±‚Ì•Ï”•ÏŠ·‚É”º‚¤–§“x•ª•z‚Ì•ÏŠ·Ž®‚Í, ˆê”Ê‚É¬‚è—§‚Â.
+‚Å—^‚¦‚ç‚ê‚é. ‚³‚Ä, ‚±‚Ì•Ï”•ÏŠ·‚É”º‚¤–§“x•ª•z‚Ì•ÏŠ·Ž®‚Í, ˆê”Ê‚É¬‚è—§‚Â.
 ‚»‚±‚Å“Á‚É<IMG
  WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img195.gif"
+ SRC="img204.gif"
  ALT="$ y$">‚Æ<IMG
  WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img9.gif"
- ALT="$ x$">‚ÌŠÖŒW‚Æ‚µ‚Ä<!-- MATH
+ ALT="$ x$">‚ÌŠÖŒW‚Æ‚µ‚Ä
+<!-- MATH
  \begin{displaymath}
 y=g\left(  x\right)  =\int_{-\infty}^{x}f_{X}\left(  u\right)  du
 \end{displaymath}
@@ -220,7 +222,7 @@ y=g\left(  x\right)  =\int_{-\infty}^{x}f_{X}\left(  u\right)  du
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="186" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
- SRC="img196.gif"
+ SRC="img205.gif"
  ALT="$\displaystyle y=g\left( x\right) =\int_{-\infty}^{x}f_{X}\left( u\right) du
 $">
 </DIV><P></P>
@@ -229,7 +231,7 @@ $">
  -->
 <IMG
  WIDTH="48" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img188.gif"
+ SRC="img197.gif"
  ALT="$ f_{X}\left( x\right) $">‚Í<IMG
  WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
  SRC="img6.gif"
@@ -238,7 +240,7 @@ $">
  -->
 <IMG
  WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img197.gif"
+ SRC="img206.gif"
  ALT="$ g\left( x\right) $">‚Æ‚µ‚Ä<IMG
  WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
  SRC="img6.gif"
@@ -247,20 +249,21 @@ $">
  -->
 <IMG
  WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img198.gif"
+ SRC="img207.gif"
  ALT="$ F_{X}\left( x\right) $">‚ð‘I‚ñ‚¾‚±‚Æ‚É‚È‚é.
 ]‚Á‚Ä<!-- MATH
  $Y\in\left[  0,1\right]$
  -->
 <IMG
  WIDTH="68" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img199.gif"
+ SRC="img208.gif"
  ALT="$ Y\in\left[ 0,1\right] $">‚Å‚ ‚é‚±‚Æ‚Í–¾‚ç‚©. ‚±‚Ì‚Æ‚«<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img190.gif"
- ALT="$ Y$">‚Ì–§“x•ª•z‚Í<!-- MATH
+ SRC="img199.gif"
+ ALT="$ Y$">‚Ì–§“x•ª•z‚Í
+<!-- MATH
  \begin{displaymath}
-p\left(  y\right)  =f_{X}\left(  x\right)  \left\vert g^{\prime}\left(
+f_{Y}\left(  y\right)  =f_{X}\left(  x\right)  \left\vert g^{\prime}\left(
 x\right)  \right\vert ^{-1}=f_{X}\left(  x\right)  \left\vert f_{X}\left(
 x\right)  \right\vert ^{-1}=1.
 \end{displaymath}
@@ -268,53 +271,51 @@ x\right)  \right\vert ^{-1}=1.
 <P></P>
 <DIV ALIGN="CENTER">
 <IMG
- WIDTH="338" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
- SRC="img200.gif"
- ALT="$\displaystyle p\left( y\right) =f_{X}\left( x\right) \left\vert g^{\prime}\left...
+ WIDTH="348" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img209.gif"
+ ALT="$\displaystyle f_{Y}\left( y\right) =f_{X}\left( x\right) \left\vert g^{\prime}\...
 ...{-1}=f_{X}\left( x\right) \left\vert f_{X}\left(
 x\right) \right\vert ^{-1}=1.
 $">
 </DIV><P></P>
 ‚Â‚Ü‚è, Šm—¦•Ï”<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img190.gif"
+ SRC="img199.gif"
  ALT="$ Y$">‚Í<!-- MATH
- $\left[
-0,1\right]$
+ $\left[0,1\right]$
  -->
 <IMG
  WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img201.gif"
+ SRC="img210.gif"
  ALT="$ \left[
-0,1\right] $">‚Ì‹æŠÔ“à‚Éˆê—l•ª•z‚·‚éˆê—l—”‚Å‚ ‚é. Ž®‚Ì‚æ‚¤‚É•Ï”•ÏŠ·‚ð‚·‚é‚Æ,
-–§“x‚ª¬‚³‚­‚È‚é‚Æ‚±‚ë‚Å‚Í, •ÏŠ·‚ÌŒX‚«‚ª¬‚³‚­‚È‚è<IMG
+0,1\right] $">‚Ì‹æŠÔ“à‚Éˆê—l•ª•z‚·‚éˆê—l—”‚Å‚ ‚é. Ž®‚Ì‚æ‚¤‚É•Ï”•ÏŠ·‚ð‚·‚é‚Æ, –§“x‚ª¬‚³‚­‚È‚é‚Æ‚±‚ë‚Å‚Í, •ÏŠ·‚ÌŒX‚«‚ª¬‚³‚­‚È‚è<IMG
  WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img195.gif"
+ SRC="img204.gif"
  ALT="$ y$">Ž²ã‚É‹Ãk‚·‚éŒø‰Ê‚ª“­‚­. ‹t‚É–§“x‚ª‘å‚«‚­‚È‚é‚Æ‚±‚ë‚ÅŒX‚«‚ª‘å‚«‚­‚È‚é‚©‚ç, <IMG
  WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img195.gif"
+ SRC="img204.gif"
  ALT="$ y$">Ž²ã‚Å‘a‚É‚È‚é‚æ‚¤‚ÈŒø‰Ê‚ª“­‚­. ‚±‚Ì‚æ‚¤‚É–§“x‚ð‘ŠŽE‚·‚é‚æ‚¤‚ÉŽÊ‘œ‚³‚ê‚é. Œ‹‰Ê‚Æ‚µ‚ÄŠm—¦•Ï”<IMG
  WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img190.gif"
+ SRC="img199.gif"
  ALT="$ Y$">‚Í<!-- MATH
  $\left[  0,1\right]$
  -->
 <IMG
  WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img201.gif"
+ SRC="img210.gif"
  ALT="$ \left[
 0,1\right] $">‚Ì‹æŠÔ‚Éˆê—l‚É•ª•z‚·‚é‚±‚Æ‚É‚È‚é.
 
 <P>
 ‚»‚±‚Å‹t‚É, <IMG
  WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img202.gif"
+ SRC="img211.gif"
  ALT="$ \xi$">‚ð<!-- MATH
  $\left[  0,1\right]$
  -->
 <IMG
  WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img201.gif"
+ SRC="img210.gif"
  ALT="$ \left[
 0,1\right] $">‚Ì‹æŠÔ‚Ìˆê—l—”‚Æ‚µ‚Ä,
 <!-- MATH
@@ -326,23 +327,23 @@ $">
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="132" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
- SRC="img203.gif"
+ SRC="img212.gif"
  ALT="$\displaystyle \xi=\int_{-\infty}^{\eta}f_{X}\left( x\right) dx
 $">
 </DIV><P></P>
 ‚ð–ž‚½‚·<IMG
  WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img204.gif"
+ SRC="img213.gif"
  ALT="$ \eta$">‚ð‹‚ß‚é‚Æ, <IMG
  WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img204.gif"
+ SRC="img213.gif"
  ALT="$ \eta$">‚Í–§“x•ª•z<!-- MATH
  $f_{X}\left(
 \eta\right)$
  -->
 <IMG
  WIDTH="48" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img205.gif"
+ SRC="img214.gif"
  ALT="$ f_{X}\left(
 \eta\right) $">‚É]‚¤. <!-- MATH
  $F_{X}\left(  \eta\right)
@@ -350,24 +351,24 @@ $">
  -->
 <IMG
  WIDTH="169" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img206.gif"
+ SRC="img215.gif"
  ALT="$ F_{X}\left( \eta\right)
 =\int_{-\infty}^{\eta}f_{X}\left( x\right) dx$">‚Æ‘‚¯‚Î, <!-- MATH
  $\eta=F^{-1}\left(  \xi\right)$
  -->
 <IMG
  WIDTH="86" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img207.gif"
+ SRC="img216.gif"
  ALT="$ \eta=F^{-1}\left( \xi\right) $">‚Å‚ ‚é.
 ‚±‚Ì‚æ‚¤‚É‚µ‚Ä, ˆê—l—”<IMG
  WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img202.gif"
+ SRC="img211.gif"
  ALT="$ \xi$">‚©‚ç‹tŠÖ”<!-- MATH
  $F_{X}^{-1}\left(  \xi\right)$
  -->
 <IMG
  WIDTH="56" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img208.gif"
+ SRC="img217.gif"
  ALT="$ F_{X}^{-1}\left( \xi\right) $">‚ð—p‚¢‚Ä,
 –§“x•ª•z<!-- MATH
  $f_{X}\left(  \eta\right)  =F_{X}^{\prime
@@ -375,11 +376,11 @@ $">
  -->
 <IMG
  WIDTH="115" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img209.gif"
+ SRC="img218.gif"
  ALT="$ f_{X}\left( \eta\right) =F_{X}^{\prime
 }\left( \eta\right) $">‚É]‚¤—”<IMG
  WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img204.gif"
+ SRC="img213.gif"
  ALT="$ \eta$">‚ðì¬‚·‚é•û–@‚ð‹tŠÖ”–@‚Æ‚¢‚¤.
 
 <P>
@@ -391,26 +392,28 @@ $">
 <P>
 Žw”•ª•z‚Ìê‡‚Í‹tŠÖ”‚ª‰ðÍ“I‚É‹‚ß‚ç‚ê‚é. •½‹Ï<IMG
  WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img122.gif"
- ALT="$ 1/\lambda$">‚ÌŽw”•ª•z‚ðl‚¦<!-- MATH
+ SRC="img131.gif"
+ ALT="$ 1/\lambda$">‚ÌŽw”•ª•z‚ðl‚¦
+<!-- MATH
  \begin{displaymath}
 \xi=\int_{0}^{\eta}\lambda e^{-\lambda x}dx=\left[  -e^{-\lambda x}\right]
-_{0}^{\eta}=1-e^{-\lambda\eta}%
+_{0}^{\eta}=1-e^{-\lambda\eta}
 \end{displaymath}
  -->
 <P></P>
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="288" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
- SRC="img210.gif"
+ SRC="img219.gif"
  ALT="$\displaystyle \xi=\int_{0}^{\eta}\lambda e^{-\lambda x}dx=\left[ -e^{-\lambda x}\right]
-_{0}^{\eta}=1-e^{-\lambda\eta}%
+_{0}^{\eta}=1-e^{-\lambda\eta}
 $">
 </DIV><P></P>
 ‚ð<IMG
  WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img204.gif"
- ALT="$ \eta$">‚ÉŠÖ‚µ‚Ä‰ð‚¢‚Ä,<P></P>
+ SRC="img213.gif"
+ ALT="$ \eta$">‚ÉŠÖ‚µ‚Ä‰ð‚¢‚Ä,
+<P></P>
 <DIV ALIGN="CENTER"><!-- MATH
  \begin{equation}
 \eta=-\lambda^{-1}\log\xi.
@@ -420,7 +423,7 @@ $">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="111" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img211.gif"
+ SRC="img220.gif"
  ALT="$\displaystyle \eta=-\lambda^{-1}\log\xi.$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (1.19)</TD></TR>
@@ -428,27 +431,28 @@ $">
 <BR CLEAR="ALL"><P></P>
 ‚½‚¾‚µ<IMG
  WIDTH="39" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img212.gif"
+ SRC="img221.gif"
  ALT="$ 1-\xi$">‚Í<IMG
  WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img202.gif"
+ SRC="img211.gif"
  ALT="$ \xi$">‚Å’u‚«Š·‚¦‚½. ˆê—l—”<IMG
  WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img202.gif"
+ SRC="img211.gif"
  ALT="$ \xi$">‚ð¶¬‚µ, ãŽ®‚Ì•ÏŠ·‚ðs‚¦‚Î•½‹Ï<IMG
  WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img122.gif"
+ SRC="img131.gif"
  ALT="$ 1/\lambda$">‚ÌŽw”•ª•z‚É]‚¤Šm—¦•Ï”‚ð¶¬‚Å‚«‚é.
 
 <P>
 
-<H3><A NAME="SECTION02131200000000000000"></A><A NAME="720"></A>
+<H3><A NAME="SECTION02131200000000000000"></A><A NAME="753"></A>
 <BR>
 ƒƒCƒuƒ‹•ª•z
 </H3>
 
 <P>
-ƒƒCƒuƒ‹•ª•z‚Ì•ª•zŠÖ”‚©‚ç<!-- MATH
+ƒƒCƒuƒ‹•ª•z‚Ì•ª•zŠÖ”‚©‚ç
+<!-- MATH
  \begin{displaymath}
 \xi=F\left(  \eta;\lambda,\kappa\right)  =1-\exp\left[  -\left\{
 \Gamma\left(  1+1/\kappa\right)  \lambda\eta\right\}  ^{\kappa}\right]  .
@@ -458,7 +462,7 @@ $">
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="330" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img213.gif"
+ SRC="img222.gif"
  ALT="$\displaystyle \xi=F\left( \eta;\lambda,\kappa\right) =1-\exp\left[ -\left\{
 \Gamma\left( 1+1/\kappa\right) \lambda\eta\right\} ^{\kappa}\right] .
 $">
@@ -466,7 +470,8 @@ $">
 <IMG
  WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
  SRC="img12.gif"
- ALT="$ t$">‚ÉŠÖ‚µ‚Ä‰ð‚¢‚Ä,<P></P>
+ ALT="$ t$">‚ÉŠÖ‚µ‚Ä‰ð‚¢‚Ä,
+<P></P>
 <DIV ALIGN="CENTER"><!-- MATH
  \begin{equation}
 \eta=-\frac{\left[  -\log\xi\right]  ^{1/\kappa}}{\Gamma\left(  1+1/\kappa
@@ -477,7 +482,7 @@ $">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="144" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
- SRC="img214.gif"
+ SRC="img223.gif"
  ALT="$\displaystyle \eta=-\frac{\left[ -\log\xi\right] ^{1/\kappa}}{\Gamma\left( 1+1/\kappa \right) \lambda}.$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (1.20)</TD></TR>
@@ -485,14 +490,14 @@ $">
 <BR CLEAR="ALL"><P></P>
 ‚±‚ê‚æ‚èˆê—l—”<IMG
  WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img202.gif"
+ SRC="img211.gif"
  ALT="$ \xi$">‚ð¶¬‚µ, ãŽ®‚Ì•ÏŠ·‚ðs‚¦‚ÎƒƒCƒuƒ‹•ª•z‚É]‚¤Šm—¦•Ï”‚ð¶¬‚Å‚«‚é. <IMG
  WIDTH="50" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img215.gif"
+ SRC="img224.gif"
  ALT="$ -\log\xi
 $">‚ª•½‹Ï<IMG
  WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img216.gif"
+ SRC="img225.gif"
  ALT="$ 1$">‚ÌŽw”•ª•z‚É]‚¤‚±‚Æ‚É’ˆÓ.
 
 <P>
@@ -502,20 +507,20 @@ $">‚ª•½‹Ï<IMG
 </H3>
 
 <P>
-‹tŠÖ”‚ð‰ðÍ“I‚É‹‚ß‚é‚±‚Æ‚ª‚Å‚«‚È‚¢‚Æ‚«‚É‚à, Š–]‚Ì•ª•z‚É]‚¤Šm—¦•Ï”‚ð¶¬‚·‚é‚±‚Æ‚ª‚Å‚«‚é. ˆê—l—”<IMG
+Žw”•ª•zCWeibull•ª•zCPareto•ª•z“™‚Í‹tŠÖ”‚ð—eˆÕ‚É‹‚ß‚ç‚ê‚éD‹tŠÖ”‚ð‰ðÍ“I‚É‹‚ß‚é‚±‚Æ‚ª‚Å‚«‚È‚¢‚Æ‚«‚É‚à, ”’lŒvŽZ‚É‚æ‚èŠ–]‚Ì•ª•z‚É]‚¤Šm—¦•Ï”‚ð¶¬‚·‚é‚±‚Æ‚ª‚Å‚«‚é. ˆê—l—”<IMG
  WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img202.gif"
+ SRC="img211.gif"
  ALT="$ \xi$">‚ð¶¬‚µ, ”’lÏ•ª‚É‚æ‚è<!-- MATH
  $\xi=F\left(  \eta\right)  =\int_{-\infty}^{\eta
 }f\left(  x\right)  dx$
  -->
 <IMG
  WIDTH="177" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img217.gif"
+ SRC="img226.gif"
  ALT="$ \xi=F\left( \eta\right) =\int_{-\infty}^{\eta
 }f\left( x\right) dx$">‚ð–ž‚½‚·<IMG
  WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img204.gif"
+ SRC="img213.gif"
  ALT="$ \eta$">‚ð‹‚ß‚ê‚Î‚æ‚¢. ƒKƒ“ƒ}•ª•zE‹tƒKƒEƒX•ª•z‚É]‚¤Šm—¦•Ï”‚Í‚±‚Ì•û–@‚Å“¾‚é‚±‚Æ‚ª‚Å‚«‚é.
 
 <P>
@@ -535,11 +540,12 @@ F\left(  t\right)  =1-\exp\left\{  -\int_{0}^{t}r\left(  u\right)  du\right\}
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="228" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
- SRC="img218.gif"
+ SRC="img227.gif"
  ALT="$\displaystyle F\left( t\right) =1-\exp\left\{ -\int_{0}^{t}r\left( u\right) du\right\}
 $">
 </DIV><P></P>
-‚ð•ÏŒ`‚µ‚Ä<P></P>
+‚ð•ÏŒ`‚µ‚Ä
+<P></P>
 <DIV ALIGN="CENTER"><!-- MATH
  \begin{equation}
 \int_{0}^{t}r\left(  u\right)  du=-\log\left[  1-F\left(  t\right)  \right]  .
@@ -549,7 +555,7 @@ $">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="216" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
- SRC="img219.gif"
+ SRC="img228.gif"
  ALT="$\displaystyle \int_{0}^{t}r\left( u\right) du=-\log\left[ 1-F\left( t\right) \right] .$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (1.21)</TD></TR>
@@ -557,39 +563,38 @@ $">
 <BR CLEAR="ALL"><P></P>
 ‚³‚Ä, <IMG
  WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img204.gif"
+ SRC="img213.gif"
  ALT="$ \eta$">‚ðƒXƒpƒCƒN–§“xŠÖ”<!-- MATH
  $f\left(  t\right)$
  -->
 <IMG
  WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img220.gif"
+ SRC="img229.gif"
  ALT="$ f\left( t\right) $">(•ª•zŠÖ”<!-- MATH
  $F\left(  t\right)$
  -->
 <IMG
  WIDTH="37" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img221.gif"
+ SRC="img230.gif"
  ALT="$ F\left( t\right) $">)‚É]‚¤Šm—¦•Ï”‚Æ‚·‚é‚Æ, <!-- MATH
- $F\left(
-\eta\right)$
+ $F\left(\eta\right)$
  -->
 <IMG
  WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img222.gif"
+ SRC="img231.gif"
  ALT="$ F\left(
 \eta\right) $">‚Íˆê—l—”‚É‚È‚è, <!-- MATH
  $-\log\left[  1-F\left(  \eta\right)  \right]$
  -->
 <IMG
  WIDTH="115" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img223.gif"
+ SRC="img232.gif"
  ALT="$ -\log\left[ 1-F\left( \eta\right) \right] $">‚ÍŽw”—”‚É‚È‚é. ‚»‚±‚Å, Žw”•ª•z‚É]‚¤—”<!-- MATH
  $\zeta\left(  =-\log\xi\right)$
  -->
 <IMG
  WIDTH="90" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img224.gif"
+ SRC="img233.gif"
  ALT="$ \zeta\left( =-\log\xi\right) $">‚ð¶¬‚µ,
 <!-- MATH
  \begin{displaymath}
@@ -600,22 +605,22 @@ $">
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="112" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
- SRC="img225.gif"
+ SRC="img234.gif"
  ALT="$\displaystyle \zeta=\int_{0}^{\eta}r\left( u\right) du
 $">
 </DIV><P></P>
 ‚ð–ž‚½‚·<IMG
  WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img204.gif"
+ SRC="img213.gif"
  ALT="$ \eta$">‚ð‹‚ß‚ê‚Î, <IMG
  WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img204.gif"
+ SRC="img213.gif"
  ALT="$ \eta$">‚ÍƒXƒpƒCƒN–§“xŠÖ”<!-- MATH
  $f\left(  t\right)$
  -->
 <IMG
  WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img220.gif"
+ SRC="img229.gif"
  ALT="$ f\left( t\right) $">‚É]‚¤Šm—¦•Ï”‚É‚È‚é. ‚±‚ÌŽè–@‚ÍŽŸßˆÈ~‚Å”ñ’èí‚ÌƒXƒpƒCƒNŽžŒn—ñ‚ðŽÀŒ»‚·‚éÛ‚É—p‚¢‚ç‚ê‚éŽžŠÔLk—˜_‚ÌŠî‘b‚É‚È‚é.
 
 <P>
@@ -626,36 +631,33 @@ $">
 
 <P>
 ƒŠƒjƒ…[ƒAƒ‹‰ß’ö‚Å‚ÍƒXƒpƒCƒNŠÔŠu<!-- MATH
- $\left\{
-T_{1},T_{2},\ldots,T_{n}\right\}$
+ $\left\{T_{1},T_{2},\ldots,T_{n}\right\}$
  -->
 <IMG
  WIDTH="113" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img226.gif"
+ SRC="img235.gif"
  ALT="$ \left\{
 T_{1},T_{2},\ldots,T_{n}\right\} $">‚ð“Æ—§‚É¶¬‚µ‚Ä‚æ‚¢. <IMG
  WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img227.gif"
+ SRC="img236.gif"
  ALT="$ i$">”Ô–Ú‚ÌƒXƒpƒCƒNŽž‚ð<!-- MATH
- $t_{i}%
-=T_{1}+T_{2}+,\ldots,+T_{i}$
+ $t_{i}=T_{1}+T_{2}+,\ldots,+T_{i}$
  -->
 <IMG
  WIDTH="164" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img228.gif"
- ALT="$ t_{i}%
-=T_{1}+T_{2}+,\ldots,+T_{i}$">‚Æ‚µ‚Ä, ƒXƒpƒCƒNŽžŒn—ñ<!-- MATH
- $\left\{  t_{1},t_{2},\ldots
-,t_{n}\right\}$
+ SRC="img237.gif"
+ ALT="$ t_{i}=T_{1}+T_{2}+,\ldots,+T_{i}$">‚Æ‚µ‚Ä, ƒXƒpƒCƒNŽžŒn—ñ<!-- MATH
+ $\left\{  t_{1},t_{2},\ldots,t_{n}\right\}$
  -->
 <IMG
  WIDTH="103" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img229.gif"
+ SRC="img238.gif"
  ALT="$ \left\{ t_{1},t_{2},\ldots
 ,t_{n}\right\} $">‚ª“¾‚ç‚ê‚é. 
 
 <P>
-‚½‚¾‚µ‰ŠúƒXƒpƒCƒN‚ÌƒXƒpƒCƒN–§“x•ª•z‚Í•½t•ª•z<P></P>
+‚½‚¾‚µ‰ŠúƒXƒpƒCƒN‚ÌƒXƒpƒCƒN–§“x•ª•z‚Í•½t•ª•z
+<P></P>
 <DIV ALIGN="CENTER"><!-- MATH
  \begin{equation}
 f_{1}\left(  t\right)  =\lambda\left[  1-F\left(  t\right)  \right]
@@ -665,21 +667,20 @@ f_{1}\left(  t\right)  =\lambda\left[  1-F\left(  t\right)  \right]
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="CENTER"><IMG
  WIDTH="142" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img230.gif"
+ SRC="img239.gif"
  ALT="$\displaystyle f_{1}\left( t\right) =\lambda\left[ 1-F\left( t\right) \right]$"></TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (1.22)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
 ‚Å—^‚¦‚é. ‚±‚±‚Å <!-- MATH
- $1/\lambda=\int
-xf\left(  x\right)  dx$
+ $1/\lambda=\int xf\left(  x\right)  dx$
  -->
 <IMG
  WIDTH="127" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img231.gif"
+ SRC="img240.gif"
  ALT="$ 1/\lambda=\int
-xf\left( x\right) dx$">. ‰ŠúƒXƒpƒCƒN‚Ì‚Ý‚ð•½t•ª•z‚©‚ç¶¬‚µ‚½‰ß’ö‚ð•½tƒŠƒjƒ…[ƒAƒ‹‰ß’ö<A NAME="753"></A>‚ÆŒÄ‚Ô.
+xf\left( x\right) dx$">. ‰ŠúƒXƒpƒCƒN‚Ì‚Ý‚ð•½t•ª•z‚©‚ç¶¬‚µ‚½‰ß’ö‚ð•½tƒŠƒjƒ…[ƒAƒ‹‰ß’ö<A NAME="786"></A>‚ÆŒÄ‚Ô.
 
 <P>
 <HR>
@@ -717,7 +718,7 @@ xf\left( x\right) dx$">. ‰ŠúƒXƒpƒCƒN‚Ì‚Ý‚ð•½t•ª•z‚©‚ç¶¬‚µ‚½‰ß’ö‚ð•½tƒŠƒjƒ…
   HREF="node16.html">Index</A></B> 
 <!--End of Navigation Panel-->
 <ADDRESS>
-AddressShimazaki
+<div align=right>&copy; 2007 - 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki</a></align>
 </ADDRESS>
-</BODY>
+<p></p><div id=disqus_thread></div><script type=text/javascript>(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://statneuro.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })();</script><script type=text/javascript>var disqus_shortname = 'statneuro';(function () { var s = document.createElement('script'); s.async = true;  s.src = 'http://disqus.com/forums/statneuro/count.js';  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);}());</script></body>
 </HTML>

@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta content="State-space Analysis, Time-varying, Higher-order, Spike Correlation, Multiple Neural Spike Train Data"
+      name="keywords" />
+    <title>Point process and state-space analysis</title>
+    <link href="../css/tool.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://www.google-analytics.com/urchin.js">
+</script>
+    <script type="text/javascript">_uacct = "UA-745872-1"; urchinTracker();</script>
+    <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <!-- Local Javascript -->
+    <!-- saved from url=(0013)about:internet -->
+    <!-- Google plus script -->
+    <script type="text/javascript">
+window.___gcfg = {lang: 'en'};
+(function() 
+{var po = document.createElement("script");
+po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(po, s);
+})();</script>
+    <!-- Facebook Metadata -->
+    <meta content="State-space analysis of dynamic interactions" property="og:title" />
+    <meta content="H. Shimazaki" property="og:site_name" />
+    <meta content="http://2000.jukuin.keio.ac.jp/shimazaki/res/ssloglin/icons/tweet_hoc.png"
+      property="og:image" />
+       
+      
+    <style type="text/css">
+<!--
+body,td,th {
+	font-family: Times New Roman, Times, serif;
+}
+.style29 {color: #FFFFFF}
+.style33 {
+	font-size: x-large;
+	font-weight: bold;
+}
+.style36 {font-size: xx-large}
+.style37 {color: #DDDDDD}
+.style43 {color: #CCCCCC}
+.style_main2 {color: #FF0000;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+  <body>
+    <a id="Top" name="Top"></a>
+    <table width="700" height="140" cellspacing="0" cellpadding="5" bordercolor="#FFFFFF"
+      border="0"
+      bgcolor="#330033">
+      <tbody>
+        <tr>
+          <td nowrap="nowrap" height="134" bgcolor="#FFFFFF" background="../icons/itoh_jakuchu4_2.jpg"
+            bordercolor="#FFFFFF">
+            <div align="right"><span class="style29 style13 style33"><span class="style13 style36"><span
+                    class="style29">Point process and state-space analysis</span></span></span><br />
+            </div>
+            <br />
+            <div align="right" class="style29"><span><strong><em><br />
+            </em>Lecture notes </strong></span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  <table width="700" cellspacing="0" cellpadding="0" border="0">
+      <tbody>
+        <tr>
+          <td width="700" height="" nowrap="nowrap" bordercolor="#FFFFFF" bgcolor="#330033">
+            <div align="right"><a class="style37" href="../histogram.html">Histogram
+                  Optimization</a> <span class="style29">|</span> <a
+                class="style37"
+                href="../kernel.html">Kernel
+                Optimization</a> <span class="style29">|</span><span class="style23 style38"> <a class="style37" href="../ssloglin/index.html">Dynamic
+                  Interactions</a></span> <span class="style29">|</span><span class="style37"> Updated
+                  <!-- #BeginDate format:IS1 -->2014-03-04<!-- #EndDate -->
+            </span></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><br />
+    </p>
+    <div id="Contents">
+    </br>
+      <table width="180" cellspacing="1" cellpadding="0" border="0">
+        <tbody>
+          <tr>
+            <td valign="top" height="22"><a class="style9" href="#Top">STATE-SPACE
+                METHOD </a></td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="#Lecture0">- 0 Introduction</a></td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="#Lecture1">- </a><a class="style9" href="#Lecture1">1 Poisson process</a><a class="style9"
+                href="#Ref"></a></td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="#Lecture2">- </a><a class="style9" href="#Lecture2">2 Renewal / Non-Poisson</a><a class="style9"
+                href="#Illustration"></a><a
+                class="style9"
+                href="ipm/5_State-space_model.pdf"></a></td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="#Lecture3">- </a><a class="style9" href="#Lecture3">3 point process-GLM</a><a class="style9"
+                href="#Presentation"></a><a
+                class="style9"
+                href="#Code"></a></td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="#Lecture4">- </a><a class="style9" href="#Lecture4">4 Rate estimation</a><a class="style9"
+                href="#Code"></a><a class="style9" href="#Code"></a></td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="#Lecture5">- </a><a class="style9" href="#Lecture5">5 State-space</a></td>
+          </tr>
+          <tr>
+            <td valign="top">&nbsp;</td>
+          </tr>
+          <tr>
+            <td valign="top">Links</td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="../histogram.html">-
+                Histogram Optimization</a></td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="../kernel.html">- Kernel
+                Optimization</a></td>
+          </tr>
+          <tr>
+            <td valign="top">- <a href="../ssloglin/index.html" class="style9">State-space analysis </a></td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="point_process.html">- Point process</a></td>
+          </tr>
+          <tr>
+            <td valign="top">&nbsp;</td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="../../index.html">- HOME
+                Page</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <p><br />
+      </p>
+  </div>
+  <table width="700" height="36" border="0" cellpadding="10" bgcolor="#ECE9D8">
+    <tbody>
+      <tr>
+        <td height="30" align="center"><p><strong>Lecture notes for two-weeks  course at </strong></p>
+          <p><a href="http://scs.ipm.ac.ir"><strong>the Institute for Research in Fundamental Sciences, School of Cognitive Sciences (2013 Mar 3-12)</strong></a></p>
+          <p><strong><img src="ipm/ipm_group_photo.jpg" alt="" width="588" height="207" /></strong> </p>
+          <table width="681" border="0" cellpadding="1" cellspacing="0">
+            <tr>
+              <th width="80" scope="row">Slides</th>
+              <th width="95" scope="row">Lecture 0</th>
+              <td width="494"><a href="ipm/0_Introduction.pdf" onclick="javascript:urchinTracker ('/downloads/Lecture0_Intro.pdf');"> <strong>Course introduction</strong></a></td>
+            </tr>
+            <tr>
+              <th scope="row">&nbsp;</th>
+              <th scope="row">Lecture 1</th>
+              <td><a href="ipm/1_Poisson_process.pdf" onclick="javascript:urchinTracker ('/downloads/Lecture1_Poisson.pdf');"><strong>A Poisson point process</strong></a></td>
+            </tr>
+            <tr>
+              <th scope="row">&nbsp;</th>
+              <th scope="row">Lecture 2 </th>
+              <td><a href="ipm/2_Renewal_process.pdf" onclick="javascript:urchinTracker ('/downloads/Lecture2_Renewal.pdf');"><strong>Renewal and non-Poisson processes</strong></a></td>
+            </tr>
+            <tr>
+              <th scope="row">&nbsp;</th>
+              <th scope="row">Lecture 3</th>
+              <td><a href="ipm/3_Point_process_GLM.pdf" onclick="javascript:urchinTracker ('/downloads/Lecture3_GLM.pdf');"><strong>Point process-GLM (Encoding)</strong></a></td>
+            </tr>
+            <tr>
+              <th scope="row">&nbsp;</th>
+              <th scope="row">Lecture 4</th>
+              <td><a href="ipm/4_Inference_spike-rate.pdf" onclick="javascript:urchinTracker ('/downloads/Lecture4_Spike_rate.pdf');"><strong>Inference for a Poisson process: Spike-rate estimation</strong></a></td>
+            </tr>
+            <tr>
+              <th scope="row">&nbsp;</th>
+              <th scope="row">Lecture 5 </th>
+              <td><a href="ipm/5_State-space_model.pdf" onclick="javascript:urchinTracker ('/downloads/Lecture5_State_space.pdf');"><strong>State-space model and a point process filter (Decoding)</strong></a></td>
+            </tr>
+            <tr>
+              <th scope="row">&nbsp;</th>
+              <th scope="row">Lecture 6</th>
+              <td> Reviews of applications (Presentation by students) </td>
+            </tr>
+        </table></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <h2><a name="Lecture0" id="Lecture0"></a>Lecture 0: <a href="ipm/0_Introduction.pdf" onclick="javascript:urchinTracker ('/downloads/Lecture0_Intro.pdf');"><strong>Course introduction</strong></a></h2>
+  <iframe src="http://docs.google.com/viewer?url=https://googledrive.com/host/0B5vp3lrRV2FfUG5heExsajZiRE0/0_Introduction.pdf&amp;embedded=true" width="700" height="550" frameborder="0">pdf</iframe>
+  </p>
+  <p>&nbsp;</p>
+  <p>&nbsp;  </p>
+  <h2><a name="Lecture1" id="Lecture1"></a>Lecture 1: <a href="ipm/1_Poisson_process.pdf" onclick="javascript:urchinTracker ('/downloads/Lecture1_Poisson.pdf');"><strong>A Poisson point process</strong></a></h2>
+  <iframe src="http://docs.google.com/viewer?url=https://googledrive.com/host/0B5vp3lrRV2FfUG5heExsajZiRE0/1_Poisson_process.pdf&amp;embedded=true" width="700" height="550" frameborder="0">pdf</iframe>
+  </p>
+  <p>&nbsp;</p>
+  <p>&nbsp;  </p>
+  <h2><a name="Lecture2" id="Lecture2"></a>Lecture 2: <a href="ipm/2_Renewal_process.pdf" onclick="javascript:urchinTracker ('/downloads/Lecture2_Renewal.pdf');"><strong>Renewal and non-Poisson processes</strong></a></h2>
+  <iframe src="http://docs.google.com/viewer?url=https://googledrive.com/host/0B5vp3lrRV2FfUG5heExsajZiRE0/2_Renewal_process.pdf&amp;embedded=true" width="700" height="550" frameborder="0">pdf</iframe>
+  </p>
+  <p>&nbsp;</p>
+  <p>&nbsp;  </p>
+  <h2><a name="Lecture3" id="Lecture3"></a>Lecture 3: <a href="ipm/3_Point_process_GLM.pdf" onclick="javascript:urchinTracker ('/downloads/Lecture3_GLM.pdf');"><strong>Point process-GLM (Encoding)</strong></a></h2>
+  <iframe src="http://docs.google.com/viewer?url=https://googledrive.com/host/0B5vp3lrRV2FfUG5heExsajZiRE0/3_Point_process_GLM.pdf&amp;embedded=true" width="700" height="550" frameborder="0">pdf</iframe>
+  </p>
+  <p>&nbsp;</p>
+  <p>&nbsp;    </p>
+  <h2><a name="Lecture4" id="Lecture4"></a>Lecture 4: <a href="ipm/4_Inference_spike-rate.pdf" onclick="javascript:urchinTracker ('/downloads/Lecture4_Spike_rate.pdf');"><strong>Inference for a Poisson process: Spike-rate estimation</strong></a></h2>
+<iframe src="http://docs.google.com/viewer?url=https://googledrive.com/host/0B5vp3lrRV2FfUG5heExsajZiRE0/4_Inference_spike-rate.pdf&amp;embedded=true" width="700" height="550" frameborder="0">pdf</iframe>
+  </p>
+  <p>&nbsp;</p>
+  <p>&nbsp;  </p>
+  <h2><a name="Lecture5" id="Lecture5"></a>Lecture 5: <a href="ipm/5_State-space_model.pdf" onclick="javascript:urchinTracker ('/downloads/Lecture5_State_space.pdf');"><strong>State-space model and a point process filter (Decoding)</strong></a></h2>
+  <iframe src="http://docs.google.com/viewer?url=https://googledrive.com/host/0B5vp3lrRV2FfUG5heExsajZiRE0/5_State-space_model.pdf&amp;embedded=true" width="700" height="550" frameborder="0">pdf</iframe>
+  </p>
+  
+  </br>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+    <p> </p>
+    <p>     </p>
+    <h2> </h2>
+    <p class="style4"></p>
+    <h3> </h3>
+    <p> </p>
+    <p> </p>
+  </body>
+</html>
