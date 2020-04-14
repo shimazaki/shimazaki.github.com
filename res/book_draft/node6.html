@@ -1,1007 +1,216 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-
-<!--Converted with jLaTeX2HTML 2008 (1.71) JA patch-1.10beta2.13
-patched version by:  Kenshi Muto, Debian Project.
-* modified by:  Shige TAKENO
-LaTeX2HTML 2008 (1.71),
-original version by:  Nikos Drakos, CBLU, University of Leeds
-* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
-* with significant contributions from:
-  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
-<HTML>
-<HEAD>
-
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-2022-jp">
-<META NAME="Generator" CONTENT="jLaTeX2HTML v2008 JA patch-1.10beta2.13">
-<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
-<META NAME="description" CONTENT="$BDj>o%9%Q%$%/;~7ONs$N<B8=(B">
-<META NAME="keywords" CONTENT="book">
-<META NAME="resource-type" CONTENT="document">
-<META NAME="distribution" CONTENT="global">
-
-<LINK REL="STYLESHEET" HREF="../css/latex2html.css">
-
-<LINK REL="previous" HREF="node5.html">
-<LINK REL="up" HREF="node3.html">
-<LINK REL="next" HREF="node7.html">
-<TITLE>$BDj>o%9%Q%$%/;~7ONs$N<B8=(B</TITLE>
-
-<META http-equiv=Content-Type content="text/html; charset=shift_jis">
-<script src=http://www.google-analytics.com/urchin.js type=text/javascript></script>
-<script type=text/javascript>_uacct="UA-745872-1";urchinTracker();</script>
-</HEAD>
-
-<BODY>
-    <a name=top id=top> </a>
-    <div id=NaviLayer>  
-    <table width=180 border=0 cellpadding=0 cellspacing=0>
-    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
-    <tr><td height=28 valign=top><b>Spike Density Estimation</b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../histogram.html>Histogram Method</a></b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../kernel.html>Kernel Method</a></b></td></tr>
-    <tr><td height=8 valign=top></td></tr>
-    <tr><td height=8 valign=top><b>Share it with your friend</b></td></tr>
-    <tr><td valign=top><a class=addthis_button href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcbd554189b9a7"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width=125 height=16 alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcbd554189b9a7"></script></td></tr>
-    <tr><td height=8 valign=top></td></tr>
-    <tr><td height=8 valign=top><b>Tweet</b></td></tr>
-    <tr><td valign=top><iframe src=../../tweet.html width=180 height=600 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
-    <tr><td height=28 valign=top></td></tr>
-    </table></div>
-<!--Navigation Panel-->
-<A NAME="tex2html235"
-  HREF="node7.html">
-<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
-<A NAME="tex2html229"
-  HREF="node3.html">
-<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
- SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
-<A NAME="tex2html225"
-  HREF="node5.html">
-<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
- SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
-<A NAME="tex2html231"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
- SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
-<A NAME="tex2html233"
-  HREF="node15.html">
-<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
- SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
-<BR>
-<B> Next:</B> <A NAME="tex2html236"
-  HREF="node7.html">$BHsDj>o%9%Q%$%/;~7ONs%b%G%k(B</A>
-<B> Up:</B> <A NAME="tex2html230"
-  HREF="node3.html">$BDj>o%9%Q%$%/;~7ONs%b%G%k(B</A>
-<B> Previous:</B> <A NAME="tex2html226"
-  HREF="node5.html">$BDj>o%j%K%e!<%"%k2aDx(B</A>
- &nbsp; <B>  <A NAME="tex2html232"
-  HREF="node1.html">$BL\<!(B</A></B> 
- &nbsp; <B>  <A NAME="tex2html234"
-  HREF="node15.html">$B:w0z(B</A></B> 
-<BR>
-<BR>
-<!--End of Navigation Panel-->
-<!--Table of Child-Links-->
-<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
-
-<UL>
-<LI><A NAME="tex2html237"
-  HREF="node6.html#SECTION00331000000000000000">$BJ,I[$N5,3J2=$H5U4X?tK!(B</A>
-<UL>
-<LI><A NAME="tex2html238"
-  HREF="node6.html#SECTION00331100000000000000">$B;X?tJ,I[(B</A>
-<LI><A NAME="tex2html239"
-  HREF="node6.html#SECTION00331200000000000000">$B%o%$%V%kJ,I[(B</A>
-<LI><A NAME="tex2html240"
-  HREF="node6.html#SECTION00331300000000000000">$B$=$NB>$NJ,I[(B</A>
-</UL>
-<BR>
-<LI><A NAME="tex2html241"
-  HREF="node6.html#SECTION00332000000000000000">$B%O%6!<%I4X?t$rMQ$$$?%9%Q%$%/@8@.(B</A>
-<LI><A NAME="tex2html242"
-  HREF="node6.html#SECTION00333000000000000000">$B%9%Q%$%/;~7ONs$N:n@.(B</A>
-</UL>
-<!--End of Table of Child-Links-->
-<HR>
 
 <H1><A NAME="SECTION00330000000000000000">
-$BDj>o%9%Q%$%/;~7ONs$N<B8=(B</A>
+定常スパイク時系列の実現</A>
 </H1>
 
 <P>
-$BK\>O$G$ODj>o%9%Q%$%/;~7ONs$r7W;;5!>e$G<B8=$9$k$?$a$N?tCM7W;;K!$r>R2p$9$k!%%9%Q%$%/;~7ONs$N<B8=$9$k$?$a$K$O!$FCDj$NJ,I[$K=>$&3NN(JQ?t$r@8@.$9$kI,MW$,$"$k!%$3$N$H$-MM!9$J3NN(J,I[$r0lMMJ,I[$KI8=`2=$7$F9M$($k$N$,4pK\$K$J$k!%F1MM$K!$%j%K%e!<%"%k2aDx$N=V4V%9%Q%$%/@8@.N($r5,3J2=$7!$%]%"%=%s2aDx$KI8=`2=$7$F9M$($k$3$H$b$G$-$k!%(B
-$B$3$N9M$(J}$O!$<!@a0J9_$GHsDj>o$N%9%Q%$%/;~7ONs$r<B8=$9$k:]$KMQ$$$i$l$k;~4V?-=LM}O@$N4pAC$K$J$k!%(B
+本章では定常スパイク時系列を計算機上で実現するための数値計算法を紹介する．スパイク時系列の実現するためには，特定の分布に従う確率変数を生成する必要がある．このとき様々な確率分布を一様分布に標準化して考えるのが基本になる．同様にリニューアル過程の瞬間スパイク生成率を規格化し，ポアソン過程に標準化して考えることもできる．この考え方は，次節以降で非定常のスパイク時系列を実現する際に用いられる時間伸縮理論の基礎になる．
 
 <P>
 
 <H2><A NAME="SECTION00331000000000000000">
-$BJ,I[$N5,3J2=$H5U4X?tK!(B</A>
+分布の規格化と逆関数法</A>
 </H2>
 
 <P>
-$B;X?tJ,I[!&%,%s%^J,I[!&%o%$%V%kJ,I[!&5U%,%&%9J,I[Ey$N%9%Q%$%/L)EYJ,I[$K=>$&3NN(JQ?t$r@8@.$7$?$$!%FCDj$NJ,I[$K=>$&3NN(JQ?t$r@8@.$9$kJ}K!$K5U4X?tK!$,$"$k!%5U4X?tK!(B<A NAME="710"></A>$B$rM}2r$9$k$?$a$K<!$N$h$&$J#2$D$N3NN(JQ?t$N3NN(L)EYJ,I[$N4X78$r9M$($h$&!%3NN(L)EYJ,I[(B<!-- MATH
- $f_{X}\left(  x\right)$
- -->
-<IMG
- WIDTH="48" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img199.png"
- ALT="$ f_{X}\left( x\right) $">
-<!-- MATHEND
- 
- -->
-$B$K=>$&3NN(JQ?t!JMp?t!K(B<IMG
- WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img6.png"
- ALT="$ X$">
-<!-- MATHEND
- 
- -->
-$B$H(B<IMG
- WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img6.png"
- ALT="$ X$">
-<!-- MATHEND
- 
- -->
-$B$H(B<!-- MATH
- $Y=g\left(  X\right)$
- -->
-<IMG
- WIDTH="76" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img200.png"
- ALT="$ Y=g\left( X\right)$">
-<!-- MATHEND
- 
- -->
-$B$J$k4X78$,$"$kJQ?t(B<IMG
- WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img201.png"
- ALT="$ Y$">
-<!-- MATHEND
- 
- -->
-$B$r9M$($k!%(B
-<IMG
- WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img6.png"
- ALT="$ X$">
-<!-- MATHEND
- 
- -->
-$B$,3NN(JQ?t$@$+$i(B<IMG
- WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img201.png"
- ALT="$ Y$">
-<!-- MATHEND
- 
- -->
-$B$b3NN(JQ?t$G$"$k!%(B
-$B$3$N$H$-3NN(JQ?t(B<IMG
- WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img201.png"
- ALT="$ Y$">
-<!-- MATHEND
- 
- -->
-$B$N3NN(L)EYJ,I[(B<!-- MATH
- $f_{Y}\left(
-y\right)$
- -->
-<IMG
- WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img202.png"
- ALT="$ f_{Y}\left(
-y\right) $">
-<!-- MATHEND
- 
- -->
-$B$O(B<!-- MATH
- $f_{X}\left(  x\right)  ,g\left(  x\right)$
- -->
-<IMG
- WIDTH="90" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img203.png"
- ALT="$ f_{X}\left( x\right) ,g\left( x\right) $">
-<!-- MATHEND
- 
- -->
-$B$rMQ$$$F$I$N$h$&$KI=8=$5$l$k$@$m$&$+!%3NN(L)EY$NJ]B8B'(B<!-- MATH
- $f_{Y}\left(  y\right)  \left\vert dy\right\vert =f_{X}\left(
-x\right)  \left\vert dx\right\vert$
- -->
-<IMG
- WIDTH="169" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img204.png"
- ALT="$ f_{Y}\left( y\right) \left\vert dy\right\vert =f_{X}\left(
-x\right) \left\vert dx\right\vert $">
-<!-- MATHEND
- 
- -->
-$B$+$i(B<IMG
- WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img201.png"
- ALT="$ Y$">
-<!-- MATHEND
- 
- -->
-$B$N3NN(L)EYJ,I[(B<!-- MATH
- $f_{Y}\left(  y\right)$
- -->
-<IMG
- WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img202.png"
- ALT="$ f_{Y}\left(
-y\right) $">
-<!-- MATHEND
- 
- -->
-$B$O(B
-<P><!-- MATH
- \begin{displaymath}
-f_{Y}\left(  y\right)  =f_{X}\left(  x\right)  \left\vert \frac{dx}{dy}\right\vert =f_{X}\left(  x\right)  \left\vert g^{\prime}\left(  x\right)
-\right\vert ^{-1}
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="277" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img205.png"
- ALT="$\displaystyle f_{Y}\left( y\right) =f_{X}\left( x\right) \left\vert \frac{dx}{d...
-...=f_{X}\left( x\right) \left\vert g^{\prime}\left( x\right)
-\right\vert ^{-1}
-$">
+指数分布・ガンマ分布・ワイブル分布・逆ガウス分布等のスパイク密度分布に従う確率変数を生成したい．特定の分布に従う確率変数を生成する方法に逆関数法がある．逆関数法<A NAME="807"><tex2html_anchor_invisible_mark></A>を理解するために次のような２つの確率変数の確率密度分布の関係を考えよう．確率密度分布<tex2html_verbatim_mark>#math300#<tex2html_image_mark>#tex2html_wrap_inline5864#
+<tex2html_verbatim_mark>mathend000#に従う確率変数（乱数）<tex2html_image_mark>#tex2html_wrap_inline5866#
+<tex2html_verbatim_mark>mathend000#と<tex2html_image_mark>#tex2html_wrap_inline5868#
+<tex2html_verbatim_mark>mathend000#と<tex2html_verbatim_mark>#math301#<tex2html_image_mark>#tex2html_wrap_inline5870#
+<tex2html_verbatim_mark>mathend000#なる関係がある変数<tex2html_image_mark>#tex2html_wrap_inline5872#
+<tex2html_verbatim_mark>mathend000#を考える．
+<tex2html_image_mark>#tex2html_wrap_inline5874#
+<tex2html_verbatim_mark>mathend000#が確率変数だから<tex2html_image_mark>#tex2html_wrap_inline5876#
+<tex2html_verbatim_mark>mathend000#も確率変数である．
+このとき確率変数<tex2html_image_mark>#tex2html_wrap_inline5878#
+<tex2html_verbatim_mark>mathend000#の確率密度分布<tex2html_verbatim_mark>#math302#<tex2html_image_mark>#tex2html_wrap_inline5880#
+<tex2html_verbatim_mark>mathend000#は<tex2html_verbatim_mark>#math303#<tex2html_image_mark>#tex2html_wrap_inline5882#
+<tex2html_verbatim_mark>mathend000#を用いてどのように表現されるだろうか．確率密度の保存則<tex2html_verbatim_mark>#math304#<tex2html_image_mark>#tex2html_wrap_inline5884#
+<tex2html_verbatim_mark>mathend000#から<tex2html_image_mark>#tex2html_wrap_inline5886#
+<tex2html_verbatim_mark>mathend000#の確率密度分布<tex2html_verbatim_mark>#math305#<tex2html_image_mark>#tex2html_wrap_inline5888#
+<tex2html_verbatim_mark>mathend000#は
+<P><tex2html_verbatim_mark>#math306#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay5890#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$GM?$($i$l$k!%$5$F!$$3$NJQ?tJQ49$KH<$&L)EYJ,I[$NJQ49<0$O!$0lHL$K@.$jN)$D!%(B
-$B$=$3$GFC$K(B<IMG
- WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img206.png"
- ALT="$ y$">
-<!-- MATHEND
- 
- -->
-$B$H(B<IMG
- WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img9.png"
- ALT="$ x$">
-<!-- MATHEND
- 
- -->
-$B$N4X78$H$7$F(B
-<P><!-- MATH
- \begin{displaymath}
-y=g\left(  x\right)  =\int_{-\infty}^{x}f_{X}\left(  u\right)  du
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="186" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
- SRC="img207.png"
- ALT="$\displaystyle y=g\left( x\right) =\int_{-\infty}^{x}f_{X}\left( u\right) du
-$">
+<tex2html_verbatim_mark>mathend000#</P>
+で与えられる．この変数変換に伴う密度分布の変換式は一般に成り立つ．
+そこで特に<tex2html_image_mark>#tex2html_wrap_inline5892#
+<tex2html_verbatim_mark>mathend000#と<tex2html_image_mark>#tex2html_wrap_inline5894#
+<tex2html_verbatim_mark>mathend000#の関係として
+<P><tex2html_verbatim_mark>#math307#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay5896#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$r9M$($F$_$h$&!%$3$3$G(B<!-- MATH
- $f_{X}\left(  x\right)$
- -->
-<IMG
- WIDTH="48" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img199.png"
- ALT="$ f_{X}\left( x\right) $">
-<!-- MATHEND
- 
- -->
-$B$O(B<IMG
- WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img6.png"
- ALT="$ X$">
-<!-- MATHEND
- 
- -->
-$B<+?H$NL)EYJ,I[$G$"$k$+$i!$(B<!-- MATH
- $g\left(  x\right)$
- -->
-<IMG
- WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img208.png"
- ALT="$ g\left( x\right) $">
-<!-- MATHEND
- 
- -->
-$B$H$7$F(B<IMG
- WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img6.png"
- ALT="$ X$">
-<!-- MATHEND
- 
- -->
-$B$NJ,I[4X?t(B<!-- MATH
- $F_{X}\left(  x\right)$
- -->
-<IMG
- WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img209.png"
- ALT="$ F_{X}\left( x\right) $">
-<!-- MATHEND
- 
- -->
-$B$rA*$s$@$3$H$K$J$k!%(B
-$B=>$C$F(B<!-- MATH
- $Y\in\left[  0,1\right]$
- -->
-<IMG
- WIDTH="68" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img210.png"
- ALT="$ Y\in\left[ 0,1\right] $">
-<!-- MATHEND
- 
- -->
-$B$G$"$k$3$H$OL@$i$+!%$3$N$H$-(B<IMG
- WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img201.png"
- ALT="$ Y$">
-<!-- MATHEND
- 
- -->
-$B$NL)EYJ,I[$O(B
-<P><!-- MATH
- \begin{displaymath}
-f_{Y}\left(  y\right)  =f_{X}\left(  x\right)  \left\vert g^{\prime}\left(
-x\right)  \right\vert ^{-1}=f_{X}\left(  x\right)  \left\vert f_{X}\left(
-x\right)  \right\vert ^{-1}=1.
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="348" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
- SRC="img211.png"
- ALT="$\displaystyle f_{Y}\left( y\right) =f_{X}\left( x\right) \left\vert g^{\prime}\...
-...1}=f_{X}\left( x\right) \left\vert f_{X}\left(
-x\right) \right\vert ^{-1}=1.
-$">
+<tex2html_verbatim_mark>mathend000#</P>
+を考えてみよう．ここで<tex2html_verbatim_mark>#math308#<tex2html_image_mark>#tex2html_wrap_inline5898#
+<tex2html_verbatim_mark>mathend000#は<tex2html_image_mark>#tex2html_wrap_inline5900#
+<tex2html_verbatim_mark>mathend000#自身の密度分布であるから，<tex2html_verbatim_mark>#math309#<tex2html_image_mark>#tex2html_wrap_inline5902#
+<tex2html_verbatim_mark>mathend000#として<tex2html_image_mark>#tex2html_wrap_inline5904#
+<tex2html_verbatim_mark>mathend000#の分布関数<tex2html_verbatim_mark>#math310#<tex2html_image_mark>#tex2html_wrap_inline5906#
+<tex2html_verbatim_mark>mathend000#を選んだことになる．
+従って<tex2html_verbatim_mark>#math311#<tex2html_image_mark>#tex2html_wrap_inline5908#
+<tex2html_verbatim_mark>mathend000#であることは明らか．このとき<tex2html_image_mark>#tex2html_wrap_inline5910#
+<tex2html_verbatim_mark>mathend000#の密度分布は
+<P><tex2html_verbatim_mark>#math312#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay5912#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$D$^$j!$3NN(JQ?t(B<IMG
- WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img201.png"
- ALT="$ Y$">
-<!-- MATHEND
- 
- -->
-$B$O(B<!-- MATH
- $\left[0,1\right]$
- -->
-<IMG
- WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img212.png"
- ALT="$ \left[0,1\right] $">
-<!-- MATHEND
- 
- -->
-$B$N6h4VFb$K0lMMJ,I[$9$k0lMMMp?t$G$"$k!%<0$N$h$&$KJQ?tJQ49$r$9$k$H!$L)EY$,>.$5$/$J$k$H$3$m$G$O!$JQ49$N79$-$,>.$5$/$J$j(B<IMG
- WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img206.png"
- ALT="$ y$">
-<!-- MATHEND
- 
- -->
-$B<4>e$K6E=L$9$k8z2L$,F/$/!%5U$KL)EY$,Bg$-$/$J$k$H$3$m$G79$-$,Bg$-$/$J$k$+$i!$(B<IMG
- WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img206.png"
- ALT="$ y$">
-<!-- MATHEND
- 
- -->
-$B<4>e$GAB$K$J$k$h$&$J8z2L$,F/$/!%$3$N$h$&$KL)EY$rAj;&$9$k$h$&$K<LA|$5$l$k!%7k2L$H$7$F3NN(JQ?t(B<IMG
- WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img201.png"
- ALT="$ Y$">
-<!-- MATHEND
- 
- -->
-$B$O(B<!-- MATH
- $\left[  0,1\right]$
- -->
-<IMG
- WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img212.png"
- ALT="$ \left[0,1\right] $">
-<!-- MATHEND
- 
- -->
-$B$N6h4V$K0lMM$KJ,I[$9$k$3$H$K$J$k!%(B
+<tex2html_verbatim_mark>mathend000#</P>
+つまり確率変数<tex2html_image_mark>#tex2html_wrap_inline5914#
+<tex2html_verbatim_mark>mathend000#は<tex2html_verbatim_mark>#math313#<tex2html_image_mark>#tex2html_wrap_inline5916#
+<tex2html_verbatim_mark>mathend000#の区間内に一様分布する一様乱数である．式のように変数変換をすると密度が小さくなるところでは変換の傾きが小さくなり<tex2html_image_mark>#tex2html_wrap_inline5918#
+<tex2html_verbatim_mark>mathend000#軸上に凝縮する効果が働く．逆に密度が大きくなるところで傾きが大きくなるから<tex2html_image_mark>#tex2html_wrap_inline5920#
+<tex2html_verbatim_mark>mathend000#軸上で疎になるような効果が働く．このように密度を相殺するように写像される．結果として確率変数<tex2html_image_mark>#tex2html_wrap_inline5922#
+<tex2html_verbatim_mark>mathend000#は<tex2html_verbatim_mark>#math314#<tex2html_image_mark>#tex2html_wrap_inline5924#
+<tex2html_verbatim_mark>mathend000#の区間に一様に分布することになる．
 
 <P>
-$B$=$3$G5U$K!$(B<IMG
- WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img213.png"
- ALT="$ \xi$">
-<!-- MATHEND
- 
- -->
-$B$r(B<!-- MATH
- $\left[  0,1\right]$
- -->
-<IMG
- WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img212.png"
- ALT="$ \left[0,1\right] $">
-<!-- MATHEND
- 
- -->
-$B$N6h4V$N0lMMMp?t$H$7$F(B
-<P><!-- MATH
- \begin{displaymath}
-\xi=\int_{-\infty}^{\eta}f_{X}\left(  x\right)  dx
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="132" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
- SRC="img214.png"
- ALT="$\displaystyle \xi=\int_{-\infty}^{\eta}f_{X}\left( x\right) dx
-$">
+そこで逆に<tex2html_image_mark>#tex2html_wrap_inline5926#
+<tex2html_verbatim_mark>mathend000#を<tex2html_verbatim_mark>#math315#<tex2html_image_mark>#tex2html_wrap_inline5928#
+<tex2html_verbatim_mark>mathend000#の区間の一様乱数として
+<P><tex2html_verbatim_mark>#math316#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay5930#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$rK~$?$9(B<IMG
- WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img215.png"
- ALT="$ \eta$">
-<!-- MATHEND
- 
- -->
-$B$r5a$a$k$H!$(B<IMG
- WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img215.png"
- ALT="$ \eta$">
-<!-- MATHEND
- 
- -->
-$B$OL)EYJ,I[(B<!-- MATH
- $f_{X}\left(
-\eta\right)$
- -->
-<IMG
- WIDTH="48" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img216.png"
- ALT="$ f_{X}\left(
-\eta\right) $">
-<!-- MATHEND
- 
- -->
-$B$K=>$&!%(B<!-- MATH
- $F_{X}\left(  \eta\right)
-=\int_{-\infty}^{\eta}f_{X}\left(  x\right)  dx$
- -->
-<IMG
- WIDTH="169" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img217.png"
- ALT="$ F_{X}\left( \eta\right)
-=\int_{-\infty}^{\eta}f_{X}\left( x\right) dx$">
-<!-- MATHEND
- 
- -->
-$B$H=q$1$P!$(B<!-- MATH
- $\eta=F^{-1}\left(  \xi\right)$
- -->
-<IMG
- WIDTH="86" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img218.png"
- ALT="$ \eta=F^{-1}\left( \xi\right) $">
-<!-- MATHEND
- 
- -->
-$B$G$"$k!%(B
-$B$3$N$h$&$K$7$F!$0lMMMp?t(B<IMG
- WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img213.png"
- ALT="$ \xi$">
-<!-- MATHEND
- 
- -->
-$B$+$i5U4X?t(B<!-- MATH
- $F_{X}^{-1}\left(  \xi\right)$
- -->
-<IMG
- WIDTH="56" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img219.png"
- ALT="$ F_{X}^{-1}\left( \xi\right) $">
-<!-- MATHEND
- 
- -->
-$B$rMQ$$$F!$L)EYJ,I[(B<!-- MATH
- $f_{X}\left(  \eta\right)  =F_{X}^{\prime
-}\left(  \eta\right)$
- -->
-<IMG
- WIDTH="115" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img220.png"
- ALT="$ f_{X}\left( \eta\right) =F_{X}^{\prime
-}\left( \eta\right) $">
-<!-- MATHEND
- 
- -->
-$B$K=>$&Mp?t(B<IMG
- WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img215.png"
- ALT="$ \eta$">
-<!-- MATHEND
- 
- -->
-$B$r:n@.$9$kJ}K!$r5U4X?tK!$H$$$&!%(B
+<tex2html_verbatim_mark>mathend000#</P>
+を満たす<tex2html_image_mark>#tex2html_wrap_inline5932#
+<tex2html_verbatim_mark>mathend000#を求めると，<tex2html_image_mark>#tex2html_wrap_inline5934#
+<tex2html_verbatim_mark>mathend000#は密度分布<tex2html_verbatim_mark>#math317#<tex2html_image_mark>#tex2html_wrap_inline5936#
+<tex2html_verbatim_mark>mathend000#に従う．<tex2html_verbatim_mark>#math318#<tex2html_image_mark>#tex2html_wrap_inline5938#
+<tex2html_verbatim_mark>mathend000#と書けば，<tex2html_verbatim_mark>#math319#<tex2html_image_mark>#tex2html_wrap_inline5940#
+<tex2html_verbatim_mark>mathend000#である．
+このようにして一様乱数<tex2html_image_mark>#tex2html_wrap_inline5942#
+<tex2html_verbatim_mark>mathend000#から逆関数<tex2html_verbatim_mark>#math320#<tex2html_image_mark>#tex2html_wrap_inline5944#
+<tex2html_verbatim_mark>mathend000#を用いて，密度分布<tex2html_verbatim_mark>#math321#<tex2html_image_mark>#tex2html_wrap_inline5946#
+<tex2html_verbatim_mark>mathend000#に従う乱数<tex2html_image_mark>#tex2html_wrap_inline5948#
+<tex2html_verbatim_mark>mathend000#を作成する方法を逆関数法という．
 
 <P>
 
 <H3><A NAME="SECTION00331100000000000000">
-$B;X?tJ,I[(B</A>
+指数分布</A>
 </H3>
 
 <P>
-$B;X?tJ,I[$N>l9g$O5U4X?t$,2r@OE*$K5a$a$i$l$k!%J?6Q(B<IMG
- WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img132.png"
- ALT="$ 1/\lambda$">
-<!-- MATHEND
- 
- -->
-$B$N;X?tJ,I[$r9M$((B
-<P><!-- MATH
- \begin{displaymath}
-\xi=\int_{0}^{\eta}\lambda e^{-\lambda x}dx=\left[  -e^{-\lambda x}\right]
-_{0}^{\eta}=1-e^{-\lambda\eta}
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="288" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
- SRC="img221.png"
- ALT="$\displaystyle \xi=\int_{0}^{\eta}\lambda e^{-\lambda x}dx=\left[ -e^{-\lambda x}\right]
-_{0}^{\eta}=1-e^{-\lambda\eta}
-$">
+指数分布の場合は逆関数が解析的に求められる．平均<tex2html_image_mark>#tex2html_wrap_inline5951#
+<tex2html_verbatim_mark>mathend000#の指数分布を考え
+<P><tex2html_verbatim_mark>#math322#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay5953#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$r(B<IMG
- WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img215.png"
- ALT="$ \eta$">
-<!-- MATHEND
- 
- -->
-$B$K4X$7$F2r$$$F(B
+<tex2html_verbatim_mark>mathend000#</P>
+を<tex2html_image_mark>#tex2html_wrap_inline5955#
+<tex2html_verbatim_mark>mathend000#に関して解いて
 <P></P>
-<DIV ALIGN="CENTER"><!-- MATH
- \begin{equation}
-\eta=-\lambda^{-1}\log\xi.
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><tex2html_verbatim_mark>#math323#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="111" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img222.png"
- ALT="$\displaystyle \eta=-\lambda^{-1}\log\xi.$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay5957#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-(1.21)</TD></TR>
+(1.26)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B$?$@$7(B<IMG
- WIDTH="39" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img223.png"
- ALT="$ 1-\xi$">
-<!-- MATHEND
- 
- -->
-$B$O(B<IMG
- WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img213.png"
- ALT="$ \xi$">
-<!-- MATHEND
- 
- -->
-$B$GCV$-49$($?!%0lMMMp?t(B<IMG
- WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img213.png"
- ALT="$ \xi$">
-<!-- MATHEND
- 
- -->
-$B$r@8@.$7!$>e<0$NJQ49$r9T$($PJ?6Q(B<IMG
- WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img132.png"
- ALT="$ 1/\lambda$">
-<!-- MATHEND
- 
- -->
-$B$N;X?tJ,I[$K=>$&3NN(JQ?t$r@8@.$G$-$k!%(B
+ただし<tex2html_image_mark>#tex2html_wrap_inline5959#
+<tex2html_verbatim_mark>mathend000#は<tex2html_image_mark>#tex2html_wrap_inline5961#
+<tex2html_verbatim_mark>mathend000#で置き換えた．一様乱数<tex2html_image_mark>#tex2html_wrap_inline5963#
+<tex2html_verbatim_mark>mathend000#を生成し，上式の変換を行えば平均<tex2html_image_mark>#tex2html_wrap_inline5965#
+<tex2html_verbatim_mark>mathend000#の指数分布に従う確率変数を生成できる．
 
 <P>
 
-<H3><A NAME="SECTION00331200000000000000"></A><A NAME="761"></A>
-<BR>
-$B%o%$%V%kJ,I[(B
+<H3><A NAME="SECTION00331200000000000000"><tex2html_anchor_invisible_mark></A><A NAME="858"><tex2html_anchor_invisible_mark></A><BR>
+ワイブル分布
 </H3>
 
 <P>
-$B%o%$%V%kJ,I[$NJ,I[4X?t$+$i(B
-<P><!-- MATH
- \begin{displaymath}
-\xi=F\left(  \eta;\lambda,\kappa\right)  =1-\exp\left[  -\left\{
-\Gamma\left(  1+1/\kappa\right)  \lambda\eta\right\}  ^{\kappa}\right]  .
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="330" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img224.png"
- ALT="$\displaystyle \xi=F\left( \eta;\lambda,\kappa\right) =1-\exp\left[ -\left\{
-\Gamma\left( 1+1/\kappa\right) \lambda\eta\right\} ^{\kappa}\right] .
-$">
+ワイブル分布の分布関数から
+<P><tex2html_verbatim_mark>#math324#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay5968#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-<IMG
- WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img12.png"
- ALT="$ t$">
-<!-- MATHEND
- 
- -->
-$B$K4X$7$F2r$$$F(B
+<tex2html_verbatim_mark>mathend000#</P>
+<tex2html_image_mark>#tex2html_wrap_inline5970#
+<tex2html_verbatim_mark>mathend000#に関して解いて
 <P></P>
-<DIV ALIGN="CENTER"><!-- MATH
- \begin{equation}
-\eta=-\frac{\left[  -\log\xi\right]  ^{1/\kappa}}{\Gamma\left(  1+1/\kappa
-\right)  \lambda}.
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><tex2html_verbatim_mark>#math325#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="144" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
- SRC="img225.png"
- ALT="$\displaystyle \eta=-\frac{\left[ -\log\xi\right] ^{1/\kappa}}{\Gamma\left( 1+1/\kappa \right) \lambda}.$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay5972#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-(1.22)</TD></TR>
+(1.27)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B$3$l$h$j0lMMMp?t(B<IMG
- WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img213.png"
- ALT="$ \xi$">
-<!-- MATHEND
- 
- -->
-$B$r@8@.$7!$>e<0$NJQ49$r9T$($P%o%$%V%kJ,I[$K=>$&3NN(JQ?t$r@8@.$G$-$k!%(B<IMG
- WIDTH="50" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img226.png"
- ALT="$ -\log\xi$">
-<!-- MATHEND
- 
- -->
-$B$,J?6Q(B<IMG
- WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img227.png"
- ALT="$ 1$">
-<!-- MATHEND
- 
- -->
-$B$N;X?tJ,I[$K=>$&$3$H$KCm0U!%(B
+これより一様乱数<tex2html_image_mark>#tex2html_wrap_inline5974#
+<tex2html_verbatim_mark>mathend000#を生成し，上式の変換を行えばワイブル分布に従う確率変数を生成できる．<tex2html_image_mark>#tex2html_wrap_inline5976#
+<tex2html_verbatim_mark>mathend000#が平均<tex2html_image_mark>#tex2html_wrap_inline5978#
+<tex2html_verbatim_mark>mathend000#の指数分布に従うことに注意．
 
 <P>
 
 <H3><A NAME="SECTION00331300000000000000">
-$B$=$NB>$NJ,I[(B</A>
+その他の分布</A>
 </H3>
 
 <P>
-$B;X?tJ,I[!$(BWeibull$BJ,I[!$(BPareto$BJ,I[Ey$O5U4X?t$rMF0W$K5a$a$i$l$k!%5U4X?t$r2r@OE*$K5a$a$k$3$H$,$G$-$J$$$H$-$K$b!$?tCM7W;;$K$h$j=jK>$NJ,I[$K=>$&3NN(JQ?t$r@8@.$9$k$3$H$,$G$-$k!%0lMMMp?t(B<IMG
- WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img213.png"
- ALT="$ \xi$">
-<!-- MATHEND
- 
- -->
-$B$r@8@.$7!$?tCM@QJ,$K$h$j(B<!-- MATH
- $\xi=F\left(  \eta\right)  =\int_{-\infty}^{\eta
-}f\left(  x\right)  dx$
- -->
-<IMG
- WIDTH="178" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img228.png"
- ALT="$ \xi=F\left( \eta\right) =\int_{-\infty}^{\eta
-}f\left( x\right) dx$">
-<!-- MATHEND
- 
- -->
-$B$rK~$?$9(B<IMG
- WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img215.png"
- ALT="$ \eta$">
-<!-- MATHEND
- 
- -->
-$B$r5a$a$l$P$h$$!%%,%s%^J,I[!&5U%,%&%9J,I[$K=>$&3NN(JQ?t$O$3$NJ}K!$GF@$k$3$H$,$G$-$k!%(B
+指数分布，Weibull分布，Pareto分布等は逆関数を容易に求められる．逆関数を解析的に求めることができないときにも，数値計算により所望の分布に従う確率変数を生成することができる．一様乱数<tex2html_image_mark>#tex2html_wrap_inline5981#
+<tex2html_verbatim_mark>mathend000#を生成し，数値積分により<tex2html_verbatim_mark>#math326#<tex2html_image_mark>#tex2html_wrap_inline5983#
+<tex2html_verbatim_mark>mathend000#を満たす<tex2html_image_mark>#tex2html_wrap_inline5985#
+<tex2html_verbatim_mark>mathend000#を求めればよい．ガンマ分布・逆ガウス分布に従う確率変数はこの方法で得ることができる．
 
 <P>
 
 <H2><A NAME="SECTION00332000000000000000">
-$B%O%6!<%I4X?t$rMQ$$$?%9%Q%$%/@8@.(B</A>
+ハザード関数を用いたスパイク生成</A>
 </H2>
 
 <P>
-$B%O%6!<%I4X?t$+$i%9%Q%$%/$r@8@.$9$k>l9g!$J,I[4X?t$H%O%6!<%I4X?t$N4X78<0$KCmL\$9$k!%(B
-<P><!-- MATH
- \begin{displaymath}
-F\left(  t\right)  =1-\exp\left\{  -\int_{0}^{t}r\left(  u\right)  du\right\}
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="228" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
- SRC="img229.png"
- ALT="$\displaystyle F\left( t\right) =1-\exp\left\{ -\int_{0}^{t}r\left( u\right) du\right\}
-$">
+ハザード関数からスパイクを生成する場合，分布関数とハザード関数の関係式に注目する．
+<P><tex2html_verbatim_mark>#math327#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay5988#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$rJQ7A$7$F(B
+<tex2html_verbatim_mark>mathend000#</P>
+を変形して
 <P></P>
-<DIV ALIGN="CENTER"><!-- MATH
- \begin{equation}
-\int_{0}^{t}r\left(  u\right)  du=-\log\left[  1-F\left(  t\right)  \right]  .
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><tex2html_verbatim_mark>#math328#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="216" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
- SRC="img230.png"
- ALT="$\displaystyle \int_{0}^{t}r\left( u\right) du=-\log\left[ 1-F\left( t\right) \right] .$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay5990#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-(1.23)</TD></TR>
+(1.28)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B$5$F!$(B<IMG
- WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img215.png"
- ALT="$ \eta$">
-<!-- MATHEND
- 
- -->
-$B$r%9%Q%$%/L)EY4X?t(B<!-- MATH
- $f\left(  t\right)$
- -->
-<IMG
- WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img231.png"
- ALT="$ f\left( t\right) $">
-<!-- MATHEND
- 
- -->
-($BJ,I[4X?t(B<!-- MATH
- $F\left(  t\right)$
- -->
-<IMG
- WIDTH="37" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img232.png"
- ALT="$ F\left( t\right) $">
-<!-- MATHEND
- 
- -->
-)$B$K=>$&3NN(JQ?t$H$9$k$H!$(B<!-- MATH
- $F\left(\eta\right)$
- -->
-<IMG
- WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img233.png"
- ALT="$ F\left(\eta\right) $">
-<!-- MATHEND
- 
- -->
-$B$O0lMMMp?t$K$J$j!$(B<!-- MATH
- $-\log\left[  1-F\left(  \eta\right)  \right]$
- -->
-<IMG
- WIDTH="115" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img234.png"
- ALT="$ -\log\left[ 1-F\left( \eta\right) \right] $">
-<!-- MATHEND
- 
- -->
-$B$O;X?tMp?t$K$J$k!%$=$3$G!$;X?tJ,I[$K=>$&Mp?t(B<!-- MATH
- $\zeta\left(  =-\log\xi\right)$
- -->
-<IMG
- WIDTH="90" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img235.png"
- ALT="$ \zeta\left( =-\log\xi\right) $">
-<!-- MATHEND
- 
- -->
-$B$r@8@.$7(B
-<P><!-- MATH
- \begin{displaymath}
-\zeta=\int_{0}^{\eta}r\left(  u\right)  du
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="112" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
- SRC="img236.png"
- ALT="$\displaystyle \zeta=\int_{0}^{\eta}r\left( u\right) du
-$">
+さて，<tex2html_image_mark>#tex2html_wrap_inline5992#
+<tex2html_verbatim_mark>mathend000#をスパイク密度関数<tex2html_verbatim_mark>#math329#<tex2html_image_mark>#tex2html_wrap_inline5994#
+<tex2html_verbatim_mark>mathend000#(分布関数<tex2html_verbatim_mark>#math330#<tex2html_image_mark>#tex2html_wrap_inline5996#
+<tex2html_verbatim_mark>mathend000#)に従う確率変数とすると，<tex2html_verbatim_mark>#math331#<tex2html_image_mark>#tex2html_wrap_inline5998#
+<tex2html_verbatim_mark>mathend000#は一様乱数になり，<tex2html_verbatim_mark>#math332#<tex2html_image_mark>#tex2html_wrap_inline6000#
+<tex2html_verbatim_mark>mathend000#は指数乱数になる．そこで，指数分布に従う乱数<tex2html_verbatim_mark>#math333#<tex2html_image_mark>#tex2html_wrap_inline6002#
+<tex2html_verbatim_mark>mathend000#を生成し
+<P><tex2html_verbatim_mark>#math334#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay6004#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$rK~$?$9(B<IMG
- WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img215.png"
- ALT="$ \eta$">
-<!-- MATHEND
- 
- -->
-$B$r5a$a$l$P!$(B<IMG
- WIDTH="13" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img215.png"
- ALT="$ \eta$">
-<!-- MATHEND
- 
- -->
-$B$O%9%Q%$%/L)EY4X?t(B<!-- MATH
- $f\left(  t\right)$
- -->
-<IMG
- WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img231.png"
- ALT="$ f\left( t\right) $">
-<!-- MATHEND
- 
- -->
-$B$K=>$&3NN(JQ?t$K$J$k!%$3$N<jK!$O<!@a0J9_$GHsDj>o$N%9%Q%$%/;~7ONs$r<B8=$9$k:]$KMQ$$$i$l$k;~4V?-=LM}O@$N4pAC$K$J$k!%(B
+<tex2html_verbatim_mark>mathend000#</P>
+を満たす<tex2html_image_mark>#tex2html_wrap_inline6006#
+<tex2html_verbatim_mark>mathend000#を求めれば，<tex2html_image_mark>#tex2html_wrap_inline6008#
+<tex2html_verbatim_mark>mathend000#はスパイク密度関数<tex2html_verbatim_mark>#math335#<tex2html_image_mark>#tex2html_wrap_inline6010#
+<tex2html_verbatim_mark>mathend000#に従う確率変数になる．この手法は次節以降で非定常のスパイク時系列を実現する際に用いられる時間伸縮理論の基礎になる．
 
 <P>
 
 <H2><A NAME="SECTION00333000000000000000">
-$B%9%Q%$%/;~7ONs$N:n@.(B</A>
+スパイク時系列の作成</A>
 </H2>
 
 <P>
-$B%j%K%e!<%"%k2aDx$G$O%9%Q%$%/4V3V(B<!-- MATH
- $\left\{T_{1},T_{2},\ldots,T_{n}\right\}$
- -->
-<IMG
- WIDTH="113" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img237.png"
- ALT="$ \left\{T_{1},T_{2},\ldots,T_{n}\right\} $">
-<!-- MATHEND
- 
- -->
-$B$rFHN)$K@8@.$7$F$h$$!%(B<IMG
- WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img238.png"
- ALT="$ i$">
-<!-- MATHEND
- 
- -->
-$BHVL\$N%9%Q%$%/;~9o$r(B<!-- MATH
- $t_{i}=T_{1}+T_{2}+,\ldots,+T_{i}$
- -->
-<IMG
- WIDTH="164" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img239.png"
- ALT="$ t_{i}=T_{1}+T_{2}+,\ldots,+T_{i}$">
-<!-- MATHEND
- 
- -->
-$B$H$7$F!$%9%Q%$%/;~7ONs(B<!-- MATH
- $\left\{  t_{1},t_{2},\ldots,t_{n}\right\}$
- -->
-<IMG
- WIDTH="103" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img240.png"
- ALT="$ \left\{ t_{1},t_{2},\ldots,t_{n}\right\} $">
-<!-- MATHEND
- 
- -->
-$B$,F@$i$l$k!%(B
+リニューアル過程ではスパイク間隔<tex2html_verbatim_mark>#math336#<tex2html_image_mark>#tex2html_wrap_inline6013#
+<tex2html_verbatim_mark>mathend000#を独立に生成してよい．<tex2html_image_mark>#tex2html_wrap_inline6015#
+<tex2html_verbatim_mark>mathend000#番目のスパイク時刻を<tex2html_verbatim_mark>#math337#<tex2html_image_mark>#tex2html_wrap_inline6017#
+<tex2html_verbatim_mark>mathend000#として，スパイク時系列<tex2html_verbatim_mark>#math338#<tex2html_image_mark>#tex2html_wrap_inline6019#
+<tex2html_verbatim_mark>mathend000#が得られる．
 
 <P>
-$B$?$@$7=i4|%9%Q%$%/$N%9%Q%$%/L)EYJ,I[$OJ?9UJ,I[(B
+ただし初期スパイクのスパイク密度分布は平衡分布
 <P></P>
-<DIV ALIGN="CENTER"><!-- MATH
- \begin{equation}
-f_{1}\left(  t\right)  =\lambda\left[  1-F\left(  t\right)  \right]
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><tex2html_verbatim_mark>#math339#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="142" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img241.png"
- ALT="$\displaystyle f_{1}\left( t\right) =\lambda\left[ 1-F\left( t\right) \right]$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6021#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-(1.24)</TD></TR>
+(1.29)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B$GM?$($k!%$3$3$G(B <!-- MATH
- $1/\lambda=\int xf\left(  x\right)  dx$
- -->
-<IMG
- WIDTH="127" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img242.png"
- ALT="$ 1/\lambda=\int xf\left( x\right) dx$">
-<!-- MATHEND
- 
- -->
-$B!%=i4|%9%Q%$%/$N$_$rJ?9UJ,I[$+$i@8@.$7$?2aDx$rJ?9U%j%K%e!<%"%k2aDx(B<A NAME="794"></A>$B$H8F$V!%(B
+で与える．ここで <tex2html_verbatim_mark>#math340#<tex2html_image_mark>#tex2html_wrap_inline6023#
+<tex2html_verbatim_mark>mathend000#．初期スパイクのみを平衡分布から生成した過程を平衡リニューアル過程<A NAME="891"><tex2html_anchor_invisible_mark></A>と呼ぶ．
 
 <P>
-<HR>
-<!--Navigation Panel-->
-<A NAME="tex2html235"
-  HREF="node7.html">
-<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
-<A NAME="tex2html229"
-  HREF="node3.html">
-<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
- SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
-<A NAME="tex2html225"
-  HREF="node5.html">
-<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
- SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
-<A NAME="tex2html231"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
- SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
-<A NAME="tex2html233"
-  HREF="node15.html">
-<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
- SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
-<BR>
-<B> Next:</B> <A NAME="tex2html236"
-  HREF="node7.html">$BHsDj>o%9%Q%$%/;~7ONs%b%G%k(B</A>
-<B> Up:</B> <A NAME="tex2html230"
-  HREF="node3.html">$BDj>o%9%Q%$%/;~7ONs%b%G%k(B</A>
-<B> Previous:</B> <A NAME="tex2html226"
-  HREF="node5.html">$BDj>o%j%K%e!<%"%k2aDx(B</A>
- &nbsp; <B>  <A NAME="tex2html232"
-  HREF="node1.html">$BL\<!(B</A></B> 
- &nbsp; <B>  <A NAME="tex2html234"
-  HREF="node15.html">$B:w0z(B</A></B> 
-<!--End of Navigation Panel-->
-<ADDRESS>
-&copy; 2007 2008 2009 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki, Ph.D.</a>
-</ADDRESS>
-</BODY>
-</HTML>

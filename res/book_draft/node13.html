@@ -1,2120 +1,680 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-
-<!--Converted with jLaTeX2HTML 2008 (1.71) JA patch-1.10beta2.13
-patched version by:  Kenshi Muto, Debian Project.
-* modified by:  Shige TAKENO
-LaTeX2HTML 2008 (1.71),
-original version by:  Nikos Drakos, CBLU, University of Leeds
-* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
-* with significant contributions from:
-  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
-<HTML>
-<HEAD>
-
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-2022-jp">
-<META NAME="Generator" CONTENT="jLaTeX2HTML v2008 JA patch-1.10beta2.13">
-<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
-<META NAME="description" CONTENT="$Bp%Xk"<(B $Bn7%"p*0iSdkn%#l:%c(B">
-<META NAME="keywords" CONTENT="book">
-<META NAME="resource-type" CONTENT="document">
-<META NAME="distribution" CONTENT="global">
-
-<LINK REL="STYLESHEET" HREF="../css/latex2html.css">
-
-<LINK REL="next" HREF="node14.html">
-<LINK REL="previous" HREF="node11.html">
-<LINK REL="up" HREF="book.html">
-<LINK REL="next" HREF="node14.html">
-<TITLE>$Bp%Xk"<(B $Bn7%"p*0iSdkn%#l:%c(B</TITLE>
-
-<META http-equiv=Content-Type content="text/html; charset=shift_jis">
-<script src=http://www.google-analytics.com/urchin.js type=text/javascript></script>
-<script type=text/javascript>_uacct="UA-745872-1";urchinTracker();</script>
-</HEAD>
-
-<BODY>
-    <a name=top id=top> </a>
-    <div id=NaviLayer>  
-    <table width=180 border=0 cellpadding=0 cellspacing=0>
-    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
-    <tr><td height=28 valign=top><b>Spike Density Estimation</b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../histogram.html>Histogram Method</a></b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../kernel.html>Kernel Method</a></b></td></tr>
-    <tr><td height=8 valign=top></td></tr>
-    <tr><td height=8 valign=top><b>Share it with your friend</b></td></tr>
-    <tr><td valign=top><a class=addthis_button href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcbd554189b9a7"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width=125 height=16 alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcbd554189b9a7"></script></td></tr>
-    <tr><td height=8 valign=top></td></tr>
-    <tr><td height=8 valign=top><b>Tweet</b></td></tr>
-    <tr><td valign=top><iframe src=../../tweet.html width=180 height=600 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
-    <tr><td height=28 valign=top></td></tr>
-    </table></div>
-<!--Navigation Panel-->
-<A NAME="tex2html381"
-  HREF="node14.html">
-<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
-<A NAME="tex2html375"
-  HREF="book.html">
-<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
- SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
-<A NAME="tex2html369"
-  HREF="node12.html">
-<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
- SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
-<A NAME="tex2html377"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
- SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
-<A NAME="tex2html379"
-  HREF="node15.html">
-<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
- SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
-<BR>
-<B> Next:</B> <A NAME="tex2html382"
-  HREF="node14.html">$B%5%$%1%X%O%/%/!&(B</A>
-<B> Up:</B> <A NAME="tex2html376"
-  HREF="book.html">$Beb%1ecBe$&eb%Cn7%"p*0e&$ec.e&-ie!&qv(B/A>
-<B> Previous:</B> <A NAME="tex2html370"
-  HREF="node12.html">$B%9%Q%$%/L)EY?dDj(B</A>
- &nbsp; <B>  <A NAME="tex2html378"
-  HREF="node1.html">$BL\<!(B</A></B> 
- &nbsp; <B>  <A NAME="tex2html380"
-  HREF="node15.html">$B:w0z(B</A></B> 
-<BR>
-<BR>
-<!--End of Navigation Panel-->
 
 <H1><A NAME="SECTION00600000000000000000">
-$Bh#(B $BE}7WE*?dB,(B</A>
+補遺 統計的推測</A>
 </H1>
 
 <P>
-$BE}7WE*?dB,$NM}O@$H<BA)$O%+!<%k!&%T%"%=%s(B(Karl Pearson)$B$H%m%J%k%I!&%(%$%k%^!<!&%U%#%C%7%c!<(B(R.A$B!%(BFisher)$B$K$h$C$FC[$+$l$?!%%T%"%=%s$O%G!<%?$NGX8e$K@x$`E}7W%b%G%k$H$$$&35G0$rL@3N$K$7!$E}7W%b%G%k$NJl?t$r%G!<%?$+$i7hDj$7$F2J3XE*$J8!>Z$K;H$&$3$H$r?d?J$7$?!%%U%#%C%7%c!<$O%G!<%?$+$iF@$i$l$kE}7WNL$HE}7W%b%G%k$NJl?t$H$rL@3N$K6hJL$7!$E}7WNL!J?dDjNL!K$NK>$^$7$$@-<A$rO@$8$?!%$=$7$F!$7+$jJV$79T$o$l$k<B83$K$h$j%G!<%?$r=8$a$F!$E}7W%b%G%k$NJl?t$r?dDj$9$k:GL`K!$r?d?J$7E}7WE*?dB,$NM}O@$r3NN)$7$?!%(B
-$B%U%#%C%7%c!<$NBG$AN)$F$?E}7WE*?dB,$NM}O@$N6/NO$J2>Dj$O!$Jl?t$,Dj?t$G$"$k$3$H$G$"$k!%(B
-$B7WB,4|4VCf$KJl?t$,JQF0$7$?$j!$;n9T$4$H$KJl?t$,JQF0$9$k$3$H$OA[Dj$7$J$$!%?@7P2J3X$K$*$1$k<B83%Q%i%@%$%`$b!$$3$l$K=>$$F10l<B832<$G(B $B7+$jJV$7<B83$r9T$&$N$,<gN.$G$"$k!%8=Be$O$3$N$h$&$J@)Ls$+$iN%$l!$8=<B@$3&$GF@$i$l$k%G!<%?$+$iE}7WE*$JH=CG$r2<$9I,MW$KGw$i$l$F$$$k$?$a$K!$%Y%$%:E}7W3X$,N4@9$G$"$k!%(B
+統計的推測の理論と実践はカール・ピアソン(Karl Pearson)とロナルド・エイルマー・フィッシャー(R.A．Fisher)によって築かれた．ピアソンはデータの背後に潜む統計モデルという概念を明確にし，統計モデルの母数をデータから決定して科学的な検証に使うことを推進した．フィッシャーはデータから得られる統計量と統計モデルの母数とを明確に区別し，統計量（推定量）の望ましい性質を論じた．そして，繰り返し行われる実験によりデータを集めて，統計モデルの母数を推定する最尤法を推進し統計的推測の理論を確立した．
+フィッシャーの打ち立てた統計的推測の理論の強力な仮定は，母数が定数であることである．
+計測期間中に母数が変動したり，試行ごとに母数が変動することは想定しない．神経科学における実験パラダイムも，これに従い同一実験下で 繰り返し実験を行うのが主流である．現代はこのような制約から離れ，現実世界で得られるデータから統計的な判断を下す必要に迫られているために，ベイズ統計学が隆盛である．
 
 <P>
 
-<H2><A NAME="SECTION00601000000000000000"></A><A NAME="1850"></A>
-<BR>
-$BJ?6QFs>h8m:9(B
+<H2><A NAME="SECTION00601000000000000000"><tex2html_anchor_invisible_mark></A><A NAME="1805"><tex2html_anchor_invisible_mark></A><BR>
+平均二乗誤差
 
 </H2>
 
 <P>
-<!-- MATH
- $\hat{\theta}$
- -->
-<IMG
- WIDTH="12" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
- SRC="img488.png"
- ALT="$ \hat{\theta}$">
-<!-- MATHEND
- 
- -->
-$B$r%Q%i%a!<%?(B<IMG
- WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img414.png"
- ALT="$ \theta$">
-<!-- MATHEND
- 
- -->
-$B$N?dDjNL$H$9$k!%Nc$r$"$2$F$_$h$&!%(B<IMG
- WIDTH="23" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img489.png"
- ALT="$ X_{i}$">
-<!-- MATHEND
- 
- -->
-$B$,J?6Q(B<IMG
- WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img414.png"
- ALT="$ \theta$">
-<!-- MATHEND
- 
- -->
-$B$N;X?tJ,I[$K=>$&Mp?t$H$9$k$H!$(B<IMG
- WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img414.png"
- ALT="$ \theta$">
-<!-- MATHEND
- 
- -->
-$B$N?dDjNL(B<!-- MATH
- $\hat{\theta}$
- -->
-<IMG
- WIDTH="12" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
- SRC="img488.png"
- ALT="$ \hat{\theta}$">
-<!-- MATHEND
- 
- -->
-$B$NNc$H$7$F$^$:9M$($i$l$k$N$,!$J?6Q(B<!-- MATH
- $\hat
-{\theta}_{n}=\frac{1}{n}\sum X_{i}$
- -->
-<IMG
- WIDTH="94" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img490.png"
- ALT="$ \hat
-{\theta}_{n}=\frac{1}{n}\sum X_{i}$">
-<!-- MATHEND
- 
- -->
-$B!$$,$"$k!%?dDjNL$OB>$K$b9M$($i$l$k!%Nc$($P=i$a$N%5%s%W%k$@$1$r;H$&(B<!-- MATH
- $\hat{\theta}_{1}=X_{i}$
- -->
-<IMG
- WIDTH="59" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img491.png"
- ALT="$ \hat{\theta}_{1}=X_{i}$">
-<!-- MATHEND
- 
- -->
-$B$b(B<IMG
- WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img414.png"
- ALT="$ \theta$">
-<!-- MATHEND
- 
- -->
-$B$N?dDjNL$G$"$k!%$=$l$G$OK>$^$7$$?dDjNL$H$O$I$N$h$&$J@-<A$r;}$D$Y$-$@$m$&$+!%J?6QFs>h8m:9$O$=$N0l$D$N4p=`$rM?$($k$H9M$($i$l$k!%(B
+<tex2html_verbatim_mark>#math500#<tex2html_image_mark>#tex2html_wrap_inline6723#
+<tex2html_verbatim_mark>mathend000#をパラメータ<tex2html_image_mark>#tex2html_wrap_inline6725#
+<tex2html_verbatim_mark>mathend000#の推定量とする．例をあげてみよう．<tex2html_image_mark>#tex2html_wrap_inline6727#
+<tex2html_verbatim_mark>mathend000#が平均<tex2html_image_mark>#tex2html_wrap_inline6729#
+<tex2html_verbatim_mark>mathend000#の指数分布に従う乱数とすると，<tex2html_image_mark>#tex2html_wrap_inline6731#
+<tex2html_verbatim_mark>mathend000#の推定量<tex2html_verbatim_mark>#math501#<tex2html_image_mark>#tex2html_wrap_inline6733#
+<tex2html_verbatim_mark>mathend000#の例としてまず考えられるのが，平均<tex2html_verbatim_mark>#math502#<tex2html_image_mark>#tex2html_wrap_inline6735#
+<tex2html_verbatim_mark>mathend000#，がある．推定量は他にも考えられる．例えば初めのサンプルだけを使う<tex2html_verbatim_mark>#math503#<tex2html_image_mark>#tex2html_wrap_inline6737#
+<tex2html_verbatim_mark>mathend000#も<tex2html_image_mark>#tex2html_wrap_inline6739#
+<tex2html_verbatim_mark>mathend000#の推定量である．それでは望ましい推定量とはどのような性質を持つべきだろうか．平均二乗誤差はその一つの基準を与えると考えられる．
 <P></P>
-<DIV ALIGN="CENTER"><A NAME="eq:MSE"></A><!-- MATH
- \begin{equation}
-\text{MSE}=E[(\hat{\theta}-\theta)^{2}]%
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><A NAME="eq:MSE"><tex2html_anchor_mark></A><tex2html_verbatim_mark>#math504#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER">MSE<IMG
- WIDTH="97" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img492.png"
- ALT="$\displaystyle =E[(\hat{\theta}-\theta)^{2}]%
-$"></TD>
+<TD NOWRAP ALIGN="CENTER">MSE<tex2html_image_mark>#tex2html_wrap_indisplay6741#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (4.1)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$BFs>hB;<:4X?t!"B;<:4X?t$r??$NJ,I[$G4|BTCM$r$H$C$?4X?t$r%j%9%/4X?t$H$$$&!%695A$N0UL#$G$O!$%j%9%/4X?t$N:G>.2=$,E}7W3X$d3X=,M}O@$N%F!<%^$G$"$k!%?dDjNL$N4|BTCM$r(B<!-- MATH
- $E\hat{\theta}=\bar{\theta}$
- -->
-<IMG
- WIDTH="54" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
- SRC="img493.png"
- ALT="$ E\hat{\theta}=\bar{\theta}$">
-<!-- MATHEND
- 
- -->
-$B$H$9$k$H(B,
+二乗損失関数、損失関数を真の分布で期待値をとった関数をリスク関数という．狭義の意味では，リスク関数の最小化が統計学や学習理論のテーマである．推定量の期待値を<tex2html_verbatim_mark>#math505#<tex2html_image_mark>#tex2html_wrap_inline6743#
+<tex2html_verbatim_mark>mathend000#とすると,
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
 <TD NOWRAP ALIGN="RIGHT">MSE</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="152" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img494.png"
- ALT="$\displaystyle =E[(\hat{\theta}-\bar{\theta}+\bar{\theta}-\theta )^{2}]$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6744#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="294" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img495.png"
- ALT="$\displaystyle =E[(\hat{\theta}-\bar{\theta})^{2}+2(\hat{\theta}-\bar{\theta})(\bar {\theta}-\theta)+(\bar{\theta}-\theta)^{2}]$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6745#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="171" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img496.png"
- ALT="$\displaystyle =E[(\hat{\theta}-\bar{\theta})^{2}]+(\bar{\theta}-\theta)^{2} %
-$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6746#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 <A NAME="eq:MSE_decomposed">(4.2)</A></TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$BBh0l9`(B<!-- MATH
- $E[(\hat{\theta}-\bar{\theta})^{2}]$
- -->
-<IMG
- WIDTH="80" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img497.png"
- ALT="$ E[(\hat{\theta}-\bar{\theta})^{2}]$">
-<!-- MATHEND
- 
- -->
-$B$O?dDjJ,;6!%BhFs9`$O%P%$%"%9$NFs>h$G$"$k!%=>$C$F%P%$%"%9$,$J$/!$J,;6$,>.$5$$?dDjNL$,K>$^$7$$?dDjNL$G$"$k!%(B
-$B3V$?$j$N$"$k?dDjNL$,>.$5$$J,;6$r;}$A!$$=$N(BMSE$B$,2DG=$JITJP?dDjNL$N(BMSE$B$h$j$b>.$5$/$J$k$3$H$O$"$j$&$k!%$3$l$,K>$^$7$$?dDjNL$G$"$k$N$O4V0c$$$J$$$,!$Nr;KE*$K$OITJP@-!$M-8z@-$OJL!9$K6cL#$5$l$F$-$?!%$^$:IaJW@-$N$"$k?dDjNL$r8+$D$1$F!$<!$KITJP?dDjNL$NCf$GJ,;6:G>.$N$b$N$rA*$V$H$$$&<j=g$rF'$`!%8EE5E*$J?dDjNL$K$D$$$F$=$N@-<A$r8+$F$_$h$&!%(B
+第一項<tex2html_verbatim_mark>#math506#<tex2html_image_mark>#tex2html_wrap_inline6748#
+<tex2html_verbatim_mark>mathend000#は推定分散．第二項はバイアスの二乗である．従ってバイアスがなく，分散が小さい推定量が望ましい推定量である．
+隔たりのある推定量が小さい分散を持ち，そのMSEが可能な不偏推定量のMSEよりも小さくなることはありうる．これが望ましい推定量であるのは間違いないが，歴史的には不偏性，有効性は別々に吟味されてきた．まず普遍性のある推定量を見つけて，次に不偏推定量の中で分散最小のものを選ぶという手順を踏む．古典的な推定量についてその性質を見てみよう．
 
 <P>
-<P>
-<DIV><B>$BLdBj(B  14</B> &nbsp; 
-<I>Gauss$BJ,I[$K=>$&3NN(JQ?t$KBP$9$kE}7WNL(B<!-- MATH
- $S_{n-1},S_{n},S_{n+1}$
- -->
-<IMG
- WIDTH="106" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img498.png"
- ALT="$ S_{n-1},S_{n},S_{n+1}$">
-<!-- MATHEND
- 
- -->
-$B$N(BMSE$B$r5a$a$h!%(B
+<P><DIV><#6750#><B>問題  18</B><#6750#> &nbsp; 
+<#6753#><I>Gauss分布に従う確率変数に対する統計量<tex2html_verbatim_mark>#math507#<tex2html_image_mark>#tex2html_wrap_inline6755#
+<tex2html_verbatim_mark>mathend000#のMSEを求めよ．
 </I>
 <P>
-<I>$B$?$@$7(B<!-- MATH
- $S_{n-1}^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar
-{X})^{2}$
- -->
-<IMG
- WIDTH="201" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img499.png"
- ALT="$ S_{n-1}^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\bar
-{X})^{2}$">
-<!-- MATHEND
- 
- -->
-$B!$(B<!-- MATH
- $S_{n}^{2}=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\bar{X})^{2}$
- -->
-<IMG
- WIDTH="168" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img500.png"
- ALT="$ S_{n}^{2}=\frac{1}{n}\sum_{i=1}^{n}(X_{i}-\bar{X})^{2}$">
-<!-- MATHEND
- 
- -->
-,
-<!-- MATH
- $S_{n+1}^{2}=\frac{1}{n+1}\sum_{i=1}^{n}(X_{i}-\bar{X})^{2}$
- -->
-<IMG
- WIDTH="200" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img501.png"
- ALT="$ S_{n+1}^{2}=\frac{1}{n+1}\sum_{i=1}^{n}(X_{i}-\bar{X})^{2}$">
-<!-- MATHEND
- 
- -->
- .
+<I>ただし<tex2html_verbatim_mark>#math508#<tex2html_image_mark>#tex2html_wrap_inline6757#
+<tex2html_verbatim_mark>mathend000#，<tex2html_verbatim_mark>#math509#<tex2html_image_mark>#tex2html_wrap_inline6759#
+<tex2html_verbatim_mark>mathend000#,
+<tex2html_verbatim_mark>#math510#<tex2html_image_mark>#tex2html_wrap_inline6761#
+<tex2html_verbatim_mark>mathend000# .
 </I>
 <P>
-<I>$B$I$l$,0lHV>.$5$$$+!%(B
+<I>どれが一番小さいか．
 </I>
-<P><P>
-<DIV><B>$B2rK!(B  15</B> &nbsp; 
-<I>MSE<!-- MATH
- $(S_{n+1})<$
- -->
-<IMG
- WIDTH="68" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img502.png"
- ALT="$ (S_{n+1})&lt;$">
-<!-- MATHEND
- 
- -->
-MSE<!-- MATH
- $(S_{n})\leq$
- -->
-<IMG
- WIDTH="52" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img503.png"
- ALT="$ (S_{n})\leq$">
-<!-- MATHEND
- 
- -->
-MSE<IMG
- WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img504.png"
- ALT="$ (S_{n-1})$">
-<!-- MATHEND
- 
- -->
+<P>
+<I></I><P><DIV><#6763#><B>解法  19</B><#6763#> &nbsp; 
+<#6766#><I>MSE<tex2html_verbatim_mark>#math511#<tex2html_image_mark>#tex2html_wrap_inline6768#
+<tex2html_verbatim_mark>mathend000#MSE<tex2html_verbatim_mark>#math512#<tex2html_image_mark>#tex2html_wrap_inline6770#
+<tex2html_verbatim_mark>mathend000#MSE<tex2html_image_mark>#tex2html_wrap_inline6772#
+<tex2html_verbatim_mark>mathend000#<tex2html_comment_mark>120
 </I><P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT">MSE<IMG
- WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img505.png"
- ALT="$\displaystyle (S_{n-1})$"></TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="203" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img506.png"
- ALT="$\displaystyle =E(S_{n-1}-\sigma^{2})^{2}=\frac{2}{n-1}\sigma^{4}$"></TD>
+<TD NOWRAP ALIGN="RIGHT">MSE<tex2html_image_mark>#tex2html_wrap_indisplay6773#</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6774#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT">MSE<IMG
- WIDTH="35" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img507.png"
- ALT="$\displaystyle (S_{n})$"></TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="195" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img508.png"
- ALT="$\displaystyle =E(S_{n}-\sigma^{2})^{2}=\frac{2n-1}{n^{2}}\sigma^{4}$"></TD>
+<TD NOWRAP ALIGN="RIGHT">MSE<tex2html_image_mark>#tex2html_wrap_indisplay6775#</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6776#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT">MSE<IMG
- WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img509.png"
- ALT="$\displaystyle (S_{n+1})$"></TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="203" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img510.png"
- ALT="$\displaystyle =E(S_{n+1}-\sigma^{2})^{2}=\frac{2}{n+1}\sigma^{2}%
-$"></TD>
+<TD NOWRAP ALIGN="RIGHT">MSE<tex2html_image_mark>#tex2html_wrap_indisplay6777#</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6778#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 </TABLE></DIV>
-<BR CLEAR="ALL"><P></P>
-<P></DIV><P></P></DIV><P></P>
+<BR CLEAR="ALL"><P></P><I>
+</I>
+<P>
+<I></I><#6766#></DIV><P></P>
+<I></I><#6753#></DIV><P></P>
+
 
 <P>
 
-<H2><A NAME="SECTION00602000000000000000"></A><A NAME="1957"></A>
-<BR>
-$B:GL`?dDj(B
-
+<H2><A NAME="SECTION00602000000000000000"><tex2html_anchor_invisible_mark></A><A NAME="1912"><tex2html_anchor_invisible_mark></A><BR>
+最尤推定
 </H2>
 
 <P>
-$BL`EY(B(likelihood<A NAME="1958"></A>)$B$r:GBg$K$9$k%Q%i%a!<%?$r:GL`?dDjNL$H$$$&!%(B<P><!-- MATH
- \begin{displaymath}
-l(\theta)=\log p\left(  X|\theta\right)  =\sum\log p\left(  X_{i}%
-|\theta\right)
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="248" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
- SRC="img511.png"
- ALT="$\displaystyle l(\theta)=\log p\left( X\vert\theta\right) =\sum\log p\left( X_{i}%
-\vert\theta\right)
-$">
+尤度(likelihood<A NAME="1913"><tex2html_anchor_invisible_mark></A>)を最大にするパラメータを最尤推定量という．<tex2html_comment_mark>122
+<P><tex2html_verbatim_mark>#math513#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay6781#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$BNc(B&nbsp;&nbsp;&nbsp;&nbsp;$B%]%"%=%sJ,I[$N>l9g(B<P></P>
+<tex2html_verbatim_mark>mathend000#</P>
+例&nbsp;&nbsp;&nbsp;&nbsp;ポアソン分布の場合<tex2html_comment_mark>124
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT"><IMG
- WIDTH="30" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img512.png"
- ALT="$\displaystyle l(\theta)$"></TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="144" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img513.png"
- ALT="$\displaystyle =\sum_{i=1}^{n}\log p\left( X_{i}\vert\theta,\Delta\right)$"></TD>
+<TD NOWRAP ALIGN="RIGHT"><tex2html_image_mark>#tex2html_wrap_indisplay6782#</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6783#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="158" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img514.png"
- ALT="$\displaystyle =\sum_{i=1}^{n}\log\frac{\left( \theta\Delta\right) ^{X_{i}}}{X_{i}%
-!}e^{-\theta\Delta}$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6784#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="237" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img515.png"
- ALT="$\displaystyle =\sum_{i=1}^{n}[X_{i}\log\left( \theta\Delta\right) -\theta\Delta-\log X_{i}!]$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6785#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B:GL`?dDj$O(B<P></P>
+最尤推定は<tex2html_comment_mark>126
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT"><IMG
- WIDTH="43" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img516.png"
- ALT="$\displaystyle \frac{\partial l(\theta)}{\partial\theta}$"></TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="108" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img517.png"
- ALT="$\displaystyle =\sum_{i=1}^{n}[\frac{X_{i}%
-}{\theta}-\Delta]$"></TD>
+<TD NOWRAP ALIGN="RIGHT"><tex2html_image_mark>#tex2html_wrap_indisplay6786#</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6787#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="126" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img518.png"
- ALT="$\displaystyle =\frac{\sum_{i=1}^{n}X_{i}}{\theta}-n\Delta$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6788#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-<!-- MATH
- $\frac{\partial l(\theta)}{\partial\theta}=0$
- -->
-<IMG
- WIDTH="65" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
- SRC="img519.png"
- ALT="$ \frac{\partial l(\theta)}{\partial\theta}=0$">
-<!-- MATHEND
- 
- -->
-$B$h$j(B<P><!-- MATH
- \begin{displaymath}
-\hat{\theta}_{n}=\frac{\sum_{i=1}^{n}X_{i}}{n\Delta}=\frac{\bar{X}}{\Delta}%
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="144" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img520.png"
- ALT="$\displaystyle \hat{\theta}_{n}=\frac{\sum_{i=1}^{n}X_{i}}{n\Delta}=\frac{\bar{X}}{\Delta}%
-$">
+<tex2html_verbatim_mark>#math514#<tex2html_image_mark>#tex2html_wrap_inline6790#
+<tex2html_verbatim_mark>mathend000#より<tex2html_comment_mark>128
+<P><tex2html_verbatim_mark>#math515#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay6792#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$?$@$7J?6QCM(B<!-- MATH
- $\bar{X}=\frac{1}{n}\sum
-X_{i}$
- -->
-<IMG
- WIDTH="92" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img521.png"
- ALT="$ \bar{X}=\frac{1}{n}\sum
-X_{i}$">
-<!-- MATHEND
- 
- -->
+<tex2html_verbatim_mark>mathend000#</P>
+ただし平均値<tex2html_verbatim_mark>#math516#<tex2html_image_mark>#tex2html_wrap_inline6794#
+<tex2html_verbatim_mark>mathend000#
 
 <P>
-$B:GL`?dDjCM$N4|BTCM$O(B
-<P><!-- MATH
- \begin{displaymath}
-E\hat{\theta}_{n}=\frac{\sum_{i=1}^{n}EX_{i}}{n\Delta}=\theta
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="159" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img522.png"
- ALT="$\displaystyle E\hat{\theta}_{n}=\frac{\sum_{i=1}^{n}EX_{i}}{n\Delta}=\theta
-$">
+最尤推定値の期待値は
+<P><tex2html_verbatim_mark>#math517#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay6796#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$BJ,;6$O(B<P></P>
+<tex2html_verbatim_mark>mathend000#</P>
+分散は<tex2html_comment_mark>130
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT"><IMG
- WIDTH="101" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img523.png"
- ALT="$\displaystyle E(\hat{\theta}_{n}-E\hat{\theta}_{n})^{2}$"></TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="151" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
- SRC="img524.png"
- ALT="$\displaystyle =E\left[ \frac{\sum_{i=1}%
-^{n}X_{i}}{n\Delta}-\theta\right] ^{2}$"></TD>
+<TD NOWRAP ALIGN="RIGHT"><tex2html_image_mark>#tex2html_wrap_indisplay6797#</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6798#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="187" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img525.png"
- ALT="$\displaystyle =\frac{1}{(n\Delta)^{2}}\sum_{i=1}^{n}E(X_{i}-\Delta\theta)^{2}$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6799#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="48" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img526.png"
- ALT="$\displaystyle =\frac{\theta}{n\Delta}%
-$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6800#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B:G8e$NEy<0$K$O%]%"%=%sJ,I[$N@-<A(B<!-- MATH
- $E(X_{i}-\Delta\theta)^{2}=EX_{i}=\Delta\theta$
- -->
-<IMG
- WIDTH="190" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img527.png"
- ALT="$ E(X_{i}-\Delta\theta)^{2}=EX_{i}=\Delta\theta$">
-<!-- MATHEND
- 
- -->
-$B$rMQ$$$?!%(B
+最後の等式にはポアソン分布の性質<tex2html_verbatim_mark>#math518#<tex2html_image_mark>#tex2html_wrap_inline6802#
+<tex2html_verbatim_mark>mathend000#を用いた．
 
 <P>
 
 <H2><A NAME="SECTION00603000000000000000">
-$B==J,E}7WNL(B</A>
+十分統計量</A>
 </H2>
 
 <P>
-$BH/2PN((B<IMG
- WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img131.png"
- ALT="$ \lambda$">
-<!-- MATHEND
- 
- -->
-$B$NDj>o%]%"%=%s2aDx$K=>$&%9%Q%$%/;~7ONs$rF@$?$H$7$h$&!%%9%Q%$%/;~7ONs$r$4$/C;$$(B<IMG
- WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img113.png"
- ALT="$ \Delta$">
-<!-- MATHEND
- 
- -->
-$BIC$N(B<IMG
- WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img53.png"
- ALT="$ n$">
-<!-- MATHEND
- 
- -->
-$B8D$N%S%s$K6h@Z$j!$(B<IMG
- WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img12.png"
- ALT="$ t$">
-<!-- MATHEND
- 
- -->
-$BHVL\$N%S%s$K%9%Q%$%/$,B8:_$9$l$P(B<IMG
- WIDTH="52" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img528.png"
- ALT="$ X_{t}=0$">
-<!-- MATHEND
- 
- -->
-$B!$$7$J$1$l$P(B<IMG
- WIDTH="52" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img529.png"
- ALT="$ X_{t}=1$">
-<!-- MATHEND
- 
- -->
-$B$H$7$F!$(B<!-- MATH
- $X=\left(
-X_{1},X_{2},\ldots,X_{n}\right)$
- -->
-<IMG
- WIDTH="157" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img530.png"
- ALT="$ X=\left(
-X_{1},X_{2},\ldots,X_{n}\right) $">
-<!-- MATHEND
- 
- -->
-$B$r%Y%k%L!<%$2aDx$H8+$J$9!%(B
-$B$3$N$H$-E}7WNL(B<!-- MATH
- $T=\sum_{t=1}^{n}X_{i}$
- -->
-<IMG
- WIDTH="96" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img531.png"
- ALT="$ T=\sum_{t=1}^{n}X_{i}$">
-<!-- MATHEND
- 
- -->
-$B$O%Y%k%L!<%$2aDx$N(B<IMG
- WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img131.png"
- ALT="$ \lambda$">
-<!-- MATHEND
- 
- -->
-$B$K4X$9$k==J,E}7WNL$G$"$k!%(B
+発火率<tex2html_image_mark>#tex2html_wrap_inline6805#
+<tex2html_verbatim_mark>mathend000#の定常ポアソン過程に従うスパイク時系列を得たとしよう．スパイク時系列をごく短い<tex2html_image_mark>#tex2html_wrap_inline6807#
+<tex2html_verbatim_mark>mathend000#秒の<tex2html_image_mark>#tex2html_wrap_inline6809#
+<tex2html_verbatim_mark>mathend000#個のビンに区切り，<tex2html_image_mark>#tex2html_wrap_inline6811#
+<tex2html_verbatim_mark>mathend000#番目のビンにスパイクが存在すれば<tex2html_image_mark>#tex2html_wrap_inline6813#
+<tex2html_verbatim_mark>mathend000#，しなければ<tex2html_image_mark>#tex2html_wrap_inline6815#
+<tex2html_verbatim_mark>mathend000#として，<tex2html_verbatim_mark>#math519#<tex2html_image_mark>#tex2html_wrap_inline6817#
+<tex2html_verbatim_mark>mathend000#をベルヌーイ過程と見なす．
+このとき統計量<tex2html_verbatim_mark>#math520#<tex2html_image_mark>#tex2html_wrap_inline6819#
+<tex2html_verbatim_mark>mathend000#はベルヌーイ過程の<tex2html_image_mark>#tex2html_wrap_inline6821#
+<tex2html_verbatim_mark>mathend000#に関する十分統計量である．
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT"><IMG
- WIDTH="80" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img532.png"
- ALT="$\displaystyle P\left( X\vert\lambda,\Delta\right)$"></TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="122" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img533.png"
- ALT="$\displaystyle =%
-{\displaystyle\prod\limits_{t=1}^{n}} P\left( X_{i}\vert\lambda,\Delta\right)$"></TD>
+<TD NOWRAP ALIGN="RIGHT"><tex2html_image_mark>#tex2html_wrap_indisplay6822#</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6823#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="191" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img534.png"
- ALT="$\displaystyle =%
-{\displaystyle\prod\limits_{t=1}^{n}} (\lambda\Delta)^{X_{i}}\left( 1-\lambda\Delta\right) ^{1-X_{i}}$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6824#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="332" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
- SRC="img535.png"
- ALT="$\displaystyle =(\lambda\Delta)^{X_{1}+X_{2}+\cdots+X_{n}}(1-\lambda\Delta)^{n-(X_{1}%
-+X_{2}+\cdots+X_{n})}%
-$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6825#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-<IMG
- WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img113.png"
- ALT="$ \Delta$">
-<!-- MATHEND
- 
- -->
-$B$O7h$^$C$F$$$k$H$9$l$P!$(B<IMG
- WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img131.png"
- ALT="$ \lambda$">
-<!-- MATHEND
- 
- -->
-$B$NCM$r?dDj$9$k$N$K!$$3$3$N%G!<%?(B<!-- MATH
- $\left(  X_{1},X_{2},\ldots,X_{n}\right)$
- -->
-<IMG
- WIDTH="121" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img536.png"
- ALT="$ \left( X_{1},X_{2},\ldots,X_{n}\right)$">
-<!-- MATHEND
- 
- -->
-$B$OI,MW$G$J$/!$E}7WNL(B<!-- MATH
- $T=\sum_{t=1}^{n}X_{i}$
- -->
-<IMG
- WIDTH="96" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img531.png"
- ALT="$ T=\sum_{t=1}^{n}X_{i}$">
-<!-- MATHEND
- 
- -->
-$B$rMQ$$$l$P==J,$G$"$k$3$H$,$o$+$k!%(B
+<tex2html_image_mark>#tex2html_wrap_inline6827#
+<tex2html_verbatim_mark>mathend000#は決まっているとすれば，<tex2html_image_mark>#tex2html_wrap_inline6829#
+<tex2html_verbatim_mark>mathend000#の値を推定するのに，ここのデータ<tex2html_verbatim_mark>#math521#<tex2html_image_mark>#tex2html_wrap_inline6831#
+<tex2html_verbatim_mark>mathend000#は必要でなく，統計量<tex2html_verbatim_mark>#math522#<tex2html_image_mark>#tex2html_wrap_inline6833#
+<tex2html_verbatim_mark>mathend000#を用いれば十分であることがわかる．
 
 <P>
-$B:#EY$ODj>o%]%"%=%s2aDx$r$d$dBg$-$a$N(B<IMG
- WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img53.png"
- ALT="$ n$">
-<!-- MATHEND
- 
- -->
-$B8D$N4QB,6h4V(B<IMG
- WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img113.png"
- ALT="$ \Delta$">
-<!-- MATHEND
- 
- -->
-$B$G6h@Z$C$?$H$7$h$&!%(B
-$B$3$N$H$-3F6h4VFb$N%9%Q%$%/$N8D?t(B<!-- MATH
- $X=\left(X_{1},X_{2},\ldots,X_{n}\right)$
- -->
-<IMG
- WIDTH="157" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img530.png"
- ALT="$ X=\left(
-X_{1},X_{2},\ldots,X_{n}\right) $">
-<!-- MATHEND
- 
- -->
-$B$OJ?6Q(B<!-- MATH
- $\lambda\Delta$
- -->
-<IMG
- WIDTH="27" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img115.png"
- ALT="$ \lambda \Delta$">
-<!-- MATHEND
- 
- -->
-$B$N%]%"%=%sJ,I[$K=>$&!%$3$N$H$-(B<!-- MATH
- $T=\sum_{t=1}^{n}X_{i}$
- -->
-<IMG
- WIDTH="96" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img531.png"
- ALT="$ T=\sum_{t=1}^{n}X_{i}$">
-<!-- MATHEND
- 
- -->
-$B$O(B<IMG
- WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img131.png"
- ALT="$ \lambda$">
-<!-- MATHEND
- 
- -->
-$B$K4X$9$k==J,E}7WNL$G$"$k!%(B
+今度は定常ポアソン過程をやや大きめの<tex2html_image_mark>#tex2html_wrap_inline6835#
+<tex2html_verbatim_mark>mathend000#個の観測区間<tex2html_image_mark>#tex2html_wrap_inline6837#
+<tex2html_verbatim_mark>mathend000#で区切ったとしよう．
+このとき各区間内のスパイクの個数<tex2html_verbatim_mark>#math523#<tex2html_image_mark>#tex2html_wrap_inline6839#
+<tex2html_verbatim_mark>mathend000#は平均<tex2html_verbatim_mark>#math524#<tex2html_image_mark>#tex2html_wrap_inline6841#
+<tex2html_verbatim_mark>mathend000#のポアソン分布に従う．このとき<tex2html_verbatim_mark>#math525#<tex2html_image_mark>#tex2html_wrap_inline6843#
+<tex2html_verbatim_mark>mathend000#は<tex2html_image_mark>#tex2html_wrap_inline6845#
+<tex2html_verbatim_mark>mathend000#に関する十分統計量である．
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT"><IMG
- WIDTH="80" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img532.png"
- ALT="$\displaystyle P\left( X\vert\lambda,\Delta\right)$"></TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="122" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img537.png"
- ALT="$\displaystyle =%
-{\displaystyle\prod\limits_{i=1}^{n}} P\left( X_{i}\vert\lambda,\Delta\right)$"></TD>
+<TD NOWRAP ALIGN="RIGHT"><tex2html_image_mark>#tex2html_wrap_indisplay6846#</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6847#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="133" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img538.png"
- ALT="$\displaystyle =%
-{\displaystyle\prod\limits_{t=1}^{n}} \frac{\left( \lambda\Delta\right) ^{X_{i}}}{X_{i}!}e^{-\lambda\Delta}$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6848#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="310" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img539.png"
- ALT="$\displaystyle =\frac{1}{X_{1}!X_{1}!\cdots X_{n}!}\cdot\left( \lambda\Delta\right) ^{X_{1}+X_{2}+\cdots+X_{n}}e^{-n\lambda\Delta}%
-$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6849#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B:GL`?dDj$r9M$($F$_$h$&!%0x;R(B<!-- MATH
- $\frac{1}{X_{1}!X_{1}!\cdots X_{n}!}$
- -->
-<IMG
- WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img540.png"
- ALT="$ \frac{1}{X_{1}!X_{1}!\cdots X_{n}!}$">
-<!-- MATHEND
- 
- -->
-$B$O(B<IMG
- WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img131.png"
- ALT="$ \lambda$">
-<!-- MATHEND
- 
- -->
-$B$K4X78$,$J$$!%(B
-<IMG
- WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img131.png"
- ALT="$ \lambda$">
-<!-- MATHEND
- 
- -->
-$B$K4X78$9$kBhFs0x;R$O(B<!-- MATH
- $\left(  \lambda\Delta\right)  ^{T}e^{-n\lambda\Delta
-}$
- -->
-<IMG
- WIDTH="96" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
- SRC="img541.png"
- ALT="$ \left( \lambda\Delta\right) ^{T}e^{-n\lambda\Delta
-}$">
-<!-- MATHEND
- 
- -->
-$B$H(B<IMG
- WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img22.png"
- ALT="$ T$">
-<!-- MATHEND
- 
- -->
-$B$N4X?t$H$7$F=q$1$k$+$i!$8D!9$N%G!<%?$rCN$kI,MW$O$J$$$3$H$,$o$+$k!%(B
+最尤推定を考えてみよう．因子<tex2html_verbatim_mark>#math526#<tex2html_image_mark>#tex2html_wrap_inline6851#
+<tex2html_verbatim_mark>mathend000#は<tex2html_image_mark>#tex2html_wrap_inline6853#
+<tex2html_verbatim_mark>mathend000#に関係がない．
+<tex2html_image_mark>#tex2html_wrap_inline6855#
+<tex2html_verbatim_mark>mathend000#に関係する第二因子は<tex2html_verbatim_mark>#math527#<tex2html_image_mark>#tex2html_wrap_inline6857#
+<tex2html_verbatim_mark>mathend000#と<tex2html_image_mark>#tex2html_wrap_inline6859#
+<tex2html_verbatim_mark>mathend000#の関数として書けるから，個々のデータを知る必要はないことがわかる．
 
 <P>
-$B0lHL$KL)EYJ,I[$N%b%G%k(B<!-- MATH
- $f\left(  x|\theta\right)$
- -->
-<IMG
- WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img542.png"
- ALT="$ f\left( x\vert\theta\right) $">
-<!-- MATHEND
- 
- -->
-$B$,(B
+一般に密度分布のモデル<tex2html_verbatim_mark>#math528#<tex2html_image_mark>#tex2html_wrap_inline6861#
+<tex2html_verbatim_mark>mathend000#が
 <P></P>
-<DIV ALIGN="CENTER"><!-- MATH
- \begin{equation}
-f\left(  x|\theta\right)  =h\left(  x\right)  g\left(  T\left(  x\right)
-|\theta\right)
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><tex2html_verbatim_mark>#math529#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="181" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img543.png"
- ALT="$\displaystyle f\left( x\vert\theta\right) =h\left( x\right) g\left( T\left( x\right) \vert\theta\right)$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6863#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (4.3)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B$N7A$K0x;RJ,2r$G$-$k>l9g!$$+$D$=$N>l9g$K8B$j!$E}7WNL(B<IMG
- WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img22.png"
- ALT="$ T$">
-<!-- MATHEND
- 
- -->
-$B$O%b%G%k%Q%i%a!<%?(B<IMG
- WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img414.png"
- ALT="$ \theta$">
-<!-- MATHEND
- 
- -->
-$B$N==J,E}7WNL$G$"$k!%$3$l$r%U%#%C%7%c!<!&%M%$%^%s$N0x;RJ,2rDjM}$H$$$&(B
-<A NAME="2091"></A>$B!%L)EYJ,I[$N%b%G%k(B<!-- MATH
- $f\left(
-x|\theta\right)$
- -->
-<IMG
- WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img542.png"
- ALT="$ f\left( x\vert\theta\right) $">
-<!-- MATHEND
- 
- -->
-$B$r(B<IMG
- WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img414.png"
- ALT="$ \theta$">
-<!-- MATHEND
- 
- -->
-$B$K0MB8$9$k0x;R$H0MB8$7$J$$0x;R$KJ,2r$G$-$F(B,
-$B0MB8$9$k0x;R$,E}7WNL(B<!-- MATH
- $T\left(  x\right)$
- -->
-<IMG
- WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img544.png"
- ALT="$ T\left( x\right) $">
-<!-- MATHEND
- 
- -->
-$B$N4X?t$GI=$9$3$H$,$G$-$k$H$9$l$P!$(B<IMG
- WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img414.png"
- ALT="$ \theta$">
-<!-- MATHEND
- 
- -->
-$B$N?dDj$K$O(B<!-- MATH
- $T\left(  x\right)$
- -->
-<IMG
- WIDTH="40" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img544.png"
- ALT="$ T\left( x\right) $">
-<!-- MATHEND
- 
- -->
-$B$rMQ$$$l$P==J,$G$"$k!%%Y%k%L!<%$2aDx$NNc$G$O(B<!-- MATH
- $h\left(  x\right)  =1$
- -->
-<IMG
- WIDTH="67" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img545.png"
- ALT="$ h\left( x\right) =1$">
-<!-- MATHEND
- 
- -->
-$B!$(B<!-- MATH
- $g\left(  T\left(  x\right)  |\theta\right)
-=\theta^{T}(1-\theta)^{n-T}$
- -->
-<IMG
- WIDTH="193" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img546.png"
- ALT="$ g\left( T\left( x\right) \vert\theta\right)
-=\theta^{T}(1-\theta)^{n-T}$">
-<!-- MATHEND
- 
- -->
-$B$H8+$F!$(B<!-- MATH
- $T=\sum_{t=1}^{n}X_{i}$
- -->
-<IMG
- WIDTH="96" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img531.png"
- ALT="$ T=\sum_{t=1}^{n}X_{i}$">
-<!-- MATHEND
- 
- -->
-$B$,==J,E}7WNL$G$"$k$3$H$,$o$+$k!%$^$?%]%"%=%sJ,I[$O(B<!-- MATH
- $h\left(
-x\right)  =\frac{1}{X_{1}!X_{1}!\cdots X_{n}!}$
- -->
-<IMG
- WIDTH="136" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img547.png"
- ALT="$ h\left(
-x\right) =\frac{1}{X_{1}!X_{1}!\cdots X_{n}!}$">
-<!-- MATHEND
- 
- -->
-$B!$(B<!-- MATH
- $g\left(  T\left(  x\right)
-|\theta\right)  =\left(  \lambda\Delta\right)  ^{T}e^{-n\lambda\Delta}$
- -->
-<IMG
- WIDTH="191" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
- SRC="img548.png"
- ALT="$ g\left( T\left( x\right)
-\vert\theta\right) =\left( \lambda\Delta\right) ^{T}e^{-n\lambda\Delta}$">
-<!-- MATHEND
- 
- -->
-$B$H$J$j!$(B<!-- MATH
- $T=\sum_{t=1}^{n}X_{i}$
- -->
-<IMG
- WIDTH="96" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img531.png"
- ALT="$ T=\sum_{t=1}^{n}X_{i}$">
-<!-- MATHEND
- 
- -->
-$B$,==J,E}7WNL$G$"$k$3$H$,$o$+$k!%(B
+の形に因子分解できる場合，かつその場合に限り，統計量<tex2html_image_mark>#tex2html_wrap_inline6865#
+<tex2html_verbatim_mark>mathend000#はモデルパラメータ<tex2html_image_mark>#tex2html_wrap_inline6867#
+<tex2html_verbatim_mark>mathend000#の十分統計量である．これをフィッシャー・ネイマンの因子分解定理という
+<A NAME="2046"><tex2html_anchor_invisible_mark></A>．密度分布のモデル<tex2html_verbatim_mark>#math530#<tex2html_image_mark>#tex2html_wrap_inline6869#
+<tex2html_verbatim_mark>mathend000#を<tex2html_image_mark>#tex2html_wrap_inline6871#
+<tex2html_verbatim_mark>mathend000#に依存する因子と依存しない因子に分解できて,
+依存する因子が統計量<tex2html_verbatim_mark>#math531#<tex2html_image_mark>#tex2html_wrap_inline6873#
+<tex2html_verbatim_mark>mathend000#の関数で表すことができるとすれば，<tex2html_image_mark>#tex2html_wrap_inline6875#
+<tex2html_verbatim_mark>mathend000#の推定には<tex2html_verbatim_mark>#math532#<tex2html_image_mark>#tex2html_wrap_inline6877#
+<tex2html_verbatim_mark>mathend000#を用いれば十分である．ベルヌーイ過程の例では<tex2html_verbatim_mark>#math533#<tex2html_image_mark>#tex2html_wrap_inline6879#
+<tex2html_verbatim_mark>mathend000#，<tex2html_verbatim_mark>#math534#<tex2html_image_mark>#tex2html_wrap_inline6881#
+<tex2html_verbatim_mark>mathend000#と見て，<tex2html_verbatim_mark>#math535#<tex2html_image_mark>#tex2html_wrap_inline6883#
+<tex2html_verbatim_mark>mathend000#が十分統計量であることがわかる．またポアソン分布は<tex2html_verbatim_mark>#math536#<tex2html_image_mark>#tex2html_wrap_inline6885#
+<tex2html_verbatim_mark>mathend000#，<tex2html_verbatim_mark>#math537#<tex2html_image_mark>#tex2html_wrap_inline6887#
+<tex2html_verbatim_mark>mathend000#となり，<tex2html_verbatim_mark>#math538#<tex2html_image_mark>#tex2html_wrap_inline6889#
+<tex2html_verbatim_mark>mathend000#が十分統計量であることがわかる．
 
 <P>
-<P>
-<DIV><B>$BDj5A(B  16</B> &nbsp; 
-<I>$B%G!<%?(B<!-- MATH
- $X=\left(  X_{1},X_{2},\ldots,X_{n}\right)$
- -->
-<IMG
- WIDTH="157" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img530.png"
- ALT="$ X=\left(
-X_{1},X_{2},\ldots,X_{n}\right) $">
-<!-- MATHEND
- 
- -->
-$B$,(B<!-- MATH
- $T\left(  X\right)$
- -->
-<IMG
- WIDTH="45" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img549.png"
- ALT="$ T\left( X\right) $">
-<!-- MATHEND
- 
- -->
-$B$,M?$($i$l$?2<$G(B<IMG
- WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img414.png"
- ALT="$ \theta$">
-<!-- MATHEND
- 
- -->
-$B$HFHN)$J;~(B,
-$B4X?t(B<!-- MATH
- $T\left(  X\right)$
- -->
-<IMG
- WIDTH="45" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img549.png"
- ALT="$ T\left( X\right) $">
-<!-- MATHEND
- 
- -->
-$B$r%b%G%k(B<!-- MATH
- $f\left(
-x|\theta\right)$
- -->
-<IMG
- WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img542.png"
- ALT="$ f\left( x\vert\theta\right) $">
-<!-- MATHEND
- 
- -->
-$B$N==J,E}7WNL$H$$$&!%(B
-</I><P><!-- MATH
- \begin{displaymath}
-P\left(  X=x|T\left(  X\right)  =t,\theta\right)  =P\left(  X=x|T\left(
-X\right)  =t\right)
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="330" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img550.png"
- ALT="$\displaystyle P\left( X=x\vert T\left( X\right) =t,\theta\right) =P\left( X=x\vert T\left(
-X\right) =t\right)
-$">
+<P><DIV><#6891#><B>定義  20</B><#6891#> &nbsp; 
+<#6894#><I>データ<tex2html_verbatim_mark>#math539#<tex2html_image_mark>#tex2html_wrap_inline6896#
+<tex2html_verbatim_mark>mathend000#が<tex2html_verbatim_mark>#math540#<tex2html_image_mark>#tex2html_wrap_inline6898#
+<tex2html_verbatim_mark>mathend000#が与えられた下で<tex2html_image_mark>#tex2html_wrap_inline6900#
+<tex2html_verbatim_mark>mathend000#と独立な時,
+関数<tex2html_verbatim_mark>#math541#<tex2html_image_mark>#tex2html_wrap_inline6902#
+<tex2html_verbatim_mark>mathend000#をモデル<tex2html_verbatim_mark>#math542#<tex2html_image_mark>#tex2html_wrap_inline6904#
+<tex2html_verbatim_mark>mathend000#の十分統計量という．
+</I><P><tex2html_verbatim_mark>#math543#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay6906#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-<P></DIV><P></P>
+<tex2html_verbatim_mark>mathend000#</P><I>
+</I>
+<P>
+<I></I><#6894#></DIV><P></P>
+
 
 <P>
 
-<H2><A NAME="SECTION00604000000000000000"></A><A NAME="2111"></A>
-<BR>
-$B%U%#%C%7%c!<>pJsNL(B
-
+<H2><A NAME="SECTION00604000000000000000"><tex2html_anchor_invisible_mark></A><A NAME="2066"><tex2html_anchor_invisible_mark></A><BR>
+フィッシャー情報量
 </H2>
 
 <P>
-$B%9%3%"(B<A NAME="2112"></A>$B$H8F$P$l$kE}7WNL$rF3F~$9$k(B
+スコア<A NAME="2067"><tex2html_anchor_invisible_mark></A>と呼ばれる統計量を導入する
 <P></P>
-<DIV ALIGN="CENTER"><A NAME="eq:Score"></A><!-- MATH
- \begin{equation}
-V\left(  X;\theta\right)  =\frac{\partial}{\partial\theta}\log f\left(
-X|\theta\right)  =\frac{1}{f\left(  X|\theta\right)  }\frac{\partial f\left(
-X|\theta\right)  }{\partial\theta}
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><A NAME="eq:Score"><tex2html_anchor_mark></A><tex2html_verbatim_mark>#math544#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="322" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img551.png"
- ALT="$\displaystyle V\left( X;\theta\right) =\frac{\partial}{\partial\theta}\log f\le...
-...ert\theta\right) }\frac{\partial f\left( X\vert\theta\right) }{\partial\theta}$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6909#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (4.4)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B%9%3%"$N4|BTCM$O(B<P></P>
+スコアの期待値は<tex2html_comment_mark>152
+<P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT"><IMG
- WIDTH="38" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img552.png"
- ALT="$\displaystyle E[V]$"></TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="165" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img553.png"
- ALT="$\displaystyle =\int V\left( x;\theta\right) f\left( X\vert\theta\right) dx$"></TD>
+<TD NOWRAP ALIGN="RIGHT"><tex2html_image_mark>#tex2html_wrap_indisplay6910#</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6911#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="116" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img554.png"
- ALT="$\displaystyle =\int\frac{\partial f\left( x\vert\theta\right) }{\partial\theta}dx$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6912#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="129" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img555.png"
- ALT="$\displaystyle =\frac{\partial}{\partial\theta}\int f\left( x\vert\theta\right) dx$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6913#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img145.png"
- ALT="$\displaystyle =0$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6914#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B%9%3%"$NJ,;6$O(B
-<P><!-- MATH
- \begin{displaymath}
-E[V^{2}]=E\left[  \frac{\partial}{\partial\theta}\log f\left(  X|\theta
-\right)  \right]  ^{2}%
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="204" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img556.png"
- ALT="$\displaystyle E[V^{2}]=E\left[ \frac{\partial}{\partial\theta}\log f\left( X\vert\theta
-\right) \right] ^{2}%
-$">
+スコアの分散は
+<P><tex2html_verbatim_mark>#math545#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay6916#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B%9%3%"$NJ,;6$r%U%#%C%7%c!<>pJsNL(B<A NAME="2132"></A>$B$H$h$S!$(B<!-- MATH
- $J\left(  \theta\right)  =E[V^{2}]$
- -->
-<IMG
- WIDTH="100" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img557.png"
- ALT="$ J\left( \theta\right) =E[V^{2}]$">
-<!-- MATHEND
- 
- -->
-$B$GI=$9!%(B
+<tex2html_verbatim_mark>mathend000#</P>
+スコアの分散をフィッシャー情報量<A NAME="2087"><tex2html_anchor_invisible_mark></A>とよび，<tex2html_verbatim_mark>#math546#<tex2html_image_mark>#tex2html_wrap_inline6918#
+<tex2html_verbatim_mark>mathend000#で表す．
 
 <P>
-$B%3!<%7!<!&%7%e%o%k%D$NITEy<0(B(Cauchy-Schwarz inequality<A NAME="2134"></A>
+確率変数に関するコーシー・シュワルツの不等式(Cauchy--Schwarz inequality<A NAME="2089"><tex2html_anchor_invisible_mark></A>
 )
 <P></P>
-<DIV ALIGN="CENTER"><!-- MATH
- \begin{equation}
-\int\left\vert f\left(  x\right)  \right\vert \,^{2}dx\cdot\int\left\vert
-g\left(  x\right)  \right\vert \,^{2}dx\geq\left\vert \int f\left(  x\right)
-g\left(  x\right)  dx\right\vert \,^{2}%
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><tex2html_verbatim_mark>#math547#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="347" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img558.png"
- ALT="$\displaystyle \int\left\vert f\left( x\right) \right\vert \,^{2}dx\cdot\int\lef...
-...x\geq\left\vert \int f\left( x\right) g\left( x\right) dx\right\vert \,^{2}%
-$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6920#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (4.5)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B$rMQ$$$l$P<!$NITEy<0$,F@$i$l$k!%(B
-<P><!-- MATH
- \begin{displaymath}
-E[V^{2}]\cdot E[(\hat{\theta}-\bar{\theta})^{2}]\geq\left\vert E\left[
-V(\hat{\theta}-\bar{\theta})\right]  \right\vert ^{2}
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="263" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img559.png"
- ALT="$\displaystyle E[V^{2}]\cdot E[(\hat{\theta}-\bar{\theta})^{2}]\geq\left\vert E\left[
-V(\hat{\theta}-\bar{\theta})\right] \right\vert ^{2}
-$">
+を用いれば次の不等式が得られる．
+<P><tex2html_verbatim_mark>#math548#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay6922#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$3$3$G:8JU$NBh0l0x;R$O%U%#%C%7%c!<>pJsNL(B<!-- MATH
- $E[V^{2}]=J\left(  \theta\right)$
- -->
-<IMG
- WIDTH="100" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img560.png"
- ALT="$ E[V^{2}]=J\left( \theta\right) $">
-<!-- MATHEND
- 
- -->
-$B!%(B
-$BBhFs0x;R$O?dDjNL$NJ,;6!$(B<!-- MATH
- $var\hat{\theta}=E[(\hat{\theta}-\bar{\theta})^{2}]$
- -->
-<IMG
- WIDTH="134" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img561.png"
- ALT="$ var\hat{\theta}=E[(\hat{\theta}-\bar{\theta})^{2}]$">
-<!-- MATHEND
- 
- -->
-$B$G$"$k!%1&JU$K$D$$$F$O$OFs>h$NCf?H$,(B
+<tex2html_verbatim_mark>mathend000#</P>
+ここで左辺の第一因子はフィッシャー情報量<tex2html_verbatim_mark>#math549#<tex2html_image_mark>#tex2html_wrap_inline6924#
+<tex2html_verbatim_mark>mathend000#．
+第二因子は推定量の分散，<tex2html_verbatim_mark>#math550#<tex2html_image_mark>#tex2html_wrap_inline6926#
+<tex2html_verbatim_mark>mathend000#である．右辺についてはは二乗の中身が
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT"><IMG
- WIDTH="38" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img562.png"
- ALT="$\displaystyle EV\hat{\theta}$"></TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="151" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img563.png"
- ALT="$\displaystyle =%
-{\displaystyle\int} V(\hat{\theta}-\bar{\theta})f\left( x\right) dx$"></TD>
+<TD NOWRAP ALIGN="RIGHT"><tex2html_image_mark>#tex2html_wrap_indisplay6927#</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6928#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="262" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img564.png"
- ALT="$\displaystyle =\int\frac{1}{f\left( x\vert\theta\right) }\frac{\partial f\left(...
-...ht) }{\partial\theta}(\hat{\theta}-\bar{\theta})f\left( x\vert\theta\right) dx$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6929#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="161" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img565.png"
- ALT="$\displaystyle =\int(\hat{\theta}-\bar{\theta})\frac{\partial f\left( x\vert\theta\right) }{\partial\theta}dx$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6930#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="260" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img566.png"
- ALT="$\displaystyle =\int\hat{\theta}\frac{\partial f\left( x\vert\theta\right) }{\pa...
-...\bar{\theta}\frac{\partial}{\partial\theta}\int f\left( x\vert\theta\right) dx$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6931#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="137" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img567.png"
- ALT="$\displaystyle =\frac{\partial}{\partial\theta}\int\hat{\theta}f\left( x\vert\theta\right) dx$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6932#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="63" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img568.png"
- ALT="$\displaystyle =\frac{\partial}{\partial\theta}E\hat{\theta}%
-$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6933#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B$H$J$k!%$f$($KE}7WNL$NJ,;6$N2<8B$O%U%#%C%7%c!<>pJsNL$N5U?t$GM?$($i$l$k!%(B
+となる．ゆえに統計量の分散の下限はフィッシャー情報量の逆数で与えられる．
 <P></P>
-<DIV ALIGN="CENTER"><!-- MATH
- \begin{equation}
-var\hat{\theta}\geq\frac{\left(  \frac{\partial E\hat{\theta}}{\partial\theta
-}\right)  ^{2}}{J\left(  \theta\right)  }%
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><tex2html_verbatim_mark>#math551#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="115" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
- SRC="img569.png"
- ALT="$\displaystyle var\hat{\theta}\geq\frac{\left( \frac{\partial E\hat{\theta}}{\partial\theta }\right) ^{2}}{J\left( \theta\right) }%
-$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6935#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (4.6)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B$3$NITEy<0$r%/%i%^!<!&%i%*ITEy<0(B<A NAME="2187"></A>$B$H$$$&!%%U%#%C%7%c!<>pJsNL$OE}7WNL$r$"$kFCDj$N%b%G%k(B<!-- MATH
- $f\left(  x|\theta\right)$
- -->
-<IMG
- WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img542.png"
- ALT="$ f\left( x\vert\theta\right) $">
-<!-- MATHEND
- 
- -->
-$B$N%Q%i%a!<%?(B<IMG
- WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img414.png"
- ALT="$ \theta$">
-<!-- MATHEND
- 
- -->
-$B$N?dDjCM$KMQ$$$k>l9g$NJ,;6$N2<8B$rM?$($k!%ITJP?dDjNL(B<!-- MATH
- $E\hat{\theta}=\theta$
- -->
-<IMG
- WIDTH="54" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
- SRC="img570.png"
- ALT="$ E\hat{\theta}=\theta$">
-<!-- MATHEND
- 
- -->
-$B$N>l9g(B
+この不等式をクラマー・ラオ不等式<A NAME="2139"><tex2html_anchor_invisible_mark></A>という．フィッシャー情報量は統計量をある特定のモデル<tex2html_verbatim_mark>#math552#<tex2html_image_mark>#tex2html_wrap_inline6937#
+<tex2html_verbatim_mark>mathend000#のパラメータ<tex2html_image_mark>#tex2html_wrap_inline6939#
+<tex2html_verbatim_mark>mathend000#の推定値に用いる場合の分散の下限を与える．不偏推定量<tex2html_verbatim_mark>#math553#<tex2html_image_mark>#tex2html_wrap_inline6941#
+<tex2html_verbatim_mark>mathend000#の場合
 <P></P>
-<DIV ALIGN="CENTER"><!-- MATH
- \begin{equation}
-var\hat{\theta}\geq\frac{1}{J\left(  \theta\right)  }%
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><tex2html_verbatim_mark>#math554#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="95" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img571.png"
- ALT="$\displaystyle var\hat{\theta}\geq\frac{1}{J\left( \theta\right) }%
-$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6943#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (4.7)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B%P%$%"%9$,$"$k>l9g$O(B<!-- MATH
- $E\hat{\theta}=\theta+b\left(  \theta\right)$
- -->
-<IMG
- WIDTH="103" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img572.png"
- ALT="$ E\hat{\theta}=\theta+b\left( \theta\right)
-$">
-<!-- MATHEND
- 
- -->
-<P></P>
-<DIV ALIGN="CENTER"><!-- MATH
- \begin{equation}
-var\hat{\theta}\geq\frac{1+b^{\prime}\left(  \theta\right)  }{J\left(
-\theta\right)  }%
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+バイアスがある場合は<tex2html_verbatim_mark>#math555#<tex2html_image_mark>#tex2html_wrap_inline6945#
+<tex2html_verbatim_mark>mathend000#<P></P>
+<DIV ALIGN="CENTER"><tex2html_verbatim_mark>#math556#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="123" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img573.png"
- ALT="$\displaystyle var\hat{\theta}\geq\frac{1+b^{\prime}\left( \theta\right) }{J\left( \theta\right) }%
-$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6947#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (4.8)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
 
 <P>
-$B%U%#%C%7%c!<>pJsNL$O<!$N$h$&$K$b=q$1$k!%(B
+フィッシャー情報量は次のようにも書ける．
 <P></P>
-<DIV ALIGN="CENTER"><!-- MATH
- \begin{equation}
-J\left(  \theta\right)  =E\left[  \left(  \frac{\partial}{\partial\theta}\log
-f\left(  x|\theta\right)  \right)  ^{2}\right]  =-E\left[  \frac{\partial^{2}%
-}{\partial\theta^{2}}\log f\left(  x|\theta\right)  \right]
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><tex2html_verbatim_mark>#math557#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="382" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
- SRC="img574.png"
- ALT="$\displaystyle J\left( \theta\right) =E\left[ \left( \frac{\partial}{\partial\th...
-...ac{\partial^{2}%
-}{\partial\theta^{2}}\log f\left( x\vert\theta\right) \right]$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6949#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (4.9)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
 
 <P>
-<P>
-<DIV><B>$BLdBj(B  17</B> &nbsp; 
-<I>$B%U%#%C%7%c!<>pJsNL$NEy<0$r>ZL@$7$J$5$$!%(B
-</I>
-<P><P>
-<DIV><B>$B2rK!(B  18</B> &nbsp; 
-<I>$B1&JU$NCf?H$K$D$$$F(B
-</I><P><!-- MATH
- \begin{displaymath}
--\frac{\partial^{2}}{\partial\theta^{2}}\log f\left(  x;\theta\right)
-=-\frac{\partial}{\partial\theta}\frac{f^{^{\prime}}}{f}=-\frac{f^{^{\prime
-\prime}}f-f^{^{\prime}}f^{^{\prime}}}{f^{2}}=-\frac{f^{^{\prime\prime}}}{f}+\frac{(f^{^{\prime}})^{2}}{f^{2}}
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="419" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
- SRC="img575.png"
- ALT="$\displaystyle -\frac{\partial^{2}}{\partial\theta^{2}}\log f\left( x;\theta\rig...
-...me}}}{f^{2}}=-\frac{f^{^{\prime\prime}}}{f}+\frac{(f^{^{\prime}})^{2}}{f^{2}}
-$">
-</DIV><P>
-<!-- MATHEND
- 
- -->
-</P><I>
-$B$N4X78$,$"$k$+$i!$4|BTCM$r$H$C$F(B
-</I><P><!-- MATH
- \begin{displaymath}
-E\left[  -\frac{f^{^{\prime\prime}}}{f}+\left(  \frac{f^{^{\prime}}}%
-{f}\right)  ^{2}\right]  =E\left[  \frac{f^{^{\prime}}}{f}\right]
-^{2}=E\left[  \frac{\partial}{\partial\theta}\log f\right]  ^{2}%
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="343" HEIGHT="73" ALIGN="MIDDLE" BORDER="0"
- SRC="img576.png"
- ALT="$\displaystyle E\left[ -\frac{f^{^{\prime\prime}}}{f}+\left( \frac{f^{^{\prime}}...
-...}}{f}\right]
-^{2}=E\left[ \frac{\partial}{\partial\theta}\log f\right] ^{2}%
-$">
-</DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-<P></DIV><P></P></DIV><P></P>
+<P><DIV><#6951#><B>問題  21</B><#6951#> &nbsp; 
+<#6954#><I>確率変数に関するコーシー・シュワルツの不等式<A NAME="2160"><tex2html_anchor_invisible_mark></A>
+)を導きなさい．</I><#6954#></DIV><P></P>
+
 
 <P>
-$B%]%"%=%sJ,I[$N%U%#%C%7%c!<>pJsNL!%(B
-$BDj>o%]%"%=%s%9%Q%$%/;~7ONs$r(B<IMG
- WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img53.png"
- ALT="$ n$">
-<!-- MATHEND
- 
- -->
-$B8D$N4QB,6h4V(B<IMG
- WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img113.png"
- ALT="$ \Delta$">
-<!-- MATHEND
- 
- -->
-$B$G6h@Z$C$?$H$7$h$&!%$3$N$H$-3F6h4VFb$N%9%Q%$%/$N8D?t(B<!-- MATH
- $X=\left(  X_{1},X_{2},\ldots,X_{n}\right)$
- -->
-<IMG
- WIDTH="157" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img530.png"
- ALT="$ X=\left(
-X_{1},X_{2},\ldots,X_{n}\right) $">
-<!-- MATHEND
- 
- -->
-$B$OJ?6Q(B<!-- MATH
- $\lambda\Delta$
- -->
-<IMG
- WIDTH="27" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img115.png"
- ALT="$ \lambda \Delta$">
-<!-- MATHEND
- 
- -->
-$B$N%]%"%=%sJ,I[(B
-<P><!-- MATH
- \begin{displaymath}
-\Pr\left(  X=\left(  X_{1},X_{2},\ldots,X_{n}\right)  |\lambda,\Delta\right)
-=
-{\displaystyle\prod\limits_{t=1}^{n}}
-\frac{\left(  \lambda\Delta\right)  ^{X_{i}}}{X_{i}!}e^{-\lambda\Delta}%
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="359" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img577.png"
- ALT="$\displaystyle \Pr\left( X=\left( X_{1},X_{2},\ldots,X_{n}\right) \vert\lambda,\...
-...^{n}}
-\frac{\left( \lambda\Delta\right) ^{X_{i}}}{X_{i}!}e^{-\lambda\Delta}%
-$">
+<P><DIV><#6956#><B>問題  22</B><#6956#> &nbsp; 
+<#6959#><I>フィッシャー情報量の等式を証明しなさい．
+</I>
+<P>
+<I></I><P><DIV><#6961#><B>解法  23</B><#6961#> &nbsp; 
+<#6964#><I>右辺の中身について
+</I><P><tex2html_verbatim_mark>#math558#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay6966#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$K=>$&!%%U%#%C%7%c!<>pJsNL$O(B
+<tex2html_verbatim_mark>mathend000#</P><I>
+の関係があるから，期待値をとって
+</I><P><tex2html_verbatim_mark>#math559#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay6968#
+</DIV><P>
+<tex2html_verbatim_mark>mathend000#</P><I>
+</I>
+<P>
+<I></I><#6964#></DIV><P></P>
+<I></I><#6959#></DIV><P></P>
+
+
+<P>
+ポアソン分布のフィッシャー情報量．
+
+<P>
+定常ポアソンスパイク時系列を<tex2html_image_mark>#tex2html_wrap_inline6970#
+<tex2html_verbatim_mark>mathend000#個の観測区間<tex2html_image_mark>#tex2html_wrap_inline6972#
+<tex2html_verbatim_mark>mathend000#で区切ったとしよう．このとき各区間内のスパイクの個数<tex2html_verbatim_mark>#math560#<tex2html_image_mark>#tex2html_wrap_inline6974#
+<tex2html_verbatim_mark>mathend000#は平均<tex2html_verbatim_mark>#math561#<tex2html_image_mark>#tex2html_wrap_inline6976#
+<tex2html_verbatim_mark>mathend000#のポアソン分布
+<P><tex2html_verbatim_mark>#math562#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay6978#
+</DIV><P>
+<tex2html_verbatim_mark>mathend000#</P>
+に従う．フィッシャー情報量は
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT"><IMG
- WIDTH="39" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img578.png"
- ALT="$\displaystyle J\left( \lambda\right)$"></TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="197" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img579.png"
- ALT="$\displaystyle =-E\left[ \frac{\partial^{2}}{\partial \lambda^{2}}\log f\left( X;\lambda,\Delta\right) \right]$"></TD>
+<TD NOWRAP ALIGN="RIGHT"><tex2html_image_mark>#tex2html_wrap_indisplay6979#</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6980#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="312" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
- SRC="img580.png"
- ALT="$\displaystyle =-E\left[ \frac{\partial^{2}}{\partial\lambda^{2}}\sum_{i=1}^{n}\left( X_{i}\log\lambda\Delta-\lambda\Delta-\log X_{i}!\right) \right]$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6981#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="206" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
- SRC="img581.png"
- ALT="$\displaystyle =-E\left[ \sum_{i=1}^{n}\frac{\partial}{\partial\lambda}\left( X_{i}%
-\frac{1}{\lambda}-\Delta\right) \right]$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6982#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="97" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img582.png"
- ALT="$\displaystyle =\frac{\sum_{i=1}^{n}EX_{i}}{\lambda^{2}}$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6983#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="105" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img583.png"
- ALT="$\displaystyle =\frac{n\lambda\Delta}{\lambda^{2}}=\frac{n\Delta}{\lambda}%
-$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6984#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B=>$C$FJ,;6$N2<8B$O(B<!-- MATH
- $\lambda/n\Delta$
- -->
-<IMG
- WIDTH="44" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img584.png"
- ALT="$ \lambda/n\Delta$">
-<!-- MATHEND
- 
- -->
-$B!%(B
+従って分散の下限は<tex2html_verbatim_mark>#math563#<tex2html_image_mark>#tex2html_wrap_inline6986#
+<tex2html_verbatim_mark>mathend000#．
 
 <P>
-<P>
-<DIV><B>$BLdBj(B  19</B> &nbsp; 
-<I>$B%]%"%=%sJ,I[(B<!-- MATH
- $p\left(  X|\lambda,\Delta\right)  =
-{\displaystyle\prod\limits_{t=1}^{n}}
-\frac{\left(  \lambda\Delta\right)  ^{X_{i}}}{X_{i}!}e^{-\lambda\Delta}%$
- -->
-<IMG
- WIDTH="200" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img585.png"
- ALT="$ p\left( X\vert\lambda,\Delta\right) =
-{\displaystyle\prod\limits_{t=1}^{n}}
-\frac{\left( \lambda\Delta\right) ^{X_{i}}}{X_{i}!}e^{-\lambda\Delta}%
-$">
-<!-- MATHEND
- 
- -->
-$B$N(B<IMG
- WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img414.png"
- ALT="$ \theta$">
-<!-- MATHEND
- 
- -->
-$B$K4X$9$k%U%#%C%7%c!<>pJsNL$r8x<0(B<!-- MATH
- $J\left(  \theta\right)  =E\left[  \left(  \frac{\partial
-}{\partial\theta}\log f\left(  x|\theta\right)  \right)  ^{2}\right]$
- -->
-<IMG
- WIDTH="200" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
- SRC="img586.png"
- ALT="$ J\left( \theta\right) =E\left[ \left( \frac{\partial
-}{\partial\theta}\log f\left( x\vert\theta\right) \right) ^{2}\right]$">
-<!-- MATHEND
- 
- -->
-$B$rMQ$$$FF3=P$;$h!%(B</I></DIV><P></P>
+<P><DIV><#6988#><B>問題  24</B><#6988#> &nbsp; 
+<#6991#><I>ポアソン分布の<tex2html_image_mark>#tex2html_wrap_inline6993#
+<tex2html_verbatim_mark>mathend000#に関するフィッシャー情報量を公式<tex2html_verbatim_mark>#math564#<tex2html_image_mark>#tex2html_wrap_inline6995#
+<tex2html_verbatim_mark>mathend000#を用いて導出せよ．</I><#6991#></DIV><P></P>
+
 
 <P>
-<P>
-<DIV><B>$BLdBj(B  20</B> &nbsp; 
-<P><P>
-<BR>
-<I>$B;X?tJ,I[$N%U%#%C%7%c!<>pJsNL$r5a$a$h(B<IMG
- WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img587.png"
- ALT="$ \quad$">
-<!-- MATHEND
- 
- -->
-</I></DIV><P></P>
+<P><DIV><#6997#><B>問題  25</B><#6997#> &nbsp; 
+<#7000#><I></I>
+<P><P><BR>
+<I>指数分布のフィッシャー情報量を求めよ．</I><#7000#></DIV><P></P>
+
 
 <P>
-<P>
-<DIV><B>$B2rK!(B  21</B> &nbsp; 
-<I>$BJ?6Q(B<IMG
- WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img132.png"
- ALT="$ 1/\lambda$">
-<!-- MATHEND
- 
- -->
-$B$N;X?tJ,I[(B<!-- MATH
- $f\left(
-x;\lambda\right)  =\lambda e^{-\lambda x}$
- -->
-<IMG
- WIDTH="118" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img588.png"
- ALT="$ f\left(
-x;\lambda\right) =\lambda e^{-\lambda x}$">
-<!-- MATHEND
- 
- -->
-$B$N(B<IMG
- WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img131.png"
- ALT="$ \lambda$">
-<!-- MATHEND
- 
- -->
-$B$K4X$9$k%U%#%C%7%c!<>pJsNL$O(B
-</I><P><!-- MATH
- \begin{displaymath}
-J\left(  \lambda\right)  =-E\left[  \frac{\partial^{2}}{\partial\lambda^{2}%
-}\left(  \log\lambda-\lambda x\right)  \right]  =-E\left[  \frac{\partial
-}{\partial\lambda}\left(  \frac{1}{\lambda}-x\right)  \right]  =\frac
-{1}{\lambda^{2}}%
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="417" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img589.png"
- ALT="$\displaystyle J\left( \lambda\right) =-E\left[ \frac{\partial^{2}}{\partial\lam...
-...al\lambda}\left( \frac{1}{\lambda}-x\right) \right] =\frac
-{1}{\lambda^{2}}%
-$">
+<P><DIV><#7002#><B>解法  26</B><#7002#> &nbsp; 
+<#7005#><I>平均<tex2html_image_mark>#tex2html_wrap_inline7007#
+<tex2html_verbatim_mark>mathend000#の指数分布<tex2html_verbatim_mark>#math565#<tex2html_image_mark>#tex2html_wrap_inline7009#
+<tex2html_verbatim_mark>mathend000#の<tex2html_image_mark>#tex2html_wrap_inline7011#
+<tex2html_verbatim_mark>mathend000#に関するフィッシャー情報量は
+</I><P><tex2html_verbatim_mark>#math566#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay7013#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P><I>
-$B$f$($KJ,;6$N2<8B$O(B<!-- MATH
- $\lambda^{2}$
- -->
-<IMG
- WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
- SRC="img590.png"
- ALT="$ \lambda^{2}$">
-<!-- MATHEND
- 
- -->
-$B!%(B</I></DIV><P></P>
+<tex2html_verbatim_mark>mathend000#</P><I>
+ゆえに分散の下限は<tex2html_verbatim_mark>#math567#<tex2html_image_mark>#tex2html_wrap_inline7015#
+<tex2html_verbatim_mark>mathend000#．</I><#7005#></DIV><P></P>
+
 
 <P>
 
 <H2><A NAME="SECTION00605000000000000000">
-$B%Y%$%:?dDj!J$O$d$o$+$j!K(B</A>
+ベイズ推定（はやわかり）</A>
 </H2>
 
 <P>
-Bayes$B$NDjM}(B<A NAME="2298"></A>
-<P><!-- MATH
- \begin{displaymath}
-p\left(  \theta|x,w\right)  =\frac{p(x|\theta)\pi(\theta|w)}{p(x|w)}%
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="181" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img591.png"
- ALT="$\displaystyle p\left( \theta\vert x,w\right) =\frac{p(x\vert\theta)\pi(\theta\vert w)}{p(x\vert w)}%
-$">
+Bayesの定理<A NAME="2248"><tex2html_anchor_invisible_mark></A>
+<P><tex2html_verbatim_mark>#math568#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay7018#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-<!-- MATH
- $p(x|\theta)$
- -->
-<IMG
- WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img592.png"
- ALT="$ p(x\vert\theta)$">
-<!-- MATHEND
- 
- -->
-$B$rL`EY(B(likelihood)$B!$(B<!-- MATH
- $\pi(\theta)$
- -->
-<IMG
- WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img593.png"
- ALT="$ \pi(\theta)$">
-<!-- MATHEND
- 
- -->
-$B$r;vA0J,I[(B<A NAME="2301"></A>(prior distribution<A NAME="2302"></A>)$B!$(B<!-- MATH
- $p\left(  \theta|x\right)$
- -->
-<IMG
- WIDTH="49" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img594.png"
- ALT="$ p\left( \theta\vert x\right) $">
-<!-- MATHEND
- 
- -->
- $B$r;v8eJ,I[(B<A NAME="2303"></A>(posterior distribution<A NAME="2304"></A>)$B$H$$$&!%(B
+<tex2html_verbatim_mark>mathend000#</P>
+<tex2html_verbatim_mark>#math569#<tex2html_image_mark>#tex2html_wrap_inline7020#
+<tex2html_verbatim_mark>mathend000#を尤度(likelihood)，<tex2html_verbatim_mark>#math570#<tex2html_image_mark>#tex2html_wrap_inline7022#
+<tex2html_verbatim_mark>mathend000#<tex2html_comment_mark>179
+を事前分布<A NAME="2251"><tex2html_anchor_invisible_mark></A>(prior distribution<A NAME="2252"><tex2html_anchor_invisible_mark></A>)，<tex2html_verbatim_mark>#math571#<tex2html_image_mark>#tex2html_wrap_inline7024#
+<tex2html_verbatim_mark>mathend000# を事後分布<A NAME="2253"><tex2html_anchor_invisible_mark></A>(posterior distribution<A NAME="2254"><tex2html_anchor_invisible_mark></A>)という．
 
 <P>
-$BJ,Jl$O@55,2=9`$GJ,;R$NAmOB$r$H$C$F(B
-<P><!-- MATH
- \begin{displaymath}
-p(x|w)=\int p\left(  x,\theta|w\right)  d\theta
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="172" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img595.png"
- ALT="$\displaystyle p(x\vert w)=\int p\left( x,\theta\vert w\right) d\theta
-$">
+分母は正規化項で分子の総和をとって
+<P><tex2html_verbatim_mark>#math572#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay7026#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$GM?$($i$l$k!%<~JUL`EY4X?t!&%(%S%G%s%9$H$$$&!%(B
+<tex2html_verbatim_mark>mathend000#</P>
+で与えられる．周辺尤度関数・エビデンスという．
 
 <P>
 
 <H3><A NAME="SECTION00605100000000000000">
-$B;v8eJ,I[$K$h$k?dDjCM(B</A>
+事後分布による推定値</A>
 </H3>
 
 <P>
-$B;v8eB;<:4X?t(B(posterior loss function,
-posterior expected loss) $B$rDj5A$7!$;v8eJ,I[$K$h$k4|BTCM(B: $B;v8e%j%9%/4X?t(B(posterior risk function)&nbsp;&nbsp;&nbsp;&nbsp;
-<P><!-- MATH
- \begin{displaymath}
-L^{\text{Bayes}}(\delta,\theta;X,w)\equiv E^{\theta|X,w}[L(\delta
-,\theta)]=\int L\left(  \delta,\theta\right)  p\left(  \theta|X,w\right)
-d\theta
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="421" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img596.png"
- ALT="$\displaystyle L^{\text{Bayes}}(\delta,\theta;X,w)\equiv E^{\theta\vert X,w}[L(\...
-...a)]=\int L\left( \delta,\theta\right) p\left( \theta\vert X,w\right)
-d\theta
-$">
+事後損失関数(posterior loss function,
+posterior expected loss) を定義し，事後分布による期待値: 事後リスク関数(posterior risk function)&nbsp;&nbsp;&nbsp;&nbsp;
+<P><tex2html_verbatim_mark>#math573#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay7029#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$r:G>.2=$9$k%Q%i%a!<%?$r?dDjNL$H$9$k(B
-<P><!-- MATH
- \begin{displaymath}
-\hat{\theta}_{\text{Bayes}}(X,w)=\arg\underset{\theta}{\min}L^{\text{Bayes}%
-}(\delta,\theta;X,w)
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="279" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img597.png"
- ALT="$\displaystyle \hat{\theta}_{\text{Bayes}}(X,w)=\arg\underset{\theta}{\min}L^{\text{Bayes}%
-}(\delta,\theta;X,w)
-$">
+<tex2html_verbatim_mark>mathend000#</P>
+を最小化するパラメータを推定量とする
+<P><tex2html_verbatim_mark>#math574#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay7031#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
+<tex2html_verbatim_mark>mathend000#</P>
 
 <P>
-$BB;<:4X?t$H$7$F;Y;}4X?t(B(indicator function)<IMG
- WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img598.png"
- ALT="$ L_{0}$">
-<!-- MATHEND
- 
- -->
-
-<P><!-- MATH
- \begin{displaymath}
-L_{0}(\delta,\theta)=1_{\delta,\theta}
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="102" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img599.png"
- ALT="$\displaystyle L_{0}(\delta,\theta)=1_{\delta,\theta}
-$">
+損失関数として支持関数(indicator function)<tex2html_image_mark>#tex2html_wrap_inline7033#
+<tex2html_verbatim_mark>mathend000#
+<P><tex2html_verbatim_mark>#math575#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay7035#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$rA*$V$H(BMAP$B?dDjCM(B<A NAME="2316"></A>(maximum a posteriori estimate<A NAME="2317"></A>)$B$,F@$i$l$k!%(B
-<P><!-- MATH
- \begin{displaymath}
-\hat{\theta}_{\text{MAP}}(X,w)=\arg\underset{\theta}{\max}p\left(
-\theta|X,w\right)
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="230" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img600.png"
- ALT="$\displaystyle \hat{\theta}_{\text{MAP}}(X,w)=\arg\underset{\theta}{\max}p\left(
-\theta\vert X,w\right)
-$">
+<tex2html_verbatim_mark>mathend000#</P>
+を選ぶとMAP推定値<A NAME="2266"><tex2html_anchor_invisible_mark></A>(maximum a posteriori estimate<A NAME="2267"><tex2html_anchor_invisible_mark></A>)が得られる．
+<P><tex2html_verbatim_mark>#math576#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay7037#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
+<tex2html_verbatim_mark>mathend000#</P>
 
 <P>
-$BB;<:4X?t$H$7$F@dBP8m:9(B<IMG
- WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img601.png"
- ALT="$ L_{1}$">
-<!-- MATHEND
- 
- -->
-
-<P><!-- MATH
- \begin{displaymath}
-L_{1}(\delta,\theta)=|\delta-\theta|
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="121" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img602.png"
- ALT="$\displaystyle L_{1}(\delta,\theta)=\vert\delta-\theta\vert
-$">
+損失関数として絶対誤差<tex2html_image_mark>#tex2html_wrap_inline7039#
+<tex2html_verbatim_mark>mathend000#
+<P><tex2html_verbatim_mark>#math577#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay7041#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$rA*$V$H;v8eCf1{CM?dDj(B(posterior median)$B$,F@$i$l$k!%(B
+<tex2html_verbatim_mark>mathend000#</P>
+を選ぶと事後中央値推定(posterior median)が得られる．
 
 <P>
-$BB;<:4X?t$H$7$FFs>h8m:9(B<IMG
- WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img603.png"
- ALT="$ L_{2}$">
-<!-- MATHEND
- 
- -->
-
-<P><!-- MATH
- \begin{displaymath}
-L_{2}(\delta,\theta)=(\delta-\theta)^{2}%
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="132" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img604.png"
- ALT="$\displaystyle L_{2}(\delta,\theta)=(\delta-\theta)^{2}%
-$">
+損失関数として二乗誤差<tex2html_image_mark>#tex2html_wrap_inline7043#
+<tex2html_verbatim_mark>mathend000#
+<P><tex2html_verbatim_mark>#math578#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay7045#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$rMQ$$$k$H;v8eJ?6Q(B(posterior mean)
-<P><!-- MATH
- \begin{displaymath}
-\hat{\theta}_{\text{PM}}(X,w)=\int\theta p\left(  \theta|X,w\right)  d\theta
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="212" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img605.png"
- ALT="$\displaystyle \hat{\theta}_{\text{PM}}(X,w)=\int\theta p\left( \theta\vert X,w\right) d\theta
-$">
+<tex2html_verbatim_mark>mathend000#</P>
+を用いると事後平均(posterior mean)
+<P><tex2html_verbatim_mark>#math579#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay7047#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$,F@$i$l$k!%;v8eJ?6Q$rFC$K%Y%$%:?dDjCM(B<A NAME="2329"></A>(Bayes estimate<A NAME="2330"></A>)$B$H8F$V$3$H$,$"$k!%(B
+<tex2html_verbatim_mark>mathend000#</P>
+が得られる．事後平均を特にベイズ推定値<A NAME="2279"><tex2html_anchor_invisible_mark></A>(Bayes estimate<A NAME="2280"><tex2html_anchor_invisible_mark></A>)と呼ぶことがある．
 
 <P>
-<P>
-<DIV><B>$BLdBj(B  22</B> &nbsp; 
-<I>$B;v8eB;<:(B<!-- MATH
- $L^{Post}(\delta,\theta)$
- -->
-<IMG
- WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img606.png"
- ALT="$ L^{Post}(\delta,\theta)$">
-<!-- MATHEND
- 
- -->
-$B:G>.2=$N86M}$+$i(BMAP$B?dDjCM!$;v8eJ?6QCM$r5a$a$h!%(B</I></DIV><P></P>
+<P><DIV><#7049#><B>問題  27</B><#7049#> &nbsp; 
+<#7052#><I>事後損失<tex2html_verbatim_mark>#math580#<tex2html_image_mark>#tex2html_wrap_inline7054#
+<tex2html_verbatim_mark>mathend000#最小化の原理からMAP推定値，事後平均値を求めよ．</I><#7052#></DIV><P></P>
+
 
 <P>
 
 <H3><A NAME="SECTION00605200000000000000">
-$B7P83%Y%$%:?dDjNL(B</A>
+経験ベイズ推定量</A>
 </H3>
 
 <P>
-$B%Y%$%:?dDjNL$OD6%Q%i%a!<%?$K0MB8$9$k!%D6%Q%i%a!<%?$r:GL`?dDj$G5a$a%Y%$%:?dDjNL$KMQ$$$k$3$H$r7P83%Y%$%:K!$H8F$V(B<A NAME="2335"></A>(empirical Bayes estimator<A NAME="2336"></A>)$B!%(B
+ベイズ推定量は超パラメータに依存する．超パラメータを最尤推定で求めベイズ推定量に用いることを経験ベイズ法と呼ぶ<A NAME="2285"><tex2html_anchor_invisible_mark></A>(empirical Bayes estimator<A NAME="2286"><tex2html_anchor_invisible_mark></A>)．
 
 <P>
-$B<~JUL`EY(B<A NAME="2337"></A><A NAME="2338"></A>
-<P><!-- MATH
- \begin{displaymath}
-p(x|w)=\int p\left(  x,\theta|w\right)  d\theta=\int p(x|\theta)\pi
-(\theta|w)d\theta
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="316" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img607.png"
- ALT="$\displaystyle p(x\vert w)=\int p\left( x,\theta\vert w\right) d\theta=\int p(x\vert\theta)\pi
-(\theta\vert w)d\theta
-$">
+周辺尤度<A NAME="2287"><tex2html_anchor_invisible_mark></A><A NAME="2288"><tex2html_anchor_invisible_mark></A>
+<P><tex2html_verbatim_mark>#math581#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay7057#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B<~JUL`EY$N:GL`?dDjCM(B($B<~JUL`EY:GBg2=(B)
-<P><!-- MATH
- \begin{displaymath}
-\hat{w}=\arg\underset{w}{\max}p(x|w)
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="137" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img608.png"
- ALT="$\displaystyle \hat{w}=\arg\underset{w}{\max}p(x\vert w)
-$">
+<tex2html_verbatim_mark>mathend000#</P>
+周辺尤度の最尤推定値(周辺尤度最大化)
+<P><tex2html_verbatim_mark>#math582#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay7059#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B7P83%Y%$%:?dDjNL$O:GE,2=$7$?D6%Q%i%a!<%?(B<IMG
- WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img609.png"
- ALT="$ \hat{w}$">
-<!-- MATHEND
- 
- -->
-$B$rMQ$$$F(B<P><!-- MATH
- \begin{displaymath}
-\hat{\theta}_{\text{EB}}(X)=\hat{\theta}_{\text{Bayes}}(X,\hat{w})
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="163" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img610.png"
- ALT="$\displaystyle \hat{\theta}_{\text{EB}}(X)=\hat{\theta}_{\text{Bayes}}(X,\hat{w})
-$">
+<tex2html_verbatim_mark>mathend000#</P>
+経験ベイズ推定量は最適化した超パラメータ<tex2html_image_mark>#tex2html_wrap_inline7061#
+<tex2html_verbatim_mark>mathend000#を用いて<P><tex2html_verbatim_mark>#math583#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay7063#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$GM?$($i$l$k!%(B
+<tex2html_verbatim_mark>mathend000#</P>
+で与えられる．
 
 <P>
 
-<BR><HR>
-<!--Table of Child-Links-->
-<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
-
-<UL>
-<LI><UL>
-<LI><A NAME="tex2html383"
-  HREF="node13.html#SECTION00601000000000000000">$BJ?6QFs>h8m:9(B
-</A>
-<LI><A NAME="tex2html384"
-  HREF="node13.html#SECTION00602000000000000000">$B:GL`?dDj(B
-</A>
-<LI><A NAME="tex2html385"
-  HREF="node13.html#SECTION00603000000000000000">$B==J,E}7WNL(B</A>
-<LI><A NAME="tex2html386"
-  HREF="node13.html#SECTION00604000000000000000">$B%U%#%C%7%c!<>pJsNL(B
-</A>
-<LI><A NAME="tex2html387"
-  HREF="node13.html#SECTION00605000000000000000">$B%Y%$%:?dDj!J$O$d$o$+$j!K(B</A>
-<UL>
-<LI><A NAME="tex2html388"
-  HREF="node13.html#SECTION00605100000000000000">$B;v8eJ,I[$K$h$k?dDjCM(B</A>
-<LI><A NAME="tex2html389"
-  HREF="node13.html#SECTION00605200000000000000">$B7P83%Y%$%:?dDjNL(B</A>
-</UL></UL></UL>
-<!--End of Table of Child-Links-->
-<HR>
-<!--Navigation Panel-->
-<A NAME="tex2html381"
-  HREF="node14.html">
-<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
-<A NAME="tex2html375"
-  HREF="book.html">
-<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
- SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
-<A NAME="tex2html369"
-  HREF="node12.html">
-<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
- SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
-<A NAME="tex2html377"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
- SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
-<A NAME="tex2html379"
-  HREF="node15.html">
-<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
- SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
-<BR>
-<B> Next:</B> <A NAME="tex2html382"
-  HREF="node14.html">$B%5%$%1%X%O%/%/!&(B</A>
-<B> Up:</B> <A NAME="tex2html376"
-  HREF="book.html">$Beb%1ecBe$&eb%Cn7%"p*0e&$ec.e&-ie!&qv(B/A>
-<B> Previous:</B> <A NAME="tex2html370"
-  HREF="node12.html">$B%9%Q%$%/L)EY?dDj(B</A>
- &nbsp; <B>  <A NAME="tex2html378"
-  HREF="node1.html">$BL\<!(B</A></B> 
- &nbsp; <B>  <A NAME="tex2html380"
-  HREF="node15.html">$B:w0z(B</A></B> 
-<!--End of Navigation Panel-->
-<ADDRESS>
-&copy; 2007 2008 2009 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki, Ph.D.</a>
-</ADDRESS>
-</BODY>
-</HTML>

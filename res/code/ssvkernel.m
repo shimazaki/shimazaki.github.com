@@ -86,6 +86,7 @@ function [y,t,optw,gs,C,confb95,yb] = ssvkernel(x,tin)
 %
 % Bug fix
 % 131004 fixed a problem for large values
+% 170917 further fix for the large value issue
 %
 % Hideaki Shimazaki 
 % http://2000.jukuin.keio.ac.jp/shimazaki
@@ -138,6 +139,7 @@ disp('computing local bandwidths...');
 
 %Window sizes
 WIN = logexp(linspace(ilogexp(max(5*dt)),ilogexp(1*T),M));
+
 W = WIN;        %Bandwidths
 
 c = zeros(M,L);
@@ -419,21 +421,20 @@ a = sqrt(12)*w;
 y = 1./a; y(abs(x) > a/2) = 0; %speed optimization
 
 
+function y = logexp(x)
+idx = x<1e2;  
+y(idx) = log(1+exp(x(idx)));
 
-function y = logexp(x) 
-if x<1e2 
-    y = log(1+exp(x));
-else
-    y = x;
-end
+idx = x>=1e2; 
+y(idx) = x(idx);
 
 function y = ilogexp(x)
 %ilogexp = @(x) log(exp(x)-1);
-if x<1e2
-    y = log(exp(x)-1);
-else
-    y = x;
-end
+idx = x<1e2;  
+y(idx) = log(exp(x(idx))-1);
+
+idx = x>=1e2; 
+y(idx) = x(idx);
 
 
 

@@ -1,1504 +1,441 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-
-<!--Converted with jLaTeX2HTML 2008 (1.71) JA patch-1.10beta2.13
-patched version by:  Kenshi Muto, Debian Project.
-* modified by:  Shige TAKENO
-LaTeX2HTML 2008 (1.71),
-original version by:  Nikos Drakos, CBLU, University of Leeds
-* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
-* with significant contributions from:
-  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
-<HTML>
-<HEAD>
-
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-2022-jp">
-<META NAME="Generator" CONTENT="jLaTeX2HTML v2008 JA patch-1.10beta2.13">
-<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
-<META NAME="description" CONTENT="$B%9%Q%$%/L)EY?dDj(B">
-<META NAME="keywords" CONTENT="book">
-<META NAME="resource-type" CONTENT="document">
-<META NAME="distribution" CONTENT="global">
-
-<LINK REL="STYLESHEET" HREF="../css/latex2html.css">
-
-<LINK REL="previous" HREF="node11.html">
-<LINK REL="up" HREF="node11.html">
-<LINK REL="next" HREF="node13.html">
-<TITLE>$B%9%Q%$%/L)EY?dDj(B</TITLE>
-
-<META http-equiv=Content-Type content="text/html; charset=shift_jis">
-<script src=http://www.google-analytics.com/urchin.js type=text/javascript></script>
-<script type=text/javascript>_uacct="UA-745872-1";urchinTracker();</script>
-</HEAD>
-
-<BODY>
-    <a name=top id=top> </a>
-    <div id=NaviLayer>  
-    <table width=180 border=0 cellpadding=0 cellspacing=0>
-    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
-    <tr><td height=28 valign=top><b>Spike Density Estimation</b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../histogram.html>Histogram Method</a></b></td></tr>
-    <tr><td height=28 valign=top><b>- <a href=../kernel.html>Kernel Method</a></b></td></tr>
-    <tr><td height=8 valign=top></td></tr>
-    <tr><td height=8 valign=top><b>Share it with your friend</b></td></tr>
-    <tr><td valign=top><a class=addthis_button href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcbd554189b9a7"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width=125 height=16 alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcbd554189b9a7"></script></td></tr>
-    <tr><td height=8 valign=top></td></tr>
-    <tr><td height=8 valign=top><b>Tweet</b></td></tr>
-    <tr><td valign=top><iframe src=../../tweet.html width=180 height=600 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
-    <tr><td height=28 valign=top></td></tr>
-    </table></div>
-<!--Navigation Panel-->
-<A NAME="tex2html359"
-  HREF="node13.html">
-<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
-<A NAME="tex2html353"
-  HREF="node11.html">
-<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
- SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
-<A NAME="tex2html349"
-  HREF="node11.html">
-<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
- SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
-<A NAME="tex2html355"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
- SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
-<A NAME="tex2html357"
-  HREF="node15.html">
-<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
- SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
-<BR>
-<B> Next:</B> <A NAME="tex2html360"
-  HREF="node13.html">$BJd0d(B $BE}7WE*?dB,(B</A>
-<B> Up:</B> <A NAME="tex2html354"
-  HREF="node11.html">$B%9%Q%$%/;~7ONs%b%G%k$N?dDj!J;CDjHG!K(B</A>
-<B> Previous:</B> <A NAME="tex2html350"
-  HREF="node11.html">$B%9%Q%$%/;~7ONs%b%G%k$N?dDj!J;CDjHG!K(B</A>
- &nbsp; <B>  <A NAME="tex2html356"
-  HREF="node1.html">$BL\<!(B</A></B> 
- &nbsp; <B>  <A NAME="tex2html358"
-  HREF="node15.html">$B:w0z(B</A></B> 
-<BR>
-<BR>
-<!--End of Navigation Panel-->
-<!--Table of Child-Links-->
-<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
-
-<UL>
-<LI><A NAME="tex2html361"
-  HREF="node12.html#SECTION00511000000000000000">$B%R%9%H%0%i%`L)EY?dDj(B&nbsp;&nbsp;&nbsp;&nbsp;(PSTH)</A>
-<UL>
-<LI><A NAME="tex2html362"
-  HREF="node12.html#SECTION00511100000000000000">$B%9%Q%$%/;~7ONs$+$i$N%R%9%H%0%i%`$N:n@.(B&nbsp;&nbsp;&nbsp;&nbsp;</A>
-<LI><A NAME="tex2html363"
-  HREF="node12.html#SECTION00511200000000000000">$BJ?6Q@QJ,Fs>h8m:95Z$S%3%9%H4X?t$NF3F~(B</A>
-<LI><A NAME="tex2html364"
-  HREF="node12.html#SECTION00511300000000000000">$B:GE,6h4VI}$NM}O@CM$N%9%1!<%j%s%0B'$HH/;6(B</A>
-<LI><A NAME="tex2html365"
-  HREF="node12.html#SECTION00511400000000000000">$B%R%9%H%0%i%`:n@.$KI,MW$J:G>.;n9T2s?t$N?dDj(B&nbsp;&nbsp;&nbsp;&nbsp;</A>
-</UL>
-<BR>
-<LI><A NAME="tex2html366"
-  HREF="node12.html#SECTION00512000000000000000">$B%+!<%M%kL)EY?dDj(B</A>
-<UL>
-<LI><A NAME="tex2html367"
-  HREF="node12.html#SECTION00512100000000000000">$B%+!<%M%k%P%s%II}:GE,2=(B</A>
-<LI><A NAME="tex2html368"
-  HREF="node12.html#SECTION00512200000000000000">$BB?<!85%+!<%M%kI}:GE,2=8x<0$NF3=P35N,(B</A>
-</UL></UL>
-<!--End of Table of Child-Links-->
-<HR>
 
 <H1><A NAME="SECTION00510000000000000000">
-$B%9%Q%$%/L)EY?dDj(B</A>
+スパイク密度推定</A>
 </H1>
 
 <P>
 
 <H2><A NAME="SECTION00511000000000000000">
-$B%R%9%H%0%i%`L)EY?dDj(B&nbsp;&nbsp;&nbsp;&nbsp;(PSTH)</A>
+ヒストグラム密度推定&nbsp;&nbsp;&nbsp;&nbsp;(PSTH)</A>
 </H2>
 
 <P>
-$BEE5$?@7P@8M}3X$NF0J*<B83$G$O463P;I7c!&9TF0!&Cm0UEy$H?@7P:YK&$NH/2PIQEY!J%l!<%H!K$NAj4X4X78$,$h$/D4$Y$i$l$k!%9-$/;H$o$l$F$$$k%l!<%H?dDj$N<jK!$K!$F10l;I7c2<$G9T$o$l$?J#?t2s$N;n9T$N%9%Q%$%/;~7ONs$rE,Ev$J;~4VI}$r$b$D6h4V$KJ,3d$7!$$=$NCf$G$N%$%Y%s%H@8@.N(!JH/2PN(!K$rK@%0%i%U$H$7$FI=$9(BPeristimulus Time Histogram (PSTH)$B$,$"$k!%(BPSTH$B$N7A>u$OJ,3d$9$k6h4V$N;~4VI}$K0MB8$9$k$K$b$+$+$o$i$:!$6h4VI}$OB?$/$N>l9g8&5f<T$K$h$jWs0UE*$KM?$($i$l$F$$$k!%(B
+電気神経生理学の動物実験では感覚刺激・行動・注意等と神経細胞の発火頻度（レート）の相関関係がよく調べられる．広く使われているレート推定の手法に，同一刺激下で行われた複数回の試行のスパイク時系列を適当な時間幅をもつ区間に分割し，その中でのイベント生成率（発火率）を棒グラフとして表すPeristimulus Time Histogram (PSTH)がある．PSTHの形状は分割する区間の時間幅に依存するにもかかわらず，区間幅は多くの場合研究者により恣意的に与えられている．
 
 <P>
-$B$3$3$G$OJ?6QFs>h8m:9:G>.2=$N4QE@$+$i:GE,6h4VI}$r7hDj$9$k4JJX$J8x<0$rF3=P$9$k!%$^$?%l!<%H$,0lHL$NDj>o3NN(2aDx$N>l9g$N:GE,6h4VI}$NM}O@CM$N%9%1!<%j%s%0B'$rF3=P$7!$E>0\E@6aK5$G$N?6$kIq$$$rD4$Y$k!%$3$NM}O@$N1~MQ$H$7$F%3%9%H4X?t$r30A^$9$k$3$H$G!$%G!<%?$+$i%R%9%H%0%i%`:n@.$KI,MW$J:G>.;n9T?t$r5a$a$?$j!$GX8e$N%l!<%H2aDx$,$J$a$i$+$J2aDx$+H]$+$r?dDj$9$k$3$H$,$G$-$k!%(B
+ここでは平均二乗誤差最小化の観点から最適区間幅を決定する簡便な公式を導出する．またレートが一般の定常確率過程の場合の最適区間幅の理論値のスケーリング則を導出し，転移点近傍での振る舞いを調べる．この理論の応用としてコスト関数を外挿することで，データからヒストグラム作成に必要な最小試行数を求めたり，背後のレート過程がなめらかな過程か否かを推定することができる．
 
 <P>
 
 <H3><A NAME="SECTION00511100000000000000">
-$B%9%Q%$%/;~7ONs$+$i$N%R%9%H%0%i%`$N:n@.(B&nbsp;&nbsp;&nbsp;&nbsp;</A>
+スパイク時系列からのヒストグラムの作成&nbsp;&nbsp;&nbsp;&nbsp;</A>
 </H3>
 
 <P>
-$BD9$5(B<IMG
- WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img22.png"
- ALT="$ T$">
-<!-- MATHEND
- 
- -->
-$B$N;~4V0MB8(BPoisson$B2aDx$N%l!<%H!J6/EY2aDx!K$r(B<!-- MATH
- $\lambda_{t}$
- -->
-<IMG
- WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img244.png"
- ALT="$ \lambda_{t}$">
-<!-- MATHEND
- 
- -->
- (<!-- MATH
- $t\in\lbrack0,\,T]$
- -->
-<IMG
- WIDTH="67" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img399.png"
- ALT="$ t\in\lbrack0,\,T]$">
-<!-- MATHEND
- 
- -->
-)$B$H$9$k!%6h4V(B<!-- MATH
- $[0,\,\Delta]$
- -->
-<IMG
- WIDTH="44" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img400.png"
- ALT="$ [0,\,\Delta]$">
-<!-- MATHEND
- 
- -->
-$B$NK@%R%9%H%0%i%`$N??$N9b$5$O(B
+長さ<tex2html_image_mark>#tex2html_wrap_inline6527#
+<tex2html_verbatim_mark>mathend000#の時間依存Poisson過程のレート（強度過程）を<tex2html_verbatim_mark>#math461#<tex2html_image_mark>#tex2html_wrap_inline6529#
+<tex2html_verbatim_mark>mathend000# (<tex2html_verbatim_mark>#math462#<tex2html_image_mark>#tex2html_wrap_inline6531#
+<tex2html_verbatim_mark>mathend000#)とする．区間<tex2html_verbatim_mark>#math463#<tex2html_image_mark>#tex2html_wrap_inline6533#
+<tex2html_verbatim_mark>mathend000#の棒ヒストグラムの真の高さは
 <P></P>
-<DIV ALIGN="CENTER"><!-- MATH
- \begin{equation}
-\theta=\frac{1}{\Delta}\int_{0}^{\Delta}{\lambda_{t}dt}.
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><tex2html_verbatim_mark>#math464#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="116" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
- SRC="img401.png"
- ALT="$\displaystyle \theta=\frac{1}{\Delta}\int_{0}^{\Delta}{\lambda_{t}dt}.$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6535#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.1)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B$GM?$($i$l$k!%$3$N6h4VFb$N(B<IMG
- WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img53.png"
- ALT="$ n$">
-<!-- MATHEND
- 
- -->
-$B2s$N;n9T?t$NAm%9%Q%$%/?t(B<IMG
- WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img402.png"
- ALT="$ k$">
-<!-- MATHEND
- 
- -->
-$B$O<!$N(BPoisson$BJ,I[$GM?$($i$l$k!%(B
+で与えられる．この区間内の<tex2html_image_mark>#tex2html_wrap_inline6537#
+<tex2html_verbatim_mark>mathend000#回の試行数の総スパイク数<tex2html_image_mark>#tex2html_wrap_inline6539#
+<tex2html_verbatim_mark>mathend000#は次のPoisson分布で与えられる．
 <P></P>
-<DIV ALIGN="CENTER"><A NAME="eq:def_poisson"></A><!-- MATH
- \begin{equation}
-p(k|n\theta\Delta)=\frac{\left(  n\theta\Delta\right)  ^{k}}{k!}%
-e^{-n\theta\Delta}%
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><A NAME="eq:def_poisson"><tex2html_anchor_mark></A><tex2html_verbatim_mark>#math465#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="187" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img403.png"
- ALT="$\displaystyle p(k\vert n\theta\Delta)=\frac{\left( n\theta\Delta\right) ^{k}}{k!}%
-e^{-n\theta\Delta}%
-$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6541#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.2)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B=>$C$F(B <IMG
- WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img404.png"
- ALT="$ {\theta}$">
-<!-- MATHEND
- 
- -->
-$B$NITJP?dDjNL$G$"$k(B<!-- MATH
- ${{\hat{\theta}}}=k/(n\Delta)$
- -->
-<IMG
- WIDTH="85" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img405.png"
- ALT="$ {{\hat{\theta}}}=k/(n\Delta)$">
-<!-- MATHEND
- 
- -->
-$B$,%G!<%?$+$i5a$a$i$l$k%R%9%H%0%i%`$N9b$5$G$"$k!%(B
+従って <tex2html_image_mark>#tex2html_wrap_inline6543#
+<tex2html_verbatim_mark>mathend000#の不偏推定量である<tex2html_verbatim_mark>#math466#<tex2html_image_mark>#tex2html_wrap_inline6545#
+<tex2html_verbatim_mark>mathend000#がデータから求められるヒストグラムの高さである．
 
 <P>
 
 <H3><A NAME="SECTION00511200000000000000">
-$BJ?6Q@QJ,Fs>h8m:95Z$S%3%9%H4X?t$NF3F~(B</A>
+平均積分二乗誤差及びコスト関数の導入</A>
 </H3>
 
 <P>
-$B%9%Q%$%/;~7ONs$N%l!<%H(B<!-- MATH
- $\lambda_{t}$
- -->
-<IMG
- WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img244.png"
- ALT="$ \lambda_{t}$">
-<!-- MATHEND
- 
- -->
-$B$H%R%9%H%0%i%`(B<!-- MATH
- $\hat{\lambda}_{t}$
- -->
-<IMG
- WIDTH="19" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img406.png"
- ALT="$ \hat{\lambda}_{t}$">
-<!-- MATHEND
- 
- -->
-$B$NEv$F$O$^$j$NNI$5$OJ?6Q@QJ,Fs>h8m:9(B(Mean Integrated
-Squared Error$B!$(BMISE)$B$GI>2A$9$k!%==J,D9$$Dj>o$J%9%Q%$%/;~7ONs$,M?$($i$l$?>l9g(BMISE$B$O<!<0$GM?$($i$l$k(B[<A
- HREF="node14.html#Shimazaki07a">Shimazaki and Shinomoto, 2007</A>]$B!%(B
+スパイク時系列のレート<tex2html_verbatim_mark>#math467#<tex2html_image_mark>#tex2html_wrap_inline6548#
+<tex2html_verbatim_mark>mathend000#とヒストグラム<tex2html_verbatim_mark>#math468#<tex2html_image_mark>#tex2html_wrap_inline6550#
+<tex2html_verbatim_mark>mathend000#の当てはまりの良さは平均積分二乗誤差(Mean Integrated Squared Error，MISE)で評価する．十分長い定常なスパイク時系列が与えられた場合MISEは次式で与えられる[#Shimazaki07a#<tex2html_cite_mark>#1##<tex2html_cite_mark>#]．
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT">MISE</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="168" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
- SRC="img407.png"
- ALT="$\displaystyle \equiv\frac{1}{T}\int_{0}^{T}E\,(\hat{\lambda}_{t}-\lambda _{t})^{2}\,dt$"></TD>
+<TD NOWRAP ALIGN="RIGHT"><#1#>MISE<#1#></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6551#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 <A NAME="eq:def_esterr">(3.3)</A></TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="204" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
- SRC="img408.png"
- ALT="$\displaystyle =\left\langle {E\left[ {\frac{1}{\Delta}\int_{0}^{\Delta}{(\,{\lambda _{t}-}\hat{\theta}\,)^{2}dt}}\right] }\right\rangle$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6552#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.4)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B$3$3$G(B <!-- MATH
- $\left\langle \,\cdot\,\right\rangle$
- -->
-<IMG
- WIDTH="26" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img409.png"
- ALT="$ \left\langle \,\cdot\,\right\rangle $">
-<!-- MATHEND
- 
- -->
-$B$O%l!<%H2aDx(B<!-- MATH
- $\lambda_{t}$
- -->
-<IMG
- WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img244.png"
- ALT="$ \lambda_{t}$">
-<!-- MATHEND
- 
- -->
-$B$N7PO)$K$h$k%"%s%5%s%V%kJ?6Q$r0UL#$7!$(B<!-- MATH
- $E_{\Lambda
-}\left[  \,\cdot\,\right]$
- -->
-<IMG
- WIDTH="47" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img410.png"
- ALT="$ E_{\Lambda
-}\left[ \,\cdot\,\right] $">
-<!-- MATHEND
- 
- -->
-$B$O%l!<%H(B<!-- MATH
- $\lambda_{t}$
- -->
-<IMG
- WIDTH="19" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img244.png"
- ALT="$ \lambda_{t}$">
-<!-- MATHEND
- 
- -->
-$B$N6h4VI}(B<IMG
- WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img113.png"
- ALT="$ \Delta$">
-<!-- MATHEND
- 
- -->
-$BFb$G$N;~4VJ?6Q(B<IMG
- WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img404.png"
- ALT="$ {\theta}$">
-<!-- MATHEND
- 
- -->
-$B$,$G$"$k>l9g$N%9%Q%$%/?t$N>r7oIU$-3NN(J,I[(B($B<0(B<A HREF="#eq:def_poisson">3.2</A>)$B$K$h$kJ?6QA`:n$rI=$9!%(B
+ここで <tex2html_verbatim_mark>#math469#<tex2html_image_mark>#tex2html_wrap_inline6554#
+<tex2html_verbatim_mark>mathend000#はレート過程<tex2html_verbatim_mark>#math470#<tex2html_image_mark>#tex2html_wrap_inline6556#
+<tex2html_verbatim_mark>mathend000#の経路によるアンサンブル平均を意味し，<tex2html_verbatim_mark>#math471#<tex2html_image_mark>#tex2html_wrap_inline6558#
+<tex2html_verbatim_mark>mathend000#はレート<tex2html_verbatim_mark>#math472#<tex2html_image_mark>#tex2html_wrap_inline6560#
+<tex2html_verbatim_mark>mathend000#の区間幅<tex2html_image_mark>#tex2html_wrap_inline6562#
+<tex2html_verbatim_mark>mathend000#内での時間平均<tex2html_image_mark>#tex2html_wrap_inline6564#
+<tex2html_verbatim_mark>mathend000#がである場合のスパイク数の条件付き確率分布(式<A HREF=<tex2html_cr_mark>#eq:def_poisson#1512><tex2html_cr_mark></A>)による平均操作を表す．
 
 <P>
-MISE$B$r6h4VI}(B<IMG
- WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img113.png"
- ALT="$ \Delta$">
-<!-- MATHEND
- 
- -->
-$BFb$G$N%l!<%H$N$f$i$.$H%9%Q%$%/@8@.$N$f$i$.$KJ,3d$7!$$5$i$K6h4VI}(B<IMG
- WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img113.png"
- ALT="$ \Delta$">
-<!-- MATHEND
- 
- -->
-$B$NA*Br$K0M$i$J$$9`$r=|$$$?%3%9%H4X?t$rF3F~$9$k$3$H$,$G$-$k!%(B
+MISEを区間幅<tex2html_image_mark>#tex2html_wrap_inline6566#
+<tex2html_verbatim_mark>mathend000#内でのレートのゆらぎとスパイク生成のゆらぎに分割し，さらに区間幅<tex2html_image_mark>#tex2html_wrap_inline6568#
+<tex2html_verbatim_mark>mathend000#の選択に依らない項を除いたコスト関数を導入することができる．
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT"><IMG
- WIDTH="42" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img411.png"
- ALT="$\displaystyle C(\Delta)$"></TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="183" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
- SRC="img412.png"
- ALT="$\displaystyle \equiv\mathbf{MISE}-\left\langle {\left( {\lambda_{t}%
--\langle\theta\rangle}\right) ^{2}}\right\rangle$"></TD>
+<TD NOWRAP ALIGN="RIGHT"><tex2html_image_mark>#tex2html_wrap_indisplay6569#</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6570#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="225" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
- SRC="img413.png"
- ALT="$\displaystyle =\left\langle E\left[ (\hat{\theta}-\theta)^{2}\right] \right\ran...
-...ft\langle {\left( \theta{-\langle\theta\rangle}\right) ^{2}%
-}\right\rangle%
-$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6571#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 <A NAME="cost">(3.5)</A></TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B<0(B<A HREF="#cost">3.5</A>$B$O(B<IMG
- WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img414.png"
- ALT="$ \theta$">
-<!-- MATHEND
- 
- -->
-$B$NJ,;6$rBh#29`$K4^$s$G$$$k$N$G!$4QB,NL$N$_$+$i$J$k<0$K=q$-D>$7<!<0$rF@$k!%(B
+式<A HREF=<tex2html_cr_mark>#cost#1523><tex2html_cr_mark></A>は<tex2html_image_mark>#tex2html_wrap_inline6573#
+<tex2html_verbatim_mark>mathend000#の分散を第２項に含んでいるので，観測量のみからなる式に書き直し次式を得る．
 <P></P>
-<DIV ALIGN="CENTER"><A NAME="Cn"></A><!-- MATH
- \begin{equation}
-C\left(  \Delta\right)  =2\left\langle E\left[  (\hat{\theta}-\theta
-)^{2}\right]  \right\rangle -\left\langle E\left[  (\hat{\theta}%
-{-\langle\theta\rangle})^{2}\right]  \right\rangle%
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><A NAME="Cn"><tex2html_anchor_mark></A><tex2html_verbatim_mark>#math473#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="311" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
- SRC="img415.png"
- ALT="$\displaystyle C\left( \Delta\right) =2\left\langle E\left[ (\hat{\theta}-\theta...
-...le E\left[ (\hat{\theta}%
-{-\langle\theta\rangle})^{2}\right] \right\rangle%
-$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6575#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.6)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B%R%9%H%0%i%`$N:GE,6h4VI}7hDj$N<j=g$r0J2<$K$^$H$a$k(B[<A
- HREF="node14.html#Shimazaki07a">Shimazaki and Shinomoto, 2007</A>]$B!%(B
+ヒストグラムの最適区間幅決定の手順を以下にまとめる[#Shimazaki07a#<tex2html_cite_mark>#1##<tex2html_cite_mark>#]．
 
 <P>
 <DL COMPACT>
 <DT>(i)</DT>
-<DD><IMG
- WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img53.png"
- ALT="$ n$">
-<!-- MATHEND
- 
- -->
-$B2s$N;n9T$K$h$jF@$i$l$?%9%Q%$%/;~7ONs$K$D$$$F!$$=$N4QB,4|4V(B <IMG
- WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img22.png"
- ALT="$ T$">
-<!-- MATHEND
- 
- -->
- $B$rI}(B<IMG
- WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img113.png"
- ALT="$ \Delta$">
-<!-- MATHEND
- 
- -->
-$B$N(B<IMG
- WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img116.png"
- ALT="$ N$">
-<!-- MATHEND
- 
- -->
-$B8D$N%S%s$K6h@Z$k!%(B<IMG
- WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img238.png"
- ALT="$ i$">
-<!-- MATHEND
- 
- -->
-$BHVL\$N%S%s$KF~$k%9%Q%$%/$N?t$r?t$(!$(B<IMG
- WIDTH="18" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img416.png"
- ALT="$ k_{i}$">
-<!-- MATHEND
- 
- -->
- $B$H$9$k!%(B
+<DD><tex2html_image_mark>#tex2html_wrap_inline6577#
+<tex2html_verbatim_mark>mathend000#回の試行により得られたスパイク時系列について，その観測期間 <tex2html_image_mark>#tex2html_wrap_inline6579#
+<tex2html_verbatim_mark>mathend000# を幅<tex2html_image_mark>#tex2html_wrap_inline6581#
+<tex2html_verbatim_mark>mathend000#の<tex2html_image_mark>#tex2html_wrap_inline6583#
+<tex2html_verbatim_mark>mathend000#個のビンに区切る．<tex2html_image_mark>#tex2html_wrap_inline6585#
+<tex2html_verbatim_mark>mathend000#番目のビンに入るスパイクの数を数え，<tex2html_image_mark>#tex2html_wrap_inline6587#
+<tex2html_verbatim_mark>mathend000# とする．
 
 <P>
 </DD>
 <DT>(ii)</DT>
-<DD>$B%9%Q%$%/?t(B<IMG
- WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img417.png"
- ALT="$ \{k_{i}\}$">
-<!-- MATHEND
- 
- -->
- $B$NJ?6Q$HJ,;6$r7W;;$9$k(B
-<P><!-- MATH
- \begin{displaymath}
-\bar{k}\equiv\frac{1}{N}\sum_{i=1}^{N}k_{i}\mbox{$B!$(Band }\displaystyle
-v\equiv\frac{1}{N}\sum_{i=1}^{N}(k_{i}-\bar{k})^{2}.
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="94" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
- SRC="img418.png"
- ALT="$\displaystyle \bar{k}\equiv\frac{1}{N}\sum_{i=1}^{N}k_{i}$">$B!$(Band <IMG
- WIDTH="143" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
- SRC="img419.png"
- ALT="$\displaystyle \displaystyle
-v\equiv\frac{1}{N}\sum_{i=1}^{N}(k_{i}-\bar{k})^{2}.
-$">
+<DD>スパイク数<tex2html_image_mark>#tex2html_wrap_inline6589#
+<tex2html_verbatim_mark>mathend000# の平均と分散を計算する
+<P><tex2html_verbatim_mark>#math474#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay6591#<#1#>，and <#1#><tex2html_image_mark>#tex2html_wrap_indisplay6592#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
+<tex2html_verbatim_mark>mathend000#</P>
 
 <P>
 </DD>
 <DT>(iii)</DT>
-<DD>$B%3%9%H4X?t$r7W;;$9$k(B
-<P><!-- MATH
- \begin{displaymath}
-C_{n}(\Delta)=\frac{2\bar{k}-v}{(n\Delta)^{2}}.
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="124" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img420.png"
- ALT="$\displaystyle C_{n}(\Delta)=\frac{2\bar{k}-v}{(n\Delta)^{2}}.
-$">
+<DD>コスト関数を計算する
+<P><tex2html_verbatim_mark>#math475#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay6594#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
+<tex2html_verbatim_mark>mathend000#</P>
 
 <P>
 </DD>
 <DT>(iv)</DT>
-<DD>$B0[$J$k%S%sI}(B<IMG
- WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img113.png"
- ALT="$ \Delta$">
-<!-- MATHEND
- 
- -->
-$B$KBP$7$F(Bi $B$+$i(B iii $B$r7+$jJV$7!$%3%9%H4X?t(B <!-- MATH
- $C_{n}(\Delta)$
- -->
-<IMG
- WIDTH="50" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img421.png"
- ALT="$ C_{n}(\Delta)$">
-<!-- MATHEND
- 
- -->
-$B$N:G>.CM$rM?$($k(B<!-- MATH
- $\Delta^{\ast}$
- -->
-<IMG
- WIDTH="25" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img422.png"
- ALT="$ \Delta^{\ast}$">
-<!-- MATHEND
- 
- -->
-$B$rC5$9!%(B
+<DD>異なるビン幅<tex2html_image_mark>#tex2html_wrap_inline6596#
+<tex2html_verbatim_mark>mathend000#に対してi から iii を繰り返し，コスト関数 <tex2html_verbatim_mark>#math476#<tex2html_image_mark>#tex2html_wrap_inline6598#
+<tex2html_verbatim_mark>mathend000#の最小値を与える<tex2html_verbatim_mark>#math477#<tex2html_image_mark>#tex2html_wrap_inline6600#
+<tex2html_verbatim_mark>mathend000#を探す．
 </DD>
 </DL>
 
 <P>
+<BLOCKQUOTE>
+</BLOCKQUOTE>
 <P>
+<BLOCKQUOTE>
+</BLOCKQUOTE>
 
 <P>
 
 <H3><A NAME="SECTION00511300000000000000">
-$B:GE,6h4VI}$NM}O@CM$N%9%1!<%j%s%0B'$HH/;6(B</A>
+最適区間幅の理論値のスケーリング則と発散</A>
 </H3>
 
 <P>
-$B<0(B<A HREF="#cost">3.5</A>$B$NBh0l9`$K(BCram&#233;r-Rao$B$NITEy<0$rE,MQ$9$k$3$H$G!$%3%9%H4X?t$N2<8B$,(B<IMG
- WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img247.png"
- ALT="$ \Lambda$">
-<!-- MATHEND
- 
- -->
-$B$NE}7WNL$GM?$($i$l$k!%(B
+式<A HREF=<tex2html_cr_mark>#cost#1559><tex2html_cr_mark></A>の第一項にCram&#233;r-Raoの不等式を適用することで，コスト関数の下限が<tex2html_image_mark>#tex2html_wrap_inline6603#
+<tex2html_verbatim_mark>mathend000#の統計量で与えられる．
 <P></P>
-<DIV ALIGN="CENTER"><A NAME="CLB"></A><!-- MATH
- \begin{equation}
-C\left(  \Delta\right)  \geq\frac{\left\langle \theta\right\rangle }{n\Delta
-}-\left\langle {\left(  \theta{-\langle\theta\rangle}\right)  ^{2}}\right\rangle%
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><A NAME="CLB"><tex2html_anchor_mark></A><tex2html_verbatim_mark>#math478#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="192" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img423.png"
- ALT="$\displaystyle C\left( \Delta\right) \geq\frac{\left\langle \theta\right\rangle ...
-...\left\langle {\left( \theta{-\langle\theta\rangle}\right) ^{2}}\right\rangle%
-$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6605#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.7)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B1&JU$N6KCM$r9M$($k$3$H$G!$%l!<%H$,J?6Q(B<IMG
- WIDTH="14" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img424.png"
- ALT="$ \mu$">
-<!-- MATHEND
- 
- -->
-$B!$Aj4X4X?t(B<IMG
- WIDTH="32" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img425.png"
- ALT="$ \phi(t)$">
-<!-- MATHEND
- 
- -->
-$B$J$kDj>o3NN(2aDx$K$D$$$F:GE,I}$N2r@O2r$,5a$^$k!%(B
+右辺の極値を考えることで，レートが平均<tex2html_image_mark>#tex2html_wrap_inline6607#
+<tex2html_verbatim_mark>mathend000#，相関関数<tex2html_image_mark>#tex2html_wrap_inline6609#
+<tex2html_verbatim_mark>mathend000#なる定常確率過程について最適幅の解析解が求まる．
 
 <P>
-<IMG
- WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img53.png"
- ALT="$ n$">
-<!-- MATHEND
- 
- -->
-$B$,==J,Bg$-$$>l9g!$(B<IMG
- WIDTH="32" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img425.png"
- ALT="$ \phi(t)$">
-<!-- MATHEND
- 
- -->
-$B$N86E@IU6a$G$NE83+<0$rMQ$$$F<0(B<A HREF="#CLB">3.7</A>$B1&JU$N6KCM$rM?$($k(B<IMG
- WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
- SRC="img113.png"
- ALT="$ \Delta$">
-<!-- MATHEND
- 
- -->
-$B$r5a$a$k!%(B<IMG
- WIDTH="32" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img425.png"
- ALT="$ \phi(t)$">
-<!-- MATHEND
- 
- -->
-$B$,86E@$G(BCusp$B7?$H$J$k$H$-$OA26aCM(B<!-- MATH
- $\phi^{\prime}(0+)$
- -->
-<IMG
- WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img426.png"
- ALT="$ \phi^{\prime}(0+)$">
-<!-- MATHEND
- 
- -->
-$B$rMQ$$$F:GE,I}$O(B<!-- MATH
- $\Delta^{*} \sim
-\sqrt{{{ - 3\mu} \mathord{\left/
-{\vphantom {{ - 3\mu } {\phi '\left( {0 + } \right)n}}} \right.
-\kern-\nulldelimiterspace} {\phi '\left( {0 + } \right)n}}}$
- -->
-<IMG
- WIDTH="161" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
- SRC="img427.png"
- ALT="$ \Delta^{*} \sim
-\sqrt{{{ - 3\mu} \mathord{\left/
-{\vphantom {{ - 3\mu } {\ph...
-...ight)n}}} \right.
-\kern-\nulldelimiterspace} {\phi '\left( {0 + } \right)n}}} $">
-<!-- MATHEND
- 
- -->
-$B$GM?$($i$l$k!%(B<IMG
- WIDTH="32" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img425.png"
- ALT="$ \phi(t)$">
-<!-- MATHEND
- 
- -->
-$B$,86E@$G$J$a$i$+$J$H$-$OBP>N@-$+$i(B<!-- MATH
- $\phi^{\prime}(0)=0$
- -->
-<IMG
- WIDTH="68" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img428.png"
- ALT="$ \phi^{\prime}(0)=0$">
-<!-- MATHEND
- 
- -->
-$B$G$"$j!$:GE,I}$O(B <!-- MATH
- $\Delta^{*}
-\sim\left(  {{{ - 6\mu} \mathord{\left/
-{\vphantom {{ - 6\mu } {\phi ''\left( {0 + } \right)n}}} \right.
-\kern-\nulldelimiterspace} {\phi ''\left( {0 + } \right)n}}} \right)  ^{{1
-\mathord{\left/
-{\vphantom {1 3}} \right.
-\kern-\nulldelimiterspace} 3}}$
- -->
-<IMG
- WIDTH="181" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
- SRC="img429.png"
- ALT="$ \Delta^{*}
-\sim\left( {{{ - 6\mu} \mathord{\left/
-{\vphantom {{ - 6\mu } {\p...
-...{1
-\mathord{\left/
-{\vphantom {1 3}} \right.
-\kern-\nulldelimiterspace} 3}} $">
-<!-- MATHEND
- 
- -->
-$B$H$J$k!%(B
+<tex2html_image_mark>#tex2html_wrap_inline6611#
+<tex2html_verbatim_mark>mathend000#が十分大きい場合，<tex2html_image_mark>#tex2html_wrap_inline6613#
+<tex2html_verbatim_mark>mathend000#の原点付近での展開式を用いて式<A HREF=<tex2html_cr_mark>#CLB#1568><tex2html_cr_mark></A>右辺の極値を与える<tex2html_image_mark>#tex2html_wrap_inline6615#
+<tex2html_verbatim_mark>mathend000#を求める．<tex2html_image_mark>#tex2html_wrap_inline6617#
+<tex2html_verbatim_mark>mathend000#が原点でCusp型となるときは漸近値<tex2html_verbatim_mark>#math479#<tex2html_image_mark>#tex2html_wrap_inline6619#
+<tex2html_verbatim_mark>mathend000#を用いて最適幅は<tex2html_verbatim_mark>#math480#<tex2html_image_mark>#tex2html_wrap_inline6621#
+<tex2html_verbatim_mark>mathend000#で与えられる．<tex2html_image_mark>#tex2html_wrap_inline6623#
+<tex2html_verbatim_mark>mathend000#が原点でなめらかなときは対称性から<tex2html_verbatim_mark>#math481#<tex2html_image_mark>#tex2html_wrap_inline6625#
+<tex2html_verbatim_mark>mathend000#であり，最適幅は <tex2html_verbatim_mark>#math482#<tex2html_image_mark>#tex2html_wrap_inline6627#
+<tex2html_verbatim_mark>mathend000#となる．
 
 <P>
-<IMG
- WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img53.png"
- ALT="$ n$">
-<!-- MATHEND
- 
- -->
-$B$,>.$5$$E>0\E@IU6a$G$O(B <!-- MATH
- $\langle(\theta-\langle\theta\rangle)^{2}\rangle\simeq\mu/n_{c}(1/\Delta)-u(1/\Delta)^{2}+O\left(  (1/\Delta
-)^{3}\right)$
- -->
-<IMG
- WIDTH="355" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
- SRC="img430.png"
- ALT="$ \langle(\theta-\langle\theta\rangle)^{2}\rangle\simeq\mu/n_{c}(1/\Delta)-u(1/\Delta)^{2}+O\left( (1/\Delta
-)^{3}\right)$">
-<!-- MATHEND
- 
- -->
-$B$HE83+$9$k(B(<IMG
- WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img431.png"
- ALT="$ n_{c}$">
-<!-- MATHEND
- 
- -->
-$B!$(B<IMG
- WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img432.png"
- ALT="$ u$">
-<!-- MATHEND
- 
- -->
-$B$ODj?t(B)$B!%$3$N$H$-NW3&E@$O(B<IMG
- WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img431.png"
- ALT="$ n_{c}$">
-<!-- MATHEND
- 
- -->
-$B$G$"$j%i%s%@%&$N#2<!AjE>0\$NM}O@$,E,MQ$G$-$k!%(B<IMG
- WIDTH="51" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img433.png"
- ALT="$ n&gt;n_{c}$">
-<!-- MATHEND
- 
- -->
-$B$G$O:GE,I}$N?6$kIq$$$O(B<!-- MATH
- $\Delta^{\ast}\sim nn_{c}/(n-n_{c})$
- -->
-<IMG
- WIDTH="137" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img434.png"
- ALT="$ \Delta^{\ast}\sim nn_{c}/(n-n_{c})$">
-<!-- MATHEND
- 
- -->
-$B$GI=$5$l$k!%(B
+<tex2html_image_mark>#tex2html_wrap_inline6629#
+<tex2html_verbatim_mark>mathend000#が小さい転移点付近では <tex2html_verbatim_mark>#math483#<tex2html_image_mark>#tex2html_wrap_inline6631#
+<tex2html_verbatim_mark>mathend000#と展開する(<tex2html_image_mark>#tex2html_wrap_inline6633#
+<tex2html_verbatim_mark>mathend000#，<tex2html_image_mark>#tex2html_wrap_inline6635#
+<tex2html_verbatim_mark>mathend000#は定数)．このとき臨界点は<tex2html_image_mark>#tex2html_wrap_inline6637#
+<tex2html_verbatim_mark>mathend000#でありランダウの２次相転移の理論が適用できる．<tex2html_image_mark>#tex2html_wrap_inline6639#
+<tex2html_verbatim_mark>mathend000#では最適幅の振る舞いは<tex2html_verbatim_mark>#math484#<tex2html_image_mark>#tex2html_wrap_inline6641#
+<tex2html_verbatim_mark>mathend000#で表される．
 
 <P>
 
 <H3><A NAME="SECTION00511400000000000000">
-$B%R%9%H%0%i%`:n@.$KI,MW$J:G>.;n9T2s?t$N?dDj(B&nbsp;&nbsp;&nbsp;&nbsp;</A>
+ヒストグラム作成に必要な最小試行回数の推定&nbsp;&nbsp;&nbsp;&nbsp;</A>
 </H3>
 
 <P>
-<IMG
- WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img53.png"
- ALT="$ n$">
-<!-- MATHEND
- 
- -->
-$B2s$N;n9T?t$N%9%Q%$%/E}7W(B<IMG
- WIDTH="13" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
- SRC="img435.png"
- ALT="$ \bar{k}$">
-<!-- MATHEND
- 
- -->
-$B!$(B<IMG
- WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img436.png"
- ALT="$ v$">
-<!-- MATHEND
- 
- -->
-$B$rMQ$$$F!$;n9T?t$,(B<IMG
- WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img437.png"
- ALT="$ m$">
-<!-- MATHEND
- 
- -->
-$B2s$N>l9g$N:GE,I}$r!$30A^$7$?%3%9%H4X?t(B
+<tex2html_image_mark>#tex2html_wrap_inline6644#
+<tex2html_verbatim_mark>mathend000#回の試行数のスパイク統計<tex2html_image_mark>#tex2html_wrap_inline6646#
+<tex2html_verbatim_mark>mathend000#，<tex2html_image_mark>#tex2html_wrap_inline6648#
+<tex2html_verbatim_mark>mathend000#を用いて，試行数が<tex2html_image_mark>#tex2html_wrap_inline6650#
+<tex2html_verbatim_mark>mathend000#回の場合の最適幅を，外挿したコスト関数
 <P></P>
-<DIV ALIGN="CENTER"><A NAME="EstimatedCostnm"></A><!-- MATH
- \begin{equation}
-C_{m}\left(  \Delta\right)  =\left(  \frac{1}{m}+\frac{1}{n}\right)
-\frac{\bar{k}}{n\Delta^{2}}-\frac{v}{(n\Delta)^{2}}
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><A NAME="EstimatedCostnm"><tex2html_anchor_mark></A><tex2html_verbatim_mark>#math485#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="253" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img438.png"
- ALT="$\displaystyle C_{m}\left( \Delta\right) =\left( \frac{1}{m}+\frac{1}{n}\right) \frac{\bar{k}}{n\Delta^{2}}-\frac{v}{(n\Delta)^{2}}$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6652#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.8)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B$+$i?dDj$9$k$3$H$,$G$-$k!%$3$l$K$h$j%G!<%?$+$i<!$N#2$D$N?tCM$r?dDj$G$-$k!%(B(i) $B%9%1!<%j%s%0;X?t(B: $B:GE,I}$N;n9T?t$K4X$9$k%9%1!<%j%s%0;X?t$rD4$Y$k$3$H$,$G$-$k!%(B
-$B;X?t$,(B<IMG
- WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img439.png"
- ALT="$ -1/2$">
-<!-- MATHEND
- 
- -->
-$B$N$H$-$OGX8e$N%l!<%H$OHyJ,IT2DG=$G$"$j!$(B<IMG
- WIDTH="41" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img440.png"
- ALT="$ -1/3$">
-<!-- MATHEND
- 
- -->
-$B$N$H$-$K$OHyJ,$NB8:_$9$k$J$a$i$+$J3NN(2aDx$G$"$k$H?dDj$5$l$k!%(B(ii) $B%R%9%H%0%i%`:n@.$KI,MW$J:G>.;n9T2s?t(B: $BE>0\E@$GH/;6$d$H$S$r<($9;XI8$rMQ$$$k$3$H$G!$E>0\E@$rM?$($k(B<IMG
- WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img431.png"
- ALT="$ n_{c}$">
-<!-- MATHEND
- 
- -->
-$B$r?dDj$9$k$3$H$,$G$-$k!%$3$l$K$h$j<B83<T$O>/$J$$;n9T?t$+$i%R%9%H%0%i%`:n@.$K:GDc8BI,MW$J;n9T?t$rM=B,$9$k$3$H$,$G$-$k!%(B
+から推定することができる．これによりデータから次の２つの数値を推定できる．(i) スケーリング指数: 最適幅の試行数に関するスケーリング指数を調べることができる．
+指数が<tex2html_image_mark>#tex2html_wrap_inline6654#
+<tex2html_verbatim_mark>mathend000#のときは背後のレートは微分不可能であり，<tex2html_image_mark>#tex2html_wrap_inline6656#
+<tex2html_verbatim_mark>mathend000#のときには微分の存在するなめらかな確率過程であると推定される．(ii) ヒストグラム作成に必要な最小試行回数: 転移点で発散やとびを示す指標を用いることで，転移点を与える<tex2html_image_mark>#tex2html_wrap_inline6658#
+<tex2html_verbatim_mark>mathend000#を推定することができる．これにより実験者は少ない試行数からヒストグラム作成に最低限必要な試行数を予測することができる．
 
 <P>
 
 <H2><A NAME="SECTION00512000000000000000">
-$B%+!<%M%kL)EY?dDj(B</A>
+カーネル密度推定</A>
 </H2>
 
 <P>
-$B?@7P2J3X$N8EE5E*$J<B83$G$OF10l4D6-2<$G<B83$r7+$jJV$79T$&!%5-O?$5$l$?%9%Q%$%/;~7ONs$O;I7c!&9TF0$J$I$N3+;O;~9o$G$=$m$($FI=<($9$k!%$3$l$r%i%9%?!<%W%m%C%H$H$$$&!%$3$l$i%9%Q%$%/;~7ONs$r=E$M9g$o$;$?%9%Q%$%/;~7ONs%G!<%?(B <IMG
- WIDTH="15" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img441.png"
- ALT="$ {t}_{i}$">
-<!-- MATHEND
- 
- -->
- (<!-- MATH
- $i=1,2,\cdots,N$
- -->
-<IMG
- WIDTH="106" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img442.png"
- ALT="$ i=1,2,\cdots,N$">
-<!-- MATHEND
- 
- -->
-) $B$r<!$N$h$&$K%G%k%?4X?t$rMQ$$$FI=$9!%(B
+神経科学の古典的な実験では同一環境下で実験を繰り返し行う．記録されたスパイク時系列は刺激・行動などの開始時刻でそろえて表示する．これをラスタープロットという．これらスパイク時系列を重ね合わせたスパイク時系列データ <tex2html_image_mark>#tex2html_wrap_inline6661#
+<tex2html_verbatim_mark>mathend000# (<tex2html_verbatim_mark>#math486#<tex2html_image_mark>#tex2html_wrap_inline6663#
+<tex2html_verbatim_mark>mathend000#) を次のようにデルタ関数を用いて表す．
 <P></P>
-<DIV ALIGN="CENTER"><A NAME="rawdensity"></A><!-- MATH
- \begin{equation}
-x_{t}=\frac{1}{n}\sum_{i=1}^{n}{{\delta\left(  {t-t}_{i}\right)  }},
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><A NAME="rawdensity"><tex2html_anchor_mark></A><tex2html_verbatim_mark>#math487#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="145" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img443.png"
- ALT="$\displaystyle x_{t}=\frac{1}{n}\sum_{i=1}^{n}{{\delta\left( {t-t}_{i}\right) }},$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6665#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.9)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B$3$3$G(B <IMG
- WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img53.png"
- ALT="$ n$">
-<!-- MATHEND
- 
- -->
- $B$O7+$jJV$7;n9T$N?t$G$"$k!%%+!<%M%kL)EY?dDj$O$3$N%G!<%?;~7ONs(B<IMG
- WIDTH="19" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img444.png"
- ALT="$ x_{t}$">
-<!-- MATHEND
- 
- -->
-$B$H%+!<%M%k4X?t(B<IMG
- WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img445.png"
- ALT="$ k(s)$">
-<!-- MATHEND
- 
- -->
-
-$B$N>v$_9~$_@QJ,$GM?$($i$l$k!%(B
+ここで <tex2html_image_mark>#tex2html_wrap_inline6667#
+<tex2html_verbatim_mark>mathend000# は繰り返し試行の数である．カーネル密度推定はこのデータ時系列<tex2html_image_mark>#tex2html_wrap_inline6669#
+<tex2html_verbatim_mark>mathend000#とカーネル関数<tex2html_image_mark>#tex2html_wrap_inline6671#
+<tex2html_verbatim_mark>mathend000#
+の畳み込み積分で与えられる．
 <P></P>
-<DIV ALIGN="CENTER"><A NAME="kerneldensity"></A><!-- MATH
- \begin{equation}
-\hat{\lambda}_{t}=\int x_{t-s}k{\left(  {s}\right)  }\,ds.
-%
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><A NAME="kerneldensity"><tex2html_anchor_mark></A><tex2html_verbatim_mark>#math488#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="141" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img446.png"
- ALT="$\displaystyle \hat{\lambda}_{t}=\int x_{t-s}k{\left( {s}\right) }\,ds. %
-$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6673#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.10)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B0J2<@QJ,(B <IMG
- WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img447.png"
- ALT="$ \int$">
-<!-- MATHEND
- 
- -->
- $B$O(B<!-- MATH
- $\int_{-\infty}^{\infty}$
- -->
-<IMG
- WIDTH="35" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="img448.png"
- ALT="$ \int_{-\infty}^{\infty}$">
-<!-- MATHEND
- 
- -->
-$B$rI=$9!%%+!<%M%k4X?t$OL)EY$N>r7o!$(B<!-- MATH
- $\int k(s)\,ds=1$
- -->
-<IMG
- WIDTH="94" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img449.png"
- ALT="$ \int k(s)\,ds=1$">
-<!-- MATHEND
- 
- -->
-,
-$B$rK~$?$7!$Cf?4$,%<%m$G!$(B<!-- MATH
- $\int sk(s)\,ds=0$
- -->
-<IMG
- WIDTH="101" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img450.png"
- ALT="$ \int sk(s)\,ds=0$">
-<!-- MATHEND
- 
- -->
-$B!$$+$DM-8B$N%P%s%II}$rM-$9$k!$(B<!-- MATH
- $w^{2}=\int s^{2}k(s)\,ds<\infty$
- -->
-<IMG
- WIDTH="156" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img451.png"
- ALT="$ w^{2}=\int s^{2}k(s)\,ds&lt;\infty$">
-<!-- MATHEND
- 
- -->
-$B!%(B
+以下積分 <tex2html_image_mark>#tex2html_wrap_inline6675#
+<tex2html_verbatim_mark>mathend000# は<tex2html_verbatim_mark>#math489#<tex2html_image_mark>#tex2html_wrap_inline6677#
+<tex2html_verbatim_mark>mathend000#を表す．カーネル関数は密度の条件，<tex2html_verbatim_mark>#math490#<tex2html_image_mark>#tex2html_wrap_inline6679#
+<tex2html_verbatim_mark>mathend000#,
+を満たし，中心がゼロで，<tex2html_verbatim_mark>#math491#<tex2html_image_mark>#tex2html_wrap_inline6681#
+<tex2html_verbatim_mark>mathend000#，かつ有限のバンド幅を有する，<tex2html_verbatim_mark>#math492#<tex2html_image_mark>#tex2html_wrap_inline6683#
+<tex2html_verbatim_mark>mathend000#．
 
 <P>
-$B0lHL$KNI$/MQ$$$i$l$k$N$O%,%&%9%+!<%M%k$G$"$k!%(B
+一般に良く用いられるのはガウスカーネルである．
 <P></P>
-<DIV ALIGN="CENTER"><A NAME="gaussdensity"></A><!-- MATH
- \begin{equation}
-k_{w}(s)=\frac{1}{\sqrt{2\pi}w}\exp{\left(  -\frac{s^{2}}{2w^{2}}\right)  },
-%
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><A NAME="gaussdensity"><tex2html_anchor_mark></A><tex2html_verbatim_mark>#math493#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="211" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
- SRC="img452.png"
- ALT="$\displaystyle k_{w}(s)=\frac{1}{\sqrt{2\pi}w}\exp{\left( -\frac{s^{2}}{2w^{2}}\right) }, %
-$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6685#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.11)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B$3$3$G(B <IMG
- WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
- SRC="img453.png"
- ALT="$ w$">
-<!-- MATHEND
- 
- -->
- $B$,%P%s%II}$G$"$k!%0J2<$3$N%P%s%II}$r:GE,2=$9$k8x<0$rF3$/!%(B
+ここで <tex2html_image_mark>#tex2html_wrap_inline6687#
+<tex2html_verbatim_mark>mathend000# がバンド幅である．以下このバンド幅を最適化する公式を導く．
 
 <P>
 
 <H3><A NAME="SECTION00512100000000000000">
-$B%+!<%M%k%P%s%II}:GE,2=(B</A>
+カーネルバンド幅最適化</A>
 </H3>
 
 <P>
-$B:GE,%+!<%M%k%P%s%II}$O0J2<$N%3%9%H4X?t$r:G>.2=$9$k%P%s%II}$K$h$jF@$k$3$H$,$G$-$k(B(Shimazaki &amp; Shinomoto 2010[<A
- HREF="node14.html#Shimazaki10">Shimazaki and Shinomoto, 2010</A>] )$B!%(B
-<P><!-- MATH
- \begin{displaymath}
-\hat{C}_{n}\left(  w\right)  =\frac{1}{n^{2}}\sum_{i,j}\int{k}_{w}{\left(
-t{-}t_{i}\right)  k}_{w}{\left(  t{-}t_{j}\right)  }\,dt-\frac{2}{n^{2}}%
-\sum_{i\neq j}k_{w}\left(  t_{i}-t_{j}\right)  ,
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="433" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img454.png"
- ALT="$\displaystyle \hat{C}_{n}\left( w\right) =\frac{1}{n^{2}}\sum_{i,j}\int{k}_{w}{...
-...right) }\,dt-\frac{2}{n^{2}}%
-\sum_{i\neq j}k_{w}\left( t_{i}-t_{j}\right) ,
-$">
+最適カーネルバンド幅は以下のコスト関数を最小化するバンド幅により得ることができる[#Shimazaki10#<tex2html_cite_mark>#1##<tex2html_cite_mark>#]．
+<P><tex2html_verbatim_mark>#math494#</P><DIV ALIGN="CENTER">
+<tex2html_image_mark>#tex2html_wrap_indisplay6690#
 </DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$BB?<!85$N%+!<%M%k$N>l9g$bF1MM$K(B
-<P><!-- MATH
- \begin{displaymath}
-C\left(  \mathbf{w}\right)  =\sum_{i,j}\int k_{\mathbf{w}}\left(
-\mathbf{x}-\mathbf{x}_{i}\right)  k_{\mathbf{w}}\left(  \mathbf{x}%
--\mathbf{x}_{j}\right)  d\mathbf{x-2}\sum_{i\neq j}k_{\mathbf{w}}\left(
-\mathbf{x}_{i}-\mathbf{x}_{j}\right)
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="425" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img455.png"
- ALT="$\displaystyle C\left( \mathbf{w}\right) =\sum_{i,j}\int k_{\mathbf{w}}\left(
-\...
-...{x-2}\sum_{i\neq j}k_{\mathbf{w}}\left(
-\mathbf{x}_{i}-\mathbf{x}_{j}\right)
-$">
-</DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$3$3$G$O(B<!-- MATH
- $\mathbf{x=}\left(  x_{1},x_{2},\ldots,x_{p}\right)$
- -->
-<IMG
- WIDTH="137" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img456.png"
- ALT="$ \mathbf{x=}\left( x_{1},x_{2},\ldots,x_{p}\right)$">
-<!-- MATHEND
- 
- -->
- $B!%(B<!-- MATH
- $\mathbf{x=}\left(  x,y\right)  \mathbf{x}_{i}\mathbf{=}\left(  x_{i},y_{i}\right)$
- -->
-<IMG
- WIDTH="149" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img457.png"
- ALT="$ \mathbf{x=}\left( x,y\right) \mathbf{x}_{i}\mathbf{=}\left( x_{i},y_{i}\right) $">
-<!-- MATHEND
- 
- -->
- <!-- MATH
- $i=1,\ldots,N$
- -->
-<IMG
- WIDTH="89" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
- SRC="img458.png"
- ALT="$ i=1,\ldots,N$">
-<!-- MATHEND
- 
- -->
-&nbsp;&nbsp;&nbsp;&nbsp;$B!%$?$@$7!$(B<!-- MATH
- $\left\Vert \mathbf{x}\right\Vert \mathbf{=}\sum_{i}^{p}x_{i}^{2}$
- -->
-<IMG
- WIDTH="90" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img459.png"
- ALT="$ \left\Vert \mathbf{x}\right\Vert \mathbf{=}\sum_{i}^{p}x_{i}^{2}$">
-<!-- MATHEND
- 
- -->
-$B$H$9$k!%Fs<!85$N>l9g$O(B<!-- MATH
- $\left\Vert \mathbf{x}\right\Vert \mathbf{=}x^{2}+y^{2}$
- -->
-<IMG
- WIDTH="95" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
- SRC="img460.png"
- ALT="$ \left\Vert \mathbf{x}\right\Vert \mathbf{=}x^{2}+y^{2}$">
-<!-- MATHEND
- 
- -->
-$B!%(B
+<tex2html_verbatim_mark>mathend000#</P>
 
 <P>
-
-<H3><A NAME="SECTION00512200000000000000">
-$BB?<!85%+!<%M%kI}:GE,2=8x<0$NF3=P35N,(B</A>
-</H3>
-
-<P>
-$B%G%k%?4X?t$rMQ$$$F!$%G!<%?$r<!$N$h$&$KI=$9$3$H$,$G$-$k!%(B
+ガウスカーネルの場合，以下の公式を最小化するバンド幅を探すことで最適なバンド幅である．
 <P></P>
-<DIV ALIGN="CENTER"><!-- MATH
- \begin{equation}
-s\left(  \mathbf{x}\right)  =\sum_{i=1}^{n}{{\delta\left(  ||{x-x}%
-_{i}||+||{y-y}_{i}||\right)  }}%
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<DIV ALIGN="CENTER"><tex2html_verbatim_mark>#math495#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="245" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img461.png"
- ALT="$\displaystyle s\left( \mathbf{x}\right) =\sum_{i=1}^{n}{{\delta\left( \vert\vert{x-x}%
-_{i}\vert\vert+\vert\vert{y-y}_{i}\vert\vert\right) }}%
-$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6692#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.12)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B%+!<%M%kL)EY?dDj$O(B
+
+<P>
+最適幅推定のコスト関数の導出　MISE
+<P><tex2html_verbatim_mark>#math496#</P><DIV ALIGN="CENTER">
+;SPMnbsp; ;SPMnbsp;<#1#>MISE<#1#><tex2html_image_mark>#tex2html_wrap_indisplay6694#
+</DIV><P>
+<tex2html_verbatim_mark>mathend000#</P>
+からコスト関数を導入する．
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT"><IMG
- WIDTH="53" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img462.png"
- ALT="$\displaystyle \hat{\lambda}\left( x,y\right)$"></TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="157" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img463.png"
- ALT="$\displaystyle =\int s\left( \mathbf{x}\right) k{\left( \mathbf{x}-\mathbf{u}\right) d}\mathbf{u}.$"></TD>
+<TD NOWRAP ALIGN="RIGHT"><tex2html_image_mark>#tex2html_wrap_indisplay6695#</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6696#<#1#>MISE<#1#><tex2html_image_mark>#tex2html_wrap_indisplay6697#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-(3.13)</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="113" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
- SRC="img464.png"
- ALT="$\displaystyle =\sum_{i=1}^{n}k\left( \mathbf{x}-\mathbf{x}_{i}\right)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6698#</TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.13)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+第二項は
+<P></P>
+<DIV ALIGN="CENTER"><tex2html_verbatim_mark>#math497#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6700#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.14)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-MISE<P><!-- MATH
- \begin{displaymath}
-\mbox{MISE}=\int E[(\lambda\left(  \mathbf{x}\right)  -\hat{\lambda}\left(
-\mathbf{x}\right)  )^{2}]d\mathbf{x},
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-&nbsp; &nbsp;MISE<IMG
- WIDTH="189" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img465.png"
- ALT="$\displaystyle =\int E[(\lambda\left( \mathbf{x}\right) -\hat{\lambda}\left(
-\mathbf{x}\right) )^{2}]d\mathbf{x},
-$">
-</DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$+$i%3%9%H4X?t$rF3F~$9$k(B
+さらに上式の第二項は
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT"><IMG
- WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img466.png"
- ALT="$\displaystyle C_{n}\left( w\right)$"></TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
- SRC="img467.png"
- ALT="$\displaystyle =$">MISE<IMG
- WIDTH="101" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img468.png"
- ALT="$\displaystyle -\int\lambda\left( \mathbf{x}\right) ^{2}\,d\mathbf{x}$"></TD>
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6701#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="271" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img469.png"
- ALT="$\displaystyle =\int E\hat{\lambda}\left( \mathbf{x}\right) ^{2}\,d\mathbf{x}%
-...
-...\left( \mathbf{x}\right) E\hat{\lambda}\left( \mathbf{x}%
-\right) d\mathbf{x}.$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6702#</TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6703#</TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6704#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.15)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$BBhFs9`$O(B<P></P>
-<DIV ALIGN="CENTER"><!-- MATH
- \begin{equation}
-Es\left(  \mathbf{x}\right)  E\hat{\lambda}\left(  \mathbf{x}\right)
-=E[s\left(  \mathbf{x}\right)  \hat{\lambda}\left(  \mathbf{x}\right)
-]-E[(s\left(  \mathbf{x}\right)  -Es\left(  \mathbf{x}\right)  )(\hat{\lambda
-}\left(  \mathbf{x}\right)  -E\hat{\lambda}\left(  \mathbf{x}\right)  )],
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+これらをコスト関数に代入して
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="472" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img470.png"
- ALT="$\displaystyle Es\left( \mathbf{x}\right) E\hat{\lambda}\left( \mathbf{x}\right)...
-...{\lambda }\left( \mathbf{x}\right) -E\hat{\lambda}\left( \mathbf{x}\right) )],$"></TD>
+<TD NOWRAP ALIGN="RIGHT"><tex2html_image_mark>#tex2html_wrap_indisplay6705#</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6706#</TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6707#</TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+サンプルからの推定は以下の式で与えられる．
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><tex2html_image_mark>#tex2html_wrap_indisplay6708#</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6709#</TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6710#</TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6711#</TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+対称なカーネルのコスト関数はさらに簡略化できる．
+<P></P>
+<DIV ALIGN="CENTER"><tex2html_verbatim_mark>#math498#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6713#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.16)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B$5$i$K!$>e<0$NBhFs9`$O(B
+として
 <P></P>
 <DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="245" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img471.png"
- ALT="$\displaystyle E[(s\left( \mathbf{x}\right) -Es\left( \mathbf{x}\right) )(\hat {\lambda}\left( \mathbf{x}\right) -E\hat{\lambda}\left( \mathbf{x}\right) )]$"></TD>
+<TD NOWRAP ALIGN="RIGHT"><tex2html_image_mark>#tex2html_wrap_indisplay6714#</TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6715#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="430" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img472.png"
- ALT="$\displaystyle \hskip2em=\int\int k{\left( \mathbf{x}-\mathbf{u}\right) }E\left[...
-... s\left( \mathbf{x}\right) -Es\left( \mathbf{x}\right) \right) \right] \,dudv$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6716#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
 <TR VALIGN="MIDDLE">
 <TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="328" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img473.png"
- ALT="$\displaystyle \hskip2em=\int\int k{\left( \mathbf{x}-\mathbf{u}\right) }\left[...
-...bf{x}-\mathbf{u}\right) \frac{{1}}{n}Es\left( \mathbf{x}\right) \right] \,dudv$"></TD>
+<TD NOWRAP ALIGN="LEFT"><tex2html_image_mark>#tex2html_wrap_indisplay6717#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
+;SPMnbsp;;SPMnbsp;;SPMnbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+ガウスカーネルの場合，
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="eq:phai_fix_approx"><tex2html_anchor_mark></A><tex2html_verbatim_mark>#math499#<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
 <TR VALIGN="MIDDLE">
-<TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="156" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
- SRC="img474.png"
- ALT="$\displaystyle \hskip2em=\frac{{1}}{n}{k}_{w}(\mathbf{0})Es\left( \mathbf{x}\right) .$"></TD>
+<TD NOWRAP ALIGN="CENTER"><tex2html_image_mark>#tex2html_wrap_indisplay6719#</TD>
 <TD NOWRAP WIDTH="10" ALIGN="RIGHT">
 (3.17)</TD></TR>
 </TABLE></DIV>
 <BR CLEAR="ALL"><P></P>
-$B$3$l$i$r%3%9%H4X?t$KBeF~$7$F(B<P></P>
-<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
-<TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT"><IMG
- WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img466.png"
- ALT="$\displaystyle C_{n}\left( w\right)$"></TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="271" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
- SRC="img475.png"
- ALT="$\displaystyle =\int E\hat{\lambda}\left( \mathbf{x}\right) ^{2}\,d\mathbf{x}-2...
-...da\left( \mathbf{x}\right) E\hat{\lambda}\left( \mathbf{x}\right) d\mathbf{x}.$"></TD>
-<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-<TR VALIGN="MIDDLE">
-<TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="406" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img476.png"
- ALT="$\displaystyle =\int E\hat{\lambda}\left( \mathbf{x}\right) ^{2}\,d\mathbf{x}%
-...
-...{{1}}{n}{k}_{w}(\mathbf{0})Es\left( \mathbf{x}%
-\right) \right] d\mathbf{x}%
-$"></TD>
-<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-</TABLE></DIV>
-<BR CLEAR="ALL"><P></P>
-$B%5%s%W%k$+$i$N?dDj$O0J2<$N<0$GM?$($i$l$k!%(B<P></P>
-<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
-<TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT"><IMG
- WIDTH="51" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img477.png"
- ALT="$\displaystyle \hat{C}_{n}\left( w\right)$"></TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="359" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img478.png"
- ALT="$\displaystyle =\int\hat{\lambda}\left( \mathbf{x}\right) ^{2}\,d\mathbf{x}-2\i...
-...-\frac{{1}}{n}{k}_{w}(\mathbf{0})s\left( \mathbf{x}\right) \right] d\mathbf{x}$"></TD>
-<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-<TR VALIGN="MIDDLE">
-<TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="302" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
- SRC="img479.png"
- ALT="$\displaystyle =\int\hat{\lambda}\left( \mathbf{x}\right) ^{2}\,d\mathbf{x-2}\le...
-...ambda}\left( \mathbf{x}_{i}\right) -\frac{{1}}{n}{k}%
-_{w}(\mathbf{0})N\right]$"></TD>
-<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-<TR VALIGN="MIDDLE">
-<TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="352" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img480.png"
- ALT="$\displaystyle =\sum_{i,j}\int k\left( \mathbf{x}-\mathbf{x}_{i}\right) k\left(...
-...right) d\mathbf{x-2}\sum_{i\neq j}k\left( \mathbf{x}_{i}-\mathbf{x}_{j}\right)$"></TD>
-<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-</TABLE></DIV>
-<BR CLEAR="ALL"><P></P>
-$BBP>N$J%+!<%M%k$N%3%9%H4X?t$O$5$i$K4JN,2=$G$-$k!%(B
-<P></P>
-<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
-<TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="RIGHT"><IMG
- WIDTH="51" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
- SRC="img477.png"
- ALT="$\displaystyle \hat{C}_{n}\left( w\right)$"></TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="234" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
- SRC="img481.png"
- ALT="$\displaystyle =\sum_{i,j}\psi\left( \mathbf{x}%
-_{i},\mathbf{x}_{j}\right) \mathbf{-2}\sum_{i\neq j}k\left( \mathbf{x}%
-_{i}-\mathbf{x}_{j}\right)$"></TD>
-<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-<TR VALIGN="MIDDLE">
-<TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="357" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
- SRC="img482.png"
- ALT="$\displaystyle =\sum_{i}\psi\left( \mathbf{x}_{i},\mathbf{x}_{i}\right) +2\sum_{...
-...\mathbf{x}_{j}\right) -4\sum_{i&lt;j}k\left( \mathbf{x}_{i}-\mathbf{x}_{j}\right)$"></TD>
-<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-<TR VALIGN="MIDDLE">
-<TD>&nbsp;</TD>
-<TD NOWRAP ALIGN="LEFT"><IMG
- WIDTH="337" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
- SRC="img483.png"
- ALT="$\displaystyle =\sum_{i}\psi\left( \mathbf{x}_{i},\mathbf{x}_{i}\right) +2\sum ...
-...},\mathbf{x}_{j}\right) -2k\left( \mathbf{x}_{i}-\mathbf{x}_{j}\right) \right]$"></TD>
-<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-</TABLE></DIV>
-<BR CLEAR="ALL"><P></P>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+より前述の公式が得られる．
 
 <P>
-$B%,%&%9%+!<%M%k$N>l9g!$$3$l$rMQ$$$F0J2<$N8x<0$rF@$k$3$H$,$G$-$k!%#2<!85$N%,%&%9%+!<%M%k$O(B
-<P></P>
-<DIV ALIGN="CENTER"><!-- MATH
- \begin{equation}
-k_{w}(\mathbf{x})=\frac{1}{2\pi w^{2}}\exp{\left(  -\frac{||\mathbf{x||}%
-}{2w^{2}}\right)  },
-\end{equation}
- -->
-<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
-<TR VALIGN="MIDDLE">
-<TD NOWRAP ALIGN="CENTER"><IMG
- WIDTH="206" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img484.png"
- ALT="$\displaystyle k_{w}(\mathbf{x})=\frac{1}{2\pi w^{2}}\exp{\left( -\frac{\vert\vert\mathbf{x\vert\vert}%
-}{2w^{2}}\right) },$"></TD>
-<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
-(3.18)</TD></TR>
-</TABLE></DIV>
-<BR CLEAR="ALL"><P></P>
-$B$f$($K!$(B
-<P><!-- MATH
- \begin{displaymath}
-k_{w}\left(  \mathbf{x}_{i}-\mathbf{x}_{j}\right)  =\frac{1}{2\pi w^{2}}%
-\exp\left[  -\frac{\left\Vert \mathbf{x}_{i}-\mathbf{x}_{j}\right\Vert
-}{2w^{2}}\right]
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="277" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img485.png"
- ALT="$\displaystyle k_{w}\left( \mathbf{x}_{i}-\mathbf{x}_{j}\right) =\frac{1}{2\pi w...
-... -\frac{\left\Vert \mathbf{x}_{i}-\mathbf{x}_{j}\right\Vert
-}{2w^{2}}\right]
-$">
-</DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B5Z$S(B
-<P><!-- MATH
- \begin{displaymath}
-\int k_{w}\left(  \mathbf{x}-\mathbf{x}_{i}\right)  k_{w}\left(
-\mathbf{x}-\mathbf{x}_{j}\right)  d\mathbf{x}=\frac{1}{4\pi w^{2}}\exp\left[
--\frac{\left\Vert \mathbf{x}_{i}-\mathbf{x}_{j}\right\Vert }{4w^{2}}\right]
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="390" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img486.png"
- ALT="$\displaystyle \int k_{w}\left( \mathbf{x}-\mathbf{x}_{i}\right) k_{w}\left(
-\m...
-...
--\frac{\left\Vert \mathbf{x}_{i}-\mathbf{x}_{j}\right\Vert }{4w^{2}}\right]
-$">
-</DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-$B$rMQ$$$F0J2<$N%3%9%H4X?t$,F3=P$G$-$k!%(B<P><!-- MATH
- \begin{displaymath}
-\hat{C}_{n}\left(  w\right)  =\frac{N}{4\pi w^{2}}+\frac{1}{2\pi w^{2}}%
-\sum_{i<j}\left[  \exp\left[  -\frac{\left\Vert \mathbf{x}_{i}-\mathbf{x}%
-_{j}\right\Vert }{4w^{2}}\right]  -4\exp\left[  -\frac{\left\Vert
-\mathbf{x}_{i}-\mathbf{x}_{j}\right\Vert }{2w^{2}}\right]  \right]
-\end{displaymath}
- -->
-</P>
-<DIV ALIGN="CENTER">
-<IMG
- WIDTH="499" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
- SRC="img487.png"
- ALT="$\displaystyle \hat{C}_{n}\left( w\right) =\frac{N}{4\pi w^{2}}+\frac{1}{2\pi w^...
-...\left\Vert
-\mathbf{x}_{i}-\mathbf{x}_{j}\right\Vert }{2w^{2}}\right] \right]
-$">
-</DIV><P>
-<!-- MATHEND
- 
- -->
-</P>
-
-<P>
-<HR>
-<!--Navigation Panel-->
-<A NAME="tex2html359"
-  HREF="node13.html">
-<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
- SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
-<A NAME="tex2html353"
-  HREF="node11.html">
-<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
- SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
-<A NAME="tex2html349"
-  HREF="node11.html">
-<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
- SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
-<A NAME="tex2html355"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
- SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
-<A NAME="tex2html357"
-  HREF="node15.html">
-<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
- SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
-<BR>
-<B> Next:</B> <A NAME="tex2html360"
-  HREF="node13.html">$BJd0d(B $BE}7WE*?dB,(B</A>
-<B> Up:</B> <A NAME="tex2html354"
-  HREF="node11.html">$B%9%Q%$%/;~7ONs%b%G%k$N?dDj!J;CDjHG!K(B</A>
-<B> Previous:</B> <A NAME="tex2html350"
-  HREF="node11.html">$B%9%Q%$%/;~7ONs%b%G%k$N?dDj!J;CDjHG!K(B</A>
- &nbsp; <B>  <A NAME="tex2html356"
-  HREF="node1.html">$BL\<!(B</A></B> 
- &nbsp; <B>  <A NAME="tex2html358"
-  HREF="node15.html">$B:w0z(B</A></B> 
-<!--End of Navigation Panel-->
-<ADDRESS>
-&copy; 2007 2008 2009 2010 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki, Ph.D.</a>
-</ADDRESS>
-</BODY>
-</HTML>

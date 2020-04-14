@@ -1,0 +1,6 @@
+No implementation found for style `fancybox'
+No implementation found for style `graphicx'
+
+book.tex is newer than book.aux: Please rerun latex.
+
+book.tex is newer than book.bbl: Please rerun latex and bibtex.

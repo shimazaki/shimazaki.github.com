@@ -84,6 +84,7 @@ function [y,t,optw,W,C,confb95,yb] = sskernel(x,tin,W)
 % 
 % Bug fix
 % 131004 fixed a problem for large values
+% 170917 further fix for the large value issue
 %
 % Hideaki Shimazaki 
 % http://2000.jukuin.keio.ac.jp/shimazaki
@@ -308,20 +309,19 @@ y = ifft(X.*K,n);
 y = y(1:L);
 
 
-function y = logexp(x) 
-if x<1e2 
-    y = log(1+exp(x));
-else
-    y = x;
-end
+function y = logexp(x)
+idx = x<1e2;  
+y(idx) = log(1+exp(x(idx)));
+
+idx = x>=1e2; 
+y(idx) = x(idx);
 
 function y = ilogexp(x)
 %ilogexp = @(x) log(exp(x)-1);
-if x<1e2
-    y = log(exp(x)-1);
-else
-    y = x;
-end
-    
+idx = x<1e2;  
+y(idx) = log(exp(x(idx))-1);
+
+idx = x>=1e2; 
+y(idx) = x(idx);
 
 

@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<!--Converted with jLaTeX2HTML 2008 (1.71) JA patch-1.10beta2.13
+patched version by:  Kenshi Muto, Debian Project.
+* modified by:  Shige TAKENO
+LaTeX2HTML 2008 (1.71),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-2022-jp">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2008 JA patch-1.10beta2.13">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="description" CONTENT="定常スパイク時系列モデル">
+<META NAME="keywords" CONTENT="book">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<LINK REL="STYLESHEET" HREF="../css/latex2html.css">
+
+<LINK REL="next" HREF="node7.html">
+<LINK REL="previous" HREF="node2.html">
+<LINK REL="up" HREF="book.html">
+<LINK REL="next" HREF="node4.html">
+<TITLE>定常スパイク時系列モデル</TITLE>
+
+<META http-equiv=Content-Type content="text/html; charset=shift_jis">
+<script src=http://www.google-analytics.com/urchin.js type=text/javascript></script>
+<script type=text/javascript>_uacct="UA-745872-1";urchinTracker();</script>
+</HEAD>
+
+<BODY>
+    <a name=top id=top> </a>
+    <div id=NaviLayer>  
+    <table width=180 border=0 cellpadding=0 cellspacing=0>
+    <tr><td height=28 valign=top><a href=../../reroute.html class=style22>HOME PAGE</a></td></tr>
+    <tr><td height=28 valign=top><b>Spike Density Estimation</b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../histogram.html>Histogram Method</a></b></td></tr>
+    <tr><td height=28 valign=top><b>- <a href=../kernel.html>Kernel Method</a></b></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Share it with your friend</b></td></tr>
+    <tr><td valign=top><a class=addthis_button href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4bdcbd554189b9a7"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width=125 height=16 alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4bdcbd554189b9a7"></script></td></tr>
+    <tr><td height=8 valign=top></td></tr>
+    <tr><td height=8 valign=top><b>Tweet</b></td></tr>
+    <tr><td valign=top><iframe src=../../tweet.html width=180 height=600 frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe></td></tr>
+    <tr><td height=28 valign=top></td></tr>
+    </table></div>
+<!--Navigation Panel-->
+<A NAME="tex2html163"
+  HREF="node4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html157"
+  HREF="book.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html151"
+  HREF="node2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html159"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/local/share/lib/latex2html/icons/contents.png"></A> 
+<A NAME="tex2html161"
+  HREF="node16.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index"
+ SRC="file:/usr/local/share/lib/latex2html/icons/index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html164"
+  HREF="node4.html">定常ポアソン過程</A>
+<B> Up:</B> <A NAME="tex2html158"
+  HREF="book.html">スパイク統計モデル入門</A>
+<B> Previous:</B> <A NAME="tex2html152"
+  HREF="node2.html">はじめに</A>
+ &nbsp; <B>  <A NAME="tex2html160"
+  HREF="node1.html">目次</A></B> 
+ &nbsp; <B>  <A NAME="tex2html162"
+  HREF="node16.html">索引</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00300000000000000000">
+絎スパイク時系列モデル</A>
+</H1>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html165"
+  HREF="node4.html">定常ポアソン過程</A>
+<UL>
+<LI><A NAME="tex2html166"
+  HREF="node4.html#SECTION00311000000000000000">指数分布</A>
+<LI><A NAME="tex2html167"
+  HREF="node4.html#SECTION00312000000000000000">一定時間内のスパイクの個数（ポアソン分布）</A>
+<LI><A NAME="tex2html168"
+  HREF="node4.html#SECTION00313000000000000000">一定スパイク数の待ち時間（アーラン分布）</A>
+<LI><A NAME="tex2html169"
+  HREF="node4.html#SECTION00314000000000000000">アーラン分布とポアソン分布の関係</A>
+<LI><A NAME="tex2html170"
+  HREF="node4.html#SECTION00315000000000000000">瞬間スパイク生成率によるポアソン過程の定義</A>
+<UL>
+<LI><A NAME="tex2html171"
+  HREF="node4.html#SECTION00315100000000000000">指数分布の導出</A>
+<LI><A NAME="tex2html172"
+  HREF="node4.html#SECTION00315200000000000000">ポアソン分布の導出</A>
+</UL>
+<LI><A NAME="tex2html173"
+  HREF="node4.html#SECTION00316000000000000000">ポアソン過程の尤度関数</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html174"
+  HREF="node5.html">定常リニューアル過程</A>
+<UL>
+<LI><A NAME="tex2html175"
+  HREF="node5.html#SECTION00321000000000000000">ハザード関数 (瞬間スパイク生成率)</A>
+<LI><A NAME="tex2html176"
+  HREF="node5.html#SECTION00322000000000000000">スパイク密度分布</A>
+<UL>
+<LI><A NAME="tex2html177"
+  HREF="node5.html#SECTION00322100000000000000">ガンマ分布</A>
+<LI><A NAME="tex2html178"
+  HREF="node5.html#SECTION00322200000000000000">ワイブル分布</A>
+<LI><A NAME="tex2html179"
+  HREF="node5.html#SECTION00322300000000000000">逆ガウス分布</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html180"
+  HREF="node6.html">定常スパイク時系列の実現</A>
+<UL>
+<LI><A NAME="tex2html181"
+  HREF="node6.html#SECTION00331000000000000000">分布の規格化と逆関数法</A>
+<UL>
+<LI><A NAME="tex2html182"
+  HREF="node6.html#SECTION00331100000000000000">指数分布</A>
+<LI><A NAME="tex2html183"
+  HREF="node6.html#SECTION00331200000000000000">ワイブル分布</A>
+<LI><A NAME="tex2html184"
+  HREF="node6.html#SECTION00331300000000000000">その他の分布</A>
+</UL>
+<LI><A NAME="tex2html185"
+  HREF="node6.html#SECTION00332000000000000000">ハザード関数を用いたスパイク生成</A>
+<LI><A NAME="tex2html186"
+  HREF="node6.html#SECTION00333000000000000000">スパイク時系列の作成</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+&copy; 2007 - 2015 <a href=http://2000.jukuin.keio.ac.jp/shimazaki>H. Shimazaki, Ph.D.</a>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta content="State-space Analysis, Time-varying, Higher-order, Spike Correlation, Multiple Neural Spike Train Data"
+      name="keywords" />
+    <title>Point process and state-space analysis</title>
+    <link href="../css/tool.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://www.google-analytics.com/urchin.js">
+</script>
+    <script type="text/javascript">_uacct = "UA-745872-1"; urchinTracker();</script>
+    <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <!-- Local Javascript -->
+    <!-- saved from url=(0013)about:internet -->
+    <!-- Google plus script -->
+    <script type="text/javascript">
+window.___gcfg = {lang: 'en'};
+(function() 
+{var po = document.createElement("script");
+po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(po, s);
+})();</script>
+    <!-- Facebook Metadata -->
+    <meta content="State-space analysis of dynamic interactions" property="og:title" />
+    <meta content="H. Shimazaki" property="og:site_name" />
+    <meta content="http://2000.jukuin.keio.ac.jp/shimazaki/res/ssloglin/icons/tweet_hoc.png"
+      property="og:image" />
+       
+      
+    <style type="text/css">
+<!--
+body,td,th {
+	font-family: Times New Roman, Times, serif;
+}
+.style29 {color: #FFFFFF}
+.style33 {
+	font-size: x-large;
+	font-weight: bold;
+}
+.style36 {font-size: xx-large}
+.style37 {color: #DDDDDD}
+.style43 {color: #CCCCCC}
+.style_main2 {color: #FF0000;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+  <body>
+    <a id="Top" name="Top"></a>
+    <table width="700" height="140" cellspacing="0" cellpadding="5" bordercolor="#FFFFFF"
+      border="0"
+      bgcolor="#330033">
+      <tbody>
+        <tr>
+          <td nowrap="nowrap" height="134" bgcolor="#FFFFFF" background="../icons/itoh_jakuchu4_2.jpg"
+            bordercolor="#FFFFFF">
+            <div align="right"><span class="style29 style13 style33"><span class="style13 style36"><span
+                    class="style29">Lecture notes on Statistical Analysis and Behaviors</span></span></span><br />
+            </div>
+            <br />
+            <div align="right" class="style29"><span><strong><em><br />
+            </em>Lecture notes </strong></span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  <table width="700" cellspacing="0" cellpadding="0" border="0">
+      <tbody>
+        <tr>
+          <td width="700" height="" nowrap="nowrap" bordercolor="#FFFFFF" bgcolor="#330033">
+            <div align="right"><a class="style37" href="../histogram.html">Histogram
+                  Optimization</a> <span class="style29">|</span> <a
+                class="style37"
+                href="../kernel.html">Kernel
+                Optimization</a> <span class="style29">|</span><span class="style23 style38"> <a class="style37" href="../ssloglin/index.html">Dynamic
+                  Interactions</a></span> <span class="style29">|</span><span class="style37"> Updated
+                  <!-- #BeginDate format:IS1 -->2015-04-08<!-- #EndDate -->
+            </span></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><br />
+    </p>
+    <div id="Contents">
+    </br>
+      <table width="180" cellspacing="1" cellpadding="0" border="0">
+        <tbody>
+          <tr>
+            <td valign="top" height="22"><a class="style9" href="#Top">STATE-SPACE
+                METHOD </a></td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="#Lecture0">- 0 Introduction</a></td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="#Lecture1">- </a><a class="style9" href="#Lecture1">1 Poisson process</a><a class="style9"
+                href="#Ref"></a></td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="#Lecture2">- </a><a class="style9" href="#Lecture2">2 Renewal / Non-Poisson</a><a class="style9"
+                href="#Illustration"></a><a
+                class="style9"
+                href="ipm/5_State-space_model.pdf"></a></td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="#Lecture3">- </a><a class="style9" href="#Lecture3">3 point process-GLM</a><a class="style9"
+                href="#Presentation"></a><a
+                class="style9"
+                href="#Code"></a></td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="#Lecture4">- </a><a class="style9" href="#Lecture4">4 Rate estimation</a><a class="style9"
+                href="#Code"></a><a class="style9" href="#Code"></a></td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="#Lecture5">- </a><a class="style9" href="#Lecture5">5 State-space</a></td>
+          </tr>
+          <tr>
+            <td valign="top">&nbsp;</td>
+          </tr>
+          <tr>
+            <td valign="top">Links</td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="../histogram.html">-
+                Histogram Optimization</a></td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="../kernel.html">- Kernel
+                Optimization</a></td>
+          </tr>
+          <tr>
+            <td valign="top">- <a href="../ssloglin/index.html" class="style9">State-space analysis </a></td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="point_process.html">- Point process</a></td>
+          </tr>
+          <tr>
+            <td valign="top">&nbsp;</td>
+          </tr>
+          <tr>
+            <td valign="top"><a class="style9" href="../../index.html">- HOME
+                Page</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <p><br />
+      </p>
+  </div>
+  <p>&nbsp;</p>
+  <p>
+    <iframe src="http://docs.google.com/viewer?url=https://drive.google.com/open?id=0B5vp3lrRV2FfRzJveklhdzVlUFk&authuser=0&amp;embedded=true" width="700" height="550" frameborder="0">pdf</iframe>
+    
+  </p>
+  <p>
+  </p>
+  </p>
+  <p>&nbsp;</p>
+  <p>
+  </p>
+    </p>
+  </p>
+    <p> </p>
+  </body>
+</html>
