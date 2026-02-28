@@ -1,7 +1,9 @@
 smzk
 _notes
+.metadata
 *~
 *.log
 *.asv
 *.eps
+*.BAK
 *.DS_Store
