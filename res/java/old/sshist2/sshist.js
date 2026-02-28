@@ -164,7 +164,7 @@ function Results_In_Window() {
 	//WIN_RESULTS.window.resizeTo(700,800);
 	WIN_RESULTS.document.open();
 	//WIN_RESULTS.document.writeln("<html><head><title>Data Sheet of the Optimized Histogram</title>");
-	//WIN_RESULTS.document.writeln("<script src=http://www.google-analytics.com/urchin.js type=text/javascript></script><script type=text/javascript> _uacct=UA-745872-1; urchinTracker();	</script></head><body>");																																					
+
 	WIN_RESULTS.document.writeln("<blockquote>&copy; 2006 Hideaki Shimazaki<br><br>");
 	WIN_RESULTS.document.writeln("<h2>Data Sheet of Your Optimized Histogram</h2>");
 	WIN_RESULTS.document.writeln("For the details of the method, please refer to<br>Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram, <em>Neural Computation</em><br><br>");

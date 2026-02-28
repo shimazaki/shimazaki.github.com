@@ -10,13 +10,6 @@ content="Histogram,Bin,Size,PSTH,density,recipe,optimize,optimizing,time-histogr
 
 <META name="verify-v1" content="pKNPE2IFqzcZvCXHtB4juyDOaPIABNL56XFNyCPt5VY=" />
 
-<script src="https://www.google-analytics.com/urchin.js" type="text/javascript">
-</script>
-
-<script type="text/javascript">
-_uacct = "UA-745872-1";
-urchinTracker();
-</script>
 
 <script src="../java/bin/bin.js" type="text/javascript" language="JavaScript">
 <!--type="text/javascript"
@@ -44,7 +37,7 @@ urchinTracker();
   <h1>Histogram Bin Size Selection </h1>
   <table width="700" height="36" border="1">
     <tr>
-      <td height="30"><p>Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram <em>Neural Computation</em> in Press [<a href="../pdf/shimazaki_neco07.pdf" onClick="javascript:urchinTracker ('/downloads/sshistogram.pdf');">pdf</a>] </p>        </td>
+      <td height="30"><p>Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram <em>Neural Computation</em> in Press [<a href="../pdf/shimazaki_neco07.pdf">pdf</a>] </p>        </td>
     </tr>
   </table>
   <p>&nbsp;</p>
@@ -151,8 +144,8 @@ classid="CLSID:8AD9C840-044E-11d1-B3E9-00805F499D93" >
 </object>
 -->
 <strong>3. Select a Bin Size</strong>
-<span class="style2">To obtain an optimal bin size of your data, push <input type="button" name="Button" value="Obtain an Optimal Bin Size" onclick="BinSelectionApplet(); StartApplet(); alert('An optimal bin size of your data is '+OptimalBinSize().toPrecision(3)); javascript:urchinTracker ('/bin_script/calculation');" language="JavaScript" />.</span>
-To obtain details, push <input name="button" type="button" onclick="BinSelectionApplet();Results_In_Window(); javascript:urchinTracker ('/bin_script/datasheet');" value="Output Data Sheet of Your Optimized Histogram" />.
+<span class="style2">To obtain an optimal bin size of your data, push <input type="button" name="Button" value="Obtain an Optimal Bin Size" onclick="BinSelectionApplet(); StartApplet(); alert('An optimal bin size of your data is '+OptimalBinSize().toPrecision(3));" language="JavaScript" />.</span>
+To obtain details, push <input name="button" type="button" onclick="BinSelectionApplet();Results_In_Window();" value="Output Data Sheet of Your Optimized Histogram" />.
 <applet code="BinSelection" codebase="../java/bin" name="BinSelection" width="0" height="0" id="BinSelection"></applet>
 </form><form name="FormApplet" id="FormApplet"><strong>
 4. Draw a Histogram and a cost function</strong>

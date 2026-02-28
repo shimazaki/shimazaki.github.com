@@ -6,12 +6,6 @@
     <meta content="histogram,ヒストグラム,直方图,直方图区间优化,核带宽优化" name="Keywords" />
     <title>Histogram Bin-width Optimization</title>
     <link href="css/tool.css" rel="stylesheet" />
-    <script type="text/javascript" src="https://www.google-analytics.com/urchin.js">
-	</script>
-    <script type="text/javascript">
-	_uacct = "UA-745872-1";
-	urchinTracker();
-	</script>
 
     <!-- Show/Hide script http://www.tutorialtastic.co.uk/tutorial/showhide_elements_with_javascript -->
     <script type="text/javascript">
@@ -27,7 +21,6 @@
 	<!-- Local Javascript -->
     <!-- saved from url=(0013)about:internet -->
     <script type="text/javascript" src="sshist/cur/bin/bin.js"></script>
-
 
 
     <style type="text/css">
@@ -232,7 +225,7 @@
             <form id="FormApplet" name="FormApplet"> <strong>3.</strong> <input
                 type="button"
                 language="JavaScript"
-                onclick="PostData(); Initialize_Parameters(); BinSelectionApplet(); StartApplet(); alert('The optimal bin size is '+BIN_OPT.toPrecision(3)); javascript:urchinTracker ('/bin_script/calculation');"
+                onclick="PostData(); Initialize_Parameters(); BinSelectionApplet(); StartApplet(); alert('The optimal bin size is '+BIN_OPT.toPrecision(3));"
                 value="PRESS HERE to Calculate the Optimal Bin Size"
                 name="Button2" />
               <!--
@@ -241,7 +234,7 @@
             </applet>          </div>
 		--> <br />
               <strong>4.</strong> <input type="button" value="Data Sheet of the Optimized Histogram"
-                onclick="Results_In_Window(); javascript:urchinTracker ('/bin_script/datasheet');"
+                onclick="Results_In_Window();"
                 name="button" />
             </form>
             <hr /> <br />
@@ -372,7 +365,6 @@
             <p>The method was developed in collaboration with Prof. Shinomoto in
               Kyoto University. </p>
             <p><img width="40" height="15" border="0" align="bottom" src="icons/pdf.gif" /><strong><a
-                  onclick="javascript:urchinTracker ('/downloads/sshistogram.pdf');"
                   target="_blank"
                   href="pdf/shimazaki_neco07.pdf">
                   Download full paper</a><br />
@@ -380,7 +372,6 @@
                 size of a time histogram <em>Neural Computation</em> (2007)
                 Vol. 19(6), 1503-1527</strong></p>
             <p><img width="40" height="15" border="0" align="bottom" src="icons/pdf.gif" /><strong><a
-                  onclick="javascript:urchinTracker ('/downloads/nips2006.pdf');"
                   target="_blank"
                   href="http://books.nips.cc/papers/files/nips19/NIPS2006_0137.pdf">
                   Short paper </a><br />
@@ -388,10 +379,9 @@
                 optimizing a time-histogram <em>Neural Information Processing
                   Systems </em> (2007) Vol. 19, 1289-1296</strong></p>
             <p><img width="40" height="15" border="0" align="bottom" src="icons/pdf.gif" /><a
-                onclick="javascript:urchinTracker ('/downloads/sshistogram.ppt');"
                 target="_blank"
                 href="ppt/histogram-kernel_optimization.pdf"><strong>
-                </strong></a><a onclick="javascript:urchinTracker ('/downloads/sshistogram.ppt');"
+                </strong></a><a
                 target="_blank"
                 href="ppt/histogram-kernel_optimization.pdf"><strong>Presentation
                   Slides</strong></a> and <a href="#FAQ"><strong>FAQ</strong></a></p>
@@ -401,9 +391,9 @@
                   New original paper on Kernel Density Estimation</a></strong><strong><br />
                 Shimazaki H. and Shinomoto S., Kernel Bandwidth Optimization in
                 Spike Rate Estimation. <em>Journal of Computational Neuroscience</em></strong> (2009)
-              doi:10.1007/s10827-009-0180-4 [Open Access: <a onclick="javascript:urchinTracker ('/downloads/sskernel.pdf');"
+              doi:10.1007/s10827-009-0180-4 [Open Access: <a
                 href="pdf/shimazaki_jcns10.pdf">PDF</a>,
-              <a onclick="javascript:urchinTracker ('/downloads/sskernel.pdf');"
+              <a
                 href="http://dx.doi.org/10.1007/s10827-009-0180-4">LINK</a>]
             </p>
             <p><a href="kernel.html">Go to Kernel Bandwidth Optimization page. </a></p>
@@ -591,7 +581,7 @@
               histogram is the area of a segmented square cell. The mean and the
               variance are simply computed from the event counts in all the bins
               of the 2-dimensional histogram. </p>
-            <p align="center"><a onclick="javascript:urchinTracker ('/downloads/Demo_sshistogram2d.m');"
+            <p align="center"><a
                 href="code/sshistogram2d_demo.m">Matlab
                 sample program</a> for selecting bin size of 2-d histogram.</p>
             <p align="center"><a href="code/python/histsample2d_iglesias.py">Python sample program</a> (contribution by Cristóvão Freitas Iglesias Junior)</p>
@@ -1144,7 +1134,7 @@ $" src="thesis/img103.gif" /></td>
       <tbody>
         <tr>
           <td width="700">
-            <p>The matlab function <a onclick="javascript:urchinTracker ('/downloads/sshist.m');"
+            <p>The matlab function <a
                 href="https://raw.githubusercontent.com/shimazaki/density_estimation/master/matlab/sshist.m">sshist.m</a>
               is now available. [2008/11/19]<br />
               To plot an optimized histogram of the data x (a vector contains
@@ -1221,7 +1211,7 @@ subplot(1,2,2); plot(D,C,'k.',optD,Cmin,'r*'); axis square;
     <table width="700" height="81" border="0" bgcolor="#DBE7D8">
       <tbody>
         <tr>
-          <td height="77"><p>Copy and Paste a sample program <a onclick="javascript:urchinTracker ('/downloads/sample.R');"
+          <td height="77"><p>Copy and Paste a sample program <a
                 href="code/sample.R">sample.R</a>,
             then run sshist(faithful[,1]) . <a onclick="showStuff('sshist.R'); return false;"
                 href="#">Display
@@ -1401,7 +1391,7 @@ savefig('Fobj.png')
     <table width="700" border="0" bgcolor="#DBE7D8">
       <tbody>
         <tr>
-          <td height="77"><p>Copy and Paste a sample program <a onclick="javascript:urchinTracker ('/downloads/sample.nb');"
+          <td height="77"><p>Copy and Paste a sample program <a
                 href="code/sample.nb">sample.nb</a>,
             then ctrl+shift. <a onclick="showStuff('sshist.nb'); return false;"
                 href="#">Display

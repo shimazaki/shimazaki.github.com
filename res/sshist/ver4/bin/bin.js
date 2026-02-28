@@ -138,10 +138,10 @@ function Results_In_Window() {
 	//WIN_RESULTS.window.resizeTo(700,800);
 	WIN_RESULTS.document.open();
 	//WIN_RESULTS.document.writeln("<html><head><title>Data Sheet of the Optimized Histogram</title>");
-	//WIN_RESULTS.document.writeln("<script src=http://www.google-analytics.com/urchin.js type=text/javascript></script><script type=text/javascript> _uacct=UA-745872-1; urchinTracker();	</script></head><body>");																																					
+
 	WIN_RESULTS.document.writeln("<blockquote>&copy; 2006 2007 Hideaki Shimazaki<br><br>");
 	WIN_RESULTS.document.writeln("<h2>Data Sheet of Your Optimized Histogram</h2>");
-	WIN_RESULTS.document.writeln("For the details of the method, please refer to<br>Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram, <em>Neural Computation</em>, Vol.19, No.6, Pages 1503-1527, 2007 <a href=../ton/pdf/shimazaki_neco07.pdf onclick=javascript:urchinTracker ('/downloads/sshistogram.pdf');><img src=icons/pdf.jpg width=16 height=16 border=0 align=absbottom /></a> <br><br>");
+	WIN_RESULTS.document.writeln("For the details of the method, please refer to<br>Shimazaki H. and Shinomoto S., A method for selecting the bin size of a time histogram, <em>Neural Computation</em>, Vol.19, No.6, Pages 1503-1527, 2007 <a href=../ton/pdf/shimazaki_neco07.pdf><img src=icons/pdf.jpg width=16 height=16 border=0 align=absbottom /></a> <br><br>");
 	WIN_RESULTS.document.writeln("<font color=#FF0000>Optimal Bin Size: <b>"+BIN_OPT.toPrecision(6)+"</b></font><br><br>");
 	WIN_RESULTS.document.writeln("<font color=#FF0000>Optimal Number of Bins: <b>"+N_OPT+"</b></font><br><br>");
 	// Event Counts 

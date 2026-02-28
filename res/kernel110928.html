@@ -9,9 +9,6 @@
 <link rel="stylesheet" href="css/tool.css" />
 <script src="kernel.js" type="text/javascript"></script>
 
-<script src="https://www.google-analytics.com/urchin.js" type="text/javascript">
-</script>
-<script type="text/javascript">_uacct = "UA-745872-1"; urchinTracker();</script>
 
 <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
 
@@ -61,7 +58,6 @@ body,td,th {
   </tr>
 </table>
 <br />
-
 
 
 <div id="Contents">
@@ -232,7 +228,7 @@ Tweet</a>
           </strong></div>
         </form>
         <p><strong>2.</strong>
-            <input name="Button" value="PRESS HERE to Calculate the Optimal Bandwidth" type="button" onclick="PostData(); raster(DATA); density(); t=xaxis(); alert('The optimal kernel width is '  + optw.toPrecision(3)); javascript:urchinTracker ('/kernel/optimization');" language="JavaScript" />
+            <input name="Button" value="PRESS HERE to Calculate the Optimal Bandwidth" type="button" onclick="PostData(); raster(DATA); density(); t=xaxis(); alert('The optimal kernel width is '  + optw.toPrecision(3));" language="JavaScript" />
         
       <div align="center">
           <canvas id="Canvas" width="500" height="300"></canvas>
@@ -240,7 +236,7 @@ Tweet</a>
       </div>
       </p>
 <p><strong>3.</strong>
-            <input name="button" type="button" onclick="Results_In_Window(); javascript:urchinTracker ('/kernel/datasheet');" value="Data Sheet of the Optimized Density Estimation" />
+            <input name="button" type="button" onclick="Results_In_Window();" value="Data Sheet of the Optimized Density Estimation" />
       </p>
       <hr />
         <p>* The Gauss kernel density was used. Its standard deviation is optmized. </p>
@@ -278,8 +274,8 @@ Tweet</a>
    <tr>
      <td height="30"><p>From the observed data only, the method  estimates a binwidth that minimizes expected L2 loss  between the kernel density estimate and an unknown underlying density function. An assumption  made here is merely that samples are drawn from the density independently each other.</p>
        <p>The method was developed in collaboration with Prof. Shinomoto in Kyoto University. </p>
-       <p><strong><img src="icons/pdf.gif" width="40" height="15" border="0" align="bottom" /> Shimazaki H. and Shinomoto S., Kernel Bandwidth Optimization in Spike Rate Estimation. <em> Journal of Computational Neuroscience</em> (2010) Vol. 29 (1-2) 171-182</strong>  doi:10.1007/s10827-009-0180-4  [<span class="style27">Open Access</span>: <a href="http://www.springerlink.com/content/g22785288648l239/fulltext.pdf" onclick="javascript:urchinTracker ('/downloads/sskernel.pdf');">PDF</a>, <a href="http://dx.doi.org/10.1007/s10827-009-0180-4" onclick="javascript:urchinTracker ('/downloads/sskernel.pdf');">LINK</a>]</p>
-       <p><strong><img src="icons/pdf.gif" width="40" height="15" border="0" align="bottom" /></strong> <a href="ppt/histogram-kernel_optimization.pdf" target="_blank" onclick="javascript:urchinTracker ('/downloads/sskernel.ppt');"><strong>Presentation Slides</strong></a> </p>
+       <p><strong><img src="icons/pdf.gif" width="40" height="15" border="0" align="bottom" /> Shimazaki H. and Shinomoto S., Kernel Bandwidth Optimization in Spike Rate Estimation. <em> Journal of Computational Neuroscience</em> (2010) Vol. 29 (1-2) 171-182</strong>  doi:10.1007/s10827-009-0180-4  [<span class="style27">Open Access</span>: <a href="http://www.springerlink.com/content/g22785288648l239/fulltext.pdf">PDF</a>, <a href="http://dx.doi.org/10.1007/s10827-009-0180-4">LINK</a>]</p>
+       <p><strong><img src="icons/pdf.gif" width="40" height="15" border="0" align="bottom" /></strong> <a href="ppt/histogram-kernel_optimization.pdf" target="_blank"><strong>Presentation Slides</strong></a> </p>
      </td>
    </tr>
 </table>
@@ -304,7 +300,7 @@ Tweet</a>
      <p align="left">where <img src="sskernel/2d_distance.gif" width="88" height="18" />. </p>
      <p align="left"> An example of the optimized 2d kernel density estimate is displayed below. </p>
      <p align="center"><img src="sskernel/shimazaki_shinomoto_optmized_2d_kde.png" width="287" height="125" /></p>
-     <p align="left">Here are the example matlab code <a href="code/sskernel2d_demo.m" onclick="javascript:urchinTracker ('/downloads/Demo_sskernel2d.m');">sskernel2d_demo.m</a> and <a href="code/oldfaithful.txt">data</a>. </p>
+     <p align="left">Here are the example matlab code <a href="code/sskernel2d_demo.m">sskernel2d_demo.m</a> and <a href="code/oldfaithful.txt">data</a>. </p>
      <p align="left">Note: if you have two dimensional variables with different dynamic ranges, it should be careful to use the one-parameter 2-d kernel. It would be recommended to either i) optimize  two-parameters kernel, or ii) optimize the one-parameter kernel using the standardized  data, for example, by dividing the data by standard deviations of each component. </p>
      <hr />
      <p align="left"><span class="style4">Q. Is the variable bandwidth kernel available?</span></p>

@@ -190,7 +190,7 @@ function Results_In_Window() {
 	WIN_RESULTS.document.writeln("<title>Data Sheet of the Optimized Histogram</title>");																																				
 	WIN_RESULTS.document.writeln("<blockquote>&copy; 2009 Hideaki Shimazaki<br><br>");
 	WIN_RESULTS.document.writeln("<h2>Data Sheet of Your Optimized Kernel Density Estimation</h2>");
-	WIN_RESULTS.document.writeln("For the details of the method, please refer to<br>Shimazaki H. and Shinomoto S., Kernel Bandwidth Optimization in Spike Rate Estimation, <em>Journal of Computational Neuroscience</em>, Vol.29, Pages 171-182., 2010 <a href=http://www.springerlink.com/content/g22785288648l239/fulltext.pdf target=_blank  onclick=javascript:urchinTracker ('/downloads/sskernel.pdf');><img src=../tmp/icons/pdf.jpg width=16 height=16 border=0 align=absbottom /></a> <br><br>");
+	WIN_RESULTS.document.writeln("For the details of the method, please refer to<br>Shimazaki H. and Shinomoto S., Kernel Bandwidth Optimization in Spike Rate Estimation, <em>Journal of Computational Neuroscience</em>, Vol.29, Pages 171-182., 2010 <a href=http://www.springerlink.com/content/g22785288648l239/fulltext.pdf target=_blank><img src=../tmp/icons/pdf.jpg width=16 height=16 border=0 align=absbottom /></a> <br><br>");
 	WIN_RESULTS.document.writeln("<font color=#FF0000>Optimal Bandwidth: <b>"+optw.toPrecision(6)+"</b></font><br><br>");
 	WIN_RESULTS.document.writeln("<h3>Data of the optimized kernel density estimate</h3><hr><table width=300><tr align=right><td width=150> X-AXIS </td> <td width=150> DENSITY </td>");
 	for (i in opty) {
