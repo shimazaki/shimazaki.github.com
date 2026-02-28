@@ -83,9 +83,7 @@ function isi() {
 		//p = y * Math.exp(-z);
 		//p = y * invGauss(z,k);
 		p = y * Gamma(z,k);
-		
-		p = y * (z,k);
-		
+
 		P = P + (1/2*pb + 1/2*p)*dt;
 		pb = p;
 		
