@@ -6,13 +6,13 @@
     <meta content="histogram,ヒストグラム,直方图,直方图区间优化,核带宽优化" name="Keywords" />
     <title>Histogram Bin-width Optimization</title>
     <link href="css/tool.css" rel="stylesheet" />
-    <script type="text/javascript" src="http://www.google-analytics.com/urchin.js">
+    <script type="text/javascript" src="https://www.google-analytics.com/urchin.js">
 	</script>
     <script type="text/javascript">
 	_uacct = "UA-745872-1";
 	urchinTracker();
 	</script>
-    
+
     <!-- Show/Hide script http://www.tutorialtastic.co.uk/tutorial/showhide_elements_with_javascript -->
     <script type="text/javascript">
 	function showStuff(id) {
@@ -27,9 +27,9 @@
 	<!-- Local Javascript -->
     <!-- saved from url=(0013)about:internet -->
     <script type="text/javascript" src="sshist/cur/bin/bin.js"></script>
-    
-    
-    
+
+
+
     <style type="text/css">
 <!--
 
@@ -236,7 +236,7 @@
                 value="PRESS HERE to Calculate the Optimal Bin Size"
                 name="Button2" />
               <!--
-		<div align="center">		  <applet code="BinSelection" codebase="sshist/cur/bin" name="BinSelection" width="0" height="0" id="BinSelection"> 
+		<div align="center">		  <applet code="BinSelection" codebase="sshist/cur/bin" name="BinSelection" width="0" height="0" id="BinSelection">
 		</applet>            <applet code=DrawHistogram codebase=sshist/cur/bin name=DrawHistogram width=464 height=326 hspace=10 vspace=10 id=DrawHistogram>
             </applet>          </div>
 		--> <br />
@@ -450,11 +450,11 @@
               Here to start Java Applet.</strong></div>
             <div align="center" id="appdiv3"></div>
             <p></p>
-            <!-- 
+            <!--
 	  <form id='appdiv3'></form>	  <applet code="BarHisto" codebase="java/bin" name="BarHisto" width="490" height="290" hspace="20" vspace="20" align="left" id="BarHisto"></applet>
 	  -->
       <!--width="490" height="290" hspace="20" vspace="20"
-      --> 
+      -->
             <p>The histogram is shown in the bottom box by red color. The blue
               line is a distribution (or rate) from which samples are drawn as
               in the upper box. Our aim is to choose a histogram that best
@@ -1285,14 +1285,14 @@ sshist &lt;- function(x){
           <td height="77">
   <blockquote>
     <p>A sample Python program contributed by Érbet Almeida Costa. <a href="code/histsample_costa.py">histsample.py</a>
-      
+
       </p>
     <p>More sample Python programs contributed by Takuma Torii. (Feb. 24, 2013)</p>
     <p><a href="code/python/histsample_torii.py"> histsample_torii.py </a>
-      
+
       </p>
     <p><a href="code/python/histsample_purepython.py">histsample_purepython.py</a> (code without numpy)
-      
+
     </p>
   </blockquote>
   <pre>
@@ -1301,7 +1301,7 @@ Created on Thu Oct 25 11:32:47 2012
 
 Histogram Binwidth Optimization Method
 
-Shimazaki and Shinomoto, Neural Comput 19 1503-1527, 2007 
+Shimazaki and Shinomoto, Neural Comput 19 1503-1527, 2007
 2006 Author Hideaki Shimazaki, Matlab
 Department of Physics, Kyoto University
 shimazaki at ton.scphys.kyoto-u.ac.jp
@@ -1352,7 +1352,7 @@ C = zeros(shape=(size(D),1))
 for i in xrange(size(N)):
     edges = linspace(x_min,x_max,N[i]+1) # Bin edges
     ki = hist(x,edges) # Count # of events in bins
-    ki = ki[0]    
+    ki = ki[0]
     k = mean(ki) #Mean of event count
     v = sum((ki-k)**2)/N[i] #Variance of event count
     C[i] = (2*k-v)/((D[i])**2) #The cost Function
@@ -1370,12 +1370,12 @@ ax.hist(x,edges)
 title(u"Histogram")
 ylabel(u"Frequency")
 xlabel(u"Value")
-savefig('Hist.png')         
+savefig('Hist.png')
 fig = figure()
 plot(D,C,'.b',optD,cmin,'*r')
 savefig('Fobj.png')
           </pre>
-          
+
           </td>
         </tr>
       </tbody>
@@ -1389,7 +1389,7 @@ savefig('Fobj.png')
           <td width="700" height="77" align="left">
             <blockquote>
               <p>A sample Python program for 2D histogram contributed by <a href="http://lattes.cnpq.br/1884098970079363">Cristóvão Freitas Iglesias Junior</a>.
-                
+
                 (Oct. 19, 2013)</p>
               <p><a href="code/python/histsample2d_iglesias.py">histsample2d_iglesias.py</a></p>
             </blockquote></td>
@@ -1482,34 +1482,34 @@ function sshist_2d, data1, data2, x1=x1, x2=x2, cost=cost, nbin=nbin
 
   nbin_min = 2
   nbin_max = 200
-  
+
   ntrial = nbin_max - nbin_min + 1
-  
+
   nbin   = INDGEN(ntrial) + nbin_min
-  
+
   delta1 = FLTARR(ntrial)
   delta2 = FLTARR(ntrial)
   cost   = FLTARR(ntrial)
-  
+
   for n = 0, ntrial-1  do begin
      delta1[n] = (MAX(data1) - MIN(data1)) / (nbin[n] - 1) * (1. - (MACHAR()).EPS)
      delta2[n] = (MAX(data2) - MIN(data2)) / (nbin[n] - 1) * (1. - (MACHAR()).EPS)
-     
+
      k = HIST_2D(data1, data2, bin1=delta1[n], bin2=delta2[n], min1=MIN(data1), min2=MIN(data2))
-     
+
      kmean = MEAN(k)
      kvari = MEAN((k - kmean)^2)
      cost[n] = (2. * kmean - kvari) / (delta1[n] * delta2[n])^2
   endfor
-  
+
   n = (WHERE(cost eq MIN(cost)))[0]
   k = HIST_2D(data1, data2, bin1=delta1[n], bin2=delta2[n], min1=MIN(data1), min2=MIN(data2))
-  
+
   x1 = FINDGEN(nbin[n]) * delta1[n] + MIN(data1)
   x2 = FINDGEN(nbin[n]) * delta2[n] + MIN(data2)
 
   return, k
-  
+
 end
 </pre>
             </span>
@@ -1552,8 +1552,8 @@ end
     <p> </p>
     <p>© 2006-11 Hideaki Shimazaki All rights reserved.</p>
     <script type="text/javascript">
-	function addElement1() { 
-	
+	function addElement1() {
+
 		/* Applet 1 */
 		var appNode1 = document.createElement('applet');
 		appNode1.width="1";
@@ -1572,36 +1572,36 @@ end
 		appNode2.height="362";
 		appNode2.hspace="10";
 		appNode2.vspace="10";
-	
+
 		appNode2.setAttribute("code","DrawHistogram ");
 		appNode2.setAttribute("codebase","sshist/cur/bin");
 		appNode2.setAttribute("id","DrawHistogram");
 		appNode2.setAttribute("name","DrawHistogram");
-		
+
 		var parent = document.getElementById("appdiv1");
 		while (parent.firstChild) {
   			parent.removeChild(parent.firstChild);
 		}
-		
+
 		var parent = document.getElementById("appdiv2");
 		while (parent.firstChild) {
   			parent.removeChild(parent.firstChild);
 		}
-	
-		
+
+
 		document.getElementById("appdiv1").appendChild(appNode1);
 		document.getElementById("appdiv2").appendChild(appNode2);
-	
+
 	}
-	
-	function addElement3() { 
+
+	function addElement3() {
 		/* Applet 3 */
 		var appNode3 = document.createElement('applet');
 		appNode3.width="400"; /*330*/
 		appNode3.height="320"; /*280*/
 		appNode3.hspace="20";
 		appNode3.vspace="20";
-	
+
 		appNode3.setAttribute("code","BarHisto");
 		appNode3.setAttribute("codebase","java/bin");
 		appNode3.setAttribute("id","BarHisto");
@@ -1613,7 +1613,7 @@ end
 		}
 
 		document.getElementById("appdiv3").appendChild(appNode3);
-	
+
 	}
 </script>
   </body>

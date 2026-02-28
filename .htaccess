@@ -1,0 +1,12 @@
+<Files "links.html">
+    AuthType Basic
+    AuthName "Input your ID and Password."
+    AuthUserFile /var/www/html/.htpasswd
+    Require valid-user
+</Files>
+
+#https redirect (now done by aws loadbalancer)
+#RewriteEngine On
+
+#RewriteCond %{HTTP:X-Forwarded-Proto} !https
+#RewriteRule ^(.*)?$ https://%{HTTP:Host}%{REQUEST_URI} [L,R=301]
