@@ -15,7 +15,7 @@ var opty;
 var t;
 
 function PostData() {
-	DATA_TEXT = document.DATAFORM.TEXT.value;	// Read texts in a form.		
+	var DATA_TEXT = document.DATAFORM.TEXT.value;	// Read texts in a form.
 	
 	var DATA_STR;								// DATASTR is an string array.
 	DATA_STR = DATA_TEXT.split(/,{1,}|:{1,}|;{1,}|\s{1,}/);			// a{1,}: Match for a, aa, aaa, aaaa
@@ -23,14 +23,14 @@ function PostData() {
 	// Eliminate NaN
 	var DATA_BUF = new Array(DATA_STR.length);			
 	var I = 0;
-	for (var i in DATA_STR) {
+	for (var i = 0; i < DATA_STR.length; i++) {
 		DATA_BUF[i] =  parseFloat(DATA_STR[i]);		// Conversion from text to float.
 		if (!isNaN(DATA_BUF[i])) {
 			I = I + 1;								//I: Number of Numerals.
 		}
 	}
-	
-	DATA_BUF2 = new Array(I);
+
+	var DATA_BUF2 = new Array(I);
 	var j = 0;
 	for (var i = 0; i < DATA_BUF.length; i++) {
 		if (!isNaN(DATA_BUF[i])) {
@@ -46,7 +46,7 @@ function PostData() {
 	DATA_MIN = DATA[1];
 	DATA_MAX = DATA[1];
 	
-	for (i in DATA) {
+	for (var i = 0; i < DATA.length; i++) {
 		DATA_MIN = Math.min(DATA_MIN, DATA[i]);
 		DATA_MAX = Math.max(DATA_MAX, DATA[i]);
 	}
@@ -62,9 +62,9 @@ function raster(x){
     if (raster.getContext){
     	var ctx = raster.getContext('2d');
 		
-		for (var i in x) {
+		for (var i = 0; i < x.length; i++) {
 			var X = Math.round(500*(x[i]-DATA_MIN)/(DATA_MAX-DATA_MIN));
-			strokeStyle = "rgb(100,100,100)";
+			var strokeStyle = "rgb(100,100,100)";
 			ctx.strokeRect(X,0,1,20);
 		}
 	}
@@ -82,8 +82,8 @@ function raster(x){
 			ctx.beginPath();
 			ctx.moveTo(0,300);
 			for (var i = 0;i<K;i++) {
-				PointX = Math.round(i*500/(K-1));
-				PointY = 300-Math.round(300*opty[i]/(1.2*Max(opty)));
+				var PointX = Math.round(i*500/(K-1));
+				var PointY = 300-Math.round(300*opty[i]/(1.2*Max(opty)));
 				ctx.lineTo(PointX, PointY);
 			}
 			ctx.lineTo(500,300);
@@ -115,7 +115,7 @@ function raster(x){
 		
 		for (var i=0; i<K; i++) {
 			y[i] = 0;
-			for (var j in DATA) {
+			for (var j = 0; j < DATA.length; j++) {
 				y[i] = y[i] + Gauss(x[i]-DATA[j],w) / DATA.length;
 			}
 		}
@@ -158,34 +158,34 @@ function raster(x){
 	
 	function Max(x) {
 		var x_MAX = x[0];
-		for (var i in x) {
+		for (var i = 0; i < x.length; i++) {
 			x_MAX = Math.max(x_MAX, x[i]);
 		}
 		return x_MAX;
 	}
 	function Min(x) {
 		var x_MIN = x[0];
-		for (var i in x) {
+		for (var i = 0; i < x.length; i++) {
 			x_MIN = Math.min(x_MIN, x[i]);
 		}
 		return x_MIN;
 	}
-	
+
 	function Min_Idx(x) {
 		var x_MIN = x[0];
 		var j = 0;
-		for (var i in x) {
+		for (var i = 0; i < x.length; i++) {
 			if ( x[i] < x_MIN) {
 				x_MIN = x[i];
 				j = i;
 			}
-			
+
 		}
 		return j;
 	}
 
 function Results_In_Window() {
-	WIN_RESULTS = window.open();
+	var WIN_RESULTS = window.open();
 	WIN_RESULTS.document.open();
 	WIN_RESULTS.document.writeln("<title>Data Sheet of the Optimized Histogram</title>");																																				
 	WIN_RESULTS.document.writeln("<blockquote>&copy; 2009 Hideaki Shimazaki<br><br>");
@@ -193,12 +193,12 @@ function Results_In_Window() {
 	WIN_RESULTS.document.writeln("For the details of the method, please refer to<br>Shimazaki H. and Shinomoto S., Kernel Bandwidth Optimization in Spike Rate Estimation, <em>Journal of Computational Neuroscience</em>, Vol.29, Pages 171-182., 2010 <a href='http://www.springerlink.com/content/g22785288648l239/fulltext.pdf' target=_blank><img src=icons/pdf.jpg width=16 height=16 border=0 align=absbottom /></a> <br><br>");
 	WIN_RESULTS.document.writeln("<font color=#FF0000>Optimal Bandwidth: <b>"+optw.toPrecision(6)+"</b></font><br><br>");
 	WIN_RESULTS.document.writeln("<h3>Data of the optimized kernel density estimate</h3><hr><table width=300><tr align=right><td width=150> X-AXIS </td> <td width=150> DENSITY </td>");
-	for (i in opty) {
+	for (var i = 0; i < opty.length; i++) {
 		WIN_RESULTS.document.writeln("<tr align=right><td>"+t[i].toPrecision(5)+"</td><td width=150>"+opty[i].toPrecision(5)+"</td>");
 	}
 	WIN_RESULTS.document.writeln("</table><br>");
 	WIN_RESULTS.document.writeln("<h3>Cost Function</h3><hr><table width=300><tr align=right><td width=150> Bandwidth </td> <td width=150> Cost </td>");
-	for (i in C) {
+	for (var i = 0; i < C.length; i++) {
 		WIN_RESULTS.document.writeln("<tr align=right><td>"+W[i].toPrecision(5)+"</td><td width=150>"+C[i].toPrecision(5)+"</td>");
 	}
 	WIN_RESULTS.document.writeln("</table><br>");

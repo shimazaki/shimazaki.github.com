@@ -2,8 +2,6 @@
 // 2008 Hideaki Shimazaki, Ph.D. 
 // 
 
-<!--
-
 var DATA;
 var DATA_MIN;
 var DATA_MAX;
@@ -13,7 +11,7 @@ var N;
 
 // Data Acquisition
 function PostData() {
-	DATA_TEXT = document.DATAFORM.TEXT.value;	// Read texts in a form.		
+	var DATA_TEXT = document.DATAFORM.TEXT.value;	// Read texts in a form.
 	
 	var DATA_STR;								// DATASTR is an string array.
 	DATA_STR = DATA_TEXT.split(/,{1,}|:{1,}|;{1,}|\s{1,}/);			// a{1,}: Match for a, aa, aaa, aaaa
@@ -21,14 +19,14 @@ function PostData() {
 	// Eliminate NaN
 	var DATA_BUF = new Array(DATA_STR.length);			
 	var I = 0;
-	for (var i in DATA_STR) {
+	for (var i = 0; i < DATA_STR.length; i++) {
 		DATA_BUF[i] =  parseFloat(DATA_STR[i]);		// Conversion from text to float.
 		if (!isNaN(DATA_BUF[i])) {
 			I = I + 1;								//I: Number of Numerals.
 		}
 	}
-	
-	DATA_BUF2 = new Array(I);
+
+	var DATA_BUF2 = new Array(I);
 	var j = 0;
 	for (var i = 0; i < DATA_BUF.length; i++) {
 		if (!isNaN(DATA_BUF[i])) {
@@ -44,7 +42,7 @@ function PostData() {
 	DATA_MIN = DATA[1];
 	DATA_MAX = DATA[1];
 	
-	for (i in DATA) {
+	for (var i = 0; i < DATA.length; i++) {
 		DATA_MIN = Math.min(DATA_MIN, DATA[i]);
 		DATA_MAX = Math.max(DATA_MAX, DATA[i]);
 	}
@@ -82,12 +80,12 @@ function isi() {
 		
 		//p = y * Math.exp(-z);
 		//p = y * invGauss(z,k);
-		p = y * Gamma(z,k);
+		var p = y * Gamma(z,k);
 
 		P = P + (1/2*pb + 1/2*p)*dt;
 		pb = p;
 		
-		r = p / (1-P);
+		var r = p / (1-P);
 		R = R + (rb + r)/2*dt;
 		rb = r;
 		
@@ -106,7 +104,7 @@ function kernel(w) {
 	for (var i=0; i<100; i++) {
 		x = x + (DATA_MAX-DATA_MIN)/99; 
 		y[i] = 0;
-		for (var j in DATA) {
+		for (var j = 0; j < DATA.length; j++) {
 			y[i] = y[i] + Gauss(x-DATA[j],w);
 		}
 	}
@@ -135,9 +133,9 @@ function raster(x){
 		
 		var x_min = Min(x);
 		var x_max = Max(x); 
-		for (var i in x) {
+		for (var i = 0; i < x.length; i++) {
 			var X = Math.round(500*(x[i]-x_min)/(x_max-x_min));
-			strokeStyle = "rgb(60,60,60)";
+			var strokeStyle = "rgb(60,60,60)";
 			ctx.strokeRect(X,0,0.1,20);
 		}
 	}
@@ -166,8 +164,8 @@ function density(x){
 		ctx.beginPath();
 		ctx.moveTo(0,300);
 		for (var i = 0;i<100;i++) {
-			PointX = Math.round(i*500/99);
-			PointY = 300-Math.round(300*y[i]/(1.2*Max(y)));
+			var PointX = Math.round(i*500/99);
+			var PointY = 300-Math.round(300*y[i]/(1.2*Max(y)));
 			ctx.lineTo(PointX, PointY);
 		}
 		ctx.lineTo(500,300);
@@ -184,7 +182,7 @@ function SortSet(a,b){return a - b}
 
 function Max(x) {
 	var x_MAX = x[0];
-	for (var i in x) {
+	for (var i = 0; i < x.length; i++) {
 		x_MAX = Math.max(x_MAX, x[i]);
 	}
 	return x_MAX;
@@ -192,20 +190,20 @@ function Max(x) {
 
 function Min(x) {
 	var x_MIN = x[0];
-	for (var i in x) {
+	for (var i = 0; i < x.length; i++) {
 		x_MIN = Math.min(x_MIN, x[i]);
 	}
 	return x_MIN;
 }
-	
+
 function Min_Idx(x) {
 	var x_MIN = x[0];
 	var j = 0;
-	for (var i in x) {
+	for (var i = 0; i < x.length; i++) {
 		if ( x[i] < x_MIN) {
 			x_MIN = x[i];
 			j = i;
-		}		
+		}
 	}
 	return j;
 }

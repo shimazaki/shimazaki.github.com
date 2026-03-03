@@ -15,10 +15,10 @@ function draw_circles_square(x){
     if (canvas.getContext){  
     	var ctx = canvas.getContext('2d');
 							
-    	R = 8;
-        N = x.length;
-		W = Math.sqrt(N);
-		for (var i in x) {
+    	var R = 8;
+        var N = x.length;
+		var W = Math.sqrt(N);
+		for (var i = 0; i < x.length; i++) {
  			ctx.beginPath();
 			if (x[i]) {
 				ctx.fillStyle = "rgb(0,0,0)";
@@ -41,10 +41,10 @@ function draw_circles_line(x){
 	if (canvas.getContext){  
  		var ctx = canvas.getContext('2d');
 							
-		R = 8;
-		N = x.length;
-		W = Math.sqrt(N);
-		for (var i in x) {
+		var R = 8;
+		var N = x.length;
+		var W = Math.sqrt(N);
+		for (var i = 0; i < x.length; i++) {
 			ctx.beginPath();
 			if (x[i]) {
 				ctx.fillStyle = "rgb(0,0,0)";
