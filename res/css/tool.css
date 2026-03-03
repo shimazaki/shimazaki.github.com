@@ -82,8 +82,14 @@ body,td,th {
 
 /* iPad size
 margin + main + margin + panel + margin
-50 + 700 + 20 + 180 + 30 = 980 
+50 + 700 + 20 + 180 + 30 = 980
 */
+
+.page-wrapper {
+	max-width: 980px;
+	margin: 0 auto;
+	position: relative;
+}
 
 
 /* List on right panel*/
