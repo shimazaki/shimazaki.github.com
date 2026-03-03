@@ -4,23 +4,10 @@ html {
 	font-size: 12pt
 }
 
-body, td, th {
-	font-family: "Helvetica Neue",
-    Arial,
-    "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans",
-    Meiryo,
-    sans-serif;
-}
-
-<!-- font-family: Times New Roman, Times, serif; -->
-
 body {
-	background-image: url();
 	margin-left: 10px; /*50*/
 	margin-right: 10px; /*10*/
 	margin-top: 17px;
-	background-repeat: no-repeat;
 	font-size:1rem;
 }
 
@@ -50,13 +37,13 @@ body {
 
 /* white | bar */
 .light_gray {
-	color: #FFFFFF
+	color: #CCCCCC;
+	font-family: "Times New Roman", Times, serif;
 }
 
 /* style for links in right panel */
 .style9 {
 	color: #555555;
-	font-weight: 12pt;
 	font-size:medium;
 	text-decoration:none
 }
@@ -70,7 +57,7 @@ body {
 }
 
 
-.style41 {font-size: smaller}
+.style41 {font-size: smaller; color: #000000}
 .style42 {color: #FF0000}
 
 
@@ -80,21 +67,12 @@ body {
 
 .style8 {color: #000000}
 
-.light_gray {font-family: "Times New Roman", Times, serif}
-
-
 h1,h2,h3,h4,h5,h6 {
 	font-family: Times New Roman, Times, serif;
 }
 body,td,th {
 	font-family: Times New Roman, Times, serif;
 }
-
-
-.style33 {	font-size: x-large;
-	font-weight: bold;
-}
-
 
 
 /* */
@@ -202,17 +180,11 @@ pre {
 	font-size: small;
 	color: #FFFFFF;
 }
-body, td, th {
-	font-family: Times New Roman, Times, serif;
-}
 .style5 {
 	font-size: 14px
 }
 .style27 {
 	color: #666666
-}
-.light_gray {
-	color: #CCCCCC
 }
 .style30 {
 	color: #000066;
@@ -221,8 +193,6 @@ body, td, th {
 .style_main2 {
 	color: #FF0000;
 	font-weight: bold;
-}
-.style41 {color: #000000
 }
 a:link {
 	text-decoration: none;
