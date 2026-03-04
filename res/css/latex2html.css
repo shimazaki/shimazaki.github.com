@@ -11,12 +11,14 @@ body {
 
 #NaviLayer {
 	position:fixed;
-	width:120px;
+	width:180px;
 	height:100px;
 	z-index:1;
 	left: 750px;
 	top: 100px;
 	visibility: visible;
+	overflow:hidden;
+	word-wrap:break-word;
 }
 
 td, th {
