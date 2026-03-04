@@ -7,6 +7,7 @@ body {
 	padding-right: 0.7in;
 	padding-left: 0.5in;
 	width: 650px;
+	margin: 0 auto;
 }
 
 #NaviLayer {
@@ -14,7 +15,7 @@ body {
 	width:180px;
 	height:100px;
 	z-index:1;
-	left: 750px;
+	left: calc(50% + 367px);
 	top: 100px;
 	visibility: visible;
 	overflow:hidden;
