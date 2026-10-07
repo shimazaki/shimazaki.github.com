@@ -20,7 +20,9 @@
 
 	<!-- Local Javascript -->
     <!-- saved from url=(0013)about:internet -->
-    <script type="text/javascript" src="sshist/cur/bin/bin.js"></script>
+    <script src="histogram.js" defer></script>
+    <script src="histogram-demo.js" defer></script>
+    <link href="css/histogram.css" rel="stylesheet" />
 
 
     <style type="text/css">
@@ -31,7 +33,7 @@
 </style>
   </head>
   <body>
-    <div class="page-wrapper tool-page">
+    <div class="page-wrapper tool-page histogram-page">
     <div id="Contents"><br />
       <table width="180" cellspacing="1" cellpadding="0" border="0">
         <tbody>
@@ -188,14 +190,14 @@
     </table>
     <br />
     <h2><a id="WebApp" name="WebApp"></a>Web Application for Bin-width
-      Optimization (Ver. 2.0)</h2>
+      Optimization</h2>
     <table width="700" cellpadding="10" border="0" bgcolor="#ECE9D8">
       <tbody>
         <tr>
           <td width="700" height="30" align="left">
-            <form id="DATAFORM" name="DATAFORM"> <strong>1. Copy&amp;Paste your
-                data</strong>
-              <div align="center"> <textarea onkeyup="PostData();Initialize_Parameters()"
+            <form id="DATAFORM" name="DATAFORM"> <strong><label for="histogram-data">1. Copy&amp;Paste your
+                data</label></strong>
+              <div align="center"> <textarea id="histogram-data"
                   wrap="off"
                   cols="65"
                   rows="9"
@@ -210,38 +212,25 @@
 1.83 4.13 1.83 4.65 4.20 3.93 4.33 1.83 4.53 2.03 4.18 4.43
 4.07 4.13 3.95 4.10 2.72 4.58 1.90 4.50 1.95 4.83 4.12</textarea>
               </div>
-              <div align="right"><strong> <input type="reset" value="Reset" name="reset" />
+              <div align="right"><strong> <input type="reset" value="Reset" />
                 </strong><br />
               </div>
             </form>
-            <strong>2.</strong> <input type="button" value="Please click here to start Java Applet"
-              onclick="addElement1()"
-              id="addElementDiv1" />
-            This may take some time.
-            <p> </p>
-            <div align="center" id="appdiv1"></div>
-            <div align="center" vspace="10" hspace="10" height="326" width="464"
-              id="appdiv2"></div>
-            <p></p>
-            <form id="FormApplet" name="FormApplet"> <strong>3.</strong> <input
-                type="button"
-                language="JavaScript"
-                onclick="PostData(); Initialize_Parameters(); BinSelectionApplet(); StartApplet(); alert('The optimal bin size is '+BIN_OPT.toPrecision(3));"
-                value="PRESS HERE to Calculate the Optimal Bin Size"
-                name="Button2" />
-              <!--
-		<div align="center">		  <applet code="BinSelection" codebase="sshist/cur/bin" name="BinSelection" width="0" height="0" id="BinSelection">
-		</applet>            <applet code=DrawHistogram codebase=sshist/cur/bin name=DrawHistogram width=464 height=326 hspace=10 vspace=10 id=DrawHistogram>
-            </applet>          </div>
-		--> <br />
-              <strong>4.</strong> <input type="button" value="Data Sheet of the Optimized Histogram"
-                onclick="Results_In_Window();"
-                name="button" />
-            </form>
+            <p><strong>2.</strong> <button type="button" id="histogram-calculate">Calculate the Optimal Bin Size</button></p>
+            <p id="histogram-status" role="status" aria-live="polite"></p>
+            <div id="histogram-results" class="histogram-plot" hidden>
+              <canvas id="histogram-canvas" width="500" height="300" role="img" aria-label="Histogram of the input data"></canvas>
+              <p><label for="histogram-bin-width">Bin width</label>: <output id="histogram-bin-label" for="histogram-bin-width"></output></p>
+              <input id="histogram-bin-width" type="range" min="0" max="198" value="0" aria-label="Histogram bin width" />
+              <p><button type="button" id="histogram-restore">Restore optimal bin width</button></p>
+            </div>
+            <p><strong>3.</strong> <button type="button" id="histogram-sheet" disabled>Data Sheet of the Optimized Histogram</button></p>
+            <noscript><p>Please enable JavaScript to use the histogram calculator and interactive demonstration.</p></noscript>
             <hr /> <br />
             *The data is processed on your own computer (the data is NOT
             transferred to our server). <br />
-            *The program searches number of bins from 2 to 200.
+            *The program searches number of bins from 2 to 200.<br />
+            *Like the kernel page, this application uses HTML5 Canvas.
             <p class="style23">07/06/16 Ver. 1.0 <br />
               06/11/08 Ver. 0.10 Improved data sheet output. </p>
             <div align="center">Web Application for Histogram Bin-width
@@ -429,23 +418,26 @@
                 resolution isn't good enough. </li>
             </ul>
             <p>There is an optimal bin size that remedies these two problems. </p>
-            <p>The Java Applet below demonstrates the problem of the bin size
-              selection. In the applet, data is shown in the upper box and its
+            <p>The interactive demonstration below illustrates the problem of the bin size
+              selection. Data is shown in the upper box and its
               histogram in the bottom box. The data is an example from
               Neuroscience: a timing of neuronal firing (spikes) obtained by
-              repeated trials. Twenty sequences (trials) are drawn in the data
+              repeated trials. Twenty-five sequences (trials) are drawn in the data
               box. However, the data can be anything (weight, height, or test
               score etc.), and can be one sequence. </p>
             <p> </p>
-            <div align="center" onclick="addElement3()" id="addElementDiv3"><strong>Click
-              Here to start Java Applet.</strong></div>
-            <div align="center" id="appdiv3"></div>
-            <p></p>
-            <!--
-	  <form id='appdiv3'></form>	  <applet code="BarHisto" codebase="java/bin" name="BarHisto" width="490" height="290" hspace="20" vspace="20" align="left" id="BarHisto"></applet>
-	  -->
-      <!--width="490" height="290" hspace="20" vspace="20"
-      -->
+            <div class="histogram-demo">
+              <p class="demo-controls">
+                <label><input type="checkbox" id="demo-histogram" checked /> Histogram</label>
+                <label><input type="checkbox" id="demo-rate" checked /> Underlying Rate</label>
+                <label><input type="checkbox" id="demo-error" /> Error</label>
+                <button type="button" id="demo-redraw">redraw</button>
+              </p>
+              <canvas id="demo-canvas" width="400" height="280" role="img" aria-label="Simulated spike trains above; their histogram and underlying rate below"></canvas>
+              <p><label for="demo-bin-width">Bin width</label>: <output id="demo-bin-label" for="demo-bin-width"></output></p>
+              <input id="demo-bin-width" type="range" min="8" max="330" value="50" aria-label="Demonstration bin width" />
+              <p><output id="demo-error-value" aria-live="polite"></output></p>
+            </div>
             <p>The histogram is shown in the bottom box by red color. The blue
               line is a distribution (or rate) from which samples are drawn as
               in the upper box. Our aim is to choose a histogram that best
@@ -1509,18 +1501,20 @@ end
       </tbody>
     </table>
     <h2> </h2>
-    <h2>Java program </h2>
+    <h2>JavaScript programs and original Java sources</h2>
     <table width="700" height="81" border="0" bgcolor="#DBE7D8">
       <tbody>
         <tr>
           <td height="77">
-            <p>The web appliation is written in Java. Here are the core codes, <a
+            <p>This version runs in JavaScript: <a href="histogram.js">histogram.js</a>
+              (optimization and drawing) and <a href="histogram-demo.js">histogram-demo.js</a>
+              (interactive demonstration).</p>
+            <p>The original Java source codes are preserved: <a
                 href="sshist/cur/bin/BinSelection.java">BinSelection.java</a>
               <a target="_blank" href="sshist/cur/bin/BarHisto.java"></a> and <a
                 href="sshist/cur/bin/DrawHistogram.java">DrawHistogram.java</a>
               . (<a target="_blank" href="sshist/cur/bin/BarHisto.java">BarHisto.java</a>)
             </p>
-            <p>They work with Javascript on this page.</p>
           </td>
         </tr>
       </tbody>
@@ -1542,71 +1536,6 @@ end
     </table>
     <p> </p>
     <p>© 2006-11 Hideaki Shimazaki All rights reserved.</p>
-    <script type="text/javascript">
-	function addElement1() {
-
-		/* Applet 1 */
-		var appNode1 = document.createElement('applet');
-		appNode1.width="1";
-		appNode1.height="1";
-		appNode1.hspace="0";
-		appNode1.vspace="0";
-
-		appNode1.setAttribute("code","BinSelection");
-		appNode1.setAttribute("codebase","sshist/cur/bin");
-		appNode1.setAttribute("id","BinSelection");
-		appNode1.setAttribute("name","BinSelection");
-
-		/* Applet 2 */
-		var appNode2 = document.createElement('applet');
-		appNode2.width="464";
-		appNode2.height="362";
-		appNode2.hspace="10";
-		appNode2.vspace="10";
-
-		appNode2.setAttribute("code","DrawHistogram ");
-		appNode2.setAttribute("codebase","sshist/cur/bin");
-		appNode2.setAttribute("id","DrawHistogram");
-		appNode2.setAttribute("name","DrawHistogram");
-
-		var parent = document.getElementById("appdiv1");
-		while (parent.firstChild) {
-  			parent.removeChild(parent.firstChild);
-		}
-
-		var parent = document.getElementById("appdiv2");
-		while (parent.firstChild) {
-  			parent.removeChild(parent.firstChild);
-		}
-
-
-		document.getElementById("appdiv1").appendChild(appNode1);
-		document.getElementById("appdiv2").appendChild(appNode2);
-
-	}
-
-	function addElement3() {
-		/* Applet 3 */
-		var appNode3 = document.createElement('applet');
-		appNode3.width="400"; /*330*/
-		appNode3.height="320"; /*280*/
-		appNode3.hspace="20";
-		appNode3.vspace="20";
-
-		appNode3.setAttribute("code","BarHisto");
-		appNode3.setAttribute("codebase","java/bin");
-		appNode3.setAttribute("id","BarHisto");
-		appNode3.setAttribute("name","BarHisto");
-
-		var parent = document.getElementById("appdiv3");
-		while (parent.firstChild) {
-  			parent.removeChild(parent.firstChild);
-		}
-
-		document.getElementById("appdiv3").appendChild(appNode3);
-
-	}
-</script>
     </div>
   </body>
 </html>

@@ -1,5 +1,5 @@
-/* Canvas experiments retain the existing tool-page layout and colors. */
-.histogram-experiment > h2 { max-width: 700px; }
+/* Canvas plots retain the existing tool-page layout and colors. */
+.histogram-page > h2 { max-width: 700px; }
 .histogram-plot, .histogram-demo {
     text-align: center;
     margin: 16px auto;

@@ -19,7 +19,7 @@ function reference(data, bins, shift) {
 }
 
 test('default page sample agrees with independent Python baseline', () => {
-    const html = fs.readFileSync(path.join(__dirname, '../res/histogram-js.html'), 'utf8');
+    const html = fs.readFileSync(path.join(__dirname, '../res/histogram.html'), 'utf8');
     const sample = H.parseData(html.match(/<textarea[^>]*>([\s\S]*?)<\/textarea>/)[1]);
     const result = H.optimize(sample);
     assert.equal(result.data.length, 107);
