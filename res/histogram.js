@@ -5,6 +5,9 @@
 (function (root) {
     'use strict';
 
+    const MIN_BINS = 2;
+    const MAX_BINS = 100;
+
     function parseData(text) {
         const tokens = text.trim().split(/[\s,;:]+/).filter(Boolean);
         const numeric = /^[+-]?(?:\d+\.?\d*|\.\d+)(?:e[+-]?\d+)?$/i;
@@ -67,7 +70,7 @@
         }
         const candidates = [];
         let best;
-        for (let bins = 2; bins <= 200; bins++) {
+        for (let bins = MIN_BINS; bins <= MAX_BINS; bins++) {
             const width = range / bins;
             if (!(width * width > 0) || !Number.isFinite(width * width)) {
                 throw new Error('The numeric range is too large or small. Please rescale your data.');
@@ -103,11 +106,14 @@
         ctx.fillStyle = '#ffffff';
         ctx.fillRect(0, 0, width, height);
         const left = 52, top = 32, plotWidth = 430, plotHeight = 233;
-        const rates = h.counts.map(count => count / h.width);
-        const ymax = Math.max(...rates) * 1.1;
+        const maxCount = Math.max(...h.counts);
+        const tickTarget = maxCount * 1.1 / 5;
+        const tickBase = 10 ** Math.floor(Math.log10(tickTarget));
+        const tickStep = Math.max(1, [1, 2, 5, 10].find(step => step * tickBase >= tickTarget) * tickBase);
+        const ymax = Math.ceil(maxCount * 1.1 / tickStep) * tickStep;
         ctx.fillStyle = '#ff0000';
-        rates.forEach((rate, i) => {
-            const barHeight = plotHeight * rate / ymax;
+        h.counts.forEach((count, i) => {
+            const barHeight = plotHeight * count / ymax;
             ctx.fillRect(left + plotWidth * i / bins, top + plotHeight - barHeight, plotWidth / bins, barHeight);
         });
         ctx.strokeStyle = '#000000';
@@ -116,18 +122,18 @@
         ctx.fillStyle = '#000000';
         ctx.font = '12px sans-serif';
         ctx.textAlign = 'left';
-        ctx.fillText('Rate (count / bin width)', left, 19);
+        ctx.fillText('Count', left, 19);
         ctx.textAlign = 'right';
         ctx.fillText('Bin width ' + format(h.width) + '   # of bins ' + bins, left + plotWidth, 19);
-        for (let i = 0; i <= 4; i++) {
-            const y = top + plotHeight * (1 - i / 4);
-            ctx.fillText(format(ymax * i / 4), left - 7, y + 4);
+        for (let count = 0; count <= ymax; count += tickStep) {
+            const y = top + plotHeight * (1 - count / ymax);
+            ctx.fillText(format(count), left - 7, y + 4);
         }
         ctx.textAlign = 'left';
         ctx.fillText(format(result.min), left, height - 14);
         ctx.textAlign = 'right';
         ctx.fillText(format(result.max), left + plotWidth, height - 14);
-        canvas.setAttribute('aria-label', 'Histogram with ' + bins + ' bins, width ' + format(h.width) + ', ' + result.data.length + ' observations.');
+        canvas.setAttribute('aria-label', 'Histogram of counts with ' + bins + ' bins, width ' + format(h.width) + ', ' + result.data.length + ' observations.');
         return h;
     }
 
@@ -144,7 +150,7 @@
             '<em>Neural Computation</em> 19(6), 1503–1527 (2007).</p>' +
             '<p>Optimal bin width: <strong>' + format(h.width) + '</strong><br>Optimal number of bins: <strong>' + h.bins +
             '</strong><br>Number of observations: ' + result.data.length + '</p>' +
-            '<h2>Data of the optimized histogram</h2><table id="histogram-data-table"><thead><tr><th>Bin edges</th><th>Frequency</th><th>Rate</th><th>Probability</th></tr></thead><tbody>' +
+            '<h2>Data of the optimized histogram</h2><table id="histogram-data-table"><thead><tr><th>Bin edges</th><th>Count</th><th>Rate</th><th>Probability</th></tr></thead><tbody>' +
             rows + '<tr><td>' + format(h.edges[h.bins]) + '</td><td></td><td></td><td></td></tr></tbody></table>' +
             '<p>Bins include their left edge; the last bin also includes its right edge.</p>' +
             '<h2>Bin width vs. cost function</h2><p>Cost averaged over 11 partition positions.</p>' +
@@ -161,12 +167,13 @@
         const label = doc.getElementById('histogram-bin-label');
         const canvas = doc.getElementById('histogram-canvas');
         const sheet = doc.getElementById('histogram-sheet');
+        slider.max = MAX_BINS - MIN_BINS;
         let result = null;
 
         function show(bins) {
             const h = draw(canvas, result, bins);
             label.textContent = format(h.width) + ' (' + bins + ' bins)';
-            slider.value = 200 - bins;
+            slider.value = MAX_BINS - bins;
             slider.setAttribute('aria-valuetext', format(h.width) + ', ' + bins + ' bins');
         }
         function calculate() {
@@ -188,7 +195,7 @@
         }
         doc.getElementById('histogram-calculate').addEventListener('click', calculate);
         doc.getElementById('histogram-restore').addEventListener('click', () => { if (result) show(result.optimal.bins); });
-        slider.addEventListener('input', () => { if (result) show(200 - Number(slider.value)); });
+        slider.addEventListener('input', () => { if (result) show(MAX_BINS - Number(slider.value)); });
         input.addEventListener('input', () => {
             result = null;
             sheet.disabled = true;

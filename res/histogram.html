@@ -221,7 +221,7 @@
             <div id="histogram-results" class="histogram-plot" hidden>
               <canvas id="histogram-canvas" width="500" height="300" role="img" aria-label="Histogram of the input data"></canvas>
               <p><label for="histogram-bin-width">Bin width</label>: <output id="histogram-bin-label" for="histogram-bin-width"></output></p>
-              <input id="histogram-bin-width" type="range" min="0" max="198" value="0" aria-label="Histogram bin width" />
+              <input id="histogram-bin-width" type="range" min="0" max="98" value="0" aria-label="Histogram bin width" />
               <p><button type="button" id="histogram-restore">Restore optimal bin width</button></p>
             </div>
             <p><strong>3.</strong> <button type="button" id="histogram-sheet" disabled>Data Sheet of the Optimized Histogram</button></p>
@@ -229,7 +229,7 @@
             <hr /> <br />
             *The data is processed on your own computer (the data is NOT
             transferred to our server). <br />
-            *The program searches number of bins from 2 to 200.<br />
+            *The program searches number of bins from 2 to 100.<br />
             *Like the kernel page, this application uses HTML5 Canvas.
             <p class="style23">07/06/16 Ver. 1.0 <br />
               06/11/08 Ver. 0.10 Improved data sheet output. </p>
@@ -544,7 +544,7 @@
               the search from the bin width as large as your sampling
               resolution.</p>
             <p>The minimum binwidth that the web-app searches is your data range
-              divided by 200. If your sampling resolution is larger than it,
+              divided by 100. If your sampling resolution is larger than it,
               ignore the suggested optimal bin. Please find the minimum in the
               cost function in `datasheet' for the bins larger than your
               sampling resolution.            </p>

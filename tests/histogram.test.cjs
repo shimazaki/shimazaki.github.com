@@ -27,8 +27,8 @@ test('default page sample agrees with independent Python baseline', () => {
     near(result.optimal.width, 0.23285714285714285);
     near(result.optimal.cost, -320.16122685700014);
     assert.deepEqual(result.optimal.counts, [20,5,3,1,1,2,2,7,10,9,18,11,14,4]);
-    assert.equal(result.candidates.length, 199);
-    assert.deepEqual(result.candidates.map(c => c.bins), Array.from({length: 199}, (_, i) => i + 2));
+    assert.equal(result.candidates.length, 99);
+    assert.deepEqual(result.candidates.map(c => c.bins), Array.from({length: 99}, (_, i) => i + 2));
     assert.equal(result.optimal.edges.length, 15);
     assert.equal(result.optimal.edges[14], 4.93);
 });
@@ -38,7 +38,7 @@ test('all repeated maxima and internal boundary values are counted exactly once'
     assert.deepEqual(H.countSorted(data, 2), [2, 4]);
     assert.deepEqual(H.countSorted(data, 2, .25), [1, 3]);
     assert.deepEqual(H.countSorted(data, 2, -.25), [2, 1]);
-    for (const bins of [2, 3, 14, 199, 200]) {
+    for (const bins of [2, 3, 14, 99, 100]) {
         assert.equal(H.histogram(data, bins).counts.reduce((a, b) => a + b, 0), data.length);
     }
 });
@@ -88,7 +88,7 @@ test('data sheet exports optimal counts, last edge and every candidate cost', ()
     assert.ok(sheet.includes('<td>1</td><td></td>'));
     assert.ok(sheet.includes('Number of observations: 4'));
     const costBody = sheet.split('id="histogram-cost-table"')[1].split('<tbody>')[1].split('</tbody>')[0];
-    assert.equal((costBody.match(/<tr>/g) || []).length, 199);
+    assert.equal((costBody.match(/<tr>/g) || []).length, 99);
     const frequencies = result.optimal.counts;
     assert.equal(frequencies.reduce((a, b) => a + b, 0), result.data.length);
 });
