@@ -1,0 +1,25 @@
+/* Canvas experiments retain the existing tool-page layout and colors. */
+.histogram-experiment > h2 { max-width: 700px; }
+.histogram-plot, .histogram-demo {
+    text-align: center;
+    margin: 16px auto;
+}
+.histogram-plot { max-width: 502px; }
+.histogram-demo { max-width: 470px; }
+.histogram-plot canvas, .histogram-demo canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.histogram-plot input[type="range"], .histogram-demo input[type="range"] {
+    width: 100%;
+    max-width: 400px;
+}
+.histogram-plot p, .histogram-demo p { margin: 8px 0; }
+.demo-controls { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.demo-controls label { white-space: nowrap; }
+#histogram-status { min-height: 1.25em; }
+#histogram-status[data-error="true"] { color: #a00000; }
+#histogram-data { max-width: 100%; box-sizing: border-box; }
+[hidden] { display: none !important; }
