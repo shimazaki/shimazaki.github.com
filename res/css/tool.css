@@ -91,6 +91,11 @@ margin + main + margin + panel + margin
 	position: relative;
 }
 
+.tool-page {
+	box-sizing: border-box;
+	padding-left: 20px;
+}
+
 
 /* List on right panel*/
 #Contents {
@@ -254,4 +259,3 @@ a:active {
 .style291 {color: #CCCCCC
 }
 */
-

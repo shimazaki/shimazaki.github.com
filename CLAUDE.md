@@ -11,7 +11,7 @@ This is the static website for **neuralengine.org**, the academic website of Dr.
 - **Domain**: https://www.neuralengine.org/
 - **Server**: Apache HTTP on AWS, with HTTPS handled by AWS Load Balancer
 - **No build step**: The site is plain HTML/CSS/JS served statically. There are no package managers, bundlers, or build tools.
-- **Deployment**: Files are synced from this Dropbox directory to the server. There is no CI/CD pipeline.
+- **Deployment**: Run `./upload2ec2.sh` from `Dropbox/lab/ec2/`. It syncs `Dropbox/www/` to `/var/www/html/` on the production server with `rsync --delete`. There is no CI/CD pipeline.
 
 ## Key Files & Structure
 

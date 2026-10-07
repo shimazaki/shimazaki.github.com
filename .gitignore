@@ -6,4 +6,5 @@ _notes
 *.asv
 *.eps
 *.BAK
+*.bak.*
 *.DS_Store
