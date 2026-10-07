@@ -1,22 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <meta content="State-space Analysis, Time-varying, Higher-order, Spike Correlation, Multiple Neural Spike Train Data"
       name="keywords" />
     <title>Dynamic Interactions</title>
     <link href="../css/tool.css" rel="stylesheet" />
-    <!-- Local Javascript -->
-    <!-- saved from url=(0013)about:internet -->
-    <!-- Google plus script -->
-    <script type="text/javascript">
-window.___gcfg = {lang: 'en'};
-(function() 
-{var po = document.createElement("script");
-po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
-var s = document.getElementsByTagName("script")[0];
-s.parentNode.insertBefore(po, s);
-})();</script>
+    <link href="ssll.css?v=20261007" rel="stylesheet" />
+    <script src="ssll-demo.js?v=20261007" defer></script>
     <!-- Facebook Metadata -->
     <meta content="State-space analysis of dynamic interactions" property="og:title" />
     <meta content="H. Shimazaki" property="og:site_name" />
@@ -109,8 +100,7 @@ body,td,th {
           </tr>
           <tr>
             <td valign="top"><a class="style9" href="#WebApp">- </a><a class="style9"
-                href="#Code">Matlab
-            Code </a><a class="style9" href="#Code"></a></td>
+                href="#Code">Source code</a></td>
           </tr>
           <tr>
             <td valign="top">&nbsp;</td>
@@ -171,11 +161,42 @@ body,td,th {
           <td width="458" valign="top"><h2><span class="style4"><a id="Ref2" name="WebApp"></a>Web App</span></h2>
           <p>This method  can spell out whether or not observed event sequences are correlated even when  their simultaneous  events appear  momentarily. </p></td>
           <td width="232" align="center" valign="top"><p><img src="icons/thomas_sharp_square.jpg" alt="" width="110" height="110" /></p>
-          <p>The app is running on Python code  by <strong>Thomas Sharp</strong>.</p></td>
+          <p>Original exact-inference code by <strong>Thomas Sharp</strong>.</p></td>
     </tr>
   </table>
-  <iframe src="https://computneuro.appspot.com" width="700" height="820" allowtransparency="true" frameborder="0"></iframe>
-  <p>The original Python implementation was written by Tomas Sharp.</p>
+  <section id="ssll-demo" aria-label="State-space analysis demonstration" aria-busy="true">
+    <p><strong>Randomly generated spike trains:</strong> 2 neurons, 50 time bins, 30 repeated trials.</p>
+    <div class="ssll-controls">
+      <button id="ssll-refresh" type="button">New sample</button>
+      <label><input id="ssll-truth" type="checkbox" disabled /> Show true interaction</label>
+    </div>
+    <p id="ssll-status" role="status" aria-live="polite">Loading the demonstration…</p>
+    <noscript><p>Enable JavaScript to generate spike trains and estimate their interaction.</p></noscript>
+    <div class="ssll-rasters">
+      <figure><figcaption>Neuron 1</figcaption><canvas id="ssll-neuron1" width="320" height="210" role="img" aria-label="Spike raster for neuron 1: time bins horizontally and trials vertically"></canvas></figure>
+      <figure><figcaption>Neuron 2</figcaption><canvas id="ssll-neuron2" width="320" height="210" role="img" aria-label="Spike raster for neuron 2: time bins horizontally and trials vertically"></canvas></figure>
+    </div>
+    <p class="ssll-caption"><span class="ssll-event">●</span> Spike &nbsp; <span class="ssll-red">●</span> Synchronous spikes</p>
+    <figure class="ssll-wide">
+      <figcaption><strong>Estimated time-varying interaction θ₁₂</strong></figcaption>
+      <canvas id="ssll-interaction" width="660" height="300" role="img" aria-label="Estimated interaction and approximate posterior uncertainty over time"></canvas>
+    </figure>
+    <p class="ssll-caption"><span class="ssll-red">—</span> Estimate &nbsp; <span class="ssll-band">■</span> ±2 posterior standard deviations <span id="ssll-truth-key" hidden>&nbsp; <span class="ssll-gray">┄</span> True interaction</span></p>
+    <p class="ssll-explanation">Zero interaction means independence. Positive values indicate more synchronous spikes than expected from independent activity. The shaded band is an approximate 95% credible interval.</p>
+    <figure class="ssll-wide">
+      <figcaption><strong>Observed spike frequencies</strong></figcaption>
+      <canvas id="ssll-rates" width="660" height="180" role="img" aria-label="Observed spike and synchronous-spike probabilities in each time bin"></canvas>
+    </figure>
+    <p class="ssll-caption"><span class="ssll-blue">—</span> Neuron 1 &nbsp; <span class="ssll-green">—</span> Neuron 2 &nbsp; <span class="ssll-red">—</span> Synchronous spikes</p>
+    <p class="ssll-explanation">Each frequency is the fraction of the 30 trials with an event in that time bin.</p>
+  </section>
+  <p class="ssll-source">Based on the current <a href="https://github.com/shimazaki/ssll">shimazaki/ssll Python library</a>. This two-neuron demonstration runs entirely in your browser.</p>
+  <details class="ssll-source">
+    <summary>Calculation and source</summary>
+    <p>The demonstration evaluates the exact likelihood of the four binary patterns, with Newton–Raphson MAP estimation, Laplace filtering and backward smoothing. EM learns the initial mean and the scalar state-noise variance Q = qI, with F = I. Initial values: θ = 0, prior covariance = 0.1I, q = 0.01. EM stops at the library's relative-change threshold of 10<sup>−4</sup>, or after 100 iterations. The posterior and its credible intervals use a Gaussian approximation.</p>
+    <p>Data are generated with θ₁ = θ₂ = −2 and θ₁₂(t) = 1 + 2 sin(4πt/50 − π/2), for t = 0, …, 49. The plots label time bins from 1 to 50.</p>
+    <p><a href="ssll.js">JavaScript calculation source</a>, ported from <a href="https://github.com/shimazaki/ssll/tree/5e1fd634cdcebc708a12e2c3cb80242fb3b08bb8">Python revision 5e1fd63</a>. Estimates, covariance matrices and log marginal likelihoods are checked against this revision using identical spike data. Original exact inference by Thomas Sharp; subsequent Python extensions by Christian Donner, Hideaki Shimazaki, Jimmy Gaudreault and Magalie Tatischeff. Distributed under the <a href="LICENSE.txt">GNU GPL, version 3 or later</a>.</p>
+  </details>
   <table width="700" cellspacing="0" cellpadding="0" border="0">
     <tbody>
       <tr>
@@ -236,7 +257,7 @@ body,td,th {
                   src="../icons/Octocats/Octocat.png" />
                 The code is  available at GitHub.</p>
               <p class="style4">Matlab: <a href="https://github.com/shimazaki/dynamic_corr">https://github.com/shimazaki/dynamic_corr</a></p>
-              <p class="style4">Python: </p>
+              <p class="style4">Python (current library): <a href="https://github.com/shimazaki/ssll">https://github.com/shimazaki/ssll</a></p>
               <p class="style4"><a href="https://github.com/christiando/ssll_lib">https://github.com/christiando/ssll_lib.git</a> (Large-scale analysis  by Christian Donner)</p>
               <p class="style4">&nbsp;</p>
               <p class="style4"><strong>Tutorial for Matlab code</strong></p>

@@ -1,0 +1,28 @@
+/* Match the surrounding research-tool pages without changing shared layout. */
+#ssll-demo {
+    box-sizing: border-box;
+    width: 700px;
+    padding: 12px 16px;
+    background: #ece9d8;
+}
+#ssll-demo > p:first-child { margin-top: 0; }
+.ssll-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; }
+.ssll-controls button { font: inherit; padding: 3px 12px; cursor: pointer; }
+#ssll-status { min-height: 1.3em; margin: 10px 0; }
+#ssll-status[data-error="true"] { color: #a00000; }
+.ssll-rasters { display: flex; justify-content: space-between; gap: 10px; }
+#ssll-demo figure { margin: 0; }
+#ssll-demo figcaption { margin: 8px 0; text-align: center; }
+#ssll-demo canvas { display: block; max-width: 100%; height: auto; border: 1px solid #b8b6ad; }
+.ssll-wide { padding-top: 10px; }
+.ssll-wide canvas { margin: 0 auto; }
+.ssll-caption { text-align: center; margin: 8px 0; font-size: 95%; }
+.ssll-explanation { margin: 10px 0; line-height: 1.35; }
+.ssll-source { width: 700px; line-height: 1.35; }
+.ssll-event { color: #222; }
+.ssll-red { color: #c62828; }
+.ssll-band { color: #eabbbb; }
+.ssll-gray { color: #555; }
+.ssll-blue { color: #245ca6; }
+.ssll-green { color: #287743; }
+#ssll-demo [hidden] { display: none !important; }
